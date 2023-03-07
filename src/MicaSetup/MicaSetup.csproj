@@ -1,0 +1,86 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>11.0</LangVersion>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWinUI>false</UseWinUI>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <Version>$(VersionPrefix)1.0.0</Version>
+    <Authors>Lemutec</Authors>
+    <Company>Lemutec</Company>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
+    <StartupObject>MicaSetup.Program</StartupObject>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AssemblyName>MicaSetup</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyInfoFile>Program.cs</AssemblyInfoFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Favicon.ico" />
+    <None Remove="Resources\Favicon.png" />
+    <None Remove="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
+    <None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
+    <None Remove="Resources\Licenses\license.en.txt" />
+    <None Remove="Resources\Licenses\license.jp.txt" />
+    <None Remove="Resources\Licenses\license.zh.txt" />
+    <None Remove="Resources\Setups\publish.7z" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\Uninst\**" />
+    <Content Remove="ViewModels\Uninst\**" />
+    <EmbeddedResource Remove="ViewModels\Uninst\**" />
+    <None Remove="ViewModels\Uninst\**" />
+    <Page Remove="ViewModels\Uninst\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Uninst\**" />
+    <Content Remove="Views\Uninst\**" />
+    <EmbeddedResource Remove="Views\Uninst\**" />
+    <None Remove="Views\Uninst\**" />
+    <Page Remove="Views\Uninst\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Program.un.cs" />
+    <None Remove="Program.un.cs" />
+    <None Remove="Resources\Setups\Uninst.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.0" />
+    <PackageReference Include="Costura.Fody" Version="5.7.0" Condition=" '$(Configuration)' == 'Release'">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
+    <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
+    <Resource Include="Resources\Images\Favicon.ico" />
+    <Resource Include="Resources\Images\Favicon.png" />
+    <Resource Include="Resources\Licenses\license.en.txt" />
+    <Resource Include="Resources\Licenses\license.jp.txt" />
+    <Resource Include="Resources\Licenses\license.zh.txt" />
+    <Resource Include="Resources\Setups\publish.7z" />
+    <Resource Include="Resources\Setups\Uninst.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicaSetup.Core\MicaSetup.Core.csproj" />
+    <ProjectReference Include="..\MicaSetup.Win32\MicaSetup.Win32.csproj" />
+  </ItemGroup>
+
+</Project>

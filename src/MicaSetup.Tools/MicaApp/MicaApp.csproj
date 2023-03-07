@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>false</UseWindowsForms>
+    <UseWinUI>false</UseWinUI>
+    <LangVersion>11.0</LangVersion>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <Version>$(VersionPrefix)1.0.0</Version>
+    <Authors>Lemutec</Authors>
+    <Company>Lemutec</Company>
+  </PropertyGroup>
+
+</Project>

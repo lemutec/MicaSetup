@@ -1,0 +1,14 @@
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+
+namespace MicaSetup.Core;
+
+public static class TaskExtension
+{
+    [SuppressMessage("Style", "IDE0060:")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void Forget(this Task self)
+    {
+    }
+}

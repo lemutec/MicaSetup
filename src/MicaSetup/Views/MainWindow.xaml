@@ -1,0 +1,19 @@
+﻿<control:WindowX x:Class="MicaSetup.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:main="clr-namespace:MicaSetup"
+        xmlns:local="clr-namespace:MicaSetup.Views"
+        xmlns:control="clr-namespace:MicaSetup.Controls"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        WindowStyle="SingleBorderWindow"
+        Icon="pack://application:,,,/MicaSetup;component/Resources/Images/Favicon.ico"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource DefaultWindowXStyle}"
+        Title="{Binding SetupName}" Height="400" Width="500">
+    <Grid>
+        <local:ShellPage/>
+    </Grid>
+</control:WindowX>

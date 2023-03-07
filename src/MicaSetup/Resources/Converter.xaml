@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:converter="clr-namespace:MicaSetup.Controls.Converters"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <converter:IsNotNullConverter x:Key="IsNotNullConverter" />
+    <converter:IsNullConverter x:Key="IsNullConverter" />
+    <converter:BoolInverseConverter x:Key="BoolInverseConverter" />
+    <converter:Add10Converter x:Key="Add10Converter" />
+    <converter:Add5Converter x:Key="Add5Converter" />
+    <converter:BoolToVisibleConverter x:Key="BoolToVisibleConverter" />
+    <converter:BoolToInvisibleConverter x:Key="BoolToInvisibleConverter" />
+    <converter:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
+    <converter:MathRoundConverter x:Key="MathRoundConverter" />
+    <converter:ProgressBarIndeterminateConverter x:Key="ProgressBarIndeterminateConverter" />
+</ResourceDictionary>

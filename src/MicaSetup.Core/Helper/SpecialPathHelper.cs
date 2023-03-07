@@ -1,0 +1,34 @@
+﻿using System;
+using System.IO;
+using System.Reflection;
+
+namespace MicaSetup.Core;
+
+public static class SpecialPathHelper
+{
+    private static string _defaultApplicationDataFolder = Pack.Current.KeyName ?? Assembly.GetExecutingAssembly().GetName().Name;
+    private readonly static string _localApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+    public static string TempPath { get; } = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+
+    public static void SetApplicationDataFolder(string applicationDataFolder)
+    {
+        _defaultApplicationDataFolder = applicationDataFolder;
+    }
+
+    public static string GetFolder(string optionFolder = null!)
+    {
+        return Path.Combine(_localApplicationData, optionFolder ?? _defaultApplicationDataFolder);
+    }
+
+    public static string GetPath(string baseName)
+    {
+        string configPath = Path.Combine(GetFolder(), baseName);
+
+        if (!Directory.Exists(new FileInfo(configPath).DirectoryName))
+        {
+            _ = Directory.CreateDirectory(new FileInfo(configPath).DirectoryName!);
+        }
+        return configPath;
+    }
+}
