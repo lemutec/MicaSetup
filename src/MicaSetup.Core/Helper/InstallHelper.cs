@@ -71,12 +71,12 @@ public static class InstallHelper
         };
 
         StringBuilder uninstallData = new();
-        Action<double, string> progressCallback2 = (progress, key) =>
+        void progressCallback2(double progress, string key)
         {
             progressCallback?.Invoke(progress, key);
             uninstallData.Append(key);
             uninstallData.Append('|');
-        };
+        }
 
         ArchiveFileHelper.ExtractAll(Pack.Current.InstallLocation, archiveStream, progressCallback2, options: extractionOptions);
 

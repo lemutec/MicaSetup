@@ -4,7 +4,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace Squircle.Core;
+namespace MicaSquircle.Core;
 
 internal static class PrivateFontHelper
 {

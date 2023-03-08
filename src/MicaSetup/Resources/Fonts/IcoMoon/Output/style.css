@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?2c5pdz');
-  src:  url('fonts/icomoon.eot?2c5pdz#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?2c5pdz') format('truetype'),
-    url('fonts/icomoon.woff?2c5pdz') format('woff'),
-    url('fonts/icomoon.svg?2c5pdz#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?e7orij');
+  src:  url('fonts/icomoon.eot?e7orij#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?e7orij') format('truetype'),
+    url('fonts/icomoon.woff?e7orij') format('woff'),
+    url('fonts/icomoon.svg?e7orij#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-Circle:before {
+  content: "\e939";
+}
+.icon-ic_celiakeyboard_menu_language:before {
+  content: "\e938";
+}
+.icon-ic_contacts_encryption_calls:before {
+  content: "\e937";
+}
+.icon-ic_public_close_filled:before {
+  content: "\e936";
+}
+.icon-ic_public_send_filled:before {
+  content: "\e935";
+}
+.icon-Squircle:before {
+  content: "\e934";
+}
 .icon-ic_gallery_create:before {
   content: "\e901";
 }

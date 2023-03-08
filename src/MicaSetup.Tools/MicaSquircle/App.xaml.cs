@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Squircle;
+namespace MicaSquircle;
 
 public partial class App : Application
 {

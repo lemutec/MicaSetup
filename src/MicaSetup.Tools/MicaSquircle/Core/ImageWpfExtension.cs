@@ -6,7 +6,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Vanara.PInvoke;
 
-namespace Squircle.Core;
+namespace MicaSquircle.Core;
 
 internal static class ImageWpfExtension
 {
