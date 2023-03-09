@@ -53,7 +53,7 @@
                 <TextBlock Text="{DynamicResource TitleTips}" FontSize="15" Margin="15,5"/>
                 <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
                     <Grid>
-                        <TextBlock Text="&#xe915;" FontSize="30" FontFamily="{StaticResource IcoMoon}" VerticalAlignment="Center"/>
+                        <TextBlock Text="{x:Static local:Selection.PublicFail}" FontSize="30" FontFamily="{StaticResource IcoMoon}" VerticalAlignment="Center"/>
                     </Grid>
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,0,0">
                         <TextBlock Text="{Binding Message}" TextWrapping="Wrap" LineHeight="25" Width="300"

@@ -22,7 +22,7 @@
                     <i:Interaction.Behaviors>
                         <control:WindowDragMoveBehavior/>
                     </i:Interaction.Behaviors>
-                    <TextBlock Text="&#xe900;" Foreground="White"
+                    <TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
                                FontSize="110" FontFamily="{StaticResource IcoMoon}"
                                HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>

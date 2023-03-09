@@ -4,7 +4,6 @@
     <ResourceDictionary.MergedDictionaries>
         <local:ResourceResourceDictionary/>
     </ResourceDictionary.MergedDictionaries>
-
     <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}" x:Key="DefaultCheckBoxStyle">
         <Setter Property="Foreground" Value="#333333"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -16,7 +15,7 @@
                         <Grid Background="Transparent" Height="20" Width="20">
                             <Border x:Name="border" Background="White" BorderBrush="#8E8E93" BorderThickness="1"
                                 CornerRadius="2" Margin="0,0,0,0" Width="20" Height="20"/>
-                            <TextBlock x:Name="checkIcon" Text="&#xe920;" Foreground="#2ACEAE"
+                            <TextBlock x:Name="checkIcon" Text="{x:Static local:Selection.PublicOk}" Foreground="#2ACEAE"
                                        FontSize="18" FontFamily="{StaticResource IcoMoon}"
                                        HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0"/>
                         </Grid>

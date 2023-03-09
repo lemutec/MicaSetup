@@ -22,7 +22,7 @@
                 <i:Interaction.Behaviors>
                     <control:WindowDragMoveBehavior/>
                 </i:Interaction.Behaviors>
-                <TextBlock Text="&#xe900;" Foreground="White"
+                    <TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
                            FontSize="110" FontFamily="{StaticResource IcoMoon}"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Grid>
@@ -37,7 +37,7 @@
                         <DropShadowEffect Color="LightGray" BlurRadius="1" ShadowDepth="0" />
                     </ToggleButton.Effect>
                     <ToggleButton.Content>
-                        <TextBlock Text="&#xe90c;" Foreground="#A2A5A7"
+                        <TextBlock Text="{x:Static control:Selection.PublicArrowUp1}" Foreground="#A2A5A7"
                                    FontSize="22" FontFamily="{StaticResource IcoMoon}"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </ToggleButton.Content>
@@ -65,7 +65,7 @@
                                     control:ButtonHelper.HoverBrush="#484C58"
                                     control:ButtonHelper.CornerRadius="4">
                                 <Button.Content>
-                                    <TextBlock Text="&#xe916;" Foreground="White"
+                                    <TextBlock Text="{x:Static control:Selection.PublicFolder}" Foreground="White"
                                                FontSize="20" FontFamily="{StaticResource IcoMoon}"
                                                HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Button.Content>
@@ -132,7 +132,7 @@
                         control:ButtonHelper.CornerRadius="4">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="&#xe928;" Foreground="White" Padding="2"
+                            <TextBlock Text="{x:Static control:Selection.ContactSencryptionCalls}" Foreground="White" Padding="2"
                                        Visibility="{Binding IsElevated,Converter={StaticResource BoolToVisibleConverter}}"
                                        FontSize="18" FontFamily="{StaticResource IcoMoon}"
                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
