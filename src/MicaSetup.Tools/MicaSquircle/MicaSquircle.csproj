@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\MicaSetup\Controls\Styles\Selection.cs"/>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Favicon.ico">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

@@ -2,7 +2,6 @@
 using SharpCompress.Common;
 using SharpCompress.Readers;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace MicaSetup.Core;

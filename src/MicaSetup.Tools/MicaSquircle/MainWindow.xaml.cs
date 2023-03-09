@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MicaSetup.Controls;
 using MicaSquircle.Core;
 using MicaWPF.Controls;
 using System;
@@ -67,26 +68,26 @@ public partial class MainWindow : MicaWindow
         Bitmap bitmap = new(512, 512);
 
         // Squircle
-        bitmap.AddIconFont("\xe934", 340, PrivateFontHelper.FontFamily, Color.White, 6, 28);
+        bitmap.AddIconFont(Selection.Squircle, 340, PrivateFontHelper.FontFamily, Color.White, 6, 28);
 
-        // Mica
-        bitmap.AddIconFont("\xe900", 200, PrivateFontHelper.FontFamily, Color.Black, 6, 20);
+        // IcoMoon
+        bitmap.AddIconFont(Selection.IcoMoon, 200, PrivateFontHelper.FontFamily, Color.Black, 6, 20);
 
         if (IconType == IconType.Setup)
         {
             // Circle
-            bitmap.AddIconFont("\xe939", 150, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#FFFFFF"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#24CDB9"), 6 + 158, 20 + 154);
 
             // Up
-            bitmap.AddIconFont("\xe935", 156, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#24CDB9"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.GallerySortReverse, 120, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#FFFFFF"), 6 + 158, 20 + 154);
         }
         else if (IconType == IconType.Uninst)
         {
             // Circle
-            bitmap.AddIconFont("\xe939", 150, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#FFFFFF"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#EB3B3B"), 6 + 158, 20 + 154);
 
             // Close
-            bitmap.AddIconFont("\xe936", 156, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#EB3B3B"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.PublicCancelFilled, 120, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#FFFFFF"), 6 + 158, 20 + 154);
         }
         return bitmap;
     }
