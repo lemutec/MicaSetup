@@ -27,6 +27,8 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 🚧Under construction🚧
 
+Some usage ideas [here](src/README.md).
+
 ## 🚀Contributes
 
 🈺Welcome PRs and any issuses.🆘
