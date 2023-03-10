@@ -3,5 +3,5 @@ bin/*
 obj/*
 *.user
 *.pdb
-*.ttf
+/*.ttf
 subset.txt
