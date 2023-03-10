@@ -4,6 +4,7 @@ using MicaSetup.Win32;
 using System;
 using System.Windows;
 using System.Windows.Interop;
+using System.Windows.Shell;
 
 namespace MicaSetup.Controls;
 
@@ -38,6 +39,45 @@ public partial class WindowX : Window
     {
         base.OnSourceInitialized(e);
         NativeMethods.HideAllWindowButton(new WindowInteropHelper(this).Handle);
+    }
+
+    public override void EndInit()
+    {
+        ApplyResizeBorderThickness(WindowState);
+        base.EndInit();
+    }
+
+    protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+    {
+        if (e.Property.Name is nameof(WindowState))
+        {
+            ApplyResizeBorderThickness((WindowState)e.NewValue);
+        }
+        base.OnPropertyChanged(e);
+    }
+
+    private void ApplyResizeBorderThickness(WindowState windowsState)
+    {
+        if (windowsState == WindowState.Maximized || ResizeMode == ResizeMode.NoResize || ResizeMode == ResizeMode.CanMinimize)
+        {
+            WindowChrome.SetWindowChrome(this, new WindowChrome()
+            {
+                CaptionHeight = 0,
+                CornerRadius = new CornerRadius(8),
+                GlassFrameThickness = new Thickness(-1),
+                ResizeBorderThickness = new Thickness(0)
+            });
+        }
+        else
+        {
+            WindowChrome.SetWindowChrome(this, new WindowChrome()
+            {
+                CaptionHeight = 0,
+                CornerRadius = new CornerRadius(8),
+                GlassFrameThickness = new Thickness(-1),
+                ResizeBorderThickness = new Thickness(3)
+            });
+        }
     }
 
     [RelayCommand]

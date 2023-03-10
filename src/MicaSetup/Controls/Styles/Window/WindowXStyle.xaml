@@ -18,7 +18,7 @@
                               CaptionHeight="0"
                               GlassFrameThickness="-1"
                               NonClientFrameEdges="None"
-                              CornerRadius="0"
+                              CornerRadius="8"
                               UseAeroCaptionButtons="False" />
             </Setter.Value>
         </Setter>

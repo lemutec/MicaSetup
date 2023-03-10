@@ -35,10 +35,10 @@
                                     </LinearGradientBrush>
                                 </Rectangle.Fill>
                             </Rectangle>
-                            <Rectangle x:Name="PART_IndeterminateIndicator" 
-                                   HorizontalAlignment="Left" Width="100"
-                                   RadiusX="1" RadiusY="1"
-                                   Height="{TemplateBinding Height}">
+                            <Rectangle x:Name="PART_IndeterminateIndicator"
+                                       HorizontalAlignment="Left" Width="100"
+                                       RadiusX="1" RadiusY="1"
+                                       Height="{TemplateBinding Height}">
                                 <Rectangle.Fill>
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                         <GradientStopCollection>
