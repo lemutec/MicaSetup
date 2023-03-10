@@ -29,7 +29,7 @@
                 <ToggleButton Style="{StaticResource ExpandToggleButtonStyle}"
                         Command="{Binding ShowOrHideInstallPathCommand}"
                         CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
-                        Width="33" Height="33" Margin="0,-15,0,0"
+                        Width="34" Height="34" Margin="0,-15,0,0"
                         Background="White" Foreground="Black"
                         BorderBrush="#50AAAAAA" BorderThickness="1"
                         control:ButtonHelper.CornerRadius="16.5">
@@ -39,10 +39,11 @@
                     <ToggleButton.Content>
                         <TextBlock Text="{x:Static control:Selection.PublicArrowUp1}" Foreground="#A2A5A7"
                                    FontSize="22" FontFamily="{StaticResource IcoMoon}"
+                                   Margin="-1,1,0,0"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </ToggleButton.Content>
                     <ToggleButton.RenderTransform>
-                        <RotateTransform CenterX="16.5" CenterY="16.5"/>
+                        <RotateTransform CenterX="17" CenterY="17"/>
                     </ToggleButton.RenderTransform>
                 </ToggleButton>
             </StackPanel>
@@ -86,7 +87,7 @@
                         </Grid>
                     </StackPanel>
                 </Border>
-                <Rectangle Width="999" Height="5" VerticalAlignment="Top">
+                <Rectangle Width="999" Height="5" VerticalAlignment="Top" Margin="0,-1,0,0">
                     <Rectangle.Fill>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                             <GradientStop Color="#5031374F" Offset="0"/>
