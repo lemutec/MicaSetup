@@ -117,6 +117,12 @@
                                     Property="Margin"
                                     Value="5" />
                         </Trigger>
+                        <Trigger Property="IsActivated"
+                                 Value="false">
+                            <Setter TargetName="PART_TxtTitle"
+                                    Property="Opacity"
+                                    Value="0.9" />
+                        </Trigger>
                         <DataTrigger Binding="{Binding Icon,RelativeSource={RelativeSource Self},Mode=OneWay, Converter={StaticResource IsNullConverter}}"
                                      Value="True">
                             <Setter TargetName="PART_ImgIcon"

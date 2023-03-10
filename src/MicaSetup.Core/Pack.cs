@@ -16,6 +16,12 @@ public class Pack
     public bool Logging { get; set; } = false;
 
     /// <summary>
+    /// Indicates whether enable Mica Backdrop
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool BackdropMica { get; set; } = false;
+
+    /// <summary>
     /// Indicates whether App installing
     /// </summary>
     [Category("GlobalVariable")]

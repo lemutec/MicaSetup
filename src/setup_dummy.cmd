@@ -7,7 +7,7 @@ del test.txt
 copy publish.7z .\MicaSetup\Resources\Setups\publish.7z
 
 @echo [prepare font]
-copy .\MicaSetup.Tools\MicaFontTrim\HarmonyOS_Sans_SC_Regular.ttf .\MicaSetup\Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf
+copy .\MicaSetup.Tools\MicaFontTrim\fonts\HarmonyOS_Sans_SC_Regular.ttf .\MicaSetup\Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf
 
 @echo [prepare dummy uninst]
 echo dummy-uninst > uninst.exe

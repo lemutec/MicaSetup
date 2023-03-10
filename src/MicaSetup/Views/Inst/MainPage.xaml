@@ -48,7 +48,7 @@
             </StackPanel>
             <Grid Margin="0,-18,0,0" Panel.ZIndex="-1"
                   Visibility="{Binding InstallPathVisabale,Converter={StaticResource BoolToVisibleConverter}}">
-                <Border Background="#F7F7F7" Height="130" VerticalAlignment="Top">
+                <Border Background="#EEF7F7F7" Height="130" VerticalAlignment="Top">
                     <StackPanel Margin="0,8,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                         <TextBlock Text="{DynamicResource InstallationPath}" FontSize="15"/>
                         <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
