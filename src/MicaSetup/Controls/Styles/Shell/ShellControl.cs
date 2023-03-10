@@ -16,6 +16,7 @@ public class ShellControl : ContentControl
     public ShellControl()
     {
         Routing.Shell = new WeakReference<ShellControl>(this);
+        FocusVisualStyle = null!;
         Loaded += (_, _) => Routing.GoTo(Route);
     }
 }
