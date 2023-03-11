@@ -10,10 +10,10 @@ namespace MicaSetup.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
-    private bool keepMyData = Pack.Current.KeepMyData;
+    private bool keepMyData = Option.Current.KeepMyData;
     partial void OnKeepMyDataChanged(bool value)
     {
-        Pack.Current.KeepMyData = value;
+        Option.Current.KeepMyData = value;
         if (!value)
         {
             _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("NotKeepMyDataTips", Mui("KeepMyDataTips")));

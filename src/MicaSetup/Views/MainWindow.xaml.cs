@@ -7,7 +7,7 @@ namespace MicaSetup.Views;
 
 public partial class MainWindow : WindowX
 {
-    public static string SetupName => Pack.Current.SetupName;
+    public static string SetupName => Option.Current.SetupName;
 
     public MainWindow()
     {
@@ -18,7 +18,7 @@ public partial class MainWindow : WindowX
 
     protected override void OnActivated(EventArgs e)
     {
-        if (Pack.Current.BackdropMica)
+        if (Option.Current.BackdropMica)
         {
             this.EnableBackdrop();
         }
@@ -27,9 +27,9 @@ public partial class MainWindow : WindowX
 
     private void OnClosing(object sender, CancelEventArgs e)
     {
-        if (Pack.Current.Uninst)
+        if (Option.Current.Uninst)
         {
-            if (Pack.Current.Uninstalling)
+            if (Option.Current.Uninstalling)
             {
                 e.Cancel = true;
                 _ = MessageBoxX.Info(this, Mui("UninstNotCompletedTips"));
@@ -37,7 +37,7 @@ public partial class MainWindow : WindowX
         }
         else
         {
-            if (Pack.Current.Installing)
+            if (Option.Current.Installing)
             {
                 if (MessageBoxX.Question(this, Mui("InstNotCompletedTips")) != WindowDialogResult.Yes)
                 {

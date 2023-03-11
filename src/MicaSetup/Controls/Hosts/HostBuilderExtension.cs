@@ -1,5 +1,6 @@
 ﻿using MicaSetup.Core;
 using MicaSetup.Win32;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -19,14 +20,22 @@ public static class HostBuilderExtension
 
     public static IHostBuilder UseAsUninst(this IHostBuilder builder)
     {
-        Pack.Current.Uninst = true;
+        Option.Current.Uninst = true;
         return builder;
     }
 
-    public static IHostBuilder UseLogger(this IHostBuilder builder, bool enabled)
+    public static IHostBuilder UseLogger(this IHostBuilder builder, bool enabled = true)
     {
-        Pack.Current.Logging = enabled;
+        Option.Current.Logging = enabled;
         Logger.Info("Setup run started ...");
+        return builder;
+    }
+
+    public static IHostBuilder UseServices(this IHostBuilder builder, Action<IServiceCollection> service)
+    {
+        ServiceCollection serviceCollection = new();
+        service?.Invoke(serviceCollection);
+        builder.ServiceProvider = serviceCollection.BuildServiceProvider();
         return builder;
     }
 
@@ -70,9 +79,9 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UsePack(this IHostBuilder builder, Action<Pack> handler)
+    public static IHostBuilder UsePack(this IHostBuilder builder, Action<Option> handler)
     {
-        handler?.Invoke(Pack.Current);
+        handler?.Invoke(Option.Current);
         return builder;
     }
 

@@ -20,8 +20,8 @@ public static class PrepareInstallPathHelper
         }
         if (preferX86)
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\" + Pack.Current.KeyName;
+            return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\" + Option.Current.KeyName;
         }
-        return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\" + Pack.Current.KeyName;
+        return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\" + Option.Current.KeyName;
     }
 }

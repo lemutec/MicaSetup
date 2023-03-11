@@ -23,19 +23,18 @@ internal class Program
         HostBuilderExtension
             .CreateBuilder()
             .UseAsUninst()
-            .UseLogger(true)
+            .UseLogger()
             .UseSingleInstance("MicaSetup")
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
             .UsePack(pack =>
             {
-                pack.DesktopShortcut = true;
-                pack.CreateUninst = true;
-                pack.RegistryKeys = true;
-                pack.AutoRun = false;
-                pack.RegistryPreferX86 = null!;
-                pack.ShowUninstallingFileName = true;
+                pack.IsCreateDesktopShortcut = true;
+                pack.IsCreateUninst = true;
+                pack.IsCreateRegistryKeys = true;
+                pack.IsCrateAsAutoRun = false;
+                pack.IsUseRegistryPreferX86 = null!;
                 pack.ExeName = "MicaApp.exe";
                 pack.KeyName = "MicaApp";
                 pack.DisplayName = "MicaApp";
@@ -44,6 +43,9 @@ internal class Program
                 pack.Publisher = "Lemutec";
                 pack.AppName = "MicaApp";
                 pack.SetupName = $"MicaApp {Mui("UninstallProgram")}";
+            })
+            .UseServices(service =>
+            {
             })
             .CreateApp()
             .UseMuiLanguage()

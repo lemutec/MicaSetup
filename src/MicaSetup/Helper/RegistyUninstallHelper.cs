@@ -11,7 +11,7 @@ public static class RegistyUninstallHelper
 {
     public static void Write(UninstallInfo info)
     {
-        using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Pack.Current.RegistryPreferX86 switch
+        using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Option.Current.IsUseRegistryPreferX86 switch
         {
             true => RegistryView.Registry32,
             false => RegistryView.Registry64,
@@ -38,7 +38,7 @@ public static class RegistyUninstallHelper
             KeyName = keyName,
         };
 
-        using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Pack.Current.RegistryPreferX86 switch
+        using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Option.Current.IsUseRegistryPreferX86 switch
         {
             true => RegistryView.Registry32,
             false => RegistryView.Registry64,
@@ -57,7 +57,7 @@ public static class RegistyUninstallHelper
 
     public static void Delete(string keyName)
     {
-        using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Pack.Current.RegistryPreferX86 switch
+        using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Option.Current.IsUseRegistryPreferX86 switch
         {
             true => RegistryView.Registry32,
             false => RegistryView.Registry64,

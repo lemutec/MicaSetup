@@ -18,13 +18,13 @@ namespace MicaSetup.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Pack.Current.KeyName, Pack.Current.InstallPathPreferX86);
+    private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName, Option.Current.UseInstallPathPreferX86);
     partial void OnInstallPathChanged(string value)
     {
         try
         {
             AvailableFreeSpace = DriveInfoHelper.GetAvailableFreeSpaceString(value);
-            Pack.Current.InstallLocation = value;
+            Option.Current.InstallLocation = value;
             IsIllegalPath = false;
         }
         catch
@@ -124,7 +124,7 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private void SelectFolder()
     {
-        if (Pack.Current.FolderPickerPreferClassic)
+        if (Option.Current.UseFolderPickerPreferClassic)
         {
             using FolderBrowserDialog dialog = new()
             {
@@ -134,7 +134,7 @@ public partial class MainViewModel : ObservableObject
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFolder = dialog.SelectedPath;
-                Pack.Current.InstallLocation = InstallPath = selectedFolder;
+                Option.Current.InstallLocation = InstallPath = selectedFolder;
             }
         }
         else
@@ -147,7 +147,7 @@ public partial class MainViewModel : ObservableObject
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 string selectedFolder = dialog.FileName;
-                Pack.Current.InstallLocation = InstallPath = selectedFolder;
+                Option.Current.InstallLocation = InstallPath = selectedFolder;
             }
         }
     }

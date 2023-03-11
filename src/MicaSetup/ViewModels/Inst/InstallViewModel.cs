@@ -20,7 +20,7 @@ public partial class InstallViewModel : ObservableObject
     [SuppressMessage("Design", "CA1031:")]
     public InstallViewModel()
     {
-        Pack.Current.Installing = true;
+        Option.Current.Installing = true;
         InstallInfo = Mui("Preparing");
 
         _ = Task.Run(async () =>
@@ -36,11 +36,7 @@ public partial class InstallViewModel : ObservableObject
                     UIDispatcherHelper.BeginInvoke(() =>
                     {
                         InstallProgress = progress * 100d;
-
-                        if (Pack.Current.ShowInstallingFileName)
-                        {
-                            InstallInfo = key;
-                        }
+                        InstallInfo = key;
                     });
                 });
 
@@ -52,11 +48,11 @@ public partial class InstallViewModel : ObservableObject
                 Logger.Error(e);
             }
 
-            if (Pack.Current.AllowFullFolderSecurity)
+            if (Option.Current.IsAllowFullFolderSecurity)
             {
                 try
                 {
-                    SecurityControlHelper.AllowFullFolderSecurity(Pack.Current.InstallLocation);
+                    SecurityControlHelper.AllowFullFolderSecurity(Option.Current.InstallLocation);
                 }
                 catch (Exception e)
                 {
@@ -65,7 +61,7 @@ public partial class InstallViewModel : ObservableObject
             }
 
             InstallInfo = Mui("InstallFinishTips");
-            Pack.Current.Installing = false;
+            Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);
 
             UIDispatcherHelper.Invoke(Routing.GoToNext);

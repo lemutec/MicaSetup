@@ -9,11 +9,11 @@ public static class InstallHelper
 {
     public static void Install(Stream archiveStream, Action<double, string> progressCallback = null!)
     {
-        if (Pack.Current.DesktopShortcut)
+        if (Option.Current.IsCreateDesktopShortcut)
         {
             try
             {
-                ShortcutHelper.CreateShortcutOnDesktop(Pack.Current.DisplayName, Path.Combine(Pack.Current.InstallLocation, Pack.Current.ExeName));
+                ShortcutHelper.CreateShortcutOnDesktop(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
             }
             catch (Exception e)
             {
@@ -21,17 +21,17 @@ public static class InstallHelper
             }
         }
 
-        if (!Directory.Exists(Pack.Current.InstallLocation))
+        if (!Directory.Exists(Option.Current.InstallLocation))
         {
-            _ = Directory.CreateDirectory(Pack.Current.InstallLocation);
+            _ = Directory.CreateDirectory(Option.Current.InstallLocation);
         }
         else
         {
-            if (!string.IsNullOrWhiteSpace(Pack.Current.OverlayInstallRemoveExt))
+            if (!string.IsNullOrWhiteSpace(Option.Current.OverlayInstallRemoveExt))
             {
-                string[] extFilters = Pack.Current.OverlayInstallRemoveExt.Split(',');
+                string[] extFilters = Option.Current.OverlayInstallRemoveExt.Split(',');
 
-                foreach (string subDir in Directory.GetDirectories(Pack.Current.InstallLocation))
+                foreach (string subDir in Directory.GetDirectories(Option.Current.InstallLocation))
                 {
                     foreach (string file in Directory.GetFiles(subDir, "*.*", SearchOption.AllDirectories))
                     {
@@ -78,30 +78,30 @@ public static class InstallHelper
             uninstallData.Append('|');
         }
 
-        ArchiveFileHelper.ExtractAll(Pack.Current.InstallLocation, archiveStream, progressCallback2, options: extractionOptions);
+        ArchiveFileHelper.ExtractAll(Option.Current.InstallLocation, archiveStream, progressCallback2, options: extractionOptions);
 
-        if (Pack.Current.RegistryKeys)
+        if (Option.Current.IsCreateRegistryKeys)
         {
             UninstallInfo info = new()
             {
-                KeyName = Pack.Current.KeyName,
-                DisplayName = Pack.Current.DisplayName,
-                DisplayVersion = Pack.Current.DisplayVersion,
-                InstallLocation = Pack.Current.InstallLocation,
-                Publisher = Pack.Current.Publisher,
-                UninstallString = Pack.Current.UninstallString,
-                SystemComponent = Pack.Current.SystemComponent,
+                KeyName = Option.Current.KeyName,
+                DisplayName = Option.Current.DisplayName,
+                DisplayVersion = Option.Current.DisplayVersion,
+                InstallLocation = Option.Current.InstallLocation,
+                Publisher = Option.Current.Publisher,
+                UninstallString = Option.Current.UninstallString,
+                SystemComponent = Option.Current.SystemComponent,
             };
 
-            if (string.IsNullOrWhiteSpace(Pack.Current.DisplayIcon))
+            if (string.IsNullOrWhiteSpace(Option.Current.DisplayIcon))
             {
-                info.DisplayIcon = Path.Combine(Pack.Current.InstallLocation, Pack.Current.ExeName);
+                info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName);
             }
             else
             {
-                info.DisplayIcon = Path.Combine(Pack.Current.InstallLocation, Pack.Current.DisplayIcon);
+                info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.DisplayIcon);
             }
-            info.UninstallString ??= Path.Combine(Pack.Current.InstallLocation, "Uninst.exe");
+            info.UninstallString ??= Path.Combine(Option.Current.InstallLocation, "Uninst.exe");
             info.UninstallData = uninstallData.ToString();
 
             try
@@ -116,7 +116,7 @@ public static class InstallHelper
 
         try
         {
-            RegistyAutoRunHelper.SetEnabled(Pack.Current.AutoRun, Pack.Current.KeyName, $"{Path.Combine(Pack.Current.InstallLocation, Pack.Current.ExeName)} {Pack.Current.AutoRunLaunchCommand}");
+            RegistyAutoRunHelper.SetEnabled(Option.Current.IsCrateAsAutoRun, Option.Current.KeyName, $"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)} {Option.Current.AutoRunLaunchCommand}");
         }
         catch (Exception e)
         {
@@ -126,11 +126,11 @@ public static class InstallHelper
 
     public static void CreateUninst(Stream uninstStream)
     {
-        if (Pack.Current.CreateUninst)
+        if (Option.Current.IsCreateUninst)
         {
             try
             {
-                using FileStream fileStream = new(Path.Combine(Pack.Current.InstallLocation, "Uninst.exe"), FileMode.Create);
+                using FileStream fileStream = new(Path.Combine(Option.Current.InstallLocation, "Uninst.exe"), FileMode.Create);
                 uninstStream.Seek(0, SeekOrigin.Begin);
                 uninstStream.CopyTo(fileStream);
             }

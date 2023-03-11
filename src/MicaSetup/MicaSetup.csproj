@@ -8,11 +8,6 @@
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWinUI>false</UseWinUI>
-    <AssemblyVersion>1.1.0</AssemblyVersion>
-    <FileVersion>1.1.0</FileVersion>
-    <Version>$(VersionPrefix)1.1.0</Version>
-    <Authors>Lemutec</Authors>
-    <Company>Lemutec</Company>
     <Platforms>AnyCPU;x64</Platforms>
     <ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
     <StartupObject>MicaSetup.Program</StartupObject>
@@ -22,8 +17,8 @@
     <AssemblyInfoFile>Program.cs</AssemblyInfoFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <EnableNETAnalyzers>True</EnableNETAnalyzers>
-    <AnalysisLevel>latest-all</AnalysisLevel>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <AnalysisLevel>6.0-recommended</AnalysisLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -66,8 +61,13 @@
       <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
-    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="Lnk" Version="1.3.2.4" />
+    <PackageReference Include="SharpCompress" Version="0.32.2" />
+    <PackageReference Include="System.IO.Abstractions" Version="19.2.1" />
+    <PackageReference Include="WindowsAPICodePack.Shell.CommonFileDialogs" Version="1.1.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,11 +80,6 @@
     <Resource Include="Resources\Licenses\license.zh.txt" />
     <Resource Include="Resources\Setups\publish.7z" />
     <Resource Include="Resources\Setups\Uninst.exe" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\MicaSetup.Core\MicaSetup.Core.csproj" />
-    <ProjectReference Include="..\MicaSetup.Win32\MicaSetup.Win32.csproj" />
   </ItemGroup>
 
 </Project>

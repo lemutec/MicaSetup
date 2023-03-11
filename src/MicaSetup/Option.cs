@@ -3,17 +3,17 @@
 namespace MicaSetup.Core;
 
 /// <summary>
-/// Package Context
+/// Option Context
 /// </summary>
-public class Pack
+public class Option
 {
-    public static Pack Current { get; } = new();
+    public static Option Current { get; } = new();
 
     /// <summary>
     /// Indicates whether enable logger
     /// </summary>
     [Category("GlobalSetting")]
-    public bool Logging { get; set; } = false;
+    public bool Logging { get; internal set; } = false;
 
     /// <summary>
     /// Indicates whether enable Mica Backdrop
@@ -43,25 +43,25 @@ public class Pack
     /// Indicates whether create uninst after app installed
     /// </summary>
     [Category("GlobalSetting")]
-    public bool CreateUninst { get; set; } = true;
+    public bool IsCreateUninst { get; set; } = true;
 
     /// <summary>
     /// Indicates whether to generate Desktop Shortcut
     /// </summary>
     [Category("GlobalSetting")]
-    public bool DesktopShortcut { get; set; } = true;
+    public bool IsCreateDesktopShortcut { get; set; } = true;
 
     /// <summary>
     /// Indicates whether to generate Registry Keys
     /// </summary>
     [Category("GlobalSetting")]
-    public bool RegistryKeys { get; set; } = true;
+    public bool IsCreateRegistryKeys { get; set; } = true;
 
     /// <summary>
     /// Indicates whether to generate AutoRun Shortcut
     /// </summary>
     [Category("GlobalSetting")]
-    public bool AutoRun { get; set; } = false;
+    public bool IsCrateAsAutoRun { get; set; } = false;
     [Category("GlobalSetting")]
     public string AutoRunLaunchCommand { get; set; } = string.Empty;
 
@@ -69,25 +69,25 @@ public class Pack
     /// Prefer to provide classic type folder selector
     /// </summary>
     [Category("GlobalSetting")]
-    public bool FolderPickerPreferClassic { get; set; } = false;
+    public bool UseFolderPickerPreferClassic { get; set; } = false;
 
     /// <summary>
     /// Prefer to provide x86 type install path
     /// </summary>
     [Category("GlobalSetting")]
-    public bool InstallPathPreferX86 { get; set; } = false;
+    public bool UseInstallPathPreferX86 { get; set; } = false;
 
     /// <summary>
     /// Prefer to provide x86 type Registry Key
     /// </summary>
     [Category("GlobalSetting")]
-    public bool? RegistryPreferX86 { get; set; } = null!;
+    public bool? IsUseRegistryPreferX86 { get; set; } = null!;
 
     /// <summary>
     /// Prefer to Allow Full Security intall path 
     /// </summary>
     [Category("GlobalSetting")]
-    public bool AllowFullFolderSecurity { get; set; } = true;
+    public bool IsAllowFullFolderSecurity { get; set; } = true;
 
     /// <summary>
     /// The file ext filter to remove when overlay install
@@ -95,18 +95,6 @@ public class Pack
     /// </summary>
     [Category("GlobalSetting")]
     public string OverlayInstallRemoveExt { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Indicates whether to show installing file name
-    /// </summary>
-    [Category("GlobalSetting")]
-    public bool ShowInstallingFileName { get; set; } = true;
-
-    /// <summary>
-    /// Indicates whether to show uninstalling file name
-    /// </summary>
-    [Category("GlobalSetting")]
-    public bool ShowUninstallingFileName { get; set; } = true;
 
     /// <summary>
     /// Your Product Exe file name

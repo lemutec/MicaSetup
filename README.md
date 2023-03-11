@@ -30,7 +30,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | MSIX Installer   | 🔲          | Using MSIX package instead of archive file.                  |
 | Notification     | 🔲          | Windows10 (or higher) Notification.                          |
 | Online Installer | 🔲          | Using Network instead of archive file.                       |
-| High DPI         | 🔲          | Support to `SetProcessDpiAwareness` and auto scaled.         |
+| High DPI         | ☑          | Support to process DPI awareness.                            |
 
 ### ✨General Features
 

@@ -55,7 +55,7 @@ public class MuiLanguage
         {
             foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
             {
-                if (dictionary.Source != null && dictionary.Source.OriginalString.Equals($"/Resources/Languages/{name}.xaml"))
+                if (dictionary.Source != null && dictionary.Source.OriginalString.Equals($"/Resources/Languages/{name}.xaml", StringComparison.Ordinal))
                 {
                     Application.Current.Resources.MergedDictionaries.Remove(dictionary);
                     Application.Current.Resources.MergedDictionaries.Add(dictionary);

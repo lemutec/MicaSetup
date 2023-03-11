@@ -84,7 +84,7 @@ public static class Logger
           .Append("|" + message);
 
         Debug.WriteLine(sb.ToString());
-        if (Pack.Current.Logging)
+        if (Option.Current.Logging)
         {
             TraceListener.WriteLine(sb.ToString());
             TraceListener.Flush();

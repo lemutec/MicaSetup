@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Core;
 using System;
-using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +19,7 @@ public partial class FinishViewModel : ObservableObject
     }
 
     [RelayCommand]
+    [SuppressMessage("Reliability", "CA2000:")]
     public void Finish(Button button)
     {
         if (Window.GetWindow(button) is Window window)
@@ -28,8 +29,8 @@ public partial class FinishViewModel : ObservableObject
                 try
                 {
                     FluentProcess.Create()
-                        .FileName(Path.Combine(Pack.Current.InstallLocation, Pack.Current.ExeName))
-                        .WorkingDirectory(Pack.Current.InstallLocation)
+                        .FileName(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName))
+                        .WorkingDirectory(Option.Current.InstallLocation)
                         .UseShellExecute()
                         .Start()
                         .Forget();

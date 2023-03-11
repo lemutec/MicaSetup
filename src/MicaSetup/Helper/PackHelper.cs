@@ -8,9 +8,9 @@ namespace MicaSetup.Core;
 
 public static class AssemblyHelper
 {
-    public static string AssemblyTitle => GetAssemblyTitle(typeof(Pack).Assembly);
-    public static readonly string AssemblyCopyright = GetAssemblyCopyright(typeof(Pack).Assembly);
-    public static readonly string AssemblyVersion = GetAssemblyVersion(typeof(Pack).Assembly);
+    public static string AssemblyTitle => GetAssemblyTitle(typeof(Option).Assembly);
+    public static readonly string AssemblyCopyright = GetAssemblyCopyright(typeof(Option).Assembly);
+    public static readonly string AssemblyVersion = GetAssemblyVersion(typeof(Option).Assembly);
 
     public static string GetAssemblyTitle(Assembly assembly = null!)
     {

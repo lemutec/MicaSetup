@@ -12,12 +12,12 @@ public static class UninstallHelper
     {
         bool anyDeleteDelayUntilReboot = false;
         List<string> deleteDelayUntilRebootList = new();
-        UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Pack.Current.KeyName);
+        UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
 
-        Pack.Current.InstallLocation = uinfo.InstallLocation;
-        if (Pack.Current.KeepMyData)
+        Option.Current.InstallLocation = uinfo.InstallLocation;
+        if (Option.Current.KeepMyData)
         {
-            if (Directory.Exists(Pack.Current.InstallLocation))
+            if (Directory.Exists(Option.Current.InstallLocation))
             {
                 string[] uninstallDatas = uinfo.UninstallDataFullPath;
                 double countMax = uninstallDatas.Length;
@@ -52,7 +52,7 @@ public static class UninstallHelper
                     progressCallback?.Invoke(Math.Min(++count / countMax, 1d), file);
                 }
 
-                if (Pack.Current.CreateUninst)
+                if (Option.Current.IsCreateUninst)
                 {
                     DeleteUninst();
                 }
@@ -74,7 +74,7 @@ public static class UninstallHelper
 
                 try
                 {
-                    Directory.Delete(Pack.Current.InstallLocation);
+                    Directory.Delete(Option.Current.InstallLocation);
                 }
                 catch (Exception e)
                 {
@@ -99,12 +99,12 @@ public static class UninstallHelper
                 return count;
             }
 
-            if (Directory.Exists(Pack.Current.InstallLocation))
+            if (Directory.Exists(Option.Current.InstallLocation))
             {
-                double countMax = GetFileCount(Pack.Current.InstallLocation);
+                double countMax = GetFileCount(Option.Current.InstallLocation);
                 int count = 0;
 
-                foreach (string dir in Directory.GetDirectories(Pack.Current.InstallLocation).Concat(new[] { Pack.Current.InstallLocation }).ToList())
+                foreach (string dir in Directory.GetDirectories(Option.Current.InstallLocation).Concat(new[] { Option.Current.InstallLocation }).ToList())
                 {
                     foreach (string file in Directory.GetFiles(dir, "*.*", SearchOption.AllDirectories))
                     {
@@ -142,14 +142,14 @@ public static class UninstallHelper
 
                 try
                 {
-                    Directory.Delete(Pack.Current.InstallLocation);
+                    Directory.Delete(Option.Current.InstallLocation);
                 }
                 catch (Exception e)
                 {
                     Logger.Error(e);
-                    if (DeleteDelayUntilReboot(Pack.Current.InstallLocation))
+                    if (DeleteDelayUntilReboot(Option.Current.InstallLocation))
                     {
-                        deleteDelayUntilRebootList.Add(Pack.Current.InstallLocation);
+                        deleteDelayUntilRebootList.Add(Option.Current.InstallLocation);
                         anyDeleteDelayUntilReboot = true;
                     }
                 }
@@ -160,11 +160,11 @@ public static class UninstallHelper
             }
         }
 
-        if (Pack.Current.DesktopShortcut)
+        if (Option.Current.IsCreateDesktopShortcut)
         {
             try
             {
-                ShortcutHelper.RemoveShortcutOnDesktop(Pack.Current.DisplayName);
+                ShortcutHelper.RemoveShortcutOnDesktop(Option.Current.DisplayName);
             }
             catch (Exception e)
             {
@@ -172,11 +172,11 @@ public static class UninstallHelper
             }
         }
 
-        if (Pack.Current.AutoRun)
+        if (Option.Current.IsCrateAsAutoRun)
         {
             try
             {
-                RegistyAutoRunHelper.Disable(Pack.Current.KeyName);
+                RegistyAutoRunHelper.Disable(Option.Current.KeyName);
             }
             catch (Exception e)
             {
@@ -186,7 +186,7 @@ public static class UninstallHelper
 
         try
         {
-            RegistyUninstallHelper.Delete(Pack.Current.KeyName);
+            RegistyUninstallHelper.Delete(Option.Current.KeyName);
         }
         catch (Exception e)
         {
@@ -202,11 +202,11 @@ public static class UninstallHelper
 
     public static void DeleteUninst()
     {
-        if (Pack.Current.CreateUninst)
+        if (Option.Current.IsCreateUninst)
         {
             try
             {
-                string uninstPath = Path.Combine(Pack.Current.InstallLocation, "Uninst.exe");
+                string uninstPath = Path.Combine(Option.Current.InstallLocation, "Uninst.exe");
                 if (File.Exists(uninstPath))
                 {
                     File.Delete(uninstPath);
