@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Core;
+using System;
 using System.Windows.Interop;
 using Application = System.Windows.Application;
 
@@ -11,7 +12,7 @@ public static class DpiHelper
 
     private static DpiScaleF GetScale()
     {
-        if (DpiAwareHelper.IsSupported && Application.Current?.MainWindow != null)
+        if (OsHelper.IsWindows81_OrGreater && Application.Current?.MainWindow != null)
         {
             nint hwnd = new WindowInteropHelper(Application.Current?.MainWindow).Handle;
             nint hMonitor = User32.MonitorFromWindow(hwnd, MonitorFlags.MONITOR_DEFAULTTONEAREST);
