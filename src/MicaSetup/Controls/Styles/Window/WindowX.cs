@@ -18,11 +18,6 @@ public partial class WindowX : Window
     }
     public static readonly DependencyProperty IsActivatedProperty =  DependencyProperty.Register("IsActivated", typeof(bool), typeof(WindowX), new PropertyMetadata(false));
 
-    public WindowX()
-    {
-        SystemCommands.CloseWindow(this);
-    }
-
     protected override void OnActivated(EventArgs e)
     {
         IsActivated = true;
@@ -122,7 +117,7 @@ public partial class WindowX : Window
     {
         if (User32.GetCursorPos(out POINT pt))
         {
-            SystemCommands.ShowSystemMenu(this, new Point(pt.X, pt.Y));
+            SystemCommands.ShowSystemMenu(this, new Point(DpiHelper.CalcDPiX(pt.X), DpiHelper.CalcDPiY(pt.Y)));
         }
     }
 }

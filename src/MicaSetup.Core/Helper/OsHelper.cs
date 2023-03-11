@@ -5,7 +5,7 @@ namespace MicaSetup.Core;
 
 public static class OsHelper
 {
-    private static Version? _versionCache;
+    private static Version? versionCache;
     private static readonly Version _osVersion = GetOSVersion();
 
     public static bool IsWindowsNT { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT;
@@ -48,15 +48,15 @@ public static class OsHelper
 
     public static Version GetOSVersion()
     {
-        if (_versionCache is null)
+        if (versionCache is null)
         {
             if (NTdll.RtlGetVersion(out var osv) != 0)
             {
                 throw new PlatformNotSupportedException("Setup can only run on Windows.");
             }
 
-            _versionCache = new Version(osv.MajorVersion, osv.MinorVersion, osv.BuildNumber, osv.Revision);
+            versionCache = new Version(osv.MajorVersion, osv.MinorVersion, osv.BuildNumber, osv.Revision);
         }
-        return _versionCache;
+        return versionCache;
     }
 }

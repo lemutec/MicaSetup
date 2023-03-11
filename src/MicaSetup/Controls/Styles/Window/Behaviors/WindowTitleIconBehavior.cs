@@ -38,7 +38,7 @@ public static class RegisterAsTitleIconBehaviorExtension
                 {
                     if (User32.GetCursorPos(out POINT pt))
                     {
-                        SystemCommands.ShowSystemMenu(window, new Point(pt.X, pt.Y));
+                        SystemCommands.ShowSystemMenu(window, new Point(DpiHelper.CalcDPiX(pt.X), DpiHelper.CalcDPiY(pt.Y)));
                     }
                 }
             }

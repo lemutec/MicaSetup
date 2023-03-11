@@ -3,9 +3,9 @@ using MicaSetup.Controls;
 using MicaSetup.Core;
 using MicaSetup.Core.Helper;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading.Tasks;
-using System.Windows;
 
 namespace MicaSetup.ViewModels;
 
@@ -17,14 +17,15 @@ public partial class InstallViewModel : ObservableObject
     [ObservableProperty]
     private double installProgress = 0d;
 
+    [SuppressMessage("Design", "CA1031:")]
     public InstallViewModel()
     {
         Pack.Current.Installing = true;
         InstallInfo = Mui("Preparing");
 
-        Task.Run(async () =>
+        _ = Task.Run(async () =>
         {
-            await Task.Delay(200);
+            await Task.Delay(200).ConfigureAwait(true);
 
             try
             {
@@ -65,7 +66,7 @@ public partial class InstallViewModel : ObservableObject
 
             InstallInfo = Mui("InstallFinishTips");
             Pack.Current.Installing = false;
-            await Task.Delay(200);
+            await Task.Delay(200).ConfigureAwait(false);
 
             UIDispatcherHelper.Invoke(Routing.GoToNext);
         });

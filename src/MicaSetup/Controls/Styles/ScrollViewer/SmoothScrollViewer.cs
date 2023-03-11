@@ -198,7 +198,7 @@ public class SmoothScrollViewer : ScrollViewer
     }
 }
 
-file class AnimationHelper
+file sealed class AnimationHelper
 {
     public static DoubleAnimation CreateAnimation(double toValue, double milliseconds = 200)
     {

@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace MicaSetup.Controls.Converters;
 
-internal class IsNullConverter : IValueConverter
+internal sealed class IsNullConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

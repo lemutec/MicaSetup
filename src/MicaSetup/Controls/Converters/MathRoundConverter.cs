@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace MicaSetup.Controls.Converters;
 
-internal class MathRoundConverter : IValueConverter
+internal sealed class MathRoundConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

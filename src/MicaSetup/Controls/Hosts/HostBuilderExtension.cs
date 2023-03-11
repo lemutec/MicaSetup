@@ -1,4 +1,5 @@
 ﻿using MicaSetup.Core;
+using MicaSetup.Win32;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -45,6 +46,12 @@ public static class HostBuilderExtension
         return builder;
     }
 
+    public static IHostBuilder UseDpiAware(this IHostBuilder builder)
+    {
+        _ = DpiAwareHelper.SetProcessDpiAwareness();
+        return builder;
+    }
+
     public static IHostBuilder UseSingleInstance(this IHostBuilder builder, string instanceName, Action<bool> callback = null!)
     {
         RuntimeHelper.CheckSingleInstance(instanceName, callback);
@@ -77,7 +84,7 @@ public static class HostBuilderExtension
 
     public static IHostBuilder UseDispatcherUnhandledExceptionCatched(this IHostBuilder builder, DispatcherUnhandledExceptionEventHandler handler = null!)
     {
-        if (builder!.App != null)
+        if (builder?.App != null)
         {
             if (handler != null)
             {
@@ -92,7 +99,7 @@ public static class HostBuilderExtension
                 };
             }
         }
-        return builder;
+        return builder!;
     }
 
     public static IHostBuilder UseDomainUnhandledExceptionCatched(this IHostBuilder builder, UnhandledExceptionEventHandler handler = null!)

@@ -1,31 +1,43 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Threading;
 
 namespace MicaSetup.Win32;
 
 public static class User32
 {
     [SecurityCritical]
-    [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Unicode)]
+    [DllImport(Lib.User32, SetLastError = true, CharSet = CharSet.Unicode)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
     public static extern nint PostMessage(nint hWnd, int msg, int wParam, int lParam);
 
-    [DllImport(ExternDll.User32)]
+    [DllImport(Lib.User32)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
     public static extern int GetWindowLong(nint hWnd, int nIndex);
 
-    [DllImport(ExternDll.User32)]
+    [DllImport(Lib.User32)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
     public static extern int SetWindowLong(nint hWnd, int nIndex, int dwNewLong);
 
     [SecurityCritical]
-    [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Unicode)]
+    [DllImport(Lib.User32, SetLastError = true, CharSet = CharSet.Unicode)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+    [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool GetCursorPos(out POINT pt);
 
     [SecurityCritical]
-    [DllImport(ExternDll.User32, SetLastError = true, CharSet = CharSet.Unicode)]
+    [DllImport(Lib.User32, SetLastError = true, CharSet = CharSet.Unicode)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
-    public static extern int GetDpiForWindow(nint hWnd);
+    public static extern nint GetDC(nint hWnd);
+
+    [SecurityCritical]
+    [DllImport(Lib.User32, SetLastError = true, CharSet = CharSet.Unicode)]
+    [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+    public static extern int ReleaseDC(nint hWnd, nint hDC);
+
+    [SecurityCritical]
+    [DllImport(Lib.User32, SetLastError = false, ExactSpelling = true)]
+    [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
+    public static extern nint MonitorFromWindow(nint hwnd, MonitorFlags dwFlags);
 }

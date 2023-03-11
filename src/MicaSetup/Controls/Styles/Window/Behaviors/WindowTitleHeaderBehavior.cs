@@ -1,6 +1,7 @@
 ﻿using MicaSetup.Win32;
 using Microsoft.Xaml.Behaviors;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
@@ -29,6 +30,7 @@ public class WindowTitleHeaderBehavior : Behavior<FrameworkElement>
 
 public static class RegisterAsTitleHeaderBehaviorExtension
 {
+    [SuppressMessage("Design", "CA1062:")]
     public static void RegisterAsTitleHeader(this UIElement self)
     {
         self.MouseLeftButtonDown += (s, e) =>
@@ -68,7 +70,7 @@ public static class RegisterAsTitleHeaderBehaviorExtension
                 {
                     if (User32.GetCursorPos(out POINT pt))
                     {
-                        SystemCommands.ShowSystemMenu(window, new Point(pt.X, pt.Y));
+                        SystemCommands.ShowSystemMenu(window, new Point(DpiHelper.CalcDPiX(pt.X), DpiHelper.CalcDPiY(pt.Y)));
                     }
                 }
             }

@@ -11,4 +11,10 @@ public static class TaskExtension
     public static void Forget(this Task self)
     {
     }
+
+    [SuppressMessage("Style", "IDE0060:")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void Forget(this ConfiguredTaskAwaitable self)
+    {
+    }
 }

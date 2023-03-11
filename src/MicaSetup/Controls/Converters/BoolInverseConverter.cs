@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace MicaSetup.Controls.Converters;
 
-internal class BoolInverseConverter : IValueConverter
+internal sealed class BoolInverseConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

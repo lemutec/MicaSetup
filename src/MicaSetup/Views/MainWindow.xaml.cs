@@ -7,7 +7,7 @@ namespace MicaSetup.Views;
 
 public partial class MainWindow : WindowX
 {
-    public string SetupName => Pack.Current.SetupName;
+    public static string SetupName => Pack.Current.SetupName;
 
     public MainWindow()
     {

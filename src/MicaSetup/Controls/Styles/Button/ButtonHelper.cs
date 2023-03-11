@@ -101,7 +101,7 @@ file static class StoryboardUtils
     }
 }
 
-file class BrushAnimation : AnimationTimeline
+file sealed class BrushAnimation : AnimationTimeline
 {
     private VisualBrush? _visualBrush;
 

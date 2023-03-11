@@ -13,6 +13,7 @@
     <Version>$(VersionPrefix)1.0.0</Version>
     <Authors>Lemutec</Authors>
     <Company>Lemutec</Company>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
 </Project>

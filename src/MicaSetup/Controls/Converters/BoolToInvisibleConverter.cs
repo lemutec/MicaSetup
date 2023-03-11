@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace MicaSetup.Controls.Converters;
 
-internal class BoolToInvisibleConverter : IValueConverter
+internal sealed class BoolToInvisibleConverter : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

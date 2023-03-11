@@ -1,6 +1,6 @@
 ﻿namespace MicaSetup.Win32;
 
-public static class ExternDll
+public static class Lib
 {
     public const string
         User32 = "user32.dll",
@@ -8,6 +8,7 @@ public static class ExternDll
         GdiPlus = "gdiplus.dll",
         Kernel32 = "kernel32.dll",
         Shell32 = "shell32.dll",
+        SHCore = "shcore.dll",
         MsImg = "msimg32.dll",
         NTdll = "ntdll.dll",
         WinInet = "wininet.dll",
