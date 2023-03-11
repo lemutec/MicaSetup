@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
         WindowStyle="SingleBorderWindow"
-        Icon="pack://application:,,,/MicaSetup;component/Resources/Images/Favicon.ico"
+        Icon="{Binding Favicon}"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource DefaultWindowXStyle}"
         Title="{Binding SetupName}" Height="400" Width="500">

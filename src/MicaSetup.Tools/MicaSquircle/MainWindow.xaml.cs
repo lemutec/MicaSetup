@@ -17,6 +17,7 @@ using ToastNotifications.Lifetime;
 using ToastNotifications.Messages;
 using ToastNotifications.Position;
 using Color = System.Drawing.Color;
+using FontStyleX = System.Drawing.FontStyle;
 
 namespace MicaSquircle;
 
@@ -68,26 +69,26 @@ public partial class MainWindow : MicaWindow
         Bitmap bitmap = new(512, 512);
 
         // Squircle
-        bitmap.AddIconFont(Selection.Squircle, 340, PrivateFontHelper.FontFamily, Color.White, 6, 28);
+        bitmap.AddIconFont(Selection.Squircle, 340, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.White, 6, 28);
 
         // IcoMoon
-        bitmap.AddIconFont(Selection.IcoMoon, 200, PrivateFontHelper.FontFamily, Color.Black, 6, 20);
+        bitmap.AddIconFont(Selection.IcoMoon, 200, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.Black, 6, 20);
 
         if (IconType == IconType.Setup)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#24CDB9"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EE24CDB9"), 6 + 156, 20 + 152);
 
             // Up
-            bitmap.AddIconFont(Selection.GallerySortReverse, 120, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#FFFFFF"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.GallerySortReverse, 120, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), 6 + 156, 20 + 152);
         }
         else if (IconType == IconType.Uninst)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#EB3B3B"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EEEB3B3B"), 6 + 156, 20 + 152);
 
             // Close
-            bitmap.AddIconFont(Selection.PublicCancelFilled, 120, PrivateFontHelper.FontFamily, ColorTranslator.FromHtml("#FFFFFF"), 6 + 158, 20 + 154);
+            bitmap.AddIconFont(Selection.PublicCancelFilled, 120, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), 6 + 156, 20 + 152);
         }
         return bitmap;
     }

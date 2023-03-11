@@ -2,11 +2,14 @@
 using MicaSetup.Core;
 using System;
 using System.ComponentModel;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MicaSetup.Views;
 
 public partial class MainWindow : WindowX
 {
+    public static ImageSource Favicon => new BitmapImage(new Uri($"pack://application:,,,/MicaSetup;component/Resources/Images/Favicon{(Option.Current.Uninst ? "Uninst" : string.Empty)}.png"));
     public static string SetupName => Option.Current.SetupName;
 
     public MainWindow()

@@ -8,7 +8,7 @@ namespace MicaSquircle.Core;
 
 internal static class ImageGdiExtension
 {
-    public static void AddIconFont(this Bitmap bitmap, string text, float fontSize, FontFamily fontFamily, Color? color = null!, int offsetX = 0, int offsetY = 0)
+    public static void AddIconFont(this Bitmap bitmap, string text, float fontSize, FontFamily fontFamily, FontStyle fontStyle = FontStyle.Regular, Color? color = null!, int offsetX = 0, int offsetY = 0)
     {
         using Graphics g = Graphics.FromImage(bitmap);
         g.TextRenderingHint = TextRenderingHint.AntiAlias;
@@ -20,7 +20,7 @@ internal static class ImageGdiExtension
             Alignment = StringAlignment.Center,
             LineAlignment = StringAlignment.Center,
         };
-        using Font font = new(fontFamily, fontSize, FontStyle.Regular);
+        using Font font = new(fontFamily, fontSize, fontStyle);
         using Brush brush = new SolidBrush(color ?? Color.Black);
 
         RectangleF textBounds = new(PointF.Empty, g.MeasureString(text, font));

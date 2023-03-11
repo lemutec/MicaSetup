@@ -28,7 +28,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Sync Assembly    | 🔲          | Sync your app assembly version to create the same version setup. |
 | Icon Creator     | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src\MicaSetup.Tools\MicaSquircle\README.md). |
 | MSIX Installer   | 🔲          | Using MSIX package instead of archive file.                  |
-| Notification     | 🔲          | Windows10 (or higher) Notification.                          |
+| Notification     | ☑          | Windows10 (or higher) Notification.                          |
 | Online Installer | 🔲          | Using Network instead of archive file.                       |
 | High DPI         | ☑          | Support to process DPI awareness.                            |
 

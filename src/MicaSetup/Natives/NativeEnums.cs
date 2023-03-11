@@ -237,7 +237,7 @@ public enum HitTestValues
     HTSIZELAST = HTBOTTOMRIGHT,
     HTOBJECT = 19,
     HTCLOSE = 20,
-    HTHELP = 21
+    HTHELP = 21,
 }
 
 public enum WindowLongFlags
@@ -258,7 +258,7 @@ public enum WindowLongFlags
     DWLP_DLGPROC = 4,
     DWL_USER = 8,
     DWL_MSGRESULT = 0,
-    DWL_DLGPROC = 4
+    DWL_DLGPROC = 4,
 }
 
 [Flags]
@@ -290,7 +290,7 @@ public enum WindowStyles : uint
     WS_ICONIC = 0x20000000u,
     WS_SIZEBOX = 0x40000u,
     WS_TILEDWINDOW = 0xCF0000u,
-    WS_CHILDWINDOW = 0x40000000u
+    WS_CHILDWINDOW = 0x40000000u,
 }
 
 public enum DWMWINDOWATTRIBUTE
@@ -371,7 +371,7 @@ public enum MoveFileFlags
     MOVEFILE_DELAY_UNTIL_REBOOT = 0x4,
     MOVEFILE_WRITE_THROUGH = 0x8,
     MOVEFILE_CREATE_HARDLINK = 0x10,
-    MOVEFILE_FAIL_IF_NOT_TRACKABLE = 0x20
+    MOVEFILE_FAIL_IF_NOT_TRACKABLE = 0x20,
 }
 
 public enum DeviceCap
@@ -414,14 +414,14 @@ public enum DeviceCap
     VREFRESH = 116,
     DESKTOPVERTRES = 117,
     DESKTOPHORZRES = 118,
-    BLTALIGNMENT = 119
+    BLTALIGNMENT = 119,
 }
 
 public enum MonitorOptions : uint
 {
     MONITOR_DEFAULTTONULL = 0x00000000,
     MONITOR_DEFAULTTOPRIMARY = 0x00000001,
-    MONITOR_DEFAULTTONEAREST = 0x00000002
+    MONITOR_DEFAULTTONEAREST = 0x00000002,
 }
 
 public enum MonitorDpiType
