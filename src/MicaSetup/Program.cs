@@ -1,5 +1,4 @@
-﻿using Autofac.Core;
-using MicaSetup.Controls;
+﻿using MicaSetup.Controls;
 using MicaSetup.Services;
 using MicaSetup.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,8 +12,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Setup")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyFileVersion("1.2.0.0")]
 
 namespace MicaSetup;
 
@@ -46,7 +45,7 @@ internal class Program
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
                 option.DisplayIcon = "MicaApp.exe";
-                option.DisplayVersion = "1.0.0.0";
+                option.DisplayVersion = "1.2.0.0";
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("Setup")}";

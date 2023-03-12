@@ -25,14 +25,14 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void StartUninstall(Button button)
+    private void StartUninstall()
     {
         Routing.GoToNext();
     }
 
     [RelayCommand]
-    private void CancelUninstall(Button button)
+    private void CancelUninstall()
     {
-        SystemCommands.CloseWindow(Window.GetWindow(button));
+        SystemCommands.CloseWindow(UIDispatcherHelper.MainWindow);
     }
 }

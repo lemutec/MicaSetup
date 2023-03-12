@@ -126,7 +126,6 @@
                 <Button Style="{StaticResource PathButtonStyle}"
                         IsEnabled="{Binding CanStart}"
                         Command="{Binding StartInstallCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                         Margin="0,10,0,0" Padding="10,0,10,0" Width="280" Height="38"
                         Foreground="White" Background="#31374F"
                         control:ButtonHelper.HoverBrush="#484C58"

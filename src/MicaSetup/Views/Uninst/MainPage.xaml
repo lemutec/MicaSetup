@@ -40,13 +40,11 @@
                         Foreground="#666666" Background="#E7E7E7"
                         control:ButtonHelper.HoverBrush="#D7DCE0"
                         Command="{Binding StartUninstallCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                         Height="30" Padding="5,0,5,0" MinWidth="80"
                         Content="{DynamicResource ButtonOK}"/>
                     <Button Style="{StaticResource PathButtonStyle}" Margin="8,0,0,0"
                         control:ButtonHelper.CornerRadius="4" FontSize="15"
                         Command="{Binding CancelUninstallCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                         Height="30" Padding="5,0,5,0" MinWidth="80"
                         Content="{DynamicResource ButtonCancel}"/>
                 </StackPanel>

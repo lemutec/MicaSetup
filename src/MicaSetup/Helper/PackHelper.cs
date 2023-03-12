@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MicaSetup.Helper;
 
-public static class AssemblyHelper
+public static class PackHelper
 {
     public static string AssemblyTitle => GetAssemblyTitle(typeof(Option).Assembly);
     public static readonly string AssemblyCopyright = GetAssemblyCopyright(typeof(Option).Assembly);

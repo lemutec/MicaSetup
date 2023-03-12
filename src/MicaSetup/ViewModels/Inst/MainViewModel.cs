@@ -76,7 +76,7 @@ public partial class MainViewModel : ObservableObject
     private void ShowOrHideInstallPath(ToggleButton button)
     {
         button.IsEnabled = false;
-        if (Window.GetWindow(button) is Window window)
+        if (UIDispatcherHelper.MainWindow is Window window)
         {
             if (button.IsChecked ?? false)
             {
@@ -84,7 +84,7 @@ public partial class MainViewModel : ObservableObject
                 {
                     From = 400,
                     To = 520,
-                    Duration = new Duration(TimeSpan.FromSeconds(0.1d)),
+                    Duration = new Duration(TimeSpan.FromSeconds(0.15d)),
                     FillBehavior = FillBehavior.Stop,
                 };
                 animation.Completed += async (_, _) =>
@@ -102,7 +102,7 @@ public partial class MainViewModel : ObservableObject
                 {
                     From = 520,
                     To = 400,
-                    Duration = new Duration(TimeSpan.FromSeconds(0.1d)),
+                    Duration = new Duration(TimeSpan.FromSeconds(0.15d)),
                     FillBehavior = FillBehavior.Stop,
                 };
                 animation.Completed += async (_, _) =>
@@ -153,17 +153,17 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void StartInstall(Button button)
+    private void StartInstall()
     {
         OnInstallPathChanged(InstallPath);
 
         if (IsIllegalPath)
         {
-            _ = MessageBoxX.Info(button, Mui("IllegalPathTips"));
+            _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("IllegalPathTips"));
             return;
         }
 
-        if (Window.GetWindow(button) is Window window)
+        if (UIDispatcherHelper.MainWindow is Window window)
         {
             window.Height = 400;
         }

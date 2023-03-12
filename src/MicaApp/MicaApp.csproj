@@ -8,9 +8,9 @@
     <UseWindowsForms>false</UseWindowsForms>
     <UseWinUI>false</UseWinUI>
     <LangVersion>11.0</LangVersion>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
-    <Version>$(VersionPrefix)1.0.0</Version>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
+    <Version>$(VersionPrefix)1.2.0</Version>
     <Authors>Lemutec</Authors>
     <Company>Lemutec</Company>
     <Platforms>AnyCPU;x64</Platforms>

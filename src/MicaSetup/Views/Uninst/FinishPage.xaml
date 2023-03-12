@@ -33,7 +33,6 @@
                         Margin="0,0,20,-75"
                         control:ButtonHelper.CornerRadius="4" FontSize="15"
                         Command="{Binding FinishCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
                         Height="30" Padding="5,0,5,0" MinWidth="80"
                         VerticalAlignment="Bottom" HorizontalAlignment="Right"
                         Content="{DynamicResource Finish}"/>

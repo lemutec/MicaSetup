@@ -2,10 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Helper;
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace MicaSetup.ViewModels;
 
@@ -19,10 +17,9 @@ public partial class FinishViewModel : ObservableObject
     }
 
     [RelayCommand]
-    [SuppressMessage("Reliability", "CA2000:")]
-    public void Finish(Button button)
+    public void Finish()
     {
-        if (Window.GetWindow(button) is Window window)
+        if (UIDispatcherHelper.MainWindow is Window window)
         {
             if (AutoRunOnClosed)
             {
