@@ -1,28 +1,25 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
-using Autofac;
 
 namespace MicaSetup.Controls;
 
 public static class Routing
 {
-    public static ContainerBuilder Builder { get; internal set; } = null!;
-    public static IContainer Container { get; internal set; } = null!;
+    public static ServiceProvider Provider { get; internal set; } = null!;
     public static WeakReference<ShellControl> Shell { get; internal set; } = null!;
 
-    public static ContainerBuilder CreateBuilder()
+    public static void RegisterRoute()
     {
-        return Builder ??= new();
-    }
+        ServiceCollection serviceCollection = new();
 
-    public static ContainerBuilder Register(string route, Type type)
-    {
-        return Builder.Register(route, type);
-    }
-
-    public static void Build()
-    {
-        Container = Builder.Build();
+        foreach (var pageItem in ShellPageSetting.PageDict)
+        {
+            serviceCollection.Register(pageItem.Key, pageItem.Value);
+        }
+        Provider = serviceCollection.BuildServiceProvider();
     }
 
     public static FrameworkElement ResolveRoute(string route)
@@ -31,7 +28,7 @@ public static class Routing
         {
             return null!;
         }
-        return Container.ResolveOptionalNamed<FrameworkElement>(route)!;
+        return Provider?.Resolve<FrameworkElement>(route)!;
     }
 
     public static void GoTo(string route)
@@ -74,11 +71,36 @@ public static class Routing
     }
 }
 
+file class RoutingServiceInfo
+{
+    public string Name { get; set; }
+    public Type Type { get; set; }
+
+    public RoutingServiceInfo(string name, Type type)
+    {
+        Name = name;
+        Type = type;
+    }
+}
+
 file static class RoutingExtension
 {
-    public static ContainerBuilder Register(this ContainerBuilder builder, string route, Type type)
+    public static IServiceCollection Register(this IServiceCollection services, string name, Type type)
     {
-        builder.RegisterType(type).Named<FrameworkElement>(route);
-        return builder;
+        services.AddSingleton(type);
+        services.AddSingleton(new RoutingServiceInfo(name, type));
+        return services;
+    }
+
+    public static T Resolve<T>(this IServiceProvider serviceProvider, string name)
+    {
+        var serviceInfo = serviceProvider.GetRequiredService<IEnumerable<RoutingServiceInfo>>()
+            .FirstOrDefault(x => x.Name == name);
+
+        if (serviceInfo == null)
+        {
+            throw new InvalidOperationException($"Service '{name}' not found");
+        }
+        return (T)serviceProvider.GetRequiredService(serviceInfo.Type);
     }
 }

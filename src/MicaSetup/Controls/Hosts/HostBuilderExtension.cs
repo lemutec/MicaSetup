@@ -1,5 +1,4 @@
-﻿using Autofac.Core;
-using MicaSetup.Helper;
+﻿using MicaSetup.Helper;
 using MicaSetup.Natives;
 using MicaSetup.Services;
 using Microsoft.Extensions.DependencyInjection;

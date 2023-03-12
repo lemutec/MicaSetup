@@ -11,12 +11,7 @@ public partial class ShellViewModel : ObservableObject
 
     public ShellViewModel()
     {
-        Routing.CreateBuilder();
-        foreach (var pageItem in ShellPageSetting.PageDict)
-        {
-            Routing.Register(pageItem.Key, pageItem.Value);
-        }
-        Routing.Build();
+        Routing.RegisterRoute();
         Route = ShellPageSetting.PageDict.FirstOrDefault().Key;
     }
 }

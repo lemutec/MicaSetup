@@ -55,7 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="7.0.0" />
     <PackageReference Include="Costura.Fody" Version="5.7.0" Condition=" '$(Configuration)' == 'Release'">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -67,7 +66,7 @@
     <PackageReference Include="Lnk" Version="1.3.2.4" />
     <PackageReference Include="SharpCompress" Version="0.32.2" />
     <PackageReference Include="System.IO.Abstractions" Version="19.2.1" />
-    <PackageReference Include="WindowsAPICodePack.Shell.CommonFileDialogs" Version="1.1.4" />
+    <PackageReference Include="WindowsAPICodePack.Shell.CommonFileDialogs" Version="1.1.5" />
   </ItemGroup>
 
   <ItemGroup>

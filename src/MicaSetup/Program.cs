@@ -41,6 +41,7 @@ internal class Program
                 option.IsAllowFullFolderSecurity = true;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.UnpackingPassword = null!;
+                option.BackdropMica = true;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
@@ -52,7 +53,7 @@ internal class Program
             })
             .UseServices(service =>
             {
-                service.AddScoped<IExplorerService>(provider => new ExplorerService());
+                service.AddScoped<IExplorerService, ExplorerService>();
             })
             .CreateApp()
             .UseMuiLanguage()

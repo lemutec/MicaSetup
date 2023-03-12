@@ -2,14 +2,13 @@
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Controls;
 using MicaSetup.Helper;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media.Animation;
+using WindowsAPICodePack.Dialogs;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 

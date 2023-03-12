@@ -19,16 +19,14 @@
 
   <ItemGroup>
     <None Remove="Favicon.ico" />
-    <None Remove="Favicon.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicaWPF" Version="5.2.0" />
+    <PackageReference Include="MicaWPF" Version="5.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Favicon.ico" />
-    <Resource Include="Favicon.png" />
   </ItemGroup>
 
 </Project>
