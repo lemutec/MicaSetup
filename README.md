@@ -26,7 +26,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Animations       | ☑          | Support a lot of advanced animations.<br />Such as Indeterminate ProgressBar, supported when your installation is no progress hint. |
 | Trim Font        | ☑          | Trimming fonts to reduce their size.                         |
 | Sync Assembly    | 🔲          | Sync your app assembly version to create the same version setup. |
-| Icon Creator     | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src\MicaSetup.Tools\MicaSquircle\README.md). |
+| Icon Creator     | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
 | MSIX Installer   | 🔲          | Using MSIX package instead of archive file.                  |
 | Notification     | ☑          | Windows10 (or higher) Notification.                          |
 | Online Installer | 🔲          | Using Network instead of archive file.                       |
