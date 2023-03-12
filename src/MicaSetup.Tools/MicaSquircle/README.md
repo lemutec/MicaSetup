@@ -1,15 +1,9 @@
 # MicaSquircle
 
-Creating the universal Squircle like icon.
+Creating the universal squircle-like icon.
 
 ## ScreenShots
 
-![image-20230310053934764](assets/image-20230310053934764.png)
+<img src="assets/image-20230312112242402.png" alt="image-20230312112242402" style="zoom:80%;" />
 
-## Examples
-
-<img src="Favicon.png" alt="Favicon" style="zoom:50%;" />
-
-<img src="FaviconSetup.png" alt="FaviconSetup" style="zoom:50%;" />
-
-<img src="FaviconUninst.png" alt="FaviconUninst" style="zoom:50%;" />
+<img src="assets/image-20230312112322464.png" alt="image-20230312112322464" style="zoom:80%;" />
