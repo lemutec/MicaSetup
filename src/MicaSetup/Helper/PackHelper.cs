@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class AssemblyHelper
 {

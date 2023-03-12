@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 #pragma warning disable CS8601
 

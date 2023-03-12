@@ -8,7 +8,7 @@ using System.IO;
 
 using File = System.IO.File;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class ShortcutHelper
 {

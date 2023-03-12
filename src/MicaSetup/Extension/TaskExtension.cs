@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class TaskExtension
 {

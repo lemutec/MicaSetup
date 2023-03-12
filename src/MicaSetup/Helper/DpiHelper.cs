@@ -1,9 +1,9 @@
-﻿using MicaSetup.Core;
+﻿using MicaSetup.Helper;
 using System;
 using System.Windows.Interop;
 using Application = System.Windows.Application;
 
-namespace MicaSetup.Win32;
+namespace MicaSetup.Natives;
 
 public static class DpiHelper
 {

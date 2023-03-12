@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MicaSetup.Win32;
+using MicaSetup.Natives;
 using System;
 using System.Windows;
 using System.Windows.Interop;

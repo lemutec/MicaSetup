@@ -1,7 +1,7 @@
-﻿using MicaSetup.Win32;
+﻿using MicaSetup.Natives;
 using System;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class OsHelper
 {

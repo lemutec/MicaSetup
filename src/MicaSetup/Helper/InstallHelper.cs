@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace MicaSetup.Core.Helper;
+namespace MicaSetup.Helper.Helper;
 
 public static class InstallHelper
 {

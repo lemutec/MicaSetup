@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class SpecialPathHelper
 {

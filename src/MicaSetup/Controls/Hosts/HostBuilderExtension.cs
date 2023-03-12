@@ -1,5 +1,7 @@
-﻿using MicaSetup.Core;
-using MicaSetup.Win32;
+﻿using Autofac.Core;
+using MicaSetup.Helper;
+using MicaSetup.Natives;
+using MicaSetup.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,12 @@ public static class HostBuilderExtension
     public static IHostBuilder CreateBuilder()
     {
         HostBuilder builder = new();
+        return builder;
+    }
+
+    public static IHostBuilder UseHostBuilder(this IHostBuilder builder, Action<IHostBuilder> custom)
+    {
+        custom?.Invoke(builder);
         return builder;
     }
 
@@ -35,7 +43,7 @@ public static class HostBuilderExtension
     {
         ServiceCollection serviceCollection = new();
         service?.Invoke(serviceCollection);
-        builder.ServiceProvider = serviceCollection.BuildServiceProvider();
+        ServiceProviderX.Current = builder.ServiceProvider = serviceCollection.BuildServiceProvider();
         return builder;
     }
 
@@ -75,7 +83,7 @@ public static class HostBuilderExtension
 
     public static IHostBuilder UseMuiLanguage(this IHostBuilder builder)
     {
-        SetupLanguage();
+        MuiLanguage.SetupLanguage();
         return builder;
     }
 

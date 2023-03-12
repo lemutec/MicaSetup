@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MicaSetup.Core;
+using MicaSetup.Helper;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;

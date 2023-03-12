@@ -1,14 +1,13 @@
-﻿using MicaSetup.Core;
+﻿using MicaSetup.Helper;
 using System;
 using System.Globalization;
 using System.IO;
-using System.Text;
 #if MUI_ZH || MUI_JP || MUI_EN
 using System.Threading;
 #endif
 using System.Windows;
 
-namespace MicaSetup;
+namespace MicaSetup.Core;
 
 public class MuiLanguage
 {

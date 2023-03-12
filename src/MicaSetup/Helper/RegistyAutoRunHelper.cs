@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class RegistyAutoRunHelper
 {

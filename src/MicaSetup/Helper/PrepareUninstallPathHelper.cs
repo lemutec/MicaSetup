@@ -1,4 +1,4 @@
-﻿namespace MicaSetup.Core;
+﻿namespace MicaSetup.Helper;
 
 public static class PrepareUninstallPathHelper
 {

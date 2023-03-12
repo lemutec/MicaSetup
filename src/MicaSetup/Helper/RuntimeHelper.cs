@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class RuntimeHelper
 {

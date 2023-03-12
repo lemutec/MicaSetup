@@ -1,1 +1,2 @@
-﻿global using static MicaSetup.MuiLanguage;
+﻿global using MicaSetup.Core;
+global using static MicaSetup.Core.MuiLanguage;

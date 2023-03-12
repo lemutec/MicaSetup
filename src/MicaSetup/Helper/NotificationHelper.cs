@@ -1,7 +1,7 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class NotificationHelper
 {

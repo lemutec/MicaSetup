@@ -2,7 +2,7 @@
 using System.Windows.Baml2006;
 using System.Xaml;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class BamlHelper
 {

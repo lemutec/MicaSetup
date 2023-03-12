@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class UIDispatcherHelper
 {

@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class StartMenuAutoRunHelper
 {

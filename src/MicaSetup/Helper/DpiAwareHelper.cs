@@ -1,6 +1,6 @@
-﻿using MicaSetup.Core;
+﻿using MicaSetup.Helper;
 
-namespace MicaSetup.Win32;
+namespace MicaSetup.Natives;
 
 public static class DpiAwareHelper
 {

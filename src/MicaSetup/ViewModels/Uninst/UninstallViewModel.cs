@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MicaSetup.Controls;
-using MicaSetup.Core;
+using MicaSetup.Helper;
 using System.Threading.Tasks;
 
 namespace MicaSetup.ViewModels;

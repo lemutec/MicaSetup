@@ -1,5 +1,8 @@
-﻿using MicaSetup.Controls;
+﻿using Autofac.Core;
+using MicaSetup.Controls;
+using MicaSetup.Services;
 using MicaSetup.Views;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -49,6 +52,7 @@ internal class Program
             })
             .UseServices(service =>
             {
+                service.AddScoped<IExplorerService>(provider => new ExplorerService());
             })
             .CreateApp()
             .UseMuiLanguage()

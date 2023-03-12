@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class ProcessExtension
 {

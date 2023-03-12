@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class CommandLineHelper
 {

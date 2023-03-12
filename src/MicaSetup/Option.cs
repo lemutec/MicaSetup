@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MicaSetup.Core;
+namespace MicaSetup;
 
 /// <summary>
 /// Option Context

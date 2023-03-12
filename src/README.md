@@ -15,6 +15,8 @@ Such as `publish.7z` as your app published package and full size font used in Se
 3>Done building project "MicaSetup.csproj" -- FAILED.
 ```
 
+And then Run VS2022 (or higher) as Admin to open the sln.
+
 ## 📦Create Setup
 
 Run the `setup_build.cmd` for building the full Setup programs.

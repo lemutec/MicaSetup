@@ -2,11 +2,12 @@
 
 namespace MicaSetup.Controls;
 
+#pragma warning disable CS8618
+
 public class HostBuilder : IHostBuilder
 {
-    public App? App { get; set; }
-
-    public ServiceProvider? ServiceProvider { get; set; }
+    public App App { get; set; }
+    public ServiceProvider ServiceProvider { get; set; }
 
     public IHostBuilder CreateApp()
     {

@@ -1,10 +1,10 @@
-﻿using MicaSetup.Win32;
+﻿using MicaSetup.Natives;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class UninstallHelper
 {

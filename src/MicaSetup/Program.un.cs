@@ -46,6 +46,7 @@ internal class Program
             })
             .UseServices(service =>
             {
+                _ = service;
             })
             .CreateApp()
             .UseMuiLanguage()

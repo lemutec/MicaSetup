@@ -1,5 +1,5 @@
-﻿using MicaSetup.Core;
-using MicaSetup.Win32;
+﻿using MicaSetup.Helper;
+using MicaSetup.Natives;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;

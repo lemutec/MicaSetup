@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MicaSetup.Win32;
+namespace MicaSetup.Natives;
 
 public enum WindowMessage
 {

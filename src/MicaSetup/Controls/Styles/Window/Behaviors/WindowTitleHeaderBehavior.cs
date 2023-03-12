@@ -1,4 +1,4 @@
-﻿using MicaSetup.Win32;
+﻿using MicaSetup.Natives;
 using Microsoft.Xaml.Behaviors;
 using System;
 using System.Diagnostics.CodeAnalysis;

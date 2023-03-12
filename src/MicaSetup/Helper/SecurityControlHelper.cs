@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.AccessControl;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class SecurityControlHelper
 {

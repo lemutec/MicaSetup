@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Controls;
-using MicaSetup.Core;
+using MicaSetup.Helper;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.IO;

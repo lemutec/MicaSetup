@@ -1,4 +1,4 @@
-﻿using MicaSetup.Core;
+﻿using MicaSetup.Helper;
 using System;
 using System.Windows;
 

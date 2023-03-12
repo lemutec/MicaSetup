@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Resources;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Helper;
 
 public static class ResourceHelper
 {

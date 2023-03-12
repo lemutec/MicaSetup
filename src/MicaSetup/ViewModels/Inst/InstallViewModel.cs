@@ -1,7 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MicaSetup.Controls;
-using MicaSetup.Core;
-using MicaSetup.Core.Helper;
+using MicaSetup.Helper;
+using MicaSetup.Helper.Helper;
+using MicaSetup.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -64,6 +66,7 @@ public partial class InstallViewModel : ObservableObject
             Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);
 
+            ServiceProviderX.Current.GetService<IExplorerService>()!.Refresh();
             UIDispatcherHelper.Invoke(Routing.GoToNext);
         });
     }
