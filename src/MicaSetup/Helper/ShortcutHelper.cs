@@ -1,11 +1,6 @@
-﻿#if COMReference
-using IWshRuntimeLibrary;
-#else
-using System.Runtime.InteropServices;
-#endif
+﻿using System.Runtime.InteropServices;
 using System;
 using System.IO;
-
 using File = System.IO.File;
 
 namespace MicaSetup.Helper;
@@ -21,17 +16,6 @@ public static class ShortcutHelper
 
         string shortcutPath = Path.Combine(directory, $"{shortcutName}.lnk");
 
-#if COMReference
-        WshShell shell = new();
-        IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutPath);
-        shortcut.TargetPath = targetPath;
-        shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
-        shortcut.WindowStyle = 1;
-        shortcut.Arguments = arguments;
-        shortcut.Description = description;
-        shortcut.IconLocation = string.IsNullOrWhiteSpace(iconLocation) ? targetPath : iconLocation;
-        shortcut.Save();
-#else
         dynamic shell = null!;
         dynamic shortcut = null!;
 
@@ -54,7 +38,6 @@ public static class ShortcutHelper
             Marshal.FinalReleaseComObject(shell);
         }
     }
-#endif
 
     public static void CreateShortcutOnDesktop(string shortcutName, string targetPath, string arguments = null!, string description = null!, string iconLocation = null!)
     {

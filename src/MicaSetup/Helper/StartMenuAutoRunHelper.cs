@@ -1,5 +1,4 @@
-﻿using Lnk;
-using System;
+﻿using System;
 using System.IO;
 
 namespace MicaSetup.Helper;
@@ -22,35 +21,6 @@ public static class StartMenuAutoRunHelper
             Logger.Error(e);
             NotificationHelper.AddNotice("Create Startup ShortCut error", "See detail following", e.ToString());
         }
-    }
-
-    public static bool IsEnabled(string shortcutName, string targetPath)
-    {
-        try
-        {
-            if (Directory.Exists(StartupFolder))
-            {
-                string lnk = StartupFolder + shortcutName + ".lnk";
-                if (File.Exists(lnk))
-                {
-                    byte[] raw = File.ReadAllBytes(lnk);
-                    if (raw[0] == 0x4c)
-                    {
-                        LnkFile lnkObj = new(raw, lnk);
-
-                        if (lnkObj.LocalPath == targetPath)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Logger.Error(e);
-        }
-        return false;
     }
 
     public static void Disable(string shortcutName)
