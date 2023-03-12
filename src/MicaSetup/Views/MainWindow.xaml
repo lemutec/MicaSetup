@@ -12,7 +12,8 @@
         Icon="{Binding Favicon}"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource DefaultWindowXStyle}"
-        Title="{Binding SetupName}" Height="400" Width="500">
+        Title="{Binding SetupName}" Height="400" Width="500"
+        control:WindowXCaption.Icon="pack://application:,,,/MicaSetup;component/Resources/Images/Favicon.ico">
     <Grid>
         <local:ShellPage/>
     </Grid>

@@ -20,7 +20,7 @@ public static class HostBuilderExtension
 
     public static IHostBuilder UseAsUninst(this IHostBuilder builder)
     {
-        Option.Current.Uninst = true;
+        Option.Current.IsUninst = true;
         return builder;
     }
 

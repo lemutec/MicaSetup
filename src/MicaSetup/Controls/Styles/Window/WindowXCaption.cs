@@ -5,6 +5,19 @@ namespace MicaSetup.Controls;
 
 public class WindowXCaption
 {
+    public static ImageSource GetIcon(DependencyObject obj)
+    {
+        return (ImageSource)obj.GetValue(IconProperty);
+    }
+
+    public static void SetIcon(DependencyObject obj, ImageSource value)
+    {
+        obj.SetValue(IconProperty, value);
+    }
+
+    public static readonly DependencyProperty IconProperty =
+        DependencyProperty.RegisterAttached("Icon", typeof(ImageSource), typeof(WindowXCaption));
+
     public static Thickness GetPadding(DependencyObject obj)
     {
         return (Thickness)obj.GetValue(PaddingProperty);

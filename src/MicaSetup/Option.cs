@@ -37,7 +37,7 @@ public class Option
     /// Indicates whether this assembly as uninst
     /// </summary>
     [Category("GlobalSetting")]
-    public bool Uninst { get; set; } = false;
+    public bool IsUninst { get; set; } = false;
 
     /// <summary>
     /// Indicates whether create uninst after app installed

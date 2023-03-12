@@ -77,18 +77,18 @@ public partial class MainWindow : MicaWindow
         if (IconType == IconType.Setup)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EE24CDB9"), 6 + 156, 20 + 152);
+            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EE24CDB9"), 6 + 154 - 8, 20 + 150 - 8);
 
             // Up
-            bitmap.AddIconFont(Selection.GallerySortReverse, 120, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), 6 + 156, 20 + 152);
+            bitmap.AddIconFont(Selection.GallerySortReverse, 120, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), 6 + 154 - 8, 20 + 150 - 8);
         }
         else if (IconType == IconType.Uninst)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EEEB3B3B"), 6 + 156, 20 + 152);
+            bitmap.AddIconFont(Selection.Circle, 160, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EEEB3B3B"), 6 + 154 - 8, 20 + 150 - 8);
 
             // Close
-            bitmap.AddIconFont(Selection.PublicCancelFilled, 120, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), 6 + 156, 20 + 152);
+            bitmap.AddIconFont(Selection.PublicCancelFilled, 120, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), 6 + 154 - 8, 20 + 150 - 8);
         }
         return bitmap;
     }

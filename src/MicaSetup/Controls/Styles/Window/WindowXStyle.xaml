@@ -49,7 +49,7 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel x:Name="PART_StkTitle" Orientation="Horizontal" VerticalAlignment="Stretch">
                                         <Image x:Name="PART_ImgIcon"
-                                               Source="{TemplateBinding Icon}"
+                                               Source="{Binding Path=Icon,RelativeSource={RelativeSource AncestorType=Window}}"
                                                RenderOptions.BitmapScalingMode="HighQuality"
                                                VerticalAlignment="Center"
                                                Width="{TemplateBinding FontSize,Converter={StaticResource Add5Converter}}"
@@ -58,6 +58,12 @@
                                             <i:Interaction.Behaviors>
                                                 <local:WindowTitleIconBehavior/>
                                             </i:Interaction.Behaviors>
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Style.Triggers>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
                                         </Image>
                                         <TextBlock x:Name="PART_TxtTitle" Margin="5,0,0,0"
                                                    Foreground="{Binding Path=(local:WindowXCaption.Foreground),RelativeSource={RelativeSource AncestorType=Window}}"
@@ -123,6 +129,18 @@
                                     Property="Opacity"
                                     Value="0.9" />
                         </Trigger>
+                        <DataTrigger Binding="{Binding Path=(local:WindowXCaption.Icon),RelativeSource={RelativeSource Self},Mode=OneWay,Converter={StaticResource IsNullConverter}}"
+                                     Value="True">
+                            <Setter TargetName="PART_ImgIcon"
+                                    Property="Source"
+                                    Value="{Binding Path=Icon,RelativeSource={RelativeSource AncestorType=Window}}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=(local:WindowXCaption.Icon),RelativeSource={RelativeSource Self},Mode=OneWay,Converter={StaticResource IsNotNullConverter}}"
+                                     Value="True">
+                            <Setter TargetName="PART_ImgIcon"
+                                    Property="Source" 
+                                    Value="{Binding Path=(local:WindowXCaption.Icon),RelativeSource={RelativeSource AncestorType=Window}}" />
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding Icon,RelativeSource={RelativeSource Self},Mode=OneWay, Converter={StaticResource IsNullConverter}}"
                                      Value="True">
                             <Setter TargetName="PART_ImgIcon"

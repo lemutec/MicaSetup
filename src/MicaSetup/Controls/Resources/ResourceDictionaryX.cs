@@ -16,7 +16,7 @@ public class ResourceDictionaryX : ResourceDictionary
         get => base.Source;
         set
         {
-            if (Option.Current.Uninst)
+            if (Option.Current.IsUninst)
             {
                 base.Source = new Uri(value.OriginalString.Replace("MicaSetup;component", "Uninst;component"));
                 return;

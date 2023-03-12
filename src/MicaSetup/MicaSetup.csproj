@@ -9,7 +9,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <UseWinUI>false</UseWinUI>
     <Platforms>AnyCPU;x64</Platforms>
-    <ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Images\FaviconSetup.ico</ApplicationIcon>
     <StartupObject>MicaSetup.Program</StartupObject>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <AssemblyName>MicaSetup</AssemblyName>
@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Favicon.ico" />
-    <None Remove="Resources\Favicon.png" />
+    <None Remove="Resources\FaviconSetup.ico" />
     <None Remove="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
     <None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
     <None Remove="Resources\Licenses\license.en.txt" />
@@ -74,7 +74,7 @@
     <Resource Include="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
     <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
     <Resource Include="Resources\Images\Favicon.ico" />
-    <Resource Include="Resources\Images\Favicon.png" />
+    <Resource Include="Resources\Images\FaviconSetup.ico" />
     <Resource Include="Resources\Licenses\license.en.txt" />
     <Resource Include="Resources\Licenses\license.jp.txt" />
     <Resource Include="Resources\Licenses\license.zh.txt" />
