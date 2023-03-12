@@ -30,25 +30,26 @@ internal class Program
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
-            .UsePack(pack =>
+            .UseOptions(option =>
             {
-                pack.IsCreateDesktopShortcut = true;
-                pack.IsCreateUninst = true;
-                pack.IsCreateRegistryKeys = true;
-                pack.IsCrateAsAutoRun = false;
-                pack.UseFolderPickerPreferClassic = false;
-                pack.UseInstallPathPreferX86 = false;
-                pack.IsUseRegistryPreferX86 = null!;
-                pack.IsAllowFullFolderSecurity = true;
-                pack.OverlayInstallRemoveExt = "exe,dll,pdb";
-                pack.ExeName = "MicaApp.exe";
-                pack.KeyName = "MicaApp";
-                pack.DisplayName = "MicaApp";
-                pack.DisplayIcon = "MicaApp.exe";
-                pack.DisplayVersion = "1.0.0.0";
-                pack.Publisher = "Lemutec";
-                pack.AppName = "MicaApp";
-                pack.SetupName = $"MicaApp {Mui("Setup")}";
+                option.IsCreateDesktopShortcut = true;
+                option.IsCreateUninst = true;
+                option.IsCreateRegistryKeys = true;
+                option.IsCrateAsAutoRun = false;
+                option.UseFolderPickerPreferClassic = false;
+                option.UseInstallPathPreferX86 = false;
+                option.IsUseRegistryPreferX86 = null!;
+                option.IsAllowFullFolderSecurity = true;
+                option.OverlayInstallRemoveExt = "exe,dll,pdb";
+                option.UnpackingPassword = null!;
+                option.ExeName = "MicaApp.exe";
+                option.KeyName = "MicaApp";
+                option.DisplayName = "MicaApp";
+                option.DisplayIcon = "MicaApp.exe";
+                option.DisplayVersion = "1.0.0.0";
+                option.Publisher = "Lemutec";
+                option.AppName = "MicaApp";
+                option.SetupName = $"MicaApp {Mui("Setup")}";
             })
             .UseServices(service =>
             {

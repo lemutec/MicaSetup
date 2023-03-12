@@ -1,4 +1,5 @@
 ﻿using SharpCompress.Common;
+using SharpCompress.Readers;
 using System;
 using System.IO;
 using System.Text;
@@ -62,6 +63,11 @@ public static class InstallHelper
             }
         }
 
+        ReaderOptions readerOptions = new()
+        {
+            Password = string.IsNullOrEmpty(Option.Current.UnpackingPassword) ? null! : Option.Current.UnpackingPassword,
+        };
+
         ExtractionOptions extractionOptions = new()
         {
             ExtractFullPath = true,
@@ -71,14 +77,12 @@ public static class InstallHelper
         };
 
         StringBuilder uninstallData = new();
-        void progressCallback2(double progress, string key)
+        ArchiveFileHelper.ExtractAll(Option.Current.InstallLocation, archiveStream, (double progress, string key) =>
         {
             progressCallback?.Invoke(progress, key);
             uninstallData.Append(key);
             uninstallData.Append('|');
-        }
-
-        ArchiveFileHelper.ExtractAll(Option.Current.InstallLocation, archiveStream, progressCallback2, options: extractionOptions);
+        }, readerOptions: readerOptions, options: extractionOptions);
 
         if (Option.Current.IsCreateRegistryKeys)
         {

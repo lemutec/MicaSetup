@@ -14,6 +14,21 @@
     <Authors>Lemutec</Authors>
     <Company>Lemutec</Company>
     <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>Favicon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Favicon.ico" />
+    <None Remove="Favicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MicaWPF" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Favicon.ico" />
+    <Resource Include="Favicon.png" />
+  </ItemGroup>
 
 </Project>

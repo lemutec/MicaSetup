@@ -97,6 +97,12 @@ public class Option
     public string OverlayInstallRemoveExt { get; set; } = string.Empty;
 
     /// <summary>
+    /// The archive file unpacking password
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string UnpackingPassword { get; set; } = null!;
+
+    /// <summary>
     /// Your Product Exe file name
     /// </summary>
     [Category("GlobalSetting")]

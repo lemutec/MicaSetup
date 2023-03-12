@@ -1,8 +1,8 @@
-﻿using System.Windows;
+﻿using MicaWPF.Controls;
 
 namespace MicaApp;
 
-public partial class MainWindow : Window
+public partial class MainWindow : MicaWindow
 {
     public MainWindow()
     {

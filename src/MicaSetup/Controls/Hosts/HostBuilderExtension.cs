@@ -87,7 +87,7 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UsePack(this IHostBuilder builder, Action<Option> handler)
+    public static IHostBuilder UseOptions(this IHostBuilder builder, Action<Option> handler)
     {
         handler?.Invoke(Option.Current);
         return builder;

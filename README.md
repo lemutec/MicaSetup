@@ -31,6 +31,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Notification     | ☑          | Windows10 (or higher) Notification.                          |
 | Online Installer | 🔲          | Using Network instead of archive file.                       |
 | High DPI         | ☑          | Support to process DPI awareness.                            |
+| Anti Unpacking   | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
 
 ### ✨General Features
 

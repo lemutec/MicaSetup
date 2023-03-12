@@ -5,12 +5,12 @@ del MicaSetup.exe
 for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath`) do set "path=%path%;%%i\MSBuild\Current\Bin;%%i\Common7\IDE"
 
 echo [build app using vs2022]
-cd .\MicaSetup.Tools\MicaApp
+cd .\MicaApp
 dotnet publish -c Release -p:PublishProfile=FolderProfile
 cd /d %~dp0
 
 echo [pack app using 7z]
-MicaSetup.Tools\7-Zip\7z a publish.7z .\MicaSetup.Tools\MicaApp\bin\Release\net48\publish\* -t7z -mx=5 -mf=BCJ2 -r -y
+MicaSetup.Tools\7-Zip\7z a publish.7z .\MicaApp\bin\Release\net48\publish\* -t7z -mx=5 -mf=BCJ2 -r -y
 copy /y publish.7z .\MicaSetup\Resources\Setups\publish.7z
 
 echo [trim font using fonttools]
