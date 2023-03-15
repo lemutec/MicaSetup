@@ -27,7 +27,7 @@
     <None Remove="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
     <None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
     <None Remove="Resources\Licenses\license.en.txt" />
-    <None Remove="Resources\Licenses\license.jp.txt" />
+    <None Remove="Resources\Licenses\license.ja.txt" />
     <None Remove="Resources\Licenses\license.zh.txt" />
     <None Remove="Resources\Setups\publish.7z" />
   </ItemGroup>
@@ -66,7 +66,10 @@
     <PackageReference Include="SharpCompress" Version="0.32.2" />
     <PackageReference Include="System.IO.Abstractions" Version="19.2.1" />
     <PackageReference Include="WindowsAPICodePack.Shell.CommonFileDialogs" Version="1.1.5" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -75,7 +78,7 @@
     <Resource Include="Resources\Images\Favicon.ico" />
     <Resource Include="Resources\Images\FaviconSetup.ico" />
     <Resource Include="Resources\Licenses\license.en.txt" />
-    <Resource Include="Resources\Licenses\license.jp.txt" />
+    <Resource Include="Resources\Licenses\license.ja.txt" />
     <Resource Include="Resources\Licenses\license.zh.txt" />
     <Resource Include="Resources\Setups\publish.7z" />
     <Resource Include="Resources\Setups\Uninst.exe" />

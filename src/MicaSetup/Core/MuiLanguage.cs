@@ -19,7 +19,7 @@ public class MuiLanguage
 #if MUI_ZH
         Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("zh-cn");
 #elif MUI_JP
-        Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("jp");
+        Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("ja");
 #elif MUI_EN
         Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
 #endif
@@ -30,21 +30,21 @@ public class MuiLanguage
     public static string GetLanguage() => SystemLanguage switch
     {
         "zh" => "zh",
-        "jp" => "jp",
+        "ja" => "ja",
         "en" or _ => "en",
     };
 
     public static string GetLanguageXaml() => SystemLanguage switch
     {
         "zh" => "zh-cn",
-        "jp" => "jp",
+        "ja" => "ja",
         "en" or _ => "en-us",
     };
 
     public static bool SetLanguage() => SystemLanguage switch
     {
         "zh" => SetLanguage("zh-cn"),
-        "jp" => SetLanguage("jp"),
+        "ja" => SetLanguage("ja"),
         "en" or _ => SetLanguage("en-us"),
     };
 
