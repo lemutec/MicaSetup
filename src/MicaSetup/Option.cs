@@ -58,10 +58,26 @@ public class Option
     public bool IsCreateRegistryKeys { get; set; } = true;
 
     /// <summary>
+    /// Indicates whether to generate StartMenu Shortcut
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsCreateStartMenu { get; set; } = true;
+
+    /// <summary>
+    /// Indicates whether to generate StartMenu Shortcut
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsCreateQuickLaunch { get; set; } = false;
+
+    /// <summary>
     /// Indicates whether to generate AutoRun Shortcut
     /// </summary>
     [Category("GlobalSetting")]
-    public bool IsCrateAsAutoRun { get; set; } = false;
+    public bool IsCreateAsAutoRun { get; set; } = false;
+
+    /// <summary>
+    /// Indicates AutoRun CLI
+    /// </summary>
     [Category("GlobalSetting")]
     public string AutoRunLaunchCommand { get; set; } = string.Empty;
 

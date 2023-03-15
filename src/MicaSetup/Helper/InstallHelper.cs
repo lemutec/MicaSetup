@@ -120,7 +120,40 @@ public static class InstallHelper
 
         try
         {
-            RegistyAutoRunHelper.SetEnabled(Option.Current.IsCrateAsAutoRun, Option.Current.KeyName, $"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)} {Option.Current.AutoRunLaunchCommand}");
+            RegistyAutoRunHelper.SetEnabled(Option.Current.IsCreateAsAutoRun, Option.Current.KeyName, $"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)} {Option.Current.AutoRunLaunchCommand}");
+        }
+        catch (Exception e)
+        {
+            Logger.Error(e);
+        }
+
+        if (Option.Current.IsCreateQuickLaunch)
+        {
+            try
+            {
+                ShortcutHelper.CreateShortcutOnQuickLaunch(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
+        if (Option.Current.IsCreateStartMenu)
+        {
+            try
+            {
+                StartMenuHelper.CreateStartMenuFolder(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName), Option.Current.IsCreateUninst);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
+        try
+        {
+            StartMenuHelper.AddToRecent(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
         }
         catch (Exception e)
         {

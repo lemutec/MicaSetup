@@ -172,7 +172,31 @@ public static class UninstallHelper
             }
         }
 
-        if (Option.Current.IsCrateAsAutoRun)
+        if (Option.Current.IsCreateQuickLaunch)
+        {
+            try
+            {
+                ShortcutHelper.RemoveShortcutOnQuickLaunch(Option.Current.DisplayName);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
+        if (Option.Current.IsCreateStartMenu)
+        {
+            try
+            {
+                StartMenuHelper.RemoveStartMenuFolder(Option.Current.DisplayName);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
+        if (Option.Current.IsCreateAsAutoRun)
         {
             try
             {

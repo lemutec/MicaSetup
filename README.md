@@ -35,23 +35,25 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 ### ✨General Features
 
-| Features         | Completion | Addition                                                     |
-| ---------------- | ---------- | ------------------------------------------------------------ |
-| Host Builder     | ☑          | Support a simple HostBuilder for handling setup configs.     |
-| Debugger         | ☑          | Unlike other installation architectures, too difficult to debug.<br />Support using VS2022 (or higher) to debug codes. |
-| WindowChrome     | ☑          | Support WindowChrome to keep native window style instead of borderless style. |
-| Shortcut         | ☑          | Support to create your app shortcut (`.lnk`).                |
-| Fork Process     | ☑          | Support setup process forked itself to avoid the file lock.  |
-| Folder Picker    | ☑          | Support advanced Folder Picker by `WindowsAPICodePack-Shell`. |
-| Globalization    | ☑          | Support English, Chinese and Japanese nowaday.<br />Support other languages customized by yourself. |
-| Registry         | ☑          | Support x86/x64 registry.                                    |
-| Create Uninst    | ☑          | Support to create `Uninst.exe` for system uninstallation.    |
-| Delay Uninst     | ☑          | Support to delete file delay until reboot.<br />Useful for handling when uninst files fails. |
-| Auto Run         | ☑          | Support to make your installed app auto run.                 |
-| Security Control | ☑          | Support to make your installed path Allow Full File Security. |
-| Install Font     | 🔲          | Support to install your fonts into system.                   |
-| Install Silent   | 🔲          | Support silent installation using CLI `/q`.<br />Useful for auto updating in the background. |
-| Install Auto     | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
+| Features           | Completion | Addition                                                     |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| Host Builder       | ☑          | Support a simple HostBuilder for handling setup configs.     |
+| Debugger           | ☑          | Unlike other installation architectures, too difficult to debug.<br />Support using VS2022 (or higher) to debug codes. |
+| WindowChrome       | ☑          | Support WindowChrome to keep native window style instead of borderless style. |
+| Shortcut           | ☑          | Support to create your app shortcut (`.lnk`).                |
+| Fork Process       | ☑          | Support setup process forked itself to avoid the file lock.  |
+| Folder Picker      | ☑          | Support advanced Folder Picker by `WindowsAPICodePack-Shell`. |
+| Globalization      | ☑          | Support English, Chinese and Japanese nowaday.<br />Support other languages customized by yourself. |
+| Registry           | ☑          | Support x86/x64 registry.                                    |
+| Create StartMenu   | ☑          | Support to create Start Menu in system folder.               |
+| Create QuickLaunch | ☑          | Support to create Quick Launch shortcut (`.lnk`).<br />Quick Launch has been obsoleted since Windows 10. |
+| Create Uninst      | ☑          | Support to create `Uninst.exe` for system uninstallation.    |
+| Delay Uninst       | ☑          | Support to delete file delay until reboot.<br />Useful for handling when uninst files fails. |
+| Auto Run           | ☑          | Support to make your installed app auto run.                 |
+| Security Control   | ☑          | Support to make your installed path Allow Full File Security. |
+| Install Font       | 🔲          | Support to install your fonts into system.                   |
+| Install Silent     | 🔲          | Support silent installation using CLI `/q`.<br />Useful for auto updating in the background. |
+| Install Auto       | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
 
 ## 📖Wikis
 

@@ -1,6 +1,7 @@
-﻿using System.Runtime.InteropServices;
-using System;
+﻿using System;
 using System.IO;
+using System.IO.Abstractions;
+using System.Runtime.InteropServices;
 using File = System.IO.File;
 
 namespace MicaSetup.Helper;
@@ -21,6 +22,7 @@ public static class ShortcutHelper
 
         try
         {
+            // Microsoft Visual C++ 2013 Redistributable
             Type t = Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8"));
             shell = Activator.CreateInstance(t);
             shortcut = shell.CreateShortcut(shortcutPath);
@@ -54,6 +56,101 @@ public static class ShortcutHelper
         if (File.Exists(filePath))
         {
             File.Delete(filePath);
+        }
+    }
+
+    public static void CreateShortcutOnQuickLaunch(string shortcutName, string targetPath, string arguments = null!, string description = null!, string iconLocation = null!)
+    {
+        if (OsHelper.IsWindows10_OrGreater)
+        {
+            string quickLaunchUserPinnedImplicitAppShortcutsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\ImplicitAppShortcuts");
+            CreateShortcut(quickLaunchUserPinnedImplicitAppShortcutsPath, shortcutName, targetPath, arguments, description, iconLocation);
+            ExplorerHelper.Refresh(quickLaunchUserPinnedImplicitAppShortcutsPath);
+
+            string quickLaunchUserPinnedTaskBarPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar");
+            CreateShortcut(quickLaunchUserPinnedTaskBarPath, shortcutName, targetPath, arguments, description, iconLocation);
+            ExplorerHelper.Refresh(quickLaunchUserPinnedTaskBarPath);
+        }
+        else
+        {
+            dynamic shell = null!;
+
+            try
+            {
+                // Microsoft Visual C++ 2013 Redistributable
+                Type t = Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8"));
+                shell = Activator.CreateInstance(t);
+                string quickLaunchPath = shell.SpecialFolders.Item("Quick Launch");
+
+                if (string.IsNullOrWhiteSpace(quickLaunchPath))
+                {
+                    quickLaunchPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch");
+                }
+                CreateShortcut(quickLaunchPath, shortcutName, targetPath, arguments, description, iconLocation);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+            finally
+            {
+                Marshal.FinalReleaseComObject(shell);
+            }
+        }
+    }
+
+    public static void RemoveShortcutOnQuickLaunch(string shortcutName)
+    {
+        if (OsHelper.IsWindows10_OrGreater)
+        {
+            string quickLaunchUserPinnedImplicitAppShortcutsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\ImplicitAppShortcuts");
+            string quickLaunchUserPinnedImplicitAppShortcutsLnkPath = Path.Combine(quickLaunchUserPinnedImplicitAppShortcutsPath, $"{shortcutName}.lnk");
+            
+            if (File.Exists(quickLaunchUserPinnedImplicitAppShortcutsLnkPath))
+            {
+                File.Delete(quickLaunchUserPinnedImplicitAppShortcutsLnkPath);
+            }
+            ExplorerHelper.Refresh(quickLaunchUserPinnedImplicitAppShortcutsPath);
+
+            string quickLaunchUserPinnedTaskBarPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar");
+            string quickLaunchUserPinnedTaskBarLnkPath = Path.Combine(quickLaunchUserPinnedTaskBarPath, $"{shortcutName}.lnk");
+
+            if (File.Exists(quickLaunchUserPinnedTaskBarLnkPath))
+            {
+                File.Delete(quickLaunchUserPinnedTaskBarLnkPath);
+            }
+            ExplorerHelper.Refresh(quickLaunchUserPinnedTaskBarPath);
+        }
+        else
+        {
+            dynamic shell = null!;
+
+            try
+            {
+                // Microsoft Visual C++ 2013 Redistributable
+                Type t = Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8"));
+                shell = Activator.CreateInstance(t);
+                string quickLaunchPath = shell.SpecialFolders.Item("Quick Launch");
+
+                if (string.IsNullOrWhiteSpace(quickLaunchPath))
+                {
+                    quickLaunchPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch");
+                }
+                string quickLaunchLnkPath = Path.Combine(quickLaunchPath, $"{shortcutName}.lnk");
+
+                if (File.Exists(quickLaunchLnkPath))
+                {
+                    File.Delete(quickLaunchLnkPath);
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+            finally
+            {
+                Marshal.FinalReleaseComObject(shell);
+            }
         }
     }
 }

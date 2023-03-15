@@ -33,7 +33,9 @@ internal class Program
                 option.IsCreateDesktopShortcut = true;
                 option.IsCreateUninst = true;
                 option.IsCreateRegistryKeys = true;
-                option.IsCrateAsAutoRun = false;
+                option.IsCreateStartMenu = true;
+                option.IsCreateQuickLaunch = false;
+                option.IsCreateAsAutoRun = false;
                 option.IsUseRegistryPreferX86 = null!;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";

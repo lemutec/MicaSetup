@@ -33,8 +33,10 @@ internal class Program
             {
                 option.IsCreateDesktopShortcut = true;
                 option.IsCreateUninst = true;
+                option.IsCreateStartMenu = true;
+                option.IsCreateQuickLaunch = false;
                 option.IsCreateRegistryKeys = true;
-                option.IsCrateAsAutoRun = false;
+                option.IsCreateAsAutoRun = false;
                 option.UseFolderPickerPreferClassic = false;
                 option.UseInstallPathPreferX86 = false;
                 option.IsUseRegistryPreferX86 = null!;
