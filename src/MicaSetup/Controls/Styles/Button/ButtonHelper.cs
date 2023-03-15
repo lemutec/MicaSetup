@@ -154,26 +154,24 @@ file sealed class BrushAnimation : AnimationTimeline
 
         from = From ?? from;
         to = To ?? to;
-        if (clock.CurrentProgress.Value == 0.0)
+        if (clock.CurrentProgress.Value == 0d)
         {
             return from;
         }
 
-        if (clock.CurrentProgress.Value == 1.0)
+        if (clock.CurrentProgress.Value == 1d)
         {
             return to;
         }
 
         bool flag = false;
-        double num = 1.0;
-        double num2 = 1.0;
+        double num = 1d;
+        double num2 = 1d;
         if (to != null && from != null)
         {
-            SolidColorBrush? solidColorBrush = to as SolidColorBrush;
-            num = ((solidColorBrush != null) ? ((double)(int)solidColorBrush.Color.A / 255.0 * to.Opacity) : to.Opacity);
-            SolidColorBrush? solidColorBrush2 = from as SolidColorBrush;
-            num2 = ((solidColorBrush2 != null) ? ((double)(int)solidColorBrush2.Color.A / 255.0 * from.Opacity) : from.Opacity);
-            if (num < 1.0 && num < num2)
+            num = (to is SolidColorBrush solidColorBrush) ? (solidColorBrush.Color.A / 255d * to.Opacity) : to.Opacity;
+            num2 = (from is SolidColorBrush solidColorBrush2) ? (solidColorBrush2.Color.A / 255d * from.Opacity) : from.Opacity;
+            if (num < 1d && num < num2)
             {
                 flag = true;
             }
@@ -183,29 +181,26 @@ file sealed class BrushAnimation : AnimationTimeline
             flag = true;
         }
 
-        double num3 = (flag ? (1.0 - clock.CurrentProgress.Value) : clock.CurrentProgress.Value);
-        if (num2 < 1.0 && num < 1.0)
+        double num3 = flag ? (1d - clock.CurrentProgress.Value) : clock.CurrentProgress.Value;
+        if (num2 < 1d && num < 1d)
         {
             if (_visualBrush == null)
             {
-                _visualBrush = CreateGridVisualBrush(flag ? to! : from!, flag ? from! : to!, 1.0 - num3, num3);
+                _visualBrush = CreateGridVisualBrush(flag ? to! : from!, flag ? from! : to!, 1d - num3, num3);
             }
             else
             {
-                Grid? grid = _visualBrush.Visual as Grid;
-                if (grid == null || grid.Children.Count <= 1)
+                if (_visualBrush.Visual is not Grid grid || grid.Children.Count <= 1)
                 {
                     return null!;
                 }
 
-                Rectangle? rectangle = grid.Children[0] as Rectangle;
-                if (rectangle != null)
+                if (grid.Children[0] is Rectangle rectangle)
                 {
-                    rectangle.Opacity = 1.0 - num3;
+                    rectangle.Opacity = 1d - num3;
                 }
 
-                Rectangle? rectangle2 = grid.Children[1] as Rectangle;
-                if (rectangle2 != null)
+                if (grid.Children[1] is Rectangle rectangle2)
                 {
                     rectangle2.Opacity = num3;
                 }
@@ -233,8 +228,8 @@ file sealed class BrushAnimation : AnimationTimeline
     {
         return new VisualBrush(new Border
         {
-            Width = 1.0,
-            Height = 1.0,
+            Width = 1d,
+            Height = 1d,
             Background = background,
             Child = new Rectangle
             {
@@ -248,21 +243,21 @@ file sealed class BrushAnimation : AnimationTimeline
     {
         return new VisualBrush(new Grid
         {
-            Width = 1.0,
-            Height = 1.0,
+            Width = 1d,
+            Height = 1d,
             Children =
+            {
+                new Rectangle
                 {
-                    (UIElement)new Rectangle
-                    {
-                        Fill = background,
-                        Opacity = opacity1
-                    },
-                    (UIElement)new Rectangle
-                    {
-                        Fill = foreground,
-                        Opacity = opacity2
-                    }
+                    Fill = background,
+                    Opacity = opacity1
+                },
+                new Rectangle
+                {
+                    Fill = foreground,
+                    Opacity = opacity2
                 }
+            }
         });
     }
 }
