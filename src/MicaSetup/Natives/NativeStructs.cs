@@ -25,6 +25,11 @@ public struct POINT : IEquatable<POINT>
         Y += dy;
     }
 
+    public static bool operator ==(POINT first, POINT second) => first.X == second.X
+        && first.Y == second.Y;
+    public static bool operator !=(POINT first, POINT second) => !(first == second);
+    public override bool Equals(object obj) => obj != null && obj is POINT p && this == p;
+
     public bool Equals(POINT other) => other.X == X && other.Y == Y;
     public override int GetHashCode() => unchecked(X ^ Y);
     public override string ToString() => $"{{X={X},Y={Y}}}";
@@ -104,11 +109,24 @@ public struct RECT : IEquatable<RECT>
     }
 
     public bool IsEmpty => left == 0 && top == 0 && right == 0 && bottom == 0;
-
-    public bool Equals(RECT r) => r.left == left && r.top == top && r.right == right && r.bottom == bottom;
-
-    public override string ToString() => $"{{left={left},top={top},right={right},bottom={bottom}}}";
+    public static bool operator ==(RECT first, RECT second) => first.Left == second.Left
+            && first.Top == second.Top
+            && first.Right == second.Right
+            && first.Bottom == second.Bottom;
+    public static bool operator !=(RECT first, RECT second) => !(first == second);
     public static readonly RECT Empty = new();
+    public override bool Equals(object obj) => obj != null && obj is RECT rect && this == rect;
+    public bool Equals(RECT r) => r.left == left && r.top == top && r.right == right && r.bottom == bottom;
+    public override string ToString() => $"{{left={left},top={top},right={right},bottom={bottom}}}";
+    public override int GetHashCode()
+    {
+        var hash = Left.GetHashCode();
+        hash = hash * 31 + Top.GetHashCode();
+        hash = hash * 31 + Right.GetHashCode();
+        hash = hash * 31 + Bottom.GetHashCode();
+        return hash;
+    }
+    internal static RECT FromRECT(RECT r) => new(r.left, r.top, r.right, r.bottom);
 }
 
 [StructLayout(LayoutKind.Sequential), Serializable]

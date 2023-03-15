@@ -45,6 +45,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Natives\Shell\**" />
+    <Content Remove="Natives\Shell\**" />
+    <EmbeddedResource Remove="Shell\**" />
+    <None Remove="Natives\Shell\**" />
+    <Page Remove="Natives\Shell\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helper\FirewallHelper.cs" />
+    <None Include="Helper\FirewallHelper.cs" />
     <Compile Remove="Program.cs" />
     <None Remove="Program.cs" />
   </ItemGroup>
