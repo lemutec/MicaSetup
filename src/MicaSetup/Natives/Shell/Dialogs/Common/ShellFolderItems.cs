@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-#pragma warning disable CS8618
-
 namespace MicaSetup.Shell.Dialogs;
+
+#pragma warning disable CS8618
 
 internal class ShellFolderItems : IEnumerator<ShellObject>
 {

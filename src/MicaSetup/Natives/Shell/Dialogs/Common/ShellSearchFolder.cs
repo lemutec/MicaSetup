@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-#pragma warning disable CS8618
-
 namespace MicaSetup.Shell.Dialogs;
+
+#pragma warning disable CS8618
 
 public class ShellSearchFolder : ShellSearchCollection
 {

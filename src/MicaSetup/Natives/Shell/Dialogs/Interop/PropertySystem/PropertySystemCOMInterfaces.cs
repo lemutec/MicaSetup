@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace MicaSetup.Shell.Dialogs;
 
-#pragma warning disable 108
+#pragma warning disable CS0108
 
 [ComImport,
 Guid(ShellIIDGuid.IPropertyDescription),

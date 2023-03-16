@@ -7,11 +7,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 
+namespace MicaSetup.Shell.Dialogs;
+
 #pragma warning disable CS8601
 #pragma warning disable CS8618
 #pragma warning disable IDE0059
-
-namespace MicaSetup.Shell.Dialogs;
 
 public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 {

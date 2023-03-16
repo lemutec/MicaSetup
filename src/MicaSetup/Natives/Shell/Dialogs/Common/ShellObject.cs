@@ -4,9 +4,9 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-#pragma warning disable CS8618
-
 namespace MicaSetup.Shell.Dialogs;
+
+#pragma warning disable CS8618
 
 public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
 {

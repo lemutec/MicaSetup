@@ -10,9 +10,9 @@ using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Markup;
 
-#pragma warning disable CS8618
-
 namespace MicaSetup.Shell.Dialogs;
+
+#pragma warning disable CS8618
 
 [ContentProperty("Controls")]
 public abstract class CommonFileDialog : IDialogControlHost, IDisposable

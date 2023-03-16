@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace MicaSetup.Shell.Dialogs;
 
-#pragma warning disable 0108
+#pragma warning disable CS0108
 
 [ComImport,
 Guid(KnownFoldersIIDGuid.IKnownFolderManager),

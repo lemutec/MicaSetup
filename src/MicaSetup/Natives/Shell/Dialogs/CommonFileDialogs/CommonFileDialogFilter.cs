@@ -8,7 +8,6 @@ namespace MicaSetup.Shell.Dialogs;
 
 public class CommonFileDialogFilter
 {
-
     private readonly Collection<string> extensions;
     private string rawDisplayName;
 

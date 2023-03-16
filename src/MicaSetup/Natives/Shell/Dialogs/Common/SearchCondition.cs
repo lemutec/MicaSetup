@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-#pragma warning disable CS8618
-
 namespace MicaSetup.Shell.Dialogs;
+
+#pragma warning disable CS8618
 
 public class SearchCondition : IDisposable
 {

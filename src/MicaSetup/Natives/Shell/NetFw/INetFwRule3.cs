@@ -2,10 +2,10 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+namespace MicaSetup.Shell.NetFw;
+
 #pragma warning disable CS0108
 #pragma warning disable IDE1006
-
-namespace MicaSetup.Shell.NetFw;
 
 [Guid("B21563FF-D696-4222-AB46-4E89B73AB34A"), TypeLibType(4160)]
 [ComImport]

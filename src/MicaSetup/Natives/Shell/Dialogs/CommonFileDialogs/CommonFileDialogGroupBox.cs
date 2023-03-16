@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.Windows.Markup;
 
-#pragma warning disable CS8618
-
 namespace MicaSetup.Shell.Dialogs;
+
+#pragma warning disable CS8618
 
 [ContentProperty("Items")]
 public class CommonFileDialogGroupBox : CommonFileDialogProminentControl

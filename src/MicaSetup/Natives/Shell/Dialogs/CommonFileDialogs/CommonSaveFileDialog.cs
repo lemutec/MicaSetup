@@ -3,10 +3,10 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
+namespace MicaSetup.Shell.Dialogs;
+
 #pragma warning disable CS8073
 #pragma warning disable CS8618
-
-namespace MicaSetup.Shell.Dialogs;
 
 public sealed class CommonSaveFileDialog : CommonFileDialog
 {

@@ -3,9 +3,9 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-#pragma warning disable CS0108
-
 namespace MicaSetup.Shell.NetFw;
+
+#pragma warning disable CS0108
 
 [Guid("39EB36E0-2097-40BD-8AF2-63A13B525362"), TypeLibType(4160)]
 [ComImport]
