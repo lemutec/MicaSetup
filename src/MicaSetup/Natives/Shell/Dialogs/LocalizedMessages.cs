@@ -3,7 +3,6 @@ namespace MicaSetup.Shell.Dialogs;
 public static class LocalizedMessages
 {
     public const string ThumbnailToolbarManagerMaxButtons = "Maximum number of buttons allowed is 7.";
-    public const string CoreHelpersRunningOn7 = "Only supported on Windows 7 or newer.";
     public const string TaskDialogUnkownControl = "Unknown dialog control type.";
     public const string PropertyCollectionCanonicalInvalidIndex = "This CanonicalName is not a valid index.";
     public const string TaskDialogProgressBarMinValueGreaterThanZero = "Minimum value provided must be a positive number.";
@@ -114,7 +113,6 @@ public static class LocalizedMessages
     public const string ShellObjectCannotGetDisplayName = "Can't get the display name.";
     public const string CommonFiltersText = "Text Files";
     public const string CommonFileDialogCannotCreateShellItem = "Shell item could not be created.";
-    public const string CoreHelpersRunningOnVista = "Only supported on Windows Vista or newer.";
     public const string ApplicationRecoverFailedToRegisterForRestartBadParameters = "Failed to register application for restart due to bad parameters.";
     public const string DialogControlCollectionMenuItemControlsCannotBeAdded = "CommonFileDialogMenuItem controls can only be added to CommonFileDialogMenu controls.";
     public const string FolderTypeSavedGames = "Saved Games";
@@ -174,7 +172,6 @@ public static class LocalizedMessages
     public const string StockIconInvalidGuid = "The Stock Icon identifier given is invalid ({0}).";
     public const string ShellObjectFactoryPlatformNotSupported = "Shell Object creation requires Windows Vista or higher operating system.";
     public const string NativeTaskDialogInternalErrorUnexpected = "An unexpected internal error occurred in the Win32 call: {0:x}";
-    public const string CoreHelpersRunningOnXp = "Only supported on Windows XP or newer.";
     public const string BatteryStateStringRepresentation = "ACOnline: {1}{0}Max Charge: {2} mWh{0}Current Charge: {3} mWh{0}Discharge Rate: {4} mWh{0}Estimated Time Remaining: {5}{0}Suggested Critical Battery Charge: {6} mWh{0}Suggested Battery Warning Charge: {7} mWh{0}";
     public const string ShellPropertyWindows7 = "This Property is available on Windows 7 only.";
     public const string FolderTypeDocuments = "Documents";

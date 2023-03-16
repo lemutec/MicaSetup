@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +15,7 @@ public class ShellSearchFolder : ShellSearchCollection
 
     public ShellSearchFolder(SearchCondition searchCondition, params ShellContainer[] searchScopePath)
     {
-        CoreHelpers.ThrowIfNotVista();
+        OsHelper.ThrowIfNotVista();
 
         NativeSearchFolderItemFactory = (ISearchFolderItemFactory)new SearchFolderItemFactoryCoClass();
 
@@ -28,7 +29,7 @@ public class ShellSearchFolder : ShellSearchCollection
 
     public ShellSearchFolder(SearchCondition searchCondition, params string[] searchScopePath)
     {
-        CoreHelpers.ThrowIfNotVista();
+        OsHelper.ThrowIfNotVista();
 
         NativeSearchFolderItemFactory = (ISearchFolderItemFactory)new SearchFolderItemFactoryCoClass();
 

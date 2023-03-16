@@ -6,15 +6,6 @@ namespace MicaSetup.Shell.Dialogs;
 
 public static class CoreHelpers
 {
-    public static bool RunningOnVista => Environment.OSVersion.Version.Major >= 6;
-
-    public static bool RunningOnWin7 =>
-            Environment.OSVersion.Platform == PlatformID.Win32NT &&
-                Environment.OSVersion.Version.CompareTo(new Version(6, 1)) >= 0;
-
-    public static bool RunningOnXP => Environment.OSVersion.Platform == PlatformID.Win32NT &&
-                Environment.OSVersion.Version.Major >= 5;
-
     public static string GetStringResource(string resourceId)
     {
         string[] parts;
@@ -38,29 +29,5 @@ public static class CoreHelpers
         var retval = CoreNativeMethods.LoadString(handle, index, stringValue, 255);
 
         return retval != 0 ? stringValue.ToString() : null!;
-    }
-
-    public static void ThrowIfNotVista()
-    {
-        if (!CoreHelpers.RunningOnVista)
-        {
-            throw new PlatformNotSupportedException(LocalizedMessages.CoreHelpersRunningOnVista);
-        }
-    }
-
-    public static void ThrowIfNotWin7()
-    {
-        if (!CoreHelpers.RunningOnWin7)
-        {
-            throw new PlatformNotSupportedException(LocalizedMessages.CoreHelpersRunningOn7);
-        }
-    }
-
-    public static void ThrowIfNotXP()
-    {
-        if (!CoreHelpers.RunningOnXP)
-        {
-            throw new PlatformNotSupportedException(LocalizedMessages.CoreHelpersRunningOnXp);
-        }
     }
 }

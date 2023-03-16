@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Helper;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -11,7 +12,7 @@ internal static class ShellObjectFactory
     {
         Debug.Assert(nativeShellItem != null, "nativeShellItem should not be null");
 
-        if (!CoreHelpers.RunningOnVista)
+        if (!OsHelper.IsWindowsVista_OrGreater)
         {
             throw new PlatformNotSupportedException(LocalizedMessages.ShellObjectFactoryPlatformNotSupported);
         }
@@ -92,7 +93,7 @@ internal static class ShellObjectFactory
 
     internal static ShellObject Create(IntPtr idListPtr)
     {
-        CoreHelpers.ThrowIfNotVista();
+        OsHelper.ThrowIfNotVista();
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
 

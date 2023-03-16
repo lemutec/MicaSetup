@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MicaSetup.Helper;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace MicaSetup.Shell.Dialogs;
 
 #pragma warning disable CS8618
+#pragma warning disable IDE0059
 
 public class ShellProperty<T> : IShellProperty
 {
@@ -43,13 +45,13 @@ public class ShellProperty<T> : IShellProperty
     {
         get
         {
-            if (!CoreHelpers.RunningOnWin7)
+            if (!OsHelper.IsWindows7_OrGreater)
             {
                 throw new PlatformNotSupportedException(LocalizedMessages.ShellPropertyWindows7);
             }
 
             GetImageReference();
-            var index = (imageReferenceIconIndex.HasValue ? imageReferenceIconIndex.Value : -1);
+            var index = imageReferenceIconIndex ?? -1;
 
             return new IconReference(imageReferencePath, index);
         }
@@ -61,24 +63,22 @@ public class ShellProperty<T> : IShellProperty
     {
         get
         {
-            using (var propVar = new PropVariant())
+            using var propVar = new PropVariant();
+            if (ParentShellObject != null!)
             {
-                if (ParentShellObject != null!)
-                {
-                    var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
+                var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
 
-                    store.GetValue(ref propertyKey, propVar);
+                store.GetValue(ref propertyKey, propVar);
 
-                    Marshal.ReleaseComObject(store);
-                    store = null;
-                }
-                else if (NativePropertyStore != null)
-                {
-                    NativePropertyStore.GetValue(ref propertyKey, propVar);
-                }
-
-                return propVar?.Value!;
+                Marshal.ReleaseComObject(store);
+                store = null;
             }
+            else
+            {
+                NativePropertyStore?.GetValue(ref propertyKey, propVar);
+            }
+
+            return propVar?.Value!;
         }
     }
 
@@ -99,10 +99,8 @@ public class ShellProperty<T> : IShellProperty
 
     public void ClearValue()
     {
-        using (var propVar = new PropVariant())
-        {
-            StorePropVariantValue(propVar);
-        }
+        using var propVar = new PropVariant();
+        StorePropVariantValue(propVar);
     }
 
     public string FormatForDisplay(PropertyDescriptionFormatOptions format)
@@ -114,20 +112,18 @@ public class ShellProperty<T> : IShellProperty
 
         var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
 
-        using (var propVar = new PropVariant())
-        {
-            store.GetValue(ref propertyKey, propVar);
+        using var propVar = new PropVariant();
+        store.GetValue(ref propertyKey, propVar);
 
-            Marshal.ReleaseComObject(store);
-            store = null;
+        Marshal.ReleaseComObject(store);
+        store = null;
 
-            var hr = Description.NativePropertyDescription.FormatForDisplay(propVar, ref format, out var formattedString);
+        var hr = Description.NativePropertyDescription.FormatForDisplay(propVar, ref format, out var formattedString);
 
-            if (!CoreErrorHelper.Succeeded(hr))
-                throw new ShellException(hr);
+        if (!CoreErrorHelper.Succeeded(hr))
+            throw new ShellException(hr);
 
-            return formattedString;
-        }
+        return formattedString;
     }
 
     public bool TryFormatForDisplay(PropertyDescriptionFormatOptions format, out string formattedString)
@@ -140,46 +136,42 @@ public class ShellProperty<T> : IShellProperty
 
         var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
 
-        using (var propVar = new PropVariant())
+        using var propVar = new PropVariant();
+        store.GetValue(ref propertyKey, propVar);
+
+        Marshal.ReleaseComObject(store);
+        store = null;
+
+        var hr = Description.NativePropertyDescription.FormatForDisplay(propVar, ref format, out formattedString);
+
+        if (!CoreErrorHelper.Succeeded(hr))
         {
-            store.GetValue(ref propertyKey, propVar);
-
-            Marshal.ReleaseComObject(store);
-            store = null;
-
-            var hr = Description.NativePropertyDescription.FormatForDisplay(propVar, ref format, out formattedString);
-
-            if (!CoreErrorHelper.Succeeded(hr))
-            {
-                formattedString = null!;
-                return false;
-            }
-            return true;
+            formattedString = null!;
+            return false;
         }
+        return true;
     }
 
     private void GetImageReference()
     {
         var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
 
-        using (var propVar = new PropVariant())
+        using var propVar = new PropVariant();
+        store.GetValue(ref propertyKey, propVar);
+
+        Marshal.ReleaseComObject(store);
+        store = null;
+
+        ((IPropertyDescription2)Description.NativePropertyDescription).GetImageReferenceForValue(
+            propVar, out var refPath);
+
+        if (refPath == null) { return; }
+
+        var index = ShellNativeMethods.PathParseIconLocation(ref refPath);
+        if (refPath != null)
         {
-            store.GetValue(ref propertyKey, propVar);
-
-            Marshal.ReleaseComObject(store);
-            store = null;
-
-            ((IPropertyDescription2)Description.NativePropertyDescription).GetImageReferenceForValue(
-                propVar, out var refPath);
-
-            if (refPath == null) { return; }
-
-            var index = ShellNativeMethods.PathParseIconLocation(ref refPath);
-            if (refPath != null)
-            {
-                imageReferencePath = refPath;
-                imageReferenceIconIndex = index;
-            }
+            imageReferencePath = refPath;
+            imageReferenceIconIndex = index;
         }
     }
 

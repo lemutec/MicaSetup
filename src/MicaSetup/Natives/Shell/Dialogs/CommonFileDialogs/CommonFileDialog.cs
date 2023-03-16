@@ -1,15 +1,16 @@
+using MicaSetup.Helper;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Markup;
 
 #pragma warning disable CS8618
-#pragma warning disable CS8600
 
 namespace MicaSetup.Shell.Dialogs;
 
@@ -74,7 +75,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
     protected CommonFileDialog()
     {
-        if (!CoreHelpers.RunningOnVista)
+        if (!OsHelper.IsWindowsVista_OrGreater)
         {
             throw new PlatformNotSupportedException(LocalizedMessages.CommonFileDialogRequiresVista);
         }
@@ -101,7 +102,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
     public event EventHandler SelectionChanged;
 
     public static bool IsPlatformSupported =>
-            CoreHelpers.RunningOnVista;
+            OsHelper.IsWindowsVista_OrGreater;
 
     public bool AddToMostRecentlyUsedList
     {
@@ -331,11 +332,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
             InitializeNativeFileDialog();
             nativeDialog = GetNativeFileDialog();
         }
-
-        if (nativeDialog != null)
-        {
-            nativeDialog.AddPlace(place.NativeShellItem, (ShellNativeMethods.FileDialogAddPlacement)location);
-        }
+        nativeDialog?.AddPlace(place.NativeShellItem, (ShellNativeMethods.FileDialogAddPlacement)location);
     }
 
     public void AddPlace(string path, FileDialogAddPlaceLocation location)
@@ -384,14 +381,11 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         CommonFileDialogControl dialogControl;
         if (propertyName == "Text")
         {
-            var textBox = control as CommonFileDialogTextBox;
-            var label = control as CommonFileDialogLabel;
-
-            if (textBox != null)
+            if (control is CommonFileDialogTextBox textBox)
             {
                 customize.SetEditBoxText(control.Id, textBox.Text);
             }
-            else if (label != null)
+            else if (control is CommonFileDialogLabel label)
             {
                 customize.SetControlLabel(control.Id, label.Text);
             }
@@ -442,8 +436,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         }
         else if (propertyName == "IsChecked")
         {
-            var checkBox = control as CommonFileDialogCheckBox;
-            if (checkBox != null)
+            if (control is CommonFileDialogCheckBox checkBox)
             {
                 customize.SetCheckButtonState(checkBox.Id, checkBox.IsChecked);
             }
@@ -531,8 +524,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
     internal static string GetFileNameFromShellItem(IShellItem item)
     {
         string filename = null!;
-        var pszString = IntPtr.Zero;
-        var hr = item.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out pszString);
+        var hr = item.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out var pszString);
         if (hr == HResult.Ok && pszString != IntPtr.Zero)
         {
             filename = Marshal.PtrToStringAuto(pszString);
@@ -792,13 +784,13 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
     private void SyncFileTypeComboToDefaultExtension(IFileDialog dialog)
     {
-        if (!(this is CommonSaveFileDialog) || DefaultExtension == null ||
+        if (this is not CommonSaveFileDialog || DefaultExtension == null ||
             filters.Count <= 0)
         {
             return;
         }
 
-        CommonFileDialogFilter filter = null!;
+        CommonFileDialogFilter filter;
 
         for (uint filtersCounter = 0; filtersCounter < filters.Count; filtersCounter++)
         {
@@ -825,18 +817,14 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         {
             var control = parent.controls.GetControlbyId(dwIDCtl);
             var button = control as CommonFileDialogButton;
-            if (button != null)
-            {
-                button.RaiseClickEvent();
-            }
+            button?.RaiseClickEvent();
         }
 
         public void OnCheckButtonToggled(IFileDialogCustomize pfdc, int dwIDCtl, bool bChecked)
         {
             var control = parent.controls.GetControlbyId(dwIDCtl);
 
-            var box = control as CommonFileDialogCheckBox;
-            if (box != null)
+            if (control is CommonFileDialogCheckBox box)
             {
                 box.IsChecked = bChecked;
                 box.RaiseCheckedChangedEvent();
@@ -868,10 +856,9 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
                         }
                         else if ((groupBox = (control as CommonFileDialogGroupBox)!) != null)
                         {
-                            foreach (CommonFileDialogControl subcontrol in groupBox.Items)
+                            foreach (CommonFileDialogControl subcontrol in groupBox.Items.Cast<CommonFileDialogControl>())
                             {
-                                var textbox = subcontrol as CommonFileDialogTextBox;
-                                if (textbox != null)
+                                if (subcontrol is CommonFileDialogTextBox textbox)
                                 {
                                     textbox.SyncValue();
                                     textbox.Closed = true;
@@ -912,15 +899,12 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         {
             var control = parent.controls.GetControlbyId(dwIDCtl);
 
-            ICommonFileDialogIndexedControls controlInterface;
-            CommonFileDialogMenu menu;
-
-            if ((controlInterface = control as ICommonFileDialogIndexedControls) != null)
+            if (control is ICommonFileDialogIndexedControls controlInterface)
             {
                 controlInterface.SelectedIndex = dwIDItem;
                 controlInterface.RaiseSelectedIndexChangedEvent();
             }
-            else if ((menu = control as CommonFileDialogMenu) != null)
+            else if (control is CommonFileDialogMenu menu)
             {
                 foreach (var item in menu.Items)
                 {

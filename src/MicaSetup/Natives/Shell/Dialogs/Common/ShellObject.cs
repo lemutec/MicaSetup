@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Helper;
+using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
@@ -34,7 +35,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         Dispose(false);
     }
 
-    public static bool IsPlatformSupported => CoreHelpers.RunningOnVista;
+    public static bool IsPlatformSupported => OsHelper.IsWindowsVista_OrGreater;
 
     public bool IsFileSystemObject
     {
@@ -82,8 +83,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         {
             if (_internalName == null && NativeShellItem != null)
             {
-                var pszString = IntPtr.Zero;
-                var hr = NativeShellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.Normal, out pszString);
+                var hr = NativeShellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.Normal, out var pszString);
                 if (hr == HResult.Ok && pszString != IntPtr.Zero)
                 {
                     _internalName = Marshal.PtrToStringAuto(pszString);
@@ -140,7 +140,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
     {
         get
         {
-            if (thumbnail == null) { thumbnail = new ShellThumbnail(this); }
+            thumbnail ??= new ShellThumbnail(this);
             return thumbnail;
         }
     }
@@ -187,9 +187,9 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
 
     public static bool operator ==(ShellObject leftShellObject, ShellObject rightShellObject)
     {
-        if ((object)leftShellObject == null)
+        if (leftShellObject is null)
         {
-            return ((object)rightShellObject == null);
+            return rightShellObject is null;
         }
         return leftShellObject.Equals(rightShellObject);
     }

@@ -9,6 +9,10 @@ public static class OsHelper
     private static readonly Version _osVersion = GetOSVersion();
 
     public static bool IsWindowsNT { get; } = Environment.OSVersion.Platform == PlatformID.Win32NT;
+    public static bool IsWindowsXP { get; } = IsWindowsNT && _osVersion == new Version(5, 0);
+    public static bool IsWindowsXP_OrGreater { get; } = IsWindowsNT && _osVersion >= new Version(5, 0);
+    public static bool IsWindowsVista { get; } = IsWindowsNT && _osVersion == new Version(6, 0);
+    public static bool IsWindowsVista_OrGreater { get; } = IsWindowsNT && _osVersion >= new Version(6, 0);
     public static bool IsWindows7 { get; } = IsWindowsNT && _osVersion == new Version(6, 1);
     public static bool IsWindows7_OrGreater { get; } = IsWindowsNT && _osVersion >= new Version(6, 1);
     public static bool IsWindows8 { get; } = IsWindowsNT && _osVersion == new Version(6, 2);
@@ -58,5 +62,29 @@ public static class OsHelper
             versionCache = new Version(osv.MajorVersion, osv.MinorVersion, osv.BuildNumber, osv.Revision);
         }
         return versionCache;
+    }
+
+    public static void ThrowIfNotVista()
+    {
+        if (!IsWindowsVista_OrGreater)
+        {
+            throw new PlatformNotSupportedException("Only supported on Windows Vista or newer.");
+        }
+    }
+
+    public static void ThrowIfNotWin7()
+    {
+        if (!IsWindows7_OrGreater)
+        {
+            throw new PlatformNotSupportedException("Only supported on Windows 7 or newer.");
+        }
+    }
+
+    public static void ThrowIfNotXP()
+    {
+        if (!IsWindowsXP_OrGreater)
+        {
+            throw new PlatformNotSupportedException("Only supported on Windows XP or newer.");
+        }
     }
 }
