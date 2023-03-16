@@ -63,7 +63,11 @@ public static class RegistyUninstallHelper
             false => RegistryView.Registry64,
             null or _ => RegistryView.Default,
         });
-        key.DeleteSubKey($@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{keyName}");
+        using RegistryKey subKey = key.OpenSubKey($@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{keyName}");
+        if (subKey != null)
+        {
+            key.DeleteSubKey($@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{keyName}");
+        }
     }
 }
 

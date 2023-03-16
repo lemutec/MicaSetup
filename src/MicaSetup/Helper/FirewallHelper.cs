@@ -47,8 +47,14 @@ public static class FirewallHelper
         }
         finally
         {
-            _ = Marshal.FinalReleaseComObject(fwPolicy2);
-            _ = Marshal.FinalReleaseComObject(inboundRule);
+            if (fwPolicy2 != null)
+            {
+                _ = Marshal.FinalReleaseComObject(fwPolicy2);
+            }
+            if (inboundRule != null)
+            {
+                _ = Marshal.FinalReleaseComObject(inboundRule);
+            }
         }
     }
 
@@ -76,8 +82,14 @@ public static class FirewallHelper
         }
         finally
         {
-            _ = Marshal.FinalReleaseComObject(fwPolicy2);
-            _ = Marshal.FinalReleaseComObject(inboundRule);
+            if (fwPolicy2 != null)
+            {
+                _ = Marshal.FinalReleaseComObject(fwPolicy2);
+            }
+            if (inboundRule != null)
+            {
+                _ = Marshal.FinalReleaseComObject(inboundRule);
+            }
         }
     }
 }

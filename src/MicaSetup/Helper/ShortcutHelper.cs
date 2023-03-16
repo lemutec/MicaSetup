@@ -35,8 +35,14 @@ public static class ShortcutHelper
         }
         finally
         {
-            _ = Marshal.FinalReleaseComObject(shortcut);
-            _ = Marshal.FinalReleaseComObject(shell);
+            if (shortcut != null)
+            {
+                _ = Marshal.FinalReleaseComObject(shortcut);
+            }
+            if (shell != null)
+            {
+                _ = Marshal.FinalReleaseComObject(shell);
+            }
         }
     }
 
@@ -92,7 +98,10 @@ public static class ShortcutHelper
             }
             finally
             {
-                _ = Marshal.FinalReleaseComObject(shell);
+                if (shell != null)
+                {
+                    _ = Marshal.FinalReleaseComObject(shell);
+                }
             }
         }
     }
@@ -146,7 +155,10 @@ public static class ShortcutHelper
             }
             finally
             {
-                _ = Marshal.FinalReleaseComObject(shell);
+                if (shell != null)
+                {
+                    _ = Marshal.FinalReleaseComObject(shell);
+                }
             }
         }
     }

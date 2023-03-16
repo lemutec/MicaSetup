@@ -10,7 +10,6 @@ public static class UninstallHelper
 {
     public static void Uninstall(Action<double, string> progressCallback = null!, Action<UninstallReport, object> reportCallback = null!)
     {
-        bool anyDeleteDelayUntilReboot = false;
         List<string> deleteDelayUntilRebootList = new();
         UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
 
@@ -46,7 +45,6 @@ public static class UninstallHelper
                         if (DeleteDelayUntilReboot(file))
                         {
                             deleteDelayUntilRebootList.Add(file);
-                            anyDeleteDelayUntilReboot = true;
                         }
                     }
                     progressCallback?.Invoke(Math.Min(++count / countMax, 1d), file);
@@ -118,7 +116,6 @@ public static class UninstallHelper
                             if (DeleteDelayUntilReboot(file))
                             {
                                 deleteDelayUntilRebootList.Add(file);
-                                anyDeleteDelayUntilReboot = true;
                             }
                         }
                         progressCallback?.Invoke(Math.Min(++count / countMax, 1d), file);
@@ -134,7 +131,6 @@ public static class UninstallHelper
                         if (DeleteDelayUntilReboot(dir))
                         {
                             deleteDelayUntilRebootList.Add(dir);
-                            anyDeleteDelayUntilReboot = true;
                         }
                     }
                     progressCallback?.Invoke(Math.Min(++count / countMax, 1d), dir);
@@ -150,7 +146,6 @@ public static class UninstallHelper
                     if (DeleteDelayUntilReboot(Option.Current.InstallLocation))
                     {
                         deleteDelayUntilRebootList.Add(Option.Current.InstallLocation);
-                        anyDeleteDelayUntilReboot = true;
                     }
                 }
             }
@@ -217,9 +212,20 @@ public static class UninstallHelper
             Logger.Error(e);
         }
 
-        if (anyDeleteDelayUntilReboot)
+        if (deleteDelayUntilRebootList.Any())
         {
-            reportCallback?.Invoke(UninstallReport.AnyDeleteDelayUntilReboot, deleteDelayUntilRebootList.ToArray());
+            foreach (string deleteDelayUntilRebootItem in deleteDelayUntilRebootList.ConvertAll(p => p))
+            {
+                if (!Directory.Exists(deleteDelayUntilRebootItem) && !File.Exists(deleteDelayUntilRebootItem))
+                {
+                    deleteDelayUntilRebootList.Remove(deleteDelayUntilRebootItem);
+                }
+            }
+
+            if (deleteDelayUntilRebootList.Any())
+            {
+                reportCallback?.Invoke(UninstallReport.AnyDeleteDelayUntilReboot, deleteDelayUntilRebootList.ToArray());
+            }
         }
     }
 
