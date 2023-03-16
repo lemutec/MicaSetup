@@ -19,9 +19,9 @@
         <StackPanel>
             <StackPanel>
                 <Grid Background="#31374F" Margin="0,-35,0,0" Height="260" VerticalAlignment="Top">
-                <i:Interaction.Behaviors>
-                    <control:WindowDragMoveBehavior/>
-                </i:Interaction.Behaviors>
+                    <i:Interaction.Behaviors>
+                        <control:WindowDragMoveBehavior/>
+                    </i:Interaction.Behaviors>
                     <TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
                            FontSize="110" FontFamily="{StaticResource IcoMoon}"
                            HorizontalAlignment="Center" VerticalAlignment="Center"/>

@@ -10,5 +10,6 @@
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Controls/Styles/ScrollViewer/ScrollViewerStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Controls/Styles/ProgressBar/ProgressBarStyle.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Controls/Styles/ToolTip/ToolTipStyle.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Controls/Styles/Carousel/CarouselStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
