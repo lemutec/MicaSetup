@@ -62,6 +62,18 @@ public partial class InstallViewModel : ObservableObject
                 }
             }
 
+            if (Option.Current.IsAllowFirewall)
+            {
+                try
+                {
+                    FirewallHelper.AllowApplication(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
+
             InstallInfo = Mui("InstallFinishTips");
             Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);

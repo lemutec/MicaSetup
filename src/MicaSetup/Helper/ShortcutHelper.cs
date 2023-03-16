@@ -23,8 +23,7 @@ public static class ShortcutHelper
         try
         {
             // Microsoft Visual C++ 2013 Redistributable
-            Type t = Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8"));
-            shell = Activator.CreateInstance(t);
+            shell = Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8")));
             shortcut = shell.CreateShortcut(shortcutPath);
             shortcut.TargetPath = targetPath;
             shortcut.WorkingDirectory = Path.GetDirectoryName(targetPath);
@@ -36,8 +35,8 @@ public static class ShortcutHelper
         }
         finally
         {
-            Marshal.FinalReleaseComObject(shortcut);
-            Marshal.FinalReleaseComObject(shell);
+            _ = Marshal.FinalReleaseComObject(shortcut);
+            _ = Marshal.FinalReleaseComObject(shell);
         }
     }
 
@@ -78,8 +77,7 @@ public static class ShortcutHelper
             try
             {
                 // Microsoft Visual C++ 2013 Redistributable
-                Type t = Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8"));
-                shell = Activator.CreateInstance(t);
+                shell = Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8")));
                 string quickLaunchPath = shell.SpecialFolders.Item("Quick Launch");
 
                 if (string.IsNullOrWhiteSpace(quickLaunchPath))
@@ -94,7 +92,7 @@ public static class ShortcutHelper
             }
             finally
             {
-                Marshal.FinalReleaseComObject(shell);
+                _ = Marshal.FinalReleaseComObject(shell);
             }
         }
     }
@@ -128,8 +126,7 @@ public static class ShortcutHelper
             try
             {
                 // Microsoft Visual C++ 2013 Redistributable
-                Type t = Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8"));
-                shell = Activator.CreateInstance(t);
+                shell = Activator.CreateInstance(Type.GetTypeFromCLSID(new Guid("72C24DD5-D70A-438B-8A42-98424B88AFB8")));
                 string quickLaunchPath = shell.SpecialFolders.Item("Quick Launch");
 
                 if (string.IsNullOrWhiteSpace(quickLaunchPath))
@@ -149,7 +146,7 @@ public static class ShortcutHelper
             }
             finally
             {
-                Marshal.FinalReleaseComObject(shell);
+                _ = Marshal.FinalReleaseComObject(shell);
             }
         }
     }

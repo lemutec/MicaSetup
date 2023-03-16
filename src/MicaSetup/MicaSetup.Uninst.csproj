@@ -45,16 +45,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Natives\Shell\**" />
-    <Content Remove="Natives\Shell\**" />
-    <EmbeddedResource Remove="Shell\**" />
-    <None Remove="Natives\Shell\**" />
-    <Page Remove="Natives\Shell\**" />
+    <Compile Remove="Natives\Shell\Dialogs\**" />
+    <Content Remove="Natives\Shell\Dialogs\**" />
+    <EmbeddedResource Remove="Shell\Dialogs\**" />
+    <None Remove="Natives\Shell\Dialogs\**" />
+    <Page Remove="Natives\Shell\Dialogs\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Helper\FirewallHelper.cs" />
-    <None Include="Helper\FirewallHelper.cs" />
     <Compile Remove="Program.cs" />
     <None Remove="Program.cs" />
   </ItemGroup>

@@ -37,6 +37,7 @@ internal class Program
                 option.IsCreateQuickLaunch = false;
                 option.IsCreateAsAutoRun = false;
                 option.IsUseRegistryPreferX86 = null!;
+                option.IsAllowFirewall = true;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";

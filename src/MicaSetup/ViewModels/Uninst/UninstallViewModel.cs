@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MicaSetup.Controls;
 using MicaSetup.Helper;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace MicaSetup.ViewModels;
@@ -40,6 +42,18 @@ public partial class UninstallViewModel : ObservableObject
                     });
                 }
             });
+
+            if (Option.Current.IsAllowFirewall)
+            {
+                try
+                {
+                    FirewallHelper.RemoveApplication(Path.Combine(Option.Current.InstallLocation ?? string.Empty, Option.Current.ExeName));
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
 
             Option.Current.Uninstalling = false;
             await Task.Delay(200);

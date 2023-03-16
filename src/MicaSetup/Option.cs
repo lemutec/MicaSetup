@@ -100,10 +100,16 @@ public class Option
     public bool? IsUseRegistryPreferX86 { get; set; } = null!;
 
     /// <summary>
-    /// Prefer to Allow Full Security intall path 
+    /// Indicates whether to Allow Full Security intall path
     /// </summary>
     [Category("GlobalSetting")]
     public bool IsAllowFullFolderSecurity { get; set; } = true;
+
+    /// <summary>
+    /// Indicates whether to Allow Network Firewall
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsAllowFirewall { get; set; } = true;
 
     /// <summary>
     /// The file ext filter to remove when overlay install

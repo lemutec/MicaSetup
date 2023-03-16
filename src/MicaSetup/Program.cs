@@ -41,6 +41,7 @@ internal class Program
                 option.UseInstallPathPreferX86 = false;
                 option.IsUseRegistryPreferX86 = null!;
                 option.IsAllowFullFolderSecurity = true;
+                option.IsAllowFirewall = true;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.UnpackingPassword = null!;
                 option.BackdropMica = true;
