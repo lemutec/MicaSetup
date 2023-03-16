@@ -53,9 +53,19 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Install Silent     | 🔲          | Support silent installation using CLI `/q`.<br />Useful for auto updating in the background. |
 | Install Auto       | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
 
+## 🎛️Personalized Controls
+
+| Controls           | Completion | Addition                                          |
+| ------------------ | ---------- | ------------------------------------------------- |
+| WindowX            | ☑          | Support Mica Backdrop.<br />Support WindowChrome. |
+| SetupProgressBar   | ☑          | Support Indeterminate Animation.                  |
+| MessageBoxX        | ☑          | Simple MessageBox instead of Classics.            |
+| SmoothScrollViewer | ☑          | Support smoothly scrolling.                       |
+| Carousel           | 🔲          | Customized control for Setup.                     |
+
 ## 🔣Toolkits
 
-| Features      | Completion | Addition                                                     |
+| Toolkits      | Completion | Addition                                                     |
 | ------------- | ---------- | ------------------------------------------------------------ |
 | Icon Creator  | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
 | Trim Font     | ☑          | Trimming fonts to reduce their size.<br />[More infomation](src/MicaSetup.Tools/MicaFontTrim/README.md). |
