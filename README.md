@@ -24,15 +24,12 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Theme            | 🔲          | Support Dark and Light theme.                                |
 | Archive File     | ☑          | Pack your app with `7z.exe`, so it's easy to customize your archive file or not. |
 | Animations       | ☑          | Support a lot of advanced animations.<br />Such as Indeterminate ProgressBar, supported when your installation is no progress hint. |
-| Trim Font        | ☑          | Trimming fonts to reduce their size.                         |
-| Sync Assembly    | 🔲          | Sync your app assembly version to create the same version setup. |
-| Icon Creator     | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
-| MSIX Installer   | 🔲          | Using MSIX package instead of archive file.                  |
 | Notification     | ☑          | Windows10 (or higher) Notification.                          |
-| Online Installer | 🔲          | Using Network instead of archive file.                       |
 | High DPI         | ☑          | Support to process DPI awareness.                            |
-| Firewall         | 🔲          | Support allows your app to access the Network through Windows Firewall Policy. |
+| Firewall         | ☑          | Support allows your app to access the Network through Windows Firewall Policy. |
 | Anti Unpacking   | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
+| MSIX Installer   | 🔲          | Using MSIX package instead of archive file.                  |
+| Online Installer | 🔲          | Using Network instead of archive file.                       |
 
 ### ✨General Features
 
@@ -55,6 +52,14 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Install Font       | 🔲          | Support to install your fonts into system.                   |
 | Install Silent     | 🔲          | Support silent installation using CLI `/q`.<br />Useful for auto updating in the background. |
 | Install Auto       | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
+
+## 🔣Toolkits
+
+| Features      | Completion | Addition                                                     |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| Icon Creator  | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
+| Trim Font     | ☑          | Trimming fonts to reduce their size.<br />[More infomation](src/MicaSetup.Tools/MicaFontTrim/README.md). |
+| Sync Assembly | 🔲          | Syncing your app assembly version to create the same version Setup and Uninst. |
 
 ## 📖Wikis
 
