@@ -28,7 +28,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | High DPI         | ☑          | Support to process DPI awareness.                            |
 | Firewall         | ☑          | Support allows your app to access the Network through Windows Firewall Policy. |
 | Anti Unpacking   | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
-| MSIX Installer   | 🔲          | Using MSIX package instead of archive file.                  |
+| MSIX Installer   | 🔲          | Using MSIX package instead of archive file.<br />Provide the function the same as following command.<br />`certmgr.exe -add app.cer -s -r localMachine AuthRoot`. |
 | Online Installer | 🔲          | Using Network instead of archive file.                       |
 
 ### ✨General Features
@@ -70,6 +70,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Icon Creator  | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
 | Trim Font     | ☑          | Trimming fonts to reduce their size.<br />[More infomation](src/MicaSetup.Tools/MicaFontTrim/README.md). |
 | Sync Assembly | 🔲          | Syncing your app assembly version to create the same version Setup and Uninst. |
+| Sign Tool     | 🔲          | Signing the setup or any exec file with `*.pvk` ext.         |
 
 ## 📖Wikis
 
