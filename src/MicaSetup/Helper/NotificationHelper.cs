@@ -5,13 +5,13 @@ namespace MicaSetup.Helper;
 
 public static class NotificationHelper
 {
-    static NotificationHelper()
-    {
-        ClearNotice();
-    }
-
     public static void AddNotice(string header, string title, string detail = null!, ToastDuration duration = ToastDuration.Short)
     {
+        if (!OsHelper.IsWindows10_OrGreater)
+        {
+            return;
+        }
+
         new ToastContentBuilder()
             .AddHeader("AddNotice", header, "AddNotice")
             .AddText(title)
@@ -22,6 +22,11 @@ public static class NotificationHelper
 
     public static void AddNoticeWithButton(string header, string title, string button, (string, string) arg, ToastDuration duration = ToastDuration.Short)
     {
+        if (!OsHelper.IsWindows10_OrGreater)
+        {
+            return;
+        }
+
         new ToastContentBuilder()
             .AddHeader("AddNotice", header, "AddNotice")
             .AddText(title)
@@ -32,6 +37,11 @@ public static class NotificationHelper
 
     public static void ClearNotice()
     {
+        if (!OsHelper.IsWindows10_OrGreater)
+        {
+            return;
+        }
+
         try
         {
             ToastNotificationManagerCompat.History.Clear();
