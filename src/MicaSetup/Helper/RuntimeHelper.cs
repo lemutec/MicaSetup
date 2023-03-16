@@ -65,7 +65,7 @@ public static class RuntimeHelper
         try
         {
             FluentProcess.Create()
-                .FileName(fileName ?? Path.Combine(dir ?? Environment.CurrentDirectory, AppDomain.CurrentDomain.FriendlyName))
+                .FileName(fileName ?? Path.Combine(dir ?? AppDomain.CurrentDomain.BaseDirectory, AppDomain.CurrentDomain.FriendlyName))
                 .Arguments(args ?? ReArguments())
                 .WorkingDirectory(dir ?? Environment.CurrentDirectory)
                 .UseShellExecute()

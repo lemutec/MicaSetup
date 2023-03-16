@@ -36,9 +36,8 @@ public static class NotificationHelper
         {
             ToastNotificationManagerCompat.History.Clear();
         }
-        catch (Exception e)
+        catch 
         {
-            Logger.Error(e);
         }
     }
 }

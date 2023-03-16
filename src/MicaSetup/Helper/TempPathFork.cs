@@ -17,10 +17,19 @@ public static class TempPathForkHelper
             {
                 _ = Directory.CreateDirectory(tempPath);
             }
-            string filePath = Path.Combine(tempPath, $"{(Option.Current.IsUninst ? "Uninst" : "Setup")}.exe");
-            File.Copy(AppDomain.CurrentDomain.FriendlyName, filePath);
-            Logger.Info($"[UseTempPathFork] Copy domain file from '{AppDomain.CurrentDomain.FriendlyName}' to '{filePath}'");
-            RuntimeHelper.RestartAsElevated(filePath, tempPath, $"{RuntimeHelper.ReArguments()} /{ForkedCli}");
+            string forkedFilePath = Path.Combine(tempPath, $"{(Option.Current.IsUninst ? "Uninst" : "Setup")}.exe");
+
+            try
+            {
+                string domainFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppDomain.CurrentDomain.FriendlyName);
+                File.Copy(domainFilePath, forkedFilePath);
+                Logger.Info($"[UseTempPathFork] Copy domain file from '{domainFilePath}' to '{forkedFilePath}'");
+                RuntimeHelper.RestartAsElevated(forkedFilePath, tempPath, $"{RuntimeHelper.ReArguments()} /{ForkedCli}");
+            }
+            catch (Exception e)
+            {
+                Logger.Fatal(e);
+            }
         }
     }
 
@@ -28,7 +37,7 @@ public static class TempPathForkHelper
     {
         if (CommandLineHelper.Has(ForkedCli))
         {
-            string tempPath = Directory.GetCurrentDirectory();
+            string tempPath = AppDomain.CurrentDomain.BaseDirectory;
             string filePath = Path.Combine(tempPath, $"{(Option.Current.IsUninst ? "Uninst" : "Setup")}.exe");
 
             _ = UninstallHelper.DeleteDelayUntilReboot(tempPath);
