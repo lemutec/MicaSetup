@@ -70,9 +70,9 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Icon Creator  | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
 | Trim Font     | ☑          | Trimming fonts to reduce their size.<br />[More infomation](src/MicaSetup.Tools/MicaFontTrim/README.md). |
 | Sync Assembly | 🔲          | Syncing your app assembly version to create the same version Setup and Uninst. |
-| Sign Tool     | 🔲          | Signing the setup or any exec file with `*.pvk` ext.         |
+| Sign Tool     | 🔲          | TBD                                                          |
 
-## 📖Wikis
+## 📖Usage & Wikis
 
 🚧Under construction🚧
 
