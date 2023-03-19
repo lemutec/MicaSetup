@@ -19,6 +19,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
     <AnalysisLevel>6.0-recommended</AnalysisLevel>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
