@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Text;
 
 namespace MicaSetup.Helper;
@@ -29,7 +30,7 @@ public static class ProcessExtension
     {
         foreach (var v in vars)
         {
-            self.StartInfo.Environment.Add(v);
+            self.StartInfo.Environment.Add(v!);
         }
         return self;
     }
@@ -70,6 +71,22 @@ public static class ProcessExtension
     public static FluentProcess StandardOutputEncoding(this FluentProcess self, Encoding encoding = null!)
     {
         self.StartInfo.StandardOutputEncoding = encoding ?? Encoding.Default;
+        return self;
+    }
+
+    public static FluentProcess BeginOutputRead(this FluentProcess self, Stream stream)
+    {
+        long pos = stream.Position;
+        self.StandardOutput.BaseStream.CopyTo(stream);
+        stream.Position = pos;
+        return self;
+    }
+
+    public static FluentProcess BeginErrorRead(this FluentProcess self, Stream stream)
+    {
+        long pos = stream.Position;
+        self.StandardOutput.BaseStream.CopyTo(stream);
+        stream.Position = pos;
         return self;
     }
 
