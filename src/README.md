@@ -38,6 +38,10 @@ pip install fonttools
 4. Build Uninst, named `Uninst.exe` using `msbuild`.
 5. Build Setup, named `MicaSetup.exe` using `msbuild`.
 
+## 📝Create Owner Sign
+
+Run the `setup_snk.cmd` for creating a `.snk` file for Setup  and Uninst program.
+
 ## 🌒Add Icon
 
 We use icon with font type icon, and add new icon with `IcoMoon CLI`.
