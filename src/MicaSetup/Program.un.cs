@@ -20,8 +20,7 @@ internal class Program
     [STAThread]
     internal static void Main()
     {
-        HostBuilderExtension
-            .CreateBuilder()
+        Hosting.CreateBuilder()
             .UseAsUninst()
             .UseLogger()
             .UseSingleInstance("MicaSetup")

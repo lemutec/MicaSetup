@@ -22,8 +22,7 @@ internal class Program
     [STAThread]
     internal static void Main()
     {
-        HostBuilderExtension
-            .CreateBuilder()
+        Hosting.CreateBuilder()
             .UseLogger()
             .UseSingleInstance("MicaSetup")
             .UseTempPathFork()
