@@ -1,4 +1,5 @@
 ﻿using MicaSetup.Helper;
+using MicaSetup.Natives;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
@@ -126,32 +127,6 @@ public class ShellProperty<T> : IShellProperty
         return formattedString;
     }
 
-    public bool TryFormatForDisplay(PropertyDescriptionFormatOptions format, out string formattedString)
-    {
-        if (Description == null || Description.NativePropertyDescription == null)
-        {
-            formattedString = null!;
-            return false;
-        }
-
-        var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
-
-        using var propVar = new PropVariant();
-        store.GetValue(ref propertyKey, propVar);
-
-        Marshal.ReleaseComObject(store);
-        store = null;
-
-        var hr = Description.NativePropertyDescription.FormatForDisplay(propVar, ref format, out formattedString);
-
-        if (!CoreErrorHelper.Succeeded(hr))
-        {
-            formattedString = null!;
-            return false;
-        }
-        return true;
-    }
-
     private void GetImageReference()
     {
         var store = ShellPropertyCollection.CreateDefaultPropertyStore(ParentShellObject);
@@ -167,7 +142,7 @@ public class ShellProperty<T> : IShellProperty
 
         if (refPath == null) { return; }
 
-        var index = ShellNativeMethods.PathParseIconLocation(ref refPath);
+        var index = ShlwApi.PathParseIconLocation(ref refPath);
         if (refPath != null)
         {
             imageReferencePath = refPath;
@@ -182,7 +157,7 @@ public class ShellProperty<T> : IShellProperty
         try
         {
             var hr = ParentShellObject.NativeShellItem2.GetPropertyStore(
-                    ShellNativeMethods.GetPropertyStoreOptions.ReadWrite,
+                    GetPropertyStoreOptions.ReadWrite,
                     ref guid,
                     out writablePropStore);
 

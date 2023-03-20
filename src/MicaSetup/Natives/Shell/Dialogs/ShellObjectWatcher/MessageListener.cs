@@ -10,9 +10,9 @@ namespace MicaSetup.Shell.Dialogs;
 
 internal class MessageListener : IDisposable
 {
-    public const uint CreateWindowMessage = (uint)WindowMessage.User + 1;
-    public const uint DestroyWindowMessage = (uint)WindowMessage.User + 2;
-    public const uint BaseUserMessage = (uint)WindowMessage.User + 5;
+    public const uint CreateWindowMessage = (uint)WindowMessage.WM_USER + 1;
+    public const uint DestroyWindowMessage = (uint)WindowMessage.WM_USER + 2;
+    public const uint BaseUserMessage = (uint)WindowMessage.WM_USER + 5;
 
     private const string MessageWindowClassName = "MessageListenerClass";
 
@@ -72,7 +72,7 @@ internal class MessageListener : IDisposable
 
         lock (_crossThreadWindowLock)
         {
-            CoreNativeMethods.PostMessage(_firstWindowHandle, (WindowMessage)CreateWindowMessage, 0, 0);
+            User32.PostMessage(_firstWindowHandle, (int)CreateWindowMessage, 0, 0);
             Monitor.Wait(_crossThreadWindowLock);
         }
 
@@ -145,7 +145,7 @@ internal class MessageListener : IDisposable
                     Monitor.Pulse(_crossThreadWindowLock);
                 }
                 break;
-            case (uint)WindowMessage.Destroy:
+            case (uint)WindowMessage.WM_DESTROY:
                     _running = false;
                 break;
             default:
@@ -184,7 +184,7 @@ internal class MessageListener : IDisposable
                 _listeners.Remove(WindowHandle);
                 if (_listeners.Count == 0)
                 {
-                    CoreNativeMethods.PostMessage(WindowHandle, WindowMessage.Destroy, 0, 0);
+                    User32.PostMessage(WindowHandle, (int)WindowMessage.WM_DESTROY, 0, 0);
                 }
             }
         }

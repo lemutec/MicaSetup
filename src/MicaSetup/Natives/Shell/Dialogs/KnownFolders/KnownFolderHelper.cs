@@ -63,8 +63,8 @@ public static class KnownFolderHelper
         }
         finally
         {
-            ShellNativeMethods.ILFree(pidl);
-            ShellNativeMethods.ILFree(pidl2);
+            Shell32.ILFree(pidl);
+            Shell32.ILFree(pidl2);
         }
     }
 
@@ -101,9 +101,9 @@ public static class KnownFolderHelper
 
         if (shellItem != null)
         {
-            shellItem.GetAttributes(ShellNativeMethods.ShellFileGetAttributesOptions.FileSystem, out var sfgao);
+            shellItem.GetAttributes(ShellFileGetAttributesOptions.FileSystem, out var sfgao);
 
-            isFileSystem = (sfgao & ShellNativeMethods.ShellFileGetAttributesOptions.FileSystem) != 0;
+            isFileSystem = (sfgao & ShellFileGetAttributesOptions.FileSystem) != 0;
         }
 
         if (isFileSystem)

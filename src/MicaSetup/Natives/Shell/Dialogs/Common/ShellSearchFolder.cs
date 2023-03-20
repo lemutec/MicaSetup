@@ -70,7 +70,7 @@ public class ShellSearchFolder : ShellSearchCollection
 
             foreach (var path in searchScopePaths)
             {
-                var hr = ShellNativeMethods.SHCreateItemFromParsingName(path, 0, ref shellItemGuid, out IShellItem scopeShellItem);
+                var hr = Shell32.SHCreateItemFromParsingName(path, 0, ref shellItemGuid, out IShellItem scopeShellItem);
 
                 if (CoreErrorHelper.Succeeded(hr)) { shellItems.Add(scopeShellItem); }
             }

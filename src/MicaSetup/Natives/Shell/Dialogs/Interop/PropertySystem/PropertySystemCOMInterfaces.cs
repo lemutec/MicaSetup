@@ -9,7 +9,7 @@ namespace MicaSetup.Shell.Dialogs;
 [ComImport,
 Guid(ShellIIDGuid.IPropertyDescription),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyDescription
+public interface IPropertyDescription
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetPropertyKey(out PropertyKey pkey);
@@ -93,7 +93,7 @@ internal interface IPropertyDescription
 [ComImport,
 Guid(ShellIIDGuid.IPropertyDescription2),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyDescription2 : IPropertyDescription
+public interface IPropertyDescription2 : IPropertyDescription
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetPropertyKey(out PropertyKey pkey);
@@ -173,7 +173,7 @@ internal interface IPropertyDescription2 : IPropertyDescription
 [ComImport,
 Guid(ShellIIDGuid.IPropertyDescriptionList),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyDescriptionList
+public interface IPropertyDescriptionList
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetCount(out uint pcElem);
@@ -185,7 +185,7 @@ internal interface IPropertyDescriptionList
 [ComImport,
 Guid(ShellIIDGuid.IPropertyEnumType),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyEnumType
+public interface IPropertyEnumType
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetEnumType([Out] out PropEnumType penumtype);
@@ -206,7 +206,7 @@ internal interface IPropertyEnumType
 [ComImport,
 Guid(ShellIIDGuid.IPropertyEnumType2),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyEnumType2 : IPropertyEnumType
+public interface IPropertyEnumType2 : IPropertyEnumType
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetEnumType([Out] out PropEnumType penumtype);
@@ -230,7 +230,7 @@ internal interface IPropertyEnumType2 : IPropertyEnumType
 [ComImport,
 Guid(ShellIIDGuid.IPropertyEnumTypeList),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyEnumTypeList
+public interface IPropertyEnumTypeList
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetCount([Out] out uint pctypes);
@@ -256,7 +256,7 @@ internal interface IPropertyEnumTypeList
 [ComImport]
 [Guid(ShellIIDGuid.IPropertyStore)]
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyStore
+public interface IPropertyStore
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetCount([Out] out uint propertyCount);
@@ -278,7 +278,7 @@ internal interface IPropertyStore
 [ComImport]
 [Guid(ShellIIDGuid.IPropertyStoreCache)]
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyStoreCache
+public interface IPropertyStoreCache
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetState(ref PropertyKey key, [Out] out PropertyStoreCacheState state);
@@ -296,7 +296,7 @@ internal interface IPropertyStoreCache
 [ComImport]
 [Guid(ShellIIDGuid.IPropertyStoreCapabilities)]
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-internal interface IPropertyStoreCapabilities
+public interface IPropertyStoreCapabilities
 {
     HResult IsPropertyWritable([In]ref PropertyKey propertyKey);
 }

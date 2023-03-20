@@ -9,6 +9,7 @@ public static class Lib
         Kernel32 = "kernel32.dll",
         Shell32 = "shell32.dll",
         SHCore = "shcore.dll",
+        ShlwApi = "shlwapi.dll",
         MsImg = "msimg32.dll",
         NTdll = "ntdll.dll",
         WinInet = "wininet.dll",

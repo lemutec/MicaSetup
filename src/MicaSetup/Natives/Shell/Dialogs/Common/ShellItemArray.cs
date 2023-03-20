@@ -13,7 +13,7 @@ internal class ShellItemArray : IShellItemArray
 
     public HResult EnumItems(out nint ppenumShellItems) => throw new NotSupportedException();
 
-    public HResult GetAttributes(ShellNativeMethods.ShellItemAttributeOptions dwAttribFlags, ShellNativeMethods.ShellFileGetAttributesOptions sfgaoMask, out ShellNativeMethods.ShellFileGetAttributesOptions psfgaoAttribs) => throw new NotSupportedException();
+    public HResult GetAttributes(ShellItemAttributeOptions dwAttribFlags, ShellFileGetAttributesOptions sfgaoMask, out ShellFileGetAttributesOptions psfgaoAttribs) => throw new NotSupportedException();
 
     public HResult GetCount(out uint pdwNumItems)
     {

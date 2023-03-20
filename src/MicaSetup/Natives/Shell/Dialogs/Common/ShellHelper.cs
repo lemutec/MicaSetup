@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Natives;
+using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
@@ -36,7 +37,7 @@ internal static class ShellHelper
 
         string path = null!;
 
-        var hr = shellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out nint pszPath);
+        var hr = shellItem.GetDisplayName(ShellItemDesignNameOptions.DesktopAbsoluteParsing, out nint pszPath);
 
         if (hr != HResult.Ok && hr != HResult.InvalidArguments)
         {
@@ -55,7 +56,7 @@ internal static class ShellHelper
 
     internal static nint PidlFromParsingName(string name)
     {
-        var retCode = ShellNativeMethods.SHParseDisplayName(
+        var retCode = Shell32.SHParseDisplayName(
             name, 0, out nint pidl, 0,
             out _);
 
@@ -70,7 +71,7 @@ internal static class ShellHelper
 
     internal static nint PidlFromUnknown(nint unknown)
     {
-        var retCode = ShellNativeMethods.SHGetIDListFromObject(unknown, out nint pidl);
+        var retCode = Shell32.SHGetIDListFromObject(unknown, out nint pidl);
         return (CoreErrorHelper.Succeeded(retCode) ? pidl : 0);
     }
 }

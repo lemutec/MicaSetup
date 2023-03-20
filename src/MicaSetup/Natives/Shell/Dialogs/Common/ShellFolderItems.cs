@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Natives;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -19,7 +20,7 @@ internal class ShellFolderItems : IEnumerator<ShellObject>
 
         var hr = nativeShellFolder.NativeShellFolder.EnumObjects(
             0,
-            ShellNativeMethods.ShellFolderEnumerationOptions.Folders | ShellNativeMethods.ShellFolderEnumerationOptions.NonFolders,
+            ShellFolderEnumerationOptions.Folders | ShellFolderEnumerationOptions.NonFolders,
             out nativeEnumIdList);
 
         if (!CoreErrorHelper.Succeeded(hr))

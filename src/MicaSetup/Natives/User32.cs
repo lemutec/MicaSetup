@@ -1,7 +1,6 @@
-﻿using System;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using System.Security;
-using System.Threading;
+using System.Text;
 
 namespace MicaSetup.Natives;
 
@@ -40,4 +39,19 @@ public static class User32
     [DllImport(Lib.User32, SetLastError = false, ExactSpelling = true)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
     public static extern nint MonitorFromWindow(nint hwnd, MonitorFlags dwFlags);
+
+    [DllImport(Lib.User32, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool DestroyIcon(nint hIcon);
+
+    [DllImport(Lib.User32, SetLastError = true, CharSet = CharSet.Unicode)]
+    public static extern int LoadString(nint instanceHandle, int id, StringBuilder buffer, int bufferSize);
+
+    [DllImport(Lib.User32)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool ClientToScreen(nint hwnd, ref POINT point);
+
+    [DllImport(Lib.User32)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static extern bool GetWindowRect(nint hwnd, ref RECT rect);
 }

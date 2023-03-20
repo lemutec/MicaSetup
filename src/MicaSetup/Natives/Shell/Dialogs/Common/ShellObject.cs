@@ -43,8 +43,8 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         {
             try
             {
-                NativeShellItem.GetAttributes(ShellNativeMethods.ShellFileGetAttributesOptions.FileSystem, out var sfgao);
-                return (sfgao & ShellNativeMethods.ShellFileGetAttributesOptions.FileSystem) != 0;
+                NativeShellItem.GetAttributes(ShellFileGetAttributesOptions.FileSystem, out var sfgao);
+                return (sfgao & ShellFileGetAttributesOptions.FileSystem) != 0;
             }
             catch (FileNotFoundException)
             {
@@ -63,8 +63,8 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         {
             try
             {
-                NativeShellItem.GetAttributes(ShellNativeMethods.ShellFileGetAttributesOptions.Link, out var sfgao);
-                return (sfgao & ShellNativeMethods.ShellFileGetAttributesOptions.Link) != 0;
+                NativeShellItem.GetAttributes(ShellFileGetAttributesOptions.Link, out var sfgao);
+                return (sfgao & ShellFileGetAttributesOptions.Link) != 0;
             }
             catch (FileNotFoundException)
             {
@@ -83,7 +83,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         {
             if (_internalName == null && NativeShellItem != null)
             {
-                var hr = NativeShellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.Normal, out var pszString);
+                var hr = NativeShellItem.GetDisplayName(ShellItemDesignNameOptions.Normal, out var pszString);
                 if (hr == HResult.Ok && pszString != 0)
                 {
                     _internalName = Marshal.PtrToStringAuto(pszString);
@@ -156,7 +156,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
             if (nativeShellItem == null && ParsingName != null)
             {
                 var guid = new Guid(ShellIIDGuid.IShellItem2);
-                var retCode = ShellNativeMethods.SHCreateItemFromParsingName(ParsingName, 0, ref guid, out nativeShellItem);
+                var retCode = Shell32.SHCreateItemFromParsingName(ParsingName, 0, ref guid, out nativeShellItem);
 
                 if (nativeShellItem == null || !CoreErrorHelper.Succeeded(retCode))
                 {
@@ -225,7 +225,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
     public virtual string GetDisplayName(DisplayNameType displayNameType)
     {
         string returnValue = null!;
-        NativeShellItem2?.GetDisplayName((ShellNativeMethods.ShellItemDesignNameOptions)displayNameType, out returnValue);
+        NativeShellItem2?.GetDisplayName((ShellItemDesignNameOptions)displayNameType, out returnValue);
         return returnValue;
     }
 
@@ -233,7 +233,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
     {
         if (!hashValue.HasValue)
         {
-            var size = ShellNativeMethods.ILGetSize(PIDL);
+            var size = Shell32.ILGetSize(PIDL);
             if (size != 0)
             {
                 var pidlData = new byte[size];
@@ -284,7 +284,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
 
         if (_internalPIDL != 0)
         {
-            ShellNativeMethods.ILFree(_internalPIDL);
+            Shell32.ILFree(_internalPIDL);
             _internalPIDL = 0;
         }
 

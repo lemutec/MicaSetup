@@ -23,11 +23,11 @@ internal static class ShellObjectFactory
 
         if (!string.IsNullOrEmpty(itemType)) { itemType = itemType.ToLowerInvariant(); }
 
-        nativeShellItem2!.GetAttributes(ShellNativeMethods.ShellFileGetAttributesOptions.FileSystem | ShellNativeMethods.ShellFileGetAttributesOptions.Folder, out var sfgao);
+        nativeShellItem2!.GetAttributes(ShellFileGetAttributesOptions.FileSystem | ShellFileGetAttributesOptions.Folder, out var sfgao);
 
-        var isFileSystem = (sfgao & ShellNativeMethods.ShellFileGetAttributesOptions.FileSystem) != 0;
+        var isFileSystem = (sfgao & ShellFileGetAttributesOptions.FileSystem) != 0;
 
-        var isFolder = (sfgao & ShellNativeMethods.ShellFileGetAttributesOptions.Folder) != 0;
+        var isFolder = (sfgao & ShellFileGetAttributesOptions.Folder) != 0;
         if (StringComparer.OrdinalIgnoreCase.Equals(itemType, ".lnk"))
         {
             return new ShellLink(nativeShellItem2);
@@ -81,7 +81,7 @@ internal static class ShellObjectFactory
         }
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
-        var retCode = ShellNativeMethods.SHCreateItemFromParsingName(parsingName, 0, ref guid, out
+        var retCode = Shell32.SHCreateItemFromParsingName(parsingName, 0, ref guid, out
         IShellItem2 nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(retCode))
@@ -97,7 +97,7 @@ internal static class ShellObjectFactory
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
 
-        var retCode = ShellNativeMethods.SHCreateItemFromIDList(idListPtr, ref guid, out var nativeShellItem);
+        var retCode = Shell32.SHCreateItemFromIDList(idListPtr, ref guid, out var nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(retCode)) { return null!; }
         return ShellObjectFactory.Create(nativeShellItem);
@@ -105,7 +105,7 @@ internal static class ShellObjectFactory
 
     internal static ShellObject Create(nint idListPtr, ShellContainer parent)
     {
-        var retCode = ShellNativeMethods.SHCreateShellItem(
+        var retCode = Shell32.SHCreateShellItem(
             0,
             parent.NativeShellFolder,
             idListPtr, out var nativeShellItem);
@@ -149,7 +149,7 @@ internal static class ShellObjectFactory
         }
         finally
         {
-            ShellNativeMethods.ILFree(pidl);
+            Shell32.ILFree(pidl);
         }
     }
 }

@@ -20,7 +20,7 @@ public class ShellPropertyWriter : IDisposable
         try
         {
             var hr = ParentShellObject.NativeShellItem2.GetPropertyStore(
-                    ShellNativeMethods.GetPropertyStoreOptions.ReadWrite,
+                    GetPropertyStoreOptions.ReadWrite,
                     ref guid,
                     out writablePropStore);
 

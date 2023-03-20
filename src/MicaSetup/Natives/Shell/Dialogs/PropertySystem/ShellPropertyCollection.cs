@@ -62,7 +62,7 @@ public class ShellPropertyCollection : ReadOnlyCollection<IShellProperty>, IDisp
     {
         var guid = new Guid(ShellIIDGuid.IPropertyStore);
         var hr = shellObj.NativeShellItem2.GetPropertyStore(
-               ShellNativeMethods.GetPropertyStoreOptions.BestEffort,
+               GetPropertyStoreOptions.BestEffort,
                ref guid,
                out var nativePropertyStore);
 

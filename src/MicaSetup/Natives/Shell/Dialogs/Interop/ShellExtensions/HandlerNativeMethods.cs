@@ -128,19 +128,6 @@ internal struct MSG
     public int pt_y;
 }
 
-internal static class HandlerNativeMethods
-{
-    internal static readonly Guid PreviewHandlerGuid = new Guid("{8895b1c6-b41f-4c1c-a562-0d564250836f}");
-
-    internal static readonly Guid ThumbnailProviderGuid = new Guid("{e357fccd-a995-4576-b01f-234630154e96}");
-
-    [DllImport("user32.dll", CharSet = CharSet.Auto)]
-    internal static extern nint GetFocus();
-
-    [DllImport("user32.dll")]
-    internal static extern nint SetParent(nint hWndChild, nint hWndNewParent);
-}
-
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
 internal class LogFont
 {

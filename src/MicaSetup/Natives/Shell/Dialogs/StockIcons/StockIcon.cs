@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Natives;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -107,7 +108,7 @@ public class StockIcon : IDisposable
         if (invalidateIcon)
         {
             if (hIcon != 0)
-                _ = CoreNativeMethods.DestroyIcon(hIcon);
+                _ = User32.DestroyIcon(hIcon);
 
             hIcon = GetHIcon();
 
@@ -172,7 +173,7 @@ public class StockIcon : IDisposable
         }
 
         if (hIcon != 0)
-            _ = CoreNativeMethods.DestroyIcon(hIcon);
+            _ = User32.DestroyIcon(hIcon);
     }
 
     public void Dispose()

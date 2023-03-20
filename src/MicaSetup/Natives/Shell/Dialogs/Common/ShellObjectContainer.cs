@@ -53,7 +53,7 @@ public abstract class ShellContainer : ShellObject, IEnumerable<ShellObject>, ID
         {
             if (desktopFolderEnumeration == null)
             {
-                ShellNativeMethods.SHGetDesktopFolder(out desktopFolderEnumeration);
+                Shell32.SHGetDesktopFolder(out desktopFolderEnumeration);
             }
 
             nativeShellFolder = desktopFolderEnumeration;

@@ -1,4 +1,5 @@
 using MicaSetup.Helper;
+using MicaSetup.Natives;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -332,7 +333,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
             InitializeNativeFileDialog();
             nativeDialog = GetNativeFileDialog();
         }
-        nativeDialog?.AddPlace(place.NativeShellItem, (ShellNativeMethods.FileDialogAddPlacement)location);
+        nativeDialog?.AddPlace(place.NativeShellItem, (FileDialogAddPlacement)location);
     }
 
     public void AddPlace(string path, FileDialogAddPlaceLocation location)
@@ -346,7 +347,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         }
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
-        var retCode = ShellNativeMethods.SHCreateItemFromParsingName(path, 0, ref guid, out
+        var retCode = Shell32.SHCreateItemFromParsingName(path, 0, ref guid, out
         IShellItem2 nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(retCode))
@@ -354,7 +355,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
             throw new CommonControlException(LocalizedMessages.CommonFileDialogCannotCreateShellItem, Marshal.GetExceptionForHR(retCode));
         }
 
-        nativeDialog?.AddPlace(nativeShellItem, (ShellNativeMethods.FileDialogAddPlacement)location);
+        nativeDialog?.AddPlace(nativeShellItem, (FileDialogAddPlacement)location);
     }
 
     public virtual void ApplyCollectionChanged()
@@ -396,11 +397,11 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
             if (dialogControl.Visible == true)
             {
-                state |= ShellNativeMethods.ControlState.Visible;
+                state |= ControlState.Visible;
             }
             else if (dialogControl.Visible == false)
             {
-                state &= ~ShellNativeMethods.ControlState.Visible;
+                state &= ~ControlState.Visible;
             }
 
             customize.SetControlState(control.Id, state);
@@ -411,11 +412,11 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
             if (dialogControl.Enabled == true)
             {
-                state |= ShellNativeMethods.ControlState.Enable;
+                state |= ControlState.Enable;
             }
             else if (dialogControl.Enabled == false)
             {
-                state &= ~ShellNativeMethods.ControlState.Enable;
+                state &= ~ControlState.Enable;
             }
 
             customize.SetControlState(control.Id, state);
@@ -524,7 +525,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
     internal static string GetFileNameFromShellItem(IShellItem item)
     {
         string filename = null!;
-        var hr = item.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out var pszString);
+        var hr = item.GetDisplayName(ShellItemDesignNameOptions.DesktopAbsoluteParsing, out var pszString);
         if (hr == HResult.Ok && pszString != 0)
         {
             filename = Marshal.PtrToStringAuto(pszString);
@@ -542,7 +543,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
     internal abstract void CleanUpNativeFileDialog();
 
-    internal abstract ShellNativeMethods.FileOpenOptions GetDerivedOptionFlags(ShellNativeMethods.FileOpenOptions flags);
+    internal abstract FileOpenOptions GetDerivedOptionFlags(FileOpenOptions flags);
 
     internal abstract IFileDialog GetNativeFileDialog();
 
@@ -666,7 +667,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
         if (!string.IsNullOrEmpty(initialDirectory))
         {
-            ShellNativeMethods.SHCreateItemFromParsingName(initialDirectory, 0, ref guid, out
+            Shell32.SHCreateItemFromParsingName(initialDirectory, 0, ref guid, out
             IShellItem2 initialDirectoryShellItem);
 
             if (initialDirectoryShellItem != null)
@@ -675,7 +676,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
         if (!string.IsNullOrEmpty(defaultDirectory))
         {
-            ShellNativeMethods.SHCreateItemFromParsingName(defaultDirectory, 0, ref guid, out
+            Shell32.SHCreateItemFromParsingName(defaultDirectory, 0, ref guid, out
             IShellItem2 defaultDirectoryShellItem);
 
             if (defaultDirectoryShellItem != null)
@@ -708,47 +709,47 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         dialog.SetFileName(DefaultFileName);
     }
 
-    private ShellNativeMethods.FileOpenOptions CalculateNativeDialogOptionFlags()
+    private FileOpenOptions CalculateNativeDialogOptionFlags()
     {
-        var flags = ShellNativeMethods.FileOpenOptions.NoTestFileCreate;
+        var flags = FileOpenOptions.NoTestFileCreate;
 
         flags = GetDerivedOptionFlags(flags);
 
         if (ensureFileExists)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.FileMustExist;
+            flags |= FileOpenOptions.FileMustExist;
         }
         if (ensurePathExists)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.PathMustExist;
+            flags |= FileOpenOptions.PathMustExist;
         }
         if (!ensureValidNames)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.NoValidate;
+            flags |= FileOpenOptions.NoValidate;
         }
         if (!EnsureReadOnly)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.NoReadOnlyReturn;
+            flags |= FileOpenOptions.NoReadOnlyReturn;
         }
         if (restoreDirectory)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.NoChangeDirectory;
+            flags |= FileOpenOptions.NoChangeDirectory;
         }
         if (!showPlacesList)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.HidePinnedPlaces;
+            flags |= FileOpenOptions.HidePinnedPlaces;
         }
         if (!addToMruList)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.DontAddToRecent;
+            flags |= FileOpenOptions.DontAddToRecent;
         }
         if (showHiddenItems)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.ForceShowHidden;
+            flags |= FileOpenOptions.ForceShowHidden;
         }
         if (!navigateToShortcut)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.NoDereferenceLinks;
+            flags |= FileOpenOptions.NoDereferenceLinks;
         }
         return flags;
     }
@@ -917,16 +918,16 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
             }
         }
 
-        public void OnOverwrite(IFileDialog pfd, IShellItem psi, out ShellNativeMethods.FileDialogEventOverwriteResponse pResponse) =>
-            pResponse = ShellNativeMethods.FileDialogEventOverwriteResponse.Default;
+        public void OnOverwrite(IFileDialog pfd, IShellItem psi, out FileDialogEventOverwriteResponse pResponse) =>
+            pResponse = FileDialogEventOverwriteResponse.Default;
 
         public void OnSelectionChange(IFileDialog pfd) => parent.OnSelectionChanged(EventArgs.Empty);
 
         public void OnShareViolation(
             IFileDialog pfd,
             IShellItem psi,
-            out ShellNativeMethods.FileDialogEventShareViolationResponse pResponse) =>
-            pResponse = ShellNativeMethods.FileDialogEventShareViolationResponse.Accept;
+            out FileDialogEventShareViolationResponse pResponse) =>
+            pResponse = FileDialogEventShareViolationResponse.Accept;
 
         public void OnTypeChange(IFileDialog pfd) => parent.OnFileTypeChanged(EventArgs.Empty);
     }

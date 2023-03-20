@@ -44,16 +44,16 @@ public class ShellObjectWatcher : IDisposable
     {
         if (Running) { return; }
 
-        var entry = new ShellNativeMethods.SHChangeNotifyEntry
+        var entry = new SHChangeNotifyEntry
         {
             recursively = _recursive,
 
             pIdl = _shellObject.PIDL
         };
 
-        _registrationId = ShellNativeMethods.SHChangeNotifyRegister(
+        _registrationId = Shell32.SHChangeNotifyRegister(
             _listenerHandle,
-            ShellNativeMethods.ShellChangeNotifyEventSource.ShellLevel | ShellNativeMethods.ShellChangeNotifyEventSource.InterruptLevel | ShellNativeMethods.ShellChangeNotifyEventSource.NewDelivery,
+            ShellChangeNotifyEventSource.ShellLevel | ShellChangeNotifyEventSource.InterruptLevel | ShellChangeNotifyEventSource.NewDelivery,
              _manager.RegisteredTypes,
             _message,
             1,
@@ -72,7 +72,7 @@ public class ShellObjectWatcher : IDisposable
         if (!Running) { return; }
         if (_registrationId > 0)
         {
-            ShellNativeMethods.SHChangeNotifyDeregister(_registrationId);
+            Shell32.SHChangeNotifyDeregister(_registrationId);
             _registrationId = 0;
         }
         Running = false;

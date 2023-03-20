@@ -18,7 +18,7 @@ internal interface IFileDialog : IModalWindow
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypes(
         [In] uint cFileTypes,
-        [In, MarshalAs(UnmanagedType.LPArray)] ShellNativeMethods.FilterSpec[] rgFilterSpec);
+        [In, MarshalAs(UnmanagedType.LPArray)] FilterSpec[] rgFilterSpec);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypeIndex([In] uint iFileType);
@@ -35,10 +35,10 @@ internal interface IFileDialog : IModalWindow
     void Unadvise([In] uint dwCookie);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetOptions([In] ShellNativeMethods.FileOpenOptions fos);
+    void SetOptions([In] FileOpenOptions fos);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetOptions(out ShellNativeMethods.FileOpenOptions pfos);
+    void GetOptions(out FileOpenOptions pfos);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetDefaultFolder([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi);
@@ -71,7 +71,7 @@ internal interface IFileDialog : IModalWindow
     void GetResult([MarshalAs(UnmanagedType.Interface)] out IShellItem ppsi);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void AddPlace([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, ShellNativeMethods.FileDialogAddPlacement fdap);
+    void AddPlace([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, FileDialogAddPlacement fdap);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetDefaultExtension([In, MarshalAs(UnmanagedType.LPWStr)] string pszDefaultExtension);
@@ -168,12 +168,12 @@ internal interface IFileDialogCustomize
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetControlState(
         [In] int dwIDCtl,
-        [Out] out ShellNativeMethods.ControlState pdwState);
+        [Out] out ControlState pdwState);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetControlState(
         [In] int dwIDCtl,
-        [In] ShellNativeMethods.ControlState dwState);
+        [In] ControlState dwState);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetEditBoxText(
@@ -213,13 +213,13 @@ internal interface IFileDialogCustomize
     void GetControlItemState(
         [In] int dwIDCtl,
         [In] int dwIDItem,
-        [Out] out ShellNativeMethods.ControlState pdwState);
+        [Out] out ControlState pdwState);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetControlItemState(
         [In] int dwIDCtl,
         [In] int dwIDItem,
-        [In] ShellNativeMethods.ControlState dwState);
+        [In] ControlState dwState);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetSelectedControlItem(
@@ -268,7 +268,7 @@ internal interface IFileDialogEvents
     void OnShareViolation(
         [In, MarshalAs(UnmanagedType.Interface)] IFileDialog pfd,
         [In, MarshalAs(UnmanagedType.Interface)] IShellItem psi,
-        out ShellNativeMethods.FileDialogEventShareViolationResponse pResponse);
+        out FileDialogEventShareViolationResponse pResponse);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void OnTypeChange([In, MarshalAs(UnmanagedType.Interface)] IFileDialog pfd);
@@ -276,7 +276,7 @@ internal interface IFileDialogEvents
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void OnOverwrite([In, MarshalAs(UnmanagedType.Interface)] IFileDialog pfd,
         [In, MarshalAs(UnmanagedType.Interface)] IShellItem psi,
-        out ShellNativeMethods.FileDialogEventOverwriteResponse pResponse);
+        out FileDialogEventOverwriteResponse pResponse);
 }
 
 [ComImport(),
@@ -289,7 +289,7 @@ internal interface IFileOpenDialog : IFileDialog
     int Show([In] nint parent);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetFileTypes([In] uint cFileTypes, [In] ref ShellNativeMethods.FilterSpec rgFilterSpec);
+    void SetFileTypes([In] uint cFileTypes, [In] ref FilterSpec rgFilterSpec);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypeIndex([In] uint iFileType);
@@ -306,10 +306,10 @@ internal interface IFileOpenDialog : IFileDialog
     void Unadvise([In] uint dwCookie);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetOptions([In] ShellNativeMethods.FileOpenOptions fos);
+    void SetOptions([In] FileOpenOptions fos);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetOptions(out ShellNativeMethods.FileOpenOptions pfos);
+    void GetOptions(out FileOpenOptions pfos);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetDefaultFolder([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi);
@@ -342,7 +342,7 @@ internal interface IFileOpenDialog : IFileDialog
     void GetResult([MarshalAs(UnmanagedType.Interface)] out IShellItem ppsi);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void AddPlace([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, ShellNativeMethods.FileDialogAddPlacement fdap);
+    void AddPlace([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi, FileDialogAddPlacement fdap);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetDefaultExtension([In, MarshalAs(UnmanagedType.LPWStr)] string pszDefaultExtension);
@@ -378,7 +378,7 @@ internal interface IFileSaveDialog : IFileDialog
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypes(
         [In] uint cFileTypes,
-        [In] ref ShellNativeMethods.FilterSpec rgFilterSpec);
+        [In] ref FilterSpec rgFilterSpec);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypeIndex([In] uint iFileType);
@@ -395,10 +395,10 @@ internal interface IFileSaveDialog : IFileDialog
     void Unadvise([In] uint dwCookie);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetOptions([In] ShellNativeMethods.FileOpenOptions fos);
+    void SetOptions([In] FileOpenOptions fos);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetOptions(out ShellNativeMethods.FileOpenOptions pfos);
+    void GetOptions(out FileOpenOptions pfos);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetDefaultFolder([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi);
@@ -433,7 +433,7 @@ internal interface IFileSaveDialog : IFileDialog
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void AddPlace(
         [In, MarshalAs(UnmanagedType.Interface)] IShellItem psi,
-        ShellNativeMethods.FileDialogAddPlacement fdap);
+        FileDialogAddPlacement fdap);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetDefaultExtension([In, MarshalAs(UnmanagedType.LPWStr)] string pszDefaultExtension);

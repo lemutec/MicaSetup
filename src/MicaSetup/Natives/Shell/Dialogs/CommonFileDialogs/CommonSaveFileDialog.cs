@@ -152,23 +152,23 @@ public sealed class CommonSaveFileDialog : CommonFileDialog
         }
     }
 
-    internal override ShellNativeMethods.FileOpenOptions GetDerivedOptionFlags(ShellNativeMethods.FileOpenOptions flags)
+    internal override FileOpenOptions GetDerivedOptionFlags(FileOpenOptions flags)
     {
         if (overwritePrompt)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.OverwritePrompt;
+            flags |= FileOpenOptions.OverwritePrompt;
         }
         if (createPrompt)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.CreatePrompt;
+            flags |= FileOpenOptions.CreatePrompt;
         }
         if (!isExpandedMode)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.DefaultNoMiniMode;
+            flags |= FileOpenOptions.DefaultNoMiniMode;
         }
         if (alwaysAppendDefaultExtension)
         {
-            flags |= ShellNativeMethods.FileOpenOptions.StrictFileTypes;
+            flags |= FileOpenOptions.StrictFileTypes;
         }
         return flags;
     }

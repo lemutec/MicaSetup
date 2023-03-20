@@ -69,7 +69,7 @@ public class CommonFileDialogFilter
             rawDisplayName,
             CommonFileDialogFilter.GetDisplayExtensionList(extensions));
 
-    internal ShellNativeMethods.FilterSpec GetFilterSpec()
+    internal FilterSpec GetFilterSpec()
     {
         var filterList = new StringBuilder();
         foreach (var extension in extensions)
@@ -79,7 +79,7 @@ public class CommonFileDialogFilter
             filterList.Append("*.");
             filterList.Append(extension);
         }
-        return new ShellNativeMethods.FilterSpec(DisplayName, filterList.ToString());
+        return new FilterSpec(DisplayName, filterList.ToString());
     }
 
     private static string GetDisplayExtensionList(Collection<string> extensions)

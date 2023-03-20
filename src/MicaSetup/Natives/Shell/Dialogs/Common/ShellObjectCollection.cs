@@ -67,7 +67,7 @@ public class ShellObjectCollection : IEnumerable, IDisposable, IList<ShellObject
     public static ShellObjectCollection FromDataObject(System.Runtime.InteropServices.ComTypes.IDataObject dataObject)
     {
         var iid = new Guid(ShellIIDGuid.IShellItemArray);
-        ShellNativeMethods.SHCreateShellItemArrayFromDataObject(dataObject, ref iid, out var shellItemArray);
+        Shell32.SHCreateShellItemArrayFromDataObject(dataObject, ref iid, out var shellItemArray);
         return new ShellObjectCollection(shellItemArray, true);
     }
 
@@ -118,7 +118,7 @@ public class ShellObjectCollection : IEnumerable, IDisposable, IList<ShellObject
                 }
                 else
                 {
-                    offsets[index] = offsets[index - 1] + ShellNativeMethods.ILGetSize(idls[index - 1]);
+                    offsets[index] = offsets[index - 1] + Shell32.ILGetSize(idls[index - 1]);
                 }
             }
 
@@ -130,7 +130,7 @@ public class ShellObjectCollection : IEnumerable, IDisposable, IList<ShellObject
 
             foreach (var idl in idls)
             {
-                var data = new byte[ShellNativeMethods.ILGetSize(idl)];
+                var data = new byte[Shell32.ILGetSize(idl)];
                 Marshal.Copy(idl, data, 0, data.Length);
                 bwriter.Write(data, 0, data.Length);
             }

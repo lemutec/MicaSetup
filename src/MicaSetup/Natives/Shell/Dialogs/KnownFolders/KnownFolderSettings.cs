@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Natives;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -74,8 +75,8 @@ internal class KnownFolderSettings
 
             knownFolderProperties.redirection = knownFolderNative.GetRedirectionCapabilities();
 
-            knownFolderProperties.tooltip = CoreHelpers.GetStringResource(knownFolderProperties.tooltipResourceId);
-            knownFolderProperties.localizedName = CoreHelpers.GetStringResource(knownFolderProperties.localizedNameResourceId);
+            knownFolderProperties.tooltip = NativeMethods.GetStringResource(knownFolderProperties.tooltipResourceId);
+            knownFolderProperties.localizedName = NativeMethods.GetStringResource(knownFolderProperties.localizedNameResourceId);
 
             knownFolderProperties.folderId = knownFolderNative.GetId();
         }

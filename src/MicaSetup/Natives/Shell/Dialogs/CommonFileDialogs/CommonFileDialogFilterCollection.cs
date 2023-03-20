@@ -6,9 +6,9 @@ public class CommonFileDialogFilterCollection : Collection<CommonFileDialogFilte
 {
     internal CommonFileDialogFilterCollection() { }
 
-    internal ShellNativeMethods.FilterSpec[] GetAllFilterSpecs()
+    internal FilterSpec[] GetAllFilterSpecs()
     {
-        var filterSpecs = new ShellNativeMethods.FilterSpec[Count];
+        var filterSpecs = new FilterSpec[Count];
 
         for (var i = 0; i < Count; i++)
         {

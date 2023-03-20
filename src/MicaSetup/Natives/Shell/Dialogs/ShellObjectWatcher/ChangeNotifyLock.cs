@@ -11,22 +11,22 @@ internal class ChangeNotifyLock
 
     internal ChangeNotifyLock(Message message)
     {
-        var lockId = ShellNativeMethods.SHChangeNotification_Lock(
+        var lockId = Shell32.SHChangeNotification_Lock(
                 message.WParam, (int)message.LParam, out var pidl, out _event);
         try
         {
             Trace.TraceInformation("Message: {0}", (ShellObjectChangeTypes)_event);
 
-            var notifyStruct = pidl.MarshalAs<ShellNativeMethods.ShellNotifyStruct>();
+            var notifyStruct = pidl.MarshalAs<ShellNotifyStruct>();
 
             var guid = new Guid(ShellIIDGuid.IShellItem2);
             if (notifyStruct.item1 != 0 &&
                 (((ShellObjectChangeTypes)_event) & ShellObjectChangeTypes.SystemImageUpdate) == ShellObjectChangeTypes.None)
             {
-                if (CoreErrorHelper.Succeeded(ShellNativeMethods.SHCreateItemFromIDList(
+                if (CoreErrorHelper.Succeeded(Shell32.SHCreateItemFromIDList(
                     notifyStruct.item1, ref guid, out var nativeShellItem)))
                 {
-                    nativeShellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.FileSystemPath,
+                    nativeShellItem.GetDisplayName(ShellItemDesignNameOptions.FileSystemPath,
                         out var name);
                     ItemName = name;
 
@@ -40,10 +40,10 @@ internal class ChangeNotifyLock
 
             if (notifyStruct.item2 != 0)
             {
-                if (CoreErrorHelper.Succeeded(ShellNativeMethods.SHCreateItemFromIDList(
+                if (CoreErrorHelper.Succeeded(Shell32.SHCreateItemFromIDList(
                     notifyStruct.item2, ref guid, out var nativeShellItem)))
                 {
-                    nativeShellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.FileSystemPath,
+                    nativeShellItem.GetDisplayName(ShellItemDesignNameOptions.FileSystemPath,
                         out var name);
                     ItemName2 = name;
 
@@ -55,7 +55,7 @@ internal class ChangeNotifyLock
         {
             if (lockId != 0)
             {
-                ShellNativeMethods.SHChangeNotification_Unlock(lockId);
+                Shell32.SHChangeNotification_Unlock(lockId);
             }
         }
 

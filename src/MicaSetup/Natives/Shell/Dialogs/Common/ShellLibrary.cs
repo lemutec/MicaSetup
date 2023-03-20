@@ -41,8 +41,8 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         var guid = new Guid(ShellKFIDGuid.Libraries);
 
         var flags = overwrite ?
-                ShellNativeMethods.LibrarySaveOptions.OverrideExisting :
-                ShellNativeMethods.LibrarySaveOptions.FailIfThere;
+                LibrarySaveOptions.OverrideExisting :
+                LibrarySaveOptions.FailIfThere;
 
         nativeShellLibrary = (INativeShellLibrary)new ShellLibraryCoClass();
         nativeShellLibrary.SaveInKnownFolder(ref guid, libraryName, flags, out nativeShellItem);
@@ -62,8 +62,8 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         var guid = knownFolder.FolderId;
 
         var flags = overwrite ?
-                ShellNativeMethods.LibrarySaveOptions.OverrideExisting :
-                ShellNativeMethods.LibrarySaveOptions.FailIfThere;
+                LibrarySaveOptions.OverrideExisting :
+                LibrarySaveOptions.FailIfThere;
 
         nativeShellLibrary = (INativeShellLibrary)new ShellLibraryCoClass();
         nativeShellLibrary.SaveInKnownFolder(ref guid, libraryName, flags, out nativeShellItem);
@@ -85,12 +85,12 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         Name = libraryName;
 
         var flags = overwrite ?
-                ShellNativeMethods.LibrarySaveOptions.OverrideExisting :
-                ShellNativeMethods.LibrarySaveOptions.FailIfThere;
+                LibrarySaveOptions.OverrideExisting :
+                LibrarySaveOptions.FailIfThere;
 
         var guid = new Guid(ShellIIDGuid.IShellItem);
 
-        ShellNativeMethods.SHCreateItemFromParsingName(folderPath, 0, ref guid, out
+        Shell32.SHCreateItemFromParsingName(folderPath, 0, ref guid, out
         IShellItem shellItemIn);
 
         nativeShellLibrary = (INativeShellLibrary)new ShellLibraryCoClass();
@@ -157,7 +157,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
             var guid = new Guid(ShellIIDGuid.IShellItem);
 
             nativeShellLibrary.GetDefaultSaveFolder(
-                ShellNativeMethods.DefaultSaveFolderType.Detect,
+                DefaultSaveFolderType.Detect,
                 ref guid,
                 out var saveFolderItem);
 
@@ -179,10 +179,10 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
             var guid = new Guid(ShellIIDGuid.IShellItem);
 
-            ShellNativeMethods.SHCreateItemFromParsingName(fullPath, 0, ref guid, out IShellItem saveFolderItem);
+            Shell32.SHCreateItemFromParsingName(fullPath, 0, ref guid, out IShellItem saveFolderItem);
 
             nativeShellLibrary.SetDefaultSaveFolder(
-                ShellNativeMethods.DefaultSaveFolderType.Detect,
+                DefaultSaveFolderType.Detect,
                 saveFolderItem);
 
             nativeShellLibrary.Commit();
@@ -208,26 +208,26 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
     {
         get
         {
-            nativeShellLibrary.GetOptions(out ShellNativeMethods.LibraryOptions flags);
+            nativeShellLibrary.GetOptions(out LibraryOptions flags);
 
             return (
-                (flags & ShellNativeMethods.LibraryOptions.PinnedToNavigationPane) ==
-                ShellNativeMethods.LibraryOptions.PinnedToNavigationPane);
+                (flags & LibraryOptions.PinnedToNavigationPane) ==
+                LibraryOptions.PinnedToNavigationPane);
         }
         set
         {
-            var flags = ShellNativeMethods.LibraryOptions.Default;
+            var flags = LibraryOptions.Default;
 
             if (value)
             {
-                flags |= ShellNativeMethods.LibraryOptions.PinnedToNavigationPane;
+                flags |= LibraryOptions.PinnedToNavigationPane;
             }
             else
             {
-                flags &= ~ShellNativeMethods.LibraryOptions.PinnedToNavigationPane;
+                flags &= ~LibraryOptions.PinnedToNavigationPane;
             }
 
-            nativeShellLibrary.SetOptions(ShellNativeMethods.LibraryOptions.PinnedToNavigationPane, flags);
+            nativeShellLibrary.SetOptions(LibraryOptions.PinnedToNavigationPane, flags);
             nativeShellLibrary.Commit();
         }
     }
@@ -298,7 +298,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
         var guid = new Guid(ShellIIDGuid.IShellItem);
         var shellItemPath = System.IO.Path.Combine(librariesFolderPath, libraryName + FileExtension);
-        var hr = ShellNativeMethods.SHCreateItemFromParsingName(shellItemPath, 0, ref guid, out IShellItem nativeShellItem);
+        var hr = Shell32.SHCreateItemFromParsingName(shellItemPath, 0, ref guid, out IShellItem nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(hr))
             throw new ShellException(hr);
@@ -514,14 +514,14 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
         var staWorker = new Thread(() =>
         {
-            hr = ShellNativeMethods.SHShowManageLibraryUI(
+            hr = Shell32.SHShowManageLibraryUI(
                 shellLibrary.NativeShellItem,
                 windowHandle,
                 title,
                 instruction,
                 allowAllLocations ?
-                   ShellNativeMethods.LibraryManageDialogOptions.NonIndexableLocationWarning :
-                   ShellNativeMethods.LibraryManageDialogOptions.Default);
+                   LibraryManageDialogOptions.NonIndexableLocationWarning :
+                   LibraryManageDialogOptions.Default);
         });
 
         staWorker.SetApartmentState(ApartmentState.STA);
@@ -537,7 +537,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
         var shellItemArrayGuid = new Guid(ShellIIDGuid.IShellItemArray);
 
-        var hr = nativeShellLibrary.GetFolders(ShellNativeMethods.LibraryFolderFilter.AllItems, ref shellItemArrayGuid, out var itemArray);
+        var hr = nativeShellLibrary.GetFolders(LibraryFolderFilter.AllItems, ref shellItemArrayGuid, out var itemArray);
 
         if (!CoreErrorHelper.Succeeded(hr)) { return list; }
 
