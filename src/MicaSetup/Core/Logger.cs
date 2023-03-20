@@ -3,17 +3,15 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.IO.Abstractions;
+using System.IO;
 using System.Reflection;
 using System.Text;
+using DebugOut = System.Diagnostics.Debug;
 
 namespace MicaSetup.Core;
 
 public static class Logger
 {
-    private static readonly FileSystem FileSystem = new();
-    private static readonly IPath Path = FileSystem.Path;
-    private static readonly IDirectory Directory = FileSystem.Directory;
     private static readonly string ApplicationLogPath = SpecialPathHelper.GetFolder();
     private static readonly TextWriterTraceListener TraceListener = null!;
 
@@ -38,6 +36,12 @@ public static class Logger
     {
     }
 
+    [Conditional("DEBUG")]
+    public static void Debug(params object[] values)
+    {
+        Log("DEBUG", string.Join(" ", values));
+    }
+
     public static void Info(params object[] values)
     {
         Log("INFO", string.Join(" ", values));
@@ -56,9 +60,6 @@ public static class Logger
     public static void Fatal(params object[] values)
     {
         Log("FATAL", string.Join(" ", values));
-#if DEBUG && false
-        Debugger.Break();
-#endif
     }
 
     public static void Exception(Exception e, string message = null!)
@@ -84,7 +85,7 @@ public static class Logger
           .Append("|" + GetCallerInfo())
           .Append("|" + message);
 
-        Debug.WriteLine(sb.ToString());
+        DebugOut.WriteLine(sb.ToString());
         if (Option.Current.Logging)
         {
             TraceListener.WriteLine(sb.ToString());
