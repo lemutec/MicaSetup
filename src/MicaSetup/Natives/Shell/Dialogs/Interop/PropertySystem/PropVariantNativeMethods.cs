@@ -79,24 +79,24 @@ internal static class PropVariantNativeMethods
     internal static extern void PropVariantGetUInt64Elem([In] PropVariant propVar, [In] uint iElem, [Out] out ulong pnVal);
 
     [DllImport("OleAut32.dll", PreserveSig = false)]
-    internal static extern IntPtr SafeArrayAccessData(IntPtr psa);
+    internal static extern nint SafeArrayAccessData(nint psa);
 
     [DllImport("OleAut32.dll", PreserveSig = true)]
-    internal static extern IntPtr SafeArrayCreateVector(ushort vt, int lowerBound, uint cElems);
+    internal static extern nint SafeArrayCreateVector(ushort vt, int lowerBound, uint cElems);
 
     [DllImport("OleAut32.dll", PreserveSig = true)]
-    internal static extern uint SafeArrayGetDim(IntPtr psa);
+    internal static extern uint SafeArrayGetDim(nint psa);
 
     [DllImport("OleAut32.dll", PreserveSig = false)]
     [return: MarshalAs(UnmanagedType.IUnknown)]
-    internal static extern object SafeArrayGetElement(IntPtr psa, ref int rgIndices);
+    internal static extern object SafeArrayGetElement(nint psa, ref int rgIndices);
 
     [DllImport("OleAut32.dll", PreserveSig = false)]
-    internal static extern int SafeArrayGetLBound(IntPtr psa, uint nDim);
+    internal static extern int SafeArrayGetLBound(nint psa, uint nDim);
 
     [DllImport("OleAut32.dll", PreserveSig = false)]
-    internal static extern int SafeArrayGetUBound(IntPtr psa, uint nDim);
+    internal static extern int SafeArrayGetUBound(nint psa, uint nDim);
 
     [DllImport("OleAut32.dll", PreserveSig = false)]
-    internal static extern void SafeArrayUnaccessData(IntPtr psa);
+    internal static extern void SafeArrayUnaccessData(nint psa);
 }

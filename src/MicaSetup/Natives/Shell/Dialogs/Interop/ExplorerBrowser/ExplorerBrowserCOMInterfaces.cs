@@ -125,25 +125,25 @@ internal interface ICommDlgBrowser3
 {
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult OnDefaultCommand(IntPtr ppshv);
+    HResult OnDefaultCommand(nint ppshv);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult OnStateChange(
-        IntPtr ppshv,
+        nint ppshv,
         CommDlgBrowserStateChange uChange);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult IncludeObject(
-        IntPtr ppshv,
-        IntPtr pidl);
+        nint ppshv,
+        nint pidl);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetDefaultMenuText(
         IShellView shellView,
-        IntPtr buffer,
+        nint buffer,
         int bufferMaxLength);
 
     [PreserveSig]
@@ -154,7 +154,7 @@ internal interface ICommDlgBrowser3
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult Notify(
-        IntPtr pshv, CommDlgBrowserNotifyType notifyType);
+        nint pshv, CommDlgBrowserNotifyType notifyType);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -179,13 +179,13 @@ internal interface ICommDlgBrowser3
 internal interface IExplorerBrowser
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void Initialize(IntPtr hwndParent, [In] ref RECT prc, [In] FolderSettings pfs);
+    void Initialize(nint hwndParent, [In] ref RECT prc, [In] FolderSettings pfs);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void Destroy();
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetRect([In, Out] ref IntPtr phdwp, RECT rcBrowser);
+    void SetRect([In, Out] ref nint phdwp, RECT rcBrowser);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetPropertyBag([MarshalAs(UnmanagedType.LPWStr)] string pszPropertyBag);
@@ -199,7 +199,7 @@ internal interface IExplorerBrowser
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult Advise(IntPtr psbe, out uint pdwCookie);
+    HResult Advise(nint psbe, out uint pdwCookie);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -212,7 +212,7 @@ internal interface IExplorerBrowser
     void GetOptions(out ExplorerBrowserOptions pdwFlag);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void BrowseToIDList(IntPtr pidl, uint uFlags);
+    void BrowseToIDList(nint pidl, uint uFlags);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -226,7 +226,7 @@ internal interface IExplorerBrowser
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult GetCurrentView(ref Guid riid, out IntPtr ppv);
+    HResult GetCurrentView(ref Guid riid, out nint ppv);
 }
 
 [ComImport,
@@ -236,7 +236,7 @@ internal interface IExplorerBrowserEvents
 {
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult OnNavigationPending(IntPtr pidlFolder);
+    HResult OnNavigationPending(nint pidlFolder);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -244,11 +244,11 @@ internal interface IExplorerBrowserEvents
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult OnNavigationComplete(IntPtr pidlFolder);
+    HResult OnNavigationComplete(nint pidlFolder);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult OnNavigationFailed(IntPtr pidlFolder);
+    HResult OnNavigationFailed(nint pidlFolder);
 }
 
 [ComImport,
@@ -276,7 +276,7 @@ internal interface IFolderView
     void GetFolder(ref Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void Item(int iItemIndex, out IntPtr ppidl);
+    void Item(int iItemIndex, out nint ppidl);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void ItemCount(uint uFlags, out int pcItems);
@@ -291,7 +291,7 @@ internal interface IFolderView
     void GetFocusedItem(out int piItem);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetItemPosition(IntPtr pidl, out POINT ppt);
+    void GetItemPosition(nint pidl, out POINT ppt);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetSpacing([Out] out POINT ppt);
@@ -306,7 +306,7 @@ internal interface IFolderView
     void SelectItem(int iItem, uint dwFlags);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SelectAndPositionItems(uint cidl, IntPtr apidl, ref POINT apt, uint dwFlags);
+    void SelectAndPositionItems(uint cidl, nint apidl, ref POINT apt, uint dwFlags);
 }
 
 [ComImport,
@@ -325,7 +325,7 @@ internal interface IFolderView2 : IFolderView
     void GetFolder(ref Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void Item(int iItemIndex, out IntPtr ppidl);
+    void Item(int iItemIndex, out nint ppidl);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -342,7 +342,7 @@ internal interface IFolderView2 : IFolderView
     void GetFocusedItem(out int piItem);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetItemPosition(IntPtr pidl, out POINT ppt);
+    void GetItemPosition(nint pidl, out POINT ppt);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetSpacing([Out] out POINT ppt);
@@ -357,25 +357,25 @@ internal interface IFolderView2 : IFolderView
     void SelectItem(int iItem, uint dwFlags);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SelectAndPositionItems(uint cidl, IntPtr apidl, ref POINT apt, uint dwFlags);
+    void SelectAndPositionItems(uint cidl, nint apidl, ref POINT apt, uint dwFlags);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetGroupBy(IntPtr key, bool fAscending);
+    void SetGroupBy(nint key, bool fAscending);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetGroupBy(ref IntPtr pkey, ref bool pfAscending);
+    void GetGroupBy(ref nint pkey, ref bool pfAscending);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetViewProperty(IntPtr pidl, IntPtr propkey, object propvar);
+    void SetViewProperty(nint pidl, nint propkey, object propvar);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetViewProperty(IntPtr pidl, IntPtr propkey, out object ppropvar);
+    void GetViewProperty(nint pidl, nint propkey, out object ppropvar);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetTileViewProperties(IntPtr pidl, [MarshalAs(UnmanagedType.LPWStr)] string pszPropList);
+    void SetTileViewProperties(nint pidl, [MarshalAs(UnmanagedType.LPWStr)] string pszPropList);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetExtendedTileViewProperties(IntPtr pidl, [MarshalAs(UnmanagedType.LPWStr)] string pszPropList);
+    void SetExtendedTileViewProperties(nint pidl, [MarshalAs(UnmanagedType.LPWStr)] string pszPropList);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetText(int iType, [MarshalAs(UnmanagedType.LPWStr)] string pwszText);
@@ -390,10 +390,10 @@ internal interface IFolderView2 : IFolderView
     void GetSortColumnCount(out int pcColumns);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetSortColumns(IntPtr rgSortColumns, int cColumns);
+    void SetSortColumns(nint rgSortColumns, int cColumns);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetSortColumns(out IntPtr rgSortColumns, int cColumns);
+    void GetSortColumns(out nint rgSortColumns, int cColumns);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetItem(int iItem, ref Guid riid, [MarshalAs(UnmanagedType.IUnknown)] out object ppv);
@@ -408,7 +408,7 @@ internal interface IFolderView2 : IFolderView
     void GetSelection(bool fNoneImpliesFolder, out IShellItemArray ppsia);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetSelectionState(IntPtr pidl, out uint pdwFlags);
+    void GetSelectionState(nint pidl, out uint pdwFlags);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void InvokeVerbOnSelection([In, MarshalAs(UnmanagedType.LPWStr)] string pszVerb);
@@ -462,7 +462,7 @@ internal interface IServiceProvider
 {
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall)]
-    HResult QueryService(ref Guid guidService, ref Guid riid, out IntPtr ppvObject);
+    HResult QueryService(ref Guid guidService, ref Guid riid, out nint ppvObject);
 };
 
 [ComImport,
@@ -473,7 +473,7 @@ internal interface IShellView
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetWindow(
-        out IntPtr phwnd);
+        out nint phwnd);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -483,7 +483,7 @@ internal interface IShellView
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult TranslateAccelerator(
-        IntPtr pmsg);
+        nint pmsg);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -503,10 +503,10 @@ internal interface IShellView
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult CreateViewWindow(
         [MarshalAs(UnmanagedType.IUnknown)] object psvPrevious,
-        IntPtr pfs,
+        nint pfs,
         [MarshalAs(UnmanagedType.IUnknown)] object psb,
-        IntPtr prcView,
-        out IntPtr phWnd);
+        nint prcView,
+        out nint phWnd);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -515,13 +515,13 @@ internal interface IShellView
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetCurrentInfo(
-        out IntPtr pfs);
+        out nint pfs);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult AddPropertySheetPages(
         uint dwReserved,
-        IntPtr pfn,
+        nint pfn,
         uint lparam);
 
     [PreserveSig]
@@ -531,7 +531,7 @@ internal interface IShellView
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult SelectItem(
-        IntPtr pidlItem,
+        nint pidlItem,
         uint uFlags);
 
     [PreserveSig]
@@ -549,13 +549,13 @@ internal interface IShellView
 internal class ExplorerBrowserClass : IExplorerBrowser
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual void Initialize(IntPtr hwndParent, [In]ref RECT prc, [In] FolderSettings pfs);
+    public extern virtual void Initialize(nint hwndParent, [In]ref RECT prc, [In] FolderSettings pfs);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     public extern virtual void Destroy();
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual void SetRect([In, Out] ref IntPtr phdwp, RECT rcBrowser);
+    public extern virtual void SetRect([In, Out] ref nint phdwp, RECT rcBrowser);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     public extern virtual void SetPropertyBag([MarshalAs(UnmanagedType.LPWStr)] string pszPropertyBag);
@@ -569,7 +569,7 @@ internal class ExplorerBrowserClass : IExplorerBrowser
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual HResult Advise(IntPtr psbe, out uint pdwCookie);
+    public extern virtual HResult Advise(nint psbe, out uint pdwCookie);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -582,7 +582,7 @@ internal class ExplorerBrowserClass : IExplorerBrowser
     public extern virtual void GetOptions(out ExplorerBrowserOptions pdwFlag);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual void BrowseToIDList(IntPtr pidl, uint uFlags);
+    public extern virtual void BrowseToIDList(nint pidl, uint uFlags);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -596,7 +596,7 @@ internal class ExplorerBrowserClass : IExplorerBrowser
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual HResult GetCurrentView(ref Guid riid, out IntPtr ppv);
+    public extern virtual HResult GetCurrentView(ref Guid riid, out nint ppv);
 }
 
 [StructLayout(LayoutKind.Sequential, Pack = 4)]

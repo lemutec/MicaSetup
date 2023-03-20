@@ -18,7 +18,7 @@ internal class ShellFolderItems : IEnumerator<ShellObject>
         this.nativeShellFolder = nativeShellFolder;
 
         var hr = nativeShellFolder.NativeShellFolder.EnumObjects(
-            IntPtr.Zero,
+            0,
             ShellNativeMethods.ShellFolderEnumerationOptions.Folders | ShellNativeMethods.ShellFolderEnumerationOptions.NonFolders,
             out nativeEnumIdList);
 

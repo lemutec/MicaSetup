@@ -31,7 +31,7 @@ internal static class MessageListenerFilter
         }
     }
 
-    public static void Unregister(IntPtr listenerHandle, uint message)
+    public static void Unregister(nint listenerHandle, uint message)
     {
         lock (_registerLock)
         {
@@ -97,13 +97,13 @@ internal static class MessageListenerFilter
 
 internal class MessageListenerFilterRegistrationResult
 {
-    internal MessageListenerFilterRegistrationResult(IntPtr handle, uint msg)
+    internal MessageListenerFilterRegistrationResult(nint handle, uint msg)
     {
         WindowHandle = handle;
         Message = msg;
     }
 
-    public IntPtr WindowHandle { get; private set; }
+    public nint WindowHandle { get; private set; }
 
     public uint Message { get; private set; }
 }

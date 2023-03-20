@@ -22,41 +22,41 @@ internal static class TabbedThumbnailNativeMethods
     internal const uint WmDwmSendIconicThumbnail = 0x0323;
 
     [DllImport("user32.dll", SetLastError = true)]
-    internal static extern IntPtr ChangeWindowMessageFilter(uint message, uint dwFlag);
+    internal static extern nint ChangeWindowMessageFilter(uint message, uint dwFlag);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     internal static extern bool ClientToScreen(
-        IntPtr hwnd,
+        nint hwnd,
         ref POINT point);
 
     [DllImport("dwmapi.dll")]
-    internal static extern int DwmInvalidateIconicBitmaps(IntPtr hwnd);
+    internal static extern int DwmInvalidateIconicBitmaps(nint hwnd);
 
     [DllImport("dwmapi.dll")]
     internal static extern int DwmSetIconicLivePreviewBitmap(
-        IntPtr hwnd,
-        IntPtr hbitmap,
+        nint hwnd,
+        nint hbitmap,
         ref POINT ptClient,
         uint flags);
 
     [DllImport("dwmapi.dll")]
     internal static extern int DwmSetIconicLivePreviewBitmap(
-        IntPtr hwnd, IntPtr hbitmap, IntPtr ptClient, uint flags);
+        nint hwnd, nint hbitmap, nint ptClient, uint flags);
 
     [DllImport("dwmapi.dll")]
     internal static extern int DwmSetIconicThumbnail(
-        IntPtr hwnd, IntPtr hbitmap, uint flags);
+        nint hwnd, nint hbitmap, uint flags);
 
     [DllImport("dwmapi.dll", PreserveSig = true)]
     internal static extern int DwmSetWindowAttribute(
-        IntPtr hwnd,
+        nint hwnd,
         //DWMWA_* values.
         uint dwAttributeToSet,
-        IntPtr pvAttributeValue,
+        nint pvAttributeValue,
         uint cbAttribute);
 
-    internal static void EnableCustomWindowPreview(IntPtr hwnd, bool enable)
+    internal static void EnableCustomWindowPreview(nint hwnd, bool enable)
     {
         var t = Marshal.AllocHGlobal(4);
         Marshal.WriteInt32(t, enable ? 1 : 0);
@@ -83,9 +83,9 @@ internal static class TabbedThumbnailNativeMethods
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
-    internal static extern bool GetClientRect(IntPtr hwnd, ref RECT rect);
+    internal static extern bool GetClientRect(nint hwnd, ref RECT rect);
 
-    internal static bool GetClientSize(IntPtr hwnd, out System.Drawing.Size size)
+    internal static bool GetClientSize(nint hwnd, out System.Drawing.Size size)
     {
         var rect = new RECT();
         if (!GetClientRect(hwnd, ref rect))
@@ -98,16 +98,16 @@ internal static class TabbedThumbnailNativeMethods
     }
 
     [DllImport("user32.dll")]
-    internal static extern IntPtr GetWindowDC(IntPtr hwnd);
+    internal static extern nint GetWindowDC(nint hwnd);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
-    internal static extern bool GetWindowRect(IntPtr hwnd, ref RECT rect);
+    internal static extern bool GetWindowRect(nint hwnd, ref RECT rect);
 
     [DllImport("user32.dll")]
-    internal static extern int ReleaseDC(IntPtr hwnd, IntPtr hdc);
+    internal static extern int ReleaseDC(nint hwnd, nint hdc);
 
-    internal static void SetIconicThumbnail(IntPtr hwnd, IntPtr hBitmap)
+    internal static void SetIconicThumbnail(nint hwnd, nint hBitmap)
     {
         var rc = DwmSetIconicThumbnail(
             hwnd,
@@ -119,12 +119,12 @@ internal static class TabbedThumbnailNativeMethods
         }
     }
 
-    internal static void SetPeekBitmap(IntPtr hwnd, IntPtr bitmap, bool displayFrame)
+    internal static void SetPeekBitmap(nint hwnd, nint bitmap, bool displayFrame)
     {
         var rc = DwmSetIconicLivePreviewBitmap(
             hwnd,
             bitmap,
-            IntPtr.Zero,
+            0,
             displayFrame ? DisplayFrame : (uint)0);
         if (rc != 0)
         {
@@ -132,7 +132,7 @@ internal static class TabbedThumbnailNativeMethods
         }
     }
 
-    internal static void SetPeekBitmap(IntPtr hwnd, IntPtr bitmap, System.Drawing.Point offset, bool displayFrame)
+    internal static void SetPeekBitmap(nint hwnd, nint bitmap, System.Drawing.Point offset, bool displayFrame)
     {
         var nativePoint = new POINT(offset.X, offset.Y);
         var rc = DwmSetIconicLivePreviewBitmap(
@@ -158,7 +158,7 @@ internal static class TabbedThumbnailNativeMethods
     [DllImport("gdi32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     internal static extern bool StretchBlt(
-        IntPtr hDestDC, int destX, int destY, int destWidth, int destHeight,
-        IntPtr hSrcDC, int srcX, int srcY, int srcWidth, int srcHeight,
+        nint hDestDC, int destX, int destY, int destWidth, int destHeight,
+        nint hSrcDC, int srcX, int srcY, int srcWidth, int srcHeight,
         uint operation);
 }

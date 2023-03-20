@@ -12,7 +12,7 @@ internal static class ImageWpfExtension
 {
     public static ImageSource ToImageSource(this Bitmap bitmap)
     {
-        IntPtr hBitmap = bitmap.GetHbitmap();
+        nint hBitmap = bitmap.GetHbitmap();
         ImageSource wpfBitmap = Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
         _ = !Gdi32.DeleteObject(hBitmap);
         return wpfBitmap;

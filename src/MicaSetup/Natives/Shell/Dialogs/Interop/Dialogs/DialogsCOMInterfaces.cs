@@ -13,7 +13,7 @@ internal interface IFileDialog : IModalWindow
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime),
     PreserveSig]
-    int Show([In] IntPtr parent);
+    int Show([In] nint parent);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypes(
@@ -86,7 +86,7 @@ internal interface IFileDialog : IModalWindow
     void ClearClientData();
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetFilter([MarshalAs(UnmanagedType.Interface)] IntPtr pFilter);
+    void SetFilter([MarshalAs(UnmanagedType.Interface)] nint pFilter);
 }
 
 [ComImport,
@@ -286,7 +286,7 @@ internal interface IFileOpenDialog : IFileDialog
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime),
     PreserveSig]
-    int Show([In] IntPtr parent);
+    int Show([In] nint parent);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypes([In] uint cFileTypes, [In] ref ShellNativeMethods.FilterSpec rgFilterSpec);
@@ -357,7 +357,7 @@ internal interface IFileOpenDialog : IFileDialog
     void ClearClientData();
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetFilter([MarshalAs(UnmanagedType.Interface)] IntPtr pFilter);
+    void SetFilter([MarshalAs(UnmanagedType.Interface)] nint pFilter);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetResults([MarshalAs(UnmanagedType.Interface)] out IShellItemArray ppenum);
@@ -373,7 +373,7 @@ internal interface IFileSaveDialog : IFileDialog
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime),
     PreserveSig]
-    int Show([In] IntPtr parent);
+    int Show([In] nint parent);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFileTypes(
@@ -448,14 +448,14 @@ internal interface IFileSaveDialog : IFileDialog
     void ClearClientData();
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetFilter([MarshalAs(UnmanagedType.Interface)] IntPtr pFilter);
+    void SetFilter([MarshalAs(UnmanagedType.Interface)] nint pFilter);
 
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetSaveAsItem([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetProperties([In, MarshalAs(UnmanagedType.Interface)] IntPtr pStore);
+    void SetProperties([In, MarshalAs(UnmanagedType.Interface)] nint pStore);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -470,9 +470,9 @@ internal interface IFileSaveDialog : IFileDialog
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void ApplyProperties(
         [In, MarshalAs(UnmanagedType.Interface)] IShellItem psi,
-        [In, MarshalAs(UnmanagedType.Interface)] IntPtr pStore,
-        [In, ComAliasName("ShellObjects.wireHWND")] ref IntPtr hwnd,
-        [In, MarshalAs(UnmanagedType.Interface)] IntPtr pSink);
+        [In, MarshalAs(UnmanagedType.Interface)] nint pStore,
+        [In, ComAliasName("ShellObjects.wireHWND")] ref nint hwnd,
+        [In, MarshalAs(UnmanagedType.Interface)] nint pSink);
 }
 
 #pragma warning restore 0108

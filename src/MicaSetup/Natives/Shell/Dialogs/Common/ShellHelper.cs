@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace MicaSetup.Shell.Dialogs;
 
+#pragma warning disable IDE0059
+
 internal static class ShellHelper
 {
     internal static PropertyKey ItemTypePropertyKey = new PropertyKey(new Guid("28636AA6-953D-11D2-B5D6-00C04FD918D0"), 11);
@@ -34,42 +36,41 @@ internal static class ShellHelper
 
         string path = null!;
 
-        var pszPath = IntPtr.Zero;
-        var hr = shellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out pszPath);
+        var hr = shellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out nint pszPath);
 
         if (hr != HResult.Ok && hr != HResult.InvalidArguments)
         {
             throw new ShellException(LocalizedMessages.ShellHelperGetParsingNameFailed, hr);
         }
 
-        if (pszPath != IntPtr.Zero)
+        if (pszPath != 0)
         {
             path = Marshal.PtrToStringAuto(pszPath);
             Marshal.FreeCoTaskMem(pszPath);
-            pszPath = IntPtr.Zero;
+            pszPath = 0;
         }
 
         return path;
     }
 
-    internal static IntPtr PidlFromParsingName(string name)
+    internal static nint PidlFromParsingName(string name)
     {
         var retCode = ShellNativeMethods.SHParseDisplayName(
-            name, IntPtr.Zero, out var pidl, 0,
-            out var sfgao);
+            name, 0, out nint pidl, 0,
+            out _);
 
-        return (CoreErrorHelper.Succeeded(retCode) ? pidl : IntPtr.Zero);
+        return (CoreErrorHelper.Succeeded(retCode) ? pidl : 0);
     }
 
-    internal static IntPtr PidlFromShellItem(IShellItem nativeShellItem)
+    internal static nint PidlFromShellItem(IShellItem nativeShellItem)
     {
         var unknown = Marshal.GetIUnknownForObject(nativeShellItem);
         return PidlFromUnknown(unknown);
     }
 
-    internal static IntPtr PidlFromUnknown(IntPtr unknown)
+    internal static nint PidlFromUnknown(nint unknown)
     {
-        var retCode = ShellNativeMethods.SHGetIDListFromObject(unknown, out var pidl);
-        return (CoreErrorHelper.Succeeded(retCode) ? pidl : IntPtr.Zero);
+        var retCode = ShellNativeMethods.SHGetIDListFromObject(unknown, out nint pidl);
+        return (CoreErrorHelper.Succeeded(retCode) ? pidl : 0);
     }
 }

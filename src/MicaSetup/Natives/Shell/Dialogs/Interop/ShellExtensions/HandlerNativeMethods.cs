@@ -38,7 +38,7 @@ public interface IInitializeWithStream
 public interface IThumbnailProvider
 {
     [SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "2#"), System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "1#")]
-    void GetThumbnail(uint squareLength, out IntPtr bitmapHandle, out uint bitmapType);
+    void GetThumbnail(uint squareLength, out nint bitmapHandle, out uint bitmapType);
 }
 
 [ComImport]
@@ -56,7 +56,7 @@ internal interface IObjectWithSite
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 internal interface IOleWindow
 {
-    void GetWindow(out IntPtr phwnd);
+    void GetWindow(out nint phwnd);
 
     void ContextSensitiveHelp([MarshalAs(UnmanagedType.Bool)] bool fEnterMode);
 }
@@ -66,7 +66,7 @@ internal interface IOleWindow
 [Guid("8895b1c6-b41f-4c1c-a562-0d564250836f")]
 internal interface IPreviewHandler
 {
-    void SetWindow(IntPtr hwnd, ref RECT rect);
+    void SetWindow(nint hwnd, ref RECT rect);
 
     void SetRect(ref RECT rect);
 
@@ -76,7 +76,7 @@ internal interface IPreviewHandler
 
     void SetFocus();
 
-    void QueryFocus(out IntPtr phwnd);
+    void QueryFocus(out nint phwnd);
 
     [PreserveSig]
     HResult TranslateAccelerator(ref MSG pmsg);
@@ -87,7 +87,7 @@ internal interface IPreviewHandler
 [Guid("fec87aaf-35f9-447a-adb7-20234491401a")]
 internal interface IPreviewHandlerFrame
 {
-    void GetWindowContext(IntPtr pinfo);
+    void GetWindowContext(nint pinfo);
 
     [PreserveSig]
     HResult TranslateAccelerator(ref MSG pmsg);
@@ -119,10 +119,10 @@ internal struct COLORREF
 [StructLayout(LayoutKind.Sequential)]
 internal struct MSG
 {
-    public IntPtr hwnd;
+    public nint hwnd;
     public int message;
-    public IntPtr wParam;
-    public IntPtr lParam;
+    public nint wParam;
+    public nint lParam;
     public int time;
     public int pt_x;
     public int pt_y;
@@ -135,10 +135,10 @@ internal static class HandlerNativeMethods
     internal static readonly Guid ThumbnailProviderGuid = new Guid("{e357fccd-a995-4576-b01f-234630154e96}");
 
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
-    internal static extern IntPtr GetFocus();
+    internal static extern nint GetFocus();
 
     [DllImport("user32.dll")]
-    internal static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
+    internal static extern nint SetParent(nint hWndChild, nint hWndNewParent);
 }
 
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]

@@ -14,7 +14,7 @@ public class StockIcon : IDisposable
     private bool linkOverlay;
     private bool selected;
     private bool invalidateIcon = true;
-    private IntPtr hIcon = IntPtr.Zero;
+    private nint hIcon = 0;
 
     public StockIcon(StockIconIdentifier id)
     {
@@ -77,7 +77,7 @@ public class StockIcon : IDisposable
         {
             UpdateHIcon();
 
-            return hIcon != IntPtr.Zero ? Bitmap.FromHicon(hIcon) : null!;
+            return hIcon != 0 ? Bitmap.FromHicon(hIcon) : null!;
         }
     }
 
@@ -87,7 +87,7 @@ public class StockIcon : IDisposable
         {
             UpdateHIcon();
 
-            return (hIcon != IntPtr.Zero) ?
+            return (hIcon != 0) ?
                 Imaging.CreateBitmapSourceFromHIcon(hIcon, Int32Rect.Empty, null!) : null!;
         }
     }
@@ -98,7 +98,7 @@ public class StockIcon : IDisposable
         {
             UpdateHIcon();
 
-            return hIcon != IntPtr.Zero ? Icon.FromHandle(hIcon) : null!;
+            return hIcon != 0 ? Icon.FromHandle(hIcon) : null!;
         }
     }
 
@@ -106,7 +106,7 @@ public class StockIcon : IDisposable
     {
         if (invalidateIcon)
         {
-            if (hIcon != IntPtr.Zero)
+            if (hIcon != 0)
                 _ = CoreNativeMethods.DestroyIcon(hIcon);
 
             hIcon = GetHIcon();
@@ -115,7 +115,7 @@ public class StockIcon : IDisposable
         }
     }
 
-    private IntPtr GetHIcon()
+    private nint GetHIcon()
     {
         var flags = StockIconsNativeMethods.StockIconOptions.Handle;
 
@@ -159,7 +159,7 @@ public class StockIcon : IDisposable
                     identifier));
             }
 
-            return IntPtr.Zero;
+            return 0;
         }
 
         return info.Handle;
@@ -171,7 +171,7 @@ public class StockIcon : IDisposable
         {
         }
 
-        if (hIcon != IntPtr.Zero)
+        if (hIcon != 0)
             _ = CoreNativeMethods.DestroyIcon(hIcon);
     }
 

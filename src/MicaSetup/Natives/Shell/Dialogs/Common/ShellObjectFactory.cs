@@ -81,7 +81,7 @@ internal static class ShellObjectFactory
         }
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
-        var retCode = ShellNativeMethods.SHCreateItemFromParsingName(parsingName, IntPtr.Zero, ref guid, out
+        var retCode = ShellNativeMethods.SHCreateItemFromParsingName(parsingName, 0, ref guid, out
         IShellItem2 nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(retCode))
@@ -91,7 +91,7 @@ internal static class ShellObjectFactory
         return ShellObjectFactory.Create(nativeShellItem);
     }
 
-    internal static ShellObject Create(IntPtr idListPtr)
+    internal static ShellObject Create(nint idListPtr)
     {
         OsHelper.ThrowIfNotVista();
 
@@ -103,10 +103,10 @@ internal static class ShellObjectFactory
         return ShellObjectFactory.Create(nativeShellItem);
     }
 
-    internal static ShellObject Create(IntPtr idListPtr, ShellContainer parent)
+    internal static ShellObject Create(nint idListPtr, ShellContainer parent)
     {
         var retCode = ShellNativeMethods.SHCreateShellItem(
-            IntPtr.Zero,
+            0,
             parent.NativeShellFolder,
             idListPtr, out var nativeShellItem);
 
@@ -117,7 +117,7 @@ internal static class ShellObjectFactory
 
     private static bool IsVirtualKnownFolder(IShellItem2 nativeShellItem2)
     {
-        var pidl = IntPtr.Zero;
+        nint pidl = 0;
         try
         {
             IKnownFolderNative nativeFolder = null!;

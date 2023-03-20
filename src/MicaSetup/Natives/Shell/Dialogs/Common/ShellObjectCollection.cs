@@ -95,7 +95,7 @@ public class ShellObjectCollection : IEnumerable, IDisposable, IList<ShellObject
 
             var itemCount = (uint)(content.Count + 1);
 
-            var idls = new IntPtr[itemCount];
+            var idls = new nint[itemCount];
 
             for (var index = 0; index < itemCount; index++)
             {

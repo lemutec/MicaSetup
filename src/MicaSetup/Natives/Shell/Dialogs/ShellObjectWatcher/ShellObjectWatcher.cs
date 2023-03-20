@@ -10,7 +10,7 @@ public class ShellObjectWatcher : IDisposable
     private readonly bool _recursive;
 
     private readonly ChangeNotifyEventManager _manager = new();
-    private readonly IntPtr _listenerHandle;
+    private readonly nint _listenerHandle;
     private readonly uint _message;
 
     private uint _registrationId;
@@ -408,7 +408,7 @@ public class ShellObjectWatcher : IDisposable
         Stop();
         _manager.UnregisterAll();
 
-        if (_listenerHandle != IntPtr.Zero)
+        if (_listenerHandle != 0)
         {
             MessageListenerFilter.Unregister(_listenerHandle, _message);
         }

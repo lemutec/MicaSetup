@@ -12,7 +12,7 @@ public sealed class PropVariant : IDisposable
     private struct Blob
     {
         public int Number;
-        public IntPtr Pointer;
+        public nint Pointer;
     }
 
     private static Dictionary<Type, Action<PropVariant, Array, uint>> _vectorActions = null!;
@@ -196,7 +196,7 @@ public sealed class PropVariant : IDisposable
     private readonly Blob _blob;
 
     [FieldOffset(8)]
-    private IntPtr _ptr;
+    private nint _ptr;
 
     [FieldOffset(8)]
     private readonly int _int32;
@@ -243,83 +243,6 @@ public sealed class PropVariant : IDisposable
         _ptr = Marshal.StringToCoTaskMemUni(value);
     }
 
-    public PropVariant(string[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromStringVector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(bool[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromBooleanVector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(short[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromInt16Vector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(ushort[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromUInt16Vector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(int[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromInt32Vector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(uint[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromUInt32Vector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(long[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromInt64Vector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(ulong[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromUInt64Vector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(double[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        PropVariantNativeMethods.InitPropVariantFromDoubleVector(value, (uint)value.Length, this);
-    }
-
-    public PropVariant(DateTime[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-        System.Runtime.InteropServices.ComTypes.FILETIME[] fileTimeArr =
-            new System.Runtime.InteropServices.ComTypes.FILETIME[value.Length];
-
-        for (int i = 0; i < value.Length; i++)
-        {
-            fileTimeArr[i] = DateTimeToFileTime(value[i]);
-        }
-
-        PropVariantNativeMethods.InitPropVariantFromFileTimeVector(fileTimeArr, (uint)fileTimeArr.Length, this);
-    }
-
     public PropVariant(bool value)
     {
         _valueType = (ushort)VarEnum.VT_BOOL;
@@ -334,130 +257,16 @@ public sealed class PropVariant : IDisposable
         PropVariantNativeMethods.InitPropVariantFromFileTime(ref ft, this);
     }
 
-    public PropVariant(byte value)
-    {
-        _valueType = (ushort)VarEnum.VT_UI1;
-        _byte = value;
-    }
-
-    public PropVariant(sbyte value)
-    {
-        _valueType = (ushort)VarEnum.VT_I1;
-        _sbyte = value;
-    }
-
-    public PropVariant(short value)
-    {
-        _valueType = (ushort)VarEnum.VT_I2;
-        _short = value;
-    }
-
-    public PropVariant(ushort value)
-    {
-        _valueType = (ushort)VarEnum.VT_UI2;
-        _ushort = value;
-    }
-
     public PropVariant(int value)
     {
         _valueType = (ushort)VarEnum.VT_I4;
         _int32 = value;
     }
 
-    public PropVariant(uint value)
-    {
-        _valueType = (ushort)VarEnum.VT_UI4;
-        _uint32 = value;
-    }
-
-    public PropVariant(decimal value)
-    {
-        _decimal = value;
-
-        _valueType = (ushort)VarEnum.VT_DECIMAL;
-    }
-
-    public PropVariant(decimal[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        _valueType = (ushort)(VarEnum.VT_DECIMAL | VarEnum.VT_VECTOR);
-        _int32 = value.Length;
-
-        _blob.Pointer = Marshal.AllocCoTaskMem(value.Length * sizeof(decimal));
-        for (int i = 0; i < value.Length; i++)
-        {
-            int[] bits = decimal.GetBits(value[i]);
-            Marshal.Copy(bits, 0, _blob.Pointer, bits.Length);
-        }
-    }
-
-    public PropVariant(float value)
-    {
-        _valueType = (ushort)VarEnum.VT_R4;
-
-        _float = value;
-    }
-
-    public PropVariant(float[] value)
-    {
-        if (value == null) { throw new ArgumentNullException("value"); }
-
-        _valueType = (ushort)(VarEnum.VT_R4 | VarEnum.VT_VECTOR);
-        _int32 = value.Length;
-
-        _blob.Pointer = Marshal.AllocCoTaskMem(value.Length * sizeof(float));
-
-        Marshal.Copy(value, 0, _blob.Pointer, value.Length);
-    }
-
-    public PropVariant(long value)
-    {
-        _long = value;
-        _valueType = (ushort)VarEnum.VT_I8;
-    }
-
-    public PropVariant(ulong value)
-    {
-        _valueType = (ushort)VarEnum.VT_UI8;
-        _ulong = value;
-    }
-
     public PropVariant(double value)
     {
         _valueType = (ushort)VarEnum.VT_R8;
         _double = value;
-    }
-
-    internal void SetIUnknown(object value)
-    {
-        _valueType = (ushort)VarEnum.VT_UNKNOWN;
-        _ptr = Marshal.GetIUnknownForObject(value);
-    }
-
-    internal void SetSafeArray(Array array)
-    {
-        if (array == null) { throw new ArgumentNullException("array"); }
-        const ushort vtUnknown = 13;
-        IntPtr psa = PropVariantNativeMethods.SafeArrayCreateVector(vtUnknown, 0, (uint)array.Length);
-
-        IntPtr pvData = PropVariantNativeMethods.SafeArrayAccessData(psa);
-        try
-        {
-            for (int i = 0; i < array.Length; ++i)
-            {
-                object obj = array.GetValue(i);
-                IntPtr punk = (obj != null) ? Marshal.GetIUnknownForObject(obj) : IntPtr.Zero;
-                Marshal.WriteIntPtr(pvData, i * IntPtr.Size, punk);
-            }
-        }
-        finally
-        {
-            PropVariantNativeMethods.SafeArrayUnaccessData(psa);
-        }
-
-        _valueType = (ushort)VarEnum.VT_ARRAY | (ushort)VarEnum.VT_UNKNOWN;
-        _ptr = psa;
     }
 
     public VarEnum VarType
@@ -532,7 +341,7 @@ public sealed class PropVariant : IDisposable
     {
         byte[] blobData = new byte[_int32];
 
-        IntPtr pBlobData = _blob.Pointer;
+        nint pBlobData = _blob.Pointer;
         Marshal.Copy(pBlobData, blobData, 0, _int32);
 
         return blobData;
@@ -562,7 +371,7 @@ public sealed class PropVariant : IDisposable
         return array;
     }
 
-    private static Array CrackSingleDimSafeArray(IntPtr psa)
+    private static Array CrackSingleDimSafeArray(nint psa)
     {
         uint cDims = PropVariantNativeMethods.SafeArrayGetDim(psa);
         if (cDims != 1)

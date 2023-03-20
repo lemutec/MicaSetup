@@ -23,11 +23,11 @@ internal interface IPropertyDescription
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime),
     PreserveSig]
-    HResult GetDisplayName(out IntPtr ppszName);
+    HResult GetDisplayName(out nint ppszName);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult GetEditInvitation(out IntPtr ppszInvite);
+    HResult GetEditInvitation(out nint ppszInvite);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -65,7 +65,7 @@ internal interface IPropertyDescription
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult GetSortDescriptionLabel([In] bool fDescending, out IntPtr ppszDescription);
+    HResult GetSortDescriptionLabel([In] bool fDescending, out nint ppszDescription);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -153,7 +153,7 @@ internal interface IPropertyDescription2 : IPropertyDescription
         out PropertyConditionOperation popDefault);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetEnumTypeList([In] ref Guid riid, out IntPtr ppv);
+    void GetEnumTypeList([In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void CoerceToCanonicalValue([In, Out] PropVariant ppropvar);
@@ -245,7 +245,7 @@ internal interface IPropertyEnumTypeList
     void GetConditionAt(
     [In] uint index,
     [In] ref Guid riid,
-    out IntPtr ppv);
+    out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void FindMatchingIndex(

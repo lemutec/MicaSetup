@@ -11,15 +11,15 @@ internal static class KnownFoldersSafeNativeMethods
     internal struct NativeFolderDefinition
     {
         internal FolderCategory category;
-        internal IntPtr name;
-        internal IntPtr description;
+        internal nint name;
+        internal nint description;
         internal Guid parentId;
-        internal IntPtr relativePath;
-        internal IntPtr parsingName;
-        internal IntPtr tooltip;
-        internal IntPtr localizedName;
-        internal IntPtr icon;
-        internal IntPtr security;
+        internal nint relativePath;
+        internal nint parsingName;
+        internal nint tooltip;
+        internal nint localizedName;
+        internal nint icon;
+        internal nint security;
         internal uint attributes;
         internal DefinitionOptions definitionOptions;
         internal Guid folderTypeId;

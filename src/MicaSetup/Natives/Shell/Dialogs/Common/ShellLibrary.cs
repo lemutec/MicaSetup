@@ -90,7 +90,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
         var guid = new Guid(ShellIIDGuid.IShellItem);
 
-        ShellNativeMethods.SHCreateItemFromParsingName(folderPath, IntPtr.Zero, ref guid, out
+        ShellNativeMethods.SHCreateItemFromParsingName(folderPath, 0, ref guid, out
         IShellItem shellItemIn);
 
         nativeShellLibrary = (INativeShellLibrary)new ShellLibraryCoClass();
@@ -179,7 +179,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
             var guid = new Guid(ShellIIDGuid.IShellItem);
 
-            ShellNativeMethods.SHCreateItemFromParsingName(fullPath, IntPtr.Zero, ref guid, out IShellItem saveFolderItem);
+            ShellNativeMethods.SHCreateItemFromParsingName(fullPath, 0, ref guid, out IShellItem saveFolderItem);
 
             nativeShellLibrary.SetDefaultSaveFolder(
                 ShellNativeMethods.DefaultSaveFolderType.Detect,
@@ -298,7 +298,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
         var guid = new Guid(ShellIIDGuid.IShellItem);
         var shellItemPath = System.IO.Path.Combine(librariesFolderPath, libraryName + FileExtension);
-        var hr = ShellNativeMethods.SHCreateItemFromParsingName(shellItemPath, IntPtr.Zero, ref guid, out IShellItem nativeShellItem);
+        var hr = ShellNativeMethods.SHCreateItemFromParsingName(shellItemPath, 0, ref guid, out IShellItem nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(hr))
             throw new ShellException(hr);
@@ -359,19 +359,19 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         return new ShellLibrary(sourceKnownFolder, isReadOnly);
     }
 
-    public static void ShowManageLibraryUI(string libraryName, string folderPath, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
+    public static void ShowManageLibraryUI(string libraryName, string folderPath, nint windowHandle, string title, string instruction, bool allowAllLocations)
     {
         using ShellLibrary shellLibrary = ShellLibrary.Load(libraryName, folderPath, true);
         ShowManageLibraryUI(shellLibrary, windowHandle, title, instruction, allowAllLocations);
     }
 
-    public static void ShowManageLibraryUI(string libraryName, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
+    public static void ShowManageLibraryUI(string libraryName, nint windowHandle, string title, string instruction, bool allowAllLocations)
     {
         using ShellLibrary shellLibrary = ShellLibrary.Load(libraryName, true);
         ShowManageLibraryUI(shellLibrary, windowHandle, title, instruction, allowAllLocations);
     }
 
-    public static void ShowManageLibraryUI(IKnownFolder sourceKnownFolder, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
+    public static void ShowManageLibraryUI(IKnownFolder sourceKnownFolder, nint windowHandle, string title, string instruction, bool allowAllLocations)
     {
         using ShellLibrary shellLibrary = Load(sourceKnownFolder, true);
         ShowManageLibraryUI(shellLibrary, windowHandle, title, instruction, allowAllLocations);
@@ -508,7 +508,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         throw new ArgumentOutOfRangeException("folderTypeGuid", LocalizedMessages.ShellLibraryInvalidFolderType);
     }
 
-    private static void ShowManageLibraryUI(ShellLibrary shellLibrary, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
+    private static void ShowManageLibraryUI(ShellLibrary shellLibrary, nint windowHandle, string title, string instruction, bool allowAllLocations)
     {
         var hr = 0;
 

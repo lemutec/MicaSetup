@@ -1,3 +1,4 @@
+using MicaSetup.Natives;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -102,7 +103,7 @@ internal interface IEnumIDList
 {
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult Next(uint celt, out IntPtr rgelt, out uint pceltFetched);
+    HResult Next(uint celt, out nint rgelt, out uint pceltFetched);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -123,7 +124,7 @@ internal interface IEnumIDList
 internal interface IEnumUnknown
 {
     [PreserveSig]
-    HResult Next(uint requestedNumber, ref IntPtr buffer, ref uint fetchedNumber);
+    HResult Next(uint requestedNumber, ref nint buffer, ref uint fetchedNumber);
 
     [PreserveSig]
     HResult Skip(uint number);
@@ -142,7 +143,7 @@ internal interface IModalWindow
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime),
     PreserveSig]
-    int Show([In] IntPtr parent);
+    int Show([In] nint parent);
 }
 
 [ComImport,
@@ -205,7 +206,7 @@ internal interface IQueryParser
     HResult SetMultiOption([In] StructuredQueryMultipleOption option, [In, MarshalAs(UnmanagedType.LPWStr)] string pszOptionKey, [In] PropVariant pOptionValue);
 
     [PreserveSig]
-    HResult GetSchemaProvider([Out] out IntPtr ppSchemaProvider);
+    HResult GetSchemaProvider([Out] out nint ppSchemaProvider);
 
     [PreserveSig]
     HResult RestateToString([In] ICondition pCondition, [In] bool fUseEnglish, [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszQueryString);
@@ -262,10 +263,10 @@ internal interface IQuerySolution : IConditionFactory
     HResult GetQuery([Out, MarshalAs(UnmanagedType.Interface)] out ICondition ppQueryNode, [Out, MarshalAs(UnmanagedType.Interface)] out IEntity ppMainType);
 
     [PreserveSig]
-    HResult GetErrors([In] ref Guid riid, [Out] out IntPtr ppParseErrors);
+    HResult GetErrors([In] ref Guid riid, [Out] out nint ppParseErrors);
 
     [PreserveSig]
-    HResult GetLexicalData([MarshalAs(UnmanagedType.LPWStr)] out string ppszInputString, [Out] out IntPtr ppTokens, [Out] out uint plcid, [Out] /* IUnknown** */ out IntPtr ppWordBreaker);
+    HResult GetLexicalData([MarshalAs(UnmanagedType.LPWStr)] out string ppszInputString, [Out] out nint ppTokens, [Out] out uint plcid, [Out] /* IUnknown** */ out nint ppWordBreaker);
 }
 
 [ComImport,
@@ -297,15 +298,15 @@ Guid(ShellIIDGuid.ISharedBitmap),
 InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 internal interface ISharedBitmap
 {
-    void GetSharedBitmap([Out] out IntPtr phbm);
+    void GetSharedBitmap([Out] out nint phbm);
 
-    void GetSize([Out] out CoreNativeMethods.Size pSize);
+    void GetSize([Out] out SIZE pSize);
 
     void GetFormat([Out] out ThumbnailAlphaType pat);
 
-    void InitializeBitmap([In] IntPtr hbm, [In] ThumbnailAlphaType wtsAT);
+    void InitializeBitmap([In] nint hbm, [In] ThumbnailAlphaType wtsAT);
 
-    void Detach([Out] out IntPtr phbm);
+    void Detach([Out] out nint phbm);
 }
 
 [ComImport,
@@ -315,36 +316,36 @@ ComConversionLoss]
 internal interface IShellFolder
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void ParseDisplayName(IntPtr hwnd, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In, MarshalAs(UnmanagedType.LPWStr)] string pszDisplayName, [In, Out] ref uint pchEaten, [Out] IntPtr ppidl, [In, Out] ref uint pdwAttributes);
+    void ParseDisplayName(nint hwnd, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In, MarshalAs(UnmanagedType.LPWStr)] string pszDisplayName, [In, Out] ref uint pchEaten, [Out] nint ppidl, [In, Out] ref uint pdwAttributes);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult EnumObjects([In] IntPtr hwnd, [In] ShellNativeMethods.ShellFolderEnumerationOptions grfFlags, [MarshalAs(UnmanagedType.Interface)] out IEnumIDList ppenumIDList);
+    HResult EnumObjects([In] nint hwnd, [In] ShellNativeMethods.ShellFolderEnumerationOptions grfFlags, [MarshalAs(UnmanagedType.Interface)] out IEnumIDList ppenumIDList);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult BindToObject([In] IntPtr pidl, IntPtr pbc, [In] ref Guid riid, [Out, MarshalAs(UnmanagedType.Interface)] out IShellFolder ppv);
+    HResult BindToObject([In] nint pidl, nint pbc, [In] ref Guid riid, [Out, MarshalAs(UnmanagedType.Interface)] out IShellFolder ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void BindToStorage([In] ref IntPtr pidl, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In] ref Guid riid, out IntPtr ppv);
+    void BindToStorage([In] ref nint pidl, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void CompareIDs([In] IntPtr lParam, [In] ref IntPtr pidl1, [In] ref IntPtr pidl2);
+    void CompareIDs([In] nint lParam, [In] ref nint pidl1, [In] ref nint pidl2);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void CreateViewObject([In] IntPtr hwndOwner, [In] ref Guid riid, out IntPtr ppv);
+    void CreateViewObject([In] nint hwndOwner, [In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetAttributesOf([In] uint cidl, [In] IntPtr apidl, [In, Out] ref uint rgfInOut);
+    void GetAttributesOf([In] uint cidl, [In] nint apidl, [In, Out] ref uint rgfInOut);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetUIObjectOf([In] IntPtr hwndOwner, [In] uint cidl, [In] IntPtr apidl, [In] ref Guid riid, [In, Out] ref uint rgfReserved, out IntPtr ppv);
+    void GetUIObjectOf([In] nint hwndOwner, [In] uint cidl, [In] nint apidl, [In] ref Guid riid, [In, Out] ref uint rgfReserved, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetDisplayNameOf([In] ref IntPtr pidl, [In] uint uFlags, out IntPtr pName);
+    void GetDisplayNameOf([In] ref nint pidl, [In] uint uFlags, out nint pName);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetNameOf([In] IntPtr hwnd, [In] ref IntPtr pidl, [In, MarshalAs(UnmanagedType.LPWStr)] string pszName, [In] uint uFlags, [Out] IntPtr ppidlOut);
+    void SetNameOf([In] nint hwnd, [In] ref nint pidl, [In, MarshalAs(UnmanagedType.LPWStr)] string pszName, [In] uint uFlags, [Out] nint ppidlOut);
 }
 
 [ComImport,
@@ -354,40 +355,40 @@ ComConversionLoss]
 internal interface IShellFolder2 : IShellFolder
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void ParseDisplayName([In] IntPtr hwnd, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In, MarshalAs(UnmanagedType.LPWStr)] string pszDisplayName, [In, Out] ref uint pchEaten, [Out] IntPtr ppidl, [In, Out] ref uint pdwAttributes);
+    void ParseDisplayName([In] nint hwnd, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In, MarshalAs(UnmanagedType.LPWStr)] string pszDisplayName, [In, Out] ref uint pchEaten, [Out] nint ppidl, [In, Out] ref uint pdwAttributes);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void EnumObjects([In] IntPtr hwnd, [In] ShellNativeMethods.ShellFolderEnumerationOptions grfFlags, [MarshalAs(UnmanagedType.Interface)] out IEnumIDList ppenumIDList);
+    void EnumObjects([In] nint hwnd, [In] ShellNativeMethods.ShellFolderEnumerationOptions grfFlags, [MarshalAs(UnmanagedType.Interface)] out IEnumIDList ppenumIDList);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void BindToObject([In] IntPtr pidl, IntPtr pbc, [In] ref Guid riid, [Out, MarshalAs(UnmanagedType.Interface)] out IShellFolder ppv);
+    void BindToObject([In] nint pidl, nint pbc, [In] ref Guid riid, [Out, MarshalAs(UnmanagedType.Interface)] out IShellFolder ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void BindToStorage([In] ref IntPtr pidl, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In] ref Guid riid, out IntPtr ppv);
+    void BindToStorage([In] ref nint pidl, [In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc, [In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void CompareIDs([In] IntPtr lParam, [In] ref IntPtr pidl1, [In] ref IntPtr pidl2);
+    void CompareIDs([In] nint lParam, [In] ref nint pidl1, [In] ref nint pidl2);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void CreateViewObject([In] IntPtr hwndOwner, [In] ref Guid riid, out IntPtr ppv);
+    void CreateViewObject([In] nint hwndOwner, [In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetAttributesOf([In] uint cidl, [In] IntPtr apidl, [In, Out] ref uint rgfInOut);
+    void GetAttributesOf([In] uint cidl, [In] nint apidl, [In, Out] ref uint rgfInOut);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetUIObjectOf([In] IntPtr hwndOwner, [In] uint cidl, [In] IntPtr apidl, [In] ref Guid riid, [In, Out] ref uint rgfReserved, out IntPtr ppv);
+    void GetUIObjectOf([In] nint hwndOwner, [In] uint cidl, [In] nint apidl, [In] ref Guid riid, [In, Out] ref uint rgfReserved, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetDisplayNameOf([In] ref IntPtr pidl, [In] uint uFlags, out IntPtr pName);
+    void GetDisplayNameOf([In] ref nint pidl, [In] uint uFlags, out nint pName);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetNameOf([In] IntPtr hwnd, [In] ref IntPtr pidl, [In, MarshalAs(UnmanagedType.LPWStr)] string pszName, [In] uint uFlags, [Out] IntPtr ppidlOut);
+    void SetNameOf([In] nint hwnd, [In] ref nint pidl, [In, MarshalAs(UnmanagedType.LPWStr)] string pszName, [In] uint uFlags, [Out] nint ppidlOut);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetDefaultSearchGUID(out Guid pguid);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void EnumSearches([Out] out IntPtr ppenum);
+    void EnumSearches([Out] out nint ppenum);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetDefaultColumn([In] uint dwRes, out uint pSort, out uint pDisplay);
@@ -396,10 +397,10 @@ internal interface IShellFolder2 : IShellFolder
     void GetDefaultColumnState([In] uint iColumn, out uint pcsFlags);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetDetailsEx([In] ref IntPtr pidl, [In] ref PropertyKey pscid, [MarshalAs(UnmanagedType.Struct)] out object pv);
+    void GetDetailsEx([In] ref nint pidl, [In] ref PropertyKey pscid, [MarshalAs(UnmanagedType.Struct)] out object pv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetDetailsOf([In] ref IntPtr pidl, [In] uint iColumn, out IntPtr psd);
+    void GetDetailsOf([In] ref nint pidl, [In] uint iColumn, out nint psd);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void MapColumnToSCID([In] uint iColumn, out PropertyKey pscid);
@@ -413,7 +414,7 @@ internal interface IShellItem
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult BindToHandler(
-        [In] IntPtr pbc,
+        [In] nint pbc,
         [In] ref Guid bhid,
         [In] ref Guid riid,
         [Out, MarshalAs(UnmanagedType.Interface)] out IShellFolder ppv);
@@ -425,7 +426,7 @@ internal interface IShellItem
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetDisplayName(
         [In] ShellNativeMethods.ShellItemDesignNameOptions sigdnName,
-        out IntPtr ppszName);
+        out nint ppszName);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetAttributes([In] ShellNativeMethods.ShellFileGetAttributesOptions sfgaoMask, out ShellNativeMethods.ShellFileGetAttributesOptions psfgaoAttribs);
@@ -446,7 +447,7 @@ internal interface IShellItem2 : IShellItem
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult BindToHandler(
-        [In] IntPtr pbc,
+        [In] nint pbc,
         [In] ref Guid bhid,
         [In] ref Guid riid,
         [Out, MarshalAs(UnmanagedType.Interface)] out IShellFolder ppv);
@@ -477,13 +478,13 @@ internal interface IShellItem2 : IShellItem
         [Out, MarshalAs(UnmanagedType.Interface)] out IPropertyStore ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetPropertyStoreWithCreateObject([In] ShellNativeMethods.GetPropertyStoreOptions Flags, [In, MarshalAs(UnmanagedType.IUnknown)] object punkCreateObject, [In] ref Guid riid, out IntPtr ppv);
+    void GetPropertyStoreWithCreateObject([In] ShellNativeMethods.GetPropertyStoreOptions Flags, [In, MarshalAs(UnmanagedType.IUnknown)] object punkCreateObject, [In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetPropertyStoreForKeys([In] ref PropertyKey rgKeys, [In] uint cKeys, [In] ShellNativeMethods.GetPropertyStoreOptions Flags, [In] ref Guid riid, [Out, MarshalAs(UnmanagedType.IUnknown)] out IPropertyStore ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void GetPropertyDescriptionList([In] ref PropertyKey keyType, [In] ref Guid riid, out IntPtr ppv);
+    void GetPropertyDescriptionList([In] ref PropertyKey keyType, [In] ref Guid riid, out nint ppv);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult Update([In, MarshalAs(UnmanagedType.Interface)] IBindCtx pbc);
@@ -522,24 +523,24 @@ internal interface IShellItemArray
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult BindToHandler(
-        [In, MarshalAs(UnmanagedType.Interface)] IntPtr pbc,
+        [In, MarshalAs(UnmanagedType.Interface)] nint pbc,
         [In] ref Guid rbhid,
         [In] ref Guid riid,
-        out IntPtr ppvOut);
+        out nint ppvOut);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetPropertyStore(
         [In] int Flags,
         [In] ref Guid riid,
-        out IntPtr ppv);
+        out nint ppv);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     HResult GetPropertyDescriptionList(
         [In] ref PropertyKey keyType,
         [In] ref Guid riid,
-        out IntPtr ppv);
+        out nint ppv);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -560,7 +561,7 @@ internal interface IShellItemArray
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult EnumItems([MarshalAs(UnmanagedType.Interface)] out IntPtr ppenumShellItems);
+    HResult EnumItems([MarshalAs(UnmanagedType.Interface)] out nint ppenumShellItems);
 }
 
 [ComImportAttribute()]
@@ -570,9 +571,9 @@ internal interface IShellItemImageFactory
 {
     [PreserveSig]
     HResult GetImage(
-    [In, MarshalAs(UnmanagedType.Struct)] CoreNativeMethods.Size size,
+    [In, MarshalAs(UnmanagedType.Struct)] SIZE size,
     [In] ShellNativeMethods.SIIGBF flags,
-    [Out] out IntPtr phbm);
+    [Out] out nint phbm);
 }
 
 [ComImport,
@@ -669,12 +670,12 @@ internal interface IShellLinkW
     void GetPath(
         [Out(), MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile,
         int cchMaxPath,
-        IntPtr pfd,
+        nint pfd,
         uint fFlags);
 
-    void GetIDList(out IntPtr ppidl);
+    void GetIDList(out nint ppidl);
 
-    void SetIDList(IntPtr pidl);
+    void SetIDList(nint pidl);
 
     void GetDescription(
         [Out(), MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszFile,
@@ -719,7 +720,7 @@ internal interface IShellLinkW
         [MarshalAs(UnmanagedType.LPWStr)] string pszPathRel,
         uint dwReserved);
 
-    void Resolve(IntPtr hwnd, uint fFlags);
+    void Resolve(nint hwnd, uint fFlags);
 
     void SetPath(
         [MarshalAs(UnmanagedType.LPWStr)] string pszFile);

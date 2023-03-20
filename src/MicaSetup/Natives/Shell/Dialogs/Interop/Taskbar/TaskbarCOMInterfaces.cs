@@ -88,72 +88,72 @@ internal interface ITaskbarList4
     void HrInit();
 
     [PreserveSig]
-    void AddTab(IntPtr hwnd);
+    void AddTab(nint hwnd);
 
     [PreserveSig]
-    void DeleteTab(IntPtr hwnd);
+    void DeleteTab(nint hwnd);
 
     [PreserveSig]
-    void ActivateTab(IntPtr hwnd);
+    void ActivateTab(nint hwnd);
 
     [PreserveSig]
-    void SetActiveAlt(IntPtr hwnd);
+    void SetActiveAlt(nint hwnd);
 
     [PreserveSig]
     void MarkFullscreenWindow(
-        IntPtr hwnd,
+        nint hwnd,
         [MarshalAs(UnmanagedType.Bool)] bool fFullscreen);
 
     [PreserveSig]
-    void SetProgressValue(IntPtr hwnd, ulong ullCompleted, ulong ullTotal);
+    void SetProgressValue(nint hwnd, ulong ullCompleted, ulong ullTotal);
 
     [PreserveSig]
-    void SetProgressState(IntPtr hwnd, TaskbarProgressBarStatus tbpFlags);
+    void SetProgressState(nint hwnd, TaskbarProgressBarStatus tbpFlags);
 
     [PreserveSig]
-    void RegisterTab(IntPtr hwndTab, IntPtr hwndMDI);
+    void RegisterTab(nint hwndTab, nint hwndMDI);
 
     [PreserveSig]
-    void UnregisterTab(IntPtr hwndTab);
+    void UnregisterTab(nint hwndTab);
 
     [PreserveSig]
-    void SetTabOrder(IntPtr hwndTab, IntPtr hwndInsertBefore);
+    void SetTabOrder(nint hwndTab, nint hwndInsertBefore);
 
     [PreserveSig]
-    void SetTabActive(IntPtr hwndTab, IntPtr hwndInsertBefore, uint dwReserved);
+    void SetTabActive(nint hwndTab, nint hwndInsertBefore, uint dwReserved);
 
     [PreserveSig]
     HResult ThumbBarAddButtons(
-        IntPtr hwnd,
+        nint hwnd,
         uint cButtons,
         [MarshalAs(UnmanagedType.LPArray)] ThumbButton[] pButtons);
 
     [PreserveSig]
     HResult ThumbBarUpdateButtons(
-        IntPtr hwnd,
+        nint hwnd,
         uint cButtons,
         [MarshalAs(UnmanagedType.LPArray)] ThumbButton[] pButtons);
 
     [PreserveSig]
-    void ThumbBarSetImageList(IntPtr hwnd, IntPtr himl);
+    void ThumbBarSetImageList(nint hwnd, nint himl);
 
     [PreserveSig]
     void SetOverlayIcon(
-      IntPtr hwnd,
-      IntPtr hIcon,
+      nint hwnd,
+      nint hIcon,
       [MarshalAs(UnmanagedType.LPWStr)] string pszDescription);
 
     [PreserveSig]
     void SetThumbnailTooltip(
-        IntPtr hwnd,
+        nint hwnd,
         [MarshalAs(UnmanagedType.LPWStr)] string pszTip);
 
     [PreserveSig]
     void SetThumbnailClip(
-        IntPtr hwnd,
-        IntPtr prcClip);
+        nint hwnd,
+        nint prcClip);
 
-    void SetTabProperties(IntPtr hwndTab, SetTabPropertiesOption stpFlags);
+    void SetTabProperties(nint hwndTab, SetTabPropertiesOption stpFlags);
 }
 
 [GuidAttribute("77F10CF0-3DB5-4966-B520-B7C54FD35ED6")]

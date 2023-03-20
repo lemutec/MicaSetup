@@ -23,7 +23,7 @@ internal interface IKnownFolderManager
 
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
-    void GetFolderIds([Out] out IntPtr folders,
+    void GetFolderIds([Out] out nint folders,
       [Out] out uint count);
 
     [PreserveSig]
@@ -57,7 +57,7 @@ internal interface IKnownFolderManager
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
-    HResult FindFolderFromIDList(IntPtr pidl, [Out, MarshalAs(UnmanagedType.Interface)] out IKnownFolderNative knownFolder);
+    HResult FindFolderFromIDList(nint pidl, [Out, MarshalAs(UnmanagedType.Interface)] out IKnownFolderNative knownFolder);
 
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
@@ -96,7 +96,7 @@ internal interface IKnownFolderNative
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
     void GetIDList([In] int i,
-        [Out] out IntPtr itemIdentifierListPointer);
+        [Out] out nint itemIdentifierListPointer);
 
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
@@ -130,7 +130,7 @@ internal class KnownFolderManagerClass : IKnownFolderManager
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
     public extern virtual void GetFolderIds(
-        [Out] out IntPtr folders,
+        [Out] out nint folders,
         [Out] out uint count);
 
     [PreserveSig]
@@ -168,7 +168,7 @@ internal class KnownFolderManagerClass : IKnownFolderManager
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual HResult FindFolderFromIDList(IntPtr pidl, [Out, MarshalAs(UnmanagedType.Interface)] out IKnownFolderNative knownFolder);
+    public extern virtual HResult FindFolderFromIDList(nint pidl, [Out, MarshalAs(UnmanagedType.Interface)] out IKnownFolderNative knownFolder);
 
     [MethodImpl(MethodImplOptions.InternalCall,
         MethodCodeType = MethodCodeType.Runtime)]

@@ -40,14 +40,14 @@ internal enum WindowLongFlags
 internal static class WindowNativeMethods
 {
     [DllImport("user32.dll", SetLastError = true)]
-    public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className, IntPtr windowTitle);
+    public static extern nint FindWindowEx(nint parentHandle, nint childAfter, string className, nint windowTitle);
 
     [DllImport("user32.dll", SetLastError = true)]
-    public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+    public static extern int GetWindowLong(nint hWnd, int nIndex);
 
     [DllImport("user32.dll", SetLastError = true)]
-    public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+    public static extern int SetWindowLong(nint hWnd, int nIndex, int dwNewLong);
 
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
-    public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int y, int width, int height, SetWindowPosFlags flags);
+    public static extern bool SetWindowPos(nint hWnd, nint hWndInsertAfter, int x, int y, int width, int height, SetWindowPosFlags flags);
 }

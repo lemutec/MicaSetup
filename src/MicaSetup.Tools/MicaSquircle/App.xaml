@@ -13,7 +13,7 @@
                 <ui:ResourceDictionaryEx/>
                 <ui:ColorPaletteResources/>
                 <ui:IntellisenseResources/>
-                <mica:ThemeDictionnary Theme="Dark"/>
+                <mica:ThemeDictionary Theme="Dark"/>
                 <ResourceDictionary Source="pack://application:,,,/ToastNotifications.Messages;component/Themes/Default.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

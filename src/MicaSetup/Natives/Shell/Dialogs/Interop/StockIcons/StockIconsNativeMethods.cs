@@ -29,7 +29,7 @@ internal static class StockIconsNativeMethods
     internal struct StockIconInfo
     {
         internal uint StuctureSize;
-        internal IntPtr Handle;
+        internal nint Handle;
         internal int ImageIndex;
         internal int Identifier;
 

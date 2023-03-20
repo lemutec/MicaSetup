@@ -23,10 +23,10 @@ internal class MessageListener : IDisposable
 
     private static readonly ShellObjectWatcherNativeMethods.WndProcDelegate wndProc = WndProc;
     private static readonly Dictionary<IntPtr, MessageListener> _listeners = new();
-    private static IntPtr _firstWindowHandle = IntPtr.Zero;
+    private static nint _firstWindowHandle = 0;
 
     private static readonly object _crossThreadWindowLock = new();
-    private static IntPtr _tempHandle = IntPtr.Zero;
+    private static nint _tempHandle = 0;
 
     public event EventHandler<WindowMessageEventArgs> MessageReceived;
 
@@ -53,7 +53,7 @@ internal class MessageListener : IDisposable
                 CrossThreadCreateWindow();
             }
 
-            if (WindowHandle == IntPtr.Zero)
+            if (WindowHandle == 0)
             {
                 throw new ShellException(LocalizedMessages.MessageListenerCannotCreateWindow,
                     Marshal.GetExceptionForHR(Marshal.GetHRForLastWin32Error()));
@@ -65,14 +65,14 @@ internal class MessageListener : IDisposable
 
     private void CrossThreadCreateWindow()
     {
-        if (_firstWindowHandle == IntPtr.Zero)
+        if (_firstWindowHandle == 0)
         {
             throw new InvalidOperationException(LocalizedMessages.MessageListenerNoWindowHandle);
         }
 
         lock (_crossThreadWindowLock)
         {
-            CoreNativeMethods.PostMessage(_firstWindowHandle, (WindowMessage)CreateWindowMessage, IntPtr.Zero, IntPtr.Zero);
+            CoreNativeMethods.PostMessage(_firstWindowHandle, (WindowMessage)CreateWindowMessage, 0, 0);
             Monitor.Wait(_crossThreadWindowLock);
         }
 
@@ -97,16 +97,16 @@ internal class MessageListener : IDisposable
         _atom = atom;
     }
 
-    private static IntPtr CreateWindow()
+    private static nint CreateWindow()
     {
-        IntPtr handle = ShellObjectWatcherNativeMethods.CreateWindowEx(
+        nint handle = ShellObjectWatcherNativeMethods.CreateWindowEx(
             0,
             MessageWindowClassName,
             "MessageListenerWindow",
             0,
             0, 0, 0, 0,
             new IntPtr(-3),
-            IntPtr.Zero, IntPtr.Zero, IntPtr.Zero);
+            0, 0, 0);
 
         return handle;
     }
@@ -127,14 +127,14 @@ internal class MessageListener : IDisposable
 
         while (_running)
         {
-            if (ShellObjectWatcherNativeMethods.GetMessage(out Message msg, IntPtr.Zero, 0, 0))
+            if (ShellObjectWatcherNativeMethods.GetMessage(out Message msg, 0, 0, 0))
             {
                 ShellObjectWatcherNativeMethods.DispatchMessage(ref msg);
             }
         }
     }
 
-    private static int WndProc(IntPtr hwnd, uint msg, IntPtr wparam, IntPtr lparam)
+    private static int WndProc(nint hwnd, uint msg, nint wparam, nint lparam)
     {
         switch (msg)
         {
@@ -161,7 +161,7 @@ internal class MessageListener : IDisposable
         return ShellObjectWatcherNativeMethods.DefWindowProc(hwnd, msg, wparam, lparam);
     }
 
-    public IntPtr WindowHandle { get; private set; }
+    public nint WindowHandle { get; private set; }
     public static bool Running { get { return _running; } }
 
     ~MessageListener()
@@ -184,7 +184,7 @@ internal class MessageListener : IDisposable
                 _listeners.Remove(WindowHandle);
                 if (_listeners.Count == 0)
                 {
-                    CoreNativeMethods.PostMessage(WindowHandle, WindowMessage.Destroy, IntPtr.Zero, IntPtr.Zero);
+                    CoreNativeMethods.PostMessage(WindowHandle, WindowMessage.Destroy, 0, 0);
                 }
             }
         }

@@ -146,11 +146,9 @@ public class ShellPropertyDescription : IDisposable
         {
             if (NativePropertyDescription != null && displayName == null)
             {
-                var dispNameptr = IntPtr.Zero;
+                var hr = NativePropertyDescription.GetDisplayName(out nint dispNameptr);
 
-                var hr = NativePropertyDescription.GetDisplayName(out dispNameptr);
-
-                if (CoreErrorHelper.Succeeded(hr) && dispNameptr != IntPtr.Zero)
+                if (CoreErrorHelper.Succeeded(hr) && dispNameptr != 0)
                 {
                     displayName = Marshal.PtrToStringUni(dispNameptr);
 
@@ -186,11 +184,9 @@ public class ShellPropertyDescription : IDisposable
         {
             if (NativePropertyDescription != null && editInvitation == null)
             {
-                var ptr = IntPtr.Zero;
+                var hr = NativePropertyDescription.GetEditInvitation(out nint ptr);
 
-                var hr = NativePropertyDescription.GetEditInvitation(out ptr);
-
-                if (CoreErrorHelper.Succeeded(hr) && ptr != IntPtr.Zero)
+                if (CoreErrorHelper.Succeeded(hr) && ptr != 0)
                 {
                     editInvitation = Marshal.PtrToStringUni(ptr);
                     Marshal.FreeCoTaskMem(ptr);
@@ -354,14 +350,13 @@ public class ShellPropertyDescription : IDisposable
 
     public string GetSortDescriptionLabel(bool descending)
     {
-        var ptr = IntPtr.Zero;
         var label = string.Empty;
 
         if (NativePropertyDescription != null)
         {
-            var hr = NativePropertyDescription.GetSortDescriptionLabel(descending, out ptr);
+            var hr = NativePropertyDescription.GetSortDescriptionLabel(descending, out nint ptr);
 
-            if (CoreErrorHelper.Succeeded(hr) && ptr != IntPtr.Zero)
+            if (CoreErrorHelper.Succeeded(hr) && ptr != 0)
             {
                 label = Marshal.PtrToStringUni(ptr);
                 Marshal.FreeCoTaskMem(ptr);

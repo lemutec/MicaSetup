@@ -61,7 +61,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
     private bool navigateToShortcut = true;
 
-    private IntPtr parentWindow = IntPtr.Zero;
+    private nint parentWindow = 0;
 
     private bool resetSelections;
 
@@ -346,7 +346,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
         }
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
-        var retCode = ShellNativeMethods.SHCreateItemFromParsingName(path, IntPtr.Zero, ref guid, out
+        var retCode = ShellNativeMethods.SHCreateItemFromParsingName(path, 0, ref guid, out
         IShellItem2 nativeShellItem);
 
         if (!CoreErrorHelper.Succeeded(retCode))
@@ -459,9 +459,9 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
     public void ResetUserSelections() => resetSelections = true;
 
-    public CommonFileDialogResult ShowDialog(IntPtr ownerWindowHandle)
+    public CommonFileDialogResult ShowDialog(nint ownerWindowHandle)
     {
-        if (ownerWindowHandle == IntPtr.Zero)
+        if (ownerWindowHandle == 0)
         {
             throw new ArgumentException(LocalizedMessages.CommonFileDialogInvalidHandle, "ownerWindowHandle");
         }
@@ -525,7 +525,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
     {
         string filename = null!;
         var hr = item.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.DesktopAbsoluteParsing, out var pszString);
-        if (hr == HResult.Ok && pszString != IntPtr.Zero)
+        if (hr == HResult.Ok && pszString != 0)
         {
             filename = Marshal.PtrToStringAuto(pszString);
             Marshal.FreeCoTaskMem(pszString);
@@ -636,7 +636,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
     {
         Debug.Assert(dialog != null, "No dialog instance to configure");
 
-        if (parentWindow == IntPtr.Zero)
+        if (parentWindow == 0)
         {
             if (Application.Current != null && Application.Current.MainWindow != null)
             {
@@ -666,7 +666,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
         if (!string.IsNullOrEmpty(initialDirectory))
         {
-            ShellNativeMethods.SHCreateItemFromParsingName(initialDirectory, IntPtr.Zero, ref guid, out
+            ShellNativeMethods.SHCreateItemFromParsingName(initialDirectory, 0, ref guid, out
             IShellItem2 initialDirectoryShellItem);
 
             if (initialDirectoryShellItem != null)
@@ -675,7 +675,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
         if (!string.IsNullOrEmpty(defaultDirectory))
         {
-            ShellNativeMethods.SHCreateItemFromParsingName(defaultDirectory, IntPtr.Zero, ref guid, out
+            ShellNativeMethods.SHCreateItemFromParsingName(defaultDirectory, 0, ref guid, out
             IShellItem2 defaultDirectoryShellItem);
 
             if (defaultDirectoryShellItem != null)

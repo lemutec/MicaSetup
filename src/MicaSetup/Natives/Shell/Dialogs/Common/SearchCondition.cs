@@ -98,7 +98,7 @@ public class SearchCondition : IDisposable
         {
             var enumUnknown = subConditionObj as IEnumUnknown;
 
-            var buffer = IntPtr.Zero;
+            nint buffer = 0;
             uint fetched = 0;
 
             while (hr == HResult.Ok)

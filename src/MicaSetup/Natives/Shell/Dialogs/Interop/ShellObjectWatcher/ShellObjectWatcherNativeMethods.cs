@@ -8,14 +8,14 @@ namespace MicaSetup.Shell.Dialogs;
 [StructLayout(LayoutKind.Sequential)]
 public struct Message
 {
-    private readonly IntPtr windowHandle;
+    private readonly nint windowHandle;
     private readonly uint msg;
-    private readonly IntPtr wparam;
-    private readonly IntPtr lparam;
+    private readonly nint wparam;
+    private readonly nint lparam;
     private readonly int time;
     private POINT point;
 
-    internal Message(IntPtr windowHandle, uint msg, IntPtr wparam, IntPtr lparam, int time, POINT point)
+    internal Message(nint windowHandle, uint msg, nint wparam, nint lparam, int time, POINT point)
         : this()
     {
         this.windowHandle = windowHandle;
@@ -26,7 +26,7 @@ public struct Message
         this.point = point;
     }
 
-    public IntPtr LParam => lparam;
+    public nint LParam => lparam;
 
     public uint Msg => msg;
 
@@ -34,9 +34,9 @@ public struct Message
 
     public int Time => time;
 
-    public IntPtr WindowHandle => windowHandle;
+    public nint WindowHandle => windowHandle;
 
-    public IntPtr WParam => wparam;
+    public nint WParam => wparam;
 
     public static bool operator !=(Message first, Message second) => !(first == second);
 
@@ -71,20 +71,20 @@ internal struct WindowClassEx
 
     internal int ExtraClassBytes;
     internal int ExtraWindowBytes;
-    internal IntPtr InstanceHandle;
-    internal IntPtr IconHandle;
-    internal IntPtr CursorHandle;
-    internal IntPtr BackgroundBrushHandle;
+    internal nint InstanceHandle;
+    internal nint IconHandle;
+    internal nint CursorHandle;
+    internal nint BackgroundBrushHandle;
 
     internal string MenuName;
     internal string ClassName;
 
-    internal IntPtr SmallIconHandle;
+    internal nint SmallIconHandle;
 }
 
 internal static class ShellObjectWatcherNativeMethods
 {
-    public delegate int WndProcDelegate(IntPtr hwnd, uint msg, IntPtr wparam, IntPtr lparam);
+    public delegate int WndProcDelegate(nint hwnd, uint msg, nint wparam, nint lparam);
 
     [DllImport("Ole32.dll")]
     public static extern HResult CreateBindCtx(
@@ -92,7 +92,7 @@ internal static class ShellObjectWatcherNativeMethods
         [Out] out IBindCtx bindCtx);
 
     [DllImport("User32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    public static extern IntPtr CreateWindowEx(
+    public static extern nint CreateWindowEx(
         int extendedStyle,
         [MarshalAs(UnmanagedType.LPWStr)]
         string className,
@@ -103,17 +103,17 @@ internal static class ShellObjectWatcherNativeMethods
         int y,
         int width,
         int height,
-        IntPtr parentHandle,
-        IntPtr menuHandle,
-        IntPtr instanceHandle,
-        IntPtr additionalData);
+        nint parentHandle,
+        nint menuHandle,
+        nint instanceHandle,
+        nint additionalData);
 
     [DllImport("User32.dll")]
     public static extern int DefWindowProc(
-        IntPtr hwnd,
+        nint hwnd,
         uint msg,
-        IntPtr wparam,
-        IntPtr lparam);
+        nint wparam,
+        nint lparam);
 
     [DllImport("User32.dll")]
     public static extern void DispatchMessage([In] ref Message message);
@@ -122,7 +122,7 @@ internal static class ShellObjectWatcherNativeMethods
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool GetMessage(
         [Out] out Message message,
-        IntPtr windowHandle,
+        nint windowHandle,
         uint filterMinMessage,
         uint filterMaxMessage);
 

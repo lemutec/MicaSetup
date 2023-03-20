@@ -21,7 +21,7 @@ public static class LocalizedMessages
     public const string CheckBoxCannotBeChanged = "CheckBox text cannot be changed while dialog is showing.";
     public const string FolderTypeRecordedTV = "RecordedTV";
     public const string JumpListCustomCategoriesDisabled = "Custom categories cannot be added while recent documents tracking is turned off.";
-    public const string CommonFileDialogInvalidHandle = "Handle provided cannot be IntPtr.Zero.";
+    public const string CommonFileDialogInvalidHandle = "Handle provided cannot be 0.";
     public const string DialogControlCollectionMoreThanOneControl = "Dialog cannot have more than one control with the same name.";
     public const string PowerManagerActiveSchemeFailed = "Failed to get active power scheme.";
     public const string CaptionCannotBeChanged = "Dialog caption cannot be changed while dialog is showing.";

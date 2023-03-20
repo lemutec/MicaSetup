@@ -16,7 +16,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
 
     private string _internalParsingName;
 
-    private IntPtr _internalPIDL = IntPtr.Zero;
+    private nint _internalPIDL = 0;
 
     private int? hashValue;
 
@@ -84,7 +84,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
             if (_internalName == null && NativeShellItem != null)
             {
                 var hr = NativeShellItem.GetDisplayName(ShellNativeMethods.ShellItemDesignNameOptions.Normal, out var pszString);
-                if (hr == HResult.Ok && pszString != IntPtr.Zero)
+                if (hr == HResult.Ok && pszString != 0)
                 {
                     _internalName = Marshal.PtrToStringAuto(pszString);
 
@@ -156,7 +156,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
             if (nativeShellItem == null && ParsingName != null)
             {
                 var guid = new Guid(ShellIIDGuid.IShellItem2);
-                var retCode = ShellNativeMethods.SHCreateItemFromParsingName(ParsingName, IntPtr.Zero, ref guid, out nativeShellItem);
+                var retCode = ShellNativeMethods.SHCreateItemFromParsingName(ParsingName, 0, ref guid, out nativeShellItem);
 
                 if (nativeShellItem == null || !CoreErrorHelper.Succeeded(retCode))
                 {
@@ -167,11 +167,11 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         }
     }
 
-    internal virtual IntPtr PIDL
+    internal virtual nint PIDL
     {
         get
         {
-            if (_internalPIDL == IntPtr.Zero && NativeShellItem != null)
+            if (_internalPIDL == 0 && NativeShellItem != null)
             {
                 _internalPIDL = ShellHelper.PidlFromShellItem(NativeShellItem);
             }
@@ -282,10 +282,10 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
             parentShellObject = null!;
         }
 
-        if (_internalPIDL != IntPtr.Zero)
+        if (_internalPIDL != 0)
         {
             ShellNativeMethods.ILFree(_internalPIDL);
-            _internalPIDL = IntPtr.Zero;
+            _internalPIDL = 0;
         }
 
         if (nativeShellItem != null)

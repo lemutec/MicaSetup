@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Natives;
+using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
@@ -157,17 +158,15 @@ public class ShellThumbnail
         return returnValue;
     }
 
-    private IntPtr GetHBitmap(System.Windows.Size size)
+    private nint GetHBitmap(System.Windows.Size size)
     {
-        var hbitmap = IntPtr.Zero;
-
-        var nativeSIZE = new CoreNativeMethods.Size
+        var nativeSIZE = new SIZE()
         {
             Width = Convert.ToInt32(size.Width),
             Height = Convert.ToInt32(size.Height)
         };
 
-        var hr = ((IShellItemImageFactory)shellItemNative).GetImage(nativeSIZE, CalculateFlags(), out hbitmap);
+        var hr = ((IShellItemImageFactory)shellItemNative).GetImage(nativeSIZE, CalculateFlags(), out nint hbitmap);
 
         if (hr == HResult.Ok) { return hbitmap; }
         else if ((uint)hr == 0x8004B200 && FormatOption == ShellThumbnailFormatOption.ThumbnailOnly)

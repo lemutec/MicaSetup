@@ -20,7 +20,7 @@ internal class ChangeNotifyLock
             var notifyStruct = pidl.MarshalAs<ShellNativeMethods.ShellNotifyStruct>();
 
             var guid = new Guid(ShellIIDGuid.IShellItem2);
-            if (notifyStruct.item1 != IntPtr.Zero &&
+            if (notifyStruct.item1 != 0 &&
                 (((ShellObjectChangeTypes)_event) & ShellObjectChangeTypes.SystemImageUpdate) == ShellObjectChangeTypes.None)
             {
                 if (CoreErrorHelper.Succeeded(ShellNativeMethods.SHCreateItemFromIDList(
@@ -35,10 +35,10 @@ internal class ChangeNotifyLock
             }
             else
             {
-                ImageIndex = notifyStruct.item1.ToInt32();
+                ImageIndex = (int)notifyStruct.item1;
             }
 
-            if (notifyStruct.item2 != IntPtr.Zero)
+            if (notifyStruct.item2 != 0)
             {
                 if (CoreErrorHelper.Succeeded(ShellNativeMethods.SHCreateItemFromIDList(
                     notifyStruct.item2, ref guid, out var nativeShellItem)))
@@ -53,7 +53,7 @@ internal class ChangeNotifyLock
         }
         finally
         {
-            if (lockId != IntPtr.Zero)
+            if (lockId != 0)
             {
                 ShellNativeMethods.SHChangeNotification_Unlock(lockId);
             }

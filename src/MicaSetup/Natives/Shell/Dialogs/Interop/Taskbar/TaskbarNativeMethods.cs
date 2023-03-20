@@ -82,7 +82,7 @@ internal struct ThumbButton
 
     internal uint Id;
     internal uint Bitmap;
-    internal IntPtr Icon;
+    internal nint Icon;
 
     [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
     internal string Tip;
@@ -103,7 +103,7 @@ internal static class TaskbarNativeMethods
 
     [DllImport("shell32.dll")]
     public static extern int SHGetPropertyStoreForWindow(
-        IntPtr hwnd,
+        nint hwnd,
         ref Guid iid,
         [Out(), MarshalAs(UnmanagedType.Interface)]out IPropertyStore propertyStore);
 
@@ -111,7 +111,7 @@ internal static class TaskbarNativeMethods
     internal static extern void GetCurrentProcessExplicitAppUserModelID(
         [Out(), MarshalAs(UnmanagedType.LPWStr)] out string AppID);
 
-    internal static IPropertyStore GetWindowPropertyStore(IntPtr hwnd)
+    internal static IPropertyStore GetWindowPropertyStore(nint hwnd)
     {
         var guid = new Guid(ShellIIDGuid.IPropertyStore);
         var rc = SHGetPropertyStoreForWindow(
@@ -132,7 +132,7 @@ internal static class TaskbarNativeMethods
     internal static extern void SetCurrentProcessExplicitAppUserModelID(
         [MarshalAs(UnmanagedType.LPWStr)] string AppID);
 
-    internal static void SetWindowProperty(IntPtr hwnd, PropertyKey propkey, string value)
+    internal static void SetWindowProperty(nint hwnd, PropertyKey propkey, string value)
     {
         var propStore = GetWindowPropertyStore(hwnd);
 

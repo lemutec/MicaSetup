@@ -68,12 +68,12 @@ public class NonFileSystemKnownFolder : ShellNonFileSystemFolder, IKnownFolder, 
         {
             if (knownFolderNative == null)
             {
-                if (nativeShellItem != null && base.PIDL == IntPtr.Zero)
+                if (nativeShellItem != null && base.PIDL == 0)
                 {
                     base.PIDL = ShellHelper.PidlFromShellItem(nativeShellItem);
                 }
 
-                if (base.PIDL != IntPtr.Zero)
+                if (base.PIDL != 0)
                 {
                     knownFolderNative = KnownFolderHelper.FromPIDL(base.PIDL);
                 }

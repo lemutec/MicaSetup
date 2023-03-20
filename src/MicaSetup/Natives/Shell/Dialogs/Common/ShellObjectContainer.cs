@@ -31,7 +31,7 @@ public abstract class ShellContainer : ShellObject, IEnumerable<ShellObject>, ID
                 var handler = new Guid(ShellBHIDGuid.ShellFolderObject);
 
                 var hr = NativeShellItem.BindToHandler(
-                    IntPtr.Zero, ref handler, ref guid, out nativeShellFolder);
+                    0, ref handler, ref guid, out nativeShellFolder);
 
                 if (CoreErrorHelper.Failed(hr))
                 {

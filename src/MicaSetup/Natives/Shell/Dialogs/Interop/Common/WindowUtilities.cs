@@ -37,7 +37,7 @@ internal enum WindowStyles
 
 internal static class WindowUtilities
 {
-    internal static System.Drawing.Size GetNonClientArea(IntPtr hwnd)
+    internal static System.Drawing.Size GetNonClientArea(nint hwnd)
     {
         var c = new POINT();
 
@@ -50,7 +50,7 @@ internal static class WindowUtilities
         return new System.Drawing.Size(c.X - r.Left, c.Y - r.Top);
     }
 
-    internal static System.Drawing.Point GetParentOffsetOfChild(IntPtr hwnd, IntPtr hwndParent)
+    internal static System.Drawing.Point GetParentOffsetOfChild(nint hwnd, nint hwndParent)
     {
         var childScreenCoord = new POINT();
 

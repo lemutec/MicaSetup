@@ -17,7 +17,7 @@ internal class EnumUnknownClass : IEnumUnknown
         return HResult.Ok;
     }
 
-    public HResult Next(uint requestedNumber, ref IntPtr buffer, ref uint fetchedNumber)
+    public HResult Next(uint requestedNumber, ref nint buffer, ref uint fetchedNumber)
     {
         current++;
 

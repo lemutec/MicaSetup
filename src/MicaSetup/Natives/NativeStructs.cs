@@ -132,22 +132,26 @@ public struct RECT : IEquatable<RECT>
 [StructLayout(LayoutKind.Sequential), Serializable]
 public struct SIZE : IEquatable<SIZE>
 {
-    public int cx;
-    public int cy;
-    
-    public SIZE(int width, int height)
+    private int width;
+    private int height;
+
+    public SIZE()
     {
-        cx = width;
-        cy = height;
     }
 
-    public int Height { get => cy; set => cy = value; }
-    public bool IsEmpty => cx == 0 && cy == 0;
-    public int Width { get => cx; set => cx = value; }
+    public SIZE(int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+    }
 
-    public bool Equals(SIZE other) => cx == other.cx || cy == other.cy;
-    public override int GetHashCode() => IsEmpty ? 0 : cx.GetHashCode() ^ cy.GetHashCode();
-    public override string ToString() => $"{{cx={cx}, cy={cy}}}";
+    public int Height { get => height; set => height = value; }
+    public bool IsEmpty => width == 0 && height == 0;
+    public int Width { get => width; set => width = value; }
+
+    public bool Equals(SIZE other) => width == other.width || height == other.height;
+    public override int GetHashCode() => IsEmpty ? 0 : width.GetHashCode() ^ height.GetHashCode();
+    public override string ToString() => $"{{cx={width}, cy={height}}}";
 
     public static readonly SIZE Empty = new();
 }

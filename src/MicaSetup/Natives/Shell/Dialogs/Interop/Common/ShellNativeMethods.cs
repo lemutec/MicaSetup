@@ -240,29 +240,29 @@ internal static class ShellNativeMethods
     }
 
     [DllImport("shell32.dll", CharSet = CharSet.None)]
-    public static extern void ILFree(IntPtr pidl);
+    public static extern void ILFree(nint pidl);
 
     [DllImport("gdi32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
-    internal static extern bool DeleteObject(IntPtr hObject);
+    internal static extern bool DeleteObject(nint hObject);
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    internal static extern uint ILGetSize(IntPtr pidl);
+    internal static extern uint ILGetSize(nint pidl);
 
     [DllImport("shlwapi.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     internal static extern int PathParseIconLocation(
         [MarshalAs(UnmanagedType.LPWStr)] ref string pszIconFile);
 
     [DllImport("shell32.dll")]
-    internal static extern IntPtr SHChangeNotification_Lock(
-        IntPtr windowHandle,
+    internal static extern nint SHChangeNotification_Lock(
+        nint windowHandle,
         int processId,
-        out IntPtr pidl,
+        out nint pidl,
         out uint lEvent);
 
     [DllImport("shell32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
-    internal static extern bool SHChangeNotification_Unlock(IntPtr hLock);
+    internal static extern bool SHChangeNotification_Unlock(nint hLock);
 
     [DllImport("shell32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -270,7 +270,7 @@ internal static class ShellNativeMethods
 
     [DllImport("shell32.dll")]
     internal static extern uint SHChangeNotifyRegister(
-        IntPtr windowHandle,
+        nint windowHandle,
         ShellChangeNotifyEventSource sources,
         ShellObjectChangeTypes events,
         uint message,
@@ -279,29 +279,29 @@ internal static class ShellNativeMethods
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     internal static extern int SHCreateItemFromIDList(
-        /*PCIDLIST_ABSOLUTE*/ IntPtr pidl,
+        nint pidl,
         ref Guid riid,
         [MarshalAs(UnmanagedType.Interface)] out IShellItem2 ppv);
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     internal static extern int SHCreateItemFromParsingName(
         [MarshalAs(UnmanagedType.LPWStr)] string path,
-        IntPtr pbc,
+        nint pbc,
         ref Guid riid,
         [MarshalAs(UnmanagedType.Interface)] out IShellItem2 shellItem);
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     internal static extern int SHCreateItemFromParsingName(
         [MarshalAs(UnmanagedType.LPWStr)] string path,
-        IntPtr pbc,
+        nint pbc,
         ref Guid riid,
         [MarshalAs(UnmanagedType.Interface)] out IShellItem shellItem);
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     internal static extern int SHCreateShellItem(
-        IntPtr pidlParent,
+        nint pidlParent,
         [In, MarshalAs(UnmanagedType.Interface)] IShellFolder psfParent,
-        IntPtr pidl,
+        nint pidl,
         [MarshalAs(UnmanagedType.Interface)] out IShellItem ppsi
     );
 
@@ -317,19 +317,19 @@ internal static class ShellNativeMethods
     );
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-    internal static extern int SHGetIDListFromObject(IntPtr iUnknown,
-        out IntPtr ppidl
+    internal static extern int SHGetIDListFromObject(nint iUnknown,
+        out nint ppidl
     );
 
     [DllImport("shell32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
-    internal static extern bool SHGetPathFromIDListW(IntPtr pidl, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszPath);
+    internal static extern bool SHGetPathFromIDListW(nint pidl, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder pszPath);
 
     [DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     internal static extern int SHParseDisplayName(
         [MarshalAs(UnmanagedType.LPWStr)] string pszName,
-        IntPtr pbc,
-        out IntPtr ppidl,
+        nint pbc,
+        out nint ppidl,
         ShellFileGetAttributesOptions sfgaoIn,
         out ShellFileGetAttributesOptions psfgaoOut
     );
@@ -337,7 +337,7 @@ internal static class ShellNativeMethods
     [DllImport("Shell32", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Winapi, SetLastError = true)]
     internal static extern int SHShowManageLibraryUI(
         [In, MarshalAs(UnmanagedType.Interface)] IShellItem library,
-        [In] IntPtr hwndOwner,
+        [In] nint hwndOwner,
         [In] string title,
         [In] string instruction,
         [In] LibraryManageDialogOptions lmdOptions);
@@ -361,7 +361,7 @@ internal static class ShellNativeMethods
     [StructLayout(LayoutKind.Sequential)]
     internal struct SHChangeNotifyEntry
     {
-        internal IntPtr pIdl;
+        internal nint pIdl;
 
         [MarshalAs(UnmanagedType.Bool)]
         internal bool recursively;
@@ -370,8 +370,8 @@ internal static class ShellNativeMethods
     [StructLayout(LayoutKind.Sequential)]
     internal struct ShellNotifyStruct
     {
-        internal IntPtr item1;
-        internal IntPtr item2;
+        internal nint item1;
+        internal nint item2;
     };
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]

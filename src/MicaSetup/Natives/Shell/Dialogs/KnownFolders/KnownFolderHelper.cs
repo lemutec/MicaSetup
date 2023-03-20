@@ -32,14 +32,14 @@ public static class KnownFolderHelper
             throw new ArgumentNullException("parsingName");
         }
 
-        var pidl = IntPtr.Zero;
-        var pidl2 = IntPtr.Zero;
+        nint pidl = 0;
+        nint pidl2 = 0;
 
         try
         {
             pidl = ShellHelper.PidlFromParsingName(parsingName);
 
-            if (pidl == IntPtr.Zero)
+            if (pidl == 0)
             {
                 throw new ArgumentException(LocalizedMessages.KnownFolderParsingName, "parsingName");
             }
@@ -53,7 +53,7 @@ public static class KnownFolderHelper
 
             pidl2 = ShellHelper.PidlFromParsingName(parsingName.PadRight(1, '\0'));
 
-            if (pidl2 == IntPtr.Zero)
+            if (pidl2 == 0)
             {
                 throw new ArgumentException(LocalizedMessages.KnownFolderParsingName, "parsingName");
             }
@@ -79,7 +79,7 @@ public static class KnownFolderHelper
         return (hr == HResult.Ok) ? GetKnownFolder(knownFolderNative) : null!;
     }
 
-    internal static IKnownFolderNative FromPIDL(IntPtr pidl)
+    internal static IKnownFolderNative FromPIDL(nint pidl)
     {
         var knownFolderManager = new KnownFolderManagerClass();
 

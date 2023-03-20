@@ -337,18 +337,19 @@ public static class KnownFolders
     {
 
         IList<IKnownFolder> foldersList = new List<IKnownFolder>();
-        var folders = IntPtr.Zero;
+
+        nint folders = 0;
 
         try
         {
             var knownFolderManager = new KnownFolderManagerClass();
             knownFolderManager.GetFolderIds(out folders, out var count);
 
-            if (count > 0 && folders != IntPtr.Zero)
+            if (count > 0 && folders != 0)
             {
                 for (var i = 0; i < count; i++)
                 {
-                    var current = new IntPtr(folders.ToInt64() + (Marshal.SizeOf(typeof(Guid)) * i));
+                    var current = new IntPtr((long)folders + (Marshal.SizeOf(typeof(Guid)) * i));
 
                     var knownFolderID = (Guid)Marshal.PtrToStructure(current, typeof(Guid));
 
@@ -360,7 +361,7 @@ public static class KnownFolders
         }
         finally
         {
-            if (folders != IntPtr.Zero) { Marshal.FreeCoTaskMem(folders); }
+            if (folders != 0) { Marshal.FreeCoTaskMem(folders); }
         }
 
         return new ReadOnlyCollection<IKnownFolder>(foldersList);

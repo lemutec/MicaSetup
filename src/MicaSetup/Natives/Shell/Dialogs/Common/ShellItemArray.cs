@@ -9,9 +9,9 @@ internal class ShellItemArray : IShellItemArray
 
     internal ShellItemArray(IShellItem[] shellItems) => shellItemsList.AddRange(shellItems);
 
-    public HResult BindToHandler(IntPtr pbc, ref Guid rbhid, ref Guid riid, out IntPtr ppvOut) => throw new NotSupportedException();
+    public HResult BindToHandler(nint pbc, ref Guid rbhid, ref Guid riid, out nint ppvOut) => throw new NotSupportedException();
 
-    public HResult EnumItems(out IntPtr ppenumShellItems) => throw new NotSupportedException();
+    public HResult EnumItems(out nint ppenumShellItems) => throw new NotSupportedException();
 
     public HResult GetAttributes(ShellNativeMethods.ShellItemAttributeOptions dwAttribFlags, ShellNativeMethods.ShellFileGetAttributesOptions sfgaoMask, out ShellNativeMethods.ShellFileGetAttributesOptions psfgaoAttribs) => throw new NotSupportedException();
 
@@ -37,7 +37,7 @@ internal class ShellItemArray : IShellItemArray
         }
     }
 
-    public HResult GetPropertyDescriptionList(ref PropertyKey keyType, ref Guid riid, out IntPtr ppv) => throw new NotSupportedException();
+    public HResult GetPropertyDescriptionList(ref PropertyKey keyType, ref Guid riid, out nint ppv) => throw new NotSupportedException();
 
-    public HResult GetPropertyStore(int Flags, ref Guid riid, out IntPtr ppv) => throw new NotSupportedException();
+    public HResult GetPropertyStore(int Flags, ref Guid riid, out nint ppv) => throw new NotSupportedException();
 }
