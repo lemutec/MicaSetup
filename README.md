@@ -18,18 +18,19 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 ### 🌟Advanced Features
 
-| Features         | Completion | Addition                                                     |
-| ---------------- | ---------- | ------------------------------------------------------------ |
-| Mica Backdrop    | ☑          | Support Windows11 Mica Backdrop.                             |
-| Theme            | 🔲          | Support Dark and Light theme.                                |
-| Archive File     | ☑          | Pack your app with `7z.exe`, so it's easy to customize your archive file or not. |
-| Animations       | ☑          | Support a lot of advanced animations.<br />Such as Indeterminate ProgressBar, supported when your installation is no progress hint. |
-| Notification     | ☑          | Windows10 (or higher) Notification.                          |
-| High DPI         | ☑          | Support to process DPI awareness.                            |
-| Firewall         | ☑          | Support allows your app to access the Network through Windows Firewall Policy. |
-| Anti Unpacking   | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
-| MSIX Installer   | 🔲          | Using MSIX package instead of archive file.<br />Provide the function the same as following command.<br />`certmgr.exe -add app.cer -s -r localMachine AuthRoot`. |
-| Online Installer | 🔲          | Using Network instead of archive file.                       |
+| Features            | Completion | Addition                                                     |
+| ------------------- | ---------- | ------------------------------------------------------------ |
+| Mica Backdrop       | ☑          | Support Windows11 Mica Backdrop.                             |
+| Theme               | 🔲          | Support Dark and Light theme.                                |
+| Archive File        | ☑          | Pack your app with `7z.exe`, so it's easy to customize your archive file or not. |
+| Animations          | ☑          | Support a lot of advanced animations.<br />Such as Indeterminate ProgressBar, supported when your installation is no progress hint. |
+| Notification        | ☑          | Windows10 (or higher) Notification.                          |
+| High DPI            | ☑          | Support to process DPI awareness.                            |
+| Firewall            | ☑          | Support allows your app to access the Network through Windows Firewall Policy. |
+| Anti Unpacking      | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
+| .NET SDKs Installer | 🔲          | Auto detecte and install the .NET/.NET Core/.NET Framework Runtime.<br />[Download .NET SDKs for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) |
+| MSIX Installer      | 🔲          | Using MSIX package instead of archive file.<br />Provide the function the same as following command.<br />`certmgr.exe -add app.cer -s -r localMachine AuthRoot`. |
+| Online Installer    | 🔲          | Using Network instead of archive file.                       |
 
 ### ✨General Features
 
