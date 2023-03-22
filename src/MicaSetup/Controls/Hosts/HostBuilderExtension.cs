@@ -13,12 +13,6 @@ namespace MicaSetup.Controls;
 
 public static class HostBuilderExtension
 {
-    public static IHostBuilder CreateBuilder()
-    {
-        HostBuilder builder = new();
-        return builder;
-    }
-
     public static IHostBuilder UseHostBuilder(this IHostBuilder builder, Action<IHostBuilder> custom)
     {
         custom?.Invoke(builder);
@@ -74,7 +68,7 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UseLangauge(this IHostBuilder builder, string name)
+    public static IHostBuilder UseLanguage(this IHostBuilder builder, string name)
     {
         Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo(name);
         return builder;

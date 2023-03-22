@@ -58,7 +58,7 @@ internal readonly struct DpiScaleF
 
     public DpiScaleF Reserve()
     {
-        return new DpiScaleF(1 / x, 1 / y);
+        return new DpiScaleF(1f / x, 1f / y);
     }
 
     public override string ToString() => $"{X},{Y}";
