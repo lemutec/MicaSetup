@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicaWPF" Version="5.2.5" />
+    <PackageReference Include="MicaWPF" Version="5.3.0" />
   </ItemGroup>
 
   <ItemGroup>
