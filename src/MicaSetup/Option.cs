@@ -112,6 +112,12 @@ public class Option
     public bool IsAllowFirewall { get; set; } = true;
 
     /// <summary>
+    /// Indicates whether to Refresh Explorer
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsRefreshExplorer { get; set; } = false;
+
+    /// <summary>
     /// The file ext filter to remove when overlay install
     /// Using just like "exe,dll,pdb"
     /// </summary>

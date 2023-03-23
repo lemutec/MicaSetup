@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MicaSetup.Controls;
 using MicaSetup.Helper;
+using MicaSetup.Services;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -58,6 +59,17 @@ public partial class UninstallViewModel : ObservableObject
             Option.Current.Uninstalling = false;
             await Task.Delay(200);
 
+            if (Option.Current.IsRefreshExplorer)
+            {
+                try
+                {
+                    ServiceManager.GetService<IExplorerService>().Refresh();
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
             UIDispatcherHelper.Invoke(Routing.GoToNext);
         }).Forget();
     }

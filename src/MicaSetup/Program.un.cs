@@ -39,6 +39,7 @@ internal class Program
                 option.IsCreateAsAutoRun = false;
                 option.IsUseRegistryPreferX86 = null!;
                 option.IsAllowFirewall = true;
+                option.IsRefreshExplorer = false;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
@@ -51,6 +52,7 @@ internal class Program
             .UseServices(service =>
             {
                 service.AddSingleton<IMuiLanguageService, MuiLanguageService>();
+                service.AddScoped<IExplorerService, ExplorerService>();
             })
             .CreateApp()
             .UseMuiLanguage()

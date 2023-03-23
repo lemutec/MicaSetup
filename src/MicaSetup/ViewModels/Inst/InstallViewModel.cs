@@ -125,7 +125,17 @@ public partial class InstallViewModel : ObservableObject
             Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);
 
-            ServiceManager.GetService<IExplorerService>()!.Refresh();
+            if (Option.Current.IsRefreshExplorer)
+            {
+                try
+                {
+                    ServiceManager.GetService<IExplorerService>().Refresh();
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
             UIDispatcherHelper.Invoke(Routing.GoToNext);
         });
     }
