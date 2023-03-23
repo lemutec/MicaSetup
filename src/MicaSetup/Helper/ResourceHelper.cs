@@ -16,6 +16,20 @@ public static class ResourceHelper
             _ = PackUriHelper.UriSchemePack;
     }
 
+    public static bool HasResource(string uriString)
+    {
+        try
+        {
+            using Stream stream = GetStream(uriString);
+            _ = stream;
+            return true;
+        }
+        catch
+        {
+        }
+        return false;
+    }
+
     public static byte[] GetBytes(string uriString)
     {
         Uri uri = new(uriString);
@@ -28,7 +42,7 @@ public static class ResourceHelper
     {
         Uri uri = new(uriString);
         StreamResourceInfo info = Application.GetResourceStream(uri);
-        return info.Stream;
+        return info?.Stream!;
     }
 
     public static string GetString(string uriString, Encoding encoding = null!)

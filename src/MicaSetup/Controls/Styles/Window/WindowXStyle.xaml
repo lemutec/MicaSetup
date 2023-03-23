@@ -4,7 +4,7 @@
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:MicaSetup.Controls">
     <Style TargetType="{x:Type local:WindowX}" x:Key="DefaultWindowXStyle">
-        <Setter Property="FontFamily" Value="{StaticResource HarmonyOSSans}" />
+        <Setter Property="FontFamily" Value="{local:LocalizedFontFamily}" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderBrush" Value="#313A4C" />
         <Setter Property="BorderThickness" Value="0" />

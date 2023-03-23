@@ -1,10 +1,8 @@
 ﻿using MicaSetup.Helper;
+using MicaSetup.Services;
 using System;
 using System.Globalization;
 using System.IO;
-#if MUI_ZH || MUI_JP || MUI_EN
-using System.Threading;
-#endif
 using System.Windows;
 
 namespace MicaSetup.Core;
@@ -15,40 +13,17 @@ public class MuiLanguage
 
     public static void SetupLanguage()
     {
-#if DEBUG
-#if MUI_ZH
-        Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("zh-cn");
-#elif MUI_JP
-        Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("ja");
-#elif MUI_EN
-        Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo("en-us");
-#endif
-#endif
         _ = SetLanguage();
     }
 
-    public static string GetLanguage() => SystemLanguage switch
-    {
-        "zh" => "zh",
-        "ja" => "ja",
-        "en" or _ => "en",
-    };
-
-    public static string GetLanguageXaml() => SystemLanguage switch
-    {
-        "zh" => "zh-cn",
-        "ja" => "ja",
-        "en" or _ => "en-us",
-    };
-
     public static bool SetLanguage() => SystemLanguage switch
     {
-        "zh" => SetLanguage("zh-cn"),
+        "zh" => SetLanguage("zh"),
         "ja" => SetLanguage("ja"),
-        "en" or _ => SetLanguage("en-us"),
+        "en" or _ => SetLanguage("en"),
     };
 
-    public static bool SetLanguage(string name = "en-us")
+    public static bool SetLanguage(string name = "en")
     {
         try
         {
@@ -98,7 +73,7 @@ public class MuiLanguage
     {
         try
         {
-            using Stream resourceXaml = ResourceHelper.GetStream($"pack://application:,,,/MicaSetup;component/Resources/Languages/{GetLanguageXaml()}.xaml");
+            using Stream resourceXaml = ResourceHelper.GetStream(ServiceManager.GetService<IMuiLanguageService>().GetXamlUriString());
             if (BamlHelper.LoadBaml(resourceXaml) is ResourceDictionary resourceDictionary)
             {
                 return (resourceDictionary[key] as string)!;

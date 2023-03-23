@@ -11,6 +11,7 @@ using System.Windows.Media.Animation;
 using MicaSetup.Shell.Dialogs;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
+using MicaSetup.Services;
 
 namespace MicaSetup.ViewModels;
 
@@ -62,7 +63,7 @@ public partial class MainViewModel : ObservableObject
 
     public MainViewModel()
     {
-        LicenseInfo = ResourceHelper.GetString($"pack://application:,,,/MicaSetup;component/Resources/Licenses/license.{GetLanguage()}.txt");
+        LicenseInfo = ResourceHelper.GetString(ServiceManager.GetService<IMuiLanguageService>().GetLicenseUriString());
         using Stream archiveStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.7z");
         RequestedFreeSpace = ArchiveFileHelper.TotalUncompressSizeString(archiveStream);
         AvailableFreeSpace = DriveInfoHelper.GetAvailableFreeSpaceString(installPath);

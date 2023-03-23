@@ -11,7 +11,7 @@
         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
-        FontFamily="{StaticResource HarmonyOSSans}"
+        FontFamily="{local:LocalizedFontFamily}"
         x:Name="Self" Title="{DynamicResource TitleTips}">
     <Window.Resources>
         <ResourceDictionary>

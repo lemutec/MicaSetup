@@ -1,5 +1,7 @@
 ﻿using MicaSetup.Controls;
+using MicaSetup.Services;
 using MicaSetup.Views;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -10,8 +12,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Uninst")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("1.2.1.0")]
-[assembly: AssemblyFileVersion("1.2.1.0")]
+[assembly: AssemblyVersion("1.2.2.0")]
+[assembly: AssemblyFileVersion("1.2.2.0")]
 
 namespace MicaSetup;
 
@@ -48,7 +50,7 @@ internal class Program
             })
             .UseServices(service =>
             {
-                _ = service;
+                service.AddSingleton<IMuiLanguageService, MuiLanguageService>();
             })
             .CreateApp()
             .UseMuiLanguage()

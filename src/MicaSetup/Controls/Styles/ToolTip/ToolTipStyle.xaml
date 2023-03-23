@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MicaSetup.Controls">
     <Style x:Key="DefaultToolTipStyle" TargetType="{x:Type ToolTip}">
-        <Setter Property="FontFamily" Value="{StaticResource HarmonyOSSans}" />
+        <Setter Property="FontFamily" Value="{local:LocalizedFontFamily}" />
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Template">

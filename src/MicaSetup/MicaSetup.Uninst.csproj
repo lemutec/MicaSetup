@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
+    <None Remove="Resources\Fonts\*.ttf" />
     <None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
     <None Remove="Resources\Images\Favicon.ico" />
     <None Remove="Resources\Images\FaviconUninst.ico" />
@@ -76,7 +76,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
+    <Resource Include="Resources\Fonts\*.ttf" />
     <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
     <Resource Include="Resources\Images\Favicon.ico" />
     <Resource Include="Resources\Images\FaviconUninst.ico" />
