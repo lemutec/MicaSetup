@@ -54,12 +54,8 @@ public class MuiLanguageService : IMuiLanguageService
             }
         }
 
-        if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en")
-        {
-            return GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
-        }
-
-        throw new Exception($"[MuiLanguageService] NotFound with match mui lang name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
+        Logger.Debug($"[MuiLanguageService] NotFound with match mui lang name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
+        return GetUriString("en");
     }
 
     public string GetLicenseUriString()
@@ -84,13 +80,8 @@ public class MuiLanguageService : IMuiLanguageService
                 }
             }
         }
-
-        if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "en")
-        {
-            return GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
-        }
-
-        throw new Exception($"[MuiLanguageService] NotFound with match mui license name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
+        Logger.Debug($"[MuiLanguageService] NotFound with match mui license name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
+        return GetUriString("en");
     }
 
     public void DebugPrint()
