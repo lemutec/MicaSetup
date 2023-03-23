@@ -26,12 +26,11 @@
   <ItemGroup>
     <None Remove="Resources\Favicon.ico" />
     <None Remove="Resources\FaviconSetup.ico" />
-    <None Remove="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
+    <None Remove="Resources\Fonts\*.ttf" />
     <None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
-    <None Remove="Resources\Licenses\license.en.txt" />
-    <None Remove="Resources\Licenses\license.ja.txt" />
-    <None Remove="Resources\Licenses\license.zh.txt" />
-    <None Remove="Resources\Setups\publish.7z" />
+    <None Remove="Resources\Licenses\license.*.txt" />
+    <None Remove="Resources\Setups\*.7z" />
+    <None Remove="Resources\Setups\*.exe" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,15 +72,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf" />
+    <Resource Include="Resources\Fonts\*.ttf" />
     <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
     <Resource Include="Resources\Images\Favicon.ico" />
     <Resource Include="Resources\Images\FaviconSetup.ico" />
-    <Resource Include="Resources\Licenses\license.en.txt" />
-    <Resource Include="Resources\Licenses\license.ja.txt" />
-    <Resource Include="Resources\Licenses\license.zh.txt" />
-    <Resource Include="Resources\Setups\publish.7z" />
-    <Resource Include="Resources\Setups\Uninst.exe" />
+    <Resource Include="Resources\Licenses\license.*.txt" />
+    <Resource Include="Resources\Setups\*.7z" />
+    <Resource Include="Resources\Setups\*.exe" />
   </ItemGroup>
 
 </Project>
