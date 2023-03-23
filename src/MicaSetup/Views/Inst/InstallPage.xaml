@@ -22,9 +22,14 @@
                     <i:Interaction.Behaviors>
                         <control:WindowDragMoveBehavior/>
                     </i:Interaction.Behaviors>
-                    <TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
+                    <!--<TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
+                               TextOptions.TextFormattingMode="Ideal"
+                               TextOptions.TextRenderingMode="Aliased"
                                FontSize="110" FontFamily="{StaticResource IcoMoon}"
-                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                    <Image Source="pack://application:,,,/MicaSetup;component/Resources/Images/FaviconRaw.png"
+                           Width="114" Height="114"
+                           RenderOptions.BitmapScalingMode="Fant"/>
                 </Grid>
             </StackPanel>
             <StackPanel>

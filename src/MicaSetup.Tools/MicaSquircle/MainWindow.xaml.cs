@@ -68,11 +68,20 @@ public partial class MainWindow : MicaWindow
     {
         Bitmap bitmap = new(512, 512);
 
-        // Squircle
-        bitmap.AddIconFont(Selection.Squircle, 340, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.White, 6, 28);
+        if (IconType == IconType.Raw)
+        {
+            bitmap = new(512, 512);
+            // IcoMoon
+            bitmap.AddIconFont(Selection.IcoMoon, 370, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.White, 6, 31);
+        }
+        else
+        {
+            // Squircle
+            bitmap.AddIconFont(Selection.Squircle, 340, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.White, 6, 28);
 
-        // IcoMoon
-        bitmap.AddIconFont(Selection.IcoMoon, 200, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.Black, 6, 20);
+            // IcoMoon
+            bitmap.AddIconFont(Selection.IcoMoon, 200, PrivateFontHelper.FontFamily, FontStyleX.Regular, Color.Black, 6, 20);
+        }
 
         if (IconType == IconType.Setup)
         {
@@ -106,6 +115,7 @@ public partial class MainWindow : MicaWindow
         {
             IconType.Setup => nameof(IconType.Setup),
             IconType.Uninst => nameof(IconType.Uninst),
+            IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         }}";
         using Bitmap bitmap = GetBitmap();
@@ -129,6 +139,7 @@ public partial class MainWindow : MicaWindow
         {
             IconType.Setup => nameof(IconType.Setup),
             IconType.Uninst => nameof(IconType.Uninst),
+            IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         })}.png");
     }
@@ -139,6 +150,7 @@ public enum IconType
     Normal,
     Setup,
     Uninst,
+    Raw,
 }
 
 public class IconTypeValueConverter : EnumValueConverter<IconType>
