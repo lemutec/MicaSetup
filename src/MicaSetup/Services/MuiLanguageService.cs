@@ -14,11 +14,18 @@ public class MuiLanguageService : IMuiLanguageService
     {
         if (FontFamily == null)
         {
-            static string GetUriString(string name = null!) => $"pack://application:,,,/MicaSetup;component/Resources/Fonts/{name ?? string.Empty}";
-
-            if (ResourceHelper.HasResource(GetUriString("HarmonyOS_Sans_SC_Regular.ttf")))
+            if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ja")
             {
-                FontFamily = new FontFamily(new Uri(GetUriString()), "./HarmonyOS_Sans_SC_Regular.ttf#HarmonyOS Sans SC");
+                FontFamily = new FontFamily("Yu Gothic UI");
+            }
+            else
+            {
+                static string GetUriString(string name = null!) => $"pack://application:,,,/MicaSetup;component/Resources/Fonts/{name ?? string.Empty}";
+
+                if (ResourceHelper.HasResource(GetUriString("HarmonyOS_Sans_SC_Regular.ttf")))
+                {
+                    FontFamily = new FontFamily(new Uri(GetUriString()), "./HarmonyOS_Sans_SC_Regular.ttf#HarmonyOS Sans SC");
+                }
             }
         }
         return FontFamily ??= new FontFamily();
