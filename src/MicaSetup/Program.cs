@@ -56,6 +56,7 @@ internal class Program
             .UseServices(service =>
             {
                 service.AddScoped<IExplorerService, ExplorerService>();
+                service.AddScoped<IDotNetVersionService, DotNetVersionService>();
             })
             .CreateApp()
             .UseMuiLanguage()

@@ -36,7 +36,7 @@ public static class HostBuilderExtension
     {
         ServiceCollection serviceCollection = new();
         service?.Invoke(serviceCollection);
-        ServiceProviderX.Current = builder.ServiceProvider = serviceCollection.BuildServiceProvider();
+        ServiceManager.Services = builder.ServiceProvider = serviceCollection.BuildServiceProvider();
         return builder;
     }
 

@@ -32,3 +32,15 @@ public static class SpecialPathHelper
         return configPath;
     }
 }
+
+public static class SpecialPathExtension
+{
+    public static string SureDirectoryExists(this string path)
+    {
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+        return path;
+    }
+}
