@@ -73,7 +73,7 @@ public class MuiLanguage
     {
         try
         {
-            using Stream resourceXaml = ResourceHelper.GetStream(ServiceManager.GetService<IMuiLanguageService>().GetXamlUriString());
+            using Stream resourceXaml = ResourceHelper.GetStream(new MuiLanguageService().GetXamlUriString());
             if (BamlHelper.LoadBaml(resourceXaml) is ResourceDictionary resourceDictionary)
             {
                 return (resourceDictionary[key] as string)!;
