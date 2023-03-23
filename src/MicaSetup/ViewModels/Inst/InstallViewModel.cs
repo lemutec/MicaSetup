@@ -3,13 +3,15 @@ using MicaSetup.Controls;
 using MicaSetup.Helper;
 using MicaSetup.Helper.Helper;
 using MicaSetup.Services;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading.Tasks;
 
 namespace MicaSetup.ViewModels;
+
+#pragma warning disable CS0162
+#pragma warning disable IDE0035
 
 public partial class InstallViewModel : ObservableObject
 {
@@ -74,11 +76,56 @@ public partial class InstallViewModel : ObservableObject
                 }
             }
 
+            if (false)
+            {
+                try
+                {
+                    IDotNetVersionService dotNetService = ServiceManager.GetService<IDotNetVersionService>();
+                    DotNetInstallInfo info = dotNetService.GetInfo(new Version(4, 8));
+
+                    try
+                    {
+                        if (dotNetService.GetNetFrameworkVersion() < info.Version)
+                        {
+                            InstallInfo = $"{Mui("Preparing")} {info.Name}";
+                            if (!dotNetService.InstallNetFramework(info.Version, (t, e) =>
+                            {
+                                UIDispatcherHelper.BeginInvoke(() =>
+                                {
+                                    InstallInfo = $"{t switch { ProgressType.Download => Mui("Downloading"), _ or ProgressType.Install => Mui("Installing") }} {info.Name}";
+                                    InstallProgress = e.ProgressPercentage;
+                                });
+                            }))
+                            {
+                                UIDispatcherHelper.BeginInvoke(() =>
+                                {
+                                    _ = MessageBoxX.Info(null!, Mui("ComponentInstallFailedTips", info.Name));
+                                    _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
+                                });
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e);
+                        UIDispatcherHelper.BeginInvoke(() =>
+                        {
+                            _ = MessageBoxX.Info(null!, Mui("ComponentInstallFailedTips", info.Name) + Environment.NewLine + e.Message);
+                            _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
+                        });
+                    }
+                }
+                catch (Exception e)
+                {
+                    Logger.Error(e);
+                }
+            }
+
             InstallInfo = Mui("InstallFinishTips");
             Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);
 
-            ServiceManager.Services.GetService<IExplorerService>()!.Refresh();
+            ServiceManager.GetService<IExplorerService>()!.Refresh();
             UIDispatcherHelper.Invoke(Routing.GoToNext);
         });
     }

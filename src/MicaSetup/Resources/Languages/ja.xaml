@@ -35,4 +35,8 @@
     <s:String x:Key="ProgressTipsUninstalling">アンインストール中</s:String>
     <s:String x:Key="UninstallFinishTips">アンインストールが完了しました。</s:String>
     <s:String x:Key="UninstallDelayUntilRebootTips">一部のファイルが削除されませんでした。これらのファイルは、次回の再起動時に自動的に削除されます。</s:String>
+    <s:String x:Key="Downloading">ダウンロード中</s:String>
+    <s:String x:Key="Installing">インストール中</s:String>
+    <s:String x:Key="NetworkUnavailableTips">現在のネットワークは使用できません。</s:String>
+    <s:String x:Key="ComponentInstallFailedTips">コンポネント「{0}」のインストールに失敗しました。</s:String>
 </ResourceDictionary>

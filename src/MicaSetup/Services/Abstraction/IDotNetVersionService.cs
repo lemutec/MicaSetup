@@ -1,12 +1,13 @@
-﻿using System;
-using System.Net;
+﻿using MicaSetup.Helper;
+using System;
 
 namespace MicaSetup.Services;
 
 public interface IDotNetVersionService
 {
+    public DotNetInstallInfo GetInfo(Version version, bool offline = false);
     public Version GetNetFrameworkVersion();
-    public bool InstallNetFramework(Version version, DownloadProgressChangedEventHandler callback = null!);
+    public bool InstallNetFramework(Version version, InstallerProgressChangedEventHandler callback = null!);
     public Version GetNetCoreVersion();
-    public bool InstallNetCore(Version version, DownloadProgressChangedEventHandler callback = null!);
+    public bool InstallNetCore(Version version, InstallerProgressChangedEventHandler callback = null!);
 }

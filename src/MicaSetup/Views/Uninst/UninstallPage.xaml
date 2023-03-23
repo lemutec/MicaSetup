@@ -39,7 +39,7 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0" Text="{Binding InstallInfo}" Foreground="#555555" TextTrimming="CharacterEllipsis"/>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" Visibility="{Binding InstallProgress,Converter={StaticResource ProgressBarValueVisibilityConverter}}">
                         <TextBlock Text="{Binding InstallProgress,Converter={StaticResource MathRoundConverter}}" Foreground="#555555" Padding="2,0,0,0"/>
                         <TextBlock Text="%" Foreground="#555555"/>
                     </StackPanel>

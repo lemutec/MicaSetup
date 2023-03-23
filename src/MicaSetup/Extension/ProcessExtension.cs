@@ -136,14 +136,16 @@ public class FluentProcess : Process
     public new static FluentProcess Start(string fileName)
     {
         return Create()
-            .FileName(fileName);
+            .FileName(fileName)
+            .Start();
     }
 
     public new static FluentProcess Start(string fileName, string args)
     {
         return new FluentProcess()
             .FileName(fileName)
-            .Arguments(args);
+            .Arguments(args)
+            .Start();
     }
 
     public new FluentProcess BeginErrorReadLine()

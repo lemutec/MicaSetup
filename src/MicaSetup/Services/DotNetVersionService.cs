@@ -1,11 +1,48 @@
 ﻿using MicaSetup.Helper;
 using System;
-using System.Net;
+using System.IO;
 
 namespace MicaSetup.Services;
 
 public class DotNetVersionService : IDotNetVersionService
 {
+    public DotNetInstallInfo GetInfo(Version version, bool offline = false)
+    {
+        if (version == new Version(1, 0))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version == new Version(1, 1))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version == new Version(2, 0))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version == new Version(2, 1))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version == new Version(2, 2))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version == new Version(3, 0))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version == new Version(3, 1))
+        {
+            throw new NotImplementedException();
+        }
+        else if (version >= new Version(5, 0))
+        {
+            throw new NotImplementedException();
+        }
+        return DotNetInstallerHelper.GetInfo(version, offline);
+    }
+
     public Version GetNetFrameworkVersion()
     {
         Version? version = DotNetVersionHelper.GetNet4xVersion();
@@ -34,9 +71,20 @@ public class DotNetVersionService : IDotNetVersionService
         return new Version();
     }
 
-    public bool InstallNetFramework(Version version, DownloadProgressChangedEventHandler callback = null!)
+    public bool InstallNetFramework(Version version, InstallerProgressChangedEventHandler callback = null!)
     {
-        throw new NotImplementedException();
+        DotNetInstallInfo info = DotNetInstallerHelper.GetInfo(version);
+
+        if (DotNetInstallerHelper.Download(info, callback))
+        {
+            bool ret = DotNetInstallerHelper.Install(info, callback);
+            if (File.Exists(info.TempFilePath))
+            {
+                File.Delete(info.TempFilePath);
+            }
+            return ret;
+        }
+        return false;
     }
     
     public Version GetNetCoreVersion()
@@ -44,7 +92,7 @@ public class DotNetVersionService : IDotNetVersionService
         throw new NotImplementedException();
     }
 
-    public bool InstallNetCore(Version version, DownloadProgressChangedEventHandler callback = null!)
+    public bool InstallNetCore(Version version, InstallerProgressChangedEventHandler callback = null!)
     {
         throw new NotImplementedException();
     }

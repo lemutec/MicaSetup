@@ -35,4 +35,8 @@
     <s:String x:Key="ProgressTipsUninstalling">正在卸载</s:String>
     <s:String x:Key="UninstallFinishTips">卸载已完成。</s:String>
     <s:String x:Key="UninstallDelayUntilRebootTips">存在部分文件删除失败，这些文件将在下次重启后自动删除。</s:String>
+    <s:String x:Key="Downloading">正在下载</s:String>
+    <s:String x:Key="Installing">正在安装</s:String>
+    <s:String x:Key="NetworkUnavailableTips">当前网络不可用</s:String>
+    <s:String x:Key="ComponentInstallFailedTips">“{0}”组件安装失败</s:String>
 </ResourceDictionary>

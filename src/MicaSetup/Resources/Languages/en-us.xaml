@@ -35,4 +35,8 @@
     <s:String x:Key="ProgressTipsUninstalling">Uninstalling</s:String>
     <s:String x:Key="UninstallFinishTips">Uninstall completed.</s:String>
     <s:String x:Key="UninstallDelayUntilRebootTips">Some files couldn't be deleted, and will be marked for deletion on next system startup.</s:String>
+    <s:String x:Key="Downloading">Downloading</s:String>
+    <s:String x:Key="Installing">Installing</s:String>
+    <s:String x:Key="NetworkUnavailableTips">Current Network unavailable.</s:String>
+    <s:String x:Key="ComponentInstallFailedTips">Failed to install the component '{0}'.</s:String>
 </ResourceDictionary>

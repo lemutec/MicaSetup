@@ -11,4 +11,5 @@
     <converter:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
     <converter:MathRoundConverter x:Key="MathRoundConverter" />
     <converter:ProgressBarIndeterminateConverter x:Key="ProgressBarIndeterminateConverter" />
+    <converter:ProgressBarValueVisibilityConverter x:Key="ProgressBarValueVisibilityConverter" />
 </ResourceDictionary>
