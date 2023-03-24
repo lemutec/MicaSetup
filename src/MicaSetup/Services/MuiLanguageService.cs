@@ -10,6 +10,11 @@ public class MuiLanguageService : IMuiLanguageService
 {
     public FontFamily FontFamily { get; set; } = null!;
 
+    static MuiLanguageService()
+    {
+        DebugPrintPrivate();
+    }
+
     public FontFamily GetFontFamily()
     {
         if (FontFamily == null)
@@ -84,10 +89,11 @@ public class MuiLanguageService : IMuiLanguageService
         return GetUriString("en");
     }
 
-    public void DebugPrint()
+    [Conditional("DEBUG")]
+    private static void DebugPrintPrivate()
     {
         CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-        Logger.Debug("Display Name", "Name", "TwoName", "ThreeName");
+        Logger.Debug("Display Name", "Name", "TwoName", "ThreeName", "IetfTag");
 
         foreach (var culture in cultures)
         {
@@ -95,11 +101,60 @@ public class MuiLanguageService : IMuiLanguageService
             {
                 continue;
             }
-            Logger.Debug(culture.DisplayName, culture.Name, culture.TwoLetterISOLanguageName, culture.ThreeLetterISOLanguageName);
+            Logger.Debug(culture.DisplayName, culture.Name, culture.TwoLetterISOLanguageName, culture.ThreeLetterISOLanguageName, culture.IetfLanguageTag);
             if (culture.DisplayName.Contains("__EDITME__"))
             {
                 Debugger.Break();
             }
         }
+    }
+}
+
+public class MuiLanguageFont
+{
+    public string? Name { get; set; }
+    public string? TwoName { get; set; }
+    public string? ThreeName { get; set; }
+
+    public string? ResourceFamilyName { get; set; }
+    public string? SystemFamilyName { get; set; }
+}
+
+public static class MuiLanguageFontExtension
+{
+    public static MuiLanguageFont OnNameOf(this MuiLanguageFont self, string name)
+    {
+        self.Name = name;
+        self.TwoName = null!;
+        self.ThreeName = null!;
+        return self;
+    }
+
+    public static MuiLanguageFont OnTwoNameOf(this MuiLanguageFont self, string twoName)
+    {
+        self.Name = null!;
+        self.TwoName = twoName;
+        self.ThreeName = null!;
+        return self;
+    }
+
+    public static MuiLanguageFont OnThreeNameOf(this MuiLanguageFont self, string threeName)
+    {
+        self.Name = null!;
+        self.TwoName = null!;
+        self.ThreeName = threeName;
+        return self;
+    }
+
+    public static MuiLanguageFont ForResourceFont(this MuiLanguageFont self, string resourceFamilyName)
+    {
+        self.ResourceFamilyName = resourceFamilyName;
+        return self;
+    }
+
+    public static MuiLanguageFont ForSystemFont(this MuiLanguageFont self, string systemFamilyName)
+    {
+        self.SystemFamilyName = systemFamilyName;
+        return self;
     }
 }
