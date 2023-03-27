@@ -47,6 +47,7 @@ public static class ArchiveFileHelper
 
         while (reader.MoveToNextEntry())
         {
+            progressCallback?.Invoke(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d), reader.Entry.Key);
             reader.WriteEntryToDirectory(destinationDirectory, options);
             currentTotalSize += reader.Entry.Size;
             progressCallback?.Invoke(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d), reader.Entry.Key);
