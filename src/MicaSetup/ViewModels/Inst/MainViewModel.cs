@@ -23,8 +23,10 @@ public partial class MainViewModel : ObservableObject
     {
         try
         {
+            value = Path.Combine(value).TrimEnd('\\', '/');
             AvailableFreeSpace = DriveInfoHelper.GetAvailableFreeSpaceString(value);
-            Option.Current.InstallLocation = value;
+            Option.Current.InstallLocation = (value?.EndsWith(Option.Current.KeyName, StringComparison.OrdinalIgnoreCase) ?? false) ? value : Path.Combine(value, Option.Current.KeyName);
+            Logger.Debug($"[InstallLocation] {Option.Current.InstallLocation}");
             IsIllegalPath = false;
         }
         catch
