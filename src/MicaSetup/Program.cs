@@ -12,8 +12,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Setup")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("1.2.2.0")]
-[assembly: AssemblyFileVersion("1.2.2.0")]
+[assembly: AssemblyVersion("1.2.3.0")]
+[assembly: AssemblyFileVersion("1.2.3.0")]
 
 namespace MicaSetup;
 
@@ -49,7 +49,7 @@ internal class Program
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
                 option.DisplayIcon = "MicaApp.exe";
-                option.DisplayVersion = "1.2.0.0";
+                option.DisplayVersion = "1.2.3.0";
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("Setup")}";
@@ -59,6 +59,11 @@ internal class Program
                 service.AddSingleton<IMuiLanguageService, MuiLanguageService>();
                 service.AddScoped<IDotNetVersionService, DotNetVersionService>();
                 service.AddScoped<IExplorerService, ExplorerService>();
+            })
+            .UseFonts(font =>
+            {
+                font.Add(new MuiLanguageFont().OnTwoNameOf("ja").ForSystemFont("Yu Gothic UI"));
+                font.Add(new MuiLanguageFont().OnAnyName().ForResourceFont("HarmonyOS_Sans_SC_Regular.ttf", "HarmonyOS Sans SC"));
             })
             .CreateApp()
             .UseMuiLanguage()

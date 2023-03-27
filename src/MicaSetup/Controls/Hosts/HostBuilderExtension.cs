@@ -11,6 +11,8 @@ using System.Windows.Threading;
 
 namespace MicaSetup.Controls;
 
+#pragma warning disable IDE0002
+
 public static class HostBuilderExtension
 {
     public static IHostBuilder UseHostBuilder(this IHostBuilder builder, Action<IHostBuilder> custom)
@@ -77,6 +79,12 @@ public static class HostBuilderExtension
     public static IHostBuilder UseMuiLanguage(this IHostBuilder builder)
     {
         MuiLanguage.SetupLanguage();
+        return builder;
+    }
+
+    public static IHostBuilder UseFonts(this IHostBuilder builder, Action<List<MuiLanguageFont>> handler)
+    {
+        handler?.Invoke(MuiLanguage.FontSelector);
         return builder;
     }
 

@@ -2,9 +2,12 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Media;
 
 namespace MicaSetup.Services;
+
+#pragma warning disable IDE0002
 
 public class MuiLanguageService : IMuiLanguageService
 {
@@ -19,17 +22,42 @@ public class MuiLanguageService : IMuiLanguageService
     {
         if (FontFamily == null)
         {
-            if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ja")
+            static string GetUriString(string name = null!) => $"pack://application:,,,/MicaSetup;component/Resources/Fonts/{name ?? string.Empty}";
+
+            if (FontSelector.Count > 0)
             {
-                FontFamily = new FontFamily("Yu Gothic UI");
+                MuiLanguageFont font = MuiLanguage.FontSelector.Where(f => f.Name == CultureInfo.CurrentUICulture.Name).ToList().FirstOrDefault()
+                    ?? MuiLanguage.FontSelector.Where(f => f.ThreeName == CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName).ToList().FirstOrDefault()
+                    ?? MuiLanguage.FontSelector.Where(f => f.TwoName == CultureInfo.CurrentUICulture.TwoLetterISOLanguageName).ToList().FirstOrDefault()
+                    ?? MuiLanguage.FontSelector.Where(f => f.Name == null && f.TwoName == null && f.ThreeName == null).ToList().FirstOrDefault();
+
+                if (font != null)
+                {
+                    if (!string.IsNullOrWhiteSpace(font.ResourceFamilyName))
+                    {
+                        if (ResourceHelper.HasResource(GetUriString(font.ResourceFontFileName!)))
+                        {
+                            FontFamily = new FontFamily(new Uri(GetUriString()), font.ResourceFamilyName);
+                        }
+                    }
+                    else if (!string.IsNullOrWhiteSpace(font.SystemFamilyName))
+                    {
+                        FontFamily = new FontFamily(font.SystemFamilyName);
+                    }
+                }
             }
             else
             {
-                static string GetUriString(string name = null!) => $"pack://application:,,,/MicaSetup;component/Resources/Fonts/{name ?? string.Empty}";
-
-                if (ResourceHelper.HasResource(GetUriString("HarmonyOS_Sans_SC_Regular.ttf")))
+                if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ja")
                 {
-                    FontFamily = new FontFamily(new Uri(GetUriString()), "./HarmonyOS_Sans_SC_Regular.ttf#HarmonyOS Sans SC");
+                    FontFamily = new FontFamily("Yu Gothic UI");
+                }
+                else
+                {
+                    if (ResourceHelper.HasResource(GetUriString("HarmonyOS_Sans_SC_Regular.ttf")))
+                    {
+                        FontFamily = new FontFamily(new Uri(GetUriString()), "./HarmonyOS_Sans_SC_Regular.ttf#HarmonyOS Sans SC");
+                    }
                 }
             }
         }
@@ -107,54 +135,5 @@ public class MuiLanguageService : IMuiLanguageService
                 Debugger.Break();
             }
         }
-    }
-}
-
-public class MuiLanguageFont
-{
-    public string? Name { get; set; }
-    public string? TwoName { get; set; }
-    public string? ThreeName { get; set; }
-
-    public string? ResourceFamilyName { get; set; }
-    public string? SystemFamilyName { get; set; }
-}
-
-public static class MuiLanguageFontExtension
-{
-    public static MuiLanguageFont OnNameOf(this MuiLanguageFont self, string name)
-    {
-        self.Name = name;
-        self.TwoName = null!;
-        self.ThreeName = null!;
-        return self;
-    }
-
-    public static MuiLanguageFont OnTwoNameOf(this MuiLanguageFont self, string twoName)
-    {
-        self.Name = null!;
-        self.TwoName = twoName;
-        self.ThreeName = null!;
-        return self;
-    }
-
-    public static MuiLanguageFont OnThreeNameOf(this MuiLanguageFont self, string threeName)
-    {
-        self.Name = null!;
-        self.TwoName = null!;
-        self.ThreeName = threeName;
-        return self;
-    }
-
-    public static MuiLanguageFont ForResourceFont(this MuiLanguageFont self, string resourceFamilyName)
-    {
-        self.ResourceFamilyName = resourceFamilyName;
-        return self;
-    }
-
-    public static MuiLanguageFont ForSystemFont(this MuiLanguageFont self, string systemFamilyName)
-    {
-        self.SystemFamilyName = systemFamilyName;
-        return self;
     }
 }

@@ -1,22 +1,30 @@
 ﻿using MicaSetup.Helper;
 using MicaSetup.Services;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Windows;
 
 namespace MicaSetup.Core;
 
-public class MuiLanguage
+public static class MuiLanguage
 {
-    public static string SystemLanguage => CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+    /// <summary>
+    /// https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list
+    /// https://learn.microsoft.com/en-us/typography/fonts/windows_10_font_list
+    /// https://learn.microsoft.com/en-us/typography/fonts/windows_81_font_list
+    /// https://learn.microsoft.com/en-us/typography/fonts/windows_8_font_list
+    /// https://learn.microsoft.com/en-us/typography/fonts/windows_7_font_list
+    /// </summary>
+    public static List<MuiLanguageFont> FontSelector { get; } = new();
 
     public static void SetupLanguage()
     {
         _ = SetLanguage();
     }
 
-    public static bool SetLanguage() => SystemLanguage switch
+    public static bool SetLanguage() => CultureInfo.CurrentUICulture.TwoLetterISOLanguageName switch
     {
         "zh" => SetLanguage("zh"),
         "ja" => SetLanguage("ja"),
@@ -84,5 +92,66 @@ public class MuiLanguage
             _ = e;
         }
         return null!;
+    }
+}
+
+public class MuiLanguageFont
+{
+    public string? Name { get; set; }
+    public string? TwoName { get; set; }
+    public string? ThreeName { get; set; }
+
+    public string? ResourceFontFileName { get; set; }
+    public string? ResourceFontFamilyName { get; set; }
+    public string? ResourceFamilyName => !string.IsNullOrWhiteSpace(ResourceFontFileName) && !string.IsNullOrWhiteSpace(ResourceFontFamilyName) ? $"./{ResourceFontFileName}#{ResourceFontFamilyName}" : null!;
+
+    public string? SystemFamilyName { get; set; }
+}
+
+public static class MuiLanguageFontExtension
+{
+    public static MuiLanguageFont OnNameOf(this MuiLanguageFont self, string name)
+    {
+        self.Name = name ?? throw new ArgumentNullException(nameof(name));
+        self.TwoName = null!;
+        self.ThreeName = null!;
+        return self;
+    }
+
+    public static MuiLanguageFont OnTwoNameOf(this MuiLanguageFont self, string twoName)
+    {
+        self.Name = null!;
+        self.TwoName = twoName ?? throw new ArgumentNullException(nameof(twoName));
+        self.ThreeName = null!;
+        return self;
+    }
+
+    public static MuiLanguageFont OnThreeNameOf(this MuiLanguageFont self, string threeName)
+    {
+        self.Name = null!;
+        self.TwoName = null!;
+        self.ThreeName = threeName ?? throw new ArgumentNullException(nameof(threeName));
+        return self;
+    }
+
+    public static MuiLanguageFont OnAnyName(this MuiLanguageFont self)
+    {
+        self.Name = null!;
+        self.TwoName = null!;
+        self.ThreeName = null!;
+        return self;
+    }
+
+    public static MuiLanguageFont ForResourceFont(this MuiLanguageFont self, string fontFileName, string familyName)
+    {
+        self.ResourceFontFileName = fontFileName ?? throw new ArgumentNullException(nameof(fontFileName));
+        self.ResourceFontFamilyName = familyName ?? throw new ArgumentNullException(nameof(familyName));
+        return self;
+    }
+
+    public static MuiLanguageFont ForSystemFont(this MuiLanguageFont self, string familyName)
+    {
+        self.SystemFamilyName = familyName ?? throw new ArgumentNullException(nameof(familyName));
+        return self;
     }
 }
