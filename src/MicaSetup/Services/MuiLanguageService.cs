@@ -42,7 +42,14 @@ public class MuiLanguageService : IMuiLanguageService
                     }
                     else if (!string.IsNullOrWhiteSpace(font.SystemFamilyName))
                     {
-                        FontFamily = new FontFamily(font.SystemFamilyName);
+                        if (SystemFontHelper.HasFontFamily(font.SystemFamilyName!))
+                        {
+                            FontFamily = new FontFamily(font.SystemFamilyName);
+                        }
+                        else if (SystemFontHelper.HasFontFamily(font.SystemFamilyNameBackup!))
+                        {
+                            FontFamily = new FontFamily(font.SystemFamilyNameBackup);
+                        }
                     }
                 }
             }

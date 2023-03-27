@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace MicaSetup.Core;
@@ -106,6 +107,7 @@ public class MuiLanguageFont
     public string? ResourceFamilyName => !string.IsNullOrWhiteSpace(ResourceFontFileName) && !string.IsNullOrWhiteSpace(ResourceFontFamilyName) ? $"./{ResourceFontFileName}#{ResourceFontFamilyName}" : null!;
 
     public string? SystemFamilyName { get; set; }
+    public string? SystemFamilyNameBackup { get; set; }
 }
 
 public static class MuiLanguageFontExtension
@@ -149,9 +151,11 @@ public static class MuiLanguageFontExtension
         return self;
     }
 
-    public static MuiLanguageFont ForSystemFont(this MuiLanguageFont self, string familyName)
+    public static MuiLanguageFont ForSystemFont(this MuiLanguageFont self, string familyName, string familyNameBackup = null!)
     {
         self.SystemFamilyName = familyName ?? throw new ArgumentNullException(nameof(familyName));
+        self.SystemFamilyNameBackup = familyNameBackup;
+        _ = !new Regex("^[a-zA-Z ]+$").IsMatch(familyName) ? throw new ArgumentException(nameof(familyName)) : default(object);
         return self;
     }
 }

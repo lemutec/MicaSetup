@@ -41,4 +41,9 @@ public static class NativeMethods
 
         return retval != 0 ? stringValue.ToString() : null!;
     }
+
+    public static ushort MakeLangId(PrimaryLanguageID primaryLangId, SublanguageID subLangId)
+    {
+        return (ushort)(((ushort)subLangId << 10) | (ushort)primaryLangId);
+    }
 }

@@ -28,6 +28,7 @@ internal class Program
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
+            .UseLanguage("ik")
             .UseOptions(option =>
             {
                 option.IsCreateDesktopShortcut = true;
@@ -62,7 +63,7 @@ internal class Program
             })
             .UseFonts(font =>
             {
-                font.Add(new MuiLanguageFont().OnTwoNameOf("ja").ForSystemFont("Yu Gothic UI"));
+                font.Add(new MuiLanguageFont().OnTwoNameOf("ja").ForSystemFont("Yu Gothic UI", "Meiryo UI"));
                 font.Add(new MuiLanguageFont().OnAnyName().ForResourceFont("HarmonyOS_Sans_SC_Regular.ttf", "HarmonyOS Sans SC"));
             })
             .CreateApp()
