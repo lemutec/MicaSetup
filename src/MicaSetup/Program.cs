@@ -28,7 +28,6 @@ internal class Program
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
-            .UseLanguage("ik")
             .UseOptions(option =>
             {
                 option.IsCreateDesktopShortcut = true;
