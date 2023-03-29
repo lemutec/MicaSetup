@@ -10,6 +10,19 @@ public static class InstallHelper
 {
     public static void Install(Stream archiveStream, Action<double, string> progressCallback = null!)
     {
+        if (Option.Current.IsInstallCertificate)
+        {
+            try
+            {
+                byte[] cer = ResourceHelper.GetBytes("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.cer");
+                CertificateHelper.Install(cer);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
         if (Option.Current.IsCreateDesktopShortcut)
         {
             try
@@ -65,6 +78,7 @@ public static class InstallHelper
 
         ReaderOptions readerOptions = new()
         {
+            LookForHeader = true,
             Password = string.IsNullOrEmpty(Option.Current.UnpackingPassword) ? null! : Option.Current.UnpackingPassword,
         };
 

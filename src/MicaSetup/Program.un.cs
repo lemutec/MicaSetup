@@ -40,6 +40,7 @@ internal class Program
                 option.IsUseRegistryPreferX86 = null!;
                 option.IsAllowFirewall = true;
                 option.IsRefreshExplorer = false;
+                option.IsInstallCertificate = false;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";

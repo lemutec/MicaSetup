@@ -155,6 +155,19 @@ public static class UninstallHelper
             }
         }
 
+        if (Option.Current.IsInstallCertificate)
+        {
+            try
+            {
+                byte[] cer = ResourceHelper.GetBytes("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.cer");
+                CertificateHelper.Uninstall(cer);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
         if (Option.Current.IsCreateDesktopShortcut)
         {
             try

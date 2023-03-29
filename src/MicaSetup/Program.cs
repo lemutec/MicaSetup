@@ -42,6 +42,7 @@ internal class Program
                 option.IsAllowFullFolderSecurity = true;
                 option.IsAllowFirewall = true;
                 option.IsRefreshExplorer = false;
+                option.IsInstallCertificate = false;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.UnpackingPassword = null!;
                 option.BackdropMica = true;

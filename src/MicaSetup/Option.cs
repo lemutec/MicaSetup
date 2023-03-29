@@ -118,6 +118,12 @@ public class Option
     public bool IsRefreshExplorer { get; set; } = false;
 
     /// <summary>
+    /// Indicates whether to Install Certification file (*.cer)
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsInstallCertificate { get; set; } = false;
+
+    /// <summary>
     /// The file ext filter to remove when overlay install
     /// Using just like "exe,dll,pdb"
     /// </summary>
