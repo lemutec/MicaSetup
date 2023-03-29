@@ -21,7 +21,6 @@ public partial class InstallViewModel : ObservableObject
     [ObservableProperty]
     private double installProgress = 0d;
 
-    [SuppressMessage("Design", "CA1031:")]
     public InstallViewModel()
     {
         Option.Current.Installing = true;
