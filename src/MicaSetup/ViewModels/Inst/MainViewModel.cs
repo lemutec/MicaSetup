@@ -12,6 +12,7 @@ using MicaSetup.Shell.Dialogs;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 using MicaSetup.Services;
+using SharpCompress.Readers;
 
 namespace MicaSetup.ViewModels;
 
@@ -67,7 +68,14 @@ public partial class MainViewModel : ObservableObject
     {
         LicenseInfo = ResourceHelper.GetString(ServiceManager.GetService<IMuiLanguageService>().GetLicenseUriString());
         using Stream archiveStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.7z");
-        RequestedFreeSpace = ArchiveFileHelper.TotalUncompressSizeString(archiveStream);
+
+        ReaderOptions readerOptions = new()
+        {
+            LookForHeader = true,
+            Password = string.IsNullOrEmpty(Option.Current.UnpackingPassword) ? null! : Option.Current.UnpackingPassword,
+        };
+
+        RequestedFreeSpace = ArchiveFileHelper.TotalUncompressSizeString(archiveStream, readerOptions);
         AvailableFreeSpace = DriveInfoHelper.GetAvailableFreeSpaceString(installPath);
     }
 
