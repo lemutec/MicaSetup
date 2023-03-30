@@ -25,7 +25,8 @@ public partial class MainViewModel : ObservableObject
         try
         {
             value = Path.Combine(value).TrimEnd('\\', '/');
-            AvailableFreeSpace = DriveInfoHelper.GetAvailableFreeSpaceString(value);
+            availableFreeSpaceLong = DriveInfoHelper.GetAvailableFreeSpace(value);
+            AvailableFreeSpace = availableFreeSpaceLong.ToFreeSpaceString();
             Option.Current.InstallLocation = (value?.EndsWith(Option.Current.KeyName, StringComparison.OrdinalIgnoreCase) ?? false) ? value : Path.Combine(value, Option.Current.KeyName);
             Logger.Debug($"[InstallLocation] {Option.Current.InstallLocation}");
             IsIllegalPath = false;
@@ -38,9 +39,11 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private string requestedFreeSpace = null!;
+    private long requestedFreeSpaceLong = default;
 
     [ObservableProperty]
     private string availableFreeSpace = null!;
+    private long availableFreeSpaceLong = default;
 
     [ObservableProperty]
     private bool isIllegalPath = false;
@@ -75,8 +78,10 @@ public partial class MainViewModel : ObservableObject
             Password = string.IsNullOrEmpty(Option.Current.UnpackingPassword) ? null! : Option.Current.UnpackingPassword,
         };
 
-        RequestedFreeSpace = ArchiveFileHelper.TotalUncompressSizeString(archiveStream, readerOptions);
-        AvailableFreeSpace = DriveInfoHelper.GetAvailableFreeSpaceString(installPath);
+        requestedFreeSpaceLong = ArchiveFileHelper.TotalUncompressSize(archiveStream, readerOptions) + (Option.Current.IsCreateUninst ? 2048000 : 0);
+        RequestedFreeSpace = requestedFreeSpaceLong.ToFreeSpaceString();
+        availableFreeSpaceLong = DriveInfoHelper.GetAvailableFreeSpace(installPath);
+        AvailableFreeSpace = availableFreeSpaceLong.ToFreeSpaceString();
     }
 
     [ObservableProperty]
@@ -171,6 +176,19 @@ public partial class MainViewModel : ObservableObject
         {
             _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("IllegalPathTips"));
             return;
+        }
+
+        try
+        {
+            if (requestedFreeSpaceLong >= availableFreeSpaceLong)
+            {
+                _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("AvailableFreeSpaceInsufficientTips"));
+                return;
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.Error(e);
         }
 
         try

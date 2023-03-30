@@ -13,14 +13,12 @@ public static class DriveInfoHelper
         return availableSpace;
     }
 
-    public static string GetAvailableFreeSpaceString(string path)
+    public static string ToFreeSpaceString(this long freeSpace)
     {
-        long availableSpace = GetAvailableFreeSpace(path);
-
-        if (availableSpace >= 1073741824)
+        if (freeSpace >= 1073741824)
         {
-            return string.Format("{0:0.##}GB", (double)availableSpace / 1073741824);
+            return $"{(double)freeSpace / 1073741824:0.##}GB";
         }
-        return string.Format("{0:0.##}MB", (double)availableSpace / 1048576);
+        return $"{(double)freeSpace / 1048576:0.##}MB";
     }
 }

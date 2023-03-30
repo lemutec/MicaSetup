@@ -23,18 +23,6 @@ public static class ArchiveFileHelper
         return archive.TotalUncompressSize;
     }
 
-    public static string TotalUncompressSizeString(Stream stream, ReaderOptions? readerOptions = null!)
-    {
-        using dynamic archive = stream.OpenArchive(readerOptions);
-        long totalUncompressSize = archive.TotalUncompressSize;
-
-        if (totalUncompressSize >= 1073741824)
-        {
-            return $"{(double)totalUncompressSize / 1073741824:0.##}GB";
-        }
-        return $"{(double)totalUncompressSize / 1048576:0.##}MB";
-    }
-
     public static void ExtractAll(string destinationDirectory, string filePath, ReaderOptions? readerOptions = null!, ExtractionOptions? options = null)
     {
         using dynamic archive = filePath.OpenArchive(readerOptions);
