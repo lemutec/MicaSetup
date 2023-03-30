@@ -46,14 +46,36 @@ public static class ArchiveFileHelper
     {
         using dynamic archive = stream.OpenArchive(readerOptions);
         using IReader reader = archive.ExtractAllEntries();
+        using ProgressAccumulator acc = new(anime: DoubleEasingAnimations.EaseInOutCirc);
         long currentTotalSize = default;
+        double currentProgress = default;
+        string currentKey = null!;
+
+        void ProgressCallback(double progress)
+        {
+            if (currentProgress != progress || currentKey != reader.Entry.Key)
+            {
+                progressCallback?.Invoke(currentProgress = progress, currentKey = reader.Entry.Key);
+            }
+        }
 
         while (reader.MoveToNextEntry())
         {
-            progressCallback?.Invoke(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d), reader.Entry.Key);
+            ProgressCallback(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d));
+
+            if ((reader.Entry.Size / 1048576d) > 1d)
+            {
+                _ = acc.Reset(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d),
+                    Math.Min((currentTotalSize + reader.Entry.Size) / (double)archive.TotalUncompressSize, 1d),
+                    reader.Entry.Size / 8912.896,
+                    ProgressCallback
+                ).Start();
+            }
             reader.WriteEntryToDirectory(destinationDirectory, options);
+
+            acc.Stop();
             currentTotalSize += reader.Entry.Size;
-            progressCallback?.Invoke(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d), reader.Entry.Key);
+            ProgressCallback(Math.Min(currentTotalSize / (double)archive.TotalUncompressSize, 1d));
         }
     }
 }

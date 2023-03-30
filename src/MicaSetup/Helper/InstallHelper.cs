@@ -93,6 +93,7 @@ public static class InstallHelper
         StringBuilder uninstallData = new();
         ArchiveFileHelper.ExtractAll(Option.Current.InstallLocation, archiveStream, (double progress, string key) =>
         {
+            Logger.Debug($"[ExtractAll] {key} {progress * 100d:0.00}%");
             progressCallback?.Invoke(progress, key);
             uninstallData.Append(key);
             uninstallData.Append('|');
