@@ -173,6 +173,19 @@ public partial class MainViewModel : ObservableObject
             return;
         }
 
+        try
+        {
+            if (!WritableHelper.CheckWritable(Path.Combine(InstallPath, Option.Current.ExeName)))
+            {
+                _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
+                return;
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.Error(e);
+        }
+
         if (UIDispatcherHelper.MainWindow is Window window)
         {
             window.Height = 400;

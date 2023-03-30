@@ -2,6 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Controls;
 using MicaSetup.Helper;
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -27,6 +29,22 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private void StartUninstall()
     {
+        try
+        {
+            UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
+
+            Option.Current.InstallLocation = uinfo.InstallLocation;
+            if (!WritableHelper.CheckWritable(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)))
+            {
+                _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
+                return;
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.Error(e);
+        }
+
         Routing.GoToNext();
     }
 
