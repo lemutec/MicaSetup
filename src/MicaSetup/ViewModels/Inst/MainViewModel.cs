@@ -2,17 +2,17 @@
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Controls;
 using MicaSetup.Helper;
+using MicaSetup.Services;
+using MicaSetup.Shell.Dialogs;
+using SharpCompress.Readers;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media.Animation;
-using MicaSetup.Shell.Dialogs;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
-using MicaSetup.Services;
-using SharpCompress.Readers;
 
 namespace MicaSetup.ViewModels;
 
