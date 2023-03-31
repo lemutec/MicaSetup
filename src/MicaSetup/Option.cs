@@ -211,14 +211,14 @@ public class Option
     public string SetupName { get; set; } = null!;
 
     /// <summary>
-    /// AppSecret
+    /// App Center's SDK app secret
     /// [AppCenter](https://appcenter.ms/)
     /// </summary>
     [Category("GlobalSetting")]
     public string AppSecret { get; set; } = null!;
 
     /// <summary>
-    /// Measurement ID
+    /// Google Analytics 4 Streaming Measurement ID
     /// [GA4](https://analytics.google.com/)
     /// </summary>
     [Category("GlobalSetting")]

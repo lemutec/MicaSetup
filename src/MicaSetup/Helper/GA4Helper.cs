@@ -30,8 +30,8 @@ public static class GA4Helper
                 ""page_location"": ""{$"https://github.com/lemutec/MicaSetup/{page.TrimStart('/')}"}"",
                 ""page_title"": ""{title ?? string.Empty}"",
             }}""";
-            StringContent content = new(json.Trim('"'), Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.Value.PostAsync("https://www.google-analytics.com/mp/collect", content);
+            using StringContent content = new(json.Trim('"'), Encoding.UTF8, "application/json");
+            using HttpResponseMessage response = await client.Value.PostAsync("https://www.google-analytics.com/mp/collect", content);
             _ = response.StatusCode;
         }
         catch (Exception e)
