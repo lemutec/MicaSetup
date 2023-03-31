@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MicaSetup.Helper;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,7 @@ public static class Routing
         {
             if (Shell.TryGetTarget(out ShellControl shell))
             {
+                OnGoTo(route);
                 shell.Content = ResolveRoute(route);
                 shell.Route = route;
             }
@@ -56,6 +58,7 @@ public static class Routing
                     {
                         if (found)
                         {
+                            OnGoTo(item.Key);
                             shell.Content = ResolveRoute(item.Key);
                             shell.Route = item.Key;
                             break;
@@ -67,6 +70,14 @@ public static class Routing
                     }
                 }
             }
+        }
+    }
+
+    private static void OnGoTo(string route)
+    {
+        if (!string.IsNullOrWhiteSpace(Option.Current.MeasurementID))
+        {
+            GA4Helper.SendPageViewAsync(route).Forget();
         }
     }
 }

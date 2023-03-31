@@ -209,4 +209,18 @@ public class Option
     /// </summary>
     [Category("GlobalSetting")]
     public string SetupName { get; set; } = null!;
+
+    /// <summary>
+    /// AppSecret
+    /// [AppCenter](https://appcenter.ms/)
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string AppSecret { get; set; } = null!;
+
+    /// <summary>
+    /// Measurement ID
+    /// [GA4](https://analytics.google.com/)
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string MeasurementID { get; set; } = null!;
 }
