@@ -85,12 +85,12 @@ internal static class ShellObjectWatcherNativeMethods
 {
     public delegate int WndProcDelegate(nint hwnd, uint msg, nint wparam, nint lparam);
 
-    [DllImport("Ole32.dll")]
+    [DllImport(Lib.Ole32)]
     public static extern HResult CreateBindCtx(
         int reserved,
         [Out] out IBindCtx bindCtx);
 
-    [DllImport("User32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    [DllImport(Lib.User32, CharSet = CharSet.Unicode, SetLastError = true)]
     public static extern nint CreateWindowEx(
         int extendedStyle,
         [MarshalAs(UnmanagedType.LPWStr)]
@@ -107,17 +107,17 @@ internal static class ShellObjectWatcherNativeMethods
         nint instanceHandle,
         nint additionalData);
 
-    [DllImport("User32.dll")]
+    [DllImport(Lib.User32)]
     public static extern int DefWindowProc(
         nint hwnd,
         uint msg,
         nint wparam,
         nint lparam);
 
-    [DllImport("User32.dll")]
+    [DllImport(Lib.User32)]
     public static extern void DispatchMessage([In] ref Message message);
 
-    [DllImport("User32.dll")]
+    [DllImport(Lib.User32)]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static extern bool GetMessage(
         [Out] out Message message,
@@ -125,7 +125,7 @@ internal static class ShellObjectWatcherNativeMethods
         uint filterMinMessage,
         uint filterMaxMessage);
 
-    [DllImport("User32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    [DllImport(Lib.User32, CharSet = CharSet.Unicode, SetLastError = true)]
     public static extern uint RegisterClassEx(
         ref WindowClassEx windowClass
         );

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Natives;
+using System;
 using System.Runtime.InteropServices;
 
 namespace MicaSetup.Shell.Dialogs;
@@ -18,7 +19,7 @@ internal static class StockIconsNativeMethods
     }
 
     [PreserveSig]
-    [DllImport("Shell32.dll", CharSet = CharSet.Unicode,
+    [DllImport(Lib.Shell32, CharSet = CharSet.Unicode,
     ExactSpelling = true, SetLastError = false)]
     internal static extern HResult SHGetStockIconInfo(
         StockIconIdentifier identifier,

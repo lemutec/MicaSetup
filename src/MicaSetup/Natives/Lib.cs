@@ -15,5 +15,8 @@ public static class Lib
         WinInet = "wininet.dll",
         UxTheme = "uxtheme.dll",
         DnsApi = "dnsapi.dll",
-        DwmApi = "dwmapi.dll";
+        DwmApi = "dwmapi.dll",
+        PropSys = "propsys.dll",
+        OleAut32 = "oleaut32.dll",
+        Ole32 = "ole32.dll";
 }
