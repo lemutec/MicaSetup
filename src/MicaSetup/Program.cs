@@ -1,4 +1,5 @@
 ﻿using MicaSetup.Controls;
+using MicaSetup.Helper;
 using MicaSetup.Services;
 using MicaSetup.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,8 +13,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Setup")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("1.2.5.0")]
-[assembly: AssemblyFileVersion("1.2.5.0")]
+[assembly: AssemblyVersion("1.3.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]
 
 namespace MicaSetup;
 
@@ -28,6 +29,7 @@ internal class Program
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
+            .UseAsMsixInstaller(enabled: false, "c17bc862-e10e-4618-b717-e47dd2bf65c8", MsixInstallMethod.AppInstaller) // Not Impl
             .UseOptions(option =>
             {
                 option.IsCreateDesktopShortcut = true;
@@ -50,12 +52,12 @@ internal class Program
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
                 option.DisplayIcon = "MicaApp.exe";
-                option.DisplayVersion = "1.2.5.0";
+                option.DisplayVersion = "1.3.0.0";
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("Setup")}";
-                option.AppSecret = null!;
-                option.MeasurementID = null!;
+                option.AppSecret = null!; // Not Impl
+                option.MeasurementID = null!; // Not Impl
             })
             .UseServices(service =>
             {

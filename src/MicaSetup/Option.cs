@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using MicaSetup.Helper;
+using System.ComponentModel;
 
 namespace MicaSetup;
 
@@ -209,6 +210,19 @@ public class Option
     /// </summary>
     [Category("GlobalSetting")]
     public string SetupName { get; set; } = null!;
+
+    /// <summary>
+    /// Provide Package Name for Get-AppxPackage
+    /// You can get it from AppxManifest.xml in your MSIX/APPX type file
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string AppxPackageName { get; set; } = null!;
+
+    /// <summary>
+    /// Provide Package install method
+    /// </summary>
+    [Category("GlobalSetting")]
+    public MsixInstallMethod AppxInstallMethod { get; set; } = default;
 
     /// <summary>
     /// App Center's SDK app secret

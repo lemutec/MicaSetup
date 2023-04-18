@@ -84,6 +84,11 @@
     <Resource Include="Resources\Images\FaviconSetup.ico" />
     <Resource Include="Resources\Licenses\license.*.txt" />
     <Resource Include="Resources\Setups\*.7z" />
+    <Resource Include="Resources\Setups\*.appx" />
+    <Resource Include="Resources\Setups\*.appxbundle" />
+    <Resource Include="Resources\Setups\*.msix" />
+    <Resource Include="Resources\Setups\*.msixbundle" />
+    <Resource Include="Resources\Setups\*.msi" />
     <Resource Include="Resources\Setups\*.zip" />
     <Resource Include="Resources\Setups\*.exe" />
     <Resource Include="Resources\Setups\*.cer" />

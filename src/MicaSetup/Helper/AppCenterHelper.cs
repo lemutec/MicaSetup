@@ -12,6 +12,9 @@ public static class AppCenterHelper
 
     public static async Task SendPageViewAsync(string page, string title = null!)
     {
+        _ = page;
+        _ = title;
+
         try
         {
             await Task.CompletedTask;

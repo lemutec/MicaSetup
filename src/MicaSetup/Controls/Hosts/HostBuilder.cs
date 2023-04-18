@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Windows;
 
 namespace MicaSetup.Controls;
 
@@ -6,12 +7,19 @@ namespace MicaSetup.Controls;
 
 public class HostBuilder : IHostBuilder
 {
-    public App App { get; set; }
+    public IApp App { get; set; }
     public ServiceProvider ServiceProvider { get; set; }
 
     public IHostBuilder CreateApp()
     {
-        App = new App();
+        if (!string.IsNullOrEmpty(Option.Current.AppxPackageName) && Option.Current.AppxInstallMethod == Helper.MsixInstallMethod.AppInstaller)
+        {
+            App = new AppInstaller();
+        }
+        else
+        {
+            App = new App();
+        }
         return this;
     }
 

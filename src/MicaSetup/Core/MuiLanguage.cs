@@ -34,6 +34,11 @@ public static class MuiLanguage
 
     public static bool SetLanguage(string name = "en")
     {
+        if (Application.Current == null)
+        {
+            return false;
+        }
+
         try
         {
             foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)

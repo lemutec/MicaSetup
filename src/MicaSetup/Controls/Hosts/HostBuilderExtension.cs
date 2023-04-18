@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace MicaSetup.Controls;
@@ -24,6 +25,17 @@ public static class HostBuilderExtension
     public static IHostBuilder UseAsUninst(this IHostBuilder builder)
     {
         Option.Current.IsUninst = true;
+        return builder;
+    }
+
+    public static IHostBuilder UseAsMsixInstaller(this IHostBuilder builder, bool enabled = false, string name = null!, MsixInstallMethod method = default)
+    {
+        if (enabled)
+        {
+            _ = name ?? throw new ArgumentNullException(nameof(name));
+            Option.Current.AppxPackageName = name;
+            Option.Current.AppxInstallMethod = method;
+        }
         return builder;
     }
 
@@ -106,15 +118,21 @@ public static class HostBuilderExtension
         {
             if (handler != null)
             {
-                builder!.App.DispatcherUnhandledException += handler;
+                if (builder!.App is Application app)
+                {
+                    app.DispatcherUnhandledException += handler;
+                }
             }
             else
             {
-                builder!.App.DispatcherUnhandledException += (object s, DispatcherUnhandledExceptionEventArgs e) =>
+                if (builder!.App is Application app)
                 {
-                    Logger.Fatal("Application.DispatcherUnhandledException", e?.Exception?.ToString()!);
-                    e!.Handled = true;
-                };
+                    app.DispatcherUnhandledException += (object s, DispatcherUnhandledExceptionEventArgs e) =>
+                    {
+                        Logger.Fatal("Application.DispatcherUnhandledException", e?.Exception?.ToString()!);
+                        e!.Handled = true;
+                    };
+                }
             }
         }
         return builder!;
