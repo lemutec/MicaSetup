@@ -1,4 +1,5 @@
-﻿using MicaSetup.Natives;
+﻿using MicaSetup.Helper;
+using MicaSetup.Natives;
 using Microsoft.Xaml.Behaviors;
 using System;
 using System.Windows;
