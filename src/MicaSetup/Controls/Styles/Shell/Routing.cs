@@ -1,5 +1,4 @@
-﻿using MicaSetup.Helper;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,10 +74,6 @@ public static class Routing
 
     private static void OnGoTo(string route)
     {
-        if (!string.IsNullOrWhiteSpace(Option.Current.MeasurementID))
-        {
-            GA4Helper.SendPageViewAsync(route).Forget();
-        }
     }
 }
 

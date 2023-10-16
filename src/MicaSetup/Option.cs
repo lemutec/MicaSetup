@@ -223,18 +223,4 @@ public class Option
     /// </summary>
     [Category("GlobalSetting")]
     public MsixInstallMethod AppxInstallMethod { get; set; } = default;
-
-    /// <summary>
-    /// App Center's SDK app secret
-    /// [AppCenter](https://appcenter.ms/)
-    /// </summary>
-    [Category("GlobalSetting")]
-    public string AppSecret { get; set; } = null!;
-
-    /// <summary>
-    /// Google Analytics 4 Streaming Measurement ID
-    /// [GA4](https://analytics.google.com/)
-    /// </summary>
-    [Category("GlobalSetting")]
-    public string MeasurementID { get; set; } = null!;
 }

@@ -11,7 +11,7 @@ public class ShellControl : ContentControl
         get => (string)GetValue(RouteProperty);
         set => SetCurrentValue(RouteProperty, value);
     }
-    public static readonly DependencyProperty RouteProperty = DependencyProperty.Register("Route", typeof(string), typeof(ShellControl), new(string.Empty));
+    public static readonly DependencyProperty RouteProperty = DependencyProperty.Register(nameof(Route), typeof(string), typeof(ShellControl), new(string.Empty));
 
     public ShellControl()
     {

@@ -56,8 +56,6 @@ internal class Program
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("Setup")}";
-                option.AppSecret = null!; // Not Impl
-                option.MeasurementID = null!; // Not Impl
             })
             .UseServices(service =>
             {
