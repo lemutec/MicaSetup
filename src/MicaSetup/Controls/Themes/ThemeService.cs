@@ -24,7 +24,7 @@ public class ThemeService
 
     private void SetWindowBackdrop(Window window, BackdropType micaType)
     {
-        if (!OsHelper.IsWindows11_OrGreater)
+        if (!OsVersionHelper.IsWindows11_OrGreater)
         {
             return;
         }
@@ -41,7 +41,7 @@ public class ThemeService
             NativeMethods.SetWindowAttribute(windowHandle, DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE, 0);
         }
 
-        if (OsHelper.IsWindows11_22523_OrGreater)
+        if (OsVersionHelper.IsWindows11_22523_OrGreater)
         {
             NativeMethods.SetWindowAttribute(windowHandle, DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE, (int)micaType);
         }

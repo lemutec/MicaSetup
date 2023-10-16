@@ -7,7 +7,7 @@ public static class NotificationHelper
 {
     public static void AddNotice(string header, string title, string detail = null!, ToastDuration duration = ToastDuration.Short)
     {
-        if (!OsHelper.IsWindows10_OrGreater)
+        if (!OsVersionHelper.IsWindows10_OrGreater)
         {
             return;
         }
@@ -22,7 +22,7 @@ public static class NotificationHelper
 
     public static void AddNoticeWithButton(string header, string title, string button, (string, string) arg, ToastDuration duration = ToastDuration.Short)
     {
-        if (!OsHelper.IsWindows10_OrGreater)
+        if (!OsVersionHelper.IsWindows10_OrGreater)
         {
             return;
         }
@@ -37,7 +37,7 @@ public static class NotificationHelper
 
     public static void ClearNotice()
     {
-        if (!OsHelper.IsWindows10_OrGreater)
+        if (!OsVersionHelper.IsWindows10_OrGreater)
         {
             return;
         }

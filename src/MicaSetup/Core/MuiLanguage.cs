@@ -6,6 +6,8 @@ using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Baml2006;
+using System.Xaml;
 
 namespace MicaSetup.Core;
 
@@ -98,6 +100,21 @@ public static class MuiLanguage
             _ = e;
         }
         return null!;
+    }
+}
+
+file static class BamlHelper
+{
+    public static object LoadBaml(Stream stream)
+    {
+        using Baml2006Reader reader = new(stream);
+        using XamlObjectWriter writer = new(reader.SchemaContext);
+
+        while (reader.Read())
+        {
+            writer.WriteNode(reader);
+        }
+        return writer.Result;
     }
 }
 

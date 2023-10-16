@@ -3,7 +3,7 @@ using Microsoft.Win32;
 
 namespace MicaSetup.Helper;
 
-public static class PathHelper
+public static class LongPathHelper
 {
     /// <summary>
     /// Changes your machine configuration to allow programs, to pass the 260 character "MAX_PATH" limitation.

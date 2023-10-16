@@ -193,7 +193,7 @@ public partial class MainViewModel : ObservableObject
 
         try
         {
-            if (!WritableHelper.CheckWritable(Path.Combine(InstallPath, Option.Current.ExeName)))
+            if (!FileWritableHelper.CheckWritable(Path.Combine(InstallPath, Option.Current.ExeName)))
             {
                 _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
                 return;

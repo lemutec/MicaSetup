@@ -35,7 +35,7 @@ public abstract class ShellObject : IDisposable, IEquatable<ShellObject>
         Dispose(false);
     }
 
-    public static bool IsPlatformSupported => OsHelper.IsWindowsVista_OrGreater;
+    public static bool IsPlatformSupported => OsVersionHelper.IsWindowsVista_OrGreater;
 
     public bool IsFileSystemObject
     {

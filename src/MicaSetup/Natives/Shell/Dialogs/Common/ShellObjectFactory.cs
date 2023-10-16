@@ -12,7 +12,7 @@ internal static class ShellObjectFactory
     {
         Debug.Assert(nativeShellItem != null, "nativeShellItem should not be null");
 
-        if (!OsHelper.IsWindowsVista_OrGreater)
+        if (!OsVersionHelper.IsWindowsVista_OrGreater)
         {
             throw new PlatformNotSupportedException(LocalizedMessages.ShellObjectFactoryPlatformNotSupported);
         }
@@ -93,7 +93,7 @@ internal static class ShellObjectFactory
 
     internal static ShellObject Create(nint idListPtr)
     {
-        OsHelper.ThrowIfNotVista();
+        OsVersionHelper.ThrowIfNotVista();
 
         var guid = new Guid(ShellIIDGuid.IShellItem2);
 

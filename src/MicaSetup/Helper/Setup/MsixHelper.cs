@@ -11,7 +11,7 @@ public static class MsixHelper
 {
     public async static Task<bool> HasAppInstaller()
     {
-        if (!OsHelper.IsWindows10_OrGreater)
+        if (!OsVersionHelper.IsWindows10_OrGreater)
         {
             return false;
         }

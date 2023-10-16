@@ -12,7 +12,7 @@ public static class DpiHelper
 
     private static DpiScaleF GetScale()
     {
-        if (OsHelper.IsWindows81_OrGreater && Application.Current?.MainWindow != null)
+        if (OsVersionHelper.IsWindows81_OrGreater && Application.Current?.MainWindow != null)
         {
             nint hwnd = new WindowInteropHelper(Application.Current?.MainWindow).Handle;
             nint hMonitor = User32.MonitorFromWindow(hwnd, MonitorFlags.MONITOR_DEFAULTTONEAREST);

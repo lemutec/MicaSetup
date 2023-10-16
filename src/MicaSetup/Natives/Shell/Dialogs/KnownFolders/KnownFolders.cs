@@ -16,7 +16,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.DeviceMetadataStore);
         }
     }
@@ -25,7 +25,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.DocumentsLibrary);
         }
     }
@@ -34,7 +34,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.ImplicitAppShortcuts);
         }
     }
@@ -43,7 +43,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.Libraries);
         }
     }
@@ -52,7 +52,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.MusicLibrary);
         }
     }
@@ -61,7 +61,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.OtherUsers);
         }
     }
@@ -70,7 +70,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.PicturesLibrary);
         }
     }
@@ -79,7 +79,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.PublicRingtones);
         }
     }
@@ -88,7 +88,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.RecordedTVLibrary);
         }
     }
@@ -97,7 +97,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.Ringtones);
         }
     }
@@ -106,7 +106,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.UserPinned);
         }
     }
@@ -115,7 +115,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.UserProgramFiles);
         }
     }
@@ -124,7 +124,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.UserProgramFilesCommon);
         }
     }
@@ -133,7 +133,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.UsersLibraries);
         }
     }
@@ -142,7 +142,7 @@ public static class KnownFolders
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return GetKnownFolder(FolderIdentifiers.VideosLibrary);
         }
     }

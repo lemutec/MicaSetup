@@ -76,7 +76,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
     protected CommonFileDialog()
     {
-        if (!OsHelper.IsWindowsVista_OrGreater)
+        if (!OsVersionHelper.IsWindowsVista_OrGreater)
         {
             throw new PlatformNotSupportedException(LocalizedMessages.CommonFileDialogRequiresVista);
         }
@@ -103,7 +103,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
     public event EventHandler SelectionChanged;
 
     public static bool IsPlatformSupported =>
-            OsHelper.IsWindowsVista_OrGreater;
+            OsVersionHelper.IsWindowsVista_OrGreater;
 
     public bool AddToMostRecentlyUsedList
     {

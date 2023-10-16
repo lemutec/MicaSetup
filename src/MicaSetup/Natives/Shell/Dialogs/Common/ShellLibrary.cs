@@ -97,7 +97,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         nativeShellLibrary.Save(shellItemIn, libraryName, flags, out nativeShellItem);
     }
 
-    private ShellLibrary() => OsHelper.ThrowIfNotWin7();
+    private ShellLibrary() => OsVersionHelper.ThrowIfNotWin7();
 
     private ShellLibrary(INativeShellLibrary nativeShellLibrary)
         : this() => this.nativeShellLibrary = nativeShellLibrary;
@@ -139,13 +139,13 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
     }
 
     public static new bool IsPlatformSupported =>
-            OsHelper.IsWindows7_OrGreater;
+            OsVersionHelper.IsWindows7_OrGreater;
 
     public static IKnownFolder LibrariesKnownFolder
     {
         get
         {
-            OsHelper.ThrowIfNotWin7();
+            OsVersionHelper.ThrowIfNotWin7();
             return KnownFolderHelper.FromKnownFolderId(new Guid(ShellKFIDGuid.Libraries));
         }
     }
@@ -291,7 +291,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
     public static ShellLibrary Load(string libraryName, bool isReadOnly)
     {
-        OsHelper.ThrowIfNotWin7();
+        OsVersionHelper.ThrowIfNotWin7();
 
         var kf = KnownFolders.Libraries;
         var librariesFolderPath = (kf != null) ? kf.Path : string.Empty;
@@ -326,7 +326,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
     public static ShellLibrary Load(string libraryName, string folderPath, bool isReadOnly)
     {
-        OsHelper.ThrowIfNotWin7();
+        OsVersionHelper.ThrowIfNotWin7();
 
         var shellItemPath = System.IO.Path.Combine(folderPath, libraryName + FileExtension);
         var item = ShellFile.FromFilePath(shellItemPath);
@@ -355,7 +355,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
     public static ShellLibrary Load(IKnownFolder sourceKnownFolder, bool isReadOnly)
     {
-        OsHelper.ThrowIfNotWin7();
+        OsVersionHelper.ThrowIfNotWin7();
         return new ShellLibrary(sourceKnownFolder, isReadOnly);
     }
 
@@ -467,7 +467,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
 
     internal static ShellLibrary FromShellItem(IShellItem nativeShellItem, bool isReadOnly)
     {
-        OsHelper.ThrowIfNotWin7();
+        OsVersionHelper.ThrowIfNotWin7();
 
         var nativeShellLibrary = (INativeShellLibrary)new ShellLibraryCoClass();
 

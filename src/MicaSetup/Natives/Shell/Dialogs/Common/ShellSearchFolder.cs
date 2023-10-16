@@ -15,7 +15,7 @@ public class ShellSearchFolder : ShellSearchCollection
 
     public ShellSearchFolder(SearchCondition searchCondition, params ShellContainer[] searchScopePath)
     {
-        OsHelper.ThrowIfNotVista();
+        OsVersionHelper.ThrowIfNotVista();
 
         NativeSearchFolderItemFactory = (ISearchFolderItemFactory)new SearchFolderItemFactoryCoClass();
 
@@ -29,7 +29,7 @@ public class ShellSearchFolder : ShellSearchCollection
 
     public ShellSearchFolder(SearchCondition searchCondition, params string[] searchScopePath)
     {
-        OsHelper.ThrowIfNotVista();
+        OsVersionHelper.ThrowIfNotVista();
 
         NativeSearchFolderItemFactory = (ISearchFolderItemFactory)new SearchFolderItemFactoryCoClass();
 

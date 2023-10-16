@@ -65,7 +65,7 @@ public static class ShortcutHelper
 
     public static void CreateShortcutOnQuickLaunch(string shortcutName, string targetPath, string arguments = null!, string description = null!, string iconLocation = null!)
     {
-        if (OsHelper.IsWindows10_OrGreater)
+        if (OsVersionHelper.IsWindows10_OrGreater)
         {
             string quickLaunchUserPinnedImplicitAppShortcutsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\ImplicitAppShortcuts");
             CreateShortcut(quickLaunchUserPinnedImplicitAppShortcutsPath, shortcutName, targetPath, arguments, description, iconLocation);
@@ -107,7 +107,7 @@ public static class ShortcutHelper
 
     public static void RemoveShortcutOnQuickLaunch(string shortcutName)
     {
-        if (OsHelper.IsWindows10_OrGreater)
+        if (OsVersionHelper.IsWindows10_OrGreater)
         {
             string quickLaunchUserPinnedImplicitAppShortcutsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\ImplicitAppShortcuts");
             string quickLaunchUserPinnedImplicitAppShortcutsLnkPath = Path.Combine(quickLaunchUserPinnedImplicitAppShortcutsPath, $"{shortcutName}.lnk");

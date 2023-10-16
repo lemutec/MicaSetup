@@ -3,7 +3,7 @@ using System;
 
 namespace MicaSetup.Helper;
 
-public static class OsHelper
+public static class OsVersionHelper
 {
     private static Version? versionCache;
     private static readonly Version _osVersion = GetOSVersion();

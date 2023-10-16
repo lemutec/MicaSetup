@@ -46,7 +46,7 @@ public class ShellProperty<T> : IShellProperty
     {
         get
         {
-            if (!OsHelper.IsWindows7_OrGreater)
+            if (!OsVersionHelper.IsWindows7_OrGreater)
             {
                 throw new PlatformNotSupportedException(LocalizedMessages.ShellPropertyWindows7);
             }

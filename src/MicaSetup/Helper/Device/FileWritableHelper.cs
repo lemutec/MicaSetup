@@ -2,7 +2,7 @@
 
 namespace MicaSetup.Helper;
 
-public static class WritableHelper
+public static class FileWritableHelper
 {
     public static bool CheckWritable(string fileName)
     {
