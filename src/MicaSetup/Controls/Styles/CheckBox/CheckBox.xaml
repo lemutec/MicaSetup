@@ -2,26 +2,41 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:MicaSetup.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <local:ResourceResourceDictionary/>
+        <local:ResourceResourceDictionary />
     </ResourceDictionary.MergedDictionaries>
-    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}" x:Key="DefaultCheckBoxStyle">
-        <Setter Property="Foreground" Value="#333333"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="4,0,0,0"/>
+    <Style x:Key="DefaultCheckBoxStyle"
+           BasedOn="{StaticResource {x:Type CheckBox}}"
+           TargetType="{x:Type CheckBox}">
+        <Setter Property="Foreground" Value="#333333" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="4,0,0,0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
                     <StackPanel Orientation="Horizontal">
-                        <Grid Background="Transparent" Height="20" Width="20">
-                            <Border x:Name="border" Background="White" BorderBrush="#8E8E93" BorderThickness="1"
-                                CornerRadius="2" Margin="0,0,0,0" Width="20" Height="20"/>
-                            <TextBlock x:Name="checkIcon" Text="{x:Static local:Selection.PublicOk}" Foreground="#2ACEAE"
-                                       FontSize="18" FontFamily="{StaticResource IcoMoon}"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0"/>
+                        <Grid Width="20"
+                              Height="20"
+                              Background="Transparent">
+                            <Border x:Name="border"
+                                    Width="20"
+                                    Height="20"
+                                    Margin="0,0,0,0"
+                                    Background="White"
+                                    BorderBrush="#8E8E93"
+                                    BorderThickness="1"
+                                    CornerRadius="2" />
+                            <TextBlock x:Name="checkIcon"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontFamily="{StaticResource IcoMoon}"
+                                       FontSize="18"
+                                       Foreground="#2ACEAE"
+                                       Opacity="0"
+                                       Text="{x:Static local:Selection.PublicOk}" />
                         </Grid>
                         <ContentPresenter Margin="5,0,0,0"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Center" />
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
@@ -31,7 +46,8 @@
                                         <Storyboard>
                                             <DoubleAnimation Storyboard.TargetName="checkIcon"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="1" Duration="0:0:0.05"/>
+                                                             To="1"
+                                                             Duration="0:0:0.05" />
                                         </Storyboard>
                                     </BeginStoryboard.Storyboard>
                                 </BeginStoryboard>
@@ -42,16 +58,17 @@
                                         <Storyboard>
                                             <DoubleAnimation Storyboard.TargetName="checkIcon"
                                                              Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                             To="0" Duration="0:0:0.05"/>
+                                                             To="0"
+                                                             Duration="0:0:0.05" />
                                         </Storyboard>
                                     </BeginStoryboard.Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="border" Property="BorderBrush" Value="#C8C8C8"/>
-                            <Setter TargetName="checkIcon" Property="Opacity" Value="0.4"/>
-                            <Setter Property="Foreground" Value="#8E8E93"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="#C8C8C8" />
+                            <Setter TargetName="checkIcon" Property="Opacity" Value="0.4" />
+                            <Setter Property="Foreground" Value="#8E8E93" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -59,6 +76,6 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource DefaultCheckBoxStyle}"/>
+    <Style BasedOn="{StaticResource DefaultCheckBoxStyle}" TargetType="{x:Type CheckBox}" />
 
 </ResourceDictionary>

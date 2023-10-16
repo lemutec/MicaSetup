@@ -3,20 +3,23 @@
                     xmlns:local="clr-namespace:MicaSetup.Controls">
     <Style x:Key="DefaultToolTipStyle" TargetType="{x:Type ToolTip}">
         <Setter Property="FontFamily" Value="{local:LocalizedFontFamily}" />
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
                     <Grid>
-                        <Border Background="#F7F9FE" CornerRadius="1" BorderThickness="1" BorderBrush="LightGray"/>
-                        <ContentPresenter Margin="8,3" Content="{TemplateBinding ContentControl.Content}"/>
+                        <Border Background="#F7F9FE"
+                                BorderBrush="LightGray"
+                                BorderThickness="1"
+                                CornerRadius="1" />
+                        <ContentPresenter Margin="8,3" Content="{TemplateBinding ContentControl.Content}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style TargetType="ToolTip" BasedOn="{StaticResource DefaultToolTipStyle}"/>
+    <Style BasedOn="{StaticResource DefaultToolTipStyle}" TargetType="ToolTip" />
 
 </ResourceDictionary>

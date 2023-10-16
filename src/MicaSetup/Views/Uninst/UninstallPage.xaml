@@ -1,52 +1,65 @@
 ﻿<UserControl x:Class="MicaSetup.Views.UninstallPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-      xmlns:local="clr-namespace:MicaSetup.Views"
-      xmlns:control="clr-namespace:MicaSetup.Controls"
-      mc:Ignorable="d"
-      d:DesignHeight="400" d:DesignWidth="500">
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:control="clr-namespace:MicaSetup.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:MicaSetup.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="400"
+             d:DesignWidth="500"
+             mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <control:ResourceResourceDictionary/>
+                <control:ResourceResourceDictionary />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
         <StackPanel>
             <StackPanel>
-                <Grid Background="#31374F" Margin="0,-35,0,0" Height="260" VerticalAlignment="Top">
+                <Grid Height="260"
+                      Margin="0,-35,0,0"
+                      VerticalAlignment="Top"
+                      Background="#31374F">
                     <i:Interaction.Behaviors>
-                        <control:WindowDragMoveBehavior/>
+                        <control:WindowDragMoveBehavior />
                     </i:Interaction.Behaviors>
                     <!--<TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
                                TextOptions.TextFormattingMode="Ideal"
                                TextOptions.TextRenderingMode="Aliased"
                                FontSize="110" FontFamily="{StaticResource IcoMoon}"
                                HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
-                    <Image Source="pack://application:,,,/MicaSetup;component/Resources/Images/FaviconRaw.png"
-                           Width="114" Height="114"
-                           RenderOptions.BitmapScalingMode="Fant"/>
+                    <Image Width="114"
+                           Height="114"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Source="pack://application:,,,/MicaSetup;component/Resources/Images/FaviconRaw.png" />
                 </Grid>
             </StackPanel>
             <StackPanel>
                 <StackPanel Margin="30,55,30,0">
-                    <control:SetupProgressBar Style="{StaticResource DefaultProgressBarStyle}"
-                                              Value="{Binding InstallProgress}"
-                                              IsIndeterminate="{Binding InstallProgress,Converter={StaticResource ProgressBarIndeterminateConverter}}" d:IsIndeterminate="True"/>
+                    <control:SetupProgressBar d:IsIndeterminate="True"
+                                              IsIndeterminate="{Binding InstallProgress, Converter={StaticResource ProgressBarIndeterminateConverter}}"
+                                              Style="{StaticResource DefaultProgressBarStyle}"
+                                              Value="{Binding InstallProgress}" />
                 </StackPanel>
                 <Grid Margin="30,8,30,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Text="{Binding InstallInfo}" Foreground="#555555" TextTrimming="CharacterEllipsis"/>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal" Visibility="{Binding InstallProgress,Converter={StaticResource ProgressBarValueVisibilityConverter}}">
-                        <TextBlock Text="{Binding InstallProgress,Converter={StaticResource MathRoundConverter}}" Foreground="#555555" Padding="2,0,0,0"/>
-                        <TextBlock Text="%" Foreground="#555555"/>
+                    <TextBlock Grid.Column="0"
+                               Foreground="#555555"
+                               Text="{Binding InstallInfo}"
+                               TextTrimming="CharacterEllipsis" />
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                Visibility="{Binding InstallProgress, Converter={StaticResource ProgressBarValueVisibilityConverter}}">
+                        <TextBlock Padding="2,0,0,0"
+                                   Foreground="#555555"
+                                   Text="{Binding InstallProgress, Converter={StaticResource MathRoundConverter}}" />
+                        <TextBlock Foreground="#555555" Text="%" />
                     </StackPanel>
                 </Grid>
             </StackPanel>

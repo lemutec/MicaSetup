@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:converter="clr-namespace:MicaSetup.Controls.Converters"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:MicaSetup.Controls.Converters">
     <converter:IsNotNullConverter x:Key="IsNotNullConverter" />
     <converter:IsNullConverter x:Key="IsNullConverter" />
     <converter:BoolInverseConverter x:Key="BoolInverseConverter" />
