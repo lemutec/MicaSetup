@@ -1,5 +1,6 @@
 ﻿using MicaSetup.Helper;
 using MicaSetup.Natives;
+using System;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -54,5 +55,45 @@ public class ThemeService
     private WindowsTheme GetTheme()
     {
         return currentTheme == WindowsTheme.Auto ? WindowsThemeHelper.GetCurrentWindowsTheme() : currentTheme;
+    }
+
+    public void SetTheme(WindowsTheme theme)
+    {
+        CurrentTheme = theme;
+        SyncThemeResource();
+    }
+
+    private bool SyncThemeResource()
+    {
+        if (Application.Current == null)
+        {
+            return false;
+        }
+
+        string name = GetTheme().ToString();
+
+        try
+        {
+            foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
+            {
+                if (dictionary is ThemeResourceDictionary trd)
+                {
+                    foreach (ResourceDictionary td in trd.MergedDictionaries)
+                    {
+                        if (dictionary.Source != null && dictionary.Source.OriginalString.Equals($"/Resources/Themes/{name}.xaml", StringComparison.Ordinal))
+                        {
+                            Application.Current.Resources.MergedDictionaries.Remove(dictionary);
+                            Application.Current.Resources.MergedDictionaries.Add(dictionary);
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            _ = e;
+        }
+        return false;
     }
 }

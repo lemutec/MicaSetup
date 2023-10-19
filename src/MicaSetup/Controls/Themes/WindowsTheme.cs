@@ -4,7 +4,7 @@ public enum WindowsTheme
 {
     Light,
     Dark,
-    Auto
+    Auto,
 }
 
 public enum BackdropType
@@ -12,6 +12,5 @@ public enum BackdropType
     None = 1,
     Mica = 2,
     Acrylic = 3,
-    Tabbed = 4
+    Tabbed = 4,
 }
-

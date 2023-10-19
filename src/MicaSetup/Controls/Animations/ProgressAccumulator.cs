@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Controls.Animations;
 
 public partial class ProgressAccumulator : ObservableObject, IDisposable
 {

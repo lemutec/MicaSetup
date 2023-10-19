@@ -22,7 +22,7 @@
                 <Grid Height="260"
                       Margin="0,-35,0,0"
                       VerticalAlignment="Top"
-                      Background="#31374F">
+                      Background="{DynamicResource ThemeBrush}">
                     <i:Interaction.Behaviors>
                         <control:WindowDragMoveBehavior />
                     </i:Interaction.Behaviors>

@@ -3,8 +3,9 @@
                     xmlns:local="clr-namespace:MicaSetup.Controls">
     <Style x:Key="PathButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Background" Value="#31374F" />
-        <Setter Property="local:ButtonHelper.HoverBrush" Value="#484C58" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBrush}" />
+        <Setter Property="local:ButtonHelper.HoverBrush" Value="{DynamicResource ButtonHoverBrush}" />
+        <Setter Property="local:ButtonHelper.CornerRadius" Value="4" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Template">

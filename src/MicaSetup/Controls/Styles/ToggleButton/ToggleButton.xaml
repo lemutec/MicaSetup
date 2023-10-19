@@ -3,9 +3,9 @@
                     xmlns:local="clr-namespace:MicaSetup.Controls">
     <Style x:Key="ExpandToggleButtonStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Background" Value="#31374F" />
+        <Setter Property="Background" Value="{DynamicResource ToggleButtonBackground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ToggleButtonBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Foreground" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">

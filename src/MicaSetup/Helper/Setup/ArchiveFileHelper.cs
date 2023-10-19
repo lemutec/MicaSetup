@@ -1,4 +1,5 @@
-﻿using SharpCompress.Archives.GZip;
+﻿using MicaSetup.Controls.Animations;
+using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.Rar;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Zip;

@@ -30,7 +30,7 @@
                                        VerticalAlignment="Center"
                                        FontFamily="{StaticResource IcoMoon}"
                                        FontSize="18"
-                                       Foreground="#2ACEAE"
+                                       Foreground="{DynamicResource HighGreenBrush}"
                                        Opacity="0"
                                        Text="{x:Static local:Selection.PublicOk}" />
                         </Grid>

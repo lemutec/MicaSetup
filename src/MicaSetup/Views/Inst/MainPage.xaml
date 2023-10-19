@@ -22,7 +22,7 @@
                 <Grid Height="260"
                       Margin="0,-35,0,0"
                       VerticalAlignment="Top"
-                      Background="#31374F">
+                      Background="{DynamicResource ThemeBrush}">
                     <i:Interaction.Behaviors>
                         <control:WindowDragMoveBehavior />
                     </i:Interaction.Behaviors>
@@ -40,12 +40,9 @@
                               Height="34"
                               Margin="0,-15,0,0"
                               control:ButtonHelper.CornerRadius="16.5"
-                              Background="White"
-                              BorderBrush="#50AAAAAA"
                               BorderThickness="1"
                               Command="{Binding ShowOrHideInstallPathCommand}"
                               CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
-                              Foreground="Black"
                               Style="{StaticResource ExpandToggleButtonStyle}">
                     <ToggleButton.Effect>
                         <DropShadowEffect BlurRadius="1"
@@ -75,23 +72,20 @@
                     <StackPanel Margin="0,8,0,0"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
-                        <TextBlock FontSize="15" Text="{DynamicResource InstallationPath}" />
+                        <TextBlock FontSize="15"
+                                   Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                   Text="{DynamicResource InstallationPath}" />
                         <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
                             <TextBox Width="380"
                                      Height="35"
                                      control:TextBoxHelper.CornerRadius="4"
                                      control:TextBoxHelper.Watermark="{DynamicResource EnterInstallationPath}"
-                                     Background="White"
                                      FontSize="15"
                                      Style="{StaticResource DefaultTextBoxStyle}"
                                      Text="{Binding InstallPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                             <Button Margin="7,0,0,0"
                                     Padding="10,0,10,0"
-                                    control:ButtonHelper.CornerRadius="4"
-                                    control:ButtonHelper.HoverBrush="#484C58"
-                                    Background="#31374F"
                                     Command="{Binding SelectFolderCommand}"
-                                    Foreground="White"
                                     Style="{StaticResource PathButtonStyle}">
                                 <Button.Content>
                                     <TextBlock HorizontalAlignment="Center"
@@ -105,15 +99,15 @@
                         </StackPanel>
                         <Grid>
                             <StackPanel Margin="3,6,0,0" Orientation="Horizontal">
-                                <TextBlock Foreground="#FF999999" Text="{DynamicResource RequestedFreeSpace}" />
-                                <TextBlock Foreground="#FF999999" Text="{Binding RequestedFreeSpace}" />
+                                <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{DynamicResource RequestedFreeSpace}" />
+                                <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{Binding RequestedFreeSpace}" />
                             </StackPanel>
                             <StackPanel Margin="200,6,0,0" Orientation="Horizontal">
                                 <StackPanel Orientation="Horizontal" Visibility="{Binding IsIllegalPath, Converter={StaticResource BoolToInvisibleConverter}}">
-                                    <TextBlock Foreground="#FF999999" Text="{DynamicResource AvailableFreeSpace}" />
-                                    <TextBlock Foreground="#FF999999" Text="{Binding AvailableFreeSpace}" />
+                                    <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{DynamicResource AvailableFreeSpace}" />
+                                    <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{Binding AvailableFreeSpace}" />
                                 </StackPanel>
-                                <TextBlock Foreground="#FF0000"
+                                <TextBlock Foreground="{DynamicResource ErrorHintBrush}"
                                            Text="{DynamicResource IllegalPath}"
                                            Visibility="{Binding IsIllegalPath, Converter={StaticResource BoolToVisibleConverter}}" />
                             </StackPanel>
@@ -126,7 +120,7 @@
                            VerticalAlignment="Top">
                     <Rectangle.Fill>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                            <GradientStop Offset="0" Color="#5031374F" />
+                            <GradientStop Offset="0" Color="{DynamicResource LinearGradientUpperColor}" />
                             <GradientStop Offset="1" Color="Transparent" />
                         </LinearGradientBrush>
                     </Rectangle.Fill>
@@ -141,7 +135,7 @@
                     <Rectangle.Fill>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                             <GradientStop Offset="0" Color="Transparent" />
-                            <GradientStop Offset="1" Color="#CED2D6" />
+                            <GradientStop Offset="1" Color="{DynamicResource LinearGradientLowerColor}" />
                         </LinearGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
@@ -167,7 +161,7 @@
                                        VerticalAlignment="Center"
                                        Cursor="Hand"
                                        FontSize="15"
-                                       Foreground="#2ACEAE"
+                                       Foreground="{DynamicResource HighGreenBrush}"
                                        Text="{DynamicResource UserLicenseAgreement}" />
                         </Button.Content>
                     </Button>
@@ -176,11 +170,7 @@
                         Height="38"
                         Margin="0,10,0,0"
                         Padding="10,0,10,0"
-                        control:ButtonHelper.CornerRadius="4"
-                        control:ButtonHelper.HoverBrush="#484C58"
-                        Background="#31374F"
                         Command="{Binding StartInstallCommand}"
-                        Foreground="White"
                         IsEnabled="{Binding CanStart}"
                         Style="{StaticResource PathButtonStyle}">
                     <Button.Content>
@@ -269,9 +259,6 @@
                         Margin="5"
                         Padding="10,0,10,0"
                         HorizontalAlignment="Right"
-                        control:ButtonHelper.CornerRadius="4"
-                        control:ButtonHelper.HoverBrush="#484C58"
-                        Background="#31374F"
                         Command="{Binding ShowOrHideLincenseInfoCommand}"
                         Content="{DynamicResource ButtonAgree}"
                         FontSize="15"

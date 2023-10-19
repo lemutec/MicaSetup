@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MicaSetup.Core;
+namespace MicaSetup.Controls.Animations;
 
 public delegate double DoubleEasingAnimation(double t, double b, double c, double d);
 

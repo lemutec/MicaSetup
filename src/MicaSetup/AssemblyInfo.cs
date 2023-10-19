@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Markup;
 using System.Windows.Media;
 
 [assembly: DisableDpiAwareness]
@@ -10,3 +11,7 @@ using System.Windows.Media;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: XmlnsPrefix("urn:MicaSetup", "mica")]
+[assembly: XmlnsDefinition("urn:MicaSetup", "MicaSetup.Controls")]
+[assembly: XmlnsDefinition("urn:MicaSetup", "MicaSetup.Controls.Converters")]

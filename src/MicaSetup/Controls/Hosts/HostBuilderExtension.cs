@@ -94,6 +94,12 @@ public static class HostBuilderExtension
         return builder;
     }
 
+    public static IHostBuilder UseTheme(this IHostBuilder builder, WindowsTheme theme = WindowsTheme.Auto)
+    {
+        ThemeService.Current.SetTheme(theme);
+        return builder;
+    }
+
     public static IHostBuilder UseFonts(this IHostBuilder builder, Action<List<MuiLanguageFont>> handler)
     {
         handler?.Invoke(MuiLanguage.FontSelector);

@@ -22,7 +22,7 @@
                 <Grid Height="260"
                       Margin="0,-35,0,0"
                       VerticalAlignment="Top"
-                      Background="#31374F">
+                      Background="{DynamicResource ThemeBrush}">
                     <i:Interaction.Behaviors>
                         <control:WindowDragMoveBehavior />
                     </i:Interaction.Behaviors>
@@ -50,16 +50,16 @@
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Column="0"
-                               Foreground="#555555"
+                               Foreground="{DynamicResource InstallHintBrush}"
                                Text="{Binding InstallInfo}"
                                TextTrimming="CharacterEllipsis" />
                     <StackPanel Grid.Column="1"
                                 Orientation="Horizontal"
                                 Visibility="{Binding InstallProgress, Converter={StaticResource ProgressBarValueVisibilityConverter}}">
                         <TextBlock Padding="2,0,0,0"
-                                   Foreground="#555555"
+                                   Foreground="{DynamicResource InstallHintBrush}"
                                    Text="{Binding InstallProgress, Converter={StaticResource MathRoundConverter}}" />
-                        <TextBlock Foreground="#555555" Text="%" />
+                        <TextBlock Foreground="{DynamicResource InstallHintBrush}" Text="%" />
                     </StackPanel>
                 </Grid>
             </StackPanel>

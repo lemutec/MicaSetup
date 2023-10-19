@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System.Windows;
 
 namespace MicaSetup.Controls;
 

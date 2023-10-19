@@ -22,7 +22,7 @@
                 <Grid Height="260"
                       Margin="0,-35,0,0"
                       VerticalAlignment="Top"
-                      Background="#31374F">
+                      Background="{DynamicResource ThemeBrush}">
                     <i:Interaction.Behaviors>
                         <control:WindowDragMoveBehavior />
                     </i:Interaction.Behaviors>
@@ -40,6 +40,7 @@
             <Grid>
                 <TextBlock Margin="30,30,0,0"
                            FontSize="18"
+                           Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                            Text="{DynamicResource UninstallFinishTips}" />
                 <Button Height="30"
                         MinWidth="80"
