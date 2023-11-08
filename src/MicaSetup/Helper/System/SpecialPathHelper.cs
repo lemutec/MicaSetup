@@ -7,7 +7,7 @@ namespace MicaSetup.Helper;
 public static class SpecialPathHelper
 {
     private static string _defaultApplicationDataFolder = Option.Current.KeyName ?? Assembly.GetExecutingAssembly().GetName().Name;
-    private readonly static string _localApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+    private static readonly string _localApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
     public static string TempPath { get; } = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
 

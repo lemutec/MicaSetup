@@ -242,7 +242,6 @@ public static class UninstallHelper
         }
     }
 
-
     public static void DeleteUninst()
     {
         if (Option.Current.IsCreateUninst)

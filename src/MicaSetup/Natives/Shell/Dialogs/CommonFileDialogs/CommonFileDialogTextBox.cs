@@ -8,11 +8,17 @@ public class CommonFileDialogTextBox : CommonFileDialogControl
 {
     private IFileDialogCustomize customizedDialog;
 
-    public CommonFileDialogTextBox() : base(string.Empty) { }
+    public CommonFileDialogTextBox() : base(string.Empty)
+    {
+    }
 
-    public CommonFileDialogTextBox(string text) : base(text) { }
+    public CommonFileDialogTextBox(string text) : base(text)
+    {
+    }
 
-    public CommonFileDialogTextBox(string name, string text) : base(name, text) { }
+    public CommonFileDialogTextBox(string name, string text) : base(name, text)
+    {
+    }
 
     public override string Text
     {

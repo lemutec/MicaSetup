@@ -450,7 +450,6 @@ internal interface IFileSaveDialog : IFileDialog
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetFilter([MarshalAs(UnmanagedType.Interface)] nint pFilter);
 
-
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void SetSaveAsItem([In, MarshalAs(UnmanagedType.Interface)] IShellItem psi);
 

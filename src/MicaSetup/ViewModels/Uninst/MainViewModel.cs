@@ -5,7 +5,6 @@ using MicaSetup.Helper;
 using System;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace MicaSetup.ViewModels;
 
@@ -13,6 +12,7 @@ public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
     private bool keepMyData = Option.Current.KeepMyData;
+
     partial void OnKeepMyDataChanged(bool value)
     {
         Option.Current.KeepMyData = value;

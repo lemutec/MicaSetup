@@ -86,7 +86,7 @@ public class DotNetVersionService : IDotNetVersionService
         }
         return false;
     }
-    
+
     public Version GetNetCoreVersion()
     {
         throw new NotImplementedException();

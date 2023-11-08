@@ -1,6 +1,6 @@
 ﻿namespace MicaSetup.Core;
 
-public class AppInstaller: IApp
+public class AppInstaller : IApp
 {
     public int Run()
     {

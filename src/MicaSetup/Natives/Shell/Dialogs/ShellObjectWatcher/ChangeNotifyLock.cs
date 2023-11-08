@@ -58,7 +58,6 @@ internal class ChangeNotifyLock
                 Shell32.SHChangeNotification_Unlock(lockId);
             }
         }
-
     }
 
     public bool FromSystemInterrupt => ((ShellObjectChangeTypes)_event & ShellObjectChangeTypes.FromInterrupt)
@@ -69,6 +68,4 @@ internal class ChangeNotifyLock
     public string ItemName2 { get; private set; }
 
     public ShellObjectChangeTypes ChangeType => (ShellObjectChangeTypes)_event;
-
-
 }

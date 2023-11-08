@@ -1,5 +1,4 @@
 using MicaSetup.Helper;
-using MicaSetup.Natives;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -215,7 +214,7 @@ public abstract class CommonFileDialog : IDialogControlHost, IDisposable
 
             var returnFilename = filenames[0];
 
-            if(this is CommonSaveFileDialog)
+            if (this is CommonSaveFileDialog)
             {
                 returnFilename = System.IO.Path.ChangeExtension(returnFilename, this.filters[this.SelectedFileTypeIndex - 1].Extensions[0]);
             }

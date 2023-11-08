@@ -12,6 +12,7 @@ public class ThemeService
     public static ThemeService Current { get; } = new();
 
     private WindowsTheme currentTheme = WindowsTheme.Light;
+
     public WindowsTheme CurrentTheme
     {
         get => GetTheme();

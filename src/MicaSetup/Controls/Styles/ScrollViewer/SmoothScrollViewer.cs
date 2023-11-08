@@ -18,6 +18,7 @@ public class SmoothScrollViewer : ScrollViewer
         get => (Orientation)GetValue(OrientationProperty);
         set => SetValue(OrientationProperty, value);
     }
+
     public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(SmoothScrollViewer), new PropertyMetadata(Orientation.Vertical));
 
     public bool CanMouseWheel
@@ -25,6 +26,7 @@ public class SmoothScrollViewer : ScrollViewer
         get => (bool)GetValue(CanMouseWheelProperty);
         set => SetValue(CanMouseWheelProperty, value);
     }
+
     public static readonly DependencyProperty CanMouseWheelProperty = DependencyProperty.Register(nameof(CanMouseWheel), typeof(bool), typeof(SmoothScrollViewer), new PropertyMetadata(true));
 
     protected override void OnMouseWheel(MouseWheelEventArgs e)
@@ -143,15 +145,18 @@ public class SmoothScrollViewer : ScrollViewer
     {
         element.SetValue(IsInertiaEnabledProperty, value);
     }
+
     public static bool GetIsInertiaEnabled(DependencyObject element)
     {
         return (bool)element.GetValue(IsInertiaEnabledProperty);
     }
+
     public bool IsInertiaEnabled
     {
         get => (bool)GetValue(IsInertiaEnabledProperty);
         set => SetValue(IsInertiaEnabledProperty, value);
     }
+
     public static readonly DependencyProperty IsInertiaEnabledProperty = DependencyProperty.RegisterAttached(nameof(IsInertiaEnabled), typeof(bool), typeof(SmoothScrollViewer), new PropertyMetadata(true));
 
     public bool IsPenetrating
@@ -159,14 +164,17 @@ public class SmoothScrollViewer : ScrollViewer
         get => (bool)GetValue(IsPenetratingProperty);
         set => SetValue(IsPenetratingProperty, value);
     }
+
     public static void SetIsPenetrating(DependencyObject element, bool value)
     {
         element.SetValue(IsPenetratingProperty, value);
     }
+
     public static bool GetIsPenetrating(DependencyObject element)
     {
         return (bool)element.GetValue(IsPenetratingProperty);
     }
+
     public static readonly DependencyProperty IsPenetratingProperty = DependencyProperty.RegisterAttached(nameof(IsPenetrating), typeof(bool), typeof(SmoothScrollViewer), new PropertyMetadata(false));
 
     internal double CurrentVerticalOffset
@@ -174,7 +182,9 @@ public class SmoothScrollViewer : ScrollViewer
         get => (double)GetValue(CurrentVerticalOffsetProperty);
         set => SetValue(CurrentVerticalOffsetProperty, value);
     }
+
     internal static readonly DependencyProperty CurrentVerticalOffsetProperty = DependencyProperty.Register(nameof(CurrentVerticalOffset), typeof(double), typeof(SmoothScrollViewer), new PropertyMetadata(0d, OnCurrentVerticalOffsetChanged));
+
     private static void OnCurrentVerticalOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         if (d is SmoothScrollViewer ctl && e.NewValue is double v)
@@ -188,7 +198,9 @@ public class SmoothScrollViewer : ScrollViewer
         get => (double)GetValue(CurrentHorizontalOffsetProperty);
         set => SetValue(CurrentHorizontalOffsetProperty, value);
     }
+
     internal static readonly DependencyProperty CurrentHorizontalOffsetProperty = DependencyProperty.Register(nameof(CurrentHorizontalOffset), typeof(double), typeof(SmoothScrollViewer), new PropertyMetadata(0d, OnCurrentHorizontalOffsetChanged));
+
     private static void OnCurrentHorizontalOffsetChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         if (d is SmoothScrollViewer ctl && e.NewValue is double v)

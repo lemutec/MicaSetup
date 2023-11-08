@@ -8,20 +8,20 @@ namespace MicaSetup.Shell.NetFw;
 [ComImport]
 public interface INetFwServiceRestriction
 {
-	[DispId(3)]
-	INetFwRules Rules
-	{
-		[DispId(3)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[return: MarshalAs(UnmanagedType.Interface)]
-		get;
-	}
+    [DispId(3)]
+    INetFwRules Rules
+    {
+        [DispId(3)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [return: MarshalAs(UnmanagedType.Interface)]
+        get;
+    }
 
-	[DispId(1)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	void RestrictService([MarshalAs(UnmanagedType.BStr)] [In] string serviceName, [MarshalAs(UnmanagedType.BStr)] [In] string appName, [In] bool RestrictService, [In] bool serviceSidRestricted);
+    [DispId(1)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    void RestrictService([MarshalAs(UnmanagedType.BStr)][In] string serviceName, [MarshalAs(UnmanagedType.BStr)][In] string appName, [In] bool RestrictService, [In] bool serviceSidRestricted);
 
-	[DispId(2)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	bool ServiceRestricted([MarshalAs(UnmanagedType.BStr)] [In] string serviceName, [MarshalAs(UnmanagedType.BStr)] [In] string appName);
+    [DispId(2)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    bool ServiceRestricted([MarshalAs(UnmanagedType.BStr)][In] string serviceName, [MarshalAs(UnmanagedType.BStr)][In] string appName);
 }

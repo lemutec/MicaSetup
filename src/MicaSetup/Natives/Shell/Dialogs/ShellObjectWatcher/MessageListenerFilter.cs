@@ -71,6 +71,7 @@ internal static class MessageListenerFilter
         }
 
         private uint _lastMessage = MessageListener.BaseUserMessage;
+
         public bool TryRegister(Action<WindowMessageEventArgs> callback, out uint message)
         {
             message = 0;

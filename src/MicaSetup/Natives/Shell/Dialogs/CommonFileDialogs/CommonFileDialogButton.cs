@@ -5,11 +5,17 @@ namespace MicaSetup.Shell.Dialogs;
 
 public class CommonFileDialogButton : CommonFileDialogProminentControl
 {
-    public CommonFileDialogButton() : base(string.Empty) { }
+    public CommonFileDialogButton() : base(string.Empty)
+    {
+    }
 
-    public CommonFileDialogButton(string text) : base(text) { }
+    public CommonFileDialogButton(string text) : base(text)
+    {
+    }
 
-    public CommonFileDialogButton(string name, string text) : base(name, text) { }
+    public CommonFileDialogButton(string name, string text) : base(name, text)
+    {
+    }
 
     public event EventHandler Click = delegate { };
 

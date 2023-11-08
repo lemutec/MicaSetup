@@ -11,6 +11,7 @@ public class SetupProgressBar : ProgressBar
         get => (bool)GetValue(LinkToWindowTaskbarProperty);
         set => SetValue(LinkToWindowTaskbarProperty, value);
     }
+
     public static readonly DependencyProperty LinkToWindowTaskbarProperty = DependencyProperty.Register("SyncToWindowTaskbar", typeof(bool), typeof(SetupProgressBar), new PropertyMetadata(true));
 
     public SetupProgressBar()

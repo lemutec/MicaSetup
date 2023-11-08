@@ -8,17 +8,17 @@ namespace MicaSetup.Shell.NetFw;
 [ComImport]
 public interface INetFwPolicy
 {
-	[DispId(1)]
-	INetFwProfile CurrentProfile
-	{
-		[DispId(1)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[return: MarshalAs(UnmanagedType.Interface)]
-		get;
-	}
+    [DispId(1)]
+    INetFwProfile CurrentProfile
+    {
+        [DispId(1)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [return: MarshalAs(UnmanagedType.Interface)]
+        get;
+    }
 
-	[DispId(2)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[return: MarshalAs(UnmanagedType.Interface)]
-	INetFwProfile GetProfileByType([In] NET_FW_PROFILE_TYPE profileType);
+    [DispId(2)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    INetFwProfile GetProfileByType([In] NET_FW_PROFILE_TYPE profileType);
 }

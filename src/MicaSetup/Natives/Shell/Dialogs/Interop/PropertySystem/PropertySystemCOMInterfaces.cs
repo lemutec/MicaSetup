@@ -298,7 +298,7 @@ public interface IPropertyStoreCache
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
 public interface IPropertyStoreCapabilities
 {
-    HResult IsPropertyWritable([In]ref PropertyKey propertyKey);
+    HResult IsPropertyWritable([In] ref PropertyKey propertyKey);
 }
 
 #pragma warning restore 108

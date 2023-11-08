@@ -12,7 +12,9 @@ public abstract class CommonFileDialogControl : DialogControl
 
     private bool visible = true;
 
-    protected CommonFileDialogControl() { }
+    protected CommonFileDialogControl()
+    {
+    }
 
     protected CommonFileDialogControl(string text)
         : base() => textValue = text;

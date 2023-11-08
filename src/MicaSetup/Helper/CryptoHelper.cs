@@ -51,7 +51,7 @@ file static class HashAlgorithmExtension
     public static string ToString(this HashAlgorithm self, byte[] buffer)
     {
         byte[] output = self.ComputeHash(buffer);
-        
+
         return output.ToHexString();
     }
 

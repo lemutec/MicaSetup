@@ -6,16 +6,22 @@ namespace MicaSetup.Shell.Dialogs;
 [Serializable]
 public class PropertySystemException : ExternalException
 {
-    public PropertySystemException() { }
+    public PropertySystemException()
+    {
+    }
 
-    public PropertySystemException(string message) : base(message) { }
+    public PropertySystemException(string message) : base(message)
+    {
+    }
 
     public PropertySystemException(string message, Exception innerException)
         : base(message, innerException)
     {
     }
 
-    public PropertySystemException(string message, int errorCode) : base(message, errorCode) { }
+    public PropertySystemException(string message, int errorCode) : base(message, errorCode)
+    {
+    }
 
     protected PropertySystemException(
         System.Runtime.Serialization.SerializationInfo info,

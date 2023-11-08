@@ -20,6 +20,7 @@ public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
     private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName, Option.Current.UseInstallPathPreferX86);
+
     partial void OnInstallPathChanged(string value)
     {
         try
@@ -39,10 +40,12 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private string requestedFreeSpace = null!;
+
     private long requestedFreeSpaceLong = default;
 
     [ObservableProperty]
     private string availableFreeSpace = null!;
+
     private long availableFreeSpaceLong = default;
 
     [ObservableProperty]
@@ -56,6 +59,7 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private bool licenseRead = true;
+
     partial void OnLicenseReadChanged(bool value)
     {
         CanStart = value;

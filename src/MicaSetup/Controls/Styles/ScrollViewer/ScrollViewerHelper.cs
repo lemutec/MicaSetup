@@ -10,36 +10,43 @@ public class ScrollViewerHelper
     {
         return (Brush)obj.GetValue(TrackBrushProperty);
     }
+
     public static void SetTrackBrush(DependencyObject obj, Brush value)
     {
         obj.SetValue(TrackBrushProperty, value);
     }
+
     public static readonly DependencyProperty TrackBrushProperty = DependencyProperty.RegisterAttached("TrackBrush", typeof(Brush), typeof(ScrollViewerHelper));
 
     public static Brush GetThumbBrush(DependencyObject obj)
     {
         return (Brush)obj.GetValue(ThumbBrushProperty);
     }
+
     public static void SetThumbBrush(DependencyObject obj, Brush value)
     {
         obj.SetValue(ThumbBrushProperty, value);
     }
+
     public static readonly DependencyProperty ThumbBrushProperty = DependencyProperty.RegisterAttached("ThumbBrush", typeof(Brush), typeof(ScrollViewerHelper));
 
     public static CornerRadius GetScrollBarCornerRadius(DependencyObject obj)
     {
         return (CornerRadius)obj.GetValue(ScrollBarCornerRadiusProperty);
     }
+
     public static void SetScrollBarCornerRadius(DependencyObject obj, CornerRadius value)
     {
         obj.SetValue(ScrollBarCornerRadiusProperty, value);
     }
+
     public static readonly DependencyProperty ScrollBarCornerRadiusProperty = DependencyProperty.RegisterAttached("ScrollBarCornerRadius", typeof(CornerRadius), typeof(ScrollViewerHelper));
 
     public static double GetScrollBarThickness(DependencyObject obj)
     {
         return (double)obj.GetValue(ScrollBarThicknessProperty);
     }
+
     public static void SetScrollBarThickness(DependencyObject obj, double value)
     {
         obj.SetValue(ScrollBarThicknessProperty, value);
@@ -51,10 +58,12 @@ public class ScrollViewerHelper
     {
         return (bool)obj.GetValue(ScrollViewerHookProperty);
     }
+
     internal static void SetScrollViewerHook(DependencyObject obj, bool value)
     {
         obj.SetValue(ScrollViewerHookProperty, value);
     }
+
     internal static readonly DependencyProperty ScrollViewerHookProperty = DependencyProperty.RegisterAttached("ScrollViewerHook", typeof(bool), typeof(ScrollViewerHelper), new PropertyMetadata(OnScrollViewerHookChanged));
 
     private static void OnScrollViewerHookChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)

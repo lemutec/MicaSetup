@@ -7,11 +7,17 @@ public class CommonFileDialogCheckBox : CommonFileDialogProminentControl
 {
     private bool isChecked;
 
-    public CommonFileDialogCheckBox() { }
+    public CommonFileDialogCheckBox()
+    {
+    }
 
-    public CommonFileDialogCheckBox(string text) : base(text) { }
+    public CommonFileDialogCheckBox(string text) : base(text)
+    {
+    }
 
-    public CommonFileDialogCheckBox(string name, string text) : base(name, text) { }
+    public CommonFileDialogCheckBox(string name, string text) : base(name, text)
+    {
+    }
 
     public CommonFileDialogCheckBox(string text, bool isChecked)
         : base(text) => this.isChecked = isChecked;

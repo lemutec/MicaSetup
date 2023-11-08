@@ -36,7 +36,9 @@ public class ShellPropertyCollection : ReadOnlyCollection<IShellProperty>, IDisp
         }
     }
 
-    public ShellPropertyCollection(string path) : this(ShellObjectFactory.Create(path)) { }
+    public ShellPropertyCollection(string path) : this(ShellObjectFactory.Create(path))
+    {
+    }
 
     internal ShellPropertyCollection(IPropertyStore nativePropertyStore)
         : base(new List<IShellProperty>())

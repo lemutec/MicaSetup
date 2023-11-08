@@ -11,29 +11,29 @@ namespace MicaSetup.Shell.NetFw;
 [ComImport]
 public interface INetFwAuthorizedApplications : IEnumerable
 {
-	[DispId(1)]
-	int Count
-	{
-		[DispId(1)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		get;
-	}
+    [DispId(1)]
+    int Count
+    {
+        [DispId(1)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        get;
+    }
 
-	[DispId(2)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	void Add([MarshalAs(UnmanagedType.Interface)] [In] INetFwAuthorizedApplication app);
+    [DispId(2)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    void Add([MarshalAs(UnmanagedType.Interface)][In] INetFwAuthorizedApplication app);
 
-	[DispId(3)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	void Remove([MarshalAs(UnmanagedType.BStr)] [In] string imageFileName);
+    [DispId(3)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    void Remove([MarshalAs(UnmanagedType.BStr)][In] string imageFileName);
 
-	[DispId(4)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[return: MarshalAs(UnmanagedType.Interface)]
-	INetFwAuthorizedApplication Item([MarshalAs(UnmanagedType.BStr)] [In] string imageFileName);
+    [DispId(4)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    [return: MarshalAs(UnmanagedType.Interface)]
+    INetFwAuthorizedApplication Item([MarshalAs(UnmanagedType.BStr)][In] string imageFileName);
 
-	[DispId(-4), TypeLibFunc(1)]
-	[MethodImpl(MethodImplOptions.InternalCall)]
-	[return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalType = "System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler")]
-	IEnumerator GetEnumerator();
+    [DispId(-4), TypeLibFunc(1)]
+    [MethodImpl(MethodImplOptions.InternalCall)]
+    [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalType = "System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler")]
+    IEnumerator GetEnumerator();
 }

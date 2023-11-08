@@ -4,11 +4,17 @@ namespace MicaSetup.Shell.Dialogs;
 
 public class CommonFileDialogLabel : CommonFileDialogControl
 {
-    public CommonFileDialogLabel() { }
+    public CommonFileDialogLabel()
+    {
+    }
 
-    public CommonFileDialogLabel(string text) : base(text) { }
+    public CommonFileDialogLabel(string text) : base(text)
+    {
+    }
 
-    public CommonFileDialogLabel(string name, string text) : base(name, text) { }
+    public CommonFileDialogLabel(string name, string text) : base(name, text)
+    {
+    }
 
     internal override void Attach(IFileDialogCustomize dialog)
     {

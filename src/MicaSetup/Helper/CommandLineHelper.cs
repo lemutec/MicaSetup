@@ -36,6 +36,7 @@ public static class CommandLineHelper
                         param = null!;
                     }
                     break;
+
                 case 2:
                     if (param != null)
                     {
@@ -46,6 +47,7 @@ public static class CommandLineHelper
                     }
                     param = parts[1];
                     break;
+
                 case 3:
                     if (param != null)
                     {

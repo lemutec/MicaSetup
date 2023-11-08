@@ -28,17 +28,27 @@ public static class DpiHelper
     }
 
     public static double CalcDPI(double src) => Math.Ceiling(src * ScaleX);
+
     public static float CalcDPI(float src) => (float)Math.Ceiling(src * ScaleX);
+
     public static double CalcDPIX(double src) => Math.Ceiling(src * ScaleX);
+
     public static float CalcDPIX(float src) => (float)Math.Ceiling(src * ScaleX);
+
     public static double CalcDPIY(double src) => Math.Ceiling(src * ScaleY);
+
     public static float CalcDPIY(float src) => (float)Math.Ceiling(src * ScaleY);
 
     public static double CalcDPi(double src) => Math.Ceiling(src * (1d / ScaleX));
+
     public static float CalcDPi(float src) => (float)Math.Ceiling(src * (1f / ScaleX));
+
     public static double CalcDPiX(double src) => Math.Ceiling(src * (1d / ScaleX));
+
     public static float CalcDPiX(float src) => (float)Math.Ceiling(src * (1f / ScaleX));
+
     public static double CalcDPiY(double src) => Math.Ceiling(src * (1d / ScaleY));
+
     public static float CalcDPiY(float src) => (float)Math.Ceiling(src * (1f / ScaleY));
 }
 

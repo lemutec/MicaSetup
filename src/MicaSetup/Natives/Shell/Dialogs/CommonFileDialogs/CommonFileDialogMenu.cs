@@ -10,11 +10,17 @@ public class CommonFileDialogMenu : CommonFileDialogProminentControl
 {
     private readonly Collection<CommonFileDialogMenuItem> items = new Collection<CommonFileDialogMenuItem>();
 
-    public CommonFileDialogMenu() : base() { }
+    public CommonFileDialogMenu() : base()
+    {
+    }
 
-    public CommonFileDialogMenu(string text) : base(text) { }
+    public CommonFileDialogMenu(string text) : base(text)
+    {
+    }
 
-    public CommonFileDialogMenu(string name, string text) : base(name, text) { }
+    public CommonFileDialogMenu(string name, string text) : base(name, text)
+    {
+    }
 
     public Collection<CommonFileDialogMenuItem> Items => items;
 
@@ -36,9 +42,13 @@ public class CommonFileDialogMenu : CommonFileDialogProminentControl
 
 public class CommonFileDialogMenuItem : CommonFileDialogControl
 {
-    public CommonFileDialogMenuItem() : base(string.Empty) { }
+    public CommonFileDialogMenuItem() : base(string.Empty)
+    {
+    }
 
-    public CommonFileDialogMenuItem(string text) : base(text) { }
+    public CommonFileDialogMenuItem(string text) : base(text)
+    {
+    }
 
     public event EventHandler Click = delegate { };
 

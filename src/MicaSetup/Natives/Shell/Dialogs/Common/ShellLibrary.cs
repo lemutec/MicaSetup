@@ -138,7 +138,7 @@ public sealed class ShellLibrary : ShellContainer, IList<ShellFileSystemFolder>
         Dispose(false);
     }
 
-    public static new bool IsPlatformSupported =>
+    public new static bool IsPlatformSupported =>
             OsVersionHelper.IsWindows7_OrGreater;
 
     public static IKnownFolder LibrariesKnownFolder

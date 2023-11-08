@@ -45,7 +45,7 @@ internal static class PropVariantNativeMethods
     internal static extern void PropVariantClear([In, Out] PropVariant pvar);
 
     [DllImport(Lib.PropSys, CharSet = CharSet.Unicode, SetLastError = true, PreserveSig = false)]
-    internal static extern void PropVariantGetBooleanElem([In] PropVariant propVar, [In]uint iElem, [Out, MarshalAs(UnmanagedType.Bool)] out bool pfVal);
+    internal static extern void PropVariantGetBooleanElem([In] PropVariant propVar, [In] uint iElem, [Out, MarshalAs(UnmanagedType.Bool)] out bool pfVal);
 
     [DllImport(Lib.PropSys, CharSet = CharSet.Unicode, SetLastError = true, PreserveSig = false)]
     internal static extern void PropVariantGetDoubleElem([In] PropVariant propVar, [In] uint iElem, [Out] out double pnVal);
@@ -67,7 +67,7 @@ internal static class PropVariantNativeMethods
     internal static extern void PropVariantGetInt64Elem([In] PropVariant propVar, [In] uint iElem, [Out] out long pnVal);
 
     [DllImport(Lib.PropSys, CharSet = CharSet.Unicode, SetLastError = true, PreserveSig = false)]
-    internal static extern void PropVariantGetStringElem([In] PropVariant propVar, [In]  uint iElem, [MarshalAs(UnmanagedType.LPWStr)] ref string ppszVal);
+    internal static extern void PropVariantGetStringElem([In] PropVariant propVar, [In] uint iElem, [MarshalAs(UnmanagedType.LPWStr)] ref string ppszVal);
 
     [DllImport(Lib.PropSys, CharSet = CharSet.Unicode, SetLastError = true, PreserveSig = false)]
     internal static extern void PropVariantGetUInt16Elem([In] PropVariant propVar, [In] uint iElem, [Out] out ushort pnVal);

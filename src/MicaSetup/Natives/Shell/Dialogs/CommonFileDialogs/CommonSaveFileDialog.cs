@@ -16,9 +16,13 @@ public sealed class CommonSaveFileDialog : CommonFileDialog
     private bool overwritePrompt = true;
     private NativeFileSaveDialog saveDialogCoClass;
 
-    public CommonSaveFileDialog() { }
+    public CommonSaveFileDialog()
+    {
+    }
 
-    public CommonSaveFileDialog(string name) : base(name) { }
+    public CommonSaveFileDialog(string name) : base(name)
+    {
+    }
 
     public bool AlwaysAppendDefaultExtension
     {

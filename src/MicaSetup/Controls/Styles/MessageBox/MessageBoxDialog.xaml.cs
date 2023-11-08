@@ -21,6 +21,7 @@ public partial class MessageBoxDialog : Window
 
     [ObservableProperty]
     protected WindowDialogResult result = WindowDialogResult.None;
+
     partial void OnResultChanged(WindowDialogResult value)
     {
         _ = value;
@@ -32,6 +33,7 @@ public partial class MessageBoxDialog : Window
 
     [ObservableProperty]
     private MessageBoxType type = MessageBoxType.Info;
+
     partial void OnTypeChanged(MessageBoxType value)
     {
         IconString = value switch

@@ -32,6 +32,7 @@ public partial class MainWindow : MicaWindow
 
     [ObservableProperty]
     private IconType iconType = IconType.Normal;
+
     partial void OnIconTypeChanged(IconType value)
     {
         CreateSquircle();

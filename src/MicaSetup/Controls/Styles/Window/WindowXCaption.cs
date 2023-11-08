@@ -31,7 +31,6 @@ public class WindowXCaption
     public static readonly DependencyProperty PaddingProperty =
         DependencyProperty.RegisterAttached("Padding", typeof(Thickness), typeof(WindowXCaption));
 
-
     public static double GetHeight(DependencyObject obj)
     {
         return (double)obj.GetValue(HeightProperty);
@@ -44,7 +43,6 @@ public class WindowXCaption
 
     public static readonly DependencyProperty HeightProperty =
         DependencyProperty.RegisterAttached("Height", typeof(double), typeof(WindowXCaption));
-
 
     public static Brush GetForeground(DependencyObject obj)
     {
@@ -85,7 +83,6 @@ public class WindowXCaption
     public static readonly DependencyProperty MinimizeButtonStyleProperty =
         DependencyProperty.RegisterAttached("MinimizeButtonStyle", typeof(Style), typeof(WindowXCaption));
 
-
     public static Style GetMaximizeButtonStyle(DependencyObject obj)
     {
         return (Style)obj.GetValue(MaximizeButtonStyleProperty);
@@ -98,7 +95,6 @@ public class WindowXCaption
 
     public static readonly DependencyProperty MaximizeButtonStyleProperty =
         DependencyProperty.RegisterAttached("MaximizeButtonStyle", typeof(Style), typeof(WindowXCaption));
-
 
     public static Style GetCloseButtonStyle(DependencyObject obj)
     {
@@ -151,7 +147,6 @@ public class WindowXCaption
 
     public static readonly DependencyProperty DisableCloseButtonProperty =
         DependencyProperty.RegisterAttached("DisableCloseButton", typeof(bool), typeof(WindowXCaption));
-
 
     public static bool GetHideBasicButtons(DependencyObject obj)
     {

@@ -4,7 +4,9 @@ namespace MicaSetup.Shell.Dialogs;
 
 public class CommonFileDialogFilterCollection : Collection<CommonFileDialogFilter>
 {
-    internal CommonFileDialogFilterCollection() { }
+    internal CommonFileDialogFilterCollection()
+    {
+    }
 
     internal FilterSpec[] GetAllFilterSpecs()
     {

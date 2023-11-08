@@ -111,7 +111,7 @@ public static class ShortcutHelper
         {
             string quickLaunchUserPinnedImplicitAppShortcutsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Microsoft\Internet Explorer\Quick Launch\User Pinned\ImplicitAppShortcuts");
             string quickLaunchUserPinnedImplicitAppShortcutsLnkPath = Path.Combine(quickLaunchUserPinnedImplicitAppShortcutsPath, $"{shortcutName}.lnk");
-            
+
             if (File.Exists(quickLaunchUserPinnedImplicitAppShortcutsLnkPath))
             {
                 File.Delete(quickLaunchUserPinnedImplicitAppShortcutsLnkPath);

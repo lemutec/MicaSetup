@@ -335,7 +335,6 @@ public static class KnownFolders
 
     private static ReadOnlyCollection<IKnownFolder> GetAllFolders()
     {
-
         IList<IKnownFolder> foldersList = new List<IKnownFolder>();
 
         nint folders = 0;

@@ -8,38 +8,38 @@ namespace MicaSetup.Shell.NetFw;
 [ComImport]
 public interface INetFwProduct
 {
-	[DispId(1)]
-	object RuleCategories
-	{
-		[DispId(1)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[return: MarshalAs(UnmanagedType.Struct)]
-		get;
-		[DispId(1)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[param: MarshalAs(UnmanagedType.Struct)]
-		set;
-	}
+    [DispId(1)]
+    object RuleCategories
+    {
+        [DispId(1)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [return: MarshalAs(UnmanagedType.Struct)]
+        get;
+        [DispId(1)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [param: MarshalAs(UnmanagedType.Struct)]
+        set;
+    }
 
-	[DispId(2)]
-	string DisplayName
-	{
-		[DispId(2)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[return: MarshalAs(UnmanagedType.BStr)]
-		get;
-		[DispId(2)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[param: MarshalAs(UnmanagedType.BStr)]
-		set;
-	}
+    [DispId(2)]
+    string DisplayName
+    {
+        [DispId(2)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [return: MarshalAs(UnmanagedType.BStr)]
+        get;
+        [DispId(2)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [param: MarshalAs(UnmanagedType.BStr)]
+        set;
+    }
 
-	[DispId(3)]
-	string PathToSignedProductExe
-	{
-		[DispId(3)]
-		[MethodImpl(MethodImplOptions.InternalCall)]
-		[return: MarshalAs(UnmanagedType.BStr)]
-		get;
-	}
+    [DispId(3)]
+    string PathToSignedProductExe
+    {
+        [DispId(3)]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        [return: MarshalAs(UnmanagedType.BStr)]
+        get;
+    }
 }

@@ -46,7 +46,7 @@ public static class NotificationHelper
         {
             ToastNotificationManagerCompat.History.Clear();
         }
-        catch 
+        catch
         {
         }
     }

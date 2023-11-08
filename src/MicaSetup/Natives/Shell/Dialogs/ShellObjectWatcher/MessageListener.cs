@@ -145,9 +145,11 @@ internal class MessageListener : IDisposable
                     Monitor.Pulse(_crossThreadWindowLock);
                 }
                 break;
+
             case (uint)WindowMessage.WM_DESTROY:
-                    _running = false;
+                _running = false;
                 break;
+
             default:
                 MessageListener listener;
                 if (_listeners.TryGetValue(hwnd, out listener))
@@ -162,7 +164,9 @@ internal class MessageListener : IDisposable
     }
 
     public nint WindowHandle { get; private set; }
-    public static bool Running { get { return _running; } }
+
+    public static bool Running
+    { get { return _running; } }
 
     ~MessageListener()
     {

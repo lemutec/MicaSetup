@@ -17,7 +17,8 @@ public partial class WindowX : Window
         get => (bool)GetValue(IsActivatedProperty);
         set => SetValue(IsActivatedProperty, value);
     }
-    public static readonly DependencyProperty IsActivatedProperty =  DependencyProperty.Register(nameof(IsActivated), typeof(bool), typeof(WindowX), new PropertyMetadata(false));
+
+    public static readonly DependencyProperty IsActivatedProperty = DependencyProperty.Register(nameof(IsActivated), typeof(bool), typeof(WindowX), new PropertyMetadata(false));
 
     protected override void OnActivated(EventArgs e)
     {

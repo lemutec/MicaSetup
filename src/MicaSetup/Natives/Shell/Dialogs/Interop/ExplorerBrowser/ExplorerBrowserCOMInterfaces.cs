@@ -206,7 +206,7 @@ internal interface IExplorerBrowser
     HResult Unadvise([In] uint dwCookie);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void SetOptions([In]ExplorerBrowserOptions dwFlag);
+    void SetOptions([In] ExplorerBrowserOptions dwFlag);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     void GetOptions(out ExplorerBrowserOptions pdwFlag);
@@ -240,7 +240,7 @@ internal interface IExplorerBrowserEvents
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    HResult OnViewCreated([MarshalAs(UnmanagedType.IUnknown)]  object psv);
+    HResult OnViewCreated([MarshalAs(UnmanagedType.IUnknown)] object psv);
 
     [PreserveSig]
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -549,7 +549,7 @@ internal interface IShellView
 internal class ExplorerBrowserClass : IExplorerBrowser
 {
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual void Initialize(nint hwndParent, [In]ref RECT prc, [In] FolderSettings pfs);
+    public extern virtual void Initialize(nint hwndParent, [In] ref RECT prc, [In] FolderSettings pfs);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     public extern virtual void Destroy();
@@ -576,7 +576,7 @@ internal class ExplorerBrowserClass : IExplorerBrowser
     public extern virtual HResult Unadvise(uint dwCookie);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    public extern virtual void SetOptions([In]ExplorerBrowserOptions dwFlag);
+    public extern virtual void SetOptions([In] ExplorerBrowserOptions dwFlag);
 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
     public extern virtual void GetOptions(out ExplorerBrowserOptions pdwFlag);

@@ -11,7 +11,6 @@ using System.Windows.Media;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
 [assembly: XmlnsPrefix("urn:MicaSetup", "mica")]
 [assembly: XmlnsDefinition("urn:MicaSetup", "MicaSetup.Controls")]
 [assembly: XmlnsDefinition("urn:MicaSetup", "MicaSetup.Controls.Converters")]

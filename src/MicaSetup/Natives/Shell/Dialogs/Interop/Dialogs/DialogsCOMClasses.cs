@@ -1,5 +1,4 @@
-﻿using MicaSetup.Shell;
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 
 namespace MicaSetup.Shell.Dialogs;
@@ -7,7 +6,6 @@ namespace MicaSetup.Shell.Dialogs;
 internal interface NativeCommonFileDialog
 {
 }
-
 
 [ComImport,
 Guid(ShellIIDGuid.IFileOpenDialog),

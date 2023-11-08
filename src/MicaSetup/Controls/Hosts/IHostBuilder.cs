@@ -8,5 +8,6 @@ public interface IHostBuilder
     public ServiceProvider ServiceProvider { get; set; }
 
     public IHostBuilder CreateApp();
+
     public void RunApp();
 }

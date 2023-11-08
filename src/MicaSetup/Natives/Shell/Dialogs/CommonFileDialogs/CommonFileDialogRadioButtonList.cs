@@ -12,9 +12,13 @@ public class CommonFileDialogRadioButtonList : CommonFileDialogControl, ICommonF
     private readonly Collection<CommonFileDialogRadioButtonListItem> items = new Collection<CommonFileDialogRadioButtonListItem>();
     private int selectedIndex = -1;
 
-    public CommonFileDialogRadioButtonList() { }
+    public CommonFileDialogRadioButtonList()
+    {
+    }
 
-    public CommonFileDialogRadioButtonList(string name) : base(name, string.Empty) { }
+    public CommonFileDialogRadioButtonList(string name) : base(name, string.Empty)
+    {
+    }
 
     public event EventHandler SelectedIndexChanged = delegate { };
 
@@ -75,7 +79,9 @@ public class CommonFileDialogRadioButtonList : CommonFileDialogControl, ICommonF
 
 public class CommonFileDialogRadioButtonListItem
 {
-    public CommonFileDialogRadioButtonListItem() : this(string.Empty) { }
+    public CommonFileDialogRadioButtonListItem() : this(string.Empty)
+    {
+    }
 
     public CommonFileDialogRadioButtonListItem(string text) => Text = text;
 

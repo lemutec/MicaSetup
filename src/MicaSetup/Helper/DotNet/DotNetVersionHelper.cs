@@ -150,7 +150,6 @@ public static class DotNetVersionHelper
         return null!;
     }
 
-
     public static Version? GetNet2xVersion()
     {
         RegistryKey key = null!;
