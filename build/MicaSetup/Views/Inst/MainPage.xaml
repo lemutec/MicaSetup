@@ -1,0 +1,270 @@
+﻿<UserControl x:Class="MicaSetup.Views.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:control="clr-namespace:MicaSetup.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:MicaSetup.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="400"
+             d:DesignWidth="500"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <control:ResourceResourceDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <Grid Height="260"
+                      Margin="0,-35,0,0"
+                      VerticalAlignment="Top"
+                      Background="{DynamicResource ThemeBrush}">
+                    <i:Interaction.Behaviors>
+                        <control:WindowDragMoveBehavior />
+                    </i:Interaction.Behaviors>
+                    <!--<TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
+                               TextOptions.TextFormattingMode="Ideal"
+                               TextOptions.TextRenderingMode="Aliased"
+                               FontSize="110" FontFamily="{StaticResource IcoMoon}"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                    <Image Width="114"
+                           Height="114"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Source="pack://application:,,,/MicaSetup;component/Resources/Images/FaviconRaw.png" />
+                </Grid>
+                <ToggleButton Width="34"
+                              Height="34"
+                              Margin="0,-15,0,0"
+                              control:ButtonHelper.CornerRadius="16.5"
+                              BorderThickness="1"
+                              Command="{Binding ShowOrHideInstallPathCommand}"
+                              CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"
+                              Style="{StaticResource ExpandToggleButtonStyle}">
+                    <ToggleButton.Effect>
+                        <DropShadowEffect BlurRadius="1"
+                                          ShadowDepth="0"
+                                          Color="LightGray" />
+                    </ToggleButton.Effect>
+                    <ToggleButton.Content>
+                        <TextBlock Margin="-1,1,0,0"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="{StaticResource IcoMoon}"
+                                   FontSize="22"
+                                   Foreground="#A2A5A7"
+                                   Text="{x:Static control:Selection.PublicArrowUp1}" />
+                    </ToggleButton.Content>
+                    <ToggleButton.RenderTransform>
+                        <RotateTransform CenterX="17" CenterY="17" />
+                    </ToggleButton.RenderTransform>
+                </ToggleButton>
+            </StackPanel>
+            <Grid Margin="0,-18,0,0"
+                  Panel.ZIndex="-1"
+                  Visibility="{Binding InstallPathVisabale, Converter={StaticResource BoolToVisibleConverter}}">
+                <Border Height="130"
+                        VerticalAlignment="Top"
+                        Background="#50DEDEDE">
+                    <StackPanel Margin="0,8,0,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <TextBlock FontSize="15"
+                                   Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                   Text="{DynamicResource InstallationPath}" />
+                        <StackPanel Margin="0,8,0,0" Orientation="Horizontal">
+                            <TextBox Width="380"
+                                     Height="35"
+                                     control:TextBoxHelper.CornerRadius="4"
+                                     control:TextBoxHelper.Watermark="{DynamicResource EnterInstallationPath}"
+                                     FontSize="15"
+                                     Style="{StaticResource DefaultTextBoxStyle}"
+                                     Text="{Binding InstallPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <Button Margin="7,0,0,0"
+                                    Padding="10,0,10,0"
+                                    Command="{Binding SelectFolderCommand}"
+                                    Style="{StaticResource PathButtonStyle}">
+                                <Button.Content>
+                                    <TextBlock HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               FontFamily="{StaticResource IcoMoon}"
+                                               FontSize="20"
+                                               Foreground="White"
+                                               Text="{x:Static control:Selection.PublicFolder}" />
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+                        <Grid>
+                            <StackPanel Margin="3,6,0,0" Orientation="Horizontal">
+                                <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{DynamicResource RequestedFreeSpace}" />
+                                <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{Binding RequestedFreeSpace}" />
+                            </StackPanel>
+                            <StackPanel Margin="200,6,0,0" Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsIllegalPath, Converter={StaticResource BoolToInvisibleConverter}}">
+                                    <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{DynamicResource AvailableFreeSpace}" />
+                                    <TextBlock Foreground="{DynamicResource UnconspicuousBrush}" Text="{Binding AvailableFreeSpace}" />
+                                </StackPanel>
+                                <TextBlock Foreground="{DynamicResource ErrorHintBrush}"
+                                           Text="{DynamicResource IllegalPath}"
+                                           Visibility="{Binding IsIllegalPath, Converter={StaticResource BoolToVisibleConverter}}" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <Rectangle Width="999"
+                           Height="5"
+                           Margin="0,-1,0,0"
+                           VerticalAlignment="Top">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="{DynamicResource LinearGradientUpperColor}" />
+                            <GradientStop Offset="1" Color="Transparent" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+            <StackPanel>
+                <Rectangle Width="999"
+                           Height="6"
+                           Margin="0,-6,0,0"
+                           VerticalAlignment="Top"
+                           Visibility="{Binding InstallPathVisabale, Converter={StaticResource BoolToVisibleConverter}}">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="Transparent" />
+                            <GradientStop Offset="1" Color="{DynamicResource LinearGradientLowerColor}" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <StackPanel Margin="0,20,0,0"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <CheckBox Content="{DynamicResource HaveReadAndApproved}"
+                              FontSize="15"
+                              IsChecked="{Binding LicenseRead, Mode=TwoWay}"
+                              Style="{StaticResource DefaultCheckBoxStyle}" />
+                    <Button Margin="3,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            control:ButtonHelper.CornerRadius="4"
+                            control:ButtonHelper.HoverBrush="Transparent"
+                            Background="Transparent"
+                            Command="{Binding ShowOrHideLincenseInfoCommand}"
+                            Foreground="White"
+                            Style="{StaticResource PathButtonStyle}">
+                        <Button.Content>
+                            <TextBlock Margin="0,-1,0,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Cursor="Hand"
+                                       FontSize="15"
+                                       Foreground="{DynamicResource HighGreenBrush}"
+                                       Text="{DynamicResource UserLicenseAgreement}" />
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+                <Button Width="280"
+                        Height="38"
+                        Margin="0,10,0,0"
+                        Padding="10,0,10,0"
+                        Command="{Binding StartInstallCommand}"
+                        IsEnabled="{Binding CanStart}"
+                        Style="{StaticResource PathButtonStyle}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Padding="2"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontFamily="{StaticResource IcoMoon}"
+                                       FontSize="18"
+                                       Foreground="White"
+                                       Text="{x:Static control:Selection.ContactSencryptionCalls}"
+                                       Visibility="{Binding IsElevated, Converter={StaticResource BoolToVisibleConverter}}" />
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="15"
+                                       Foreground="White"
+                                       Text="{DynamicResource StartInstall}" />
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Border Margin="15,0,15,15"
+                d:Visibility="Collapsed"
+                Background="White"
+                CornerRadius="4"
+                Visibility="{Binding LicenseShown, Converter={StaticResource BoolToVisibleConverter}}">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5"
+                                  ShadowDepth="0"
+                                  Color="LightGray" />
+            </Border.Effect>
+            <Border.RenderTransform>
+                <TranslateTransform />
+            </Border.RenderTransform>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <BeginStoryboard.Storyboard>
+                            <Storyboard>
+                                <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                    From="15,15,15,15"
+                                                    To="15,0,15,15"
+                                                    Duration="0:0:0.15" />
+                            </Storyboard>
+                        </BeginStoryboard.Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="0:0:0.0"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             Duration="0:0:0.15">
+                                <DoubleAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseOut" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0"
+                           Margin="0,10,0,0"
+                           HorizontalAlignment="Center"
+                           FontSize="15"
+                           Text="{DynamicResource UserLicenseAgreement}" />
+                <control:SmoothScrollViewer Grid.Row="1"
+                                            Height="auto"
+                                            Margin="5,18,5,0">
+                    <TextBlock FontSize="13"
+                               LineHeight="25"
+                               Text="{Binding LicenseInfo}"
+                               TextWrapping="Wrap" />
+                </control:SmoothScrollViewer>
+                <Button Grid.Row="2"
+                        Height="30"
+                        Margin="5"
+                        Padding="10,0,10,0"
+                        HorizontalAlignment="Right"
+                        Command="{Binding ShowOrHideLincenseInfoCommand}"
+                        Content="{DynamicResource ButtonAgree}"
+                        FontSize="15"
+                        Foreground="White"
+                        Style="{StaticResource PathButtonStyle}" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

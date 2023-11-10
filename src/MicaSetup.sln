@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaSetup", "MicaSetup\MicaSetup.csproj", "{A8F05DC8-59D6-43B0-B8CD-D9DF1A60736C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaSetup", "..\build\MicaSetup\MicaSetup.csproj", "{A8F05DC8-59D6-43B0-B8CD-D9DF1A60736C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaSetup.Uninst", "MicaSetup\MicaSetup.Uninst.csproj", "{2EBCFD95-5926-4C99-A033-5BD88314C8AF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{6E5EFFFA-896E-45AC-82DD-BFF9F0BEAB3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaSetup.Uninst", "..\build\MicaSetup\MicaSetup.Uninst.csproj", "{2EBCFD95-5926-4C99-A033-5BD88314C8AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{24F56013-5D6A-453F-B6A0-46E8F9226703}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaApp", "MicaApp\MicaApp.csproj", "{FEB1068F-89BA-48FF-ADBC-54AB9169C2EB}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaSquircle", "MicaSetup.Tools\MicaSquircle\MicaSquircle.csproj", "{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,14 +43,6 @@ Global
 		{FEB1068F-89BA-48FF-ADBC-54AB9169C2EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FEB1068F-89BA-48FF-ADBC-54AB9169C2EB}.Release|x64.ActiveCfg = Release|x64
 		{FEB1068F-89BA-48FF-ADBC-54AB9169C2EB}.Release|x64.Build.0 = Release|x64
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Debug|x64.Build.0 = Debug|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Release|x64.ActiveCfg = Release|Any CPU
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,7 +50,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A8F05DC8-59D6-43B0-B8CD-D9DF1A60736C} = {24F56013-5D6A-453F-B6A0-46E8F9226703}
 		{2EBCFD95-5926-4C99-A033-5BD88314C8AF} = {24F56013-5D6A-453F-B6A0-46E8F9226703}
-		{26D813EB-1D9E-4502-ABE0-167FFE1B5AFD} = {6E5EFFFA-896E-45AC-82DD-BFF9F0BEAB3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F356859C-CA7E-4434-BCDA-5BC25D53D330}

@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="MicaSetup.Views.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:control="clr-namespace:MicaSetup.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:MicaSetup.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="400"
+             d:DesignWidth="500"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <control:ResourceResourceDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <Grid Height="260"
+                      Margin="0,-35,0,0"
+                      VerticalAlignment="Top"
+                      Background="{DynamicResource ThemeBrush}">
+                    <i:Interaction.Behaviors>
+                        <control:WindowDragMoveBehavior />
+                    </i:Interaction.Behaviors>
+                    <!--<TextBlock Text="{x:Static control:Selection.IcoMoon}" Foreground="White"
+                               TextOptions.TextFormattingMode="Ideal"
+                               TextOptions.TextRenderingMode="Aliased"
+                               FontSize="110" FontFamily="{StaticResource IcoMoon}"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                    <Image Width="114"
+                           Height="114"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Source="pack://application:,,,/MicaSetup;component/Resources/Images/FaviconRaw.png" />
+                </Grid>
+            </StackPanel>
+            <Grid>
+                <TextBlock Margin="30,30,0,0"
+                           FontSize="18"
+                           Text="{DynamicResource SureUninstallTips}" />
+                <CheckBox Margin="30,80,0,0"
+                          Content="{DynamicResource KeepMyDataTips}"
+                          FontSize="15"
+                          IsChecked="{Binding KeepMyData, Mode=TwoWay}"
+                          Style="{StaticResource DefaultCheckBoxStyle}" />
+                <StackPanel Margin="0,0,20,-25"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal">
+                    <Button Height="30"
+                            MinWidth="80"
+                            Padding="5,0,5,0"
+                            control:ButtonHelper.CornerRadius="4"
+                            control:ButtonHelper.HoverBrush="#D7DCE0"
+                            Background="#E7E7E7"
+                            Command="{Binding StartUninstallCommand}"
+                            Content="{DynamicResource ButtonOK}"
+                            FontSize="15"
+                            Foreground="#666666"
+                            Style="{StaticResource PathButtonStyle}" />
+                    <Button Height="30"
+                            MinWidth="80"
+                            Margin="8,0,0,0"
+                            Padding="5,0,5,0"
+                            control:ButtonHelper.CornerRadius="4"
+                            Command="{Binding CancelUninstallCommand}"
+                            Content="{DynamicResource ButtonCancel}"
+                            FontSize="15"
+                            Style="{StaticResource PathButtonStyle}" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
