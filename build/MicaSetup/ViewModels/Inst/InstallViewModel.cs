@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MicaSetup.Controls;
+using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using MicaSetup.Helper.Helper;
 using MicaSetup.Services;

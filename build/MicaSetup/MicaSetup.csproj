@@ -35,6 +35,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Fonts\*.ttf" />
+    <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
+    <Resource Include="Resources\Images\*.ico" />
+    <Resource Include="Resources\Images\*.png" />
+    <Resource Include="Resources\Licenses\license.*.txt" />
+    <Resource Include="Resources\Setups\*.7z" />
+    <Resource Include="Resources\Setups\*.appx" />
+    <Resource Include="Resources\Setups\*.appxbundle" />
+    <Resource Include="Resources\Setups\*.msix" />
+    <Resource Include="Resources\Setups\*.msixbundle" />
+    <Resource Include="Resources\Setups\*.msi" />
+    <Resource Include="Resources\Setups\*.zip" />
+    <Resource Include="Resources\Setups\*.exe" />
+    <Resource Include="Resources\Setups\*.cer" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="ViewModels\Uninst\**" />
     <Content Remove="ViewModels\Uninst\**" />
     <EmbeddedResource Remove="ViewModels\Uninst\**" />
@@ -63,7 +80,6 @@
       <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
     <PackageReference Include="SharpCompress" Version="0.33.0" />
@@ -73,23 +89,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net.Http" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Resources\Fonts\*.ttf" />
-    <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
-    <Resource Include="Resources\Images\*.ico" />
-    <Resource Include="Resources\Images\*.png" />
-    <Resource Include="Resources\Licenses\license.*.txt" />
-    <Resource Include="Resources\Setups\*.7z" />
-    <Resource Include="Resources\Setups\*.appx" />
-    <Resource Include="Resources\Setups\*.appxbundle" />
-    <Resource Include="Resources\Setups\*.msix" />
-    <Resource Include="Resources\Setups\*.msixbundle" />
-    <Resource Include="Resources\Setups\*.msi" />
-    <Resource Include="Resources\Setups\*.zip" />
-    <Resource Include="Resources\Setups\*.exe" />
-    <Resource Include="Resources\Setups\*.cer" />
   </ItemGroup>
 
 </Project>

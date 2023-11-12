@@ -13,7 +13,7 @@
     <s:String x:Key="SelectPathTips">インストールパスの選択してください</s:String>
     <s:String x:Key="StartInstall">インストール</s:String>
     <s:String x:Key="Preparing">準備中</s:String>
-    <s:String x:Key="InstallFinishTips">インストールが完了しました。</s:String>
+    <s:String x:Key="InstallFinishTips">インストールが完了しました</s:String>
     <s:String x:Key="RunImmediately">すぐに実行</s:String>
     <s:String x:Key="ButtonOK">ＯＫ</s:String>
     <s:String x:Key="ButtonCancel">キャンセル</s:String>
@@ -26,14 +26,14 @@
     <s:String x:Key="UninstNotCompletedTips">アンインストールはまだ完了されていないため終了することはできません。</s:String>
     <s:String x:Key="HaveReadAndApproved">契約の既読と承認：</s:String>
     <s:String x:Key="UserLicenseAgreement">ユーザライセンス契約</s:String>
-    <s:String x:Key="ButtonAgree">同意</s:String>
+    <s:String x:Key="ButtonAgree">戻る</s:String>
     <s:String x:Key="ProgressTipsInstalling">インストール中</s:String>
     <s:String x:Key="Finish">完了</s:String>
     <s:String x:Key="SureUninstallTips">本当にアンインストールしますか？</s:String>
     <s:String x:Key="KeepMyDataTips">マイデータを保留する</s:String>
     <s:String x:Key="NotKeepMyDataTips">チェック「{0}」を外すと、すべてのファイルが削除されます！</s:String>
     <s:String x:Key="ProgressTipsUninstalling">アンインストール中</s:String>
-    <s:String x:Key="UninstallFinishTips">アンインストールが完了しました。</s:String>
+    <s:String x:Key="UninstallFinishTips">アンインストールが完了しました</s:String>
     <s:String x:Key="UninstallDelayUntilRebootTips">一部のファイルが削除されませんでした。これらのファイルは、次回の再起動時に自動的に削除されます。</s:String>
     <s:String x:Key="Downloading">ダウンロード中</s:String>
     <s:String x:Key="Installing">インストール中</s:String>

@@ -9,33 +9,36 @@ namespace MicaSetup.ViewModels;
 
 public partial class FinishViewModel : ObservableObject
 {
-    [ObservableProperty]
-    private bool autoRunOnClosed = true;
-
     public FinishViewModel()
     {
     }
 
     [RelayCommand]
-    public void Finish()
+    public void Close()
     {
         if (UIDispatcherHelper.MainWindow is Window window)
         {
-            if (AutoRunOnClosed)
+            SystemCommands.CloseWindow(window);
+        }
+    }
+
+    [RelayCommand]
+    public void Open()
+    {
+        if (UIDispatcherHelper.MainWindow is Window window)
+        {
+            try
             {
-                try
-                {
-                    FluentProcess.Create()
-                        .FileName(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName))
-                        .WorkingDirectory(Option.Current.InstallLocation)
-                        .UseShellExecute()
-                        .Start()
-                        .Forget();
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
+                FluentProcess.Create()
+                    .FileName(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName))
+                    .WorkingDirectory(Option.Current.InstallLocation)
+                    .UseShellExecute()
+                    .Start()
+                    .Forget();
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
             }
             SystemCommands.CloseWindow(window);
         }

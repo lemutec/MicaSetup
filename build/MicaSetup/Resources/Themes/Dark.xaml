@@ -13,7 +13,13 @@
     <Color x:Key="KeyboardFocusBorderColor">#87FFFFFF</Color>
     <SolidColorBrush x:Key="KeyboardFocusBorderColorBrush" Color="{StaticResource KeyboardFocusBorderColor}" />
 
+    <Color x:Key="WindowControlButtonColorDefault">#0FFFFFFF</Color>
+
     <!--  Colors  -->
+
+    <Color x:Key="SystemAccentColorPrimary">#559ce4</Color>
+    <Color x:Key="SystemAccentColorSecondary">#80b9ee</Color>
+    <Color x:Key="SystemAccentColorTertiary">#add8ff</Color>
 
     <Color x:Key="TextFillColorPrimary">#FFFFFF</Color>
     <Color x:Key="TextFillColorSecondary">#C5FFFFFF</Color>
@@ -287,19 +293,48 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <!--  TextBox (same brushes are used for AutoSuggestBox, NumberBox and PasswordBox  -->
+    <SolidColorBrush x:Key="TextControlBackground" Color="{StaticResource ControlFillColorDefault}" />
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="{StaticResource ControlFillColorSecondary}" />
+    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="{StaticResource ControlFillColorInputActive}" />
+    <SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="{StaticResource ControlFillColorDisabled}" />
+
+    <!--<SolidColorBrush x:Key="TextControlBorderBrush" Color="{StaticResource TextControlElevationBorderBrush}" />-->
+    <SolidColorBrush x:Key="TextControlForeground" Color="{StaticResource TextFillColorPrimary}" />
+    <SolidColorBrush x:Key="TextControlForegroundDisabled" Color="{StaticResource TextFillColorDisabled}" />
+    <SolidColorBrush x:Key="TextControlFocusedBorderBrush" Color="{StaticResource SystemAccentColorPrimary}" />
+    <SolidColorBrush x:Key="TextControlBorderBrushDisabled" Color="{StaticResource ControlStrokeColorDefault}" />
+
+    <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="{StaticResource TextFillColorSecondary}" />
+    <SolidColorBrush x:Key="TextControlButtonForeground" Color="{StaticResource TextFillColorSecondary}" />
+
+    <!--  Button  -->
+    <SolidColorBrush x:Key="AccentButtonBackground" Color="{StaticResource SystemAccentColorPrimary}" />
+    <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="{StaticResource SystemAccentColorSecondary}" />
+    <SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="{StaticResource SystemAccentColorTertiary}" />
+    <!--<SolidColorBrush x:Key="AccentButtonBackgroundDisabled" ResourceKey="AccentFillColorDisabledBrush" />-->
+    <SolidColorBrush x:Key="AccentButtonForeground" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+    <SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="{StaticResource TextOnAccentFillColorPrimary}" />
+    <SolidColorBrush x:Key="AccentButtonForegroundPressed" Color="{StaticResource TextOnAccentFillColorSecondary}" />
+    <!--<SolidColorBrush x:Key="AccentButtonForegroundDisabled" ResourceKey="TextOnAccentFillColorDisabled" />-->
+    <!--<SolidColorBrush x:Key="AccentButtonBorderBrush" Color="{DynamicResource AccentControlElevationBorder}" />-->
+    <!--<SolidColorBrush x:Key="AccentButtonBorderBrushPointerOver" Color="{DynamicResource AccentControlElevationBorder}" />-->
+    <SolidColorBrush x:Key="AccentButtonBorderBrushPressed" Color="{DynamicResource ControlFillColorTransparent}" />
+    <!--<SolidColorBrush x:Key="AccentButtonBorderBrushDisabled" Color="{DynamicResource ControlFillColorTransparentBrush}" />-->
+    <SolidColorBrush x:Key="ButtonBackground" Color="{StaticResource ControlFillColorDefault}" />
+    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{StaticResource ControlFillColorSecondary}" />
+    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{StaticResource ControlFillColorTertiary}" />
+    <SolidColorBrush x:Key="ButtonBackgroundDisabled" Color="{StaticResource ControlFillColorDisabled}" />
+    <SolidColorBrush x:Key="ButtonForeground" Color="{StaticResource TextFillColorPrimary}" />
+    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="{StaticResource TextFillColorPrimary}" />
+    <SolidColorBrush x:Key="ButtonForegroundPressed" Color="{StaticResource TextFillColorSecondary}" />
+    <SolidColorBrush x:Key="ButtonForegroundDisabled" Color="{StaticResource TextFillColorDisabled}" />
+    <!--<SolidColorBrush x:Key="ButtonBorderBrush" Color="{StaticResource ControlElevationBorder}" />-->
+    <!--<SolidColorBrush x:Key="ButtonBorderBrushPointerOver" Color="{StaticResource ControlElevationBorder}" />-->
+    <SolidColorBrush x:Key="ButtonBorderBrushPressed" Color="{StaticResource ControlStrokeColorDefault}" />
+    <SolidColorBrush x:Key="ButtonBorderBrushDisabled" Color="{StaticResource ControlStrokeColorDefault}" />
+
     <!--  Mica  -->
-
-    <Color x:Key="ThemeColor">#31374F</Color>
-    <SolidColorBrush x:Key="ThemeBrush" Color="{StaticResource ThemeColor}" />
-
-    <Color x:Key="ButtonHoverColor">#484C58</Color>
-    <SolidColorBrush x:Key="ButtonHoverBrush" Color="{StaticResource ButtonHoverColor}" />
-
-    <Color x:Key="ToggleButtonBackgroundColor">#FFFFFF</Color>
-    <SolidColorBrush x:Key="ToggleButtonBackground" Color="{StaticResource ToggleButtonBackgroundColor}" />
-
-    <Color x:Key="ToggleButtonBorderColor">#50AAAAAA</Color>
-    <SolidColorBrush x:Key="ToggleButtonBorderBrush" Color="{StaticResource ToggleButtonBorderColor}" />
 
     <Color x:Key="UnconspicuousColor">#FF999999</Color>
     <SolidColorBrush x:Key="UnconspicuousBrush" Color="{StaticResource UnconspicuousColor}" />
@@ -307,16 +342,10 @@
     <Color x:Key="HighGreenColor">#2ACEAE</Color>
     <SolidColorBrush x:Key="HighGreenBrush" Color="{StaticResource HighGreenColor}" />
 
-    <Color x:Key="InstallHintColor">#555555</Color>
+    <Color x:Key="InstallHintColor">#BBBBBB</Color>
     <SolidColorBrush x:Key="InstallHintBrush" Color="{StaticResource InstallHintColor}" />
 
     <Color x:Key="ErrorHintColor">#FF0000</Color>
     <SolidColorBrush x:Key="ErrorHintBrush" Color="{StaticResource ErrorHintColor}" />
-
-    <Color x:Key="LinearGradientUpperColor">#5031374F</Color>
-    <SolidColorBrush x:Key="LinearGradientUpperBrush" Color="{StaticResource LinearGradientUpperColor}" />
-
-    <Color x:Key="LinearGradientLowerColor">#CED2D6</Color>
-    <SolidColorBrush x:Key="LinearGradientLowerBrush" Color="{StaticResource LinearGradientLowerColor}" />
 
 </ResourceDictionary>

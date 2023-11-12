@@ -1,5 +1,4 @@
-﻿using MicaSetup.Controls;
-using MicaSetup.Helper;
+﻿using MicaSetup.Design.Controls;
 using MicaSetup.Services;
 using MicaSetup.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,7 +28,6 @@ internal class Program
             .UseTempPathFork()
             .UseElevated()
             .UseDpiAware()
-            .UseAsMsixInstaller(enabled: false, "c17bc862-e10e-4618-b717-e47dd2bf65c8", MsixInstallMethod.AppInstaller) // Not Impl
             .UseOptions(option =>
             {
                 option.IsCreateDesktopShortcut = true;
@@ -47,7 +45,6 @@ internal class Program
                 option.IsInstallCertificate = false;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.UnpackingPassword = null!;
-                option.BackdropMica = true;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
@@ -63,14 +60,9 @@ internal class Program
                 service.AddScoped<IDotNetVersionService, DotNetVersionService>();
                 service.AddScoped<IExplorerService, ExplorerService>();
             })
-            .UseFonts(font =>
-            {
-                font.Add(new MuiLanguageFont().OnTwoNameOf("ja").ForSystemFont("Yu Gothic UI", "Meiryo UI"));
-                font.Add(new MuiLanguageFont().OnAnyName().ForResourceFont("HarmonyOS_Sans_SC_Regular.ttf", "HarmonyOS Sans SC"));
-            })
             .CreateApp()
             .UseMuiLanguage()
-            .UseTheme(WindowsTheme.Light)
+            .UseTheme(WindowsTheme.Auto)
             .UsePages(page =>
             {
                 page.Add(nameof(MainPage), typeof(MainPage));

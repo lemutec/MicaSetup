@@ -189,3 +189,8 @@ public struct OSVERSIONINFOEX
     public byte ProductType;
     public byte Reserved;
 }
+
+public struct HRESULT
+{
+    public const int S_OK = 0;
+}

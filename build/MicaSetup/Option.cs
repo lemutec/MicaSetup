@@ -17,12 +17,6 @@ public class Option
     public bool Logging { get; internal set; } = false;
 
     /// <summary>
-    /// Indicates whether enable Mica Backdrop
-    /// </summary>
-    [Category("GlobalSetting")]
-    public bool BackdropMica { get; set; } = false;
-
-    /// <summary>
     /// Indicates whether App installing
     /// </summary>
     [Category("GlobalVariable")]
@@ -217,10 +211,4 @@ public class Option
     /// </summary>
     [Category("GlobalSetting")]
     public string AppxPackageName { get; set; } = null!;
-
-    /// <summary>
-    /// Provide Package install method
-    /// </summary>
-    [Category("GlobalSetting")]
-    public MsixInstallMethod AppxInstallMethod { get; set; } = default;
 }

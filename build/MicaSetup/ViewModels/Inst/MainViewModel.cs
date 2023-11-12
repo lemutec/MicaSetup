@@ -1,16 +1,14 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MicaSetup.Controls;
+using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using MicaSetup.Services;
 using MicaSetup.Shell.Dialogs;
 using SharpCompress.Readers;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
-using System.Windows.Media.Animation;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 
@@ -89,49 +87,12 @@ public partial class MainViewModel : ObservableObject
     }
 
     [ObservableProperty]
-    private bool installPathVisabale = false;
+    private bool installPathShown = false;
 
     [RelayCommand]
-    private void ShowOrHideInstallPath(ToggleButton button)
+    private void ShowOrHideInstallPath()
     {
-        button.IsEnabled = false;
-        if (UIDispatcherHelper.MainWindow is Window window)
-        {
-            if (button.IsChecked ?? false)
-            {
-                DoubleAnimation animation = new()
-                {
-                    From = 400,
-                    To = 520,
-                    Duration = new Duration(TimeSpan.FromSeconds(0.15d)),
-                    FillBehavior = FillBehavior.Stop,
-                };
-                animation.Completed += async (_, _) =>
-                {
-                    InstallPathVisabale = true;
-                    await Task.Delay(50);
-                    button.IsEnabled = true;
-                };
-                window.BeginAnimation(Window.HeightProperty, animation);
-            }
-            else
-            {
-                InstallPathVisabale = false;
-                DoubleAnimation animation = new()
-                {
-                    From = 520,
-                    To = 400,
-                    Duration = new Duration(TimeSpan.FromSeconds(0.15d)),
-                    FillBehavior = FillBehavior.Stop,
-                };
-                animation.Completed += async (_, _) =>
-                {
-                    await Task.Delay(50);
-                    button.IsEnabled = true;
-                };
-                window.BeginAnimation(Window.HeightProperty, animation);
-            }
-        }
+        InstallPathShown = !InstallPathShown;
     }
 
     [RelayCommand]
@@ -208,10 +169,6 @@ public partial class MainViewModel : ObservableObject
             Logger.Error(e);
         }
 
-        if (UIDispatcherHelper.MainWindow is Window window)
-        {
-            window.Height = 400;
-        }
         Routing.GoToNext();
     }
 }

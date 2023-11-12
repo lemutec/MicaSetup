@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MicaSetup.Controls;
+using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using System;
 using System.IO;

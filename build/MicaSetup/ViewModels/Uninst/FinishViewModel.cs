@@ -8,7 +8,7 @@ namespace MicaSetup.ViewModels;
 public partial class FinishViewModel : ObservableObject
 {
     [RelayCommand]
-    public void Finish()
+    public void Close()
     {
         if (UIDispatcherHelper.MainWindow is Window window)
         {

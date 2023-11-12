@@ -7,7 +7,6 @@ public partial class App : Application, IApp
 {
     public App()
     {
-        NotificationHelper.ClearNotice();
         InitializeComponent();
     }
 }

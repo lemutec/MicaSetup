@@ -19,12 +19,14 @@
     <SolidColorBrush x:Key="AccentTextFillColorTertiaryBrush" Color="{DynamicResource SystemAccentColorLight2}" />
     <SolidColorBrush x:Key="AccentFillColorSelectedTextBackgroundBrush" Color="{DynamicResource SystemAccentColor}" />
     <SolidColorBrush x:Key="AccentFillColorDefaultBrush" Color="{DynamicResource SystemAccentColorLight2}" />
-    <SolidColorBrush x:Key="AccentFillColorSecondaryBrush"
-                     Opacity="0.9"
-                     Color="{DynamicResource SystemAccentColorLight2}" />
-    <SolidColorBrush x:Key="AccentFillColorTertiaryBrush"
-                     Opacity="0.8"
-                     Color="{DynamicResource SystemAccentColorLight2}" />
+    <SolidColorBrush
+        x:Key="AccentFillColorSecondaryBrush"
+        Opacity="0.9"
+        Color="{DynamicResource SystemAccentColorLight2}" />
+    <SolidColorBrush
+        x:Key="AccentFillColorTertiaryBrush"
+        Opacity="0.8"
+        Color="{DynamicResource SystemAccentColorLight2}" />
 
     <!--  Brushes  -->
 

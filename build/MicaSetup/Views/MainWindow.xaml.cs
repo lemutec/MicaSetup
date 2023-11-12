@@ -1,4 +1,7 @@
-﻿using MicaSetup.Controls;
+﻿using MicaSetup.Design.Controls;
+
+using MicaSetup.Design.Controls;
+
 using MicaSetup.Helper;
 using System;
 using System.ComponentModel;
@@ -16,15 +19,6 @@ public partial class MainWindow : WindowX
         DataContext = this;
         InitializeComponent();
         Closing += OnClosing;
-    }
-
-    protected override void OnActivated(EventArgs e)
-    {
-        if (Option.Current.BackdropMica)
-        {
-            this.EnableBackdrop();
-        }
-        base.OnActivated(e);
     }
 
     private void OnClosing(object sender, CancelEventArgs e)

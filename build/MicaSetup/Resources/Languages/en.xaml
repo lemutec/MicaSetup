@@ -3,8 +3,8 @@
                     xmlns:s="clr-namespace:System;assembly=mscorlib">
     <s:String x:Key="Setup">Setup</s:String>
     <s:String x:Key="UninstallProgram">Uninstall</s:String>
-    <s:String x:Key="RequestedFreeSpace">Needed Space: </s:String>
-    <s:String x:Key="AvailableFreeSpace">Remaining Space: </s:String>
+    <s:String x:Key="RequestedFreeSpace">Needed Space:</s:String>
+    <s:String x:Key="AvailableFreeSpace">Remaining Space:</s:String>
     <s:String x:Key="AvailableFreeSpaceInsufficientTips">The target disk space is insufficient, please use other disk to install!</s:String>
     <s:String x:Key="InstallationPath">Installation path:</s:String>
     <s:String x:Key="EnterInstallationPath">Enter installation path</s:String>
@@ -13,7 +13,7 @@
     <s:String x:Key="SelectPathTips">Please select the installation path.</s:String>
     <s:String x:Key="StartInstall">Install</s:String>
     <s:String x:Key="Preparing">Preparing</s:String>
-    <s:String x:Key="InstallFinishTips">Install completed.</s:String>
+    <s:String x:Key="InstallFinishTips">Install completed</s:String>
     <s:String x:Key="RunImmediately">Run immediately</s:String>
     <s:String x:Key="ButtonOK">OK</s:String>
     <s:String x:Key="ButtonCancel">Cancel</s:String>
@@ -26,14 +26,14 @@
     <s:String x:Key="UninstNotCompletedTips">The uninstallation has not been completed. Program can't be terminated.</s:String>
     <s:String x:Key="HaveReadAndApproved">Read &#38;&#38; Approved</s:String>
     <s:String x:Key="UserLicenseAgreement">User License Agreement</s:String>
-    <s:String x:Key="ButtonAgree">Agree</s:String>
+    <s:String x:Key="ButtonAgree">Back</s:String>
     <s:String x:Key="ProgressTipsInstalling">Installing</s:String>
     <s:String x:Key="Finish">Finish</s:String>
     <s:String x:Key="SureUninstallTips">Are you sure you want to uninstall?</s:String>
     <s:String x:Key="KeepMyDataTips">Keep my data</s:String>
     <s:String x:Key="NotKeepMyDataTips">If '{0}' is not checked, all files will be deleted!</s:String>
     <s:String x:Key="ProgressTipsUninstalling">Uninstalling</s:String>
-    <s:String x:Key="UninstallFinishTips">Uninstall completed.</s:String>
+    <s:String x:Key="UninstallFinishTips">Uninstall completed</s:String>
     <s:String x:Key="UninstallDelayUntilRebootTips">Some files couldn't be deleted, and will be marked for deletion on next system startup.</s:String>
     <s:String x:Key="Downloading">Downloading</s:String>
     <s:String x:Key="Installing">Installing</s:String>

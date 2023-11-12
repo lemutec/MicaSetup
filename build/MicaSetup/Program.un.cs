@@ -1,4 +1,4 @@
-﻿using MicaSetup.Controls;
+﻿using MicaSetup.Design.Controls;
 using MicaSetup.Services;
 using MicaSetup.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -55,14 +55,9 @@ internal class Program
                 service.AddSingleton<IMuiLanguageService, MuiLanguageService>();
                 service.AddScoped<IExplorerService, ExplorerService>();
             })
-            .UseFonts(font =>
-            {
-                font.Add(new MuiLanguageFont().OnTwoNameOf("ja").ForSystemFont("Yu Gothic UI", "Meiryo UI"));
-                font.Add(new MuiLanguageFont().OnAnyName().ForResourceFont("HarmonyOS_Sans_SC_Regular.ttf", "HarmonyOS Sans SC"));
-            })
             .CreateApp()
             .UseMuiLanguage()
-            .UseTheme(WindowsTheme.Light)
+            .UseTheme(WindowsTheme.Auto)
             .UsePages(page =>
             {
                 page.Add(nameof(MainPage), typeof(MainPage));

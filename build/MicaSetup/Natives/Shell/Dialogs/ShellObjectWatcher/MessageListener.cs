@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
+using static MicaSetup.Natives.User32;
 
 namespace MicaSetup.Shell.Dialogs;
 
