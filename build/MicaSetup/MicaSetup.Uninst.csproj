@@ -31,6 +31,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Fonts\*.ttf" />
+    <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
+    <Resource Include="Resources\Images\*.ico" />
+    <Resource Include="Resources\Images\*.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="ViewModels\Inst\**" />
     <Content Remove="ViewModels\Inst\**" />
     <EmbeddedResource Remove="ViewModels\Inst\**" />
@@ -75,13 +82,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net.Http" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Resources\Fonts\*.ttf" />
-    <Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
-    <Resource Include="Resources\Images\*.ico" />
-    <Resource Include="Resources\Images\*.png" />
   </ItemGroup>
 
 </Project>

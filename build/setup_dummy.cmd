@@ -6,9 +6,6 @@ MicaSetup.Tools\7-Zip\7z a publish.7z test.txt -t7z -mx=5 -mf=BCJ2 -r -y
 del test.txt
 copy publish.7z .\MicaSetup\Resources\Setups\publish.7z
 
-@echo [prepare font]
-copy .\MicaSetup.Tools\MicaFontTrim\fonts\HarmonyOS_Sans_SC_Regular.ttf .\MicaSetup\Resources\Fonts\HarmonyOS_Sans_SC_Regular.ttf
-
 @echo [prepare dummy uninst]
 echo dummy-uninst > uninst.exe
 copy uninst.exe .\MicaSetup\Resources\Setups\Uninst.exe
