@@ -67,6 +67,9 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private bool isElevated = RuntimeHelper.IsElevated;
 
+    [ObservableProperty] 
+    private bool isCustomizeVisiableAutoRun = Option.Current.IsCustomizeVisiableAutoRun;
+
     [ObservableProperty]
     private bool autoRun = Option.Current.IsCreateAsAutoRun;
 

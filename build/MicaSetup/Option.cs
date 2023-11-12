@@ -65,10 +65,16 @@ public class Option
     public bool IsCreateQuickLaunch { get; set; } = false;
 
     /// <summary>
-    /// Indicates whether to generate AutoRun Shortcut
+    /// Indicates whether to generate AutoRun
     /// </summary>
     [Category("GlobalSetting")]
     public bool IsCreateAsAutoRun { get; set; } = false;
+
+    /// <summary>
+    /// Indicates whether to show customize option of AutoRun
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsCustomizeVisiableAutoRun { get; set; } = false;
 
     /// <summary>
     /// Indicates AutoRun CLI

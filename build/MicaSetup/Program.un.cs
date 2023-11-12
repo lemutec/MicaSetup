@@ -12,8 +12,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Uninst")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("1.3.0.0")]
-[assembly: AssemblyFileVersion("1.3.0.0")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
 
 namespace MicaSetup;
 
