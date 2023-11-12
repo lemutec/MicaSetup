@@ -22,6 +22,10 @@ public partial class MainViewModel : ObservableObject
         try
         {
             value = Path.Combine(value).TrimEnd('\\', '/');
+            if (value.EndsWith(":"))
+            {
+                value += Path.DirectorySeparatorChar;
+            }
             availableFreeSpaceLong = DriveInfoHelper.GetAvailableFreeSpace(value);
             AvailableFreeSpace = availableFreeSpaceLong.ToFreeSpaceString();
             Option.Current.InstallLocation = (value?.EndsWith(Option.Current.KeyName, StringComparison.OrdinalIgnoreCase) ?? false) ? value : Path.Combine(value, Option.Current.KeyName);
