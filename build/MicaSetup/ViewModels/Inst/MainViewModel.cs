@@ -7,8 +7,6 @@ using MicaSetup.Shell.Dialogs;
 using SharpCompress.Readers;
 using System;
 using System.IO;
-using System.Windows;
-using System.Windows.Controls.Primitives;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 
@@ -68,6 +66,22 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private bool isElevated = RuntimeHelper.IsElevated;
+
+    [ObservableProperty]
+    private bool autoRun = Option.Current.IsCreateAsAutoRun;
+
+    partial void OnAutoRunChanged(bool value)
+    {
+        Option.Current.IsCreateAsAutoRun = value;
+    }
+
+    [ObservableProperty]
+    private bool desktopShortcut = Option.Current.IsCreateDesktopShortcut;
+
+    partial void OnDesktopShortcutChanged(bool value)
+    {
+        Option.Current.IsCreateDesktopShortcut = value;
+    }
 
     public MainViewModel()
     {

@@ -59,7 +59,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
-                                       Text="完成" />
+                                       Text="{DynamicResource Finish}" />
                         </StackPanel>
                     </Button.Content>
                 </Button>

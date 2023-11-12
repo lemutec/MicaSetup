@@ -60,7 +60,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
-                                           Text="完成" />
+                                           Text="{DynamicResource Finish}" />
                             </StackPanel>
                         </Button.Content>
                     </Button>
@@ -77,7 +77,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
-                                           Text="打开" />
+                                           Text="{DynamicResource Open}" />
                             </StackPanel>
                         </Button.Content>
                     </Button>

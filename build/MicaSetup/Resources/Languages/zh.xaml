@@ -40,4 +40,8 @@
     <s:String x:Key="Installing">正在安装</s:String>
     <s:String x:Key="NetworkUnavailableTips">当前网络不可用</s:String>
     <s:String x:Key="ComponentInstallFailedTips">“{0}”组件安装失败</s:String>
+    <s:String x:Key="Open">打开</s:String>
+    <s:String x:Key="Customize">自定义选项</s:String>
+    <s:String x:Key="CustomizeAutoRun">开机自动启动</s:String>
+    <s:String x:Key="CustomizeDesktopShortcut">添加桌面快捷方式</s:String>
 </ResourceDictionary>

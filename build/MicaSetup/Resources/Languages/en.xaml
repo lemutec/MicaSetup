@@ -39,4 +39,8 @@
     <s:String x:Key="Installing">Installing</s:String>
     <s:String x:Key="NetworkUnavailableTips">Current Network unavailable.</s:String>
     <s:String x:Key="ComponentInstallFailedTips">Failed to install the component '{0}'.</s:String>
+    <s:String x:Key="Open">Open</s:String>
+    <s:String x:Key="Customize">Customize</s:String>
+    <s:String x:Key="CustomizeAutoRun">Auto Start</s:String>
+    <s:String x:Key="CustomizeDesktopShortcut">Desktop Shortcut</s:String>
 </ResourceDictionary>
