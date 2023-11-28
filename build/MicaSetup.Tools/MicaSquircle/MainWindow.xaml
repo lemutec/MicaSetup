@@ -1,0 +1,32 @@
+﻿<mica:MicaWindow x:Class="MicaSquircle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mica="clr-namespace:MicaWPF.Controls;assembly=MicaWPF"
+        xmlns:local="clr-namespace:MicaSquircle"
+        Title="MicaSquircle"
+        TitleBarType="WinUI" Icon="Favicon.ico"
+        Background="#E4E4E4" Width="640" Height="680">
+    <Window.Resources>
+        <local:IconTypeValueConverter x:Key="IconTypeValueConverter"/>
+    </Window.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+            <RadioButton Content="Normal" IsChecked="{Binding IconType,Converter={StaticResource IconTypeValueConverter},ConverterParameter={x:Static local:IconType.Normal}}"/>
+            <RadioButton Content="Setup" IsChecked="{Binding IconType,Converter={StaticResource IconTypeValueConverter},ConverterParameter={x:Static local:IconType.Setup}}"/>
+            <RadioButton Content="Uninst" IsChecked="{Binding IconType,Converter={StaticResource IconTypeValueConverter},ConverterParameter={x:Static local:IconType.Uninst}}"/>
+            <RadioButton Content="Raw" IsChecked="{Binding IconType,Converter={StaticResource IconTypeValueConverter},ConverterParameter={x:Static local:IconType.Raw}}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+            <CheckBox Content="PNG" IsChecked="{Binding CreatePng}"/>
+            <CheckBox Content="ICO" IsChecked="{Binding CreateIco}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+            <Button Content="Create" Command="{Binding CreateSquircleCommand}" MinWidth="80" Visibility="Collapsed"/>
+            <Button Content="Save" Command="{Binding SaveSquircleCommand}" Margin="10,0,0,0" MinWidth="80"/>
+            <Button Content="Folder" Command="{Binding FolderCommand}" Margin="10,0,0,0" MinWidth="80"/>
+        </StackPanel>
+        <Grid Background="#C0C0C0" Width="512" Height="512" Margin="0,6,0,0">
+            <Image Source="{Binding ImageSource}" Stretch="None"/>
+        </Grid>
+    </StackPanel>
+</mica:MicaWindow>
