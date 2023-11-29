@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ahktmi');
-  src:  url('fonts/icomoon.eot?ahktmi#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ahktmi') format('truetype'),
-    url('fonts/icomoon.woff?ahktmi') format('woff'),
-    url('fonts/icomoon.svg?ahktmi#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?qimpvi');
+  src:  url('fonts/icomoon.eot?qimpvi#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qimpvi') format('truetype'),
+    url('fonts/icomoon.woff?qimpvi') format('woff'),
+    url('fonts/icomoon.svg?qimpvi#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -31,294 +31,294 @@
 .icon-CeliakeyboardMenuLanguage:before {
   content: "\e901";
 }
-.icon-ContactsDelete:before {
+.icon-Circle:before {
   content: "\e902";
 }
-.icon-DeviceMateBook:before {
+.icon-ContactsDelete:before {
   content: "\e903";
 }
-.icon-FilesNameDrive:before {
+.icon-ContactSencryptionCalls:before {
   content: "\e904";
 }
-.icon-GalleryCollage:before {
+.icon-DeviceMateBook:before {
   content: "\e905";
 }
-.icon-GalleryCreate:before {
+.icon-FilesNameDrive:before {
   content: "\e906";
 }
-.icon-GalleryMaterialSelectCheckbo:before {
+.icon-GalleryCollage:before {
   content: "\e907";
 }
-.icon-GalleryMoveIn10:before {
+.icon-GalleryCreate:before {
   content: "\e908";
 }
-.icon-GalleryMoveOut:before {
+.icon-GalleryMaterialSelectCheckbo:before {
   content: "\e909";
 }
-.icon-GalleryPhotoEditMore:before {
+.icon-GalleryMoveIn10:before {
   content: "\e90a";
 }
-.icon-GalleryRectify:before {
+.icon-GalleryMoveOut:before {
   content: "\e90b";
 }
-.icon-GalleryRename:before {
+.icon-GalleryPhotoEditMore:before {
   content: "\e90c";
 }
-.icon-GallerySet:before {
+.icon-GalleryRectify:before {
   content: "\e90d";
 }
-.icon-GallerySortOrder:before {
+.icon-GalleryRename:before {
   content: "\e90e";
 }
-.icon-GallerySortReverse:before {
+.icon-GallerySet:before {
   content: "\e90f";
 }
-.icon-MessageForwarding:before {
+.icon-GallerySortOrder:before {
   content: "\e910";
 }
-.icon-MessageTheme:before {
+.icon-GallerySortReverse:before {
   content: "\e911";
 }
-.icon-PowerOff:before {
+.icon-IcoMoon:before {
   content: "\e912";
 }
-.icon-PublicAdd:before {
+.icon-MessageForwarding:before {
   content: "\e913";
 }
-.icon-PublicAddFilled:before {
+.icon-MessageTheme:before {
   content: "\e914";
 }
-.icon-PublicAddNorm:before {
+.icon-PowerOff:before {
   content: "\e915";
 }
-.icon-PublicApp:before {
+.icon-PublicAdd:before {
   content: "\e916";
 }
-.icon-PublicArrowLeft:before {
+.icon-PublicAddFilled:before {
   content: "\e917";
 }
-.icon-PublicArrowRight:before {
+.icon-PublicAddNorm:before {
   content: "\e918";
 }
-.icon-PublicArrowUp0:before {
+.icon-PublicApp:before {
   content: "\e919";
 }
-.icon-PublicArrowUp1:before {
+.icon-PublicArrowLeft:before {
   content: "\e91a";
 }
-.icon-PublicBack:before {
+.icon-PublicArrowRight:before {
   content: "\e91b";
 }
-.icon-PublicBackToTop:before {
+.icon-PublicArrowUp0:before {
   content: "\e91c";
 }
-.icon-PublicBrightness:before {
+.icon-PublicArrowUp1:before {
   content: "\e91d";
 }
-.icon-PublicCancel:before {
+.icon-PublicBack:before {
   content: "\e91e";
 }
-.icon-PublicCancelFilled:before {
+.icon-PublicBackToTop:before {
   content: "\e91f";
 }
-.icon-PublicClose:before {
+.icon-PublicBrightness:before {
   content: "\e920";
 }
-.icon-PublicCloudDownload:before {
+.icon-PublicCancel:before {
   content: "\e921";
 }
-.icon-PublicCloudUpload:before {
+.icon-PublicCancelFilled:before {
   content: "\e922";
 }
-.icon-PublicConnection:before {
+.icon-PublicClose:before {
   content: "\e923";
 }
-.icon-PublicContacts:before {
+.icon-PublicCloudDownload:before {
   content: "\e924";
 }
-.icon-PublicCopy:before {
+.icon-PublicCloudUpload:before {
   content: "\e925";
 }
-.icon-PublicDelete:before {
+.icon-PublicConnection:before {
   content: "\e926";
 }
-.icon-PublicDoNotDisturb:before {
+.icon-PublicContacts:before {
   content: "\e927";
 }
-.icon-PublicDownload:before {
+.icon-PublicCopy:before {
   content: "\e928";
 }
-.icon-PublicEdit:before {
+.icon-PublicDelete:before {
   content: "\e929";
 }
-.icon-PublicEmail:before {
+.icon-PublicDoNotDisturb:before {
   content: "\e92a";
 }
-.icon-PublicEmailSend:before {
+.icon-PublicDownload:before {
   content: "\e92b";
 }
-.icon-PublicEnlarge:before {
+.icon-PublicEdit:before {
   content: "\e92c";
 }
-.icon-PublicFail:before {
+.icon-PublicEmail:before {
   content: "\e92d";
 }
-.icon-PublicFolder:before {
+.icon-PublicEmailSend:before {
   content: "\e92e";
 }
-.icon-PublicForbid:before {
+.icon-PublicEnlarge:before {
   content: "\e92f";
 }
-.icon-PublicHelp:before {
+.icon-PublicFail:before {
   content: "\e930";
 }
-.icon-PublicHighLights:before {
+.icon-PublicFolder:before {
   content: "\e931";
 }
-.icon-PublicHome:before {
+.icon-PublicForbid:before {
   content: "\e932";
 }
-.icon-PublicInputSearch:before {
+.icon-PublicHelp:before {
   content: "\e933";
 }
-.icon-PublicKeyboard:before {
+.icon-PublicHighLights:before {
   content: "\e934";
 }
-.icon-PublicListCycle:before {
+.icon-PublicHome:before {
   content: "\e935";
 }
-.icon-PubliClock:before {
+.icon-PublicInputSearch:before {
   content: "\e936";
 }
-.icon-PublicMessage:before {
+.icon-PublicKeyboard:before {
   content: "\e937";
 }
-.icon-PublicMobileData:before {
+.icon-PublicListCycle:before {
   content: "\e938";
 }
-.icon-PublicMove:before {
+.icon-PubliClock:before {
   content: "\e939";
 }
-.icon-PublicNavigation:before {
+.icon-PublicMessage:before {
   content: "\e93a";
 }
-.icon-PublicOk:before {
+.icon-PublicMobileData:before {
   content: "\e93b";
 }
-.icon-PublicOkFilled:before {
+.icon-PublicMove:before {
   content: "\e93c";
 }
-.icon-PublicPicture:before {
+.icon-PublicNavigation:before {
   content: "\e93d";
 }
-.icon-PublicPrinter:before {
+.icon-PublicOk:before {
   content: "\e93e";
 }
-.icon-PublicQuit:before {
+.icon-PublicOkFilled:before {
   content: "\e93f";
 }
-.icon-PublicRandom:before {
+.icon-PublicPicture:before {
   content: "\e940";
 }
-.icon-PublicReduce:before {
+.icon-PublicPrinter:before {
   content: "\e941";
 }
-.icon-PublicRefresh:before {
+.icon-PublicQuit:before {
   content: "\e942";
 }
-.icon-PublicRemove:before {
+.icon-PublicRandom:before {
   content: "\e943";
 }
-.icon-PublicReset:before {
+.icon-PublicReduce:before {
   content: "\e944";
 }
-.icon-PublicRing:before {
+.icon-PublicRefresh:before {
   content: "\e945";
 }
-.icon-PublicRingOff:before {
+.icon-PublicRemove:before {
   content: "\e946";
 }
-.icon-PublicRotate:before {
+.icon-PublicReset:before {
   content: "\e947";
 }
-.icon-PublicSave:before {
+.icon-PublicRing:before {
   content: "\e948";
 }
-.icon-PublicScan:before {
+.icon-PublicRingOff:before {
   content: "\e949";
 }
-.icon-PublicSearch:before {
+.icon-PublicRotate:before {
   content: "\e94a";
 }
-.icon-PublicSecurity:before {
+.icon-PublicSave:before {
   content: "\e94b";
 }
-.icon-PublicSend:before {
+.icon-PublicScan:before {
   content: "\e94c";
 }
-.icon-PublicSettings:before {
+.icon-PublicSearch:before {
   content: "\e94d";
 }
-.icon-PublicShare:before {
+.icon-PublicSecurity:before {
   content: "\e94e";
 }
-.icon-PublicSift:before {
+.icon-PublicSend:before {
   content: "\e94f";
 }
-.icon-PublicSound:before {
+.icon-PublicSettings:before {
   content: "\e950";
 }
-.icon-PublicText:before {
+.icon-PublicShare:before {
   content: "\e951";
 }
-.icon-PublicThemes:before {
+.icon-PublicSift:before {
   content: "\e952";
 }
-.icon-PublicThumbsup:before {
+.icon-PublicSound:before {
   content: "\e953";
 }
-.icon-PublicTodo:before {
+.icon-PublicText:before {
   content: "\e954";
 }
-.icon-PublicTopping:before {
+.icon-PublicThemes:before {
   content: "\e955";
 }
-.icon-PublicUnlock:before {
+.icon-PublicThumbsup:before {
   content: "\e956";
 }
-.icon-PublicUpgrade:before {
+.icon-PublicTodo:before {
   content: "\e957";
 }
-.icon-PublicUpload:before {
+.icon-PublicTopping:before {
   content: "\e958";
 }
-.icon-PublicVolumeDown:before {
+.icon-PublicUnlock:before {
   content: "\e959";
 }
-.icon-PublicWirelessProjection:before {
+.icon-PublicUpgrade:before {
+  content: "\e95a";
+}
+.icon-PublicUpload:before {
   content: "\e95b";
 }
-.icon-PublicWorldClock:before {
+.icon-PublicVolumeDown:before {
   content: "\e95c";
 }
-.icon-QuickReply:before {
+.icon-PublicWirelessProjection:before {
   content: "\e95d";
 }
-.icon-Reboot:before {
+.icon-PublicWorldClock:before {
   content: "\e95e";
 }
-.icon-SearchThings:before {
+.icon-QuickReply:before {
   content: "\e95f";
 }
-.icon-ContactSencryptionCalls:before {
+.icon-Reboot:before {
   content: "\e960";
 }
-.icon-Circle:before {
+.icon-SearchThings:before {
   content: "\e961";
 }
 .icon-Squircle:before {
   content: "\e962";
-}
-.icon-IcoMoon:before {
-  content: "\e95a";
 }

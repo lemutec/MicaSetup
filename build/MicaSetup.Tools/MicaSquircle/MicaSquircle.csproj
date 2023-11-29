@@ -5,15 +5,9 @@
     <TargetFramework>net472</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <LangVersion>11.0</LangVersion>
+    <LangVersion>12.0</LangVersion>
     <UseWindowsForms>true</UseWindowsForms>
-    <PackageIcon>Favicon.ico</PackageIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Favicon.ico" />
-    <None Remove="Favicon.png" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
@@ -27,17 +21,6 @@
 
   <ItemGroup>
     <Compile Include="..\..\MicaSetup\Design\Controls\Selection.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Favicon.ico">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </Resource>
-    <Resource Include="Favicon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </Resource>
   </ItemGroup>
 
 </Project>

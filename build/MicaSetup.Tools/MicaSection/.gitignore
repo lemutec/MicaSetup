@@ -1,0 +1,8 @@
+# VS Files
+.vs/*
+bin/*
+obj/*
+
+# Ignore Files
+*.user
+*.pdb
