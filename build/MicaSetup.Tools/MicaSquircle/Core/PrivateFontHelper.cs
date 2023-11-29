@@ -13,7 +13,7 @@ internal static class PrivateFontHelper
 
     static PrivateFontHelper()
     {
-        string fontFilePath = Environment.CurrentDirectory + @"\..\..\..\..\..\..\src\MicaSetup\Resources\Fonts\IcoMoon\output\fonts\icomoon.ttf";
+        string fontFilePath = Environment.CurrentDirectory + @"\..\..\..\..\..\..\build\MicaSetup\Resources\Fonts\IcoMoon\output\fonts\icomoon.ttf";
         byte[] fontData = File.ReadAllBytes(fontFilePath);
         nint fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
         Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
