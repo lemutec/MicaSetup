@@ -48,7 +48,7 @@
                        Margin="0,8,0,8"
                        HorizontalAlignment="Center"
                        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                       Text="MicaApp" />
+                       Text="{Binding Message}" />
             <StackPanel>
                 <StackPanel Margin="30,55,30,0">
                     <control:SetupProgressBar d:IsIndeterminate="True"

@@ -10,6 +10,8 @@ namespace MicaSetup.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+    public string Message => Option.Current.MessageOfPage1;
+
     [ObservableProperty]
     private bool keepMyData = Option.Current.KeepMyData;
 

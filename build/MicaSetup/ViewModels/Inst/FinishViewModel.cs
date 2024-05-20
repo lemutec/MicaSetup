@@ -9,6 +9,8 @@ namespace MicaSetup.ViewModels;
 
 public partial class FinishViewModel : ObservableObject
 {
+    public string Message => Option.Current.MessageOfPage3;
+
     public FinishViewModel()
     {
     }

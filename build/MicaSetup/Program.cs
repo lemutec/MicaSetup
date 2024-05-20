@@ -55,6 +55,9 @@ internal class Program
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("Setup")}";
+                option.MessageOfPage1 = "MicaApp";
+                option.MessageOfPage2 = Mui("Installing");
+                option.MessageOfPage3 = Mui("InstallFinishTips");
             })
             .UseServices(service =>
             {

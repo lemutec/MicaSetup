@@ -43,7 +43,7 @@
                            Margin="0,8,0,8"
                            HorizontalAlignment="Center"
                            Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                           Text="{DynamicResource InstallFinishTips}" />
+                           Text="{Binding Message}" />
                 <StackPanel Grid.Row="2"
                             Margin="0,56,0,0"
                             HorizontalAlignment="Center"

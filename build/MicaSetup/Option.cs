@@ -6,7 +6,7 @@ namespace MicaSetup;
 /// <summary>
 /// Option Context
 /// </summary>
-public class Option
+public partial class Option
 {
     public static Option Current { get; } = new();
 
@@ -217,4 +217,27 @@ public class Option
     /// </summary>
     [Category("GlobalSetting")]
     public string AppxPackageName { get; set; } = null!;
+
+    /// <summary>
+    /// Message of <see cref="Views.MainPage"/>
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string MessageOfPage1 { get; set; } = null!;
+
+    /// <summary>
+#if SETUP
+    /// Message of <see cref="Views.InstallPage"/>
+#elif UNINST
+    /// Message of <see cref="Views.UninstallPage"/>
+#endif
+
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string MessageOfPage2 { get; set; } = null!;
+
+    /// <summary>
+    /// Message of <see cref="Views.FinishPage"/>
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string MessageOfPage3 { get; set; } = null!;
 }

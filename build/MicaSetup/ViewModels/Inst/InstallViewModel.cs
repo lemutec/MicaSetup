@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 namespace MicaSetup.ViewModels;
 
 #pragma warning disable CS0162
-#pragma warning disable IDE0035
 
 public partial class InstallViewModel : ObservableObject
 {
+    public string Message => Option.Current.MessageOfPage2;
+
     [ObservableProperty]
     private string installInfo = string.Empty;
 

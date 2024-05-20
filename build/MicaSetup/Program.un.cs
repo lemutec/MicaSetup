@@ -49,6 +49,9 @@ internal class Program
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("UninstallProgram")}";
+                option.MessageOfPage1 = "MicaApp";
+                option.MessageOfPage2 = Mui("ProgressTipsUninstalling");
+                option.MessageOfPage3 = Mui("UninstallFinishTips");
             })
             .UseServices(service =>
             {

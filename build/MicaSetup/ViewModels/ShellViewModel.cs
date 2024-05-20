@@ -1,5 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MicaSetup.Controls;
 using MicaSetup.Design.Controls;
 using System.Linq;
 

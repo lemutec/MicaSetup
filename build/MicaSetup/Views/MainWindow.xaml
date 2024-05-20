@@ -4,7 +4,6 @@
                  xmlns:control="clr-namespace:MicaSetup.Design.Controls"
                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                  xmlns:local="clr-namespace:MicaSetup.Views"
-                 xmlns:main="clr-namespace:MicaSetup"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  Title="{Binding SetupName}"
                  Width="560"

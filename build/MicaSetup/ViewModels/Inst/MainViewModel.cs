@@ -14,6 +14,8 @@ namespace MicaSetup.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+    public string Message => Option.Current.MessageOfPage1;
+
     [ObservableProperty]
     private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName, Option.Current.UseInstallPathPreferX86);
 
@@ -71,7 +73,7 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private bool isElevated = RuntimeHelper.IsElevated;
 
-    [ObservableProperty] 
+    [ObservableProperty]
     private bool isCustomizeVisiableAutoRun = Option.Current.IsCustomizeVisiableAutoRun;
 
     [ObservableProperty]

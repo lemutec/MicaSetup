@@ -50,7 +50,7 @@
                        Margin="0,8,0,8"
                        HorizontalAlignment="Center"
                        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                       Text="MicaApp" />
+                       Text="{Binding Message}" />
             <Button Grid.Row="2"
                     Height="38"
                     MinWidth="170"

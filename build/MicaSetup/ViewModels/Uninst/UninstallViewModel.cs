@@ -10,6 +10,8 @@ namespace MicaSetup.ViewModels;
 
 public partial class UninstallViewModel : ObservableObject
 {
+    public string Message => Option.Current.MessageOfPage2;
+
     [ObservableProperty]
     private string installInfo = string.Empty;
 

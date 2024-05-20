@@ -43,7 +43,7 @@
                            Margin="0,8,0,8"
                            HorizontalAlignment="Center"
                            Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                           Text="{DynamicResource UninstallFinishTips}" />
+                           Text="{Binding Message}" />
             </StackPanel>
             <Grid Margin="0,56,0,8">
                 <Button Height="38"
