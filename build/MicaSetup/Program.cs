@@ -12,8 +12,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Setup")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("2.0.1.0")]
+[assembly: AssemblyFileVersion("2.0.1.0")]
 
 namespace MicaSetup;
 
@@ -23,7 +23,7 @@ internal class Program
     internal static void Main()
     {
         Hosting.CreateBuilder()
-            .UseLogger()
+            .UseLogger(false)
             .UseSingleInstance("MicaSetup")
             .UseTempPathFork()
             .UseElevated()
@@ -51,7 +51,7 @@ internal class Program
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
                 option.DisplayIcon = "MicaApp.exe";
-                option.DisplayVersion = "1.3.0.0";
+                option.DisplayVersion = "2.0.1.0";
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("Setup")}";

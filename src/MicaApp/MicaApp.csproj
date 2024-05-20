@@ -1,32 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net472</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <UseWindowsForms>false</UseWindowsForms>
-    <UseWinUI>false</UseWinUI>
-    <LangVersion>12.0</LangVersion>
-    <AssemblyVersion>1.3.0</AssemblyVersion>
-    <FileVersion>1.3.2</FileVersion>
-    <Version>$(VersionPrefix)1.3.0</Version>
-    <Authors>Lemutec</Authors>
-    <Company>Lemutec</Company>
-    <Platforms>AnyCPU;x64</Platforms>
-    <ApplicationIcon>Favicon.ico</ApplicationIcon>
-  </PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <UseWindowsForms>false</UseWindowsForms>
+        <UseWinUI>false</UseWinUI>
+        <LangVersion>12.0</LangVersion>
+        <AssemblyVersion>2.0.1.0</AssemblyVersion>
+        <FileVersion>2.0.1.0</FileVersion>
+        <Version>$(VersionPrefix)2.0.1.0</Version>
+        <Authors>Lemutec</Authors>
+        <Company>Lemutec</Company>
+        <Platforms>AnyCPU;x64</Platforms>
+        <ApplicationIcon>Favicon.ico</ApplicationIcon>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Favicon.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MicaWPF" Version="6.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="*.ico" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="*.ico" />
+    </ItemGroup>
+	<ItemGroup>
+		<Resource Include="*.ico" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="MicaWPF" Version="6.2.8" />
+	</ItemGroup>
 
 </Project>
