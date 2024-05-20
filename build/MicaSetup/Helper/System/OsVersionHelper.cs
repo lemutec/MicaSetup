@@ -54,12 +54,12 @@ public static class OsVersionHelper
     {
         if (versionCache is null)
         {
-            if (NTdll.RtlGetVersion(out var osv) != 0)
+            if (NTdll.RtlGetVersion(out OSVERSIONINFOEX osv) != 0)
             {
                 throw new PlatformNotSupportedException("Setup can only run on Windows.");
             }
 
-            versionCache = new Version(osv.MajorVersion, osv.MinorVersion, osv.BuildNumber, osv.Revision);
+            versionCache = new Version(osv.MajorVersion, osv.MinorVersion, osv.BuildNumber, osv.PlatformId);
         }
         return versionCache;
     }
