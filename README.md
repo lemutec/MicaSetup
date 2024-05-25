@@ -15,11 +15,11 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Features            | Completion | Addition                                                     |
 | ------------------- | ---------- | ------------------------------------------------------------ |
 | Mica Backdrop       | ☑          | Support Windows11 Mica Backdrop.                             |
-| Theme               | 🔲          | Support Dark and Light theme.                                |
+| Theme               | ☑          | Support Dark and Light theme.                                |
 | Archive File        | ☑          | Pack your app with `7z.exe`, so it's easy to customize your archive file or not. |
 | Animations          | ☑          | Support a lot of advanced animations.<br />Such as Indeterminate ProgressBar, supported when your installation is no progress hint. |
-| Notification        | ☑          | Windows10 (or higher) Notification.                          |
-| High DPI            | ☑          | Support to process DPI awareness.                            |
+| ~~Notification~~    | ~~☑~~      | ~~Windows10 (or higher) Notification.~~                      |
+| HiDPI               | ☑          | Support to process DPI awareness.                            |
 | Firewall            | ☑          | Support allows your app to access the Network through Windows Firewall Policy. |
 | Anti Unpacking      | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
 | .NET SDKs Installer | 🔲          | Auto detecte and install the .NET/.NET Core/.NET Framework Runtime.<br />[Download .NET SDKs for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) |
@@ -46,7 +46,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Security Control   | ☑          | Support to make your installed path Allow Full File Security. |
 | Install Font       | 🔲          | Support to install your fonts into system.                   |
 | Install Silent     | 🔲          | Support silent installation using CLI `/q`.<br />Useful for auto updating in the background. |
-| Install Auto       | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
+| Install Automate   | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
 
 ## 🎛️Personalized Controls
 
@@ -56,22 +56,36 @@ MicaSetup is a universal advanced installation package generation tool project t
 | SetupProgressBar   | ☑          | Support Indeterminate Animation.                  |
 | MessageBoxX        | ☑          | Simple MessageBox instead of Classics.            |
 | SmoothScrollViewer | ☑          | Support smoothly scrolling.                       |
-| Carousel           | 🔲          | Customized control for Setup.                     |
 
 ## 🔣Toolkits
 
-| Toolkits      | Completion | Addition                                                     |
-| ------------- | ---------- | ------------------------------------------------------------ |
-| Icon Creator  | ☑          | Creating the universal Squircle like icon.<br />[More infomation](src/MicaSetup.Tools/MicaSquircle/README.md). |
-| Trim Font     | ☑          | Trimming fonts to reduce their size.<br />[More infomation](src/MicaSetup.Tools/MicaFontTrim/README.md). |
-| Sync Assembly | 🔲          | Syncing your app assembly version to create the same version Setup and Uninst. |
-| Sign Tool     | 🔲          | TBD                                                          |
+| Toolkits     | Completion | Addition                                                     |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| Icon Creator | ☑          | Creating the universal Squircle like icon.<br />[More infomation](build/MicaSetup.Tools/MicaSquircle/README.md). |
+| Trim Font    | ☑          | Only MicaSetup v1 needed.<br />[More infomation](https://github.com/lemutec/MicaSetup/tree/v1/src/MicaSetup.Tools/MicaFontTrim). |
 
 ## 📖Usage & Wikis
 
-🚧Under construction🚧
+> 🚧Under construction🚧
 
-Some usage ideas [here](src/README.md).
+### ⚙️Debug Codes
+
+Run the `setup_dummy.cmd` for creating some dummy things used in project.
+
+Such as `publish.7z` as your app published package and full size font used in Setup programs.
+
+And then Run VS2022 (or higher) as Admin to open the sln.
+
+### 📦Create Setup
+
+Run the `setup_build.cmd` for building the full Setup programs.
+
+Command Flow:
+
+1. Build my app, named `MicaApp` using `dotnet publish`.
+2. Pack my app using `7z.exe`.
+3. Build Uninst, named `Uninst.exe` using `msbuild`.
+4. Build Setup, named `MicaSetup.exe` using `msbuild`.
 
 ## 🚀Contributes
 
