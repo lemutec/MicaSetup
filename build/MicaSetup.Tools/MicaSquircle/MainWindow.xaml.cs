@@ -114,13 +114,28 @@ public partial class MainWindow : MicaWindow
         }}";
         using Bitmap bitmap = GetBitmap();
 
-        if (CreatePng)
+        try
         {
-            bitmap.Save($"{pathNoExt}.png", ImageFormat.Png);
+            if (CreatePng)
+            {
+                bitmap.Save($"{pathNoExt}.png", ImageFormat.Png);
+            }
         }
-        if (CreateIco)
+        catch
         {
-            bitmap.ConvertToIco($"{pathNoExt}.ico");
+            ///
+        }
+
+        try
+        {
+            if (CreateIco)
+            {
+                bitmap.ConvertToIco($"{pathNoExt}.ico");
+            }
+        }
+        catch
+        {
+            ///
         }
 
         notifier.ShowInformation("Create completed.");
