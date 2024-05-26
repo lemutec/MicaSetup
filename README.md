@@ -32,7 +32,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | HiDPI               | ☑          | Support to process DPI awareness.                            |
 | Firewall            | ☑          | Support allows your app to access the Network through Windows Firewall Policy. |
 | Anti Unpacking      | ☑          | Support encryption type archive file package.<br />Needs create your app archive file with password firstly.<br />Also can sign your setup program by `.snk`. |
-| .NET SDKs Installer | 🔲          | Auto detecte and install the .NET/.NET Core/.NET Framework Runtime.<br />[Download .NET SDKs for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) |
+| .NET SDKs Installer | 🔲          | Auto detect and install the .NET/.NET Core/.NET Framework Runtime.<br />[Download .NET SDKs for Visual Studio](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) |
 | MSIX Installer      | 🔲          | Using MSIX package instead of archive file.<br />Provide the function the same as following command.<br />`certmgr.exe -add app.cer -s -r localMachine AuthRoot`. |
 | Online Installer    | 🔲          | Using Network instead of archive file.                       |
 
