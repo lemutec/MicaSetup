@@ -63,6 +63,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Compile Remove="Helper\Setup\ArchiveFileHelper.cs" />
+		<Compile Remove="Helper\Setup\InstallHelper.cs" />
 		<Compile Remove="Program.cs" />
 		<None Remove="Program.cs" />
 	</ItemGroup>
@@ -75,7 +77,6 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
-		<PackageReference Include="SharpCompress" Version="0.33.0" />
 	</ItemGroup>
 
 	<ItemGroup>
