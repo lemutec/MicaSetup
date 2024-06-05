@@ -65,6 +65,9 @@
 	<ItemGroup>
 		<Compile Remove="Helper\Setup\ArchiveFileHelper.cs" />
 		<Compile Remove="Helper\Setup\InstallHelper.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Compile Remove="Program.cs" />
 		<None Remove="Program.cs" />
 	</ItemGroup>
@@ -75,14 +78,12 @@
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
 		<Reference Include="System.Management" />
-		<Reference Include="System.Net.Http" />
 	</ItemGroup>
 
 </Project>

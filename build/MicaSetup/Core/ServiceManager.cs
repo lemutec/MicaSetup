@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
 
 namespace MicaSetup.Services;
 
@@ -6,10 +6,10 @@ namespace MicaSetup.Services;
 
 public class ServiceManager
 {
-    public static ServiceProvider Services { get; set; }
+    public static IServiceProvider Services { get; set; }
 
-    public static T GetService<T>()
+    public static T? GetService<T>() where T : class
     {
-        return Services.GetService<T>()!;
+        return Services.GetService(typeof(T)) as T;
     }
 }

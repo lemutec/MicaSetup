@@ -65,7 +65,7 @@ public partial class UninstallViewModel : ObservableObject
             {
                 try
                 {
-                    ServiceManager.GetService<IExplorerService>().Refresh();
+                    ServiceManager.GetService<IExplorerService>()?.Refresh();
                 }
                 catch (Exception e)
                 {

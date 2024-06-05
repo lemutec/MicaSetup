@@ -1,7 +1,7 @@
 ﻿using MicaSetup.Design.Controls;
+using MicaSetup.Extension.DependencyInjection;
 using MicaSetup.Services;
 using MicaSetup.Views;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -46,6 +46,7 @@ internal class Program
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
+                option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;
                 option.ExeName = "MicaApp.exe";
                 option.KeyName = "MicaApp";

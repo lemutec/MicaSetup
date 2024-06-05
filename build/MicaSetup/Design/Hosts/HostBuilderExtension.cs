@@ -1,7 +1,7 @@
-﻿using MicaSetup.Helper;
+﻿using MicaSetup.Extension.DependencyInjection;
+using MicaSetup.Helper;
 using MicaSetup.Natives;
 using MicaSetup.Services;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -37,7 +37,7 @@ public static class HostBuilderExtension
 
     public static IHostBuilder UseServices(this IHostBuilder builder, Action<IServiceCollection> service)
     {
-        ServiceCollection serviceCollection = new();
+        IServiceCollection serviceCollection = new ServiceCollection();
         service?.Invoke(serviceCollection);
         ServiceManager.Services = builder.ServiceProvider = serviceCollection.BuildServiceProvider();
         return builder;

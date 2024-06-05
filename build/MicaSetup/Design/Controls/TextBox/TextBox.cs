@@ -47,9 +47,6 @@ public class TextBoxEx : TextBox
         set => SetValue(PlaceholderEnabledProperty, value);
     }
 
-    /// <summary>
-    /// TODO
-    /// </summary>
     public bool IsTextSelectionEnabled
     {
         get => (bool)GetValue(IsTextSelectionEnabledProperty);

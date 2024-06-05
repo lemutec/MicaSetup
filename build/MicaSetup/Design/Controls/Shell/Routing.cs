@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Windows;
 
@@ -8,18 +8,17 @@ namespace MicaSetup.Design.Controls;
 
 public static class Routing
 {
-    public static ServiceProvider Provider { get; internal set; } = null!;
+    public static IRoutingProvider Provider { get; internal set; } = null!;
     public static WeakReference<ShellControl> Shell { get; internal set; } = null!;
 
     public static void RegisterRoute()
     {
-        ServiceCollection serviceCollection = new();
+        Provider ??= new RoutingProvider();
 
         foreach (var pageItem in ShellPageSetting.PageDict)
         {
-            serviceCollection.Register(pageItem.Key, pageItem.Value);
+            Provider.AddSingleton(pageItem.Key, pageItem.Value);
         }
-        Provider = serviceCollection.BuildServiceProvider();
     }
 
     public static FrameworkElement ResolveRoute(string route)
@@ -72,41 +71,40 @@ public static class Routing
         }
     }
 
+    [SuppressMessage("Style", "IDE0060:Remove unused parameter")]
     private static void OnGoTo(string route)
     {
+        ///
     }
 }
 
-file class RoutingServiceInfo
+public sealed class RoutingProvider : IRoutingProvider
 {
-    public string Name { get; set; }
-    public Type Type { get; set; }
+    public List<RoutingServiceInfo> services = [];
 
-    public RoutingServiceInfo(string name, Type type)
+    public T Resolve<T>(string name) where T : class
     {
-        Name = name;
-        Type = type;
+        var serviceInfo = services.Where(x => x.Name == name).FirstOrDefault()
+            ?? throw new InvalidOperationException($"Service '{name}' not found");
+
+        return (T)Activator.CreateInstance(serviceInfo.Type);
+    }
+
+    public void AddSingleton(string name, Type type)
+    {
+        services.Add(new RoutingServiceInfo(name, type));
     }
 }
 
-file static class RoutingExtension
+public interface IRoutingProvider
 {
-    public static IServiceCollection Register(this IServiceCollection services, string name, Type type)
-    {
-        services.AddSingleton(type);
-        services.AddSingleton(new RoutingServiceInfo(name, type));
-        return services;
-    }
+    public T Resolve<T>(string name) where T : class;
 
-    public static T Resolve<T>(this IServiceProvider serviceProvider, string name)
-    {
-        var serviceInfo = serviceProvider.GetRequiredService<IEnumerable<RoutingServiceInfo>>()
-            .FirstOrDefault(x => x.Name == name);
+    public void AddSingleton(string name, Type type);
+}
 
-        if (serviceInfo == null)
-        {
-            throw new InvalidOperationException($"Service '{name}' not found");
-        }
-        return (T)serviceProvider.GetRequiredService(serviceInfo.Type);
-    }
+public class RoutingServiceInfo(string name, Type type)
+{
+    public string Name { get; set; } = name;
+    public Type Type { get; set; } = type;
 }

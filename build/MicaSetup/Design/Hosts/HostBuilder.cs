@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
 
 namespace MicaSetup.Design.Controls;
 
@@ -7,7 +7,7 @@ namespace MicaSetup.Design.Controls;
 public class HostBuilder : IHostBuilder
 {
     public IApp App { get; set; }
-    public ServiceProvider ServiceProvider { get; set; }
+    public IServiceProvider ServiceProvider { get; set; }
 
     public IHostBuilder CreateApp()
     {
