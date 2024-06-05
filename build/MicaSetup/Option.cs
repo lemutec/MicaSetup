@@ -132,6 +132,13 @@ public partial class Option
     public string OverlayInstallRemoveExt { get; set; } = string.Empty;
 
     /// <summary>
+    /// A handler to remove when overlay install
+    /// Handler will be run after <option refs="OverlayInstallRemoveExt"/>
+    /// </summary>
+    [Category("GlobalSetting")]
+    public AbstractOverlayInstallRemoveHandler OverlayInstallRemoveHandler { get; set; } = null!;
+
+    /// <summary>
     /// The archive file unpacking password
     /// </summary>
     [Category("GlobalSetting")]

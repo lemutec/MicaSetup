@@ -74,6 +74,32 @@ public static class InstallHelper
                     }
                 }
             }
+
+            if (Option.Current.OverlayInstallRemoveHandler != null
+                && !Option.Current.OverlayInstallRemoveHandler.IsEmpty)
+            {
+                foreach (string subDir in Directory.GetDirectories(Option.Current.InstallLocation))
+                {
+                    foreach (string file in Directory.GetFiles(subDir, "*.*", SearchOption.AllDirectories))
+                    {
+                        FileInfo fileInfo = new(file);
+
+                        try
+                        {
+                            bool toRemove = Option.Current.OverlayInstallRemoveHandler.ToRemove(fileInfo);
+
+                            if (toRemove)
+                            {
+                                File.Delete(file);
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            Logger.Error(e);
+                        }
+                    }
+                }
+            }
         }
 
         ReaderOptions readerOptions = new()
