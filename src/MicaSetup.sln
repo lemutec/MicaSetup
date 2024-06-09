@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaApp", "MicaApp\MicaApp.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{A4B4936D-02F8-4D9F-A441-51FDF1983EE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicaSquircle", "..\build\MicaSetup.Tools\MicaSquircle\MicaSquircle.csproj", "{8F560E01-AFAC-4A79-927C-F791EE401181}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeIcon", "..\build\MicaSetup.Tools\MakeIcon\MakeIcon.csproj", "{8F560E01-AFAC-4A79-927C-F791EE401181}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMica", "..\build\MicaSetup.Tools\MakeMica\MakeMica.csproj", "{90E97BF5-8462-4A14-877A-F11B71E12C2D}"
 EndProject

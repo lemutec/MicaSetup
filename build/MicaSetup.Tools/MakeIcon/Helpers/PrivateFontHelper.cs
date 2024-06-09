@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Resources;
 
-namespace MicaSquircle.Helpers;
+namespace MakeIcon.Helpers;
 
 internal static class PrivateFontHelper
 {
@@ -19,7 +19,7 @@ internal static class PrivateFontHelper
         if (!UriParser.IsKnownScheme("pack"))
             _ = PackUriHelper.UriSchemePack;
 
-        byte[] fontData = GetBytes("pack://application:,,,/MicaSquircle;component/Resources/Fonts/HarmonyOS_Icons_Slim.ttf");
+        byte[] fontData = GetBytes("pack://application:,,,/MakeIcon;component/Resources/Fonts/HarmonyOS_Icons_Slim.ttf");
         nint fontPtr = Marshal.AllocCoTaskMem(fontData.Length);
         Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
         PrivateFontCollection.AddMemoryFont(fontPtr, fontData.Length);

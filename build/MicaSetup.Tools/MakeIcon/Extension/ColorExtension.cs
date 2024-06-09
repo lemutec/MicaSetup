@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using Color = System.Drawing.Color;
 
-namespace MicaSquircle.Extension;
+namespace MakeIcon.Extension;
 
 internal static class ColorExtension
 {

@@ -1,4 +1,4 @@
-# MicaSquircle
+# MakeIcon
 
 Creating the universal squircle-like icon.
 

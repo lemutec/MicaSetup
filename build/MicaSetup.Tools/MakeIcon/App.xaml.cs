@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MicaSquircle;
+namespace MakeIcon;
 
 public partial class App : Application
 {

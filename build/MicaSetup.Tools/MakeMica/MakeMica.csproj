@@ -11,6 +11,7 @@
         <AssemblyVersion>2.0.3.0</AssemblyVersion>
         <FileVersion>2.0.3.0</FileVersion>
         <Version>$(VersionPrefix)2.0.3.0</Version>
+		<ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 

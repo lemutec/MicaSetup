@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MicaSetup.Design.Controls;
-using MicaSquircle.Extension;
-using MicaSquircle.Helpers;
+using MakeIcon.Design.Controls;
+using MakeIcon.Extension;
+using MakeIcon.Helpers;
 using Microsoft.Win32;
 using System;
 using System.ComponentModel;
@@ -23,7 +23,7 @@ using Wpf.Ui.Controls;
 using FontFamily = System.Drawing.FontFamily;
 using FontStyleX = System.Drawing.FontStyle;
 
-namespace MicaSquircle;
+namespace MakeIcon;
 
 [INotifyPropertyChanged]
 public partial class MainWindow : FluentWindow
@@ -137,6 +137,11 @@ public partial class MainWindow : FluentWindow
     [RelayCommand]
     private void SaveSquircle()
     {
+        if (!File.Exists(Path))
+        {
+            return;
+        }
+
         string pathNoExt = $"Favicon{IconType switch
         {
             IconType.Setup => nameof(IconType.Setup),
@@ -144,7 +149,7 @@ public partial class MainWindow : FluentWindow
             IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         }}";
-        using Bitmap bitmap = ReadBitmap(Path);
+        using Bitmap bitmap = ReadBitmap(Path!);
 
         try
         {

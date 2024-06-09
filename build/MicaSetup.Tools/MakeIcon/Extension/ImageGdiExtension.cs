@@ -4,7 +4,7 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
 
-namespace MicaSquircle.Extension;
+namespace MakeIcon.Extension;
 
 internal static class ImageGdiExtension
 {

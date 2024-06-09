@@ -1,4 +1,4 @@
-namespace MicaSetup.Design.Controls;
+namespace MakeIcon.Design.Controls;
 
 public static class Selection
 {
