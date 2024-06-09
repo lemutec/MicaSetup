@@ -1,6 +1,6 @@
-﻿using MicaSetup.Helper;
+﻿using MicaSetup.Design.Behaviors;
+using MicaSetup.Helper;
 using MicaSetup.Natives;
-using Microsoft.Xaml.Behaviors;
 using System;
 using System.Windows;
 using System.Windows.Input;

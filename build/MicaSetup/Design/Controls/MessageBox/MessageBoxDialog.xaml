@@ -4,7 +4,7 @@
         xmlns:conv="clr-namespace:MicaSetup.Design.Converters"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:design="clr-namespace:MicaSetup.Design"
-        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:i="clr-namespace:MicaSetup.Design.Behaviors"
         xmlns:local="clr-namespace:MicaSetup.Design.Controls"
         xmlns:markups="clr-namespace:MicaSetup.Design.Markups"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -77,7 +77,7 @@
                 <StackPanel Margin="15,0,0,0" Orientation="Horizontal">
                     <Grid>
                         <TextBlock VerticalAlignment="Center"
-                                   FontFamily="{StaticResource IcoMoon}"
+                                   FontFamily="{StaticResource SymbolThemeFontFamily}"
                                    FontSize="30"
                                    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                                    Text="{x:Static local:Selection.PublicFail}" />

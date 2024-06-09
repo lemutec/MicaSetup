@@ -26,14 +26,12 @@
 
 	<ItemGroup>
 		<None Remove="Resources\Fonts\*.ttf" />
-		<None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
 		<None Remove="Resources\Images\*.ico" />
 		<None Remove="Resources\Images\*.png" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Resource Include="Resources\Fonts\*.ttf" />
-		<Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
 		<Resource Include="Resources\Images\*.ico" />
 		<Resource Include="Resources\Images\*.png" />
 	</ItemGroup>
@@ -78,7 +76,6 @@
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
 	</ItemGroup>
 
 	<ItemGroup>

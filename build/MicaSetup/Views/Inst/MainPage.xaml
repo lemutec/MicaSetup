@@ -5,7 +5,7 @@
              xmlns:conv="clr-namespace:MicaSetup.Design.Converters"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:design="clr-namespace:MicaSetup.Design"
-             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:i="clr-namespace:MicaSetup.Design.Behaviors"
              xmlns:local="clr-namespace:MicaSetup.Views"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="400"
@@ -67,7 +67,7 @@
                         <TextBlock Padding="2"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   FontFamily="{StaticResource IcoMoon}"
+                                   FontFamily="{StaticResource SymbolThemeFontFamily}"
                                    FontSize="18"
                                    Text="{x:Static control:Selection.ContactSencryptionCalls}"
                                    Visibility="{Binding IsElevated, Converter={StaticResource BoolToVisibilityConverter}}" />
@@ -134,7 +134,7 @@
                         <Button.Content>
                             <TextBlock HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
-                                       FontFamily="{StaticResource IcoMoon}"
+                                       FontFamily="{StaticResource SymbolThemeFontFamily}"
                                        FontSize="18"
                                        Text="{x:Static control:Selection.PublicFolder}" />
                         </Button.Content>
@@ -174,7 +174,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock HorizontalAlignment="Center"
                                                    VerticalAlignment="Center"
-                                                   FontFamily="{StaticResource IcoMoon}"
+                                                   FontFamily="{StaticResource SymbolThemeFontFamily}"
                                                    FontSize="18"
                                                    Text="{x:Static control:Selection.ContactSencryptionCalls}"
                                                    Visibility="{Binding IsElevated, Converter={StaticResource BoolToVisibilityConverter}}" />
@@ -205,7 +205,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
-                                   FontFamily="{StaticResource IcoMoon}"
+                                   FontFamily="{StaticResource SymbolThemeFontFamily}"
                                    FontSize="18"
                                    Foreground="{DynamicResource HighGreenBrush}"
                                    Text="{x:Static control:Selection.PublicFolder}" />

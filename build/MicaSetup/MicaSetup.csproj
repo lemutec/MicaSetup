@@ -27,7 +27,6 @@
 	<ItemGroup>
 		<None Remove="Resources\*.ico" />
 		<None Remove="Resources\Fonts\*.ttf" />
-		<None Remove="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
 		<None Remove="Resources\Licenses\license.*.txt" />
 		<None Remove="Resources\Setups\*.7z" />
 		<None Remove="Resources\Setups\*.zip" />
@@ -37,7 +36,6 @@
 
 	<ItemGroup>
 		<Resource Include="Resources\Fonts\*.ttf" />
-		<Resource Include="Resources\Fonts\IcoMoon\Output\fonts\icomoon.ttf" />
 		<Resource Include="Resources\Images\*.ico" />
 		<Resource Include="Resources\Images\*.png" />
 		<Resource Include="Resources\Licenses\license.*.txt" />
@@ -71,7 +69,8 @@
 	<ItemGroup>
 		<Compile Remove="Program.un.cs" />
 		<None Remove="Program.un.cs" />
-		<None Remove="Resources\Images\*.png" />
+		<Resource Remove="Resources\Images\FaviconUninst.ico" />
+		<Resource Remove="Resources\Images\FaviconUninst.png" />
 		<None Remove="Resources\Setups\Uninst.exe" />
 	</ItemGroup>
 
@@ -81,7 +80,6 @@
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
 		<PackageReference Include="SharpCompress" Version="0.33.0" />
 	</ItemGroup>
 

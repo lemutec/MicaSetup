@@ -27,7 +27,7 @@
                             <TextBlock x:Name="checkIcon"
                                        HorizontalAlignment="Center"
                                        VerticalAlignment="Center"
-                                       FontFamily="{StaticResource IcoMoon}"
+                                       FontFamily="{StaticResource SymbolThemeFontFamily}"
                                        FontSize="18"
                                        Foreground="{DynamicResource HighGreenBrush}"
                                        Opacity="0"
