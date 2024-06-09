@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Design.Controls;
 using MicaSquircle.Core;
-using MicaWPF.Controls;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -16,12 +15,13 @@ using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Messages;
 using ToastNotifications.Position;
+using Wpf.Ui.Controls;
 using FontStyleX = System.Drawing.FontStyle;
 
 namespace MicaSquircle;
 
 [INotifyPropertyChanged]
-public partial class MainWindow : MicaWindow
+public partial class MainWindow : FluentWindow
 {
     [ObservableProperty]
     private bool createPng = true;
@@ -40,7 +40,7 @@ public partial class MainWindow : MicaWindow
     [ObservableProperty]
     private ImageSource? imageSource = null!;
 
-    private Notifier notifier;
+    private readonly Notifier notifier;
 
     public MainWindow()
     {
@@ -66,7 +66,7 @@ public partial class MainWindow : MicaWindow
 
     private Bitmap GetBitmap()
     {
-        Bitmap bitmap = new(512 / 2, 512 / 2);
+        Bitmap bitmap = new(256, 256);
 
         if (IconType == IconType.Raw)
         {
@@ -99,7 +99,7 @@ public partial class MainWindow : MicaWindow
     [RelayCommand]
     private void CreateSquircle()
     {
-        ImageSource = GetBitmap().DrawFrame(ColorTranslator.FromHtml("#50FFFFFF"), 60 / 2).ToImageSource();
+        ImageSource = GetBitmap().DrawFrame(ColorTranslator.FromHtml("#50FFFFFF"), 1).ToImageSource();
     }
 
     [RelayCommand]

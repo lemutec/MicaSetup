@@ -1,19 +1,14 @@
 ﻿<Application x:Class="MicaSquircle.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:ui="http://schemas.modernwpf.com/2019"
-             xmlns:mica="clr-namespace:MicaWPF.Styles;assembly=MicaWPF"
              xmlns:local="clr-namespace:MicaSquircle"
+             xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources/>
-                <ui:XamlControlsResources/>
-                <ui:ResourceDictionaryEx/>
-                <ui:ColorPaletteResources/>
-                <ui:IntellisenseResources/>
-                <mica:ThemeDictionary Theme="Dark"/>
+                <wui:ThemesDictionary Theme="Dark" />
+                <wui:ControlsDictionary />
                 <ResourceDictionary Source="pack://application:,,,/ToastNotifications.Messages;component/Themes/Default.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

@@ -51,9 +51,9 @@ internal static class ImageGdiExtension
     /// <summary>
     /// https://ja.jinzhao.wiki/wiki/ICO_(%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88)
     /// </summary>
-    public static void ConvertToIco(this Image bitmap, string filePath, int[] sizes = null!)
+    public static void ConvertToIco(this Image bitmap, string filePath, int[]? sizes = null)
     {
-        sizes ??= new int[] { 16, 24, 32, 48, 64, 256 };
+        sizes ??= [16, 24, 32, 48, 64, 256];
 
         using MemoryStream memoryStream = new();
         using BinaryWriter binaryWriter = new(memoryStream);
