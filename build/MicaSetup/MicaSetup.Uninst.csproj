@@ -71,6 +71,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Resource Remove="Resources\Images\FaviconSetup.ico" />
+		<Resource Remove="Resources\Images\FaviconSetup.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Resources\Images\FaviconSetup.ico" />
+		<None Include="Resources\Images\FaviconSetup.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Costura.Fody" Version="5.7.0" Condition=" '$(Configuration)' == 'Release'">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
