@@ -69,6 +69,7 @@
 	<ItemGroup>
 		<Compile Remove="Program.un.cs" />
 		<None Remove="Program.un.cs" />
+		<Resource Remove="Resources\Images\FaviconSetup.png" />
 		<Resource Remove="Resources\Images\FaviconUninst.ico" />
 		<Resource Remove="Resources\Images\FaviconUninst.png" />
 		<None Remove="Resources\Setups\Uninst.exe" />
