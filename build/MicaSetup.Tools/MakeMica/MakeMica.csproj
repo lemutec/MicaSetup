@@ -23,12 +23,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Syntax\JSON.xshd" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AvalonEdit" Version="6.3.0.90" />
 		<PackageReference Include="Costura.Fody" Version="5.7.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="WPF-UI" Version="3.0.0-preview.7" />
+		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\Syntax\JSON.xshd" />
 	</ItemGroup>
 
 </Project>

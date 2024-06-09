@@ -1,10 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using MakeMica.ViewModels;
 using System;
 using System.ComponentModel;
 using System.Windows.Media;
 using Wpf.Ui.Controls;
 
-namespace MakeMica;
+namespace MakeMica.Views;
 
 [INotifyPropertyChanged]
 public partial class MainWindow : FluentWindow
