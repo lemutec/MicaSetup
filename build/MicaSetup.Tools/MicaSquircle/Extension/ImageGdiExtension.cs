@@ -53,7 +53,7 @@ internal static class ImageGdiExtension
     /// </summary>
     public static void ConvertToIco(this Image bitmap, string filePath, int[]? sizes = null)
     {
-        sizes ??= [16, 24, 32, 48, 64, 256];
+        sizes ??= [256, 64, 48, 32, 24, 16];
 
         using MemoryStream memoryStream = new();
         using BinaryWriter binaryWriter = new(memoryStream);

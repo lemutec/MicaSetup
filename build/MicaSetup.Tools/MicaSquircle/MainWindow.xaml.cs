@@ -144,7 +144,7 @@ public partial class MainWindow : FluentWindow
             IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         }}";
-        using Bitmap bitmap = ReadBitmap();
+        using Bitmap bitmap = ReadBitmap(Path);
 
         try
         {
