@@ -22,6 +22,7 @@
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
 		<DefineConstants>$(DefineConstants);UNINST</DefineConstants>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>

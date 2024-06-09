@@ -1,20 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>WinExe</OutputType>
-        <TargetFramework>net472</TargetFramework>
-        <Nullable>enable</Nullable>
-        <UseWPF>true</UseWPF>
-        <UseWindowsForms>false</UseWindowsForms>
-        <UseWinUI>false</UseWinUI>
-        <LangVersion>12.0</LangVersion>
-        <AssemblyVersion>2.0.3.0</AssemblyVersion>
-        <FileVersion>2.0.3.0</FileVersion>
-        <Version>$(VersionPrefix)2.0.3.0</Version>
-        <Authors>Lemutec</Authors>
-        <Company>Lemutec</Company>
-        <Platforms>AnyCPU;x64</Platforms>
-        <ApplicationIcon>Favicon.ico</ApplicationIcon>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>false</UseWindowsForms>
+		<UseWinUI>false</UseWinUI>
+		<LangVersion>12.0</LangVersion>
+		<AssemblyVersion>2.0.3.0</AssemblyVersion>
+		<FileVersion>2.0.3.0</FileVersion>
+		<Version>$(VersionPrefix)2.0.3.0</Version>
+		<Authors>Lemutec</Authors>
+		<Company>Lemutec</Company>
+		<Platforms>AnyCPU;x64</Platforms>
+		<ApplicationIcon>Favicon.ico</ApplicationIcon>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
