@@ -14,10 +14,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="Resources\*.png" />
+		<None Remove="Resources\Images\*.png" />
+		<None Remove="Resources\Fonts\*.ttf" />
     </ItemGroup>
+	
 	<ItemGroup>
-		<Resource Include="Resources\*.png" />
+		<Resource Include="Resources\Images\*.png" />
+		<Resource Include="Resources\Fonts\*.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -31,10 +34,6 @@
 		<PackageReference Include="ToastNotifications" Version="2.5.1" />
 		<PackageReference Include="ToastNotifications.Messages" Version="2.5.1" />
 		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="4.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Include="..\..\MicaSetup\Design\Controls\Selection.cs" />
 	</ItemGroup>
 
 </Project>

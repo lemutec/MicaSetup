@@ -50,7 +50,7 @@
                     CornerRadius="16">
                 <Border.Background>
                     <ImageBrush AlignmentY="Top"
-                                ImageSource="Resources/background-b.png"
+                                ImageSource="Resources/Images/background-b.png"
                                 RenderOptions.BitmapScalingMode="NearestNeighbor"
                                 Stretch="UniformToFill"
                                 TileMode="Tile"
