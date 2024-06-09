@@ -12,8 +12,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Uninst")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("2.0.1.0")]
-[assembly: AssemblyFileVersion("2.0.1.0")]
+[assembly: AssemblyVersion("2.0.2.0")]
+[assembly: AssemblyFileVersion("2.0.2.0")]
 
 namespace MicaSetup;
 
@@ -45,7 +45,7 @@ internal class Program
                 option.KeyName = "MicaApp";
                 option.DisplayName = "MicaApp";
                 option.DisplayIcon = "MicaApp.exe";
-                option.DisplayVersion = "2.0.1.0";
+                option.DisplayVersion = "2.0.2.0";
                 option.Publisher = "Lemutec";
                 option.AppName = "MicaApp";
                 option.SetupName = $"MicaApp {Mui("UninstallProgram")}";
