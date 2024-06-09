@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+        <LangVersion>12.0</LangVersion>
+        <UseWindowsForms>true</UseWindowsForms>
+        <AssemblyVersion>2.0.3.0</AssemblyVersion>
+        <FileVersion>2.0.3.0</FileVersion>
+        <Version>$(VersionPrefix)2.0.3.0</Version>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\Images\*.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\Images\*.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Costura.Fody" Version="5.7.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="WPF-UI" Version="3.0.0-preview.7" />
+	</ItemGroup>
+
+</Project>
