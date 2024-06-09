@@ -12,6 +12,8 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 > The programs using MicaSetup.
 
+[lemutec/LyricStudio](https://github.com/lemutec/LyricStudio)
+
 [GenshinMatrix/Fischless](https://github.com/GenshinMatrix/Fischless)
 
 [babalae/better-genshin-impact](https://github.com/babalae/better-genshin-impact)
