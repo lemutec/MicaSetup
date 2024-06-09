@@ -1,4 +1,4 @@
-using CommunityToolkit.Mvvm.Input;
+using MicaSetup.Design.Commands;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;

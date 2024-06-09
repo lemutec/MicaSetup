@@ -1,5 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using MicaSetup.Design.Commands;
+using MicaSetup.Design.ComponentModel;
 using MicaSetup.Helper;
 using System;
 using System.IO;
@@ -45,4 +45,13 @@ public partial class FinishViewModel : ObservableObject
             SystemCommands.CloseWindow(window);
         }
     }
+}
+
+partial class FinishViewModel
+{
+    private RelayCommand? closeCommand;
+    public IRelayCommand CloseCommand => closeCommand ??= new RelayCommand(Close);
+
+    private RelayCommand? openCommand;
+    public IRelayCommand OpenCommand => openCommand ??= new RelayCommand(Open);
 }

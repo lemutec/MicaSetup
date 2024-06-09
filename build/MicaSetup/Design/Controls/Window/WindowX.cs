@@ -1,5 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using MicaSetup.Design.Commands;
+using MicaSetup.Design.ComponentModel;
 using MicaSetup.Natives;
 using System;
 using System.Windows;
@@ -10,7 +10,7 @@ using System.Windows.Shell;
 namespace MicaSetup.Design.Controls;
 
 [INotifyPropertyChanged]
-public partial class WindowX : Window
+public partial class WindowX : WindowXO
 {
     public HwndSource? HwndSource { get; private set; }
     public nint? Handle { get; private set; }
@@ -112,38 +112,60 @@ public partial class WindowX : Window
     }
 
     [RelayCommand]
-    private void CloseWindow()
+    public void CloseWindow()
     {
         WindowSystemCommands.CloseWindow(this);
     }
 
     [RelayCommand]
-    private void MinimizeWindow()
+    public void MinimizeWindow()
     {
         WindowSystemCommands.MinimizeWindow(this);
     }
 
     [RelayCommand]
-    private void MaximizeWindow()
+    public void MaximizeWindow()
     {
         WindowSystemCommands.MaximizeWindow(this);
     }
 
     [RelayCommand]
-    private void RestoreWindow()
+    public void RestoreWindow()
     {
         WindowSystemCommands.RestoreWindow(this);
     }
 
     [RelayCommand]
-    private void MaximizeOrRestoreWindow()
+    public void MaximizeOrRestoreWindow()
     {
         WindowSystemCommands.MaximizeOrRestoreWindow(this);
     }
 
     [RelayCommand]
-    private void ShowSystemMenu()
+    public void ShowSystemMenu()
     {
         WindowSystemCommands.ShowSystemMenu(this);
     }
+}
+
+partial class WindowX
+{
+    private RelayCommand? closeWindowCommand;
+    public IRelayCommand CloseWindowCommand => closeWindowCommand ??= new RelayCommand(CloseWindow);
+
+    private RelayCommand? minimizeWindowCommand;
+
+    public IRelayCommand MinimizeWindowCommand => minimizeWindowCommand ??= new RelayCommand(MinimizeWindow);
+
+    private RelayCommand? maximizeWindowCommand;
+    public IRelayCommand MaximizeWindowCommand => maximizeWindowCommand ??= new RelayCommand(MaximizeWindow);
+
+    private RelayCommand? restoreWindowCommand;
+    public IRelayCommand RestoreWindowCommand => restoreWindowCommand ??= new RelayCommand(RestoreWindow);
+
+    private RelayCommand? maximizeOrRestoreWindowCommand;
+    public IRelayCommand MaximizeOrRestoreWindowCommand => maximizeOrRestoreWindowCommand ??= new RelayCommand(MaximizeOrRestoreWindow);
+
+    private RelayCommand? showSystemMenuCommand;
+    public IRelayCommand ShowSystemMenuCommand => showSystemMenuCommand ??= new RelayCommand(ShowSystemMenu);
 }

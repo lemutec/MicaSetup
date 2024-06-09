@@ -1,9 +1,11 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using MicaSetup.Design.ComponentModel;
 using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using MicaSetup.Helper.Helper;
 using MicaSetup.Services;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -128,7 +130,7 @@ public partial class InstallViewModel : ObservableObject
             {
                 try
                 {
-                    ServiceManager.GetService<IExplorerService>().Refresh();
+                    ServiceManager.GetService<IExplorerService>()?.Refresh();
                 }
                 catch (Exception e)
                 {
@@ -138,4 +140,59 @@ public partial class InstallViewModel : ObservableObject
             UIDispatcherHelper.Invoke(Routing.GoToNext);
         });
     }
+}
+
+partial class InstallViewModel
+{
+    public string InstallInfo
+    {
+        get => installInfo;
+        set
+        {
+            if (!EqualityComparer<string>.Default.Equals(installInfo, value))
+            {
+                OnInstallInfoChanging(value);
+                OnInstallInfoChanging(default, value);
+                OnPropertyChanging(new PropertyChangingEventArgs("InstallInfo"));
+                installInfo = value;
+                OnInstallInfoChanged(value);
+                OnInstallInfoChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("InstallInfo"));
+            }
+        }
+    }
+
+    public double InstallProgress
+    {
+        get => installProgress;
+        set
+        {
+            if (!EqualityComparer<double>.Default.Equals(installProgress, value))
+            {
+                OnInstallProgressChanging(value);
+                OnInstallProgressChanging(default, value);
+                OnPropertyChanging(new PropertyChangingEventArgs("InstallProgress"));
+                installProgress = value;
+                OnInstallProgressChanged(value);
+                OnInstallProgressChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("InstallProgress"));
+            }
+        }
+    }
+
+    partial void OnInstallInfoChanging(string value);
+
+    partial void OnInstallInfoChanging(string? oldValue, string newValue);
+
+    partial void OnInstallInfoChanged(string value);
+
+    partial void OnInstallInfoChanged(string? oldValue, string newValue);
+
+    partial void OnInstallProgressChanging(double value);
+
+    partial void OnInstallProgressChanging(double oldValue, double newValue);
+
+    partial void OnInstallProgressChanged(double value);
+
+    partial void OnInstallProgressChanged(double oldValue, double newValue);
 }

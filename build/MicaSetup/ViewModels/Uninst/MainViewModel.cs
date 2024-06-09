@@ -1,8 +1,10 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using MicaSetup.Design.Commands;
+using MicaSetup.Design.ComponentModel;
 using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Windows;
 
@@ -51,8 +53,48 @@ public partial class MainViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void CancelUninstall()
+    public void CancelUninstall()
     {
         SystemCommands.CloseWindow(UIDispatcherHelper.MainWindow);
     }
+}
+
+partial class MainViewModel
+{
+    public bool KeepMyData
+    {
+        get => keepMyData;
+        set
+        {
+            if (!EqualityComparer<bool>.Default.Equals(keepMyData, value))
+            {
+                OnKeepMyDataChanging(value);
+                OnKeepMyDataChanging(default, value);
+                OnPropertyChanging(new PropertyChangingEventArgs("KeepMyData"));
+                keepMyData = value;
+                OnKeepMyDataChanged(value);
+                OnKeepMyDataChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("KeepMyData"));
+            }
+        }
+    }
+
+    partial void OnKeepMyDataChanging(bool value);
+
+    partial void OnKeepMyDataChanging(bool oldValue, bool newValue);
+
+    partial void OnKeepMyDataChanged(bool value);
+
+    partial void OnKeepMyDataChanged(bool oldValue, bool newValue);
+}
+
+partial class MainViewModel
+{
+    private RelayCommand? startUninstallCommand;
+
+    public IRelayCommand StartUninstallCommand => startUninstallCommand ??= new RelayCommand(StartUninstall);
+
+    private RelayCommand? cancelUninstallCommand;
+
+    public IRelayCommand CancelUninstallCommand => cancelUninstallCommand ??= new RelayCommand(CancelUninstall);
 }

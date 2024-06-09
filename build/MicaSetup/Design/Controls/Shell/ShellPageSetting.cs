@@ -5,5 +5,5 @@ namespace MicaSetup.Design.Controls;
 
 public class ShellPageSetting
 {
-    public static Dictionary<string, Type> PageDict = new();
+    public static Dictionary<string, Type> PageDict = [];
 }

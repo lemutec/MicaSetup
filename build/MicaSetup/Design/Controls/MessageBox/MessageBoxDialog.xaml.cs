@@ -1,11 +1,13 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
+﻿using MicaSetup.Design.Commands;
+using MicaSetup.Design.ComponentModel;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows;
 
 namespace MicaSetup.Design.Controls;
 
 [INotifyPropertyChanged]
-public partial class MessageBoxDialog : Window
+public partial class MessageBoxDialog : WindowXO
 {
     [ObservableProperty]
     private string message = null!;
@@ -68,19 +70,19 @@ public partial class MessageBoxDialog : Window
     }
 
     [RelayCommand]
-    private void Okay()
+    public void Okay()
     {
         Result = WindowDialogResult.OK;
     }
 
     [RelayCommand]
-    private void Yes()
+    public void Yes()
     {
         Result = WindowDialogResult.Yes;
     }
 
     [RelayCommand]
-    private void No()
+    public void No()
     {
         Result = WindowDialogResult.No;
     }
@@ -106,4 +108,194 @@ public enum WindowDialogResult
     Cancel = 2,
     Yes = 6,
     No = 7
+}
+
+partial class MessageBoxDialog
+{
+    public string Message
+    {
+        get => message;
+        set
+        {
+            if (!EqualityComparer<string>.Default.Equals(message, value))
+            {
+                OnMessageChanging(value);
+                OnMessageChanging(default, value);
+                message = value;
+                OnMessageChanged(value);
+                OnMessageChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("Message"));
+            }
+        }
+    }
+
+    public bool OkayVisiable
+    {
+        get => okayVisiable;
+        set
+        {
+            if (!EqualityComparer<bool>.Default.Equals(okayVisiable, value))
+            {
+                OnOkayVisiableChanging(value);
+                OnOkayVisiableChanging(default, value);
+                okayVisiable = value;
+                OnOkayVisiableChanged(value);
+                OnOkayVisiableChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("OkayVisiable"));
+            }
+        }
+    }
+
+    public bool YesVisiable
+    {
+        get => yesVisiable;
+        set
+        {
+            if (!EqualityComparer<bool>.Default.Equals(yesVisiable, value))
+            {
+                OnYesVisiableChanging(value);
+                OnYesVisiableChanging(default, value);
+                yesVisiable = value;
+                OnYesVisiableChanged(value);
+                OnYesVisiableChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("YesVisiable"));
+            }
+        }
+    }
+
+    public bool NoVisiable
+    {
+        get => noVisiable;
+        set
+        {
+            if (!EqualityComparer<bool>.Default.Equals(noVisiable, value))
+            {
+                OnNoVisiableChanging(value);
+                OnNoVisiableChanging(default, value);
+                noVisiable = value;
+                OnNoVisiableChanged(value);
+                OnNoVisiableChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("NoVisiable"));
+            }
+        }
+    }
+
+    public WindowDialogResult Result
+    {
+        get => result;
+        set
+        {
+            if (!EqualityComparer<WindowDialogResult>.Default.Equals(result, value))
+            {
+                OnResultChanging(value);
+                OnResultChanging(default, value);
+                result = value;
+                OnResultChanged(value);
+                OnResultChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("Result"));
+            }
+        }
+    }
+
+    public string IconString
+    {
+        get => iconString;
+        set
+        {
+            if (!EqualityComparer<string>.Default.Equals(iconString, value))
+            {
+                OnIconStringChanging(value);
+                OnIconStringChanging(default, value);
+                iconString = value;
+                OnIconStringChanged(value);
+                OnIconStringChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("IconString"));
+            }
+        }
+    }
+
+    public MessageBoxType Type
+    {
+        get => @type;
+        set
+        {
+            if (!EqualityComparer<MessageBoxType>.Default.Equals(@type, value))
+            {
+                OnTypeChanging(value);
+                OnTypeChanging(default, value);
+                @type = value;
+                OnTypeChanged(value);
+                OnTypeChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("Type"));
+            }
+        }
+    }
+
+    partial void OnMessageChanging(string value);
+
+    partial void OnMessageChanging(string? oldValue, string newValue);
+
+    partial void OnMessageChanged(string value);
+
+    partial void OnMessageChanged(string? oldValue, string newValue);
+
+    partial void OnOkayVisiableChanging(bool value);
+
+    partial void OnOkayVisiableChanging(bool oldValue, bool newValue);
+
+    partial void OnOkayVisiableChanged(bool value);
+
+    partial void OnOkayVisiableChanged(bool oldValue, bool newValue);
+
+    partial void OnYesVisiableChanging(bool value);
+
+    partial void OnYesVisiableChanging(bool oldValue, bool newValue);
+
+    partial void OnYesVisiableChanged(bool value);
+
+    partial void OnYesVisiableChanged(bool oldValue, bool newValue);
+
+    partial void OnNoVisiableChanging(bool value);
+
+    partial void OnNoVisiableChanging(bool oldValue, bool newValue);
+
+    partial void OnNoVisiableChanged(bool value);
+
+    partial void OnNoVisiableChanged(bool oldValue, bool newValue);
+
+    partial void OnResultChanging(WindowDialogResult value);
+
+    partial void OnResultChanging(WindowDialogResult oldValue, WindowDialogResult newValue);
+
+    partial void OnResultChanged(WindowDialogResult value);
+
+    partial void OnResultChanged(WindowDialogResult oldValue, WindowDialogResult newValue);
+
+    partial void OnIconStringChanging(string value);
+
+    partial void OnIconStringChanging(string? oldValue, string newValue);
+
+    partial void OnIconStringChanged(string value);
+
+    partial void OnIconStringChanged(string? oldValue, string newValue);
+
+    partial void OnTypeChanging(MessageBoxType value);
+
+    partial void OnTypeChanging(MessageBoxType oldValue, MessageBoxType newValue);
+
+    partial void OnTypeChanged(MessageBoxType value);
+
+    partial void OnTypeChanged(MessageBoxType oldValue, MessageBoxType newValue);
+}
+
+partial class MessageBoxDialog
+{
+    private RelayCommand? okayCommand;
+    public IRelayCommand OkayCommand => okayCommand ??= new RelayCommand(Okay);
+
+    private RelayCommand? yesCommand;
+    public IRelayCommand YesCommand => yesCommand ??= new RelayCommand(Yes);
+
+    private RelayCommand? noCommand;
+    public IRelayCommand NoCommand => noCommand ??= new RelayCommand(No);
 }

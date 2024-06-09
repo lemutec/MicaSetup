@@ -75,7 +75,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 	</ItemGroup>
 
 	<ItemGroup>
