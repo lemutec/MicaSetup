@@ -14,21 +14,50 @@
                   ExtendsContentIntoTitleBar="True"
                   ResizeMode="CanMinimize">
     <Grid>
-        <StackPanel Margin="0,42,0,0">
-            <StackPanel Margin="0,5,0,0"
-                        HorizontalAlignment="Center"
-                        Orientation="Horizontal">
-                <Button MinWidth="80"
-                        Margin="10,0,0,0"
-                        Command="{Binding BuildCommand}"
-                        Content="Build" />
-                <Button MinWidth="80"
-                        Margin="10,0,0,0"
-                        Command="{Binding FolderCommand}"
-                        Content="Folder" />
-            </StackPanel>
-            <control:JsonCodeBox x:Name="JsonCodeBox" />
-        </StackPanel>
+        <Grid Margin="0,42,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Command="{Binding NewCommand}" Header="New" />
+                    <MenuItem Command="{Binding OpenCommand}" Header="Open" />
+                    <Separator MinWidth="120" />
+                    <MenuItem Command="{Binding SaveCommand}" Header="Save" />
+                    <MenuItem Command="{Binding SaveAsCommand}" Header="Save As" />
+                    <Separator MinWidth="120" />
+                    <MenuItem Command="{Binding ExitCommand}" Header="Exit" />
+                </MenuItem>
+            </Menu>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Margin="8">
+                    <control:JsonCodeBox x:Name="JsonCodeBox" Code="{Binding Code}" />
+                    <Button HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Command="{Binding BeautifyCommand}"
+                            Content="Beautify" />
+                </Grid>
+                <StackPanel Grid.Row="1"
+                            Margin="8"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button MinWidth="80"
+                            Margin="10,0,0,0"
+                            Command="{Binding BuildCommand}"
+                            Content="Build" />
+                    <Button MinWidth="80"
+                            Margin="10,0,0,0"
+                            Command="{Binding FolderCommand}"
+                            Content="Folder" />
+                </StackPanel>
+            </Grid>
+
+        </Grid>
         <wui:TitleBar Title="MakeMica" />
     </Grid>
 </wui:FluentWindow>

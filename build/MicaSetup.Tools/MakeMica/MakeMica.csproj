@@ -16,14 +16,14 @@
 
 	<ItemGroup>
 		<None Remove="Resources\Images\*.png" />
+		<None Remove="Resources\Syntax\*.xshd" />
+		<None Remove="Resources\Templates\*.json" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Resource Include="Resources\Images\*.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Resources\Syntax\JSON.xshd" />
+		<Resource Include="Resources\Syntax\*.xshd" />
+		<Resource Include="Resources\Templates\*.json" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -35,10 +35,6 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="WPF-UI" Version="3.0.0-preview.7" />
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Resource Include="Resources\Syntax\JSON.xshd" />
 	</ItemGroup>
 
 </Project>
