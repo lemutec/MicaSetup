@@ -1,13 +1,17 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MicaSetup.Design.Controls;
-using MicaSquircle.Core;
+using MicaSquircle.Extension;
+using MicaSquircle.Helpers;
+using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
@@ -16,6 +20,7 @@ using ToastNotifications.Lifetime;
 using ToastNotifications.Messages;
 using ToastNotifications.Position;
 using Wpf.Ui.Controls;
+using FontFamily = System.Drawing.FontFamily;
 using FontStyleX = System.Drawing.FontStyle;
 
 namespace MicaSquircle;
@@ -23,6 +28,9 @@ namespace MicaSquircle;
 [INotifyPropertyChanged]
 public partial class MainWindow : FluentWindow
 {
+    [ObservableProperty]
+    private string? path = null;
+
     [ObservableProperty]
     private bool createPng = true;
 
@@ -34,7 +42,10 @@ public partial class MainWindow : FluentWindow
 
     partial void OnIconTypeChanged(IconType value)
     {
-        CreateSquircle();
+        if (File.Exists(Path))
+        {
+            CreateSquircle(Path!);
+        }
     }
 
     [ObservableProperty]
@@ -61,45 +72,66 @@ public partial class MainWindow : FluentWindow
 
         DataContext = this;
         InitializeComponent();
-        CreateSquircle();
     }
 
-    private Bitmap GetBitmap()
+    protected override void OnSourceInitialized(EventArgs e)
+    {
+        base.OnSourceInitialized(e);
+
+        if (WindowBackdrop.IsSupported(WindowBackdropType.Mica))
+        {
+            Background = new SolidColorBrush(Colors.Transparent);
+            WindowBackdrop.ApplyBackdrop(this, WindowBackdropType.Mica);
+        }
+    }
+
+    private Bitmap ReadBitmap(string filename = "Favicon.png")
     {
         Bitmap bitmap = new(256, 256);
+        FontFamily fontFamily = PrivateFontHelper.FontFamily;
 
-        if (IconType == IconType.Raw)
-        {
-            bitmap.AddImage(new Bitmap("Favicon.png"), 0, 0, 256, 256);
-        }
-        else
-        {
-            bitmap.AddImage(new Bitmap("Favicon.png"), 0, 0, 256, 256);
-        }
+        bitmap.AddImage(new Bitmap(filename), 0, 0, 256, 256);
 
         if (IconType == IconType.Setup)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 160 / 2, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EE24CDB9"), (6 + 154 - 8) / 2 - 6, (20 + 150 - 8) / 2 - 6);
+            bitmap.AddIconFont(Selection.Circle, 80, fontFamily, FontStyleX.Regular, "#EE24CDB9".ToColor(), 70, 75);
 
             // Up
-            bitmap.AddIconFont(Selection.GallerySortReverse, 120 / 2, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), (6 + 154 - 8) / 2 - 6, (20 + 150 - 8) / 2 - 6);
+            bitmap.AddIconFont(Selection.GallerySortReverse, 60, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
         }
         else if (IconType == IconType.Uninst)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 160 / 2, PrivateFontHelper.FontFamily, FontStyleX.Regular, ColorTranslator.FromHtml("#EEEB3B3B"), (6 + 154 - 8) / 2 - 6, (20 + 150 - 8) / 2 - 6);
+            bitmap.AddIconFont(Selection.Circle, 80, fontFamily, FontStyleX.Regular, "#EEEB3B3B".ToColor(), 70, 75);
 
             // Close
-            bitmap.AddIconFont(Selection.PublicCancelFilled, 120 / 2, PrivateFontHelper.FontFamily, FontStyleX.Bold, ColorTranslator.FromHtml("#FFFFFF"), (6 + 154 - 8) / 2 - 6, (20 + 150 - 8) / 2 - 6);
+            bitmap.AddIconFont(Selection.PublicCancelFilled, 60, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
         }
         return bitmap;
     }
 
     [RelayCommand]
-    private void CreateSquircle()
+    private void OpenImage()
     {
-        ImageSource = GetBitmap().DrawFrame(ColorTranslator.FromHtml("#50FFFFFF"), 1).ToImageSource();
+        OpenFileDialog openFileDialog = new()
+        {
+            Filter = "Image files (*.png)|*.png",
+            Title = "Open Image",
+        };
+
+        if (openFileDialog.ShowDialog() ?? false)
+        {
+            CreateSquircle(Path = openFileDialog.FileName);
+        }
+    }
+
+    [RelayCommand]
+    private void CreateSquircle(string filename)
+    {
+        ImageSource = ReadBitmap(filename)
+            .DrawFrame("#50FFFFFF".ToColor(), 1)
+            .ToImageSource();
     }
 
     [RelayCommand]
@@ -112,7 +144,7 @@ public partial class MainWindow : FluentWindow
             IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         }}";
-        using Bitmap bitmap = GetBitmap();
+        using Bitmap bitmap = ReadBitmap();
 
         try
         {
@@ -151,6 +183,18 @@ public partial class MainWindow : FluentWindow
             IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         })}.png");
+    }
+
+    private void OnDrop(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] files
+                && files.FirstOrDefault() is string path)
+            {
+                CreateSquircle(Path = path);
+            }
+        }
     }
 }
 

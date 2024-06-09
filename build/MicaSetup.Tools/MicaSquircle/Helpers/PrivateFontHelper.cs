@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Resources;
 
-namespace MicaSquircle.Core;
+namespace MicaSquircle.Helpers;
 
 internal static class PrivateFontHelper
 {

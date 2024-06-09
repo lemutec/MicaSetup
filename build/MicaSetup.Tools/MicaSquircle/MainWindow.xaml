@@ -9,7 +9,10 @@
                   Height="680"
                   wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
                   wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                  AllowDrop="True"
                   Background="#E4E4E4"
+                  Drop="OnDrop"
+                  ExtendsContentIntoTitleBar="True"
                   ResizeMode="CanMinimize">
     <Window.Resources>
         <local:IconTypeValueConverter x:Key="IconTypeValueConverter" />
@@ -32,9 +35,8 @@
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
                 <Button MinWidth="80"
-                        Command="{Binding CreateSquircleCommand}"
-                        Content="Create"
-                        Visibility="Collapsed" />
+                        Command="{Binding OpenImageCommand}"
+                        Content="Open" />
                 <Button MinWidth="80"
                         Margin="10,0,0,0"
                         Command="{Binding SaveSquircleCommand}"
