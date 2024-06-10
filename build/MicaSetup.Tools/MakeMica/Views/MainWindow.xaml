@@ -5,59 +5,154 @@
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:local="clr-namespace:MakeMica"
                   xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
-                  Title="MicaSquircle"
+                  Title="MakeMicaW"
                   Width="640"
                   Height="680"
                   wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
                   wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                   Background="#E4E4E4"
+                  Drop="OnDrop"
                   ExtendsContentIntoTitleBar="True"
-                  ResizeMode="CanMinimize">
+                  ResizeMode="CanMinimize"
+                  WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="0,42,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Menu>
-                <MenuItem Header="File">
-                    <MenuItem Command="{Binding NewCommand}" Header="New" />
-                    <MenuItem Command="{Binding OpenCommand}" Header="Open" />
-                    <Separator MinWidth="120" />
-                    <MenuItem Command="{Binding SaveCommand}" Header="Save" />
-                    <MenuItem Command="{Binding SaveAsCommand}" Header="Save As" />
-                    <Separator MinWidth="120" />
-                    <MenuItem Command="{Binding ExitCommand}" Header="Exit" />
-                </MenuItem>
-            </Menu>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="2*" />
                 </Grid.RowDefinitions>
-                <Grid Margin="8">
-                    <control:JsonCodeBox x:Name="JsonCodeBox" Code="{Binding Code}" />
-                    <Button HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Command="{Binding BeautifyCommand}"
-                            Content="Beautify" />
-                </Grid>
-                <StackPanel Grid.Row="1"
-                            Margin="8"
-                            HorizontalAlignment="Center"
-                            Orientation="Horizontal">
-                    <Button MinWidth="80"
-                            Margin="10,0,0,0"
-                            Command="{Binding BuildCommand}"
-                            Content="Build" />
-                    <Button MinWidth="80"
-                            Margin="10,0,0,0"
-                            Command="{Binding FolderCommand}"
-                            Content="Folder" />
-                </StackPanel>
+                <Border Margin="8,8,8,0"
+                        BorderBrush="#2B2B2B"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <Grid Margin="8">
+                        <control:JsonCodeBox x:Name="JsonCodeBox" Code="{Binding Code}" />
+                        <Button Margin="0,0,16,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Command="{Binding BeautifyCommand}"
+                                ToolTip="Beautify">
+                            <Button.Content>
+                                <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Crop}" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Border>
+                <GridSplitter Grid.Row="1"
+                              Width="5"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Background="Gray" />
+                <Border Grid.Row="2"
+                        Margin="8,8,8,16"
+                        BorderBrush="#2B2B2B"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <Grid Margin="8">
+                        <control:CodeBox x:Name="LogCodeBox"
+                                         IsReadOnly="True"
+                                         ShowLineNumbers="False" />
+                        <Button Margin="0,0,16,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Command="{Binding ClearLogCommand}"
+                                ToolTip="Clear">
+                            <Button.Content>
+                                <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Delete}" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Border>
             </Grid>
-
         </Grid>
-        <wui:TitleBar Title="MakeMica" />
+        <wui:TitleBar>
+            <wui:TitleBar.Header>
+                <StackPanel Margin="16,0,0,0" Orientation="Horizontal">
+                    <Image Width="21"
+                           RenderOptions.BitmapScalingMode="HighQuality"
+                           Source="pack://application:,,,/Resources/Images/Favicon.png">
+                        <Image.RenderTransform>
+                            <RotateTransform Angle="0" CenterX="10.5" CenterY="10.5" />
+                        </Image.RenderTransform>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RenderTransform.Angle">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="10" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.75" Value="-10" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <Menu Background="Transparent">
+                        <MenuItem Header="File">
+                            <MenuItem Command="{Binding NewCommand}" Header="New">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.CalculatorAddition}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="{Binding OpenCommand}" Header="Open">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.FolderOpen}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator MinWidth="120" />
+                            <MenuItem Command="{Binding SaveCommand}" Header="Save">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Save}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="{Binding SaveAsCommand}" Header="Save As">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.SaveCopy}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator MinWidth="120" />
+                            <MenuItem Command="{Binding ExitCommand}" Header="Exit">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Clear}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Margin="-10,0,0,0" Header="Build">
+                            <MenuItem Command="{Binding BuildCommand}" Header="Build MicaSetup">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Download}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="{Binding OpenOutputFolderCommand}" Header="Open Output Folder">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.FolderOpen}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Margin="-10,0,0,0" Header="Help">
+                            <MenuItem Command="{Binding OpenHomePageCommand}" Header="GitHub">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Globe}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator MinWidth="120" />
+                            <MenuItem Command="{Binding OpenAboutCommand}" Header="About">
+                                <MenuItem.Icon>
+                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Info}" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
+            </wui:TitleBar.Header>
+        </wui:TitleBar>
     </Grid>
 </wui:FluentWindow>

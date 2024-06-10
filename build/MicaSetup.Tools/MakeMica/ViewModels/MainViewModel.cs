@@ -1,30 +1,65 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MakeMica.Core;
+using MakeMica.Design.Controls;
 using MakeMica.Design.Helpers;
+using MakeMica.Views;
+using Microsoft.Win32;
+using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 
 namespace MakeMica.ViewModels;
 
-public partial class MainViewModel : ObservableRecipient
+public partial class MainViewModel : ObservableObject
 {
+    [ObservableProperty]
+    private string? filePath = null;
+
     [ObservableProperty]
     private string code = string.Empty;
 
     public MainViewModel()
     {
-        Code = ResourceHelper.GetString(@"pack://application:,,,/Resources/Templates/Sample.json");
     }
 
     [RelayCommand]
     private void New()
     {
-        // TODO
+        if (!string.IsNullOrWhiteSpace(Code))
+        {
+            if (MessageBoxX.Question("Overwirte current codes?", "Question") != MessageBoxResult.Yes)
+            {
+                return;
+            }
+        }
+
+        FilePath = null!;
+        Code = ResourceHelper.GetString(@"pack://application:,,,/Resources/Templates/Sample.json");
     }
 
     [RelayCommand]
     private void Open()
     {
-        // TODO
+        OpenFileDialog openFileDialog = new()
+        {
+            Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
+            FilterIndex = 1,
+            Multiselect = false,
+            Title = "Open JSON File",
+        };
+
+        if (openFileDialog.ShowDialog() == true)
+        {
+            Open(openFileDialog.FileName);
+        }
+    }
+
+    public void Open(string filePath)
+    {
+        FilePath = filePath;
+        Code = File.ReadAllText(FilePath);
     }
 
     [RelayCommand]
@@ -48,11 +83,10 @@ public partial class MainViewModel : ObservableRecipient
     [RelayCommand]
     private void Build()
     {
-        // TODO
     }
 
     [RelayCommand]
-    private void OpenFolder()
+    private void OpenOutputFolder()
     {
         // TODO
     }
@@ -60,6 +94,34 @@ public partial class MainViewModel : ObservableRecipient
     [RelayCommand]
     private void Beautify()
     {
+        try
+        {
+            if (!string.IsNullOrWhiteSpace(Code))
+            {
+                Code = JsonBeautifier.Beautify(Code);
+            }
+        }
+        catch (Exception e)
+        {
+            MessageBoxX.Question(e.Message, "Error");
+        }
+    }
+
+    [RelayCommand]
+    private void ClearLog()
+    {
         // TODO
+    }
+
+    [RelayCommand]
+    private void OpenHomePage()
+    {
+        _ = Process.Start("https://github.com/lemutec/MicaSetup");
+    }
+
+    [RelayCommand]
+    private void OpenAbout()
+    {
+        new AboutWindow() { Owner = Application.Current.MainWindow }.ShowDialog();
     }
 }

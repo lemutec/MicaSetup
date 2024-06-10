@@ -10,7 +10,10 @@
                 <wui:ThemesDictionary Theme="Dark" />
                 <wui:ControlsDictionary />
                 <ResourceDictionary Source="pack://application:,,,/Design/Controls/CodeEditor/CodeBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Design/Controls/TitleBar/TitleBar.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Design/Controls/MessageBox/MessageBoxWindow.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <FontFamily x:Key="SymbolThemeFontFamily">pack://application:,,,/Resources/Fonts/Segoe Fluent Icons.ttf#Segoe Fluent Icons</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

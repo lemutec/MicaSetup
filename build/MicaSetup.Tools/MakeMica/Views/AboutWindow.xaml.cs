@@ -2,19 +2,17 @@
 using MakeMica.ViewModels;
 using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Windows;
 using System.Windows.Media;
 using Wpf.Ui.Controls;
 
 namespace MakeMica.Views;
 
 [INotifyPropertyChanged]
-public partial class MainWindow : FluentWindow
+public partial class AboutWindow : FluentWindow
 {
-    public MainViewModel ViewModel { get; }
+    public AboutViewModel ViewModel { get; }
 
-    public MainWindow()
+    public AboutWindow()
     {
         DataContext = ViewModel = new();
         InitializeComponent();
@@ -28,18 +26,6 @@ public partial class MainWindow : FluentWindow
         {
             Background = new SolidColorBrush(Colors.Transparent);
             WindowBackdrop.ApplyBackdrop(this, WindowBackdropType.Mica);
-        }
-    }
-
-    private void OnDrop(object sender, DragEventArgs e)
-    {
-        if (e.Data.GetDataPresent(DataFormats.FileDrop))
-        {
-            if (e.Data.GetData(DataFormats.FileDrop) is string[] files
-                && files.FirstOrDefault() is string path)
-            {
-                ViewModel.Open(path);
-            }
         }
     }
 }

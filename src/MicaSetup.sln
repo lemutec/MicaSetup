@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeIcon", "..\build\MicaSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMica", "..\build\MicaSetup.Tools\MakeMica\MakeMica.csproj", "{90E97BF5-8462-4A14-877A-F11B71E12C2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeMica.Cli", "..\build\MicaSetup.Tools\MakeMica.Cli\MakeMica.Cli.csproj", "{D07191A1-8C70-4951-8DF3-7094F137EFD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,14 @@ Global
 		{90E97BF5-8462-4A14-877A-F11B71E12C2D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90E97BF5-8462-4A14-877A-F11B71E12C2D}.Release|x64.ActiveCfg = Release|Any CPU
 		{90E97BF5-8462-4A14-877A-F11B71E12C2D}.Release|x64.Build.0 = Release|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Debug|x64.Build.0 = Debug|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|x64.ActiveCfg = Release|Any CPU
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +84,7 @@ Global
 		{2EBCFD95-5926-4C99-A033-5BD88314C8AF} = {24F56013-5D6A-453F-B6A0-46E8F9226703}
 		{8F560E01-AFAC-4A79-927C-F791EE401181} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{90E97BF5-8462-4A14-877A-F11B71E12C2D} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
+		{D07191A1-8C70-4951-8DF3-7094F137EFD0} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F356859C-CA7E-4434-BCDA-5BC25D53D330}
