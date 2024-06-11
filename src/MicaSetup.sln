@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeIcon", "..\build\MicaSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMica", "..\build\MicaSetup.Tools\MakeMica\MakeMica.csproj", "{90E97BF5-8462-4A14-877A-F11B71E12C2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeMica.Cli", "..\build\MicaSetup.Tools\MakeMica.Cli\MakeMica.Cli.csproj", "{D07191A1-8C70-4951-8DF3-7094F137EFD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMica.Cli", "..\build\MicaSetup.Tools\MakeMica.Cli\MakeMica.Cli.csproj", "{D07191A1-8C70-4951-8DF3-7094F137EFD0}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MakeMica.Shared", "..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.shproj", "{D9649F16-8BD5-4268-8CF8-952C8909795A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,8 +87,14 @@ Global
 		{8F560E01-AFAC-4A79-927C-F791EE401181} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{90E97BF5-8462-4A14-877A-F11B71E12C2D} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{D07191A1-8C70-4951-8DF3-7094F137EFD0} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
+		{D9649F16-8BD5-4268-8CF8-952C8909795A} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F356859C-CA7E-4434-BCDA-5BC25D53D330}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.projitems*{90e97bf5-8462-4a14-877a-f11b71e12c2d}*SharedItemsImports = 5
+		..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.projitems*{d07191a1-8c70-4951-8df3-7094f137efd0}*SharedItemsImports = 5
+		..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.projitems*{d9649f16-8bd5-4268-8cf8-952c8909795a}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

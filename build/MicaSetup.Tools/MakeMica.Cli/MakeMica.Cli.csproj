@@ -18,6 +18,10 @@
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
+
+	<Import Project="..\MakeMica.Shared\MakeMica.Shared.projitems" Label="Shared" />
 
 </Project>
