@@ -41,15 +41,15 @@ internal class Program
                 option.IsAllowFirewall = true;
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
-                option.ExeName = "MicaApp.exe";
+                option.AppName = "MicaApp";
                 option.KeyName = "MicaApp";
-                option.DisplayName = "MicaApp";
-                option.DisplayIcon = "MicaApp.exe";
+                option.ExeName = "MicaApp.exe";
+                option.DisplayName = $"{option.AppName}";
+                option.DisplayIcon = $"{option.ExeName}";
                 option.DisplayVersion = "2.0.3.0";
                 option.Publisher = "Lemutec";
-                option.AppName = "MicaApp";
-                option.SetupName = $"MicaApp {Mui("UninstallProgram")}";
-                option.MessageOfPage1 = "MicaApp";
+                option.SetupName = $"{option.AppName} {Mui("UninstallProgram")}";
+                option.MessageOfPage1 = $"{option.AppName}";
                 option.MessageOfPage2 = Mui("ProgressTipsUninstalling");
                 option.MessageOfPage3 = Mui("UninstallFinishTips");
             })

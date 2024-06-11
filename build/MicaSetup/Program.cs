@@ -48,15 +48,15 @@ internal class Program
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;
-                option.ExeName = "MicaApp.exe";
+                option.AppName = "MicaApp";
                 option.KeyName = "MicaApp";
-                option.DisplayName = "MicaApp";
-                option.DisplayIcon = "MicaApp.exe";
+                option.ExeName = "MicaApp.exe";
+                option.DisplayName = $"{option.AppName}";
+                option.DisplayIcon = $"{option.ExeName}";
                 option.DisplayVersion = "2.0.3.0";
                 option.Publisher = "Lemutec";
-                option.AppName = "MicaApp";
-                option.SetupName = $"MicaApp {Mui("Setup")}";
-                option.MessageOfPage1 = "MicaApp";
+                option.SetupName = $"{option.AppName} {Mui("Setup")}";
+                option.MessageOfPage1 = $"{option.AppName}";
                 option.MessageOfPage2 = Mui("Installing");
                 option.MessageOfPage3 = Mui("InstallFinishTips");
             })
