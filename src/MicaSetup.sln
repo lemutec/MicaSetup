@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMica.Cli", "..\build\Mi
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MakeMica.Shared", "..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.shproj", "{D9649F16-8BD5-4268-8CF8-952C8909795A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMui", "..\build\MicaSetup.Tools\MakeMui\MakeMui.csproj", "{CE070827-0632-4949-8DCA-A07CE450C277}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,14 @@ Global
 		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|x64.ActiveCfg = Release|Any CPU
 		{D07191A1-8C70-4951-8DF3-7094F137EFD0}.Release|x64.Build.0 = Release|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +98,7 @@ Global
 		{90E97BF5-8462-4A14-877A-F11B71E12C2D} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{D07191A1-8C70-4951-8DF3-7094F137EFD0} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{D9649F16-8BD5-4268-8CF8-952C8909795A} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
+		{CE070827-0632-4949-8DCA-A07CE450C277} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F356859C-CA7E-4434-BCDA-5BC25D53D330}

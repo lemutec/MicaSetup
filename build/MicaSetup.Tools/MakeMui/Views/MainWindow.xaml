@@ -1,0 +1,20 @@
+﻿<wui:FluentWindow x:Class="MakeMui.Views.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:local="clr-namespace:MakeMui"
+                  xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
+                  Title="MakeMuiW"
+                  Width="640"
+                  Height="680"
+                  wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+                  wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                  Background="#E4E4E4"
+                  ExtendsContentIntoTitleBar="True"
+                  ResizeMode="CanMinimize"
+                  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid Margin="0,42,0,0" />
+        <wui:TitleBar Title="MakeMuiW" />
+    </Grid>
+</wui:FluentWindow>
