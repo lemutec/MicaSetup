@@ -16,8 +16,14 @@ mkdir .\Build\bin\
 copy /y .\MicaSetup.Tools\MakeMica\bin\Release\publish\MakeMica.exe .\Build\
 ren .\Build\MakeMica.exe makemicaw.exe
 
-copy /y .\MicaSetup.Tools\MicaSquircle\bin\Release\publish\MicaSquircle.exe .\Build\
-ren .\Build\MicaSquircle.exe makeiconw.exe
+copy /y .\MicaSetup.Tools\MakeMica.Cli\bin\Release\publish\MakeMica.Cli.exe .\Build\
+ren .\Build\MakeMica.Cli.exe makemica.exe
+
+copy /y .\MicaSetup.Tools\MakeIcon\bin\Release\publish\MakeIcon.exe .\Build\
+ren .\Build\MakeIcon.exe makeiconw.exe
+
+copy /y .\MicaSetup.Tools\MakeMui\bin\Release\publish\MakeMui.exe .\Build\
+ren .\Build\MakeMui.exe makemuiw.exe
 
 copy /y .\MicaSetup.Tools\7-Zip\7z.dll .\Build\bin\7z.dll
 copy /y .\MicaSetup.Tools\7-Zip\7z.exe .\Build\bin\7z.exe
