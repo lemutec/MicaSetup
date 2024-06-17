@@ -6,22 +6,31 @@ public static class PrepareInstallPathHelper
 {
     public static string GetPrepareInstallPath(string keyName, bool preferX86 = false)
     {
-        try
+        if (RuntimeHelper.IsElevated)
         {
-            UninstallInfo info = RegistyUninstallHelper.Read(keyName);
-
-            if (!string.IsNullOrWhiteSpace(info.InstallLocation))
+            try
             {
-                return info.InstallLocation;
+                UninstallInfo info = RegistyUninstallHelper.Read(keyName);
+
+                if (!string.IsNullOrWhiteSpace(info.InstallLocation))
+                {
+                    return info.InstallLocation;
+                }
             }
+            catch
+            {
+                ///
+            }
+
+            if (preferX86)
+            {
+                return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\" + Option.Current.KeyName;
+            }
+            return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\" + Option.Current.KeyName;
         }
-        catch
+        else
         {
+            return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\" + Option.Current.KeyName;
         }
-        if (preferX86)
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\" + Option.Current.KeyName;
-        }
-        return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\" + Option.Current.KeyName;
     }
 }
