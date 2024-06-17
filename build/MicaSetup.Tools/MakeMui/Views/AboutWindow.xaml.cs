@@ -1,22 +1,20 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MakeMui.ViewModels;
 using System.ComponentModel;
-using System.Windows.Controls;
 using System.Windows.Media;
 using Wpf.Ui.Controls;
 
 namespace MakeMui.Views;
 
 [INotifyPropertyChanged]
-public partial class MainWindow : FluentWindow
+public partial class AboutWindow : FluentWindow
 {
-    public MainViewModel ViewModel { get; }
+    public AboutViewModel ViewModel { get; }
 
-    public MainWindow()
+    public AboutWindow()
     {
         DataContext = ViewModel = new();
         InitializeComponent();
-        ViewModel.DataGrid = dataGrid;
     }
 
     protected override void OnSourceInitialized(EventArgs e)
