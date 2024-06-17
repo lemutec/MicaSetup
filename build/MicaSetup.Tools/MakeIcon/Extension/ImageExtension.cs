@@ -8,7 +8,7 @@ using Vanara.PInvoke;
 
 namespace MakeIcon.Extension;
 
-internal static class ImageWpfExtension
+internal static class ImageExtension
 {
     public static ImageSource ToImageSource(this Bitmap bitmap)
     {

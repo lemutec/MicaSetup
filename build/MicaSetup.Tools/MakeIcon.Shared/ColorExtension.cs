@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using Color = System.Drawing.Color;
 
-namespace MakeIcon.Extension;
+namespace MakeIcon.Shared;
 
 internal static class ColorExtension
 {

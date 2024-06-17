@@ -4,9 +4,9 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
 
-namespace MakeIcon.Extension;
+namespace MakeIcon.Shared;
 
-internal static class ImageGdiExtension
+internal static class ImageExtension
 {
     public static void AddImage(this Bitmap bitmap, Bitmap overlay, int offsetX = 0, int offsetY = 0, int width = 0, int height = 0)
     {

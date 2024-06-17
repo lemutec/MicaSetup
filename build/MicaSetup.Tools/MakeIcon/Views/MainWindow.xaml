@@ -5,6 +5,7 @@
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
                   xmlns:local="clr-namespace:MakeIcon.Views"
+                  xmlns:shared="clr-namespace:MakeIcon.Shared"
                   xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
                   Title="MakeIconW"
                   Width="500"
@@ -22,9 +23,9 @@
     <Grid>
         <StackPanel Margin="0,42,0,0">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <RadioButton Content="Normal" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Normal}}" />
-                <RadioButton Content="Setup" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Setup}}" />
-                <RadioButton Content="Uninst" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Uninst}}" />
+                <RadioButton Content="Normal" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Normal}}" />
+                <RadioButton Content="Setup" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Setup}}" />
+                <RadioButton Content="Uninst" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Uninst}}" />
             </StackPanel>
             <StackPanel Margin="0,5,0,0"
                         HorizontalAlignment="Center"
@@ -59,7 +60,7 @@
                 <Image Source="{Binding ImageSource}" Stretch="None" />
             </Border>
         </StackPanel>
-        <wui:TitleBar Title="MakeIconW">
+        <wui:TitleBar Title="MakeIconW" ShowMaximize="False">
             <wui:TitleBar.Icon>
                 <wui:ImageIcon Source="pack://application:,,,/Resources/Images/Favicon.png" />
             </wui:TitleBar.Icon>

@@ -22,6 +22,9 @@ ren .\Build\MakeMica.Cli.exe makemica.exe
 copy /y .\MicaSetup.Tools\MakeIcon\bin\Release\publish\MakeIcon.exe .\Build\
 ren .\Build\MakeIcon.exe makeiconw.exe
 
+copy /y .\MicaSetup.Tools\MakeIcon.Cli\bin\Release\publish\MakeIcon.Cli.exe .\Build\
+ren .\Build\MakeIcon.Cli.exe makeicon.exe
+
 copy /y .\MicaSetup.Tools\MakeMui\bin\Release\publish\MakeMui.exe .\Build\
 ren .\Build\MakeMui.exe makemuiw.exe
 

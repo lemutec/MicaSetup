@@ -23,6 +23,10 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MakeMica.Shared", "..\build
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeMui", "..\build\MicaSetup.Tools\MakeMui\MakeMui.csproj", "{CE070827-0632-4949-8DCA-A07CE450C277}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MakeIcon.Shared", "..\build\MicaSetup.Tools\MakeIcon.Shared\MakeIcon.Shared.shproj", "{76D295D2-DC97-40EF-98B5-87706B87C945}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MakeIcon.Cli", "..\build\MicaSetup.Tools\MakeIcon.Cli\MakeIcon.Cli.csproj", "{AE27428B-858E-4596-9202-FD5EF69D545F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|x64.ActiveCfg = Release|Any CPU
 		{CE070827-0632-4949-8DCA-A07CE450C277}.Release|x64.Build.0 = Release|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Debug|x64.Build.0 = Debug|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Release|x64.ActiveCfg = Release|Any CPU
+		{AE27428B-858E-4596-9202-FD5EF69D545F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,12 +111,17 @@ Global
 		{D07191A1-8C70-4951-8DF3-7094F137EFD0} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{D9649F16-8BD5-4268-8CF8-952C8909795A} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 		{CE070827-0632-4949-8DCA-A07CE450C277} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
+		{76D295D2-DC97-40EF-98B5-87706B87C945} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
+		{AE27428B-858E-4596-9202-FD5EF69D545F} = {A4B4936D-02F8-4D9F-A441-51FDF1983EE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F356859C-CA7E-4434-BCDA-5BC25D53D330}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\build\MicaSetup.Tools\MakeIcon.Shared\MakeIcon.Shared.projitems*{76d295d2-dc97-40ef-98b5-87706b87c945}*SharedItemsImports = 13
+		..\build\MicaSetup.Tools\MakeIcon.Shared\MakeIcon.Shared.projitems*{8f560e01-afac-4a79-927c-f791ee401181}*SharedItemsImports = 5
 		..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.projitems*{90e97bf5-8462-4a14-877a-f11b71e12c2d}*SharedItemsImports = 5
+		..\build\MicaSetup.Tools\MakeIcon.Shared\MakeIcon.Shared.projitems*{ae27428b-858e-4596-9202-fd5ef69d545f}*SharedItemsImports = 5
 		..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.projitems*{d07191a1-8c70-4951-8df3-7094f137efd0}*SharedItemsImports = 5
 		..\build\MicaSetup.Tools\MakeMica.Shared\MakeMica.Shared.projitems*{d9649f16-8bd5-4268-8cf8-952c8909795a}*SharedItemsImports = 13
 	EndGlobalSection

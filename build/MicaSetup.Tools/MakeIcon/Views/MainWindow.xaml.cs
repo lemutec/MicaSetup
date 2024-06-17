@@ -1,15 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MakeIcon.Design.Controls;
 using MakeIcon.Design.Converters;
 using MakeIcon.Extension;
 using MakeIcon.Helpers;
+using MakeIcon.Shared;
 using Microsoft.Win32;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -19,8 +17,6 @@ using ToastNotifications.Lifetime;
 using ToastNotifications.Messages;
 using ToastNotifications.Position;
 using Wpf.Ui.Controls;
-using FontFamily = System.Drawing.FontFamily;
-using FontStyleX = System.Drawing.FontStyle;
 
 namespace MakeIcon.Views;
 
@@ -84,32 +80,6 @@ public partial class MainWindow : FluentWindow
         }
     }
 
-    private Bitmap ReadBitmap(string filename = "Favicon.png")
-    {
-        Bitmap bitmap = new(256, 256);
-        FontFamily fontFamily = PrivateFontHelper.FontFamily;
-
-        bitmap.AddImage(new Bitmap(filename), 0, 0, 256, 256);
-
-        if (IconType == IconType.Setup)
-        {
-            // Circle
-            bitmap.AddIconFont(Selection.Circle, 80, fontFamily, FontStyleX.Regular, "#EE24CDB9".ToColor(), 70, 75);
-
-            // Up
-            bitmap.AddIconFont(Selection.GallerySortReverse, 60, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
-        }
-        else if (IconType == IconType.Uninst)
-        {
-            // Circle
-            bitmap.AddIconFont(Selection.Circle, 80, fontFamily, FontStyleX.Regular, "#EEEB3B3B".ToColor(), 70, 75);
-
-            // Close
-            bitmap.AddIconFont(Selection.PublicCancelFilled, 60, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
-        }
-        return bitmap;
-    }
-
     [RelayCommand]
     private void OpenImage()
     {
@@ -128,7 +98,7 @@ public partial class MainWindow : FluentWindow
     [RelayCommand]
     private void CreateImage(string filename)
     {
-        ImageSource = ReadBitmap(filename)
+        ImageSource = ImageHelper.OpenImage(IconType, PrivateFontHelper.FontFamily, filename)
             .DrawFrame("#50FFFFFF".ToColor(), 1)
             .ToImageSource();
     }
@@ -146,81 +116,17 @@ public partial class MainWindow : FluentWindow
             return;
         }
 
-        string pathNoExt = $"Favicon{IconType switch
+        if (CreatePng)
         {
-            IconType.Setup => nameof(IconType.Setup),
-            IconType.Uninst => nameof(IconType.Uninst),
-            _ => string.Empty,
-        }}";
-        using Bitmap bitmap = ReadBitmap(FilePath!);
-
-        try
-        {
-            if (CreatePng)
-            {
-                string path = Path.Combine(new FileInfo(FilePath).DirectoryName, $"{pathNoExt}.png");
-
-                if (Path.GetFullPath(path) == Path.GetFullPath(FilePath))
-                {
-                    // Skip if the file is the same
-                    return;
-                }
-
-                if (File.Exists(path))
-                {
-                    File.Delete(path);
-                }
-                bitmap.Save(path, ImageFormat.Png);
-            }
-        }
-        catch
-        {
-            ///
+            ImageHelper.SaveImage(IconType, PrivateFontHelper.FontFamily, FilePath!, ".png");
         }
 
-        try
+        if (CreateIco)
         {
-            if (CreateIco)
-            {
-                string path = Path.Combine(new FileInfo(FilePath).DirectoryName, $"{pathNoExt}.ico");
-
-                if (File.Exists(path))
-                {
-                    File.Delete(path);
-                }
-                bitmap.ConvertToIco(path);
-            }
-        }
-        catch
-        {
-            ///
+            ImageHelper.SaveImage(IconType, PrivateFontHelper.FontFamily, FilePath!, ".ico");
         }
 
         notifier.ShowInformation("Create completed.");
-    }
-
-    [Obsolete]
-    [RelayCommand]
-    private void Folder()
-    {
-        if (string.IsNullOrWhiteSpace(FilePath))
-        {
-            return;
-        }
-
-        string path = Path.Combine(new FileInfo(FilePath).DirectoryName, $@"Favicon{IconType switch
-        {
-            IconType.Setup => nameof(IconType.Setup),
-            IconType.Uninst => nameof(IconType.Uninst),
-            _ => string.Empty,
-        }}.{(CreatePng ? "png" : "ico")}");
-
-        if (!File.Exists(path))
-        {
-            return;
-        }
-
-        _ = Process.Start("explorer.exe", $@"/e,/select,{path}");
     }
 
     private void OnDrop(object sender, DragEventArgs e)
@@ -246,13 +152,6 @@ public partial class MainWindow : FluentWindow
     {
         _ = new AboutWindow() { Owner = Application.Current.MainWindow }.ShowDialog();
     }
-}
-
-public enum IconType
-{
-    Normal,
-    Setup,
-    Uninst,
 }
 
 public class IconTypeValueConverter : EnumValueConverter<IconType>

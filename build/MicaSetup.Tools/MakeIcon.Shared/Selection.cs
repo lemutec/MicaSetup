@@ -1,4 +1,4 @@
-namespace MakeIcon.Design.Controls;
+namespace MakeIcon.Shared;
 
 public static class Selection
 {
