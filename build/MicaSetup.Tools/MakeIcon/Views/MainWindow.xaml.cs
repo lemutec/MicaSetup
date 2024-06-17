@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MakeIcon.Design.Controls;
+using MakeIcon.Design.Converters;
 using MakeIcon.Extension;
 using MakeIcon.Helpers;
 using Microsoft.Win32;
@@ -9,11 +10,9 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Media;
 using ToastNotifications;
 using ToastNotifications.Lifetime;
@@ -23,7 +22,7 @@ using Wpf.Ui.Controls;
 using FontFamily = System.Drawing.FontFamily;
 using FontStyleX = System.Drawing.FontStyle;
 
-namespace MakeIcon;
+namespace MakeIcon.Views;
 
 [INotifyPropertyChanged]
 public partial class MainWindow : FluentWindow
@@ -199,6 +198,18 @@ public partial class MainWindow : FluentWindow
             }
         }
     }
+
+    [RelayCommand]
+    private void ShowGitHub()
+    {
+        _ = Process.Start("https://github.com/lemutec/MicaSetup");
+    }
+
+    [RelayCommand]
+    private void ShowAbout()
+    {
+        _ = new AboutWindow() { Owner = Application.Current.MainWindow }.ShowDialog();
+    }
 }
 
 public enum IconType
@@ -210,25 +221,4 @@ public enum IconType
 
 public class IconTypeValueConverter : EnumValueConverter<IconType>
 {
-}
-
-public class EnumValueConverter<T> : IValueConverter where T : struct
-{
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value == null)
-        {
-            return false;
-        }
-        return Enum.TryParse(value.ToString(), out T enumValue) && Equals(enumValue, parameter);
-    }
-
-    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-    {
-        if (value == null)
-        {
-            return null!;
-        }
-        return Enum.Parse(typeof(T), parameter.ToString()!);
-    }
 }

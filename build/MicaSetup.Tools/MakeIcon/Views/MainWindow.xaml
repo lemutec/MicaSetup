@@ -1,8 +1,10 @@
-﻿<wui:FluentWindow x:Class="MakeIcon.MainWindow"
+﻿<wui:FluentWindow x:Class="MakeIcon.Views.MainWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:control="clr-namespace:MakeIcon.Design.Controls"
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                  xmlns:local="clr-namespace:MakeIcon"
+                  xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+                  xmlns:local="clr-namespace:MakeIcon.Views"
                   xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
                   Title="MakeIconW"
                   Width="640"
@@ -51,7 +53,7 @@
                     CornerRadius="16">
                 <Border.Background>
                     <ImageBrush AlignmentY="Top"
-                                ImageSource="Resources/Images/background-b.png"
+                                ImageSource="pack://application:,,,/Resources/Images/background-b.png"
                                 RenderOptions.BitmapScalingMode="NearestNeighbor"
                                 Stretch="UniformToFill"
                                 TileMode="Tile"
@@ -61,6 +63,46 @@
                 <Image Source="{Binding ImageSource}" Stretch="None" />
             </Border>
         </StackPanel>
-        <wui:TitleBar Title="MakeIconW" />
+        <wui:TitleBar Title="MakeIconW">
+            <wui:TitleBar.Icon>
+                <wui:ImageIcon Source="pack://application:,,,/Resources/Images/Favicon.png" />
+            </wui:TitleBar.Icon>
+            <wui:TitleBar.Header>
+                <StackPanel>
+                    <wui:Button Width="44"
+                                Height="30"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                CornerRadius="0"
+                                Icon="{wui:SymbolIcon CaretDown24}">
+                        <wui:Button.ContextMenu>
+                            <ContextMenu FontSize="12">
+                                <MenuItem Command="{Binding ShowGitHubCommand}"
+                                          FontSize="12"
+                                          Header="GitHub">
+                                    <MenuItem.Icon>
+                                        <wui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
+                                                      FontSize="16"
+                                                      Glyph="&#xf4e3;" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Command="{Binding ShowAboutCommand}"
+                                          FontSize="12"
+                                          Header="About">
+                                    <MenuItem.Icon>
+                                        <wui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
+                                                      FontSize="16"
+                                                      Glyph="&#xf3f1;" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </wui:Button.ContextMenu>
+                        <i:Interaction.Behaviors>
+                            <control:LeftContextMenuBehavior PlacementOffsetX="0" PlacementOffsetY="0" />
+                        </i:Interaction.Behaviors>
+                    </wui:Button>
+                </StackPanel>
+            </wui:TitleBar.Header>
+        </wui:TitleBar>
     </Grid>
 </wui:FluentWindow>
