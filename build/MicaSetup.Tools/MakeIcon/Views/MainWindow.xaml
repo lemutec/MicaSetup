@@ -7,8 +7,8 @@
                   xmlns:local="clr-namespace:MakeIcon.Views"
                   xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
                   Title="MakeIconW"
-                  Width="640"
-                  Height="680"
+                  Width="500"
+                  Height="600"
                   wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
                   wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                   AllowDrop="True"
@@ -32,24 +32,20 @@
                 <CheckBox Content="PNG" IsChecked="{Binding CreatePng}" />
                 <CheckBox Content="ICO" IsChecked="{Binding CreateIco}" />
             </StackPanel>
-            <StackPanel Margin="0,5,0,0"
+            <StackPanel Margin="0,8,0,0"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
                 <Button MinWidth="80"
                         Command="{Binding OpenImageCommand}"
                         Content="Open" />
                 <Button MinWidth="80"
-                        Margin="10,0,0,0"
-                        Command="{Binding SaveSquircleCommand}"
+                        Margin="24,0,0,0"
+                        Command="{Binding SaveImageCommand}"
                         Content="Save" />
-                <Button MinWidth="80"
-                        Margin="10,0,0,0"
-                        Command="{Binding FolderCommand}"
-                        Content="Folder" />
             </StackPanel>
-            <Border Width="512"
-                    Height="512"
-                    Margin="0,6,0,0"
+            <Border Width="420"
+                    Height="420"
+                    Margin="0,8,0,0"
                     CornerRadius="16">
                 <Border.Background>
                     <ImageBrush AlignmentY="Top"

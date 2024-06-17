@@ -28,7 +28,7 @@ namespace MakeIcon.Views;
 public partial class MainWindow : FluentWindow
 {
     [ObservableProperty]
-    private string? path = null;
+    private string? filePath = null;
 
     [ObservableProperty]
     private bool createPng = true;
@@ -41,9 +41,9 @@ public partial class MainWindow : FluentWindow
 
     partial void OnIconTypeChanged(IconType value)
     {
-        if (File.Exists(Path))
+        if (File.Exists(FilePath))
         {
-            CreateSquircle(Path!);
+            CreateImage(FilePath!);
         }
     }
 
@@ -121,12 +121,12 @@ public partial class MainWindow : FluentWindow
 
         if (openFileDialog.ShowDialog() ?? false)
         {
-            CreateSquircle(Path = openFileDialog.FileName);
+            CreateImage(FilePath = openFileDialog.FileName);
         }
     }
 
     [RelayCommand]
-    private void CreateSquircle(string filename)
+    private void CreateImage(string filename)
     {
         ImageSource = ReadBitmap(filename)
             .DrawFrame("#50FFFFFF".ToColor(), 1)
@@ -134,9 +134,14 @@ public partial class MainWindow : FluentWindow
     }
 
     [RelayCommand]
-    private void SaveSquircle()
+    private void SaveImage()
     {
-        if (!File.Exists(Path))
+        if (!File.Exists(FilePath))
+        {
+            return;
+        }
+
+        if (!CreatePng && !CreateIco)
         {
             return;
         }
@@ -147,13 +152,25 @@ public partial class MainWindow : FluentWindow
             IconType.Uninst => nameof(IconType.Uninst),
             _ => string.Empty,
         }}";
-        using Bitmap bitmap = ReadBitmap(Path!);
+        using Bitmap bitmap = ReadBitmap(FilePath!);
 
         try
         {
             if (CreatePng)
             {
-                bitmap.Save($"{pathNoExt}.png", ImageFormat.Png);
+                string path = Path.Combine(new FileInfo(FilePath).DirectoryName, $"{pathNoExt}.png");
+
+                if (Path.GetFullPath(path) == Path.GetFullPath(FilePath))
+                {
+                    // Skip if the file is the same
+                    return;
+                }
+
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+                bitmap.Save(path, ImageFormat.Png);
             }
         }
         catch
@@ -165,7 +182,13 @@ public partial class MainWindow : FluentWindow
         {
             if (CreateIco)
             {
-                bitmap.ConvertToIco($"{pathNoExt}.ico");
+                string path = Path.Combine(new FileInfo(FilePath).DirectoryName, $"{pathNoExt}.ico");
+
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+                bitmap.ConvertToIco(path);
             }
         }
         catch
@@ -176,15 +199,28 @@ public partial class MainWindow : FluentWindow
         notifier.ShowInformation("Create completed.");
     }
 
+    [Obsolete]
     [RelayCommand]
     private void Folder()
     {
-        _ = Process.Start("explorer.exe", $"/e,/select,Favicon{(IconType switch
+        if (string.IsNullOrWhiteSpace(FilePath))
+        {
+            return;
+        }
+
+        string path = Path.Combine(new FileInfo(FilePath).DirectoryName, $@"Favicon{IconType switch
         {
             IconType.Setup => nameof(IconType.Setup),
             IconType.Uninst => nameof(IconType.Uninst),
             _ => string.Empty,
-        })}.png");
+        }}.{(CreatePng ? "png" : "ico")}");
+
+        if (!File.Exists(path))
+        {
+            return;
+        }
+
+        _ = Process.Start("explorer.exe", $@"/e,/select,{path}");
     }
 
     private void OnDrop(object sender, DragEventArgs e)
@@ -194,7 +230,7 @@ public partial class MainWindow : FluentWindow
             if (e.Data.GetData(DataFormats.FileDrop) is string[] files
                 && files.FirstOrDefault() is string path)
             {
-                CreateSquircle(Path = path);
+                CreateImage(FilePath = path);
             }
         }
     }
