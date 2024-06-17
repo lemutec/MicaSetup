@@ -50,6 +50,7 @@ public static class StartMenuHelper
         }
     }
 
+    [Stable(false)]
     public static bool PinToStartMenu(string filePath)
     {
         if (!File.Exists(filePath))

@@ -6,6 +6,7 @@ namespace MicaSetup.Helper;
 /// TODO
 /// </summary>
 [Auth(Auth.Unknown)]
+[Stable(false)]
 public class DotNetCoreInstallerHelper
 {
 }
