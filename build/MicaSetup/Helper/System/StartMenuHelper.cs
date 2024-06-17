@@ -3,6 +3,7 @@ using MicaSetup.Natives;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace MicaSetup.Helper;
@@ -47,5 +48,41 @@ public static class StartMenuHelper
         {
             Directory.Delete(startMenuFolderPath, true);
         }
+    }
+
+    public static bool PinToStartMenu(string filePath)
+    {
+        if (!File.Exists(filePath))
+        {
+            Logger.Warn("File does not exist.");
+            return false;
+        }
+
+        try
+        {
+            Type shellType = Type.GetTypeFromProgID("Shell.Application");
+            object shellObject = Activator.CreateInstance(shellType);
+            dynamic folder = shellType.InvokeMember("Namespace", BindingFlags.InvokeMethod, null, shellObject, [new FileInfo(filePath).DirectoryName]);
+            dynamic item = folder.ParseName(new FileInfo(filePath).Name);
+            dynamic verbs = item.Verbs();
+
+            foreach (dynamic verb in verbs)
+            {
+                string name = verb.Name.ToString();
+                Logger.Info(verb.Name.ToString());
+
+                if (name.EndsWith("(&P)", StringComparison.OrdinalIgnoreCase))
+                {
+                    verb.DoIt();
+                    return true;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.Error(e);
+        }
+
+        return false;
     }
 }

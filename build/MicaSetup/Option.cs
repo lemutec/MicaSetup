@@ -64,6 +64,12 @@ public partial class Option
     public bool IsCreateQuickLaunch { get; set; } = false;
 
     /// <summary>
+    /// Indicates whether to generate StartMenu Shortcut
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsPinToStartMenu { get; set; } = false;
+
+    /// <summary>
     /// Indicates whether to generate AutoRun
     /// </summary>
     [Category("GlobalSetting")]

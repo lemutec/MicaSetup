@@ -175,7 +175,25 @@ public static class InstallHelper
         {
             try
             {
-                ShortcutHelper.CreateShortcutOnQuickLaunch(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+                if (RuntimeHelper.IsElevated)
+                {
+                    ShortcutHelper.CreateShortcutOnQuickLaunch(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
+        if (Option.Current.IsPinToStartMenu)
+        {
+            try
+            {
+                if (RuntimeHelper.IsElevated)
+                {
+                    _ = StartMenuHelper.PinToStartMenu(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+                }
             }
             catch (Exception e)
             {

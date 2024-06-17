@@ -33,7 +33,8 @@ internal class Program
                 option.IsCreateDesktopShortcut = true;
                 option.IsCreateUninst = true;
                 option.IsCreateStartMenu = true;
-                option.IsCreateQuickLaunch = false;
+                option.IsPinToStartMenu = false;
+                option.IsCreateQuickLaunch = true;
                 option.IsCreateRegistryKeys = true;
                 option.IsCreateAsAutoRun = true;
                 option.IsCustomizeVisiableAutoRun = true;
