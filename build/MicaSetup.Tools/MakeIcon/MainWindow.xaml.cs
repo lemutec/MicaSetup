@@ -146,7 +146,6 @@ public partial class MainWindow : FluentWindow
         {
             IconType.Setup => nameof(IconType.Setup),
             IconType.Uninst => nameof(IconType.Uninst),
-            IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         }}";
         using Bitmap bitmap = ReadBitmap(Path!);
@@ -185,7 +184,6 @@ public partial class MainWindow : FluentWindow
         {
             IconType.Setup => nameof(IconType.Setup),
             IconType.Uninst => nameof(IconType.Uninst),
-            IconType.Raw => nameof(IconType.Raw),
             _ => string.Empty,
         })}.png");
     }
@@ -208,7 +206,6 @@ public enum IconType
     Normal,
     Setup,
     Uninst,
-    Raw,
 }
 
 public class IconTypeValueConverter : EnumValueConverter<IconType>

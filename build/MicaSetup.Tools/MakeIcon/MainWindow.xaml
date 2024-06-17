@@ -23,7 +23,6 @@
                 <RadioButton Content="Normal" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Normal}}" />
                 <RadioButton Content="Setup" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Setup}}" />
                 <RadioButton Content="Uninst" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Uninst}}" />
-                <RadioButton Content="Raw" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static local:IconType.Raw}}" />
             </StackPanel>
             <StackPanel Margin="0,5,0,0"
                         HorizontalAlignment="Center"
