@@ -1,8 +1,10 @@
-﻿using MicaSetup.Natives;
+﻿using MicaSetup.Attributes;
+using MicaSetup.Natives;
 using Microsoft.Win32;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class LongPathHelper
 {
     /// <summary>

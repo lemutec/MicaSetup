@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using MicaSetup.Attributes;
+using Microsoft.Win32;
 using System;
 
 namespace MicaSetup.Helper;
@@ -6,6 +7,7 @@ namespace MicaSetup.Helper;
 /// <summary>
 /// https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
 /// </summary>
+[Auth(Auth.Admin)]
 public static class DotNetVersionHelper
 {
     public static Version? GetNet4xVersion()

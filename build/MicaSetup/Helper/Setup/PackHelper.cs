@@ -74,7 +74,7 @@ public static class PackHelper
     private static TAssy[] GetAssemblies<TAssy>(Assembly assembly = null!)
     {
         object[] attributes = (assembly ?? Assembly.GetExecutingAssembly()).GetCustomAttributes(typeof(TAssy), false);
-        List<TAssy> attributeList = new();
+        List<TAssy> attributeList = [];
 
         foreach (object attribute in attributes)
         {

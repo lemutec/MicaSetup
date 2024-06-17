@@ -1,10 +1,12 @@
-﻿using Microsoft.Win32;
+﻿using MicaSetup.Attributes;
+using Microsoft.Win32;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.User)]
 public static class RegistyAutoRunHelper
 {
-    private const string RunLocation = @"Software\Microsoft\Windows\CurrentVersion\Run";
+    private const string RunLocation = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 
     public static void Enable(string keyName, string launchCommand)
     {

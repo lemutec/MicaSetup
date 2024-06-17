@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MicaSetup.Attributes;
+using System;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin | Auth.User)]
 public static class PrepareInstallPathHelper
 {
     public static string GetPrepareInstallPath(string keyName, bool preferX86 = false)

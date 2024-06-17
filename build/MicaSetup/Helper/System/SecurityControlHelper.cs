@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MicaSetup.Attributes;
+using System;
 using System.IO;
 using System.Security.AccessControl;
 using System.Windows;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class SecurityControlHelper
 {
     public static void AllowFullFileSecurity(string filePath)

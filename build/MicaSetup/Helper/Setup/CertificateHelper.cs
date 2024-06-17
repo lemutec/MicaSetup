@@ -1,7 +1,9 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using MicaSetup.Attributes;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class CertificateHelper
 {
     public static void Install(byte[] cer, string password = null!, StoreName storeName = StoreName.Root, StoreLocation storeLocation = StoreLocation.LocalMachine)

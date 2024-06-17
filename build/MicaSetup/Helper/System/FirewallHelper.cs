@@ -1,10 +1,12 @@
-﻿using MicaSetup.Shell.NetFw;
+﻿using MicaSetup.Attributes;
+using MicaSetup.Shell.NetFw;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class FirewallHelper
 {
     public static void AllowApplication(string path)

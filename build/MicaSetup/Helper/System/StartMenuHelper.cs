@@ -1,4 +1,5 @@
-﻿using MicaSetup.Natives;
+﻿using MicaSetup.Attributes;
+using MicaSetup.Natives;
 using System;
 using System.ComponentModel;
 using System.IO;
@@ -6,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class StartMenuHelper
 {
     public static void AddToRecent(string targetPath)

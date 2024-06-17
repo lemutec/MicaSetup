@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using MicaSetup.Attributes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ namespace MicaSetup.Helper;
 
 #pragma warning disable CS8601
 
+[Auth(Auth.Admin)]
 public static class RegistyUninstallHelper
 {
     public static void Write(UninstallInfo info)

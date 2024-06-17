@@ -1,5 +1,8 @@
-﻿namespace MicaSetup.Helper;
+﻿using MicaSetup.Attributes;
 
+namespace MicaSetup.Helper;
+
+[Auth(Auth.Admin)]
 public static class PrepareUninstallPathHelper
 {
     public static UninstallDataInfo GetPrepareUninstallPath(string keyName)

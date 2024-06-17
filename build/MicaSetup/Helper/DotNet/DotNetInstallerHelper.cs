@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MicaSetup.Attributes;
+using System;
 using System.ComponentModel;
 using System.IO;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class DotNetInstallerHelper
 {
     public static DotNetInstallInfo GetInfo(Version version, bool offline = false)

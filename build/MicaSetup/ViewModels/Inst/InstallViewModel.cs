@@ -57,7 +57,10 @@ public partial class InstallViewModel : ObservableObject
             {
                 try
                 {
-                    SecurityControlHelper.AllowFullFolderSecurity(Option.Current.InstallLocation);
+                    if (RuntimeHelper.IsElevated)
+                    {
+                        SecurityControlHelper.AllowFullFolderSecurity(Option.Current.InstallLocation);
+                    }
                 }
                 catch (Exception e)
                 {
@@ -69,7 +72,10 @@ public partial class InstallViewModel : ObservableObject
             {
                 try
                 {
-                    FirewallHelper.AllowApplication(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+                    if (RuntimeHelper.IsElevated)
+                    {
+                        FirewallHelper.AllowApplication(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
+                    }
                 }
                 catch (Exception e)
                 {

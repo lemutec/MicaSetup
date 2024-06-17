@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MicaSetup.Attributes;
+using System;
 using System.IO;
 using System.Windows;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class StartMenuAutoRunHelper
 {
     public static string StartupFolder => Environment.GetEnvironmentVariable("windir") + @"\..\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\";

@@ -14,8 +14,11 @@ public static class InstallHelper
         {
             try
             {
-                byte[] cer = ResourceHelper.GetBytes("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.cer");
-                CertificateHelper.Install(cer);
+                if (RuntimeHelper.IsElevated)
+                {
+                    byte[] cer = ResourceHelper.GetBytes("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.cer");
+                    CertificateHelper.Install(cer);
+                }
             }
             catch (Exception e)
             {
@@ -184,7 +187,10 @@ public static class InstallHelper
         {
             try
             {
-                StartMenuHelper.CreateStartMenuFolder(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName), Option.Current.IsCreateUninst);
+                if (RuntimeHelper.IsElevated)
+                {
+                    StartMenuHelper.CreateStartMenuFolder(Option.Current.DisplayName, Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName), Option.Current.IsCreateUninst);
+                }
             }
             catch (Exception e)
             {

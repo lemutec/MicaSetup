@@ -1,9 +1,11 @@
-﻿using MicaSetup.Natives;
+﻿using MicaSetup.Attributes;
+using MicaSetup.Natives;
 using System.Drawing;
 using System.Drawing.Text;
 
 namespace MicaSetup.Helper;
 
+[Auth(Auth.Admin)]
 public static class SystemFontHelper
 {
     public static bool HasFontFamily(string familyName, int? language = null!)
