@@ -8,8 +8,8 @@
                   xmlns:shared="clr-namespace:MakeIcon.Shared"
                   xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
                   Title="MakeIconW"
-                  Width="500"
-                  Height="600"
+                  Width="550"
+                  Height="640"
                   wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
                   wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                   AllowDrop="True"
@@ -21,31 +21,73 @@
         <local:IconTypeValueConverter x:Key="IconTypeValueConverter" />
     </Window.Resources>
     <Grid>
-        <StackPanel Margin="0,42,0,0">
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <RadioButton Content="Normal" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Normal}}" />
-                <RadioButton Content="Setup" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Setup}}" />
-                <RadioButton Content="Uninst" IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Uninst}}" />
+        <Grid Margin="16,42,16,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBlock MinWidth="80"
+                           Margin="0,0,16,0"
+                           VerticalAlignment="Center">
+                    <Run Text="Icon Type" /><Run Text=":" />
+                </TextBlock>
+                <RadioButton MinWidth="100"
+                             Content="Normal"
+                             IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Normal}}" />
+                <RadioButton MinWidth="100"
+                             Content="Setup"
+                             IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Setup}}" />
+                <RadioButton MinWidth="100"
+                             Content="Uninst"
+                             IsChecked="{Binding IconType, Converter={StaticResource IconTypeValueConverter}, ConverterParameter={x:Static shared:IconType.Uninst}}" />
             </StackPanel>
-            <StackPanel Margin="0,5,0,0"
-                        HorizontalAlignment="Center"
+            <StackPanel Grid.Row="1"
+                        Margin="0,8,0,0"
                         Orientation="Horizontal">
-                <CheckBox Content="PNG" IsChecked="{Binding CreatePng}" />
-                <CheckBox Content="ICO" IsChecked="{Binding CreateIco}" />
+                <TextBlock MinWidth="80"
+                           Margin="0,0,16,0"
+                           VerticalAlignment="Center">
+                    <Run Text="Icon Size" /><Run Text=":" />
+                </TextBlock>
+                <CheckBox MinWidth="70"
+                          Content="256"
+                          IsChecked="{Binding IsSize256}" />
+                <CheckBox MinWidth="70"
+                          Content="64"
+                          IsChecked="{Binding IsSize64}" />
+                <CheckBox MinWidth="70"
+                          Content="48"
+                          IsChecked="{Binding IsSize48}" />
+                <CheckBox MinWidth="70"
+                          Content="32"
+                          IsChecked="{Binding IsSize32}" />
+                <CheckBox MinWidth="70"
+                          Content="24"
+                          IsChecked="{Binding IsSize24}" />
+                <CheckBox MinWidth="70"
+                          Content="16"
+                          IsChecked="{Binding IsSize16}" />
             </StackPanel>
-            <StackPanel Margin="0,8,0,0"
-                        HorizontalAlignment="Center"
+            <StackPanel Grid.Row="2"
+                        Margin="0,5,0,0"
                         Orientation="Horizontal">
-                <Button MinWidth="80"
-                        Command="{Binding OpenImageCommand}"
-                        Content="Open" />
-                <Button MinWidth="80"
-                        Margin="24,0,0,0"
-                        Command="{Binding SaveImageCommand}"
-                        Content="Save" />
+                <TextBlock MinWidth="80"
+                           Margin="0,0,16,0"
+                           VerticalAlignment="Center">
+                    <Run Text="Extension" /><Run Text=":" />
+                </TextBlock>
+                <CheckBox MinWidth="80"
+                          Content="PNG"
+                          IsChecked="{Binding IsCreatePng}" />
+                <CheckBox MinWidth="80"
+                          Content="ICO"
+                          IsChecked="{Binding IsCreateIco}" />
             </StackPanel>
-            <Border Width="420"
-                    Height="420"
+            <Border Grid.Row="3"
                     Margin="0,8,0,0"
                     CornerRadius="16">
                 <Border.Background>
@@ -59,7 +101,19 @@
                 </Border.Background>
                 <Image Source="{Binding ImageSource}" Stretch="None" />
             </Border>
-        </StackPanel>
+            <StackPanel Grid.Row="4"
+                        Margin="0,8,0,0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button MinWidth="80"
+                        Command="{Binding OpenImageCommand}"
+                        Content="Open" />
+                <Button MinWidth="80"
+                        Margin="24,0,0,0"
+                        Command="{Binding SaveImageCommand}"
+                        Content="Save" />
+            </StackPanel>
+        </Grid>
         <wui:TitleBar Title="MakeIconW" ShowMaximize="False">
             <wui:TitleBar.Icon>
                 <wui:ImageIcon Source="pack://application:,,,/Resources/Images/Favicon.png" />

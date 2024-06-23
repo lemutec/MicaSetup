@@ -34,7 +34,7 @@ public static class ImageHelper
         return bitmap;
     }
 
-    public static void SaveImage(IconType type, FontFamily fontFamily, string filename = "Favicon.png", string ext = ".png")
+    public static void SaveImage(IconType type, FontFamily fontFamily, string filename = "Favicon.png", string ext = ".png", int[]? size = null)
     {
         using Bitmap bitmap = OpenImage(type, fontFamily, filename);
         string pathNoExt = $"Favicon{type switch
@@ -75,7 +75,7 @@ public static class ImageHelper
                 {
                     File.Delete(output);
                 }
-                bitmap.ConvertToIco(output);
+                bitmap.ConvertToIco(output, size);
             }
         }
         catch

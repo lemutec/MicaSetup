@@ -6,7 +6,7 @@ namespace MicaSetup.Helper;
 
 internal static class JsonHelper
 {
-    public static string SerializeObject(IDictionary<string, object?> obj)
+    public static string SerializeObject(IDictionary<string, dynamic?> obj)
     {
         StringBuilder json = new("{");
         bool first = true;
@@ -42,9 +42,9 @@ internal static class JsonHelper
         return json.ToString();
     }
 
-    public static IDictionary<string, object?> DeserializeObject(string json)
+    public static IDictionary<string, dynamic?> DeserializeObject(string json)
     {
-        Dictionary<string, object?> obj = [];
+        Dictionary<string, dynamic?> obj = [];
         Regex regex = new("\"(?<key>[^\"]+)\"\\s*:\\s*(?<value>null|\"(?<string>[^\"]*)\"|(?<number>\\d+(?:\\.\\d+)?|true|false))");
         MatchCollection matches = regex.Matches(json);
 
