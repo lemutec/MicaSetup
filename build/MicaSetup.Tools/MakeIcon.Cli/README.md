@@ -1,16 +1,8 @@
 # MakeIcon.Cli
 
-Universal Windows Icon Generator.
+Universal Windows Icon Generator CLI for MicaSetup.
 
 ## Usage
-
-```bash
-makeicon --input "C:\Users\ema\Desktop\1.png" --type "normal,setup,uninst" --size "256,128" --ext "png,ico"
-```
-
-and then `Favicon.png`, `Favicon.ico`, `FaviconSetup.png`, `FaviconSetup.ico`, `FaviconUninst.png`, `FaviconUninst.ico` will be created.
-
-## Help
 
 ```bash
 makeicon --help
@@ -27,4 +19,14 @@ Options:
   --version        Show version information
   -?, -h, --help   Show help and usage information
 ```
+
+### Example
+
+```bash
+makeicon --input "C:\Users\ema\Desktop\1.png" --type "normal,setup,uninst" --size "256,128" --ext "png,ico"
+```
+
+and then `Favicon.png`, `Favicon.ico`, `FaviconSetup.png`, `FaviconSetup.ico`, `FaviconUninst.png`, `FaviconUninst.ico` will be created.
+
+
 
