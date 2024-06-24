@@ -18,7 +18,7 @@ using ToastNotifications.Position;
 
 namespace MakeIcon.ViewModels;
 
-public partial class MainWindowViewModel : ObservableObject
+public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
 {
     [ObservableProperty]
     private string? filePath = null;
@@ -39,6 +39,15 @@ public partial class MainWindowViewModel : ObservableObject
             CreateImage(FilePath!);
         }
     }
+
+    [Obsolete("Only for CLI")]
+    public bool IsTypeNormal { get; set; } = false;
+
+    [Obsolete("Only for CLI")]
+    public bool IsTypeSetup { get; set; } = false;
+
+    [Obsolete("Only for CLI")]
+    public bool IsTypeUninst { get; set; } = false;
 
     [ObservableProperty]
     private ImageSource? imageSource = null!;

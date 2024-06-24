@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MakeIcon.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "--input \"C:\\Users\\ema\\Desktop\\1.png\" --size 256,128 --ext png,ico --type normal,setup,uninst"
+    }
+  }
+}

@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ImageExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ImageHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IconType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IMakeIconParam.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Selection.cs" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@ namespace MicaSetup.Helper;
 
 public static class CommandLineHelper
 {
-    public static StringDictionary Values { get; private set; } = new();
+    public static StringDictionary Values { get; private set; } = [];
 
     static CommandLineHelper()
     {

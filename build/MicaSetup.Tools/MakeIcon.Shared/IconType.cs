@@ -2,7 +2,7 @@
 
 public enum IconType
 {
-    Normal,
-    Setup,
-    Uninst,
+    Normal = 0b0000,
+    Setup = 0b0001,
+    Uninst = 0b0010,
 }

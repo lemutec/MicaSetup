@@ -5,6 +5,8 @@
 		<TargetFramework>net472</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<UseWPF>false</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
 		<LangVersion>12.0</LangVersion>
 		<AssemblyVersion>2.0.3.0</AssemblyVersion>
 		<FileVersion>2.0.3.0</FileVersion>
@@ -13,11 +15,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Costura.Fody" Version="5.7.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
+		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
 	</ItemGroup>
 
 	<Import Project="..\MakeIcon.Shared\MakeIcon.Shared.projitems" Label="Shared" />
