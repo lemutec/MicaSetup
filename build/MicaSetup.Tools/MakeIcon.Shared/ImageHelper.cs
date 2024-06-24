@@ -75,7 +75,7 @@ public static class ImageHelper
                 {
                     File.Delete(output);
                 }
-                bitmap.ConvertToIco(output, size);
+                bitmap.ConvertToIco(output, size ?? [256]);
             }
         }
         catch
