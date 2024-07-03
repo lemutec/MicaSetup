@@ -41,6 +41,7 @@ internal class Program
                 option.IsAllowFirewall = true;
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
+                option.IsEnableUninstallDelayUntilReboot = true;
                 option.AppName = "MicaApp";
                 option.KeyName = "MicaApp";
                 option.ExeName = "MicaApp.exe";

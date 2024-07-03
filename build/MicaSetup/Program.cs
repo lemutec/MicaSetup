@@ -46,6 +46,7 @@ internal class Program
                 option.IsAllowFirewall = true;
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
+                option.IsEnableUninstallDelayUntilReboot = true;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;

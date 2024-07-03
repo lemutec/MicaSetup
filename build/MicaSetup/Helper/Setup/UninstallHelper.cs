@@ -10,7 +10,7 @@ public static class UninstallHelper
 {
     public static void Uninstall(Action<double, string> progressCallback = null!, Action<UninstallReport, object> reportCallback = null!)
     {
-        List<string> deleteDelayUntilRebootList = new();
+        List<string> deleteDelayUntilRebootList = [];
         UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
 
         Option.Current.InstallLocation = uinfo.InstallLocation;
@@ -21,7 +21,7 @@ public static class UninstallHelper
                 string[] uninstallDatas = uinfo.UninstallDataFullPath;
                 double countMax = uninstallDatas.Length;
                 int count = 0;
-                List<string> dirs = new();
+                List<string> dirs = [];
 
                 foreach (string file in uninstallDatas)
                 {
@@ -283,7 +283,15 @@ public static class UninstallHelper
     /// </returns>
     public static bool DeleteDelayUntilReboot(string filePath)
     {
-        return Kernel32.MoveFileEx(filePath, null!, MoveFileFlags.MOVEFILE_DELAY_UNTIL_REBOOT);
+        if (Option.Current.IsEnableUninstallDelayUntilReboot)
+        {
+            return Kernel32.MoveFileEx(filePath, null!, MoveFileFlags.MOVEFILE_DELAY_UNTIL_REBOOT);
+        }
+        else
+        {
+            // I had to pretend that the deletion was successful.
+            return true;
+        }
     }
 }
 

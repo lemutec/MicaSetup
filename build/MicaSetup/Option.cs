@@ -130,6 +130,12 @@ public partial class Option
     public bool IsInstallCertificate { get; set; } = false;
 
     /// <summary>
+    /// Indicates whether to enable `DeleteDelayUntilReboot`
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsEnableUninstallDelayUntilReboot { get; set; } = false;
+
+    /// <summary>
     /// The file ext filter to remove when overlay install
     /// Using just like "exe,dll,pdb"
     /// </summary>
