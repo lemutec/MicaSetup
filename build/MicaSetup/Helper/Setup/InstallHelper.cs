@@ -128,41 +128,42 @@ public static class InstallHelper
             uninstallData.Append('|'); // The  '|' is a good split char for file path.
         }, readerOptions: readerOptions, options: extractionOptions);
 
-        if (Option.Current.IsCreateRegistryKeys)
+        if (Option.Current.IsCreateRegistryKeys && RuntimeHelper.IsElevated)
         {
-            if (RuntimeHelper.IsElevated)
+            UninstallInfo info = new()
             {
-                UninstallInfo info = new()
-                {
-                    KeyName = Option.Current.KeyName,
-                    DisplayName = Option.Current.DisplayName,
-                    DisplayVersion = Option.Current.DisplayVersion,
-                    InstallLocation = Option.Current.InstallLocation,
-                    Publisher = Option.Current.Publisher,
-                    UninstallString = Option.Current.UninstallString,
-                    SystemComponent = Option.Current.SystemComponent,
-                };
+                KeyName = Option.Current.KeyName,
+                DisplayName = Option.Current.DisplayName,
+                DisplayVersion = Option.Current.DisplayVersion,
+                InstallLocation = Option.Current.InstallLocation,
+                Publisher = Option.Current.Publisher,
+                UninstallString = Option.Current.UninstallString,
+                SystemComponent = Option.Current.SystemComponent,
+            };
 
-                if (string.IsNullOrWhiteSpace(Option.Current.DisplayIcon))
-                {
-                    info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName);
-                }
-                else
-                {
-                    info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.DisplayIcon);
-                }
-                info.UninstallString ??= Path.Combine(Option.Current.InstallLocation, "Uninst.exe");
-                info.UninstallData = uninstallData.ToString();
-
-                try
-                {
-                    RegistyUninstallHelper.Write(info);
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
+            if (string.IsNullOrWhiteSpace(Option.Current.DisplayIcon))
+            {
+                info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName);
             }
+            else
+            {
+                info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.DisplayIcon);
+            }
+            info.UninstallString ??= Path.Combine(Option.Current.InstallLocation, "Uninst.exe");
+            info.UninstallData = uninstallData.ToString();
+
+            try
+            {
+                RegistyUninstallHelper.Write(info);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+        else
+        {
+            // TODO: create uninstall log
         }
 
         try
