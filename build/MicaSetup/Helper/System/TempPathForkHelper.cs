@@ -24,7 +24,7 @@ public static class TempPathForkHelper
                 string domainFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppDomain.CurrentDomain.FriendlyName);
                 File.Copy(domainFilePath, forkedFilePath);
                 Logger.Info($"[UseTempPathFork] Copy domain file from '{domainFilePath}' to '{forkedFilePath}'");
-                RuntimeHelper.RestartAsElevated(forkedFilePath, tempPath, $"{RuntimeHelper.ReArguments()} /{ForkedCli}");
+                RuntimeHelper.Restart(forkedFilePath, tempPath, $"{RuntimeHelper.ReArguments()} /{ForkedCli}");
             }
             catch (Exception e)
             {

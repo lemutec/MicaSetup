@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicaSetup.Attributes;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -44,7 +45,7 @@ public static class RuntimeHelper
         }
         if (!IsElevated)
         {
-            RestartAsElevated();
+            Restart();
         }
     }
 
@@ -59,7 +60,7 @@ public static class RuntimeHelper
         return string.Join(" ", args);
     }
 
-    public static void RestartAsElevated(string fileName = null!, string dir = null!, string args = null!, int? exitCode = null, bool forced = false)
+    public static void Restart(string fileName = null!, string dir = null!, string args = null!, int? exitCode = null, bool forced = false)
     {
         try
         {
@@ -68,7 +69,7 @@ public static class RuntimeHelper
                 .Arguments(args ?? ReArguments())
                 .WorkingDirectory(dir ?? Environment.CurrentDirectory)
                 .UseShellExecute()
-                .Verb("runas")
+                .Verb(RequestExecutionLevelAttribute.IsRequestAdmin ? "runas" : string.Empty)
                 .Start()
                 .Forget();
         }
