@@ -114,7 +114,6 @@
                             <Setter Property="Opacity" Value="0.3" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource PressedForeground}" />
                             <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundPressed}" />
                             <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushPressed}" />
                         </Trigger>
