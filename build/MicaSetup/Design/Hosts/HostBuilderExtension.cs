@@ -1,4 +1,5 @@
-﻿using MicaSetup.Extension.DependencyInjection;
+﻿using MicaSetup.Attributes;
+using MicaSetup.Extension.DependencyInjection;
 using MicaSetup.Helper;
 using MicaSetup.Natives;
 using MicaSetup.Services;
@@ -53,9 +54,14 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UseElevated(this IHostBuilder builder)
+    public static IHostBuilder UseElevated(this IHostBuilder builder, bool? isElevated = null)
     {
-        RuntimeHelper.EnsureElevated();
+        isElevated ??= RequestExecutionLevelAttribute.IsRequestAdmin;
+
+        if (isElevated ?? false)
+        {
+            RuntimeHelper.EnsureElevated();
+        }
         return builder;
     }
 

@@ -9,6 +9,7 @@ namespace MicaSetup.Helper;
 [Auth(Auth.Admin)]
 public static class SecurityControlHelper
 {
+    [Auth(Auth.Admin)]
     public static void AllowFullFileSecurity(string filePath)
     {
         if (!RuntimeHelper.IsElevated)
@@ -31,6 +32,7 @@ public static class SecurityControlHelper
         }
     }
 
+    [Auth(Auth.Admin)]
     public static void AllowFullFolderSecurity(string dirPath)
     {
         if (!RuntimeHelper.IsElevated)

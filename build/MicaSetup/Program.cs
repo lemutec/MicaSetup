@@ -1,4 +1,5 @@
-﻿using MicaSetup.Design.Controls;
+﻿using MicaSetup.Attributes;
+using MicaSetup.Design.Controls;
 using MicaSetup.Extension.DependencyInjection;
 using MicaSetup.Services;
 using MicaSetup.Views;
@@ -14,6 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
 [assembly: AssemblyVersion("2.0.3.0")]
 [assembly: AssemblyFileVersion("2.0.3.0")]
+[assembly: RequestExecutionLevel("admin")]
 
 namespace MicaSetup;
 
