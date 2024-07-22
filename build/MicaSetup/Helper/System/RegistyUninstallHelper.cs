@@ -11,6 +11,7 @@ namespace MicaSetup.Helper;
 [Auth(Auth.Admin)]
 public static class RegistyUninstallHelper
 {
+    [Auth(Auth.Admin)]
     public static void Write(UninstallInfo info)
     {
         using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Option.Current.IsUseRegistryPreferX86 switch
@@ -33,6 +34,7 @@ public static class RegistyUninstallHelper
         subKey.SetValue("SystemComponent", info.SystemComponent ? 1 : 0, RegistryValueKind.DWord);
     }
 
+    [Auth(Auth.Admin)]
     public static UninstallInfo Read(string keyName)
     {
         UninstallInfo info = new()
@@ -57,6 +59,7 @@ public static class RegistyUninstallHelper
         return info;
     }
 
+    [Auth(Auth.Admin)]
     public static void Delete(string keyName)
     {
         using RegistryKey key = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, Option.Current.IsUseRegistryPreferX86 switch
