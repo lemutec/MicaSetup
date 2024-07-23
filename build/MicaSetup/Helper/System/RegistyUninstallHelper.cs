@@ -98,13 +98,13 @@ public class UninstallDataInfo
     {
         get
         {
-            List<string> paths = new();
+            List<string> paths = [];
 
             foreach (string uninstallDataCurrent in UninstallData?.Split('|', '\n') ?? Array.Empty<string>())
             {
                 paths.Add(Path.Combine(InstallLocation ?? string.Empty, uninstallDataCurrent));
             }
-            return paths.ToArray();
+            return [.. paths];
         }
     }
 

@@ -44,4 +44,5 @@
     <s:String x:Key="Customize">自定义选项</s:String>
     <s:String x:Key="CustomizeAutoRun">开机自动启动</s:String>
     <s:String x:Key="CustomizeDesktopShortcut">添加桌面快捷方式</s:String>
+    <s:String x:Key="InstallationInfoLostHint">安装信息已丢失，请手动删除文件。</s:String>
 </ResourceDictionary>

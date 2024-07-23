@@ -35,13 +35,20 @@ public partial class MainViewModel : ObservableObject
     {
         try
         {
-            UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
-
-            Option.Current.InstallLocation = uinfo.InstallLocation;
-            if (!FileWritableHelper.CheckWritable(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)))
+            if (RuntimeHelper.IsElevated)
             {
-                _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
-                return;
+                UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
+
+                Option.Current.InstallLocation = uinfo.InstallLocation;
+                if (!FileWritableHelper.CheckWritable(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)))
+                {
+                    _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
+                    return;
+                }
+            }
+            else
+            {
+                // Unable to check the filelock from register, so skip it.
             }
         }
         catch (Exception e)

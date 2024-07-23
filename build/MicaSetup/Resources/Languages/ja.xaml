@@ -43,4 +43,5 @@
     <s:String x:Key="Customize">カスタマイズ</s:String>
     <s:String x:Key="CustomizeAutoRun">自動起動</s:String>
     <s:String x:Key="CustomizeDesktopShortcut">ショートカット</s:String>
+    <s:String x:Key="InstallationInfoLostHint">インストール情報が失われたため、手動でファイルを削除してください。</s:String>
 </ResourceDictionary>

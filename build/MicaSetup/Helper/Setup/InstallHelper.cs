@@ -163,7 +163,21 @@ public static class InstallHelper
         }
         else
         {
-            // TODO: create uninstall log
+            try
+            {
+                string uninstDataPath = Path.Combine(Option.Current.InstallLocation, "Uninst.dat");
+
+                if (File.Exists(uninstDataPath))
+                {
+                    // Not allow user file named the same as it.
+                    File.Delete(uninstDataPath);
+                }
+                File.WriteAllText(uninstDataPath, uninstallData.ToString());
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
 
         try

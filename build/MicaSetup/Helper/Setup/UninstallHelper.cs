@@ -1,4 +1,5 @@
-﻿using MicaSetup.Natives;
+﻿using MicaSetup.Design.Controls;
+using MicaSetup.Natives;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,31 @@ public static class UninstallHelper
     public static void Uninstall(Action<double, string> progressCallback = null!, Action<UninstallReport, object> reportCallback = null!)
     {
         List<string> deleteDelayUntilRebootList = [];
-        UninstallDataInfo uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
+        UninstallDataInfo uinfo = null!;
+
+        if (RuntimeHelper.IsElevated)
+        {
+            uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath(Option.Current.KeyName);
+
+            if (string.IsNullOrEmpty(uinfo.InstallLocation))
+            {
+                uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath();
+
+                if (string.IsNullOrWhiteSpace(uinfo.UninstallData))
+                {
+                    MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("InstallationInfoLostHint"));
+                }
+            }
+        }
+        else
+        {
+            uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath();
+
+            if (string.IsNullOrWhiteSpace(uinfo.UninstallData))
+            {
+                MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("InstallationInfoLostHint"));
+            }
+        }
 
         Option.Current.InstallLocation = uinfo.InstallLocation;
         if (Option.Current.KeepMyData)
