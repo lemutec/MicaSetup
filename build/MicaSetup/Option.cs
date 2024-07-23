@@ -163,6 +163,7 @@ public partial class Option
 
     /// <summary>
     /// Indicates whether to uninst and keep my data
+    /// For security reason, it's only can be used in admin
     /// </summary>
     [Category("GlobalVariable")]
     public bool KeepMyData { get; set; } = true;

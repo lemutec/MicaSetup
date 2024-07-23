@@ -30,6 +30,9 @@ public static class UninstallHelper
         }
         else
         {
+            // For security reason, uninst should always keep data because of unundering admin.
+            Option.Current.KeepMyData = true;
+
             uinfo = PrepareUninstallPathHelper.GetPrepareUninstallPath();
 
             if (string.IsNullOrWhiteSpace(uinfo.UninstallData))

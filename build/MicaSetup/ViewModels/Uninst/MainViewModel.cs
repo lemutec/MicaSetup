@@ -15,6 +15,9 @@ public partial class MainViewModel : ObservableObject
     public string Message => Option.Current.MessageOfPage1;
 
     [ObservableProperty]
+    private bool isElevated = RuntimeHelper.IsElevated;
+
+    [ObservableProperty]
     private bool keepMyData = Option.Current.KeepMyData;
 
     partial void OnKeepMyDataChanged(bool value)
@@ -68,6 +71,24 @@ public partial class MainViewModel : ObservableObject
 
 partial class MainViewModel
 {
+    public bool IsElevated
+    {
+        get => isElevated;
+        set
+        {
+            if (!EqualityComparer<bool>.Default.Equals(isElevated, value))
+            {
+                OnIsElevatedChanging(value);
+                OnIsElevatedChanging(default, value);
+                OnPropertyChanging(new PropertyChangingEventArgs("IsElevated"));
+                isElevated = value;
+                OnIsElevatedChanged(value);
+                OnIsElevatedChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("IsElevated"));
+            }
+        }
+    }
+
     public bool KeepMyData
     {
         get => keepMyData;
@@ -85,6 +106,14 @@ partial class MainViewModel
             }
         }
     }
+
+    partial void OnIsElevatedChanging(bool value);
+
+    partial void OnIsElevatedChanging(bool oldValue, bool newValue);
+
+    partial void OnIsElevatedChanged(bool value);
+
+    partial void OnIsElevatedChanged(bool oldValue, bool newValue);
 
     partial void OnKeepMyDataChanging(bool value);
 

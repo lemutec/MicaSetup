@@ -58,7 +58,8 @@
                       FontSize="15"
                       Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                       IsChecked="{Binding KeepMyData, Mode=TwoWay}"
-                      Style="{StaticResource DefaultCheckBoxStyle}" />
+                      Style="{StaticResource DefaultCheckBoxStyle}"
+                      Visibility="{Binding IsElevated, Converter={StaticResource BoolToVisibilityConverter}}" />
         </StackPanel>
         <StackPanel Margin="20"
                     HorizontalAlignment="Right"
