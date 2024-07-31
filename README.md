@@ -1,3 +1,5 @@
+[![Actions](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml/badge.svg)](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml) [![Platform](https://img.shields.io/badge/platform-Windows-blue?logo=windowsxp&color=1E9BFA)](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
+
 # 📦MicaSetup
 
 MicaSetup is a universal advanced installation package generation tool project that supports various features and allows customization of the full entire installation process.

@@ -1,0 +1,38 @@
+name: MicaSetup
+
+on:
+  release:
+    types: [created]
+  push:
+    branches:
+      - v2
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Setup Windows SDK
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.5
+
+      - name: Prepare dummy files `publish.7z` and `Uninst.exe`
+        run: cd build && echo publish.7z > .\MicaSetup\Resources\Setups\publish.7z && echo uninst.exe > .\MicaSetup\Resources\Setups\Uninst.exe
+
+      - name: Install dependencies of uninst
+        run: cd build && dotnet restore MicaSetup\MicaSetup.Uninst.csproj
+
+      - name: Install dependencies of setup
+        run: cd build && dotnet restore MicaSetup\MicaSetup.csproj
+
+      - name: Build uninst
+        run: cd build && dotnet build MicaSetup\MicaSetup.Uninst.csproj --configuration Release --no-restore
+
+      - name: Build setup
+        run: cd build && dotnet build MicaSetup\MicaSetup.csproj --configuration Release --no-restore
