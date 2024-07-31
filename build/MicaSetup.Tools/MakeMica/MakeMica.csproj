@@ -35,13 +35,13 @@
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="WPF-UI" Version="3.0.4" />
+		<PackageReference Include="WPF-UI" Version="3.0.5" />
 		<PackageReference Include="FluentCommandLineParser" Version="1.4.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
 		<PackageReference Include="Antelcat.I18N.WPF" Version="1.0.1" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
-		<PackageReference Include="Vanara.PInvoke.User32" Version="3.4.17" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+		<PackageReference Include="Vanara.PInvoke.User32" Version="4.0.2" />
 	</ItemGroup>
 
 	<Import Project="..\MakeMica.Shared\MakeMica.Shared.projitems" Label="Shared" />
