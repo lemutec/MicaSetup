@@ -20,6 +20,11 @@
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SharpCompress" Version="0.33.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Microsoft.CSharp" />
 	</ItemGroup>
 
 	<Import Project="..\MakeMica.Shared\MakeMica.Shared.projitems" Label="Shared" />

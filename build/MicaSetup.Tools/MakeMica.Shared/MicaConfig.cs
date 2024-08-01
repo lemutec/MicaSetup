@@ -5,8 +5,15 @@ public class MicaConfig
     /// <summary>
     /// The template file location.
     /// When `.dist` dir is empty, extract it to `.dist`.
+    /// Support 7z/zip template.
     /// </summary>
-    public string Template { get; set; } = "./template/default.7z";
+    public string Template { get; set; } = "${MICADIR}/template/default.7z";
+
+    /// <summary>
+    /// The package file location.
+    /// Support 7z/zip file.
+    /// </summary>
+    public string Package { get; set; } = "./publish.7z";
 
     /// <summary>
     /// The display name of register.
@@ -45,19 +52,29 @@ public class MicaConfig
     public string Guid { get; set; } = "00000000-0000-0000-0000-000000000000";
 
     /// <summary>
+    /// The main icon location.
+    /// Only support extension file of png/ico.
+    /// When null, use internal main icon.
+    /// </summary>
+    public string? Favicon { get; set; } = null;
+
+    /// <summary>
     /// The setup icon location.
+    /// Only support extension file of png/ico.
     /// When null, use internal setup icon.
     /// </summary>
     public string? Icon { get; set; } = null;
 
     /// <summary>
     /// The uninst icon location.
+    /// Only support extension file of png/ico.
     /// When null, use internal uninst icon.
     /// </summary>
     public string? UnIcon { get; set; } = null;
 
     /// <summary>
     /// The setup LICENSE file location.
+    /// UTF-8 is needed.
     /// When null, use internal license file.
     /// </summary>
     public string? LicenseFile { get; set; } = null;
@@ -135,14 +152,14 @@ public class MicaConfig
     public string AutoRunLaunchCommand { get; set; } = "-autostart";
 
     /// <summary>
-    /// <see cref="MicaSetup.Option.UseFolderPickerPreferClassic"/>
+    /// <see cref="MicaSetup.Option.IsUseFolderPickerPreferClassic"/>
     /// </summary>
-    public bool UseFolderPickerPreferClassic { get; set; } = false;
+    public bool IsUseFolderPickerPreferClassic { get; set; } = false;
 
     /// <summary>
-    /// <see cref="MicaSetup.Option.UseInstallPathPreferX86"/>
+    /// <see cref="MicaSetup.Option.IsUseInstallPathPreferX86"/>
     /// </summary>
-    public bool UseInstallPathPreferX86 { get; set; } = false;
+    public bool IsUseInstallPathPreferX86 { get; set; } = false;
 
     /// <summary>
     /// <see cref="MicaSetup.Option.IsUseRegistryPreferX86"/>

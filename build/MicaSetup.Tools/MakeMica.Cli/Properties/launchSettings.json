@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MakeMica.Cli": {
+      "commandName": "Project",
+      "commandLineArgs": "micasetup.json"
+    }
+  }
+}

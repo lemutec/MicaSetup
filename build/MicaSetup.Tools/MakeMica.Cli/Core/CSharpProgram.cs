@@ -9,8 +9,13 @@ namespace MakeMica.Cli.Core;
 
 public static class CSharpProgram
 {
-    public static void Confirm(string csPath, MicaConfig config)
+    public static void SetupConfig(string csPath, MicaConfig config, bool isUninst = false)
     {
+        if (!File.Exists(csPath))
+        {
+            return;
+        }
+
         string code = File.ReadAllText(csPath);
         SyntaxTree tree = CSharpSyntaxTree.ParseText(code);
         CompilationUnitSyntax root = tree.GetCompilationUnitRoot();
@@ -19,26 +24,108 @@ public static class CSharpProgram
         {
             if (Guid.TryParse(config.Guid, out _))
             {
-                root = root.ReplaceStringAttribute("Guid", config.Guid);
+                root = root.ReplaceAssemblyAttributeWithString("Guid", config.Guid);
             }
             else
             {
-                throw new ArgumentException($"Invalid `Guid` of '{config.Guid}'.");
+                throw new ArgumentException($"[ERR] Invalid `Guid` of '{config.Guid}'.");
             }
+        }
+
+        if (!string.IsNullOrWhiteSpace(config.RequestExecutionLevel))
+        {
+            if (config.RequestExecutionLevel.Equals("admin", StringComparison.OrdinalIgnoreCase)
+             || config.RequestExecutionLevel.Equals("user", StringComparison.OrdinalIgnoreCase))
+            {
+                root = root.ReplaceAssemblyAttributeWithString("RequestExecutionLevel", config.RequestExecutionLevel.ToLower());
+            }
+            else
+            {
+                throw new ArgumentException($"[ERR] Invalid `RequestExecutionLevel` of '{config.RequestExecutionLevel}'.");
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(config.Version))
+        {
+            if (Version.TryParse(config.Version, out _))
+            {
+                root = root.ReplaceAssemblyAttributeWithString("AssemblyVersion", config.Version);
+                root = root.ReplaceAssemblyAttributeWithString("AssemblyFileVersion", config.Version);
+                root = root.ReplaceOptionWithString("DisplayVersion", config.Version);
+            }
+            else
+            {
+                throw new ArgumentException($"[ERR] Invalid `Version` of '{config.Version}'.");
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(config.AppName))
+        {
+            root = root.ReplaceOptionWithString("AppName", config.AppName);
         }
 
         if (!string.IsNullOrWhiteSpace(config.KeyName))
         {
-            bool isValid = IsValidRegistryKeyName(config.KeyName);
-
-            if (!isValid)
+            if (IsValidRegistryKeyName(config.KeyName))
             {
-                throw new ArgumentException($"Invalid `KeyName` of '{config.KeyName}'.");
+                root = root.ReplaceOptionWithString("KeyName", config.KeyName);
             }
-            // TODO
+            else
+            {
+                throw new ArgumentException($"[ERR] Invalid `KeyName` of '{config.KeyName}'.");
+            }
         }
 
-        File.WriteAllText(Path.ChangeExtension(csPath, ".X.cs"), root.ToString());
+        if (!string.IsNullOrWhiteSpace(config.ExeName))
+        {
+            root = root.ReplaceOptionWithString("ExeName", config.ExeName);
+
+            // TODO: CHECK EXE EXITS
+        }
+
+        if (!string.IsNullOrWhiteSpace(config.Publisher))
+        {
+            root = root.ReplaceOptionWithString("Publisher", config.Publisher);
+        }
+
+        if (!isUninst)
+        {
+            if (!string.IsNullOrWhiteSpace(config.LicenseFile) || !string.IsNullOrWhiteSpace(config.License))
+            {
+                root = root.ReplaceOptionWithBoolean("IsUseLicenseFile", true);
+            }
+            else
+            {
+                root = root.ReplaceOptionWithBoolean("IsUseLicenseFile", false);
+            }
+        }
+
+        root = root.ReplaceOptionWithBoolean("IsCreateDesktopShortcut", config.IsCreateDesktopShortcut);
+        root = root.ReplaceOptionWithBoolean("IsCreateUninst", config.IsCreateUninst);
+        root = root.ReplaceOptionWithBoolean("IsCreateStartMenu", config.IsCreateStartMenu);
+        root = root.ReplaceOptionWithBoolean("IsCreateQuickLaunch", config.IsCreateQuickLaunch);
+        root = root.ReplaceOptionWithBoolean("IsCreateRegistryKeys", config.IsCreateRegistryKeys);
+        root = root.ReplaceOptionWithBoolean("IsCreateAsAutoRun", config.IsCreateAsAutoRun);
+        root = root.ReplaceOptionWithNullableBoolean("IsUseRegistryPreferX86", config.IsUseRegistryPreferX86);
+        root = root.ReplaceOptionWithBoolean("IsAllowFirewall", config.IsAllowFirewall);
+        root = root.ReplaceOptionWithBoolean("IsRefreshExplorer", config.IsRefreshExplorer);
+        root = root.ReplaceOptionWithBoolean("IsInstallCertificate", config.IsInstallCertificate);
+        root = root.ReplaceOptionWithBoolean("IsEnableUninstallDelayUntilReboot", config.IsEnableUninstallDelayUntilReboot);
+
+        if (!isUninst)
+        {
+            root = root.ReplaceOptionWithBoolean("IsPinToStartMenu", config.IsPinToStartMenu);
+            root = root.ReplaceOptionWithBoolean("IsCustomizeVisiableAutoRun", config.IsCustomizeVisiableAutoRun);
+            root = root.ReplaceOptionWithString("AutoRunLaunchCommand", config.AutoRunLaunchCommand);
+            root = root.ReplaceOptionWithBoolean("IsUseFolderPickerPreferClassic", config.IsUseFolderPickerPreferClassic);
+            root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferX86", config.IsUseInstallPathPreferX86);
+            root = root.ReplaceOptionWithBoolean("IsAllowFullFolderSecurity", config.IsAllowFullFolderSecurity);
+            root = root.ReplaceOptionWithString("OverlayInstallRemoveExt", config.OverlayInstallRemoveExt);
+            root = root.ReplaceOptionWithString("UnpackingPassword", config.UnpackingPassword);
+        }
+
+        File.Delete(csPath);
+        File.WriteAllText(csPath, root.ToString());
     }
 
     public static bool IsValidRegistryKeyName(string keyName)
@@ -64,7 +151,7 @@ public static class CSharpProgram
 
 file static class SyntaxNodeExtensions
 {
-    public static CompilationUnitSyntax ReplaceStringAttribute(this CompilationUnitSyntax root, string name, string value)
+    public static CompilationUnitSyntax ReplaceAssemblyAttributeWithString(this CompilationUnitSyntax root, string name, string value)
     {
         var attributeList = root.AttributeLists
           .SelectMany(al => al.Attributes)
@@ -86,6 +173,76 @@ file static class SyntaxNodeExtensions
         }
 
         return root;
+    }
+
+    public static CompilationUnitSyntax ReplaceOptionWithAny(this CompilationUnitSyntax root, string optionName, ExpressionSyntax newRight)
+    {
+        var assignmentNode = root.DescendantNodes()
+            .OfType<AssignmentExpressionSyntax>()
+            .FirstOrDefault(a =>
+                a.Left is MemberAccessExpressionSyntax memberAccess &&
+                memberAccess.Name.Identifier.Text == optionName);
+
+        if (assignmentNode != null)
+        {
+            var newAssignment = assignmentNode.WithRight(newRight);
+
+            return root.ReplaceNode(assignmentNode, newAssignment);
+        }
+        else
+        {
+            Console.WriteLine($"[ERR] `{optionName}` assignment not found.");
+        }
+
+        return root;
+    }
+
+    //
+    public static CompilationUnitSyntax ReplaceOptionWithString(this CompilationUnitSyntax root, string optionName, string? value)
+    {
+        if (value == null)
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.NullLiteralExpression);
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
+        else
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.StringLiteralExpression, SyntaxFactory.Literal(value));
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
+    }
+
+    public static CompilationUnitSyntax ReplaceOptionWithNullableBoolean(this CompilationUnitSyntax root, string optionName, bool? value)
+    {
+        if (value == null)
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.NullLiteralExpression);
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
+        else if (value == true)
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.TrueLiteralExpression);
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
+        else
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.FalseLiteralExpression);
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
+    }
+
+    public static CompilationUnitSyntax ReplaceOptionWithBoolean(this CompilationUnitSyntax root, string optionName, bool value)
+    {
+        if (value)
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.TrueLiteralExpression);
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
+        else
+        {
+            var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.FalseLiteralExpression);
+            return root.ReplaceOptionWithAny(optionName, newRight);
+        }
     }
 
     [Conditional("DEBUG")]
