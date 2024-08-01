@@ -41,7 +41,7 @@ internal static class JsonBeautifier
         foreach (KeyValuePair<string, object> kv in tempKeyValues)
         {
             Type t0 = typeof(JObject);
-            Type t1 = kv.Value.GetType();
+            Type? t1 = kv.Value?.GetType();
 
             if (t0 == t1)
             {

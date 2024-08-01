@@ -15,7 +15,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
+		<None Remove="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
 	</ItemGroup>
 
 	<ItemGroup>
