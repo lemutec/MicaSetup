@@ -91,13 +91,13 @@ public partial class Option
     /// Prefer to provide classic type folder selector
     /// </summary>
     [Category("GlobalSetting")]
-    public bool UseFolderPickerPreferClassic { get; set; } = false;
+    public bool IsUseFolderPickerPreferClassic { get; set; } = false;
 
     /// <summary>
     /// Prefer to provide x86 type install path
     /// </summary>
     [Category("GlobalSetting")]
-    public bool UseInstallPathPreferX86 { get; set; } = false;
+    public bool IsUseInstallPathPreferX86 { get; set; } = false;
 
     /// <summary>
     /// Prefer to provide x86 type Registry Key
@@ -134,6 +134,12 @@ public partial class Option
     /// </summary>
     [Category("GlobalSetting")]
     public bool IsEnableUninstallDelayUntilReboot { get; set; } = false;
+
+    /// <summary>
+    /// Indicates whether to use license.txt instead of others
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsUseLicenseFile { get; internal set; }
 
     /// <summary>
     /// The file ext filter to remove when overlay install

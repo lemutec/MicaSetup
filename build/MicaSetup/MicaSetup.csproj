@@ -28,7 +28,7 @@
 	<ItemGroup>
 		<None Remove="Resources\*.ico" />
 		<None Remove="Resources\Fonts\*.ttf" />
-		<None Remove="Resources\Licenses\license.*.txt" />
+		<None Remove="Resources\Licenses\license*.txt" />
 		<None Remove="Resources\Setups\*.7z" />
 		<None Remove="Resources\Setups\*.zip" />
 		<None Remove="Resources\Setups\*.exe" />
@@ -39,7 +39,7 @@
 		<Resource Include="Resources\Fonts\*.ttf" />
 		<Resource Include="Resources\Images\*.ico" />
 		<Resource Include="Resources\Images\*.png" />
-		<Resource Include="Resources\Licenses\license.*.txt" />
+		<Resource Include="Resources\Licenses\license*.txt" />
 		<Resource Include="Resources\Setups\*.7z" />
 		<Resource Include="Resources\Setups\*.appx" />
 		<Resource Include="Resources\Setups\*.appxbundle" />

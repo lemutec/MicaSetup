@@ -41,14 +41,15 @@ internal class Program
                 option.IsCreateAsAutoRun = true;
                 option.IsCustomizeVisiableAutoRun = true;
                 option.AutoRunLaunchCommand = "-autostart";
-                option.UseFolderPickerPreferClassic = false;
-                option.UseInstallPathPreferX86 = false;
+                option.IsUseFolderPickerPreferClassic = false;
+                option.IsUseInstallPathPreferX86 = false;
                 option.IsUseRegistryPreferX86 = null!;
                 option.IsAllowFullFolderSecurity = true;
                 option.IsAllowFirewall = true;
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
                 option.IsEnableUninstallDelayUntilReboot = true;
+                option.IsUseLicenseFile = false;
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;

@@ -20,7 +20,7 @@ public static class MuiLanguage
     /// https://learn.microsoft.com/en-us/typography/fonts/windows_8_font_list
     /// https://learn.microsoft.com/en-us/typography/fonts/windows_7_font_list
     /// </summary>
-    public static List<MuiLanguageFont> FontSelector { get; } = new();
+    public static List<MuiLanguageFont> FontSelector { get; } = [];
 
     public static void SetupLanguage()
     {

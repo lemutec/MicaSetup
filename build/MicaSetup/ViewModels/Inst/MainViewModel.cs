@@ -19,7 +19,7 @@ public partial class MainViewModel : ObservableObject
     public string Message => Option.Current.MessageOfPage1;
 
     [ObservableProperty]
-    private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName, Option.Current.UseInstallPathPreferX86);
+    private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName, Option.Current.IsUseInstallPathPreferX86);
 
     partial void OnInstallPathChanged(string value)
     {
@@ -130,7 +130,7 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void SelectFolder()
     {
-        if (Option.Current.UseFolderPickerPreferClassic)
+        if (Option.Current.IsUseFolderPickerPreferClassic)
         {
             using FolderBrowserDialog dialog = new()
             {

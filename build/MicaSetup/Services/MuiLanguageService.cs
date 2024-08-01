@@ -100,7 +100,12 @@ public class MuiLanguageService : IMuiLanguageService
 
     public string GetLicenseUriString()
     {
-        static string GetUriString(string name) => $"pack://application:,,,/MicaSetup;component/Resources/Licenses/license.{name}.txt";
+        const string prefix = "pack://application:,,,/MicaSetup;component/Resources/Licenses/";
+
+        if (Option.Current.IsUseLicenseFile)
+        {
+            return prefix + "license.txt";
+        }
 
         if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.Name)))
         {
@@ -122,6 +127,8 @@ public class MuiLanguageService : IMuiLanguageService
         }
         Logger.Debug($"[MuiLanguageService] NotFound with match mui license name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
         return GetUriString("en");
+
+        static string GetUriString(string name) => prefix + $"license.{name}.txt";
     }
 
     [Conditional("DEBUG")]

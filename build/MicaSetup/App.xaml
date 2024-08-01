@@ -1,11 +1,9 @@
-﻿<Application
-    x:Class="MicaSetup.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:control="clr-namespace:MicaSetup.Design.Controls"
-    xmlns:design="clr-namespace:MicaSetup.Design"
-    xmlns:local="clr-namespace:MicaSetup"
-    StartupUri="Views/MainWindow.xaml">
+﻿<Application x:Class="MicaSetup.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:design="clr-namespace:MicaSetup.Design"
+             xmlns:local="clr-namespace:MicaSetup"
+             StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
