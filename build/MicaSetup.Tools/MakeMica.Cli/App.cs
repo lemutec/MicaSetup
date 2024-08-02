@@ -40,10 +40,10 @@ internal sealed class App
             PreserveFileTime = true,
         });
 
-        CSharpProject.SetTargetFramework(@".dist\MicaSetup\MicaSetup.csproj", config.TargetFramework);
-        CSharpProject.SetTargetFramework(@".dist\MicaSetup\MicaSetup.Uninst.csproj", config.TargetFramework);
-        CSharpProgram.SetupConfig(@".dist\MicaSetup\Program.cs", config, false);
-        CSharpProgram.SetupConfig(@".dist\MicaSetup\Program.un.cs", config, true);
+        CSharpProject.SetupConfig(@".dist\MicaSetup\MicaSetup.csproj", config, isUninst: false);
+        CSharpProject.SetupConfig(@".dist\MicaSetup\MicaSetup.Uninst.csproj", config, isUninst: true);
+        CSharpProgram.SetupConfig(@".dist\MicaSetup\Program.cs", config, isUninst: false);
+        CSharpProgram.SetupConfig(@".dist\MicaSetup\Program.un.cs", config, isUninst: true);
         CSharpResource.SetupConfig(@".dist\MicaSetup\Resources", config);
     }
 }
