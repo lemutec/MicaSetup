@@ -180,13 +180,16 @@ public static class InstallHelper
             }
         }
 
-        try
+        if (Option.Current.IsCreateAsAutoRun)
         {
-            RegistyAutoRunHelper.SetEnabled(Option.Current.IsCreateAsAutoRun, Option.Current.KeyName, $"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)} {Option.Current.AutoRunLaunchCommand}");
-        }
-        catch (Exception e)
-        {
-            Logger.Error(e);
+            try
+            {
+                RegistyAutoRunHelper.Enable(Option.Current.KeyName, $"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)} {Option.Current.AutoRunLaunchCommand}");
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
         }
 
         if (Option.Current.IsCreateQuickLaunch)
