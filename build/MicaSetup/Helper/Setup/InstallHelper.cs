@@ -184,7 +184,7 @@ public static class InstallHelper
         {
             try
             {
-                RegistyAutoRunHelper.Enable(Option.Current.KeyName, $"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)} {Option.Current.AutoRunLaunchCommand}");
+                RegistyAutoRunHelper.Enable(Option.Current.KeyName, $"\"{Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)}\" {Option.Current.AutoRunLaunchCommand}");
             }
             catch (Exception e)
             {

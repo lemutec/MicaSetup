@@ -10,20 +10,20 @@ public static class RegistyAutoRunHelper
 
     public static void Enable(string keyName, string launchCommand)
     {
-        using RegistryKey key = Registry.CurrentUser.CreateSubKey(RunLocation);
+        using RegistryKey? key = Registry.CurrentUser.CreateSubKey(RunLocation);
         key?.SetValue(keyName, launchCommand);
     }
 
     public static bool IsEnabled(string keyName, string launchCommand)
     {
-        using RegistryKey key = Registry.CurrentUser.OpenSubKey(RunLocation);
+        using RegistryKey? key = Registry.CurrentUser.OpenSubKey(RunLocation);
 
         if (key == null)
         {
             return false;
         }
 
-        string value = (string)key.GetValue(keyName);
+        string? value = (string?)key.GetValue(keyName);
 
         if (value == null)
         {
@@ -35,7 +35,7 @@ public static class RegistyAutoRunHelper
 
     public static void Disable(string keyName, string launchCommand = null!)
     {
-        using RegistryKey key = Registry.CurrentUser.CreateSubKey(RunLocation);
+        using RegistryKey? key = Registry.CurrentUser.CreateSubKey(RunLocation);
 
         _ = launchCommand;
         if (key == null)
@@ -49,7 +49,7 @@ public static class RegistyAutoRunHelper
         }
     }
 
-    public static void SetEnabled(bool enable, string keyName, string launchCommand)
+    public static void SetEnabled(bool enable, string keyName, string launchCommand = null!)
     {
         if (enable)
         {
