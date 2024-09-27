@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace MicaSetup.Views;
 
-public partial class MainWindow : WindowX
+public partial class MainWindow : FluentWindow
 {
     public static ImageSource? Favicon => new ImageSourceConverter().ConvertFromString($"pack://application:,,,/MicaSetup;component/Resources/Images/Favicon{(Option.Current.IsUninst ? "Uninst" : "Setup")}.ico") as ImageSource;
     public static string SetupName => Option.Current.SetupName;
@@ -24,14 +24,14 @@ public partial class MainWindow : WindowX
             if (Option.Current.Uninstalling)
             {
                 e.Cancel = true;
-                _ = MessageBoxX.Info(this, Mui("UninstNotCompletedTips"));
+                _ = MessageBox.Info(this, Mui("UninstNotCompletedTips"));
             }
         }
         else
         {
             if (Option.Current.Installing)
             {
-                if (MessageBoxX.Question(this, Mui("InstNotCompletedTips")) != WindowDialogResult.Yes)
+                if (MessageBox.Question(this, Mui("InstNotCompletedTips")) != WindowDialogResult.Yes)
                 {
                     e.Cancel = true;
                 }

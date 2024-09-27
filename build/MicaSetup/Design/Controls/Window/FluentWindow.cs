@@ -10,7 +10,7 @@ using System.Windows.Shell;
 namespace MicaSetup.Design.Controls;
 
 [INotifyPropertyChanged]
-public partial class WindowX : WindowXO
+public partial class FluentWindow : ObservableWindow
 {
     public HwndSource? HwndSource { get; private set; }
     public nint? Handle { get; private set; }
@@ -22,9 +22,9 @@ public partial class WindowX : WindowXO
         set => SetValue(IsActivatedProperty, value);
     }
 
-    public static readonly DependencyProperty IsActivatedProperty = DependencyProperty.Register(nameof(IsActivated), typeof(bool), typeof(WindowX), new PropertyMetadata(false));
+    public static readonly DependencyProperty IsActivatedProperty = DependencyProperty.Register(nameof(IsActivated), typeof(bool), typeof(FluentWindow), new PropertyMetadata(false));
 
-    public WindowX()
+    public FluentWindow()
     {
         Loaded += (s, e) =>
         {
@@ -148,7 +148,7 @@ public partial class WindowX : WindowXO
     }
 }
 
-partial class WindowX
+partial class FluentWindow
 {
     private RelayCommand? closeWindowCommand;
     public IRelayCommand CloseWindowCommand => closeWindowCommand ??= new RelayCommand(CloseWindow);

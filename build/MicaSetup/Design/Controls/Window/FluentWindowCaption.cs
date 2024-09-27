@@ -3,7 +3,7 @@ using System.Windows.Media;
 
 namespace MicaSetup.Design.Controls;
 
-public sealed class WindowXCaption
+public sealed class FluentWindowCaption
 {
     public static ImageSource GetIcon(DependencyObject obj)
     {
@@ -16,7 +16,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty IconProperty =
-        DependencyProperty.RegisterAttached("Icon", typeof(ImageSource), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("Icon", typeof(ImageSource), typeof(FluentWindowCaption));
 
     public static Thickness GetPadding(DependencyObject obj)
     {
@@ -29,7 +29,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty PaddingProperty =
-        DependencyProperty.RegisterAttached("Padding", typeof(Thickness), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("Padding", typeof(Thickness), typeof(FluentWindowCaption));
 
     public static double GetHeight(DependencyObject obj)
     {
@@ -42,7 +42,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty HeightProperty =
-        DependencyProperty.RegisterAttached("Height", typeof(double), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("Height", typeof(double), typeof(FluentWindowCaption));
 
     public static Brush GetForeground(DependencyObject obj)
     {
@@ -55,7 +55,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty ForegroundProperty =
-        DependencyProperty.RegisterAttached("Foreground", typeof(Brush), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("Foreground", typeof(Brush), typeof(FluentWindowCaption));
 
     public static Brush GetBackground(DependencyObject obj)
     {
@@ -68,7 +68,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty BackgroundProperty =
-        DependencyProperty.RegisterAttached("Background", typeof(Brush), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("Background", typeof(Brush), typeof(FluentWindowCaption));
 
     public static Style GetMinimizeButtonStyle(DependencyObject obj)
     {
@@ -81,7 +81,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty MinimizeButtonStyleProperty =
-        DependencyProperty.RegisterAttached("MinimizeButtonStyle", typeof(Style), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("MinimizeButtonStyle", typeof(Style), typeof(FluentWindowCaption));
 
     public static Style GetMaximizeButtonStyle(DependencyObject obj)
     {
@@ -94,7 +94,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty MaximizeButtonStyleProperty =
-        DependencyProperty.RegisterAttached("MaximizeButtonStyle", typeof(Style), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("MaximizeButtonStyle", typeof(Style), typeof(FluentWindowCaption));
 
     public static Style GetCloseButtonStyle(DependencyObject obj)
     {
@@ -107,7 +107,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty CloseButtonStyleProperty =
-        DependencyProperty.RegisterAttached("CloseButtonStyle", typeof(Style), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("CloseButtonStyle", typeof(Style), typeof(FluentWindowCaption));
 
     public static Style GetFullScreenButtonStyle(DependencyObject obj)
     {
@@ -120,7 +120,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty FullScreenButtonStyleProperty =
-        DependencyProperty.RegisterAttached("FullScreenButtonStyle", typeof(Style), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("FullScreenButtonStyle", typeof(Style), typeof(FluentWindowCaption));
 
     public static object GetHeader(DependencyObject obj)
     {
@@ -133,7 +133,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty HeaderProperty =
-        DependencyProperty.RegisterAttached("Header", typeof(object), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("Header", typeof(object), typeof(FluentWindowCaption));
 
     public static UIElement GetExtendControl(DependencyObject obj)
     {
@@ -146,7 +146,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty ExtendControlProperty =
-        DependencyProperty.RegisterAttached("ExtendControl", typeof(UIElement), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("ExtendControl", typeof(UIElement), typeof(FluentWindowCaption));
 
     public static bool GetDisableCloseButton(DependencyObject obj)
     {
@@ -159,7 +159,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty DisableCloseButtonProperty =
-        DependencyProperty.RegisterAttached("DisableCloseButton", typeof(bool), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("DisableCloseButton", typeof(bool), typeof(FluentWindowCaption));
 
     public static bool GetHideBasicButtons(DependencyObject obj)
     {
@@ -172,7 +172,7 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty HideBasicButtonsProperty =
-        DependencyProperty.RegisterAttached("HideBasicButtons", typeof(bool), typeof(WindowXCaption));
+        DependencyProperty.RegisterAttached("HideBasicButtons", typeof(bool), typeof(FluentWindowCaption));
 
     public static bool GetShowFullScreenButton(DependencyObject obj)
     {
@@ -185,5 +185,5 @@ public sealed class WindowXCaption
     }
 
     public static readonly DependencyProperty ShowFullScreenButtonProperty =
-        DependencyProperty.RegisterAttached("ShowFullScreenButton", typeof(bool), typeof(WindowXCaption), new(false));
+        DependencyProperty.RegisterAttached("ShowFullScreenButton", typeof(bool), typeof(FluentWindowCaption), new(false));
 }

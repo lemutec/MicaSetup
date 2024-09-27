@@ -31,7 +31,7 @@ public partial class MainViewModel : ObservableObject
     {
         if (!string.IsNullOrWhiteSpace(Code))
         {
-            if (MessageBoxX.Question("Overwirte current codes?", "Question") != MessageBoxResult.Yes)
+            if (MessageBox.Question("Overwirte current codes?", "Question") != MessageBoxResult.Yes)
             {
                 return;
             }
@@ -107,7 +107,7 @@ public partial class MainViewModel : ObservableObject
         }
         catch (Exception e)
         {
-            MessageBoxX.Question(e.Message, "Error");
+            MessageBox.Question(e.Message, "Error");
         }
     }
 

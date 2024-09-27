@@ -3,7 +3,7 @@ using System.Windows;
 
 namespace MicaSetup.Design.Controls;
 
-public static class MessageBoxX
+public static class MessageBox
 {
     public static WindowDialogResult Info(DependencyObject dependencyObject, string message)
     {

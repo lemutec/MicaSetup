@@ -43,7 +43,7 @@ public partial class UninstallViewModel : ObservableObject
                 {
                     UIDispatcherHelper.Invoke(main =>
                     {
-                        _ = MessageBoxX.Info(main, Mui("UninstallDelayUntilRebootTips"));
+                        _ = MessageBox.Info(main, Mui("UninstallDelayUntilRebootTips"));
                     });
                 }
             });

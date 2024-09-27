@@ -2,7 +2,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/Button/Button.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/TextBox/TextBox.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/Window/WindowX.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/Window/FluentWindow.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/CheckBox/CheckBox.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/ScrollViewer/ScrollViewer.xaml" />
         <ResourceDictionary Source="pack://application:,,,/MicaSetup;component/Design/Controls/ProgressBar/ProgressBar.xaml" />

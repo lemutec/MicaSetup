@@ -165,7 +165,7 @@ public partial class MainViewModel : ObservableObject
 
         if (IsIllegalPath)
         {
-            _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("IllegalPathTips"));
+            _ = MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("IllegalPathTips"));
             return;
         }
 
@@ -173,7 +173,7 @@ public partial class MainViewModel : ObservableObject
         {
             if (requestedFreeSpaceLong >= availableFreeSpaceLong)
             {
-                _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("AvailableFreeSpaceInsufficientTips"));
+                _ = MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("AvailableFreeSpaceInsufficientTips"));
                 return;
             }
         }
@@ -186,7 +186,7 @@ public partial class MainViewModel : ObservableObject
         {
             if (!FileWritableHelper.CheckWritable(Path.Combine(InstallPath, Option.Current.ExeName)))
             {
-                _ = MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
+                _ = MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
                 return;
             }
         }

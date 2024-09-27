@@ -11,7 +11,7 @@ public abstract class TriggerBase : Animatable, IAttachedObject
 {
     private DependencyObject associatedObject = null!;
 
-    private Type associatedObjectTypeConstraint = null!;
+    private readonly Type associatedObjectTypeConstraint = null!;
 
     private static readonly DependencyPropertyKey ActionsPropertyKey = DependencyProperty.RegisterReadOnly("Actions", typeof(TriggerActionCollection), typeof(TriggerBase), new FrameworkPropertyMetadata());
 

@@ -7,7 +7,7 @@ using System.Windows;
 namespace MicaSetup.Design.Controls;
 
 [INotifyPropertyChanged]
-public partial class MessageBoxDialog : WindowXO
+public partial class MessageBoxDialog : ObservableWindow
 {
     [ObservableProperty]
     private string message = null!;

@@ -106,7 +106,7 @@ public partial class InstallViewModel : ObservableObject
                             {
                                 UIDispatcherHelper.BeginInvoke(() =>
                                 {
-                                    _ = MessageBoxX.Info(null!, Mui("ComponentInstallFailedTips", info.Name));
+                                    _ = MessageBox.Info(null!, Mui("ComponentInstallFailedTips", info.Name));
                                     _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
                                 });
                             }
@@ -117,7 +117,7 @@ public partial class InstallViewModel : ObservableObject
                         Logger.Error(e);
                         UIDispatcherHelper.BeginInvoke(() =>
                         {
-                            _ = MessageBoxX.Info(null!, Mui("ComponentInstallFailedTips", info.Name) + Environment.NewLine + e.Message);
+                            _ = MessageBox.Info(null!, Mui("ComponentInstallFailedTips", info.Name) + Environment.NewLine + e.Message);
                             _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
                         });
                     }

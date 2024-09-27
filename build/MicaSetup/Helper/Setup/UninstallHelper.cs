@@ -24,7 +24,7 @@ public static class UninstallHelper
 
                 if (string.IsNullOrWhiteSpace(uinfo.UninstallData))
                 {
-                    MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("InstallationInfoLostHint"));
+                    MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("InstallationInfoLostHint"));
                 }
             }
         }
@@ -37,7 +37,7 @@ public static class UninstallHelper
 
             if (string.IsNullOrWhiteSpace(uinfo.UninstallData))
             {
-                MessageBoxX.Info(UIDispatcherHelper.MainWindow, Mui("InstallationInfoLostHint"));
+                MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("InstallationInfoLostHint"));
             }
         }
 

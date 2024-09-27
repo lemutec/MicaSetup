@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Security.AccessControl;
-using System.Windows;
 
 namespace MicaSetup.Helper;
 
@@ -28,7 +27,7 @@ public static class SecurityControlHelper
         catch (Exception e)
         {
             Logger.Error(e);
-            MessageBox.Show("Allow Full File Security Error" + e.ToString());
+            System.Windows.MessageBox.Show("Allow Full File Security Error" + e.ToString());
         }
     }
 
@@ -54,7 +53,7 @@ public static class SecurityControlHelper
         catch (Exception e)
         {
             Logger.Error(e);
-            MessageBox.Show("Allow Full Folder Security Error" + e.ToString());
+            System.Windows.MessageBox.Show("Allow Full Folder Security Error" + e.ToString());
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace MicaSetup.Design.Controls;
 
-public partial class WindowXO : Window, INotifyPropertyChanged
+public partial class ObservableWindow : Window, INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -1,7 +1,6 @@
 ﻿using MicaSetup.Attributes;
 using System;
 using System.IO;
-using System.Windows;
 
 namespace MicaSetup.Helper;
 
@@ -22,7 +21,7 @@ public static class StartMenuAutoRunHelper
         catch (Exception e)
         {
             Logger.Error(e);
-            MessageBox.Show("Create Startup ShortCut error" + "See detail following" + e.ToString());
+            System.Windows.MessageBox.Show("Create Startup ShortCut error" + "See detail following" + e.ToString());
         }
     }
 

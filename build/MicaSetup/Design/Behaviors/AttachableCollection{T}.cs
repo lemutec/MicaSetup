@@ -9,9 +9,9 @@ namespace MicaSetup.Design.Behaviors;
 
 public abstract class AttachableCollection<T> : FreezableCollection<T>, IAttachedObject where T : DependencyObject, IAttachedObject
 {
-    private Collection<T> snapshot;
+    private Collection<T> snapshot = null!;
 
-    private DependencyObject associatedObject;
+    private DependencyObject associatedObject = null!;
 
     protected DependencyObject AssociatedObject
     {
@@ -147,7 +147,7 @@ public abstract class AttachableCollection<T> : FreezableCollection<T>, IAttache
     {
         OnDetaching();
         WritePreamble();
-        associatedObject = null;
+        associatedObject = null!;
         WritePostscript();
     }
 }
