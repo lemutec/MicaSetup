@@ -30,10 +30,13 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
 		<PackageReference Include="WPF-UI" Version="3.0.5" />
 		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.14" />
+		<PackageReference Include="ComputedAnimations.WPF" Version="0.4.5-beta" />
+		<PackageReference Include="ComputedBehaviors.WPF" Version="0.4.5-beta" />
+		<PackageReference Include="ComputedConverters.WPF" Version="0.4.5-beta" />
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
 	</ItemGroup>
 

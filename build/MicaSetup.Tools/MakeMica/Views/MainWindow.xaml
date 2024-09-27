@@ -1,20 +1,21 @@
-﻿<wui:FluentWindow x:Class="MakeMica.Views.MainWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:control="clr-namespace:MakeMica.Design.Controls"
-                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                  xmlns:local="clr-namespace:MakeMica"
-                  xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
-                  Title="MakeMicaW"
-                  Width="640"
-                  Height="680"
-                  wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
-                  wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                  Background="#E4E4E4"
-                  Drop="OnDrop"
-                  ExtendsContentIntoTitleBar="True"
-                  ResizeMode="CanMinimize"
-                  WindowStartupLocation="CenterScreen">
+﻿<ui:FluentWindow x:Class="MakeMica.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:control="clr-namespace:MakeMica.Design.Controls"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:local="clr-namespace:MakeMica"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 Title="MakeMicaW"
+                 Width="640"
+                 Height="680"
+                 ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+                 ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                 Background="#E4E4E4"
+                 Drop="OnDrop"
+                 ExtendsContentIntoTitleBar="True"
+                 ResizeMode="CanMinimize"
+                 WindowBackdropType="Mica"
+                 WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="0,42,0,0">
             <Grid.RowDefinitions>
@@ -39,7 +40,7 @@
                                 Command="{Binding BeautifyCommand}"
                                 ToolTip="Beautify">
                             <Button.Content>
-                                <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Crop}" />
+                                <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Crop}" />
                             </Button.Content>
                         </Button>
                     </Grid>
@@ -64,15 +65,15 @@
                                 Command="{Binding ClearLogCommand}"
                                 ToolTip="Clear">
                             <Button.Content>
-                                <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Delete}" />
+                                <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Delete}" />
                             </Button.Content>
                         </Button>
                     </Grid>
                 </Border>
             </Grid>
         </Grid>
-        <wui:TitleBar>
-            <wui:TitleBar.Header>
+        <ui:TitleBar>
+            <ui:TitleBar.Header>
                 <StackPanel Margin="16,0,0,0" Orientation="Horizontal">
                     <Image Width="21"
                            RenderOptions.BitmapScalingMode="HighQuality"
@@ -99,60 +100,60 @@
                         <MenuItem Header="File">
                             <MenuItem Command="{Binding NewCommand}" Header="New">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.CalculatorAddition}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.CalculatorAddition}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem Command="{Binding OpenCommand}" Header="Open">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.FolderOpen}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.FolderOpen}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <Separator MinWidth="120" />
                             <MenuItem Command="{Binding SaveCommand}" Header="Save">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Save}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Save}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem Command="{Binding SaveAsCommand}" Header="Save As">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.SaveCopy}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.SaveCopy}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <Separator MinWidth="120" />
                             <MenuItem Command="{Binding ExitCommand}" Header="Exit">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Clear}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Clear}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                         </MenuItem>
                         <MenuItem Margin="-10,0,0,0" Header="Build">
                             <MenuItem Command="{Binding BuildCommand}" Header="Build MicaSetup">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Download}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Download}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem Command="{Binding OpenOutputFolderCommand}" Header="Open Output Folder">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.FolderOpen}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.FolderOpen}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                         </MenuItem>
                         <MenuItem Margin="-10,0,0,0" Header="Help">
                             <MenuItem Command="{Binding OpenHomePageCommand}" Header="GitHub">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Globe}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Globe}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <Separator MinWidth="120" />
                             <MenuItem Command="{Binding OpenAboutCommand}" Header="About">
                                 <MenuItem.Icon>
-                                    <wui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static control:FontSymbols.Info}" />
+                                    <ui:FontIcon FontFamily="{DynamicResource SymbolThemeFontFamily}" Glyph="{x:Static ui:FontSymbols.Info}" />
                                 </MenuItem.Icon>
                             </MenuItem>
                         </MenuItem>
                     </Menu>
                 </StackPanel>
-            </wui:TitleBar.Header>
-        </wui:TitleBar>
+            </ui:TitleBar.Header>
+        </ui:TitleBar>
     </Grid>
-</wui:FluentWindow>
+</ui:FluentWindow>

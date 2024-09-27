@@ -1,12 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MakeIcon.Design.Converters;
-using MakeIcon.Shared;
 using MakeIcon.ViewModels;
-using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Media;
 using Wpf.Ui.Controls;
 
 namespace MakeIcon.Views;
@@ -22,17 +18,6 @@ public partial class MainWindow : FluentWindow
         InitializeComponent();
     }
 
-    protected override void OnSourceInitialized(EventArgs e)
-    {
-        base.OnSourceInitialized(e);
-
-        if (WindowBackdrop.IsSupported(WindowBackdropType.Mica))
-        {
-            Background = new SolidColorBrush(Colors.Transparent);
-            WindowBackdrop.ApplyBackdrop(this, WindowBackdropType.Mica);
-        }
-    }
-
     private void OnDrop(object sender, DragEventArgs e)
     {
         if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -44,8 +29,4 @@ public partial class MainWindow : FluentWindow
             }
         }
     }
-}
-
-public class IconTypeValueConverter : EnumValueConverter<IconType>
-{
 }

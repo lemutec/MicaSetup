@@ -1,10 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MakeMica.ViewModels;
-using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Media;
 using Wpf.Ui.Controls;
 
 namespace MakeMica.Views;
@@ -18,17 +16,6 @@ public partial class MainWindow : FluentWindow
     {
         DataContext = ViewModel = new();
         InitializeComponent();
-    }
-
-    protected override void OnSourceInitialized(EventArgs e)
-    {
-        base.OnSourceInitialized(e);
-
-        if (WindowBackdrop.IsSupported(WindowBackdropType.Mica))
-        {
-            Background = new SolidColorBrush(Colors.Transparent);
-            WindowBackdrop.ApplyBackdrop(this, WindowBackdropType.Mica);
-        }
     }
 
     private void OnDrop(object sender, DragEventArgs e)

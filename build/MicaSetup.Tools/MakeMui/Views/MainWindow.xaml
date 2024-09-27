@@ -1,20 +1,21 @@
-﻿<wui:FluentWindow x:Class="MakeMui.Views.MainWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:control="clr-namespace:MakeMui.Design.Controls"
-                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                  xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-                  xmlns:local="clr-namespace:MakeMui"
-                  xmlns:wui="http://schemas.lepo.co/wpfui/2022/xaml"
-                  Title="MakeMuiW"
-                  Width="1100"
-                  Height="680"
-                  wui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
-                  wui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                  Background="#E4E4E4"
-                  ExtendsContentIntoTitleBar="True"
-                  ResizeMode="CanMinimize"
-                  WindowStartupLocation="CenterScreen">
+﻿<ui:FluentWindow x:Class="MakeMui.Views.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:b="http://schemas.github.com/computedbehaviors/2024/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+                 xmlns:local="clr-namespace:MakeMui"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 Title="MakeMuiW"
+                 Width="1100"
+                 Height="680"
+                 ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+                 ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                 Background="#E4E4E4"
+                 ExtendsContentIntoTitleBar="True"
+                 ResizeMode="CanMinimize"
+                 WindowBackdropType="Mica"
+                 WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="CellStyle"
                BasedOn="{StaticResource DefaultDataGridCellStyle}"
@@ -48,17 +49,17 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <wui:TextBox IsReadOnly="True"
-                             PlaceholderText="Mui-language XAML Folder ..."
-                             Text="{Binding Folder}" />
+                <ui:TextBox IsReadOnly="True"
+                            PlaceholderText="Mui-language XAML Folder ..."
+                            Text="{Binding Folder}" />
                 <Button Grid.Column="1"
                         MinWidth="45"
                         Margin="8,0,0,0"
                         Command="{Binding OpenFolderCommand}">
                     <Button.Content>
-                        <wui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
-                                      FontSize="16"
-                                      Glyph="&#xf42f;" />
+                        <ui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
+                                     FontSize="16"
+                                     Glyph="&#xf42f;" />
                     </Button.Content>
                 </Button>
             </Grid>
@@ -86,46 +87,46 @@
 
             </DataGrid>
         </Grid>
-        <wui:TitleBar Title="MakeMuiW">
-            <wui:TitleBar.Icon>
-                <wui:ImageIcon Source="pack://application:,,,/Resources/Images/Favicon.png" />
-            </wui:TitleBar.Icon>
-            <wui:TitleBar.Header>
+        <ui:TitleBar Title="MakeMuiW">
+            <ui:TitleBar.Icon>
+                <ui:ImageIcon Source="pack://application:,,,/Resources/Images/Favicon.png" />
+            </ui:TitleBar.Icon>
+            <ui:TitleBar.Header>
                 <StackPanel>
-                    <wui:Button Width="44"
-                                Height="30"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                CornerRadius="0"
-                                Icon="{wui:SymbolIcon CaretDown24}">
-                        <wui:Button.ContextMenu>
+                    <ui:Button Width="44"
+                               Height="30"
+                               Background="Transparent"
+                               BorderBrush="Transparent"
+                               CornerRadius="0"
+                               Icon="{ui:SymbolIcon CaretDown24}">
+                        <ui:Button.ContextMenu>
                             <ContextMenu FontSize="12">
                                 <MenuItem Command="{Binding ShowGitHubCommand}"
                                           FontSize="12"
                                           Header="GitHub">
                                     <MenuItem.Icon>
-                                        <wui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
-                                                      FontSize="16"
-                                                      Glyph="&#xf4e3;" />
+                                        <ui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
+                                                     FontSize="16"
+                                                     Glyph="&#xf4e3;" />
                                     </MenuItem.Icon>
                                 </MenuItem>
                                 <MenuItem Command="{Binding ShowAboutCommand}"
                                           FontSize="12"
                                           Header="About">
                                     <MenuItem.Icon>
-                                        <wui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
-                                                      FontSize="16"
-                                                      Glyph="&#xf3f1;" />
+                                        <ui:FontIcon FontFamily="{DynamicResource FluentSystemIcons}"
+                                                     FontSize="16"
+                                                     Glyph="&#xf3f1;" />
                                     </MenuItem.Icon>
                                 </MenuItem>
                             </ContextMenu>
-                        </wui:Button.ContextMenu>
+                        </ui:Button.ContextMenu>
                         <i:Interaction.Behaviors>
-                            <control:LeftContextMenuBehavior PlacementOffsetX="0" PlacementOffsetY="0" />
+                            <b:LeftContextMenuBehavior PlacementOffsetX="0" PlacementOffsetY="0" />
                         </i:Interaction.Behaviors>
-                    </wui:Button>
+                    </ui:Button>
                 </StackPanel>
-            </wui:TitleBar.Header>
-        </wui:TitleBar>
+            </ui:TitleBar.Header>
+        </ui:TitleBar>
     </Grid>
-</wui:FluentWindow>
+</ui:FluentWindow>
