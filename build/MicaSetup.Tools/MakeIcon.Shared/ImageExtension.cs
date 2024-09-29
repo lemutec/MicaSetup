@@ -20,7 +20,7 @@ internal static class ImageExtension
     public static void AddIconFont(this Bitmap bitmap, string text, float fontSize, FontFamily fontFamily, FontStyle fontStyle = FontStyle.Regular, Color? color = null!, int offsetX = 0, int offsetY = 0)
     {
         using Graphics g = Graphics.FromImage(bitmap);
-        float dpiFactor = g.DpiX / (96f * 1.25f); // TODO: use 1f instead of 1.25f.
+        float dpiFactor = g.DpiX / 96f;
         float adjustedFontSize = fontSize / dpiFactor;
 
         g.TextRenderingHint = TextRenderingHint.AntiAlias;

@@ -18,18 +18,18 @@ public static class ImageHelper
         if (type == IconType.Setup)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 80, fontFamily, FontStyleX.Regular, "#EE24CDB9".ToColor(), 70, 75);
+            bitmap.AddIconFont(Selection.Circle, 100, fontFamily, FontStyleX.Regular, "#EE24CDB9".ToColor(), 70, 75);
 
             // Up
-            bitmap.AddIconFont(Selection.GallerySortReverse, 60, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
+            bitmap.AddIconFont(Selection.GallerySortReverse, 75, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
         }
         else if (type == IconType.Uninst)
         {
             // Circle
-            bitmap.AddIconFont(Selection.Circle, 80, fontFamily, FontStyleX.Regular, "#EEEB3B3B".ToColor(), 70, 75);
+            bitmap.AddIconFont(Selection.Circle, 100, fontFamily, FontStyleX.Regular, "#EEEB3B3B".ToColor(), 70, 75);
 
             // Close
-            bitmap.AddIconFont(Selection.PublicCancelFilled, 60, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
+            bitmap.AddIconFont(Selection.PublicCancelFilled, 75, fontFamily, FontStyleX.Bold, "#FFFFFF".ToColor(), 70, 75);
         }
         return bitmap;
     }
