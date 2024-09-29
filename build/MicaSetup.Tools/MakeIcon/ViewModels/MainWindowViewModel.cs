@@ -37,13 +37,13 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
         }
     }
 
-    [Obsolete("Only for CLI")]
+    [Obsolete("Only CLI")]
     public bool IsTypeNormal { get; set; } = false;
 
-    [Obsolete("Only for CLI")]
+    [Obsolete("Only CLI")]
     public bool IsTypeSetup { get; set; } = false;
 
-    [Obsolete("Only for CLI")]
+    [Obsolete("Only CLI")]
     public bool IsTypeUninst { get; set; } = false;
 
     [ObservableProperty]

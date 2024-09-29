@@ -20,6 +20,9 @@ internal static class ImageExtension
     public static void AddIconFont(this Bitmap bitmap, string text, float fontSize, FontFamily fontFamily, FontStyle fontStyle = FontStyle.Regular, Color? color = null!, int offsetX = 0, int offsetY = 0)
     {
         using Graphics g = Graphics.FromImage(bitmap);
+        float dpiFactor = g.DpiX / (96f * 1.25f); // TODO: use 1f instead of 1.25f.
+        float adjustedFontSize = fontSize / dpiFactor;
+
         g.TextRenderingHint = TextRenderingHint.AntiAlias;
         g.SmoothingMode = SmoothingMode.HighQuality;
         g.PixelOffsetMode = PixelOffsetMode.HighQuality;
@@ -29,7 +32,7 @@ internal static class ImageExtension
             Alignment = StringAlignment.Center,
             LineAlignment = StringAlignment.Center,
         };
-        using Font font = new(fontFamily, fontSize, fontStyle);
+        using Font font = new(fontFamily, adjustedFontSize, fontStyle);
         using Brush brush = new SolidBrush(color ?? Color.Black);
 
         RectangleF textBounds = new(PointF.Empty, g.MeasureString(text, font));
