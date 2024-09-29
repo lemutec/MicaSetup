@@ -32,13 +32,11 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
 		<PackageReference Include="WPF-UI" Version="3.0.5" />
-		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.14" />
+		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.15" />
 		<PackageReference Include="ComputedAnimations.WPF" Version="0.4.5-beta" />
 		<PackageReference Include="ComputedBehaviors.WPF" Version="0.4.5-beta" />
 		<PackageReference Include="ComputedConverters.WPF" Version="0.4.5-beta" />
 		<PackageReference Include="System.Drawing.Common" Version="8.0.8" />
-		<PackageReference Include="ToastNotifications" Version="2.5.1" />
-		<PackageReference Include="ToastNotifications.Messages" Version="2.5.1" />
 		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="4.0.4" />
 		<PackageReference Include="Vanara.PInvoke.User32" Version="4.0.4" />
 	</ItemGroup>

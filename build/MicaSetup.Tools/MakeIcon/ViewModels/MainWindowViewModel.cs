@@ -11,10 +11,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
-using ToastNotifications;
-using ToastNotifications.Lifetime;
-using ToastNotifications.Messages;
-using ToastNotifications.Position;
+using Wpf.Ui.Violeta.Controls;
 
 namespace MakeIcon.ViewModels;
 
@@ -52,8 +49,6 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
     [ObservableProperty]
     private ImageSource? imageSource = null!;
 
-    private readonly Notifier notifier;
-
     [ObservableProperty]
     private bool isSize256 = true;
 
@@ -74,20 +69,6 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
 
     public MainWindowViewModel()
     {
-        notifier = new(cfg =>
-        {
-            cfg.PositionProvider = new WindowPositionProvider(
-                parentWindow: Application.Current.MainWindow,
-                corner: Corner.BottomCenter,
-                offsetX: 10,
-                offsetY: 60);
-
-            cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(
-                notificationLifetime: TimeSpan.FromSeconds(1),
-                maximumNotificationCount: MaximumNotificationCount.FromCount(5));
-
-            cfg.Dispatcher = Application.Current.Dispatcher;
-        });
     }
 
     [RelayCommand]
@@ -162,14 +143,14 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
 
             if (sizes.Count == 0)
             {
-                notifier.ShowError("Please select the size.");
+                Toast.Error("Please select the size.");
                 return;
             }
 
             ImageHelper.SaveImage(IconType, PrivateFontHelper.FontFamily, FilePath!, ".ico", [.. sizes]);
         }
 
-        notifier.ShowInformation("Create completed.");
+        Toast.Information("Create completed.");
     }
 
     [RelayCommand]
