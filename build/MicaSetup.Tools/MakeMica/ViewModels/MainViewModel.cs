@@ -1,16 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MakeMica.Core;
-using MakeMica.Design.Controls;
-using MakeMica.Design.Helpers;
-using MakeMica.Shared;
 using MakeMica.Views;
 using Microsoft.Win32;
-using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using Wpf.Ui.Violeta.Resources;
 
 namespace MakeMica.ViewModels;
 
@@ -40,7 +37,7 @@ public partial class MainViewModel : ObservableObject
         FilePath = null!;
 
         //Code = JsonConvert.SerializeObject(new MicaConfig());
-        Code = ResourceHelper.GetString(@"pack://application:,,,/Resources/Templates/Sample.json");
+        Code = ResourcesProvider.GetString(@"pack://application:,,,/Resources/Templates/Sample.json");
     }
 
     [RelayCommand]

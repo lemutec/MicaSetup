@@ -2,7 +2,7 @@
 using System.Xml;
 using ICSharpCode.AvalonEdit.Highlighting;
 using ICSharpCode.AvalonEdit.Highlighting.Xshd;
-using MakeMica.Design.Helpers;
+using Wpf.Ui.Violeta.Resources;
 
 namespace MakeMica.Design.Controls;
 
@@ -16,7 +16,7 @@ public class JsonCodeBox : CodeBox
     private void RegisterHighlighting()
     {
         IHighlightingDefinition luaHighlighting;
-        using Stream s = ResourceHelper.GetStream(@"pack://application:,,,/Resources/Syntax/JSON.xshd");
+        using Stream s = ResourcesProvider.GetStream(@"pack://application:,,,/Resources/Syntax/JSON.xshd");
         using XmlReader reader = new XmlTextReader(s);
         luaHighlighting = HighlightingLoader.Load(reader, HighlightingManager.Instance);
 
