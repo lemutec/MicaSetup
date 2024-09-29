@@ -8,6 +8,7 @@
                  xmlns:local="clr-namespace:MakeIcon.Views"
                  xmlns:shared="clr-namespace:MakeIcon.Shared"
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:vio="http://schemas.lepo.co/wpfui/2022/xaml/violeta"
                  Title="MakeIconW"
                  Width="550"
                  Height="640"

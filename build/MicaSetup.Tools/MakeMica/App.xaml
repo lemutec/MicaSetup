@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MakeMica"
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:vio="http://schemas.lepo.co/wpfui/2022/xaml/violeta"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ui:ThemesDictionary Theme="Dark" />
                 <ui:ControlsDictionary />
+                <vio:ControlsDictionary />
                 <ResourceDictionary Source="pack://application:,,,/Design/Controls/CodeEditor/CodeBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Design/Controls/TitleBar/TitleBar.xaml" />
             </ResourceDictionary.MergedDictionaries>
