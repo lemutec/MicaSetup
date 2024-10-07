@@ -1,6 +1,7 @@
 ﻿using SharpCompress.Common;
 using SharpCompress.Readers;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -119,13 +120,12 @@ public static class InstallHelper
             PreserveFileTime = true,
         };
 
-        StringBuilder uninstallData = new();
+        HashSet<string> uninstallData = [];
         ArchiveFileHelper.ExtractAll(Option.Current.InstallLocation, archiveStream, (double progress, string key) =>
         {
             Logger.Debug($"[ExtractAll] {key} {progress * 100d:0.00}%");
             progressCallback?.Invoke(progress, key);
-            uninstallData.Append(key);
-            uninstallData.Append('|'); // The  '|' is a good split char for file path.
+            uninstallData.Add(key);
         }, readerOptions: readerOptions, options: extractionOptions);
 
         if (Option.Current.IsCreateRegistryKeys && RuntimeHelper.IsElevated)
@@ -150,7 +150,7 @@ public static class InstallHelper
                 info.DisplayIcon = Path.Combine(Option.Current.InstallLocation, Option.Current.DisplayIcon);
             }
             info.UninstallString ??= Path.Combine(Option.Current.InstallLocation, "Uninst.exe");
-            info.UninstallData = uninstallData.ToString();
+            info.UninstallData = string.Join("|", uninstallData); // The  '|' is a good split char for file path.
 
             try
             {
@@ -172,7 +172,7 @@ public static class InstallHelper
                     // Not allow user file named the same as it.
                     File.Delete(uninstDataPath);
                 }
-                File.WriteAllText(uninstDataPath, uninstallData.ToString());
+                File.WriteAllText(uninstDataPath, string.Join("|", uninstallData)); // The  '|' is a good split char for file path.
             }
             catch (Exception e)
             {
