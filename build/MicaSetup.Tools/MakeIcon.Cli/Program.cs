@@ -15,6 +15,10 @@ RootCommand rootCommand =
         description: "Support icon type normal,setup,uninst."
     ),
     new Option<string>(
+        "--color",
+        description: "Support change color."
+    ),
+    new Option<string>(
         "--size",
         description: "Support size 256,128,64,48,32,24,16."
     ),
@@ -38,10 +42,11 @@ rootCommand.SetHandler(ctx =>
 
     Console.WriteLine($"Input: {kvp["input"]}");
     Console.WriteLine($"Type: {kvp["type"]}");
+    Console.WriteLine($"Color: {kvp["color"]}");
     Console.WriteLine($"Size: {kvp["size"]}");
     Console.WriteLine($"Ext: {kvp["ext"]}");
 
-    IMakeIconParam param = MakeIconParam.Creat(kvp);
+    IMakeIconParam param = MakeIconParam.Create(kvp);
 
     if (string.IsNullOrEmpty(param.FilePath))
     {
@@ -77,17 +82,17 @@ rootCommand.SetHandler(ctx =>
     {
         if (param.IsTypeNormal)
         {
-            ImageHelper.SaveImage(IconType.Normal, PrivateFontHelper.FontFamily, param.FilePath!, ".png");
+            ImageHelper.SaveImage(IconType.Normal, PrivateFontHelper.FontFamily, param.FilePath!, ".png", null, param.ChangedColor);
             Console.WriteLine("Normal type png created.");
         }
         if (param.IsTypeSetup)
         {
-            ImageHelper.SaveImage(IconType.Setup, PrivateFontHelper.FontFamily, param.FilePath!, ".png");
+            ImageHelper.SaveImage(IconType.Setup, PrivateFontHelper.FontFamily, param.FilePath!, ".png", null, param.ChangedColor);
             Console.WriteLine("Setup type png created.");
         }
         if (param.IsTypeUninst)
         {
-            ImageHelper.SaveImage(IconType.Uninst, PrivateFontHelper.FontFamily, param.FilePath!, ".png");
+            ImageHelper.SaveImage(IconType.Uninst, PrivateFontHelper.FontFamily, param.FilePath!, ".png", null, param.ChangedColor);
             Console.WriteLine("Uninst type png created.");
         }
     }
@@ -129,17 +134,17 @@ rootCommand.SetHandler(ctx =>
 
         if (param.IsTypeNormal)
         {
-            ImageHelper.SaveImage(IconType.Normal, PrivateFontHelper.FontFamily, param.FilePath!, ".ico", [.. sizes]);
+            ImageHelper.SaveImage(IconType.Normal, PrivateFontHelper.FontFamily, param.FilePath!, ".ico", [.. sizes], param.ChangedColor);
             Console.WriteLine("Normal type ico created.");
         }
         if (param.IsTypeSetup)
         {
-            ImageHelper.SaveImage(IconType.Setup, PrivateFontHelper.FontFamily, param.FilePath!, ".ico", [.. sizes]);
+            ImageHelper.SaveImage(IconType.Setup, PrivateFontHelper.FontFamily, param.FilePath!, ".ico", [.. sizes], param.ChangedColor);
             Console.WriteLine("Setup type ico created.");
         }
         if (param.IsTypeUninst)
         {
-            ImageHelper.SaveImage(IconType.Uninst, PrivateFontHelper.FontFamily, param.FilePath!, ".ico", [.. sizes]);
+            ImageHelper.SaveImage(IconType.Uninst, PrivateFontHelper.FontFamily, param.FilePath!, ".ico", [.. sizes], param.ChangedColor);
             Console.WriteLine("Uninst type ico created.");
         }
     }

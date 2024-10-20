@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ComputedConverters;
 using MakeIcon.Extension;
 using MakeIcon.Helpers;
 using MakeIcon.Shared;
@@ -9,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using Wpf.Ui.Violeta.Controls;
@@ -30,6 +32,28 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
     private IconType iconType = IconType.Normal;
 
     partial void OnIconTypeChanged(IconType value)
+    {
+        if (File.Exists(FilePath))
+        {
+            CreateImage(FilePath!);
+        }
+    }
+
+    [ObservableProperty]
+    private bool isKeepOriginal = true;
+
+    partial void OnIsKeepOriginalChanged(bool value)
+    {
+        if (File.Exists(FilePath))
+        {
+            CreateImage(FilePath!);
+        }
+    }
+
+    [ObservableProperty]
+    private string changedColor = "#FFFFFF";
+
+    partial void OnChangedColorChanged(string value)
     {
         if (File.Exists(FilePath))
         {
@@ -72,6 +96,20 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
     }
 
     [RelayCommand]
+    private void Drop(RelayEventParameter param)
+    {
+        (object sender, DragEventArgs e) = param.Deconstruct<DragEventArgs>();
+        if (e.Data.GetDataPresent(DataFormats.FileDrop))
+        {
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] files
+                && files.FirstOrDefault() is string path)
+            {
+                CreateImage(FilePath = path);
+            }
+        }
+    }
+
+    [RelayCommand]
     private void OpenImage()
     {
         OpenFileDialog openFileDialog = new()
@@ -89,9 +127,13 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
     [RelayCommand]
     public void CreateImage(string filename)
     {
-        ImageSource = ImageHelper.OpenImage(IconType, PrivateFontHelper.FontFamily, filename)
-            .DrawFrame("#50FFFFFF".ToColor(), 1)
-            .ToImageSource();
+        ImageSource = ImageHelper.OpenImage(
+            type: IconType,
+            fontFamily: PrivateFontHelper.FontFamily,
+            filename: filename,
+            changedColor: IsKeepOriginal ? null : ChangedColor
+        ).DrawFrame("#50FFFFFF".ToColor(), 1)
+        .ToImageSource();
     }
 
     [RelayCommand]
@@ -109,7 +151,14 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
 
         if (IsCreatePng)
         {
-            ImageHelper.SaveImage(IconType, PrivateFontHelper.FontFamily, FilePath!, ".png");
+            ImageHelper.SaveImage(
+                type: IconType,
+                fontFamily: PrivateFontHelper.FontFamily,
+                filename: FilePath!,
+                ext: ".png",
+                size: null,
+                changedColor: IsKeepOriginal ? null : ChangedColor
+            );
         }
 
         if (IsCreateIco)
@@ -147,10 +196,17 @@ public partial class MainWindowViewModel : ObservableObject, IMakeIconParam
                 return;
             }
 
-            ImageHelper.SaveImage(IconType, PrivateFontHelper.FontFamily, FilePath!, ".ico", [.. sizes]);
+            ImageHelper.SaveImage(
+                type: IconType,
+                fontFamily: PrivateFontHelper.FontFamily,
+                filename: FilePath!,
+                ext: ".ico",
+                size: [.. sizes],
+                changedColor: IsKeepOriginal ? null : ChangedColor
+            );
         }
 
-        Toast.Information("Create completed.");
+        Toast.Success("Create completed.");
     }
 
     [RelayCommand]

@@ -10,6 +10,7 @@ public sealed class MakeIconParam : IMakeIconParam
     public bool IsTypeNormal { get; set; } = true;
     public bool IsTypeSetup { get; set; } = true;
     public bool IsTypeUninst { get; set; } = true;
+    public string? ChangedColor { get; set; } = null;
     public bool IsSize256 { get; set; } = true;
     public bool IsSize64 { get; set; } = true;
     public bool IsSize48 { get; set; } = true;
@@ -17,7 +18,7 @@ public sealed class MakeIconParam : IMakeIconParam
     public bool IsSize24 { get; set; } = true;
     public bool IsSize16 { get; set; } = true;
 
-    public static IMakeIconParam Creat(IDictionary<string, string> kvp)
+    public static IMakeIconParam Create(IDictionary<string, string> kvp)
     {
         MakeIconParam param = new();
 
@@ -31,6 +32,11 @@ public sealed class MakeIconParam : IMakeIconParam
             param.IsTypeNormal = kvp["type"].Contains("normal");
             param.IsTypeSetup = kvp["type"].Contains("setup");
             param.IsTypeUninst = kvp["type"].Contains("uninst");
+        }
+
+        if (kvp.ContainsKey("color"))
+        {
+            param.ChangedColor = kvp["color"];
         }
 
         if (kvp.ContainsKey("size"))

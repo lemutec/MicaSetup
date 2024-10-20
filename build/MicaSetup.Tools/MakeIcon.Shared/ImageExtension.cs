@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Drawing.Text;
@@ -43,7 +44,37 @@ internal static class ImageExtension
         g.DrawString(text, font, brush, center.X + offsetX, center.Y + offsetY);
     }
 
-    public static Bitmap DrawFrame(this Bitmap bitmap, Color? color = null!, int thickness = 1)
+    public static unsafe Bitmap ChangeColor(this Bitmap bitmap, Color? color = null)
+    {
+        if (color != null)
+        {
+            Color newColor = color ?? Color.White;
+
+            Rectangle rect = new(0, 0, bitmap.Width, bitmap.Height);
+            BitmapData bmpData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
+            nint ptr = bmpData.Scan0;
+            int bytes = Math.Abs(bmpData.Stride) * bitmap.Height;
+            byte* pixelData = (byte*)ptr;
+
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                byte* row = pixelData + (y * bmpData.Stride);
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    byte* pixel = row + (x * 4);
+
+                    pixel[2] = newColor.R; // R
+                    pixel[1] = newColor.G; // G
+                    pixel[0] = newColor.B; // B
+                }
+            }
+
+            bitmap.UnlockBits(bmpData);
+        }
+        return bitmap;
+    }
+
+    public static Bitmap DrawFrame(this Bitmap bitmap, Color? color = null, int thickness = 1)
     {
         using Graphics g = Graphics.FromImage(bitmap);
         using Pen pen = new(color ?? Color.Black, thickness);

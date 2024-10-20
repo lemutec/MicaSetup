@@ -14,6 +14,8 @@ public interface IMakeIconParam
 
     public bool IsTypeUninst { get; set; }
 
+    public string? ChangedColor { get; set; }
+
     public bool IsSize256 { get; set; }
 
     public bool IsSize64 { get; set; }

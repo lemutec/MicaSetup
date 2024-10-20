@@ -9,11 +9,13 @@ namespace MakeIcon.Shared;
 
 public static class ImageHelper
 {
-    public static Bitmap OpenImage(IconType type, FontFamily fontFamily, string filename = "Favicon.png")
+    public static Bitmap OpenImage(IconType type, FontFamily fontFamily, string filename = "Favicon.png", string? changedColor = null)
     {
         Bitmap bitmap = new(256, 256);
 
         bitmap.AddImage(new Bitmap(filename), 0, 0, 256, 256);
+
+        bitmap = bitmap.ChangeColor(changedColor?.ToColor());
 
         if (type == IconType.Setup)
         {
@@ -34,9 +36,9 @@ public static class ImageHelper
         return bitmap;
     }
 
-    public static void SaveImage(IconType type, FontFamily fontFamily, string filename = "Favicon.png", string ext = ".png", int[]? size = null)
+    public static void SaveImage(IconType type, FontFamily fontFamily, string filename = "Favicon.png", string ext = ".png", int[]? size = null, string? changedColor = null)
     {
-        using Bitmap bitmap = OpenImage(type, fontFamily, filename);
+        using Bitmap bitmap = OpenImage(type, fontFamily, filename, changedColor);
         string pathNoExt = $"Favicon{type switch
         {
             IconType.Setup => nameof(IconType.Setup),

@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using ComputedConverters;
 using MakeIcon.ViewModels;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows;
 using Wpf.Ui.Controls;
 
@@ -20,13 +20,6 @@ public partial class MainWindow : FluentWindow
 
     private void OnDrop(object sender, DragEventArgs e)
     {
-        if (e.Data.GetDataPresent(DataFormats.FileDrop))
-        {
-            if (e.Data.GetData(DataFormats.FileDrop) is string[] files
-                && files.FirstOrDefault() is string path)
-            {
-                ViewModel.CreateImage(ViewModel.FilePath = path);
-            }
-        }
+        ViewModel.DropCommand.Execute(new RelayEventParameter(sender, e));
     }
 }

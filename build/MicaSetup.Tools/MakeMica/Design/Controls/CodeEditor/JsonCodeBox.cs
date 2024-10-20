@@ -15,10 +15,9 @@ public class JsonCodeBox : CodeBox
 
     private void RegisterHighlighting()
     {
-        IHighlightingDefinition luaHighlighting;
         using Stream s = ResourcesProvider.GetStream(@"pack://application:,,,/Resources/Syntax/JSON.xshd");
         using XmlReader reader = new XmlTextReader(s);
-        luaHighlighting = HighlightingLoader.Load(reader, HighlightingManager.Instance);
+        IHighlightingDefinition luaHighlighting = HighlightingLoader.Load(reader, HighlightingManager.Instance);
 
         HighlightingManager.Instance.RegisterHighlighting("Json", [".json"], luaHighlighting);
         SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("Json");

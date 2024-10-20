@@ -5,8 +5,15 @@ namespace MakeIcon.Shared;
 
 internal static class ColorExtension
 {
-    public static Color ToColor(this string htmlColor)
+    public static Color ToColor(this string htmlColor, Color? fallback = null)
     {
-        return ColorTranslator.FromHtml(htmlColor);
+        try
+        {
+            return ColorTranslator.FromHtml(htmlColor);
+        }
+        catch
+        {
+            return fallback ?? Color.Transparent;
+        }
     }
 }

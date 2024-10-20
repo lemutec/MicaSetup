@@ -29,6 +29,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
@@ -49,6 +50,26 @@
                              IsChecked="{Binding IconType, Converter={StaticResource EnumToBoolConverter}, ConverterParameter={x:Static shared:IconType.Uninst}}" />
             </StackPanel>
             <StackPanel Grid.Row="1"
+                        Margin="0,5,0,0"
+                        Orientation="Horizontal">
+                <TextBlock MinWidth="80"
+                           Margin="0,0,16,0"
+                           VerticalAlignment="Center">
+                    <Run Text="Color" /><Run Text=":" />
+                </TextBlock>
+                <RadioButton MinWidth="100"
+                             Content="Original"
+                             IsChecked="{Binding IsKeepOriginal}" />
+                <RadioButton x:Name="SpecifyColorRadioButton"
+                             MinWidth="100"
+                             Content="Specify"
+                             IsChecked="{Binding IsKeepOriginal, Converter={x:Static c:BoolInverter.Instance}}" />
+                <ui:TextBox MinWidth="100"
+                            IsEnabled="{Binding IsChecked, ElementName=SpecifyColorRadioButton}"
+                            PlaceholderText="#FFFFFF"
+                            Text="{Binding ChangedColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+            <StackPanel Grid.Row="2"
                         Margin="0,8,0,0"
                         Orientation="Horizontal">
                 <TextBlock MinWidth="80"
@@ -75,7 +96,7 @@
                           Content="16"
                           IsChecked="{Binding IsSize16}" />
             </StackPanel>
-            <StackPanel Grid.Row="2"
+            <StackPanel Grid.Row="3"
                         Margin="0,5,0,0"
                         Orientation="Horizontal">
                 <TextBlock MinWidth="80"
@@ -90,7 +111,7 @@
                           Content="ICO"
                           IsChecked="{Binding IsCreateIco}" />
             </StackPanel>
-            <Border Grid.Row="3"
+            <Border Grid.Row="4"
                     Margin="0,8,0,0"
                     CornerRadius="16">
                 <Border.Background>
@@ -104,7 +125,7 @@
                 </Border.Background>
                 <Image Source="{Binding ImageSource}" Stretch="None" />
             </Border>
-            <StackPanel Grid.Row="4"
+            <StackPanel Grid.Row="5"
                         Margin="0,8,0,0"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">

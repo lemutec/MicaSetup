@@ -36,10 +36,10 @@
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="WPF-UI" Version="3.0.5" />
-		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.16" />
-		<PackageReference Include="ComputedAnimations.WPF" Version="0.4.5-beta" />
-		<PackageReference Include="ComputedBehaviors.WPF" Version="0.4.5-beta" />
-		<PackageReference Include="ComputedConverters.WPF" Version="0.4.5-beta" />
+		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.20" />
+		<PackageReference Include="ComputedAnimations.WPF" Version="0.4.7-beta" />
+		<PackageReference Include="ComputedBehaviors.WPF" Version="0.4.7-beta" />
+		<PackageReference Include="ComputedConverters.WPF" Version="0.4.7-beta" />
 		<PackageReference Include="FluentCommandLineParser" Version="1.4.3" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
