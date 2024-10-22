@@ -4,6 +4,14 @@
 
 MicaSetup is a universal advanced installation package generation tool project that supports various features and allows customization of the full entire installation process.
 
+## 🔣Toolkits
+
+| Toolkits | Description                                               | GUI               | CLI               |
+| -------- | --------------------------------------------------------- | ----------------- | ----------------- |
+| MakeIcon | Create setup and uninst icon, both *.png and *.ico.       | Ready             | Ready             |
+| MakeMica | Build a package installer using configuration JSON file.  | Under development | Under development |
+| MakeMui  | A GUI for editing the multi-language XAML resource files. | Under development | /                 |
+
 ## 🌒ScreenShots
 
 <img src="./assets/image-20240520214715174.png" alt="image-20240520214715174" style="zoom: 80%;" />
@@ -70,13 +78,6 @@ MicaSetup is a universal advanced installation package generation tool project t
 | SetupProgressBar   | ☑          | Support Indeterminate Animation.                  |
 | MessageBoxX        | ☑          | Simple MessageBox instead of Classics.            |
 | SmoothScrollViewer | ☑          | Support smoothly scrolling.                       |
-
-## 🔣Toolkits
-
-| Toolkits     | Completion | Addition                                                     |
-| ------------ | ---------- | ------------------------------------------------------------ |
-| Icon Creator | ☑          | Creating the universal Squircle like icon.<br />[More infomation](build/MicaSetup.Tools/MicaSquircle/README.md). |
-| Trim Font    | ☑          | Only MicaSetup v1 needed.<br />[More infomation](https://github.com/lemutec/MicaSetup/tree/v1/src/MicaSetup.Tools/MicaFontTrim). |
 
 ## 📖Usage & Wikis
 
