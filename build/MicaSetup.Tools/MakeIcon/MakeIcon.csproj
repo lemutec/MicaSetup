@@ -15,6 +15,10 @@
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);NU1902;NU1903;</NoWarn>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<None Remove="Resources\Images\*.png" />
 		<None Remove="Resources\Fonts\*.ttf" />
@@ -26,14 +30,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="5.7.0">
+		<PackageReference Include="Costura.Fody" Version="5.7.0" Condition="'$(Configuration)' == 'Release'">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
 		<PackageReference Include="WPF-UI" Version="3.0.5" />
-		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.23" />
+		<PackageReference Include="WPF-UI.Violeta" Version="3.0.5.26" />
 		<PackageReference Include="ComputedAnimations.WPF" Version="0.4.8" />
 		<PackageReference Include="ComputedBehaviors.WPF" Version="0.4.8" />
 		<PackageReference Include="ComputedConverters.WPF" Version="0.4.8" />

@@ -19,8 +19,12 @@
 		<None Remove="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
 	</ItemGroup>
 
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);NU1902;NU1903;</NoWarn>
+	</PropertyGroup>
+
 	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="5.7.0">
+		<PackageReference Include="Costura.Fody" Version="5.7.0" Condition="'$(Configuration)' == 'Release'">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
