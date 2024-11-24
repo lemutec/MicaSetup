@@ -11,39 +11,48 @@ internal sealed class App
     {
         _ = config ?? throw new ArgumentNullException(nameof(config));
 
-        string? template = MicaPath.GetFullPath(config.Template);
-        string? package = MicaPath.GetFullPath(config.Package);
-
-        if (!File.Exists(template))
+        // Extract template files
         {
-            Console.WriteLine($"ERR: Template file '{template}' not found.");
-            return;
+            string? template = MicaPath.GetFullPath(config.Template);
+            string? package = MicaPath.GetFullPath(config.Package);
+
+            if (!File.Exists(template))
+            {
+                Console.WriteLine($"ERR: Template file '{template}' not found.");
+                return;
+            }
+
+            if (!File.Exists(package))
+            {
+                Console.WriteLine($"ERR: Package file '{package}' not found.");
+                return;
+            }
+
+            if (Directory.Exists(".dist"))
+            {
+                Directory.Delete(".dist", true);
+            }
+            _ = Directory.CreateDirectory(".dist");
+
+            ArchiveFileHelper.ExtractAll(".dist", template, options: new ExtractionOptions()
+            {
+                ExtractFullPath = true,
+                Overwrite = true,
+                PreserveAttributes = false,
+                PreserveFileTime = true,
+            });
         }
 
-        if (!File.Exists(package))
+        // Apply your config
         {
-            Console.WriteLine($"ERR: Package file '{package}' not found.");
-            return;
+            CSharpProject.SetupConfig(@".dist\MicaSetup.csproj", config, isUninst: false);
+            CSharpProject.SetupConfig(@".dist\MicaSetup.Uninst.csproj", config, isUninst: true);
+            CSharpProgram.SetupConfig(@".dist\Program.cs", config, isUninst: false);
+            CSharpProgram.SetupConfig(@".dist\Program.un.cs", config, isUninst: true);
+            CSharpResource.SetupConfig(@".dist\Resources", config);
         }
 
-        if (Directory.Exists(".dist"))
-        {
-            Directory.Delete(".dist", true);
-        }
-        _ = Directory.CreateDirectory(".dist");
-
-        ArchiveFileHelper.ExtractAll(".dist", template, options: new ExtractionOptions()
-        {
-            ExtractFullPath = true,
-            Overwrite = true,
-            PreserveAttributes = false,
-            PreserveFileTime = true,
-        });
-
-        CSharpProject.SetupConfig(@".dist\MicaSetup\MicaSetup.csproj", config, isUninst: false);
-        CSharpProject.SetupConfig(@".dist\MicaSetup\MicaSetup.Uninst.csproj", config, isUninst: true);
-        CSharpProgram.SetupConfig(@".dist\MicaSetup\Program.cs", config, isUninst: false);
-        CSharpProgram.SetupConfig(@".dist\MicaSetup\Program.un.cs", config, isUninst: true);
-        CSharpResource.SetupConfig(@".dist\MicaSetup\Resources", config);
+        // Compile and pack the setup
+        CSharpCompiler.Build(config);
     }
 }

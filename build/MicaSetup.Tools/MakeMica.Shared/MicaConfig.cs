@@ -16,6 +16,11 @@ public class MicaConfig
     public string Package { get; set; } = "./publish.7z";
 
     /// <summary>
+    /// The output setup file location.
+    /// </summary>
+    public string Output { get; set; } = "./${AppName}Setup_v${Version}.exe";
+
+    /// <summary>
     /// The display name of register.
     /// </summary>
     public string AppName { get; set; } = "MicaApp";

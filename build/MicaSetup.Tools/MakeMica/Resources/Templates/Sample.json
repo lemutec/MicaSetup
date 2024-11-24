@@ -1,6 +1,7 @@
 {
   "Template": "./template/default.7z",
   "Package": "./publish.7z",
+  "Output": "./${AppName}Setup_v${Version}.exe",
   "AppName": "MicaApp",
   "KeyName": "MicaApp",
   "ExeName": "MicaApp.exe",

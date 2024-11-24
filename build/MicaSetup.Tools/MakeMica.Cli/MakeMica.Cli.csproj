@@ -13,7 +13,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<NoWarn>$(NoWarn);NU1902;NU1903;</NoWarn>
+		<NoWarn>$(NoWarn);NU1902;NU1903;CS1998;</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,6 +25,7 @@
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="PureSharpCompress" Version="0.38.0" />
+		<PackageReference Include="Flucli" Version="0.3.2" />
 	</ItemGroup>
 
 	<ItemGroup>

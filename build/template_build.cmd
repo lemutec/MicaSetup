@@ -1,6 +1,6 @@
 rd /s /q .\MicaSetup\obj
 rd /s /q .\MicaSetup\bin
-del .\MicaSetup\bin\MicaSetup.csproj.user
+del .\MicaSetup\MicaSetup.csproj.user
 del .\MicaSetup\Resources\Setups\publish.7z
 del .\MicaSetup\Resources\Setups\publish.cer
 del .\MicaSetup\Resources\Setups\Uninst.exe

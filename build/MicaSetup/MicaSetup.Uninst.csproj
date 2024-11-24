@@ -25,6 +25,10 @@
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);NU1902;NU1903;CS8625;</NoWarn>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<None Remove="Resources\Fonts\*.ttf" />
 		<None Remove="Resources\Images\*.ico" />
@@ -82,7 +86,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="PureSharpCompress" Version="0.38.0" Condition="'$(Configuration)' == 'Debug'"/>
+		<PackageReference Include="PureSharpCompress" Version="0.38.0" Condition="'$(Configuration)' == 'Debug'" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,16 +1,17 @@
-﻿using Microsoft.Win32;
+﻿using Flucli.Utils.Extensions;
+using Microsoft.Win32;
 
 namespace MakeMica.Cli.Core;
 
 public static class CSharpScript
 {
-    private static string FindVSWhere()
+    public static string FindVSWhere()
     {
         string? uninstallInfo = (GetUninstallInfo(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", "Microsoft Visual Studio Installer")
                              ?? GetUninstallInfo(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "Microsoft Visual Studio Installer"))
                              ?? throw new ApplicationException("Microsoft Visual Studio Installer is not installed, register not found.");
 
-        string[] parsedArgs = ParseArguments(uninstallInfo);
+        string[] parsedArgs = [.. uninstallInfo.ToArguments()];
 
         if (parsedArgs.Length <= 0)
         {
@@ -53,41 +54,5 @@ public static class CSharpScript
             }
         }
         return null;
-    }
-
-    private static string[] ParseArguments(string commandLine)
-    {
-        List<string> args = [];
-        string currentArg = string.Empty;
-        bool inQuotes = false;
-
-        for (int i = 0; i < commandLine.Length; i++)
-        {
-            char c = commandLine[i];
-
-            if (c == '"')
-            {
-                inQuotes = !inQuotes;
-            }
-            else if (c == ' ' && !inQuotes)
-            {
-                if (currentArg != string.Empty)
-                {
-                    args.Add(currentArg);
-                    currentArg = string.Empty;
-                }
-            }
-            else
-            {
-                currentArg += c;
-            }
-        }
-
-        if (currentArg != string.Empty)
-        {
-            args.Add(currentArg);
-        }
-
-        return [.. args];
     }
 }

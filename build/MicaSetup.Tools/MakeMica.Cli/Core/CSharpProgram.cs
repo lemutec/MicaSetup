@@ -28,7 +28,7 @@ public static class CSharpProgram
             }
             else
             {
-                throw new ArgumentException($"[ERR] Invalid `Guid` of '{config.Guid}'.");
+                throw new ArgumentException($"Invalid `Guid` of '{config.Guid}'.");
             }
         }
 
@@ -41,7 +41,7 @@ public static class CSharpProgram
             }
             else
             {
-                throw new ArgumentException($"[ERR] Invalid `RequestExecutionLevel` of '{config.RequestExecutionLevel}'.");
+                throw new ArgumentException($"Invalid `RequestExecutionLevel` of '{config.RequestExecutionLevel}'.");
             }
         }
 
@@ -55,7 +55,7 @@ public static class CSharpProgram
             }
             else
             {
-                throw new ArgumentException($"[ERR] Invalid `Version` of '{config.Version}'.");
+                throw new ArgumentException($"Invalid `Version` of '{config.Version}'.");
             }
         }
 
@@ -72,7 +72,7 @@ public static class CSharpProgram
             }
             else
             {
-                throw new ArgumentException($"[ERR] Invalid `KeyName` of '{config.KeyName}'.");
+                throw new ArgumentException($"Invalid `KeyName` of '{config.KeyName}'.");
             }
         }
 
@@ -111,6 +111,9 @@ public static class CSharpProgram
         root = root.ReplaceOptionWithBoolean("IsRefreshExplorer", config.IsRefreshExplorer);
         root = root.ReplaceOptionWithBoolean("IsInstallCertificate", config.IsInstallCertificate);
         root = root.ReplaceOptionWithBoolean("IsEnableUninstallDelayUntilReboot", config.IsEnableUninstallDelayUntilReboot);
+        root = root.ReplaceOptionWithString("MessageOfPage1", config.MessageOfPage1);
+        root = root.ReplaceOptionWithString("MessageOfPage2", config.MessageOfPage2);
+        root = root.ReplaceOptionWithString("MessageOfPage3", config.MessageOfPage3);
 
         if (!isUninst)
         {
