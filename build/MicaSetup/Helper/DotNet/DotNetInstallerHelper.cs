@@ -70,7 +70,7 @@ public static class DotNetInstallerHelper
 
         if (!ConnectivityHelper.IsNetworkAvailable || !ConnectivityHelper.Ping())
         {
-            throw new Exception($"{Mui("NetworkUnavailableTips")}");
+            throw new Exception($"{"NetworkUnavailableTips".Tr()}");
         }
         callback?.Invoke(ProgressType.Download, new ProgressChangedEventArgs(0, null!));
         return SimpleDownloadHelper.DownloadFile(info.DownloadUrl, info.TempFilePath, (s, e) => callback?.Invoke(ProgressType.Download, e));

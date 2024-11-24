@@ -23,12 +23,12 @@ public partial class UninstallViewModel : ObservableObject
     public UninstallViewModel()
     {
         Option.Current.Uninstalling = true;
-        InstallInfo = Mui("Preparing");
+        InstallInfo = "Preparing".Tr();
 
-        Task.Run(async () =>
+        _ = Task.Run(async () =>
         {
             await Task.Delay(200);
-            InstallInfo = Mui("ProgressTipsUninstalling");
+            InstallInfo = "ProgressTipsUninstalling".Tr();
 
             UninstallHelper.Uninstall((progress, key) =>
             {
@@ -43,7 +43,7 @@ public partial class UninstallViewModel : ObservableObject
                 {
                     UIDispatcherHelper.Invoke(main =>
                     {
-                        _ = MessageBox.Info(main, Mui("UninstallDelayUntilRebootTips"));
+                        _ = MessageBox.Info(main, "UninstallDelayUntilRebootTips".Tr());
                     });
                 }
             });
@@ -75,7 +75,7 @@ public partial class UninstallViewModel : ObservableObject
                 }
             }
             UIDispatcherHelper.Invoke(Routing.GoToNext);
-        }).Forget();
+        });
     }
 }
 

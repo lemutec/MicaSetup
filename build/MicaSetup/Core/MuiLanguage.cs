@@ -60,13 +60,13 @@ public static class MuiLanguage
         return false;
     }
 
-    public static string Mui(string key)
+    public static string Tr(this string key)
     {
         try
         {
             if (Application.Current == null)
             {
-                return MuiBaml(key);
+                return TrBaml(key);
             }
             if (Application.Current!.FindResource(key) is string value)
             {
@@ -80,12 +80,12 @@ public static class MuiLanguage
         return null!;
     }
 
-    public static string Mui(string key, params object[] args)
+    public static string Tr(this string key, params object[] args)
     {
-        return string.Format(Mui(key)?.ToString(), args);
+        return string.Format(Tr(key)?.ToString(), args);
     }
 
-    private static string MuiBaml(string key)
+    private static string TrBaml(this string key)
     {
         try
         {

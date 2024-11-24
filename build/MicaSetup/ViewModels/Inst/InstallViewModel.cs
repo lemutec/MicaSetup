@@ -26,7 +26,7 @@ public partial class InstallViewModel : ObservableObject
     public InstallViewModel()
     {
         Option.Current.Installing = true;
-        InstallInfo = Mui("Preparing");
+        InstallInfo = "Preparing".Tr();
 
         _ = Task.Run(async () =>
         {
@@ -35,7 +35,7 @@ public partial class InstallViewModel : ObservableObject
             try
             {
                 using Stream archiveStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.7z");
-                InstallInfo = Mui("ProgressTipsInstalling");
+                InstallInfo = "ProgressTipsInstalling".Tr();
                 InstallHelper.Install(archiveStream, (progress, key) =>
                 {
                     UIDispatcherHelper.BeginInvoke(() =>
@@ -94,19 +94,19 @@ public partial class InstallViewModel : ObservableObject
                     {
                         if (dotNetService.GetNetFrameworkVersion() < info.Version)
                         {
-                            InstallInfo = $"{Mui("Preparing")} {info.Name}";
+                            InstallInfo = $"{"Preparing".Tr()} {info.Name}";
                             if (!dotNetService.InstallNetFramework(info.Version, (t, e) =>
                             {
                                 UIDispatcherHelper.BeginInvoke(() =>
                                 {
-                                    InstallInfo = $"{t switch { ProgressType.Download => Mui("Downloading"), _ or ProgressType.Install => Mui("Installing") }} {info.Name}";
+                                    InstallInfo = $"{t switch { ProgressType.Download => "Downloading".Tr(), _ or ProgressType.Install => "Installing".Tr() }} {info.Name}";
                                     InstallProgress = e.ProgressPercentage;
                                 });
                             }))
                             {
                                 UIDispatcherHelper.BeginInvoke(() =>
                                 {
-                                    _ = MessageBox.Info(null!, Mui("ComponentInstallFailedTips", info.Name));
+                                    _ = MessageBox.Info(null!, "ComponentInstallFailedTips".Tr(info.Name));
                                     _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
                                 });
                             }
@@ -117,7 +117,7 @@ public partial class InstallViewModel : ObservableObject
                         Logger.Error(e);
                         UIDispatcherHelper.BeginInvoke(() =>
                         {
-                            _ = MessageBox.Info(null!, Mui("ComponentInstallFailedTips", info.Name) + Environment.NewLine + e.Message);
+                            _ = MessageBox.Info(null!, "ComponentInstallFailedTips".Tr(info.Name) + Environment.NewLine + e.Message);
                             _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
                         });
                     }
@@ -128,7 +128,7 @@ public partial class InstallViewModel : ObservableObject
                 }
             }
 
-            InstallInfo = Mui("InstallFinishTips");
+            InstallInfo = "InstallFinishTips".Tr();
             Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);
 

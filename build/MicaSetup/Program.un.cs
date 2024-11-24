@@ -1,4 +1,5 @@
 ﻿using MicaSetup.Attributes;
+using MicaSetup.Core;
 using MicaSetup.Design.Controls;
 using MicaSetup.Extension.DependencyInjection;
 using MicaSetup.Services;
@@ -51,10 +52,10 @@ internal class Program
                 option.DisplayIcon = $"{option.ExeName}";
                 option.DisplayVersion = "2.1.1.0";
                 option.Publisher = "Lemutec";
-                option.SetupName = $"{option.AppName} {Mui("UninstallProgram")}";
+                option.SetupName = $"{option.AppName} {"UninstallProgram".Tr()}";
                 option.MessageOfPage1 = $"{option.AppName}";
-                option.MessageOfPage2 = Mui("ProgressTipsUninstalling");
-                option.MessageOfPage3 = Mui("UninstallFinishTips");
+                option.MessageOfPage2 = "ProgressTipsUninstalling".Tr();
+                option.MessageOfPage3 = "UninstallFinishTips".Tr();
             })
             .UseServices(service =>
             {

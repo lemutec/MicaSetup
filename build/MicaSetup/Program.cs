@@ -60,10 +60,10 @@ internal class Program
                 option.DisplayIcon = $"{option.ExeName}";
                 option.DisplayVersion = "2.1.1.0";
                 option.Publisher = "Lemutec";
-                option.SetupName = $"{option.AppName} {Mui("Setup")}";
+                option.SetupName = $"{option.AppName} {"Setup".Tr()}";
                 option.MessageOfPage1 = $"{option.AppName}";
-                option.MessageOfPage2 = Mui("Installing");
-                option.MessageOfPage3 = Mui("InstallFinishTips");
+                option.MessageOfPage2 = "Installing".Tr();
+                option.MessageOfPage3 = "InstallFinishTips".Tr();
             })
             .UseServices(service =>
             {

@@ -24,14 +24,14 @@ public partial class MainWindow : FluentWindow
             if (Option.Current.Uninstalling)
             {
                 e.Cancel = true;
-                _ = MessageBox.Info(this, Mui("UninstNotCompletedTips"));
+                _ = MessageBox.Info(this, "UninstNotCompletedTips".Tr());
             }
         }
         else
         {
             if (Option.Current.Installing)
             {
-                if (MessageBox.Question(this, Mui("InstNotCompletedTips")) != WindowDialogResult.Yes)
+                if (MessageBox.Question(this, "InstNotCompletedTips".Tr()) != WindowDialogResult.Yes)
                 {
                     e.Cancel = true;
                 }

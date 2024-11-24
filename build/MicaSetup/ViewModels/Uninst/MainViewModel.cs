@@ -25,7 +25,7 @@ public partial class MainViewModel : ObservableObject
         Option.Current.KeepMyData = value;
         if (!value)
         {
-            _ = Design.Controls.MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("NotKeepMyDataTips", Mui("KeepMyDataTips")));
+            _ = Design.Controls.MessageBox.Info(UIDispatcherHelper.MainWindow, "NotKeepMyDataTips".Tr("KeepMyDataTips".Tr()));
         }
     }
 
@@ -45,7 +45,7 @@ public partial class MainViewModel : ObservableObject
                 Option.Current.InstallLocation = uinfo.InstallLocation;
                 if (!FileWritableHelper.CheckWritable(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)))
                 {
-                    _ = Design.Controls.MessageBox.Info(UIDispatcherHelper.MainWindow, Mui("LockedTipsAndExitTry", Option.Current.ExeName));
+                    _ = Design.Controls.MessageBox.Info(UIDispatcherHelper.MainWindow, "LockedTipsAndExitTry".Tr(Option.Current.ExeName));
                     return;
                 }
             }
