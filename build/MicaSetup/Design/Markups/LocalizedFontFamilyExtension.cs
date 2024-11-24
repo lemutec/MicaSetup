@@ -10,6 +10,6 @@ public class LocalizedFontFamilyExtension : MarkupExtension
 {
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
-        return ServiceManager.GetService<IMuiLanguageService>()?.GetFontFamily() ?? new FontFamily();
+        return ServiceManager.GetService<ITrService>()?.GetFontFamily() ?? new FontFamily();
     }
 }

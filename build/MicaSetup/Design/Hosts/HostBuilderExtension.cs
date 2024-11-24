@@ -77,15 +77,22 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UseLanguage(this IHostBuilder builder, string name)
+    public static IHostBuilder UseCulture(this IHostBuilder builder, string name)
     {
         Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new CultureInfo(name);
         return builder;
     }
 
-    public static IHostBuilder UseMuiLanguage(this IHostBuilder builder)
+    public static IHostBuilder UseLocale(this IHostBuilder builder, string? name = null)
     {
-        MuiLanguage.SetupLanguage();
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            Locale.Culture = new CultureInfo(name);
+        }
+        else
+        {
+            Locale.Culture = CultureInfo.CurrentUICulture;
+        }
         return builder;
     }
 
@@ -95,9 +102,9 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UseFonts(this IHostBuilder builder, Action<List<MuiLanguageFont>> handler)
+    public static IHostBuilder UseFonts(this IHostBuilder builder, Action<List<TrFont>> handler)
     {
-        handler?.Invoke(MuiLanguage.FontSelector);
+        handler?.Invoke(Locale.FontSelector);
         return builder;
     }
 

@@ -9,11 +9,11 @@ namespace MicaSetup.Services;
 
 #pragma warning disable IDE0002
 
-public class MuiLanguageService : IMuiLanguageService
+public class TrService : ITrService
 {
     public FontFamily FontFamily { get; set; } = null!;
 
-    static MuiLanguageService()
+    static TrService()
     {
         DebugPrintPrivate();
     }
@@ -24,12 +24,12 @@ public class MuiLanguageService : IMuiLanguageService
         {
             static string GetUriString(string name = null!) => $"pack://application:,,,/MicaSetup;component/Resources/Fonts/{name ?? string.Empty}";
 
-            if (FontSelector.Count > 0)
+            if (Locale.FontSelector.Count > 0)
             {
-                MuiLanguageFont font = MuiLanguage.FontSelector.Where(f => f.Name == CultureInfo.CurrentUICulture.Name).ToList().FirstOrDefault()
-                    ?? MuiLanguage.FontSelector.Where(f => f.ThreeName == CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName).ToList().FirstOrDefault()
-                    ?? MuiLanguage.FontSelector.Where(f => f.TwoName == CultureInfo.CurrentUICulture.TwoLetterISOLanguageName).ToList().FirstOrDefault()
-                    ?? MuiLanguage.FontSelector.Where(f => f.Name == null && f.TwoName == null && f.ThreeName == null).ToList().FirstOrDefault();
+                TrFont font = Locale.FontSelector.Where(f => f.Name == CultureInfo.CurrentUICulture.Name).ToList().FirstOrDefault()
+                    ?? Locale.FontSelector.Where(f => f.ThreeName == CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName).ToList().FirstOrDefault()
+                    ?? Locale.FontSelector.Where(f => f.TwoName == CultureInfo.CurrentUICulture.TwoLetterISOLanguageName).ToList().FirstOrDefault()
+                    ?? Locale.FontSelector.Where(f => f.Name == null && f.TwoName == null && f.ThreeName == null).ToList().FirstOrDefault();
 
                 if (font != null)
                 {
@@ -94,7 +94,7 @@ public class MuiLanguageService : IMuiLanguageService
             }
         }
 
-        Logger.Debug($"[MuiLanguageService] NotFound with match mui lang name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
+        Logger.Debug($"[TrService] NotFound with match tr name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
         return GetUriString("en");
     }
 
@@ -125,7 +125,7 @@ public class MuiLanguageService : IMuiLanguageService
                 }
             }
         }
-        Logger.Debug($"[MuiLanguageService] NotFound with match mui license name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
+        Logger.Debug($"[TrService] NotFound with match mui license name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
         return GetUriString("en");
 
         static string GetUriString(string name) => prefix + $"license.{name}.txt";

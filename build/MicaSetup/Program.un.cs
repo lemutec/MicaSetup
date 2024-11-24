@@ -59,11 +59,11 @@ internal class Program
             })
             .UseServices(service =>
             {
-                service.AddSingleton<IMuiLanguageService, MuiLanguageService>();
+                service.AddSingleton<ITrService, TrService>();
                 service.AddScoped<IExplorerService, ExplorerService>();
             })
             .CreateApp()
-            .UseMuiLanguage()
+            .UseLocale()
             .UseTheme(WindowsTheme.Auto)
             .UsePages(page =>
             {

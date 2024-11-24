@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Windows.Forms.Design;
 using DialogResult = System.Windows.Forms.DialogResult;
 using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 
@@ -96,7 +97,7 @@ public partial class MainViewModel : ObservableObject
 
     public MainViewModel()
     {
-        string? licenseUrl = ServiceManager.GetService<IMuiLanguageService>()?.GetLicenseUriString();
+        string? licenseUrl = ServiceManager.GetService<ITrService>()?.GetLicenseUriString();
         LicenseInfo = !string.IsNullOrEmpty(licenseUrl) ? ResourceHelper.GetString(licenseUrl!) : string.Empty;
         using Stream archiveStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.7z");
 

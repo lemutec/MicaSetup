@@ -2,7 +2,7 @@
 
 namespace MicaSetup.Services;
 
-public interface IMuiLanguageService
+public interface ITrService
 {
     public FontFamily GetFontFamily();
 
