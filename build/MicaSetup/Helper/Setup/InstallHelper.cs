@@ -1,5 +1,5 @@
-﻿using SharpCompress.Common;
-using SharpCompress.Readers;
+﻿using PureSharpCompress.Common;
+using PureSharpCompress.Readers;
 using System;
 using System.Collections.Generic;
 using System.IO;

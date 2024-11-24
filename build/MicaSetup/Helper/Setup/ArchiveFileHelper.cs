@@ -1,10 +1,10 @@
 ﻿using MicaSetup.Controls.Animations;
-using SharpCompress.Archives.GZip;
-using SharpCompress.Archives.Rar;
-using SharpCompress.Archives.SevenZip;
-using SharpCompress.Archives.Zip;
-using SharpCompress.Common;
-using SharpCompress.Readers;
+using PureSharpCompress.Archives.GZip;
+using PureSharpCompress.Archives.Rar;
+using PureSharpCompress.Archives.SevenZip;
+using PureSharpCompress.Archives.Zip;
+using PureSharpCompress.Common;
+using PureSharpCompress.Readers;
 using System;
 using System.IO;
 

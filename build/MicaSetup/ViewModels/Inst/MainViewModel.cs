@@ -4,7 +4,7 @@ using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using MicaSetup.Services;
 using MicaSetup.Shell.Dialogs;
-using SharpCompress.Readers;
+using PureSharpCompress.Readers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

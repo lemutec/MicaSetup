@@ -4,7 +4,7 @@
 		<OutputType>WinExe</OutputType>
 		<TargetFramework>net472</TargetFramework>
 		<Nullable>enable</Nullable>
-		<LangVersion>12.0</LangVersion>
+		<LangVersion>latest</LangVersion>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
 		<UseWinUI>false</UseWinUI>
@@ -85,7 +85,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="SharpCompress" Version="0.33.0" />
+		<PackageReference Include="PureSharpCompress" Version="0.38.0-rc3" />
 	</ItemGroup>
 
 	<ItemGroup>
