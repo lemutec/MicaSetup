@@ -3,7 +3,7 @@ using System.Windows;
 
 namespace MicaSetup.Helper;
 
-public static class UIDispatcherHelper
+public static class ApplicationDispatcherHelper
 {
     public static Window MainWindow => Application.Current.Dispatcher.Invoke(() => Application.Current.MainWindow);
 

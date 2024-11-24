@@ -25,7 +25,7 @@ public partial class MainViewModel : ObservableObject
         Option.Current.KeepMyData = value;
         if (!value)
         {
-            _ = Design.Controls.MessageBox.Info(UIDispatcherHelper.MainWindow, "NotKeepMyDataTips".Tr("KeepMyDataTips".Tr()));
+            _ = Design.Controls.MessageBox.Info(ApplicationDispatcherHelper.MainWindow, "NotKeepMyDataTips".Tr("KeepMyDataTips".Tr()));
         }
     }
 
@@ -45,7 +45,7 @@ public partial class MainViewModel : ObservableObject
                 Option.Current.InstallLocation = uinfo.InstallLocation;
                 if (!FileWritableHelper.CheckWritable(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName)))
                 {
-                    _ = Design.Controls.MessageBox.Info(UIDispatcherHelper.MainWindow, "LockedTipsAndExitTry".Tr(Option.Current.ExeName));
+                    _ = Design.Controls.MessageBox.Info(ApplicationDispatcherHelper.MainWindow, "LockedTipsAndExitTry".Tr(Option.Current.ExeName));
                     return;
                 }
             }
@@ -65,7 +65,7 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     public void CancelUninstall()
     {
-        SystemCommands.CloseWindow(UIDispatcherHelper.MainWindow);
+        SystemCommands.CloseWindow(ApplicationDispatcherHelper.MainWindow);
     }
 }
 

@@ -32,7 +32,7 @@ public partial class UninstallViewModel : ObservableObject
 
             UninstallHelper.Uninstall((progress, key) =>
             {
-                UIDispatcherHelper.BeginInvoke(() =>
+                ApplicationDispatcherHelper.BeginInvoke(() =>
                 {
                     InstallProgress = progress * 100d;
                     InstallInfo = key;
@@ -41,7 +41,7 @@ public partial class UninstallViewModel : ObservableObject
             {
                 if (report == UninstallReport.AnyDeleteDelayUntilReboot)
                 {
-                    UIDispatcherHelper.Invoke(main =>
+                    ApplicationDispatcherHelper.Invoke(main =>
                     {
                         _ = MessageBox.Info(main, "UninstallDelayUntilRebootTips".Tr());
                     });
@@ -74,7 +74,7 @@ public partial class UninstallViewModel : ObservableObject
                     Logger.Error(e);
                 }
             }
-            UIDispatcherHelper.Invoke(Routing.GoToNext);
+            ApplicationDispatcherHelper.Invoke(Routing.GoToNext);
         });
     }
 }

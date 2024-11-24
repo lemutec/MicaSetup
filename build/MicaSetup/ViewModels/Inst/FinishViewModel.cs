@@ -18,7 +18,7 @@ public partial class FinishViewModel : ObservableObject
     [RelayCommand]
     public void Close()
     {
-        if (UIDispatcherHelper.MainWindow is Window window)
+        if (ApplicationDispatcherHelper.MainWindow is Window window)
         {
             SystemCommands.CloseWindow(window);
         }
@@ -27,7 +27,7 @@ public partial class FinishViewModel : ObservableObject
     [RelayCommand]
     public void Open()
     {
-        if (UIDispatcherHelper.MainWindow is Window window)
+        if (ApplicationDispatcherHelper.MainWindow is Window window)
         {
             try
             {

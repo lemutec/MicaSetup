@@ -38,7 +38,7 @@ public partial class InstallViewModel : ObservableObject
                 InstallInfo = "ProgressTipsInstalling".Tr();
                 InstallHelper.Install(archiveStream, (progress, key) =>
                 {
-                    UIDispatcherHelper.BeginInvoke(() =>
+                    ApplicationDispatcherHelper.BeginInvoke(() =>
                     {
                         InstallProgress = progress * 100d;
                         InstallInfo = key;
@@ -97,14 +97,14 @@ public partial class InstallViewModel : ObservableObject
                             InstallInfo = $"{"Preparing".Tr()} {info.Name}";
                             if (!dotNetService.InstallNetFramework(info.Version, (t, e) =>
                             {
-                                UIDispatcherHelper.BeginInvoke(() =>
+                                ApplicationDispatcherHelper.BeginInvoke(() =>
                                 {
                                     InstallInfo = $"{t switch { ProgressType.Download => "Downloading".Tr(), _ or ProgressType.Install => "Installing".Tr() }} {info.Name}";
                                     InstallProgress = e.ProgressPercentage;
                                 });
                             }))
                             {
-                                UIDispatcherHelper.BeginInvoke(() =>
+                                ApplicationDispatcherHelper.BeginInvoke(() =>
                                 {
                                     _ = MessageBox.Info(null!, "ComponentInstallFailedTips".Tr(info.Name));
                                     _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
@@ -115,7 +115,7 @@ public partial class InstallViewModel : ObservableObject
                     catch (Exception e)
                     {
                         Logger.Error(e);
-                        UIDispatcherHelper.BeginInvoke(() =>
+                        ApplicationDispatcherHelper.BeginInvoke(() =>
                         {
                             _ = MessageBox.Info(null!, "ComponentInstallFailedTips".Tr(info.Name) + Environment.NewLine + e.Message);
                             _ = FluentProcess.Start("explorer.exe", info.ThankYouUrl);
@@ -143,7 +143,7 @@ public partial class InstallViewModel : ObservableObject
                     Logger.Error(e);
                 }
             }
-            UIDispatcherHelper.Invoke(Routing.GoToNext);
+            ApplicationDispatcherHelper.Invoke(Routing.GoToNext);
         });
     }
 }

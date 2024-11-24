@@ -105,7 +105,7 @@ public static class RuntimeHelper
         {
             while (handle.WaitOne())
             {
-                UIDispatcherHelper.BeginInvoke(main =>
+                ApplicationDispatcherHelper.BeginInvoke(main =>
                 {
                     main?.Activate();
                     main?.Show();

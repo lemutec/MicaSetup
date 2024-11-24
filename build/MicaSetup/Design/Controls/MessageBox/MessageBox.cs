@@ -7,7 +7,7 @@ public static class MessageBox
 {
     public static WindowDialogResult Info(DependencyObject dependencyObject, string message)
     {
-        Window owner = (dependencyObject is Window win ? win : dependencyObject == null ? UIDispatcherHelper.MainWindow : Window.GetWindow(dependencyObject)) ?? UIDispatcherHelper.MainWindow;
+        Window owner = (dependencyObject is Window win ? win : dependencyObject == null ? ApplicationDispatcherHelper.MainWindow : Window.GetWindow(dependencyObject)) ?? ApplicationDispatcherHelper.MainWindow;
 
         return new MessageBoxDialog()
         {
@@ -18,7 +18,7 @@ public static class MessageBox
 
     public static WindowDialogResult Question(DependencyObject dependencyObject, string message)
     {
-        Window owner = (dependencyObject is Window win ? win : dependencyObject == null ? UIDispatcherHelper.MainWindow : Window.GetWindow(dependencyObject)) ?? UIDispatcherHelper.MainWindow;
+        Window owner = (dependencyObject is Window win ? win : dependencyObject == null ? ApplicationDispatcherHelper.MainWindow : Window.GetWindow(dependencyObject)) ?? ApplicationDispatcherHelper.MainWindow;
 
         return new MessageBoxDialog()
         {
