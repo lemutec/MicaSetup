@@ -1,7 +1,7 @@
 ﻿using MakeMica.Cli.Core;
 using MakeMica.Cli.Helper;
 using MakeMica.Shared;
-using SharpCompress.Common;
+using PureSharpCompress.Common;
 
 namespace MakeMica.Cli;
 

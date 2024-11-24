@@ -24,7 +24,7 @@
 		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
 		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="SharpCompress" Version="0.33.0" />
+		<PackageReference Include="PureSharpCompress" Version="0.38.0" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -19,7 +19,7 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<AnalysisLevel>6.0-recommended</AnalysisLevel>
-		<SignAssembly>True</SignAssembly>
+		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
 		<DefineConstants>$(DefineConstants);SETUP</DefineConstants>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -81,12 +81,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<PackageReference Include="Costura.Fody" Version="5.7.0" Condition="'$(Configuration)' == 'Release'">-->
 		<PackageReference Include="Costura.Fody" Version="5.7.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="PureSharpCompress" Version="0.38.0-rc3" />
+		<PackageReference Include="PureSharpCompress" Version="0.38.0" />
 	</ItemGroup>
 
 	<ItemGroup>

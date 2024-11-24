@@ -3,7 +3,6 @@ using PureSharpCompress.Readers;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace MicaSetup.Helper.Helper;
 

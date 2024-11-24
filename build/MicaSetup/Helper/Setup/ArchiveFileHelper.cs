@@ -44,7 +44,7 @@ public static class ArchiveFileHelper
         {
             if (currentProgress != progress || currentKey != reader.Entry.Key)
             {
-                progressCallback?.Invoke(currentProgress = progress, currentKey = reader.Entry.Key);
+                progressCallback?.Invoke(currentProgress = progress, currentKey = reader.Entry.Key!);
             }
         }
 
