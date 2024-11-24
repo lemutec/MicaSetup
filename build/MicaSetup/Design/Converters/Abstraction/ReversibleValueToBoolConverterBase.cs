@@ -11,24 +11,24 @@ public abstract class ReversibleValueToBoolConverterBase<T, TConverter> : ValueT
 
     public bool BaseOnFalseValue
     {
-        get { return (bool)this.GetValue(BaseOnFalseValueProperty); }
-        set { this.SetValue(BaseOnFalseValueProperty, value); }
+        get => (bool)GetValue(BaseOnFalseValueProperty);
+        set => SetValue(BaseOnFalseValueProperty, value);
     }
 
     protected override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (!this.BaseOnFalseValue)
+        if (!BaseOnFalseValue)
         {
             return base.Convert(value, targetType, parameter, culture);
         }
 
-        var falseValue = this.FalseValue;
-        return !Equals(value, falseValue) ^ this.IsInverted;
+        var falseValue = FalseValue;
+        return !Equals(value, falseValue) ^ IsInverted;
     }
 
     protected override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return true.Equals(value) ^ this.IsInverted ? this.TrueValue! : this.FalseValue!;
+        return true.Equals(value) ^ IsInverted ? TrueValue! : FalseValue!;
     }
 
     public static readonly Property BaseOnFalseValueProperty = PropertyHelper.Create<bool, ValueToBoolConverterBase<T, TConverter>>(nameof(BaseOnFalseValueProperty));

@@ -11,14 +11,14 @@ public abstract class ValueToBoolConverterBase<T, TConverter> : ConverterBase
 
     public bool IsInverted
     {
-        get { return (bool)this.GetValue(IsInvertedProperty); }
-        set { this.SetValue(IsInvertedProperty, value); }
+        get => (bool)GetValue(IsInvertedProperty);
+        set => SetValue(IsInvertedProperty, value);
     }
 
     protected override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        var trueValue = this.TrueValue;
-        return Equals(value, trueValue) ^ this.IsInverted;
+        var trueValue = TrueValue;
+        return Equals(value, trueValue) ^ IsInverted;
     }
 
     public static readonly Property IsInvertedProperty = PropertyHelper.Create<bool, ValueToBoolConverterBase<T, TConverter>>(nameof(IsInverted));

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
-using static MicaSetup.Natives.User32;
 
 namespace MicaSetup.Shell.Dialogs;
 
@@ -11,9 +10,9 @@ namespace MicaSetup.Shell.Dialogs;
 
 internal class MessageListener : IDisposable
 {
-    public const uint CreateWindowMessage = (uint)WindowMessage.WM_USER + 1;
-    public const uint DestroyWindowMessage = (uint)WindowMessage.WM_USER + 2;
-    public const uint BaseUserMessage = (uint)WindowMessage.WM_USER + 5;
+    public const uint CreateWindowMessage = (uint)User32.WindowMessage.WM_USER + 1;
+    public const uint DestroyWindowMessage = (uint)User32.WindowMessage.WM_USER + 2;
+    public const uint BaseUserMessage = (uint)User32.WindowMessage.WM_USER + 5;
 
     private const string MessageWindowClassName = "MessageListenerClass";
 
@@ -147,7 +146,7 @@ internal class MessageListener : IDisposable
                 }
                 break;
 
-            case (uint)WindowMessage.WM_DESTROY:
+            case (uint)User32.WindowMessage.WM_DESTROY:
                 _running = false;
                 break;
 
@@ -166,8 +165,7 @@ internal class MessageListener : IDisposable
 
     public nint WindowHandle { get; private set; }
 
-    public static bool Running
-    { get { return _running; } }
+    public static bool Running => _running;
 
     ~MessageListener()
     {
@@ -189,7 +187,7 @@ internal class MessageListener : IDisposable
                 _listeners.Remove(WindowHandle);
                 if (_listeners.Count == 0)
                 {
-                    User32.PostMessage(WindowHandle, (int)WindowMessage.WM_DESTROY, 0, 0);
+                    User32.PostMessage(WindowHandle, (int)User32.WindowMessage.WM_DESTROY, 0, 0);
                 }
             }
         }

@@ -16,12 +16,12 @@ public class NullToBoolConverter : SingletonConverterBase<NullToBoolConverter>
 
     public bool IsInverted
     {
-        get { return (bool)this.GetValue(IsInvertedProperty); }
-        set { this.SetValue(IsInvertedProperty, value); }
+        get => (bool)GetValue(IsInvertedProperty);
+        set => SetValue(IsInvertedProperty, value);
     }
 
     protected override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return value == null ^ this.IsInverted;
+        return value == null ^ IsInverted;
     }
 }

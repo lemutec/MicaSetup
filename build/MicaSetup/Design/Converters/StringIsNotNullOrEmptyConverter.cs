@@ -25,8 +25,8 @@ public class StringIsNullOrEmptyConverter : SingletonConverterBase<StringIsNotNu
 
     public bool IsInverted
     {
-        get { return (bool)this.GetValue(IsInvertedProperty); }
-        set { this.SetValue(IsInvertedProperty, value); }
+        get => (bool)GetValue(IsInvertedProperty);
+        set => SetValue(IsInvertedProperty, value);
     }
 
     protected override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -36,7 +36,7 @@ public class StringIsNullOrEmptyConverter : SingletonConverterBase<StringIsNotNu
             throw new ArgumentNullException(nameof(targetType));
         }
 
-        if (this.IsInverted)
+        if (IsInverted)
         {
             return !string.IsNullOrEmpty(value as string);
         }

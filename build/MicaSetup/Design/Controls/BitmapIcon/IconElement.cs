@@ -38,8 +38,8 @@ public abstract class IconElement : FrameworkElement
     [Bindable(true), Category("Appearance")]
     public Brush Foreground
     {
-        get { return (Brush)GetValue(ForegroundProperty); }
-        set { SetValue(ForegroundProperty, value); }
+        get => (Brush)GetValue(ForegroundProperty);
+        set => SetValue(ForegroundProperty, value);
     }
 
     private static readonly DependencyProperty VisualParentForegroundProperty =

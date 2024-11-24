@@ -1,5 +1,4 @@
-﻿using MicaSetup.Helper;
-using System.Windows;
+﻿using System.Windows;
 
 namespace MicaSetup;
 
