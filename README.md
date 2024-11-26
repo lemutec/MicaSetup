@@ -18,18 +18,6 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 <img src="./assets/image-20240520214758733.png" alt="image-20240520214758733" style="zoom:80%;" />
 
-## 😋Demos
-
-> The programs using MicaSetup.
-
-[lemutec/LyricStudio](https://github.com/lemutec/LyricStudio)
-
-[GenshinMatrix/Fischless](https://github.com/GenshinMatrix/Fischless)
-
-[babalae/better-genshin-impact](https://github.com/babalae/better-genshin-impact)
-
-[babalae/better-wuthering-waves](https://github.com/babalae/better-wuthering-waves)
-
 ## 💡Features
 
 ### 🌟Advanced Features
@@ -79,9 +67,25 @@ MicaSetup is a universal advanced installation package generation tool project t
 | MessageBoxX        | ☑          | Simple MessageBox instead of Classics.            |
 | SmoothScrollViewer | ☑          | Support smoothly scrolling.                       |
 
+## 😋Demos
+
+> The programs using MicaSetup.
+
+[GenshinMatrix/Fischless.Relauncher](GenshinMatrix/Fischless.Relauncher) (Recommended)
+
+[lemutec/LyricStudio](https://github.com/lemutec/LyricStudio)
+
+[GenshinMatrix/Fischless](https://github.com/GenshinMatrix/Fischless)
+
+[babalae/better-genshin-impact](https://github.com/babalae/better-genshin-impact)
+
+[babalae/better-wuthering-waves](https://github.com/babalae/better-wuthering-waves)
+
 ## 📖Usage & Wikis
 
-> 🚧Under construction🚧
+🚧Under construction🚧
+
+## 🎃Developer
 
 ### ⚙️Debug Codes
 
