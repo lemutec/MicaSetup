@@ -111,9 +111,19 @@ public static class CSharpProgram
         root = root.ReplaceOptionWithBoolean("IsRefreshExplorer", config.IsRefreshExplorer);
         root = root.ReplaceOptionWithBoolean("IsInstallCertificate", config.IsInstallCertificate);
         root = root.ReplaceOptionWithBoolean("IsEnableUninstallDelayUntilReboot", config.IsEnableUninstallDelayUntilReboot);
-        root = root.ReplaceOptionWithString("MessageOfPage1", config.MessageOfPage1);
-        root = root.ReplaceOptionWithString("MessageOfPage2", config.MessageOfPage2);
-        root = root.ReplaceOptionWithString("MessageOfPage3", config.MessageOfPage3);
+
+        if (config.MessageOfPage1 != null)
+        {
+            root = root.ReplaceOptionWithString("MessageOfPage1", config.MessageOfPage1);
+        }
+        if (config.MessageOfPage2 != null)
+        {
+            root = root.ReplaceOptionWithString("MessageOfPage2", config.MessageOfPage2);
+        }
+        if (config.MessageOfPage3 != null)
+        {
+            root = root.ReplaceOptionWithString("MessageOfPage3", config.MessageOfPage3);
+        }
 
         if (!isUninst)
         {
@@ -200,7 +210,6 @@ file static class SyntaxNodeExtensions
         return root;
     }
 
-    //
     public static CompilationUnitSyntax ReplaceOptionWithString(this CompilationUnitSyntax root, string optionName, string? value)
     {
         if (value == null)
