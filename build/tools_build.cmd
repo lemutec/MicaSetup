@@ -13,9 +13,9 @@ cd /d %~dp0
 mkdir .\Build\
 mkdir .\Build\bin\
 
-copy /y .\MicaSetup.Tools\MakeMica\bin\Release\publish\MakeMica.exe .\Build\
-del .\Build\makemicaw.exe
-ren .\Build\MakeMica.exe makemicaw.exe
+@REM copy /y .\MicaSetup.Tools\MakeMica\bin\Release\publish\MakeMica.exe .\Build\
+@REM del .\Build\makemicaw.exe
+@REM ren .\Build\MakeMica.exe makemicaw.exe
 
 copy /y .\MicaSetup.Tools\MakeMica.Cli\bin\Release\publish\MakeMica.Cli.exe .\Build\
 del .\Build\makemica.exe
@@ -29,9 +29,9 @@ copy /y .\MicaSetup.Tools\MakeIcon.Cli\bin\Release\publish\MakeIcon.Cli.exe .\Bu
 del .\Build\makeicon.exe
 ren .\Build\MakeIcon.Cli.exe makeicon.exe
 
-copy /y .\MicaSetup.Tools\MakeMui\bin\Release\publish\MakeMui.exe .\Build\
-del .\Build\makemuiw.exe
-ren .\Build\MakeMui.exe makemuiw.exe
+@REM copy /y .\MicaSetup.Tools\MakeMui\bin\Release\publish\MakeMui.exe .\Build\
+@REM del .\Build\makemuiw.exe
+@REM ren .\Build\MakeMui.exe makemuiw.exe
 
 copy /y .\MicaSetup.Tools\7-Zip\7z.dll .\Build\bin\7z.dll
 copy /y .\MicaSetup.Tools\7-Zip\7z.exe .\Build\bin\7z.exe
