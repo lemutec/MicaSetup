@@ -1,15 +1,16 @@
 cd /d %~dp0
 
-@echo [prepare somethings]
+@echo [prepare]
 del MicaSetup.exe
 for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath`) do set "path=%path%;%%i\MSBuild\Current\Bin;%%i\Common7\IDE"
 
-echo [build app using vs2022]
+echo [build app]
 cd ..\src\
 dotnet publish -c Release -p:PublishProfile=FolderProfile
 cd /d %~dp0
 
-@echo [finish]
+rd /s /q .\Build\
+
 mkdir .\Build\
 mkdir .\Build\bin\
 
@@ -35,5 +36,21 @@ ren .\Build\MakeIcon.Cli.exe makeicon.exe
 
 copy /y .\MicaSetup.Tools\7-Zip\7z.dll .\Build\bin\7z.dll
 copy /y .\MicaSetup.Tools\7-Zip\7z.exe .\Build\bin\7z.exe
+
+echo [template]
+
+rd /s /q .\MicaSetup\obj
+rd /s /q .\MicaSetup\bin
+del .\MicaSetup\MicaSetup.csproj.user
+del .\MicaSetup\Resources\Setups\publish.7z
+del .\MicaSetup\Resources\Setups\publish.cer
+del .\MicaSetup\Resources\Setups\Uninst.exe
+MicaSetup.Tools\7-Zip\7z a default.7z .\MicaSetup\* -t7z -mx=5 -mf=BCJ2 -r -y
+mkdir .\Build\template
+move default.7z .\Build\template\default.7z
+
+echo [pack]
+
+MicaSetup.Tools\7-Zip\7z a micasetup.7z .\Build\* -t7z -mx=5 -mf=BCJ2 -r -y
 
 @pause
