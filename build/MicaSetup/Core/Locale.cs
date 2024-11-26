@@ -1,5 +1,4 @@
 ﻿using MicaSetup.Helper;
-using MicaSetup.Services;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -34,19 +33,9 @@ public static class Locale
 
     private static void SetCulture(CultureInfo? value)
     {
-        CultureInfo culture = value ?? Fallback;
+        CultureInfo culture = Resolve(value);
 
-        while (!HasCulture(culture))
-        {
-            if (culture.Parent == CultureInfo.InvariantCulture)
-            {
-                culture = Fallback;
-                break;
-            }
-            culture = culture.Parent;
-        }
-
-        _ = SetCulture(culture.Name);
+        _ = SetCulture(Resolve(value).Name);
 
         CultureInfo.CurrentCulture
             = CultureInfo.CurrentUICulture
@@ -79,10 +68,26 @@ public static class Locale
             }
             return false;
         }
-
-        static bool HasCulture(CultureInfo culture)
-            => ResourceHelper.HasResource($"pack://application:,,,/MicaSetup;component/Resources/Languages/{culture.Name}.xaml");
     }
+
+    public static CultureInfo Resolve(CultureInfo? value)
+    {
+        CultureInfo culture = value ?? Fallback;
+
+        while (!HasCulture(culture))
+        {
+            if (culture.Parent == CultureInfo.InvariantCulture)
+            {
+                culture = Fallback;
+                break;
+            }
+            culture = culture.Parent;
+        }
+        return culture;
+    }
+
+    public static bool HasCulture(CultureInfo culture)
+        => ResourceHelper.HasResource($"pack://application:,,,/MicaSetup;component/Resources/Languages/{culture.Name}.xaml");
 }
 
 internal static class LocaleExtension
@@ -110,7 +115,7 @@ internal static class LocaleExtension
         {
             try
             {
-                using Stream resourceXaml = ResourceHelper.GetStream(new TrService().GetXamlUriString());
+                using Stream resourceXaml = ResourceHelper.GetStream($"pack://application:,,,/MicaSetup;component/Resources/Languages/{Locale.Resolve(CultureInfo.CurrentUICulture).Name}.xaml");
                 if (LoadBaml(resourceXaml) is ResourceDictionary resourceDictionary)
                 {
                     return (resourceDictionary[key] as string)!;

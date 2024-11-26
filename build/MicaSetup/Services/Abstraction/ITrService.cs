@@ -6,7 +6,5 @@ public interface ITrService
 {
     public FontFamily GetFontFamily();
 
-    public string GetXamlUriString();
-
     public string GetLicenseUriString();
 }

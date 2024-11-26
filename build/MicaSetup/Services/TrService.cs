@@ -71,33 +71,6 @@ public class TrService : ITrService
         return FontFamily ??= new FontFamily();
     }
 
-    public string GetXamlUriString()
-    {
-        static string GetUriString(string name) => $"pack://application:,,,/MicaSetup;component/Resources/Languages/{name}.xaml";
-
-        if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.Name)))
-        {
-            return GetUriString(CultureInfo.CurrentUICulture.Name);
-        }
-        else
-        {
-            if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)))
-            {
-                return GetUriString(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
-            }
-            else
-            {
-                if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName)))
-                {
-                    return GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
-                }
-            }
-        }
-
-        Logger.Debug($"[TrService] NotFound with match tr name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
-        return GetUriString("en");
-    }
-
     public string GetLicenseUriString()
     {
         const string prefix = "pack://application:,,,/MicaSetup;component/Resources/Licenses/";
