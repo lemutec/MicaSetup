@@ -5,6 +5,23 @@ namespace MakeMica.Cli.Core;
 
 public static class CSharpScript
 {
+    public static string FindMicaDir()
+    {
+        string? uninstallInfo = (GetUninstallInfo(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", "MicaSetup")
+                             ?? GetUninstallInfo(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall", "MicaSetup"))
+                             ?? throw new ApplicationException("MicaSetup is not installed, register not found.");
+
+        FileInfo uninst = new(uninstallInfo.Trim('"'));
+        string micadir = uninst.DirectoryName;
+
+        if (!Directory.Exists(micadir))
+        {
+            throw new ApplicationException("MicaSetup is not installed, directory not found.");
+        }
+
+        return micadir;
+    }
+
     public static string FindVSWhere()
     {
         string? uninstallInfo = (GetUninstallInfo(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", "Microsoft Visual Studio Installer")
@@ -19,14 +36,14 @@ public static class CSharpScript
         }
 
         FileInfo uninst = new(parsedArgs[0].Trim('"'));
-        string drawio = Path.Combine(uninst.DirectoryName, "vswhere.exe");
+        string vswhere = Path.Combine(uninst.DirectoryName, "vswhere.exe");
 
-        if (!File.Exists(drawio))
+        if (!File.Exists(vswhere))
         {
             throw new ApplicationException("Microsoft Visual Studio Installer is not installed, file not found.");
         }
 
-        return drawio;
+        return vswhere;
     }
 
     private static string? GetUninstallInfo(string keyPath, string displayName)

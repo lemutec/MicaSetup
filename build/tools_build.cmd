@@ -52,5 +52,6 @@ move default.7z .\Build\template\default.7z
 echo [pack]
 
 MicaSetup.Tools\7-Zip\7z a micasetup.7z .\Build\* -t7z -mx=5 -mf=BCJ2 -r -y
+Build\makemica micasetup.json
 
 @pause

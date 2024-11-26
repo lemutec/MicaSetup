@@ -7,7 +7,7 @@ public class MicaConfig
     /// When `.dist` dir is empty, extract it to `.dist`.
     /// Support 7z/zip template.
     /// </summary>
-    public string Template { get; set; } = "${MICADIR}/template/default.7z";
+    public string Template { get; set; } = "${MicaDir}/template/default.7z";
 
     /// <summary>
     /// The package file location.
