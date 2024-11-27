@@ -66,7 +66,7 @@ public static class DotNetInstallerHelper
         _ = info.DownloadUrl ?? throw new NotImplementedException();
         _ = info.FileName ?? throw new NotImplementedException();
 
-        Logger.Info($"[DotNetInstaller] Download .NET Framework {info.Version} from '{info.DownloadUrl}' and save to '{info.TempFilePath}'.");
+        Logger.Information($"[DotNetInstaller] Download .NET Framework {info.Version} from '{info.DownloadUrl}' and save to '{info.TempFilePath}'.");
 
         if (!ConnectivityHelper.IsNetworkAvailable || !ConnectivityHelper.Ping())
         {
@@ -82,7 +82,7 @@ public static class DotNetInstallerHelper
         _ = info.FileName ?? throw new NotImplementedException();
         _ = info.Arguments ?? throw new NotImplementedException();
 
-        Logger.Info($"[DotNetInstaller] Install .NET Framework {info.Version} from '{info.TempFilePath}'.");
+        Logger.Information($"[DotNetInstaller] Install .NET Framework {info.Version} from '{info.TempFilePath}'.");
 
         callback?.Invoke(ProgressType.Install, new ProgressChangedEventArgs(-1, null!));
         int exitCode = FluentProcess.Create()

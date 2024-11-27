@@ -55,7 +55,7 @@ public static class StartMenuHelper
     {
         if (!File.Exists(filePath))
         {
-            Logger.Warn("File does not exist.");
+            Logger.Warning("File does not exist.");
             return false;
         }
 
@@ -70,7 +70,7 @@ public static class StartMenuHelper
             foreach (dynamic verb in verbs)
             {
                 string name = verb.Name.ToString();
-                Logger.Info(verb.Name.ToString());
+                Logger.Information(verb.Name.ToString());
 
                 if (name.EndsWith("(&P)", StringComparison.OrdinalIgnoreCase))
                 {

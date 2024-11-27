@@ -32,7 +32,7 @@ public static class HostBuilderExtension
     public static IHostBuilder UseLogger(this IHostBuilder builder, bool enabled = true)
     {
         Option.Current.Logging = enabled;
-        Logger.Info("Setup run started ...");
+        Logger.Information("Setup run started ...");
         return builder;
     }
 

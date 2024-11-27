@@ -40,7 +40,7 @@ public static class RuntimeHelper
     {
         if (IsDebuggerAttached)
         {
-            Logger.Warn("[RuntimeHelper] IsDebuggerAttached causes skip EnsureElevated");
+            Logger.Warning("[RuntimeHelper] IsDebuggerAttached causes skip EnsureElevated");
             return;
         }
         if (!IsElevated)

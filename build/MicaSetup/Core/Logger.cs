@@ -42,12 +42,12 @@ public static class Logger
         Log("DEBUG", string.Join(" ", values));
     }
 
-    public static void Info(params object[] values)
+    public static void Information(params object[] values)
     {
         Log("INFO", string.Join(" ", values));
     }
 
-    public static void Warn(params object[] values)
+    public static void Warning(params object[] values)
     {
         Log("ERROR", string.Join(" ", values));
     }

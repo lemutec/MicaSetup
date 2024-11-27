@@ -174,7 +174,7 @@ public class FluentProcess : Process
 
     public new FluentProcess Start()
     {
-        Logger.Info(
+        Logger.Information(
         $"""
             "{StartInfo.FileName}" {StartInfo.Arguments}
         """);
