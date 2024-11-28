@@ -81,8 +81,8 @@ internal static class CSharpCompiler
         }
 
         string output = config.Output
-            .Replace("${AppName}", config.AppName)
-            .Replace("${Version}", config.Version);
+            .Replace(MicaMacro.AppName, config.AppName)
+            .Replace(MicaMacro.Version, config.Version);
 
         File.Copy(@".\.dist\bin\Release\MicaSetup.exe", output, true);
 

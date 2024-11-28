@@ -13,10 +13,10 @@ internal sealed class App
 
         // Extract template files
         {
-            if (config.Template.Contains("${MicaDir}"))
+            if (config.Template.Contains(MicaMacro.MicaDir))
             {
-                string micadir = CSharpScript.FindMicaDir();
-                config.Template = config.Template.Replace("${MicaDir}", micadir);
+                string micadir = MicaMacro.GetMicaDir();
+                config.Template = config.Template.Replace(MicaMacro.MicaDir, micadir);
             }
 
             string? template = MicaPath.GetFullPath(config.Template);

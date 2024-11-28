@@ -9,6 +9,7 @@
     <Import_RootNamespace>MakeMica.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MicaMacro.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MicaConfig.cs" />
   </ItemGroup>
 </Project>

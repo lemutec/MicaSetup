@@ -5,6 +5,7 @@ namespace MakeMica.Cli.Core;
 
 public static class CSharpScript
 {
+    [Obsolete("Use MicaMacro.GetMicaDir instead")]
     public static string FindMicaDir()
     {
         string? uninstallInfo = (GetUninstallInfo(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", "MicaSetup")
