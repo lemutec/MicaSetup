@@ -34,6 +34,7 @@
   "IsRefreshExplorer": true,
   "IsInstallCertificate": false,
   "IsEnableUninstallDelayUntilReboot": true,
+  "IsEnvironmentVariable": true,
   "OverlayInstallRemoveExt": "exe,dll,pdb,7z",
   "UnpackingPassword": null,
   "MessageOfPage1": null,
