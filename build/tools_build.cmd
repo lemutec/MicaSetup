@@ -30,10 +30,6 @@ copy /y .\MicaSetup.Tools\MakeIcon.Cli\bin\Release\publish\MakeIcon.Cli.exe .\Bu
 del .\Build\makeicon.exe
 ren .\Build\MakeIcon.Cli.exe makeicon.exe
 
-@REM copy /y .\MicaSetup.Tools\MakeMui\bin\Release\publish\MakeMui.exe .\Build\
-@REM del .\Build\makemuiw.exe
-@REM ren .\Build\MakeMui.exe makemuiw.exe
-
 copy /y .\MicaSetup.Tools\7-Zip\7z.dll .\Build\bin\7z.dll
 copy /y .\MicaSetup.Tools\7-Zip\7z.exe .\Build\bin\7z.exe
 
