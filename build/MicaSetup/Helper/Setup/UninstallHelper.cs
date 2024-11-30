@@ -247,13 +247,26 @@ public static class UninstallHelper
         {
             try
             {
-                if (RuntimeHelper.IsElevated)
+                RemoveEnvironmentVariable(Option.Current.InstallLocation);
+
+                foreach (string directory in Directory.EnumerateDirectories(Option.Current.InstallLocation, "*", SearchOption.AllDirectories))
                 {
-                    EnvironmentVariableHelper.RemoveDirectoryFromSystemPath(Option.Current.InstallLocation);
+                    if (new DirectoryInfo(directory).Name == "bin")
+                    {
+                        RemoveEnvironmentVariable(directory);
+                    }
                 }
-                else
+
+                static void RemoveEnvironmentVariable(string directoryPath)
                 {
-                    EnvironmentVariableHelper.RemoveDirectoryFromUserPath(Option.Current.InstallLocation);
+                    if (RuntimeHelper.IsElevated)
+                    {
+                        EnvironmentVariableHelper.RemoveDirectoryFromSystemPath(directoryPath);
+                    }
+                    else
+                    {
+                        EnvironmentVariableHelper.RemoveDirectoryFromUserPath(directoryPath);
+                    }
                 }
             }
             catch (Exception e)

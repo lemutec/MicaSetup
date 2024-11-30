@@ -240,13 +240,26 @@ public static class InstallHelper
         {
             try
             {
-                if (RuntimeHelper.IsElevated)
+                AddEnvironmentVariable(Option.Current.InstallLocation);
+
+                foreach (string directory in Directory.EnumerateDirectories(Option.Current.InstallLocation, "*", SearchOption.AllDirectories))
                 {
-                    EnvironmentVariableHelper.AddDirectoryToSystemPath(Option.Current.InstallLocation);
+                    if (new DirectoryInfo(directory).Name == "bin")
+                    {
+                        AddEnvironmentVariable(directory);
+                    }
                 }
-                else
+
+                static void AddEnvironmentVariable(string directoryPath)
                 {
-                    EnvironmentVariableHelper.AddDirectoryToUserPath(Option.Current.InstallLocation);
+                    if (RuntimeHelper.IsElevated)
+                    {
+                        EnvironmentVariableHelper.AddDirectoryToSystemPath(directoryPath);
+                    }
+                    else
+                    {
+                        EnvironmentVariableHelper.AddDirectoryToUserPath(directoryPath);
+                    }
                 }
             }
             catch (Exception e)
