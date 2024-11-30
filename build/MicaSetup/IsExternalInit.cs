@@ -6,6 +6,4 @@ namespace System.Runtime.CompilerServices;
 /// Workaround class for records and "init" keyword
 /// </summary>
 [EditorBrowsable(EditorBrowsableState.Never)]
-internal class IsExternalInit
-{
-}
+internal class IsExternalInit;
