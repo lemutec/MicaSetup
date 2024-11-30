@@ -5,6 +5,7 @@
 | Costura.Fody                               | .NET Standard 1.0    | 5.7.0   | [MIT](https://www.nuget.org/packages/Costura.Fody/5.7.0<br />https://github.com/Fody/Costura/blob/develop/LICENSE) |
 | WindowsAPICodePack.Shell.CommonFileDialogs | -                    | 1.1.4   | [Custom](https://github.com/emako/CommonFileDialogs/blob/master/LICENSE) |
 | PureSharpCompress                          | .NET Framework 4.6.2 | 0.38.0  | [MIT](https://github.com/emako/puresharpcompress/blob/master/LICENSE) |
+| BytecodeApi.PEParser                       | .NET 7               | 3.0.0   | [BSD-2-Clause](https://github.com/bytecode77/bytecode-api?tab=BSD-2-Clause-1-ov-file#readme) |
 
 # 🎨Fonts & Icons
 

@@ -80,9 +80,7 @@ internal static class CSharpCompiler
             throw new Exception("Build Setup failed.");
         }
 
-        string output = config.Output
-            .Replace(MicaMacro.AppName, config.AppName)
-            .Replace(MicaMacro.Version, config.Version);
+        string output = config.Output;
 
         File.Copy(@".\.dist\bin\Release\MicaSetup.exe", output, true);
 

@@ -26,7 +26,7 @@ public static class CSharpResource
                 File.Delete(file);
             }
 
-            string licenseFile = MicaPath.GetFullPath(config.LicenseFile);
+            string licenseFile = MicaMacro.GetFullPath(config.LicenseFile);
             string license = Path.Combine(resourceDir, "Licenses", "license.txt");
 
             if (File.Exists(licenseFile))
@@ -41,7 +41,7 @@ public static class CSharpResource
 
         if (!string.IsNullOrWhiteSpace(config.Favicon))
         {
-            string favicon = MicaPath.GetFullPath(config.Favicon);
+            string favicon = MicaMacro.GetFullPath(config.Favicon);
 
             if (File.Exists(favicon))
             {
@@ -66,7 +66,7 @@ public static class CSharpResource
 
         if (!string.IsNullOrWhiteSpace(config.Icon))
         {
-            string icon = MicaPath.GetFullPath(config.Icon);
+            string icon = MicaMacro.GetFullPath(config.Icon);
 
             if (File.Exists(icon))
             {
@@ -91,7 +91,7 @@ public static class CSharpResource
 
         if (!string.IsNullOrWhiteSpace(config.UnIcon))
         {
-            string unIcon = MicaPath.GetFullPath(config.UnIcon);
+            string unIcon = MicaMacro.GetFullPath(config.UnIcon);
 
             if (File.Exists(unIcon))
             {

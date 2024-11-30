@@ -11,16 +11,20 @@ internal sealed class App
     {
         _ = config ?? throw new ArgumentNullException(nameof(config));
 
-        // Extract template files
+        // Solve Marco, CAN'T change the order.
         {
-            if (config.Template.Contains(MicaMacro.MicaDir))
-            {
-                string micadir = MicaMacro.GetMicaDir();
-                config.Template = config.Template.Replace(MicaMacro.MicaDir, micadir);
-            }
+            config.Template = config.Template.SolveTemplate();
+            config.Version = config.Version.SolveVersion(config);
+            config.Output = config.Output.SolveOutput(config);
+            config.Favicon = config.Favicon?.SolveIcon();
+            config.Icon = config.Icon?.SolveIcon();
+            config.UnIcon = config.UnIcon?.SolveIcon();
+        }
 
-            string? template = MicaPath.GetFullPath(config.Template);
-            string? package = MicaPath.GetFullPath(config.Package);
+        // Extract template files.
+        {
+            string? template = MicaMacro.GetFullPath(config.Template);
+            string? package = MicaMacro.GetFullPath(config.Package);
 
             if (!File.Exists(template))
             {

@@ -1,4 +1,5 @@
-﻿using PureSharpCompress.Archives.GZip;
+﻿using PureSharpCompress.Archives;
+using PureSharpCompress.Archives.GZip;
 using PureSharpCompress.Archives.Rar;
 using PureSharpCompress.Archives.SevenZip;
 using PureSharpCompress.Archives.Zip;
@@ -27,6 +28,43 @@ internal static class ArchiveFileHelper
             reader.WriteEntryToDirectory(destinationDirectory, options);
             currentTotalSize += reader.Entry.Size;
         }
+    }
+
+    public static IEnumerable<IArchiveEntry?> ReadStream(string filePath, string targetEntryKey, ReaderOptions? readerOptions = null!)
+    {
+        using dynamic archive = filePath.OpenArchive(readerOptions);
+        targetEntryKey = targetEntryKey.NormalizeEntry();
+
+        foreach (dynamic entry in archive.Entries)
+        {
+            string entryKey = ((string)entry.Key).NormalizeEntry();
+
+            if (entryKey.Equals(targetEntryKey, StringComparison.OrdinalIgnoreCase))
+            {
+                //
+                yield return entry as IArchiveEntry;
+            }
+        }
+
+        yield break;
+    }
+
+    public static IEnumerable<IArchiveEntry?> ReadStream(string targetEntryKey, Stream stream, ReaderOptions? readerOptions = null!)
+    {
+        using dynamic archive = stream.OpenArchive(readerOptions);
+        targetEntryKey = targetEntryKey.NormalizeEntry();
+
+        foreach (dynamic entry in archive.Entries)
+        {
+            string entryKey = ((string)entry.Key).NormalizeEntry();
+
+            if (entryKey.Equals(targetEntryKey, StringComparison.OrdinalIgnoreCase))
+            {
+                yield return entry as IArchiveEntry;
+            }
+        }
+
+        yield break;
     }
 }
 
@@ -100,5 +138,15 @@ file static class ArchiveFileHelperExtension
             ArchiveFileType.SevenZip or _ => SevenZipArchive.Open(stream, readerOptions),
         };
         return archive;
+    }
+
+    public static string NormalizeEntry(this string path)
+    {
+        if (path.StartsWith("./") || path.StartsWith(".\\"))
+        {
+            path = path.Substring(2);
+        }
+
+        return path.Replace("\\", "/");
     }
 }
