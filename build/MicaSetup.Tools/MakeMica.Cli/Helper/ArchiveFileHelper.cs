@@ -41,7 +41,7 @@ internal static class ArchiveFileHelper
 
             if (entryKey.Equals(targetEntryKey, StringComparison.OrdinalIgnoreCase))
             {
-                //
+                // Use yield to ensure dispose of archive files.
                 yield return entry as IArchiveEntry;
             }
         }

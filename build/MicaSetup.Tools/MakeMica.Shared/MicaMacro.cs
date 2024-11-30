@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace MakeMica.Shared;
 
@@ -8,10 +10,6 @@ public static class MicaMacro
 {
     public const string MicaDir = "${MicaDir}";
     public const string AppName = "${AppName}";
-    public const string AppName1 = "${AppName:1}"; // Version::ToString(1)
-    public const string AppName2 = "${AppName:2}"; // Version::ToString(2)
-    public const string AppName3 = "${AppName:3}"; // Version::ToString(3)
-    public const string AppName4 = "${AppName:4}"; // Version::ToString(4)
     public const string KeyName = "${KeyName}";
     public const string ExeName = "${ExeName}";
     public const string Version = "${Version}";
@@ -58,8 +56,8 @@ public static class MicaMacro
 
         return
             value.Replace(AppName, config.AppName)
-                 .Replace(KeyName, config.AppName)
-                 .Replace(ExeName, config.AppName)
+                 .Replace(KeyName, config.KeyName)
+                 .Replace(ExeName, config.ExeName)
                  .Replace(Version, config.Version);
     }
 
@@ -84,13 +82,77 @@ public static class MicaMacro
     /// Solve Version path.
     /// </summary>
     /// <param name="value">Recommend for ${Package}:${ExeName}</param>
-    public static string SolveVersion(this string value, MicaConfig config)
+    /// <param name="config"></param>
+    /// <param name="solvePackage">function solvePackage(option: {filePath: string, targetEntryKey: string}) => value</param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static string SolveVersion(this string value, MicaConfig config, Func<string, string, string>? solvePackageFunc = null)
     {
         _ = value ?? throw new ArgumentNullException(nameof(value));
 
-        // TODO
         if (value.Contains(Package))
         {
+            value = value
+                .Replace(Package, string.Empty) // Remove marco mark.
+                .Replace(AppName, config.AppName)
+                .Replace(KeyName, config.KeyName)
+                .Replace(ExeName, config.ExeName);
+
+            int? ifFieldCount = null;
+
+            Match match = Regex.Match(value, @"\|(\d+)$");
+            if (match.Success)
+            {
+                if (int.TryParse(match.Groups[1].Value, out int fieldCount))
+                {
+                    ifFieldCount = fieldCount;
+                    value = Regex.Replace(value, @"\|(\d+)$", string.Empty);
+                }
+            }
+
+            Console.WriteLine("Solve ${Version} from ${Package}.");
+            Console.WriteLine("If your package is too big, it may require some memory and time.");
+            Console.WriteLine("Use file system instead if not worked or crashed.");
+
+            // Should fallback to `v1.0.0`.
+            value = solvePackageFunc?.Invoke(config.Package, value) ?? "1.0.0";
+
+            if (ifFieldCount != null)
+            {
+                value = new Version(value).ToString(ifFieldCount.Value);
+            }
+        }
+        else if (value.Contains(AppName) || value.Contains(KeyName) || value.Contains(ExeName))
+        {
+            value = value
+                .Replace(AppName, config.AppName)
+                .Replace(KeyName, config.KeyName)
+                .Replace(ExeName, config.ExeName);
+
+            int? ifFieldCount = null;
+
+            Match match = Regex.Match(value, @"\|(\d+)$");
+            if (match.Success)
+            {
+                if (int.TryParse(match.Groups[1].Value, out int fieldCount))
+                {
+                    ifFieldCount = fieldCount;
+                    value = Regex.Replace(value, @"\|(\d+)$", string.Empty);
+                }
+            }
+
+            if (!File.Exists(value))
+            {
+                throw new FileNotFoundException(value);
+            }
+
+            FileVersionInfo fileVersionInfo = FileVersionInfo.GetVersionInfo(value);
+            value = fileVersionInfo.FileVersion;
+
+            if (ifFieldCount != null)
+            {
+                value = new Version(value).ToString(ifFieldCount.Value);
+            }
         }
 
         return value;

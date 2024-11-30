@@ -14,7 +14,7 @@ internal sealed class App
         // Solve Marco, CAN'T change the order.
         {
             config.Template = config.Template.SolveTemplate();
-            config.Version = config.Version.SolveVersion(config);
+            config.Version = config.Version.SolveVersion(config, PEImageHelper.GetFileVersionFromArchive!);
             config.Output = config.Output.SolveOutput(config);
             config.Favicon = config.Favicon?.SolveIcon();
             config.Icon = config.Icon?.SolveIcon();
