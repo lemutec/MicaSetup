@@ -254,6 +254,7 @@ public static class InstallHelper
                 {
                     if (RuntimeHelper.IsElevated)
                     {
+                        EnvironmentVariableHelper.AddDirectoryToUserPath(directoryPath);
                         EnvironmentVariableHelper.AddDirectoryToSystemPath(directoryPath);
                     }
                     else

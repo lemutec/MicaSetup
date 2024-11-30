@@ -261,6 +261,7 @@ public static class UninstallHelper
                 {
                     if (RuntimeHelper.IsElevated)
                     {
+                        EnvironmentVariableHelper.RemoveDirectoryFromUserPath(directoryPath);
                         EnvironmentVariableHelper.RemoveDirectoryFromSystemPath(directoryPath);
                     }
                     else
