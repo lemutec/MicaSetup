@@ -6,7 +6,7 @@
   "KeyName": "MicaSetup",
   "ExeName": "makemica.exe",
   "Publisher": "Lemutec",
-  "Version": "2.3.0.0",
+  "Version": "${Package}${ExeName}|3",
   "TargetFramework": "net472",
   "Guid": "00000000-0000-0000-0000-000000000000",
   "Favicon": null,
