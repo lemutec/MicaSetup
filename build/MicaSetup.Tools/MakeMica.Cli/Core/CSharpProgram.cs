@@ -45,6 +45,11 @@ public static class CSharpProgram
             }
         }
 
+        if (config.IsEnvironmentVariable)
+        {
+            root = root.ReplaceOptionWithBoolean("IsEnvironmentVariable", config.IsEnvironmentVariable);
+        }
+
         if (!string.IsNullOrWhiteSpace(config.Version))
         {
             if (Version.TryParse(config.Version, out _))

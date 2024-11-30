@@ -1,5 +1,4 @@
-﻿using MicaSetup.Design.Controls;
-using MicaSetup.Natives;
+﻿using MicaSetup.Natives;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -237,6 +236,25 @@ public static class UninstallHelper
             try
             {
                 RegistyAutoRunHelper.Disable(Option.Current.KeyName);
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
+        if (Option.Current.IsEnvironmentVariable)
+        {
+            try
+            {
+                if (RuntimeHelper.IsElevated)
+                {
+                    EnvironmentVariableHelper.RemoveDirectoryFromSystemPath(Option.Current.InstallLocation);
+                }
+                else
+                {
+                    EnvironmentVariableHelper.RemoveDirectoryFromUserPath(Option.Current.InstallLocation);
+                }
             }
             catch (Exception e)
             {

@@ -236,6 +236,25 @@ public static class InstallHelper
             }
         }
 
+        if (Option.Current.IsEnvironmentVariable)
+        {
+            try
+            {
+                if (RuntimeHelper.IsElevated)
+                {
+                    EnvironmentVariableHelper.AddDirectoryToSystemPath(Option.Current.InstallLocation);
+                }
+                else
+                {
+                    EnvironmentVariableHelper.AddDirectoryToUserPath(Option.Current.InstallLocation);
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Error(e);
+            }
+        }
+
         try
         {
             StartMenuHelper.AddToRecent(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));

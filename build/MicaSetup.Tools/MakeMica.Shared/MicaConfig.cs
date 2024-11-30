@@ -207,6 +207,11 @@ public class MicaConfig
     public string? UnpackingPassword { get; set; } = null;
 
     /// <summary>
+    /// Indicates whether to add environment variable
+    /// </summary>
+    public bool IsEnvironmentVariable { get; set; } = false;
+
+    /// <summary>
     /// <see cref="MicaSetup.Option.MessageOfPage1"/>
     /// </summary>
     public string? MessageOfPage1 { get; set; } = null;

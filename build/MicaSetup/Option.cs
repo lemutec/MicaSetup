@@ -162,6 +162,12 @@ public partial class Option
     public string UnpackingPassword { get; set; } = null!;
 
     /// <summary>
+    /// Indicates whether to add environment variable
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsEnvironmentVariable { get; set; } = false;
+
+    /// <summary>
     /// Your Product Exe file name
     /// </summary>
     [Category("GlobalSetting")]

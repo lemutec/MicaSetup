@@ -53,6 +53,7 @@ internal class Program
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;
+                option.EnvironmentVariable = null!;
                 option.AppName = "MicaApp";
                 option.KeyName = "MicaApp";
                 option.ExeName = "MicaApp.exe";
