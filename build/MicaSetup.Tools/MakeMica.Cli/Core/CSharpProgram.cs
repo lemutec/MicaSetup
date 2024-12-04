@@ -107,6 +107,7 @@ public static class CSharpProgram
 
         root = root.ReplaceOptionWithBoolean("IsCreateDesktopShortcut", config.IsCreateDesktopShortcut);
         root = root.ReplaceOptionWithBoolean("IsCreateUninst", config.IsCreateUninst);
+        root = root.ReplaceOptionWithBoolean("IsUninstLower", config.IsUninstLower);
         root = root.ReplaceOptionWithBoolean("IsCreateStartMenu", config.IsCreateStartMenu);
         root = root.ReplaceOptionWithBoolean("IsCreateQuickLaunch", config.IsCreateQuickLaunch);
         root = root.ReplaceOptionWithBoolean("IsCreateRegistryKeys", config.IsCreateRegistryKeys);

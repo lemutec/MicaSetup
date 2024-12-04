@@ -40,6 +40,12 @@ public partial class Option
     public bool IsCreateUninst { get; set; } = true;
 
     /// <summary>
+    /// Indicates whether create uninst program file named as lower case
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsUninstLower { get; set; } = false;
+
+    /// <summary>
     /// Indicates whether to generate Desktop Shortcut
     /// </summary>
     [Category("GlobalSetting")]

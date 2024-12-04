@@ -122,6 +122,11 @@ public class MicaConfig
     public bool IsCreateUninst { get; set; } = true;
 
     /// <summary>
+    /// <see cref="MicaSetup.Option.IsUninstLower"/>
+    /// </summary>
+    public bool IsUninstLower { get; set; } = false;
+
+    /// <summary>
     /// <see cref="MicaSetup.Option.IsCreateStartMenu"/>
     /// </summary>
     public bool IsCreateStartMenu { get; set; } = true;

@@ -285,7 +285,7 @@ public static class InstallHelper
         {
             try
             {
-                using FileStream fileStream = new(Path.Combine(Option.Current.InstallLocation, "Uninst.exe"), FileMode.Create);
+                using FileStream fileStream = new(Path.Combine(Option.Current.InstallLocation, Option.Current.IsUninstLower ? "uninst.exe" : "Uninst.exe"), FileMode.Create);
                 uninstStream.Seek(0, SeekOrigin.Begin);
                 uninstStream.CopyTo(fileStream);
             }

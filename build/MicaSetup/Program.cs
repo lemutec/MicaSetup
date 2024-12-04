@@ -34,6 +34,7 @@ internal class Program
             {
                 option.IsCreateDesktopShortcut = true;
                 option.IsCreateUninst = true;
+                option.IsUninstLower = false;
                 option.IsCreateStartMenu = true;
                 option.IsPinToStartMenu = false;
                 option.IsCreateQuickLaunch = true;
