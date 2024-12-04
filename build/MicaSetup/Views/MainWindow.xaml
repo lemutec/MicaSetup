@@ -8,7 +8,7 @@
                       Title="{Binding SetupName}"
                       Width="560"
                       Height="350"
-                      control:FluentWindowCaption.Icon="pack://application:,,,/MicaSetup;component/Resources/Images/Favicon.ico"
+                      control:FluentWindowCaption.Icon="pack://application:,,,/MicaSetup;component/Resources/Images/Favicon.png"
                       Background="{DynamicResource ApplicationBackgroundBrush}"
                       Icon="{Binding Favicon}"
                       ResizeMode="CanMinimize"
