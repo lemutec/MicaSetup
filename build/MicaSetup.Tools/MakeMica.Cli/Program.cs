@@ -5,7 +5,7 @@ using System.Reflection;
 
 internal static class Program
 {
-    public static void Main(string[] args)
+    private static void Main(string[] args)
     {
         Console.WriteLine($"Startup: makemica v{Assembly.GetCallingAssembly().GetName().Version.ToString(3)}");
 

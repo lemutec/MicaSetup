@@ -4,18 +4,21 @@ namespace FetchVer;
 
 internal sealed class Program
 {
-    public static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        Console.WriteLine($"Startup: fetchver v{Assembly.GetCallingAssembly().GetName().Version.ToString(3)}");
-
         if (args.Length <= 0)
         {
+            Console.WriteLine($"Startup: fetchver v{Assembly.GetCallingAssembly().GetName().Version.ToString(3)}");
+
             // Support exe/dll/csproj/cs/7z/zip, etc files
-            Console.WriteLine("Usage: fetchver [option] \"path/to/exe\"");
+            Console.WriteLine("Usage: fetchver [option] \"path/to/exe/or/archive/file\"");
 
 #if DEBUG
             args = ["FetchVer.exe"];
 #endif
         }
+
+        CommandLine cli = ParseCommandLine.Parse(args);
+        cli.Execute();
     }
 }

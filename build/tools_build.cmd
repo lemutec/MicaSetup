@@ -16,6 +16,9 @@ mkdir .\Build\bin\
 
 copy /y .\MicaSetup.Tools\MICA\bin\Release\publish\MICA.exe .\Build\
 
+copy /y .\MicaSetup.Tools\FetchVer\bin\Release\publish\FetchVer.exe .\Build\
+ren .\Build\FetchVer.exe fetchver.exe
+
 @REM copy /y .\MicaSetup.Tools\MakeMica\bin\Release\publish\MakeMica.exe .\Build\
 @REM del .\Build\makemicaw.exe
 @REM ren .\Build\MakeMica.exe makemicaw.exe

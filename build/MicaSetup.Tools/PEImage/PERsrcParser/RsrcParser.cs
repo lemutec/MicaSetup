@@ -35,7 +35,6 @@ public class RsrcParser
                 )[0];
                 if (fileInfo.dwFileType == (uint)VFT.VFT_APP)
                 {
-                    Console.WriteLine($"Found VS_FFI_SIGNATURE at offset {i} with dwFileType = {fileInfo.dwFileType}");
                     return fileInfo;
                 }
             }
