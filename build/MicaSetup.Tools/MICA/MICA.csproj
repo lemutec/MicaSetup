@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net472</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<AssemblyVersion>2.3.2.0</AssemblyVersion>
+		<FileVersion>2.3.2.0</FileVersion>
+		<Version>$(VersionPrefix)2.3.2.0</Version>
+		<ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\Images\*.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\Images\*.png" />
+	</ItemGroup>
+
+</Project>

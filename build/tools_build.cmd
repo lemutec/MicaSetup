@@ -14,6 +14,8 @@ rd /s /q .\Build\
 mkdir .\Build\
 mkdir .\Build\bin\
 
+copy /y .\MicaSetup.Tools\MICA\bin\Release\publish\MICA.exe .\Build\
+
 @REM copy /y .\MicaSetup.Tools\MakeMica\bin\Release\publish\MakeMica.exe .\Build\
 @REM del .\Build\makemicaw.exe
 @REM ren .\Build\MakeMica.exe makemicaw.exe

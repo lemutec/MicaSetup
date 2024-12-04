@@ -4,7 +4,7 @@
   "Output": "./${AppName}_v${Version}.exe",
   "AppName": "MicaSetup",
   "KeyName": "MicaSetup",
-  "ExeName": "makemica.exe",
+  "ExeName": "MICA.exe",
   "Publisher": "Lemutec",
   "Version": "${Package}${ExeName}|3",
   "TargetFramework": "net472",
