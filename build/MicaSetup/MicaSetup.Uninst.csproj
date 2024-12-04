@@ -76,6 +76,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Resource Remove="Resources\Images\Favicon.ico" />
 		<Resource Remove="Resources\Images\FaviconUninst.png" />
 		<Resource Remove="Resources\Images\FaviconSetup.ico" />
 		<Resource Remove="Resources\Images\FaviconSetup.png" />
