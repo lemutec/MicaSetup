@@ -17,7 +17,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="5.7.0" Condition="'$(Configuration)' == 'Release'">
+		<PackageReference Include="Costura.Fody" Version="6.0.0" Condition="'$(Configuration)' == 'Release'">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
@@ -30,6 +30,10 @@
 
 	<ItemGroup>
 		<Reference Include="Microsoft.CSharp" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\PEImage\PEParser.csproj" />
 	</ItemGroup>
 
 	<Import Project="..\MakeMica.Shared\MakeMica.Shared.projitems" Label="Shared" />

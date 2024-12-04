@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -11,5 +11,21 @@
 		<Version>$(VersionPrefix)2.3.2.0</Version>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Costura.Fody" Version="6.0.0" Condition="'$(Configuration)' == 'Release'">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="PureSharpCompress" Version="0.38.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Microsoft.CSharp" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\PEImage\PEParser.csproj" />
+	</ItemGroup>
 
 </Project>

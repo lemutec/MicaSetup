@@ -1,4 +1,4 @@
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Represents the base class for PE image optional headers. This is an abstract class.

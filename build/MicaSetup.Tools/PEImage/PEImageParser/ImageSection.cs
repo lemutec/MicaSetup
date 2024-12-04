@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Represents a section of a PE image file, containing the header and a <see cref="byte" />[] representing the contents of the section.

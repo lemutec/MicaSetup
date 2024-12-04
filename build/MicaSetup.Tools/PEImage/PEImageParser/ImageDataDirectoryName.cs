@@ -1,4 +1,4 @@
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Specifies the name of a data directory entry of a PE image file.

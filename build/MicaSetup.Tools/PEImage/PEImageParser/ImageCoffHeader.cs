@@ -1,4 +1,4 @@
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Represents the COFF header of a PE image file.

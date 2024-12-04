@@ -1,4 +1,4 @@
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Specifies the values for the <see cref="ImageOptionalHeader.DllCharacteristics" /> property of the optional header of a PE image file.

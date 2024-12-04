@@ -2,7 +2,7 @@
 using PEParser.PERsrcParser;
 using PureSharpCompress.Archives;
 
-namespace MakeMica.Cli.Helper;
+namespace FetchVer.Helper;
 
 internal static class PEImageHelper
 {

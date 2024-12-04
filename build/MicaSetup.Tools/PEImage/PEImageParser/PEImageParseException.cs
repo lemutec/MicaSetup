@@ -1,4 +1,4 @@
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// The exception that is thrown when parsing of a <see cref="PEImage" /> fails.

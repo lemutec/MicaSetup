@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace MakeMica.Cli.PEParser.PERsrcParser;
+namespace PEParser.PERsrcParser;
 
 /// <summary>
 /// Contains version information for a file. This information is language and code page independent.

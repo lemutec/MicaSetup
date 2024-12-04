@@ -1,4 +1,4 @@
-﻿namespace MakeMica.Cli.PEParser.PERsrcParser;
+﻿namespace PEParser.PERsrcParser;
 
 /// <summary>
 /// The general type of file.

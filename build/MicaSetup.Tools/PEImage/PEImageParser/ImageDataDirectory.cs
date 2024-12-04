@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Represents a data directory of a PE image file.

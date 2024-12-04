@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace MakeMica.Cli.PEParser.PERsrcParser;
+namespace PEParser.PERsrcParser;
 
 public class RsrcParser
 {

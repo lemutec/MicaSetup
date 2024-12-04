@@ -1,4 +1,4 @@
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Specifies the values for the <see cref="ImageCoffHeader.Machine" /> property of the COFF header of a PE image file.

@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace FetchVer;
 
@@ -12,11 +10,11 @@ internal sealed class Program
 
         if (args.Length <= 0)
         {
-            // Support exe/dll/csproj/cs files
-            Console.WriteLine("Usage: fetchver \"path/to/exe\"");
+            // Support exe/dll/csproj/cs/7z/zip, etc files
+            Console.WriteLine("Usage: fetchver [option] \"path/to/exe\"");
 
 #if DEBUG
-            args = ["FetchVersion.exe"];
+            args = ["FetchVer.exe"];
 #endif
         }
     }

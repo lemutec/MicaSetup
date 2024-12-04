@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace MakeMica.Cli.PEParser.PEImageParser;
+namespace PEParser.PEImageParser;
 
 /// <summary>
 /// Represents a PE (x86) or a PE+ (x64) image. This class parses binary files, typically EXE and DLL files.
