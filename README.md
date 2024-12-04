@@ -89,6 +89,17 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 🚧Under construction🚧
 
+### Usage of `fetchver`
+
+```bash
+@echo off
+for /f "tokens=* delims=" %%i in ('fetchver.exe /v3 "fetchver.exe"') do set fetchver=%%i
+@echo The result is: %fetchver%
+@pause
+```
+
+Support options: v1, v2, v3, v4
+
 ## 🎃Developer
 
 ### ⚙️Debug Codes

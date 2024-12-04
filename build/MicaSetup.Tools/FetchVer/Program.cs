@@ -15,6 +15,8 @@ internal sealed class Program
 
 #if DEBUG
             args = ["FetchVer.exe"];
+#else
+            return;
 #endif
         }
 

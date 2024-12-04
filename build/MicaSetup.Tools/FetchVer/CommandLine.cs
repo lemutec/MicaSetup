@@ -135,6 +135,7 @@ internal static class ParseCommandLine
         fieldCount = args.Any(arg => arg.Equals("/v1")) ? 1 : fieldCount;
         fieldCount = args.Any(arg => arg.Equals("/v2")) ? 2 : fieldCount;
         fieldCount = args.Any(arg => arg.Equals("/v3")) ? 3 : fieldCount;
+        fieldCount = args.Any(arg => arg.Equals("/v4")) ? null : fieldCount;
         return fieldCount;
     }
 }
