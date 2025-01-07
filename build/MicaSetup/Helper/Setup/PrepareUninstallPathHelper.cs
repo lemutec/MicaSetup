@@ -47,7 +47,7 @@ public static class PrepareUninstallPathHelper
 
             if (File.Exists(uninstallDataPath))
             {
-                uninstallData = $"{File.ReadAllText(uninstallDataPath)}{uninstallData}";
+                uninstallData = $"{File.ReadAllText(uninstallDataPath).TrimEnd('|')}|{uninstallData}";
             }
 
             UninstallDataInfo uinfo = new()
