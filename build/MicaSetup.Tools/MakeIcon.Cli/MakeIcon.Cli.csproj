@@ -1,41 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFramework>net472</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<UseWPF>false</UseWPF>
-		<UseWindowsForms>true</UseWindowsForms>
-		<LangVersion>latest</LangVersion>
-		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<AssemblyVersion>2.3.3.0</AssemblyVersion>
-		<FileVersion>2.3.3.0</FileVersion>
-		<Version>$(VersionPrefix)2.3.3.0</Version>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UseWPF>false</UseWPF>
+        <UseWindowsForms>true</UseWindowsForms>
+        <LangVersion>latest</LangVersion>
+        <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+        <AssemblyVersion>2.3.3.0</AssemblyVersion>
+        <FileVersion>2.3.3.0</FileVersion>
+        <Version>$(VersionPrefix)2.3.3.0</Version>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<None Remove="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
-	</ItemGroup>
+    <ItemGroup>
+        <None Remove="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
+    </ItemGroup>
 
-	<PropertyGroup>
-		<NoWarn>$(NoWarn);NU1902;NU1903;</NoWarn>
-	</PropertyGroup>
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);NU1902;NU1903;</NoWarn>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="6.0.0" Condition="'$(Configuration)' == 'Release'">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="UTF.Unknown" Version="2.5.1" />
-		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Costura.Fody" Version="6.0.0" Condition="'$(Configuration)' == 'Release'">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="UTF.Unknown" Version="2.5.1" />
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    </ItemGroup>
 
-	<ItemGroup>
-	  <EmbeddedResource Include="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
-	</ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\Fonts\HarmonyOS_Icons_Slim.ttf" />
+    </ItemGroup>
 
-	<Import Project="..\MakeIcon.Shared\MakeIcon.Shared.projitems" Label="Shared" />
+    <Import Project="..\MakeIcon.Shared\MakeIcon.Shared.projitems" Label="Shared" />
 
 </Project>

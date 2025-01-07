@@ -1,97 +1,99 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net472</TargetFramework>
-		<Nullable>enable</Nullable>
-		<LangVersion>latest</LangVersion>
-		<UseWPF>true</UseWPF>
-		<UseWindowsForms>true</UseWindowsForms>
-		<UseWinUI>false</UseWinUI>
-		<Platforms>AnyCPU;x64</Platforms>
-		<ApplicationIcon>Resources\Images\FaviconSetup.ico</ApplicationIcon>
-		<StartupObject>MicaSetup.Program</StartupObject>
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<AssemblyName>MicaSetup</AssemblyName>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<AssemblyInfoFile>Program.cs</AssemblyInfoFile>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<ApplicationManifest>app.manifest</ApplicationManifest>
-		<EnableNETAnalyzers>false</EnableNETAnalyzers>
-		<AnalysisLevel>6.0-recommended</AnalysisLevel>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
-		<DefineConstants>$(DefineConstants);SETUP</DefineConstants>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <UseWPF>true</UseWPF>
+        <UseWindowsForms>true</UseWindowsForms>
+        <UseWinUI>false</UseWinUI>
+        <Platforms>AnyCPU;x64</Platforms>
+        <ApplicationIcon>Resources\Images\FaviconSetup.ico</ApplicationIcon>
+        <StartupObject>MicaSetup.Program</StartupObject>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <AssemblyName>MicaSetup</AssemblyName>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AssemblyInfoFile>Program.cs</AssemblyInfoFile>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <EnableNETAnalyzers>false</EnableNETAnalyzers>
+        <AnalysisLevel>6.0-recommended</AnalysisLevel>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
+        <DefineConstants>$(DefineConstants);SETUP</DefineConstants>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
 
-	<PropertyGroup>
-		<NoWarn>$(NoWarn);NU1902;NU1903;CS8625;</NoWarn>
-	</PropertyGroup>
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);NU1902;NU1903;CS8625;</NoWarn>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<None Remove="Resources\*.ico" />
-		<None Remove="Resources\Fonts\*.ttf" />
-		<None Remove="Resources\Licenses\license*.txt" />
-		<None Remove="Resources\Setups\*.7z" />
-		<None Remove="Resources\Setups\*.zip" />
-		<None Remove="Resources\Setups\*.exe" />
-		<None Remove="Resources\Setups\*.cer" />
-	</ItemGroup>
+    <ItemGroup>
+        <None Remove="Resources\*.ico" />
+        <None Remove="Resources\Fonts\*.ttf" />
+        <None Remove="Resources\Licenses\license*.txt" />
+        <None Remove="Resources\Licenses\license*.rtf" />
+        <None Remove="Resources\Setups\*.7z" />
+        <None Remove="Resources\Setups\*.zip" />
+        <None Remove="Resources\Setups\*.exe" />
+        <None Remove="Resources\Setups\*.cer" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Resource Include="Resources\Fonts\*.ttf" />
-		<Resource Include="Resources\Images\*.ico" />
-		<Resource Include="Resources\Images\*.png" />
-		<Resource Include="Resources\Licenses\license*.txt" />
-		<Resource Include="Resources\Setups\*.7z" />
-		<Resource Include="Resources\Setups\*.appx" />
-		<Resource Include="Resources\Setups\*.appxbundle" />
-		<Resource Include="Resources\Setups\*.msix" />
-		<Resource Include="Resources\Setups\*.msixbundle" />
-		<Resource Include="Resources\Setups\*.msi" />
-		<Resource Include="Resources\Setups\*.zip" />
-		<Resource Include="Resources\Setups\*.exe" />
-		<Resource Include="Resources\Setups\*.cer" />
-	</ItemGroup>
+    <ItemGroup>
+        <Resource Include="Resources\Fonts\*.ttf" />
+        <Resource Include="Resources\Images\*.ico" />
+        <Resource Include="Resources\Images\*.png" />
+        <Resource Include="Resources\Licenses\license*.txt" />
+        <Resource Include="Resources\Licenses\license*.rtf" />
+        <Resource Include="Resources\Setups\*.7z" />
+        <Resource Include="Resources\Setups\*.appx" />
+        <Resource Include="Resources\Setups\*.appxbundle" />
+        <Resource Include="Resources\Setups\*.msix" />
+        <Resource Include="Resources\Setups\*.msixbundle" />
+        <Resource Include="Resources\Setups\*.msi" />
+        <Resource Include="Resources\Setups\*.zip" />
+        <Resource Include="Resources\Setups\*.exe" />
+        <Resource Include="Resources\Setups\*.cer" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="ViewModels\Uninst\**" />
-		<Content Remove="ViewModels\Uninst\**" />
-		<EmbeddedResource Remove="ViewModels\Uninst\**" />
-		<None Remove="ViewModels\Uninst\**" />
-		<Page Remove="ViewModels\Uninst\**" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="ViewModels\Uninst\**" />
+        <Content Remove="ViewModels\Uninst\**" />
+        <EmbeddedResource Remove="ViewModels\Uninst\**" />
+        <None Remove="ViewModels\Uninst\**" />
+        <Page Remove="ViewModels\Uninst\**" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="Views\Uninst\**" />
-		<Content Remove="Views\Uninst\**" />
-		<EmbeddedResource Remove="Views\Uninst\**" />
-		<None Remove="Views\Uninst\**" />
-		<Page Remove="Views\Uninst\**" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Views\Uninst\**" />
+        <Content Remove="Views\Uninst\**" />
+        <EmbeddedResource Remove="Views\Uninst\**" />
+        <None Remove="Views\Uninst\**" />
+        <Page Remove="Views\Uninst\**" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="Program.un.cs" />
-		<None Remove="Program.un.cs" />
-		<Resource Remove="Resources\Images\Favicon.ico" />
-		<Resource Remove="Resources\Images\FaviconSetup.png" />
-		<Resource Remove="Resources\Images\FaviconUninst.ico" />
-		<Resource Remove="Resources\Images\FaviconUninst.png" />
-		<None Remove="Resources\Setups\Uninst.exe" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Program.un.cs" />
+        <None Remove="Program.un.cs" />
+        <Resource Remove="Resources\Images\Favicon.ico" />
+        <Resource Remove="Resources\Images\FaviconSetup.png" />
+        <Resource Remove="Resources\Images\FaviconUninst.ico" />
+        <Resource Remove="Resources\Images\FaviconUninst.png" />
+        <None Remove="Resources\Setups\Uninst.exe" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="6.0.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="PureSharpCompress" Version="0.38.0" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Costura.Fody" Version="6.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="PureSharpCompress" Version="0.38.0" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Management" />
-	</ItemGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Management" />
+    </ItemGroup>
 
 </Project>

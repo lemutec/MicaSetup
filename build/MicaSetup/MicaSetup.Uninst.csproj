@@ -1,98 +1,98 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net472</TargetFramework>
-		<Nullable>enable</Nullable>
-		<LangVersion>latest</LangVersion>
-		<UseWPF>true</UseWPF>
-		<UseWindowsForms>true</UseWindowsForms>
-		<UseWinUI>false</UseWinUI>
-		<Platforms>AnyCPU;x64</Platforms>
-		<ApplicationIcon>Resources\Images\FaviconUninst.ico</ApplicationIcon>
-		<StartupObject>MicaSetup.Program</StartupObject>
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<AssemblyName>MicaSetup</AssemblyName>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<AssemblyInfoFile>Program.un.cs</AssemblyInfoFile>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<ApplicationManifest>app.manifest</ApplicationManifest>
-		<EnableNETAnalyzers>false</EnableNETAnalyzers>
-		<AnalysisLevel>6.0-recommended</AnalysisLevel>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
-		<DefineConstants>$(DefineConstants);UNINST</DefineConstants>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <UseWPF>true</UseWPF>
+        <UseWindowsForms>true</UseWindowsForms>
+        <UseWinUI>false</UseWinUI>
+        <Platforms>AnyCPU;x64</Platforms>
+        <ApplicationIcon>Resources\Images\FaviconUninst.ico</ApplicationIcon>
+        <StartupObject>MicaSetup.Program</StartupObject>
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <AssemblyName>MicaSetup</AssemblyName>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AssemblyInfoFile>Program.un.cs</AssemblyInfoFile>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <EnableNETAnalyzers>false</EnableNETAnalyzers>
+        <AnalysisLevel>6.0-recommended</AnalysisLevel>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
+        <DefineConstants>$(DefineConstants);UNINST</DefineConstants>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
 
-	<PropertyGroup>
-		<NoWarn>$(NoWarn);NU1902;NU1903;CS8625;</NoWarn>
-	</PropertyGroup>
+    <PropertyGroup>
+        <NoWarn>$(NoWarn);NU1902;NU1903;CS8625;</NoWarn>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<None Remove="Resources\Fonts\*.ttf" />
-		<None Remove="Resources\Images\*.ico" />
-		<None Remove="Resources\Images\*.png" />
-	</ItemGroup>
+    <ItemGroup>
+        <None Remove="Resources\Fonts\*.ttf" />
+        <None Remove="Resources\Images\*.ico" />
+        <None Remove="Resources\Images\*.png" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Resource Include="Resources\Fonts\*.ttf" />
-		<Resource Include="Resources\Images\*.ico" />
-		<Resource Include="Resources\Images\*.png" />
-	</ItemGroup>
+    <ItemGroup>
+        <Resource Include="Resources\Fonts\*.ttf" />
+        <Resource Include="Resources\Images\*.ico" />
+        <Resource Include="Resources\Images\*.png" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="ViewModels\Inst\**" />
-		<Content Remove="ViewModels\Inst\**" />
-		<EmbeddedResource Remove="ViewModels\Inst\**" />
-		<None Remove="ViewModels\Inst\**" />
-		<Page Remove="ViewModels\Inst\**" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="ViewModels\Inst\**" />
+        <Content Remove="ViewModels\Inst\**" />
+        <EmbeddedResource Remove="ViewModels\Inst\**" />
+        <None Remove="ViewModels\Inst\**" />
+        <Page Remove="ViewModels\Inst\**" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="Views\Inst\**" />
-		<Content Remove="Views\Inst\**" />
-		<EmbeddedResource Remove="Views\Inst\**" />
-		<None Remove="Views\Inst\**" />
-		<Page Remove="Views\Inst\**" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Views\Inst\**" />
+        <Content Remove="Views\Inst\**" />
+        <EmbeddedResource Remove="Views\Inst\**" />
+        <None Remove="Views\Inst\**" />
+        <Page Remove="Views\Inst\**" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="Natives\Shell\Dialogs\**" />
-		<Content Remove="Natives\Shell\Dialogs\**" />
-		<EmbeddedResource Remove="Shell\Dialogs\**" />
-		<None Remove="Natives\Shell\Dialogs\**" />
-		<Page Remove="Natives\Shell\Dialogs\**" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Natives\Shell\Dialogs\**" />
+        <Content Remove="Natives\Shell\Dialogs\**" />
+        <EmbeddedResource Remove="Shell\Dialogs\**" />
+        <None Remove="Natives\Shell\Dialogs\**" />
+        <Page Remove="Natives\Shell\Dialogs\**" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="Helper\Setup\ArchiveFileHelper.cs" />
-		<Compile Remove="Helper\Setup\InstallHelper.cs" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Helper\Setup\ArchiveFileHelper.cs" />
+        <Compile Remove="Helper\Setup\InstallHelper.cs" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Compile Remove="Program.cs" />
-		<None Remove="Program.cs" />
-	</ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Program.cs" />
+        <None Remove="Program.cs" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Resource Remove="Resources\Images\Favicon.ico" />
-		<Resource Remove="Resources\Images\FaviconUninst.png" />
-		<Resource Remove="Resources\Images\FaviconSetup.ico" />
-		<Resource Remove="Resources\Images\FaviconSetup.png" />
-	</ItemGroup>
+    <ItemGroup>
+        <Resource Remove="Resources\Images\Favicon.ico" />
+        <Resource Remove="Resources\Images\FaviconUninst.png" />
+        <Resource Remove="Resources\Images\FaviconSetup.ico" />
+        <Resource Remove="Resources\Images\FaviconSetup.png" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="6.0.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="PureSharpCompress" Version="0.38.0" Condition="'$(Configuration)' == 'Debug'" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Costura.Fody" Version="6.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="PureSharpCompress" Version="0.38.0" Condition="'$(Configuration)' == 'Debug'" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Management" />
-	</ItemGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.Management" />
+    </ItemGroup>
 
 </Project>

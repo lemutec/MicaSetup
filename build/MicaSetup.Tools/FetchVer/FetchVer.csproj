@@ -1,31 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFramework>net472</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<LangVersion>latest</LangVersion>
-		<AssemblyVersion>2.3.3.0</AssemblyVersion>
-		<FileVersion>2.3.3.0</FileVersion>
-		<Version>$(VersionPrefix)2.3.3.0</Version>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <AssemblyVersion>2.3.3.0</AssemblyVersion>
+        <FileVersion>2.3.3.0</FileVersion>
+        <Version>$(VersionPrefix)2.3.3.0</Version>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Costura.Fody" Version="6.0.0" Condition="'$(Configuration)' == 'Release'">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="PureSharpCompress" Version="0.38.0" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Costura.Fody" Version="6.0.0" Condition="'$(Configuration)' == 'Release'">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>compile; runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="PureSharpCompress" Version="0.38.0" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<Reference Include="Microsoft.CSharp" />
-	</ItemGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp" />
+    </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\PEImage\PEParser.csproj" />
-	</ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\PEImage\PEParser.csproj" />
+    </ItemGroup>
 
 </Project>
