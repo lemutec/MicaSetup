@@ -25,9 +25,9 @@ public static class SpecialPathHelper
     {
         string configPath = Path.Combine(GetFolder(), baseName);
 
-        if (!Directory.Exists(new FileInfo(configPath).DirectoryName))
+        if (!Directory.Exists(Path.GetDirectoryName(configPath)))
         {
-            _ = Directory.CreateDirectory(new FileInfo(configPath).DirectoryName!);
+            _ = Directory.CreateDirectory(Path.GetDirectoryName(configPath));
         }
         return configPath;
     }

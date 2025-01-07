@@ -1,5 +1,3 @@
-**应募一个MicaSetup程序图标 | Request a contribution of a MicaSetup program icon | プログラムのアイコンはただ今応募受付中**
-
 ![logo64](./branding/logo64.png)
 
 [![Actions](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml/badge.svg)](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml) [![Platform](https://img.shields.io/badge/platform-Windows-blue?logo=windowsxp&color=1E9BFA)](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)

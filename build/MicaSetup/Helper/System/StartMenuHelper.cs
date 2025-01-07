@@ -34,7 +34,7 @@ public static class StartMenuHelper
 
         if (isCreateUninst)
         {
-            string uninstTargetPath = Path.Combine($"{new FileInfo(targetPath).Directory.FullName}", "Uninst.exe");
+            string uninstTargetPath = Path.Combine($"{Path.GetDirectoryName(targetPath)}", "Uninst.exe");
             ShortcutHelper.CreateShortcut(startMenuFolderPath, $"Uninstall_{folderName}", uninstTargetPath);
         }
     }
@@ -63,8 +63,8 @@ public static class StartMenuHelper
         {
             Type shellType = Type.GetTypeFromProgID("Shell.Application");
             object shellObject = Activator.CreateInstance(shellType);
-            dynamic folder = shellType.InvokeMember("Namespace", BindingFlags.InvokeMethod, null, shellObject, [new FileInfo(filePath).DirectoryName]);
-            dynamic item = folder.ParseName(new FileInfo(filePath).Name);
+            dynamic folder = shellType.InvokeMember("Namespace", BindingFlags.InvokeMethod, null, shellObject, [Path.GetDirectoryName(filePath)]);
+            dynamic item = folder.ParseName(Path.GetFileName(filePath));
             dynamic verbs = item.Verbs();
 
             foreach (dynamic verb in verbs)

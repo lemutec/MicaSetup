@@ -41,7 +41,7 @@ public static class PrepareUninstallPathHelper
                 domainFilePath = CommandLineHelper.Values[TempPathForkHelper.ForkedCli];
             }
 
-            string installLocation = new FileInfo(domainFilePath).DirectoryName;
+            string installLocation = Path.GetDirectoryName(domainFilePath);
             string uninstallDataPath = Path.Combine(installLocation, "Uninst.dat");
             string uninstallData = "Uninst.dat";
 

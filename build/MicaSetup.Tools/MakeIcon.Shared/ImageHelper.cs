@@ -45,7 +45,7 @@ public static class ImageHelper
             IconType.Uninst => nameof(IconType.Uninst),
             _ => string.Empty,
         }}";
-        string output = Path.Combine(new FileInfo(filename).DirectoryName, $"{pathNoExt}{ext}");
+        string output = Path.Combine(Path.GetDirectoryName(filename), $"{pathNoExt}{ext}");
 
         try
         {
