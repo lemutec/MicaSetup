@@ -683,9 +683,4 @@ public enum ApplicationTheme
     /// Light application theme.
     /// </summary>
     Light,
-
-    /// <summary>
-    /// High contract application theme.
-    /// </summary>
-    HighContrast,
 }

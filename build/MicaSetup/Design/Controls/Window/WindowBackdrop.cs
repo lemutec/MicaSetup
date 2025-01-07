@@ -93,7 +93,6 @@ public static class WindowBackdrop
                 break;
 
             case ApplicationTheme.Light:
-            case ApplicationTheme.HighContrast:
                 WindowDarkMode.RemoveWindowDarkMode(hWnd);
                 break;
         }

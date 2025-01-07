@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace MicaSetup.Helper;
 
-internal static class JsonHelper
+public static class JsonHelper
 {
     public static string SerializeObject(IDictionary<string, dynamic?> obj)
     {

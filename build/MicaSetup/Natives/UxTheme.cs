@@ -5,6 +5,12 @@ namespace MicaSetup.Natives;
 
 public static class UxTheme
 {
+    [DllImport(Lib.UxTheme, EntryPoint = "#135", SetLastError = true, CharSet = CharSet.Unicode)]
+    public static extern int SetPreferredAppMode(PreferredAppMode preferredAppMode);
+
+    [DllImport(Lib.UxTheme, EntryPoint = "#136", SetLastError = true, CharSet = CharSet.Unicode)]
+    public static extern void FlushMenuThemes();
+
     [DllImport(Lib.UxTheme, SetLastError = false, ExactSpelling = true)]
     public static extern int SetWindowThemeAttribute(nint hwnd, WINDOWTHEMEATTRIBUTETYPE eAttribute, in WTA_OPTIONS pvAttribute, uint cbAttribute);
 
@@ -62,4 +68,13 @@ public static class UxTheme
         public WTNCA Flags;
         public uint Mask;
     }
+
+    public enum PreferredAppMode : int
+    {
+        Default,
+        AllowDark,
+        ForceDark,
+        ForceLight,
+        Max,
+    };
 }

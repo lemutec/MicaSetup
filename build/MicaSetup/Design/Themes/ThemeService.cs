@@ -1,4 +1,5 @@
-﻿using MicaSetup.Helper;
+﻿using MicaSetup.Design.Themes;
+using MicaSetup.Helper;
 using MicaSetup.Natives;
 using System;
 using System.Windows;
@@ -59,12 +60,19 @@ public class ThemeService
 
     private WindowsTheme GetTheme()
     {
-        return currentTheme == WindowsTheme.Auto ? WindowsThemeHelper.GetCurrentWindowsTheme() : currentTheme;
+        return currentTheme == WindowsTheme.Auto ? (OSThemeHelper.AppsUseDarkTheme() ? WindowsTheme.Dark : WindowsTheme.Light) : currentTheme;
     }
 
     public void SetTheme(WindowsTheme theme)
     {
         CurrentTheme = theme;
+
+        SystemMenuThemeManager.Apply(theme switch
+        {
+            WindowsTheme.Dark => SystemMenuTheme.Dark,
+            WindowsTheme.Light => SystemMenuTheme.Light,
+            WindowsTheme.Auto or _ => SystemMenuTheme.Auto,
+        });
         SyncThemeResource();
     }
 
