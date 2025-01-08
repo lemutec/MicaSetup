@@ -1,13 +1,16 @@
 cd /d %~dp0
 
-@echo [prepare]
-del MicaSetup.exe
-for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -property installationPath`) do set "path=%path%;%%i\MSBuild\Current\Bin;%%i\Common7\IDE"
+echo [build]
 
-echo [build app]
-cd ..\src\
-dotnet publish -c Release -p:PublishProfile=FolderProfile
-cd /d %~dp0
+dotnet publish MicaSetup.Tools\FetchVer\FetchVer.csproj -c Release -p:PublishProfile=FolderProfile
+dotnet publish MicaSetup.Tools\MakeIcon\MakeIcon.csproj -c Release -p:PublishProfile=FolderProfile
+dotnet publish MicaSetup.Tools\MakeIcon.Cli\MakeIcon.Cli.csproj -c Release -p:PublishProfile=FolderProfile
+dotnet publish MicaSetup.Tools\MakeMica\MakeMica.csproj -c Release -p:PublishProfile=FolderProfile
+dotnet publish MicaSetup.Tools\MakeMica.Cli\MakeMica.Cli.csproj -c Release -p:PublishProfile=FolderProfile
+dotnet publish MicaSetup.Tools\MakeMui\MakeMui.csproj -c Release -p:PublishProfile=FolderProfile
+dotnet publish MicaSetup.Tools\MICA\MICA.csproj -c Release -p:PublishProfile=FolderProfile
+
+echo [copy]
 
 rd /s /q .\Build\
 
@@ -38,7 +41,7 @@ ren .\Build\MakeIcon.Cli.exe makeicon.exe
 copy /y .\MicaSetup.Tools\7-Zip\7z.dll .\Build\bin\7z.dll
 copy /y .\MicaSetup.Tools\7-Zip\7z.exe .\Build\bin\7z.exe
 
-echo [template]
+echo [create]
 
 rd /s /q .\MicaSetup\obj
 rd /s /q .\MicaSetup\bin
