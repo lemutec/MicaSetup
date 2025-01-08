@@ -41,7 +41,7 @@ internal static class CSharpCompiler
         Console.OutputEncoding = Encoding.UTF8;
 
         CliResult uninstResult = msbuild
-            .WithArguments(@".dist\MicaSetup.Uninst.csproj /t:Rebuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /restore")
+            .WithArguments(@".dist\MicaSetup.Uninst.csproj /t:Rebuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:ImportDirectoryBuildProps=false /p:RestoreUseStaticGraphEvaluation=false /restore")
             .WithStandardOutputPipe(PipeTarget.ToDelegate(static async (line, token) =>
             {
                 Console.Out.WriteLine(line);
@@ -62,7 +62,7 @@ internal static class CSharpCompiler
         File.Copy(@".\.dist\bin\Release\MicaSetup.exe", @".\.dist\Resources\Setups\Uninst.exe", true);
 
         CliResult setupResult = msbuild
-            .WithArguments(@".\.dist\MicaSetup.csproj /t:Build /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /restore")
+            .WithArguments(@".dist\MicaSetup.csproj /t:Rebuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:ImportDirectoryBuildProps=false /p:RestoreUseStaticGraphEvaluation=false /restore")
             .WithStandardOutputPipe(PipeTarget.ToDelegate(static async (line, token) =>
             {
                 Console.Out.WriteLine(line);

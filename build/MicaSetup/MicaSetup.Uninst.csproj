@@ -23,6 +23,8 @@
         <AssemblyOriginatorKeyFile>app.snk</AssemblyOriginatorKeyFile>
         <DefineConstants>$(DefineConstants);UNINST</DefineConstants>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <ImportDirectoryBuildTargets>false</ImportDirectoryBuildTargets>
+        <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     </PropertyGroup>
 
     <PropertyGroup>
