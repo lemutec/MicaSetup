@@ -17,10 +17,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 8.0.x
-
-      - name: Setup Windows SDK
-        uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.5
+          dotnet-version: 9.0.x
 
       - name: Prepare dummy files `publish.7z` and `Uninst.exe`
         run: cd build && echo publish.7z > .\MicaSetup\Resources\Setups\publish.7z && echo uninst.exe > .\MicaSetup\Resources\Setups\Uninst.exe
