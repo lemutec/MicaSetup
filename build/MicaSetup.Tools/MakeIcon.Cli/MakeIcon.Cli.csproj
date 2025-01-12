@@ -9,9 +9,9 @@
         <UseWindowsForms>true</UseWindowsForms>
         <LangVersion>latest</LangVersion>
         <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-        <AssemblyVersion>2.3.5.0</AssemblyVersion>
-        <FileVersion>2.3.5.0</FileVersion>
-        <Version>$(VersionPrefix)2.3.5.0</Version>
+        <AssemblyVersion>2.3.6.0</AssemblyVersion>
+        <FileVersion>2.3.6.0</FileVersion>
+        <Version>$(VersionPrefix)2.3.6.0</Version>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
