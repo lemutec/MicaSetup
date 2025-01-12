@@ -73,7 +73,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 > The programs using MicaSetup.
 
-[GenshinMatrix/Fischless.Relauncher](GenshinMatrix/Fischless.Relauncher) (Recommended)
+[GenshinMatrix/Fischless.Relauncher](https://github.com/GenshinMatrix/Fischless.Relauncher) (Recommended)
 
 [lemutec/LyricStudio](https://github.com/lemutec/LyricStudio)
 
