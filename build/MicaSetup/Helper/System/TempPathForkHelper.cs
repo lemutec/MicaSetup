@@ -45,14 +45,9 @@ public static class TempPathForkHelper
             {
                 FluentProcess.Create()
                     .FileName("powershell.exe")
-                    .Arguments(
-                        $"""
-                            Start-Sleep -s 3;
-                            Remove-Item "{filePath}";
-                            Remove-Item "{tempPath}";
-                        """)
+                    .Arguments($"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Sleep -s 3; Remove-Item '{filePath}'; Remove-Item '{tempPath}';\"")
                     .UseShellExecute(false)
-                    .CreateNoWindow()
+                    .CreateNoWindow(true)
                     .Start()
                     .Forget();
             }
