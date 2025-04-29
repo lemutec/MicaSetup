@@ -7,9 +7,9 @@
         <UseWPF>true</UseWPF>
         <UseWindowsForms>true</UseWindowsForms>
         <LangVersion>latest</LangVersion>
-        <AssemblyVersion>2.3.6.0</AssemblyVersion>
-        <FileVersion>2.3.6.0</FileVersion>
-        <Version>$(VersionPrefix)2.3.6.0</Version>
+        <AssemblyVersion>2.3.7.0</AssemblyVersion>
+        <FileVersion>2.3.7.0</FileVersion>
+        <Version>$(VersionPrefix)2.3.7.0</Version>
         <ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
