@@ -19,7 +19,10 @@ public partial class MainViewModel : ObservableObject
     public string Message => Option.Current.MessageOfPage1;
 
     [ObservableProperty]
-    private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName, Option.Current.IsUseInstallPathPreferX86);
+    private string installPath = PrepareInstallPathHelper.GetPrepareInstallPath(Option.Current.KeyName,
+        Option.Current.IsUseInstallPathPreferX86,
+        Option.Current.IsUseInstallPathPreferAppDataLocalPrograms,
+        Option.Current.IsUseInstallPathPreferAppDataRoaming);
 
     partial void OnInstallPathChanged(string value)
     {

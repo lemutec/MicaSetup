@@ -172,6 +172,16 @@ public class MicaConfig
     public bool IsUseInstallPathPreferX86 { get; set; } = false;
 
     /// <summary>
+    /// <see cref="MicaSetup.Option.IsUseInstallPathPreferAppDataLocalPrograms"/>
+    /// </summary>
+    public bool IsUseInstallPathPreferAppDataLocalPrograms { get; set; } = false;
+
+    /// <summary>
+    /// <see cref="MicaSetup.Option.IsUseInstallPathPreferAppDataRoaming"/>
+    /// </summary>
+    public bool IsUseInstallPathPreferAppDataRoaming { get; set; } = false;
+
+    /// <summary>
     /// <see cref="MicaSetup.Option.IsUseRegistryPreferX86"/>
     /// </summary>
     public bool? IsUseRegistryPreferX86 { get; set; } = null!;

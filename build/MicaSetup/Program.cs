@@ -44,6 +44,8 @@ internal class Program
                 option.AutoRunLaunchCommand = "-autostart";
                 option.IsUseFolderPickerPreferClassic = false;
                 option.IsUseInstallPathPreferX86 = false;
+                option.IsUseInstallPathPreferAppDataLocalPrograms = false;
+                option.IsUseInstallPathPreferAppDataRoaming = false;
                 option.IsUseRegistryPreferX86 = null!;
                 option.IsAllowFullFolderSecurity = true;
                 option.IsAllowFirewall = true;

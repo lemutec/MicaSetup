@@ -100,10 +100,29 @@ public partial class Option
     public bool IsUseFolderPickerPreferClassic { get; set; } = false;
 
     /// <summary>
-    /// Prefer to provide x86 type install path
+    /// Prefer to provide x86 type install path (Admin requested)
+    /// Such as `C:\Program Files (x86)\{APP_NAME}`
+    /// <seealso cref="System.Environment.SpecialFolder.ProgramFiles"/>
+    /// <seealso cref="System.Environment.SpecialFolder.ProgramFilesX86"/>
     /// </summary>
     [Category("GlobalSetting")]
     public bool IsUseInstallPathPreferX86 { get; set; } = false;
+
+    /// <summary>
+    /// Prefer to provide x86 type install path
+    /// Such as `C:\Users\{USER_NAME}\AppData\Local\Programs\{APP_NAME}`
+    /// <seealso cref="System.Environment.SpecialFolder.LocalApplicationData"/>
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsUseInstallPathPreferAppDataLocalPrograms { get; set; } = false;
+
+    /// <summary>
+    /// Prefer to provide app data type install path
+    /// Such as `C:\Users\{USER_NAME}\AppData\Roaming\{APP_NAME}`
+    /// <seealso cref="System.Environment.SpecialFolder.ApplicationData"/>
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsUseInstallPathPreferAppDataRoaming { get; set; } = false;
 
     /// <summary>
     /// Prefer to provide x86 type Registry Key

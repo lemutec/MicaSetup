@@ -6,7 +6,7 @@ namespace MicaSetup.Helper;
 [Auth(Auth.Admin | Auth.User)]
 public static class PrepareInstallPathHelper
 {
-    public static string GetPrepareInstallPath(string keyName, bool preferX86 = false)
+    public static string GetPrepareInstallPath(string keyName, bool preferX86 = false, bool preferAppDataLocalPrograms = false, bool preferAppDataRoaming = false)
     {
         if (RuntimeHelper.IsElevated)
         {
@@ -28,10 +28,22 @@ public static class PrepareInstallPathHelper
             {
                 return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\" + Option.Current.KeyName;
             }
+            else if (preferAppDataLocalPrograms)
+            {
+                return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Programs\" + Option.Current.KeyName;
+            }
+            else if (preferAppDataRoaming)
+            {
+                return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\" + Option.Current.KeyName;
+            }
             return Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + @"\" + Option.Current.KeyName;
         }
         else
         {
+            if (preferAppDataLocalPrograms)
+            {
+                return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Programs\" + Option.Current.KeyName;
+            }
             return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\" + Option.Current.KeyName;
         }
     }

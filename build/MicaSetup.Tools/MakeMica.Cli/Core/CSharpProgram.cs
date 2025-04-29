@@ -138,6 +138,8 @@ public static class CSharpProgram
             root = root.ReplaceOptionWithString("AutoRunLaunchCommand", config.AutoRunLaunchCommand);
             root = root.ReplaceOptionWithBoolean("IsUseFolderPickerPreferClassic", config.IsUseFolderPickerPreferClassic);
             root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferX86", config.IsUseInstallPathPreferX86);
+            root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferAppDataLocalPrograms", config.IsUseInstallPathPreferAppDataLocalPrograms);
+            root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferAppDataRoaming", config.IsUseInstallPathPreferAppDataRoaming);
             root = root.ReplaceOptionWithBoolean("IsAllowFullFolderSecurity", config.IsAllowFullFolderSecurity);
             root = root.ReplaceOptionWithString("OverlayInstallRemoveExt", config.OverlayInstallRemoveExt);
             root = root.ReplaceOptionWithString("UnpackingPassword", config.UnpackingPassword);
