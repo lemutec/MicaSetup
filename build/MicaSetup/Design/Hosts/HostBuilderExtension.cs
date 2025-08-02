@@ -44,13 +44,16 @@ public static class HostBuilderExtension
         return builder;
     }
 
-    public static IHostBuilder UseTempPathFork(this IHostBuilder builder)
+    public static IHostBuilder UseTempPathFork(this IHostBuilder builder, bool enabled = true)
     {
-        if (RuntimeHelper.IsDebuggerAttached)
+        if (enabled)
         {
-            return builder;
+            if (RuntimeHelper.IsDebuggerAttached)
+            {
+                return builder;
+            }
+            TempPathForkHelper.Fork();
         }
-        TempPathForkHelper.Fork();
         return builder;
     }
 

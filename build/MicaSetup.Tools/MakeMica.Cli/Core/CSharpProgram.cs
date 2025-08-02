@@ -45,8 +45,15 @@ public static class CSharpProgram
             }
         }
 
+        // Default is true so we only replace it when false
+        if (!config.IsUseTempPathFork)
+        {
+            root = root.ReplaceHostingMethodNameWithBoolean("UseTempPathFork", config.IsUseTempPathFork);
+        }
+
         if (config.IsEnvironmentVariable)
         {
+            // Replace from `UseTempPathFork()` to `.UseTempPathFork(false)`
             root = root.ReplaceOptionWithBoolean("IsEnvironmentVariable", config.IsEnvironmentVariable);
         }
 
@@ -263,6 +270,33 @@ file static class SyntaxNodeExtensions
             var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.FalseLiteralExpression);
             return root.ReplaceOptionWithAny(optionName, newRight);
         }
+    }
+
+    public static CompilationUnitSyntax ReplaceHostingMethodNameWithBoolean(this CompilationUnitSyntax root, string hostingMethodName, bool value)
+    {
+        var oldInvocation = root
+            .DescendantNodes()
+            .OfType<InvocationExpressionSyntax>()
+            .FirstOrDefault(inv =>
+                inv.Expression is MemberAccessExpressionSyntax memberAccess &&
+                memberAccess.Name.Identifier.Text == hostingMethodName);
+
+        if (oldInvocation == null)
+            return root;
+
+        var newArgList = SyntaxFactory.ArgumentList(
+            SyntaxFactory.SingletonSeparatedList(
+                SyntaxFactory.Argument(
+                    SyntaxFactory.LiteralExpression(value ? SyntaxKind.TrueLiteralExpression : SyntaxKind.FalseLiteralExpression)
+                )
+            )
+        );
+
+        var newInvocation = oldInvocation
+            .WithArgumentList(newArgList)
+            .WithTriviaFrom(oldInvocation);
+
+        return root.ReplaceNode(oldInvocation, newInvocation);
     }
 
     [Conditional("DEBUG")]

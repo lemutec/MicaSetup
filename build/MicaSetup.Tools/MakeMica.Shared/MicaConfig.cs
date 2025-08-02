@@ -222,6 +222,11 @@ public class MicaConfig
     public string? UnpackingPassword { get; set; } = null;
 
     /// <summary>
+    /// Indicates whether to use temporary path fork relaunching
+    /// </summary>
+    public bool IsUseTempPathFork { get; set; } = true;
+
+    /// <summary>
     /// Indicates whether to add environment variable
     /// </summary>
     public bool IsEnvironmentVariable { get; set; } = false;
