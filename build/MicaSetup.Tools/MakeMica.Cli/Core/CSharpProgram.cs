@@ -48,12 +48,16 @@ public static class CSharpProgram
         // Default is true so we only replace it when false
         if (!config.IsUseTempPathFork)
         {
-            root = root.ReplaceHostingMethodNameWithBoolean("UseTempPathFork", config.IsUseTempPathFork);
+            // Only support for installer instead of uninstaller
+            if (!csPath.EndsWith("Program.un.cs"))
+            {
+                // Replace from `UseTempPathFork()` to `.UseTempPathFork(false)`
+                root = root.ReplaceHostingMethodNameWithBoolean("UseTempPathFork", config.IsUseTempPathFork);
+            }
         }
 
         if (config.IsEnvironmentVariable)
         {
-            // Replace from `UseTempPathFork()` to `.UseTempPathFork(false)`
             root = root.ReplaceOptionWithBoolean("IsEnvironmentVariable", config.IsEnvironmentVariable);
         }
 
