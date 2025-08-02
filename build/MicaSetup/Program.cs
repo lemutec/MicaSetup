@@ -13,8 +13,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("MicaApp Setup")]
 [assembly: AssemblyCompany("Lemutec")]
 [assembly: AssemblyCopyright("Under MIT License. Copyright (c) Lemutec Contributors.")]
-[assembly: AssemblyVersion("2.3.8.0")]
-[assembly: AssemblyFileVersion("2.3.8.0")]
+[assembly: AssemblyVersion("2.4.0.0")]
+[assembly: AssemblyFileVersion("2.4.0.0")]
 [assembly: RequestExecutionLevel("admin")]
 
 namespace MicaSetup;
@@ -62,7 +62,7 @@ internal class Program
                 option.ExeName = "MicaApp.exe";
                 option.DisplayName = $"{option.AppName}";
                 option.DisplayIcon = $"{option.ExeName}";
-                option.DisplayVersion = "2.3.8.0";
+                option.DisplayVersion = "2.4.0.0";
                 option.Publisher = "Lemutec";
                 option.SetupName = $"{option.AppName} {"Setup".Tr()}";
                 option.MessageOfPage1 = $"{option.AppName}";
