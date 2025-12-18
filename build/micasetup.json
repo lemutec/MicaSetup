@@ -38,6 +38,7 @@
   "IsInstallCertificate": false,
   "IsEnableUninstallDelayUntilReboot": true,
   "IsEnvironmentVariable": true,
+  "IsUseTempPathFork": false,
   "OverlayInstallRemoveExt": "exe,dll,pdb,7z",
   "UnpackingPassword": null,
   "MessageOfPage1": null,
