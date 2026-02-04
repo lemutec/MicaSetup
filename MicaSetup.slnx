@@ -1,0 +1,28 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Deploy/">
+    <Project Path="build/MicaSetup/MicaSetup.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="build/MicaSetup/MicaSetup.Uninst.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Tools/">
+    <Project Path="build/MicaSetup.Tools/FetchVer/FetchVer.csproj" />
+    <Project Path="build/MicaSetup.Tools/MakeIcon.Cli/MakeIcon.Cli.csproj" />
+    <Project Path="build/MicaSetup.Tools/MakeIcon.Shared/MakeIcon.Shared.shproj" />
+    <Project Path="build/MicaSetup.Tools/MakeIcon/MakeIcon.csproj" />
+    <Project Path="build/MicaSetup.Tools/MakeMica.Cli/MakeMica.Cli.csproj" />
+    <Project Path="build/MicaSetup.Tools/MakeMica.Shared/MakeMica.Shared.shproj" />
+    <Project Path="build/MicaSetup.Tools/MakeMica/MakeMica.csproj" />
+    <Project Path="build/MicaSetup.Tools/MICA/MICA.csproj" />
+    <Project Path="build/MicaSetup.Tools/PEImage/PEParser.csproj" />
+  </Folder>
+  <Project Path="src/MicaApp/MicaApp.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>
