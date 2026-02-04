@@ -1,4 +1,4 @@
-﻿using MakeMica.Shared;
+using MakeMica.Shared;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -43,6 +43,13 @@ public static class CSharpProgram
             {
                 throw new ArgumentException($"Invalid `RequestExecutionLevel` of '{config.RequestExecutionLevel}'.");
             }
+        }
+
+        // Default is null so we only replace it when not null or white space
+        if (!string.IsNullOrWhiteSpace(config.SingleInstanceMutex))
+        {
+            // Replace from `UseSingleInstance(XXX)` to `UseSingleInstance(SingleInstanceMutex)`
+            root = root.ReplaceHostingMethodNameWithString("UseSingleInstance", config.SingleInstanceMutex);
         }
 
         // Default is true so we only replace it when false
@@ -274,6 +281,33 @@ file static class SyntaxNodeExtensions
             var newRight = SyntaxFactory.LiteralExpression(SyntaxKind.FalseLiteralExpression);
             return root.ReplaceOptionWithAny(optionName, newRight);
         }
+    }
+
+    public static CompilationUnitSyntax ReplaceHostingMethodNameWithString(this CompilationUnitSyntax root, string hostingMethodName, string? value)
+    {
+        var oldInvocation = root
+            .DescendantNodes()
+            .OfType<InvocationExpressionSyntax>()
+            .FirstOrDefault(inv =>
+                inv.Expression is MemberAccessExpressionSyntax memberAccess &&
+                memberAccess.Name.Identifier.Text == hostingMethodName);
+
+        if (oldInvocation == null)
+            return root;
+
+        var newArgList = SyntaxFactory.ArgumentList(
+            SyntaxFactory.SingletonSeparatedList(
+                SyntaxFactory.Argument(
+                    SyntaxFactory.LiteralExpression(SyntaxKind.StringLiteralExpression, SyntaxFactory.Literal(value))
+                )
+            )
+        );
+
+        var newInvocation = oldInvocation
+            .WithArgumentList(newArgList)
+            .WithTriviaFrom(oldInvocation);
+
+        return root.ReplaceNode(oldInvocation, newInvocation);
     }
 
     public static CompilationUnitSyntax ReplaceHostingMethodNameWithBoolean(this CompilationUnitSyntax root, string hostingMethodName, bool value)
