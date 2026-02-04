@@ -1,4 +1,4 @@
-![logo64](./branding/logo64.png)
+![logo64](https://raw.githubusercontent.com/lemutec/MicaSetup/refs/heads/v2/branding/logo64.png)
 
 [![Actions](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml/badge.svg)](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml) [![Platform](https://img.shields.io/badge/platform-Windows-blue?logo=windowsxp&color=1E9BFA)](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
 
