@@ -16,9 +16,9 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 ## 🌒ScreenShots
 
-<img src="./assets/image-20240520214715174.png" alt="image-20240520214715174" style="zoom: 80%;" />
+<img src="https://raw.githubusercontent.com/lemutec/MicaSetup/refs/heads/v2/assets/image-20240520214715174.png" alt="image-20240520214715174" style="zoom: 80%;" />
 
-<img src="./assets/image-20240520214758733.png" alt="image-20240520214758733" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/lemutec/MicaSetup/refs/heads/v2/assets/image-20240520214758733.png" alt="image-20240520214758733" style="zoom:80%;" />
 
 ## 💡Features
 
