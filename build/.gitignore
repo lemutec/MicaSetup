@@ -3,3 +3,5 @@
 Build/
 /*.exe
 /*.7z
+/*.nupkg
+/*.snupkg

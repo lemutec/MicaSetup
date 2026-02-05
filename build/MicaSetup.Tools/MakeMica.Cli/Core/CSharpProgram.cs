@@ -298,7 +298,7 @@ file static class SyntaxNodeExtensions
         var newArgList = SyntaxFactory.ArgumentList(
             SyntaxFactory.SingletonSeparatedList(
                 SyntaxFactory.Argument(
-                    SyntaxFactory.LiteralExpression(SyntaxKind.StringLiteralExpression, SyntaxFactory.Literal(value))
+                    SyntaxFactory.LiteralExpression(SyntaxKind.StringLiteralExpression, SyntaxFactory.Literal(value!))
                 )
             )
         );
