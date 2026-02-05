@@ -1,6 +1,6 @@
 ![logo64](https://raw.githubusercontent.com/lemutec/MicaSetup/refs/heads/v2/branding/logo64.png)
 
-[![Actions](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml/badge.svg)](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml) [![Platform](https://img.shields.io/badge/platform-Windows-blue?logo=windowsxp&color=1E9BFA)](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
+[![GitHub license](https://img.shields.io/github/license/lemutec/MicaSetup)](https://github.com/lemutec/MicaSetup/blob/v2/LICENSE) [![NuGet](https://img.shields.io/nuget/v/MicaSetup.Tools.svg)](https://nuget.org/packages/MicaSetup.Tools) [![Actions](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml/badge.svg)](https://github.com/lemutec/MicaSetup/actions/workflows/micasetup.yml) [![Platform](https://img.shields.io/badge/platform-Windows-blue?logo=windowsxp&color=1E9BFA)](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
 
 # 📦MicaSetup
 
@@ -83,7 +83,29 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 ## 📖Usage & Wikis
 
-🚧Under construction🚧
+### Build via NuGet package
+
+```xml
+<ItemGroup>
+    <PackageReference Include="MicaSetup.Tools" Version="2.5.0" />
+</ItemGroup>
+```
+
+and then you can use `makemica.exe` and `7z.exe` from NuGet cache directory in your PowerShell script.
+
+```powershell
+Write-Host "Get NuGet global package cache directory"
+$globalPackages = (dotnet nuget locals global-packages --list) -split ":\s*", 2 | Select-Object -Last 1
+$sevenZip = Join-Path $globalPackages "micasetup.tools\2.5.0\build\bin\7z.exe"
+$exePath = Join-Path $globalPackages "micasetup.tools\2.5.0\build\makemica.exe"
+
+Write-Host "7z packing"
+& $sevenZip a $package7z ".\*" -t7z -mx=5 -mf=BCJ2 -r -y
+
+Write-Host "Installer building"
+# Ensure your micasetup.json file here
+& $exePath
+```
 
 ### Usage of `fetchver`
 
