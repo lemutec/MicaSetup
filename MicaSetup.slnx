@@ -11,6 +11,9 @@
       <Platform Solution="*|x64" Project="x64" />
     </Project>
   </Folder>
+  <Folder Name="/NuGet/">
+    <Project Path="build/MicaSetup.Tools/MicaSetup.Tools/MicaSetup.Tools.csproj" />
+  </Folder>
   <Folder Name="/Tools/">
     <Project Path="build/MicaSetup.Tools/FetchVer/FetchVer.csproj" />
     <Project Path="build/MicaSetup.Tools/MakeIcon.Cli/MakeIcon.Cli.csproj" />

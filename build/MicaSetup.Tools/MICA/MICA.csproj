@@ -4,9 +4,9 @@
         <OutputType>WinExe</OutputType>
         <TargetFramework>net472</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <AssemblyVersion>2.4.0.0</AssemblyVersion>
-        <FileVersion>2.4.0.0</FileVersion>
-        <Version>$(VersionPrefix)2.4.0.0</Version>
+        <AssemblyVersion>2.5.0.0</AssemblyVersion>
+        <FileVersion>2.5.0.0</FileVersion>
+        <Version>$(VersionPrefix)2.5.0.0</Version>
         <ApplicationIcon>Resources\Images\Favicon.ico</ApplicationIcon>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
