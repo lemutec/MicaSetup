@@ -73,15 +73,13 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 > The programs using MicaSetup.
 
-[GenshinMatrix/Fischless.Relauncher](https://github.com/GenshinMatrix/Fischless.Relauncher) (Recommended)
+[QL-Win/QuickLook](https://github.com/QL-Win/QuickLook) (Recommended)
+
+[GenshinMatrix/Fischless.Relauncher](https://github.com/GenshinMatrix/Fischless.Relauncher)
 
 [lemutec/LyricStudio](https://github.com/lemutec/LyricStudio)
 
 [GenshinMatrix/Fischless](https://github.com/GenshinMatrix/Fischless)
-
-[babalae/better-genshin-impact](https://github.com/babalae/better-genshin-impact)
-
-[babalae/better-wuthering-waves](https://github.com/babalae/better-wuthering-waves)
 
 ## 📖Usage & Wikis
 
@@ -106,7 +104,7 @@ Run the `setup_dummy.cmd` for creating some dummy things used in project.
 
 Such as `publish.7z` as your app published package and full size font used in Setup programs.
 
-And then Run VS2022 (or higher) as Admin to open the sln.
+And then Run VS2026 (or higher) as Admin to open the `.slnx`.
 
 ### 📦Create Setup
 
@@ -121,7 +119,7 @@ Command Flow:
 
 ## 🚀Contributes
 
-🈺Welcome PRs, issuses, wikis, demos.
+🈺Welcome PRs, issues, wikis, demos.
 
 ## 🌟Components
 
