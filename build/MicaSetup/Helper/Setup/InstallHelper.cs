@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace MicaSetup.Helper.Helper;
+namespace MicaSetup.Helper;
 
 public static class InstallHelper
 {

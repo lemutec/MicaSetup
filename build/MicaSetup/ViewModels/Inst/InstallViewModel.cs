@@ -1,7 +1,6 @@
 ﻿using MicaSetup.Design.ComponentModel;
 using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
-using MicaSetup.Helper.Helper;
 using MicaSetup.Services;
 using System;
 using System.Collections.Generic;
