@@ -47,6 +47,7 @@ internal class Program
                 option.IsInstallCertificate = false;
                 option.IsEnableUninstallDelayUntilReboot = true;
                 option.IsEnvironmentVariable = false;
+                option.CloseApplications = [];
                 option.AppName = "MicaApp";
                 option.KeyName = "MicaApp";
                 option.ExeName = "MicaApp.exe";

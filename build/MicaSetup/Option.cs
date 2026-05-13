@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using MicaSetup.Helper;
+using System.ComponentModel;
 
 namespace MicaSetup;
 
@@ -185,6 +186,13 @@ public partial class Option
     /// </summary>
     [Category("GlobalSetting")]
     public string UnpackingPassword { get; set; } = null!;
+
+    /// <summary>
+    /// A list of applications to close before install/upgrade/uninstall begins.
+    /// Equivalent to WiX util:CloseApplication.
+    /// </summary>
+    [Category("GlobalSetting")]
+    public List<CloseApplicationInfo> CloseApplications { get; set; } = [];
 
     /// <summary>
     /// Indicates whether to add environment variable

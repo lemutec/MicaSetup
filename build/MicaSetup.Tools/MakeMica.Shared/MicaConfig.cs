@@ -245,4 +245,46 @@ public class MicaConfig
     /// <see cref="MicaSetup.Option.MessageOfPage3"/>
     /// </summary>
     public string? MessageOfPage3 { get; set; } = null;
+
+    /// <summary>
+    /// A list of applications to close before install/upgrade/uninstall begins.
+    /// Equivalent to WiX util:CloseApplication.
+    /// When null or empty, no applications are closed.
+    /// </summary>
+    public List<CloseApplicationItem>? CloseApplications { get; set; } = null;
+}
+
+/// <summary>
+/// Describes a single application to close before the setup operation.
+/// Mirrors the properties of WiX util:CloseApplication.
+/// </summary>
+public class CloseApplicationItem
+{
+    /// <summary>
+    /// The process executable name to close, e.g. "QuickLook.exe".
+    /// </summary>
+    public string Target { get; set; } = string.Empty;
+
+    /// <summary>
+    /// When true, sends WM_CLOSE to the main window for a graceful shutdown before killing.
+    /// Equivalent to WiX CloseMessage="yes". Default: true.
+    /// </summary>
+    public bool CloseMessage { get; set; } = true;
+
+    /// <summary>
+    /// Reserved for future use (reboot prompt on failure).
+    /// Equivalent to WiX RebootPrompt. Default: false.
+    /// </summary>
+    public bool RebootPrompt { get; set; } = false;
+
+    /// <summary>
+    /// When true, forcibly terminates the process if graceful close times out.
+    /// Equivalent to WiX TerminateProcess="1". Default: true.
+    /// </summary>
+    public bool TerminateProcess { get; set; } = true;
+
+    /// <summary>
+    /// Seconds to wait for graceful exit before killing. Default: 5.
+    /// </summary>
+    public int Timeout { get; set; } = 5;
 }

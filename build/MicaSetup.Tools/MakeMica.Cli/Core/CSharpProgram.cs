@@ -163,6 +163,11 @@ public static class CSharpProgram
             root = root.ReplaceOptionWithString("UnpackingPassword", config.UnpackingPassword);
         }
 
+        if (config.CloseApplications is { Count: > 0 })
+        {
+            root = root.ReplaceOptionWithCloseApplications(config.CloseApplications);
+        }
+
         File.Delete(csPath);
         File.WriteAllText(csPath, root.ToString());
     }
@@ -350,5 +355,25 @@ file static class SyntaxNodeExtensions
                 PrintSyntaxTree(child.AsNode()!, indentLevel + 1);
             }
         }
+    }
+
+    public static CompilationUnitSyntax ReplaceOptionWithCloseApplications(this CompilationUnitSyntax root, List<CloseApplicationItem> items)
+    {
+        // Build a C# collection expression string, e.g.:
+        // [
+        //     new CloseApplicationInfo { Target = "QuickLook.exe", CloseMessage = true, RebootPrompt = false, TerminateProcess = true, Timeout = 5 },
+        // ]
+        System.Text.StringBuilder sb = new();
+        sb.AppendLine("[");
+        foreach (CloseApplicationItem item in items)
+        {
+            string boolStr(bool v) => v ? "true" : "false";
+            sb.AppendLine(
+                $"    new MicaSetup.Helper.CloseApplicationInfo {{ Target = \"{item.Target}\", CloseMessage = {boolStr(item.CloseMessage)}, RebootPrompt = {boolStr(item.RebootPrompt)}, TerminateProcess = {boolStr(item.TerminateProcess)}, Timeout = {item.Timeout} }},");
+        }
+        sb.Append(']');
+
+        ExpressionSyntax collectionExpr = SyntaxFactory.ParseExpression(sb.ToString());
+        return root.ReplaceOptionWithAny("CloseApplications", collectionExpr);
     }
 }
