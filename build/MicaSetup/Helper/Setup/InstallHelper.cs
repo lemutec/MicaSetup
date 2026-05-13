@@ -125,12 +125,14 @@ public static class InstallHelper
         };
 
         HashSet<string> uninstallData = [];
+#pragma warning disable IDE0350 // Use implicitly typed lambda
         ArchiveFileHelper.ExtractAll(Option.Current.InstallLocation, archiveStream, (double progress, string key) =>
         {
             Logger.Debug($"[ExtractAll] {key} {progress * 100d:0.00}%");
             progressCallback?.Invoke(progress, key);
             uninstallData.Add(key);
         }, readerOptions: readerOptions, options: extractionOptions);
+#pragma warning restore IDE0350 // Use implicitly typed lambda
 
         if (Option.Current.IsCreateRegistryKeys && RuntimeHelper.IsElevated)
         {

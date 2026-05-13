@@ -134,7 +134,7 @@ public static class UninstallHelper
                 double countMax = GetFileCount(Option.Current.InstallLocation);
                 int count = 0;
 
-                foreach (string dir in Directory.GetDirectories(Option.Current.InstallLocation).Concat(new[] { Option.Current.InstallLocation }).ToList())
+                foreach (string dir in Directory.GetDirectories(Option.Current.InstallLocation).Concat([Option.Current.InstallLocation]).ToList())
                 {
                     foreach (string file in Directory.GetFiles(dir, "*.*", SearchOption.AllDirectories))
                     {
