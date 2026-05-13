@@ -368,8 +368,9 @@ file static class SyntaxNodeExtensions
         foreach (CloseApplicationItem item in items)
         {
             string boolStr(bool v) => v ? "true" : "false";
+            string strOrNull(string? v) => v == null ? "null!" : $"\"{v}\"";
             sb.AppendLine(
-                $"    new MicaSetup.Helper.CloseApplicationInfo {{ Target = \"{item.Target}\", CloseMessage = {boolStr(item.CloseMessage)}, RebootPrompt = {boolStr(item.RebootPrompt)}, TerminateProcess = {boolStr(item.TerminateProcess)}, Timeout = {item.Timeout} }},");
+                $"    new MicaSetup.Helper.CloseApplicationInfo {{ Target = \"{item.Target}\", Description = {strOrNull(item.Description)}, WindowTitle = {strOrNull(item.WindowTitle)}, CloseMessage = {boolStr(item.CloseMessage)}, RebootPrompt = {boolStr(item.RebootPrompt)}, TerminateProcess = {boolStr(item.TerminateProcess)}, Timeout = {item.Timeout} }},");
         }
         sb.Append(']');
 

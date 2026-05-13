@@ -47,6 +47,8 @@
   "CloseApplications": [
     {
       "Target": "QuickLook.exe",
+      "Description": "QuickLook",
+      "WindowTitle": null,
       "CloseMessage": true,
       "RebootPrompt": false,
       "TerminateProcess": true,

@@ -8,6 +8,21 @@ public class CloseApplicationInfo
     public string Target { get; set; } = string.Empty;
 
     /// <summary>
+    /// Human-readable label shown in logs/UI when the application is running.
+    /// Equivalent to WiX CloseApplication Description (used with PromptToContinue).
+    /// Not used for process matching.
+    /// </summary>
+    public string? Description { get; set; } = null;
+
+    /// <summary>
+    /// Optional window title filter. When set, only processes whose
+    /// <see cref="System.Diagnostics.Process.MainWindowTitle"/> contains this string
+    /// (case-insensitive) will be closed. Useful when multiple processes share the
+    /// same executable name. In WPF this corresponds to <c>Window.Title</c>.
+    /// </summary>
+    public string? WindowTitle { get; set; } = null;
+
+    /// <summary>
     /// When true, sends a close message (WM_CLOSE) to the main window before terminating.
     /// Equivalent to WiX CloseApplication CloseMessage="yes".
     /// </summary>

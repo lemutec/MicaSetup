@@ -266,6 +266,19 @@ public class CloseApplicationItem
     public string Target { get; set; } = string.Empty;
 
     /// <summary>
+    /// Human-readable label shown in logs/UI when the application is running.
+    /// Equivalent to WiX CloseApplication Description. Not used for process matching.
+    /// </summary>
+    public string? Description { get; set; } = null;
+
+    /// <summary>
+    /// Optional window title filter (case-insensitive substring match).
+    /// When set, only processes whose MainWindowTitle contains this string are closed.
+    /// In WPF this corresponds to Window.Title. MicaSetup-specific extension.
+    /// </summary>
+    public string? WindowTitle { get; set; } = null;
+
+    /// <summary>
     /// When true, sends WM_CLOSE to the main window for a graceful shutdown before killing.
     /// Equivalent to WiX CloseMessage="yes". Default: true.
     /// </summary>

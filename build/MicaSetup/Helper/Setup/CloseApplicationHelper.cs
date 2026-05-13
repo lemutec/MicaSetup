@@ -38,6 +38,7 @@ public static class CloseApplicationHelper
         }
 
         string processName = Path.GetFileNameWithoutExtension(info.Target);
+        string label = string.IsNullOrWhiteSpace(info.Description) ? info.Target : info.Description;
         Process[] processes = Process.GetProcessesByName(processName);
 
         foreach (Process process in processes)
@@ -48,6 +49,17 @@ public static class CloseApplicationHelper
                 {
                     continue;
                 }
+
+                // WindowTitle filter: skip processes whose window title does not match.
+                if (!string.IsNullOrWhiteSpace(info.WindowTitle))
+                {
+                    if (!process.MainWindowTitle.Contains(info.WindowTitle, StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+                }
+
+                Logger.Info($"[CloseApplication] Closing \"{label}\" (PID={process.Id}, Window=\"{process.MainWindowTitle}\")");
 
                 if (info.CloseMessage)
                 {
