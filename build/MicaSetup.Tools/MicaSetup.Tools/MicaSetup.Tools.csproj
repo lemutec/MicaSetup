@@ -4,9 +4,9 @@
         <OutputType>Library</OutputType>
         <TargetFramework>net472</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <AssemblyVersion>2.5.0.0</AssemblyVersion>
-        <FileVersion>2.5.0.0</FileVersion>
-        <Version>$(VersionPrefix)2.5.0.0</Version>
+        <AssemblyVersion>2.5.1.0</AssemblyVersion>
+        <FileVersion>2.5.1.0</FileVersion>
+        <Version>$(VersionPrefix)2.5.1.0</Version>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <NuspecFile>..\..\..\nuget\Package.nuspec</NuspecFile>
