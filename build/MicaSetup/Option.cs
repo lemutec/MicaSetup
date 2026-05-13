@@ -192,7 +192,7 @@ public partial class Option
     /// Equivalent to WiX util:CloseApplication.
     /// </summary>
     [Category("GlobalSetting")]
-    public List<CloseApplicationInfo> CloseApplications { get; set; } = [];
+    public CloseApplicationInfo[] CloseApplications { get; set; } = [];
 
     /// <summary>
     /// Indicates whether to add environment variable

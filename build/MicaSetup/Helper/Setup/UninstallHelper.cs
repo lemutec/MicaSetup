@@ -10,7 +10,7 @@ public static class UninstallHelper
 {
     public static void Uninstall(Action<double, string> progressCallback = null!, Action<UninstallReport, object> reportCallback = null!)
     {
-        if (Option.Current.CloseApplications.Count > 0)
+        if (Option.Current.CloseApplications.Length > 0)
         {
             CloseApplicationHelper.CloseApplications();
         }

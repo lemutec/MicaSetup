@@ -10,7 +10,7 @@ public static class InstallHelper
 {
     public static void Install(Stream archiveStream, Action<double, string> progressCallback = null!)
     {
-        if (Option.Current.CloseApplications.Count > 0)
+        if (Option.Current.CloseApplications.Length > 0)
         {
             CloseApplicationHelper.CloseApplications();
         }

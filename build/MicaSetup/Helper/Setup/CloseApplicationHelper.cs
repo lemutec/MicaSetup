@@ -59,7 +59,7 @@ public static class CloseApplicationHelper
                     }
                 }
 
-                Logger.Info($"[CloseApplication] Closing \"{label}\" (PID={process.Id}, Window=\"{process.MainWindowTitle}\")");
+                Logger.Information($"[CloseApplication] Closing \"{label}\" (PID={process.Id}, Window=\"{process.MainWindowTitle}\")");
 
                 if (info.CloseMessage)
                 {
