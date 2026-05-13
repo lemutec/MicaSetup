@@ -251,7 +251,7 @@ public class MicaConfig
     /// Equivalent to WiX util:CloseApplication.
     /// When null or empty, no applications are closed.
     /// </summary>
-    public List<CloseApplicationItem>? CloseApplications { get; set; } = null;
+    public CloseApplicationItem[]? CloseApplications { get; set; } = null;
 }
 
 /// <summary>

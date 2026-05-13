@@ -3,6 +3,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Diagnostics;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace MakeMica.Cli.Core;
@@ -163,7 +164,7 @@ public static class CSharpProgram
             root = root.ReplaceOptionWithString("UnpackingPassword", config.UnpackingPassword);
         }
 
-        if (config.CloseApplications is { Count: > 0 })
+        if (config.CloseApplications is { Length: > 0 })
         {
             root = root.ReplaceOptionWithCloseApplications(config.CloseApplications);
         }
@@ -357,13 +358,13 @@ file static class SyntaxNodeExtensions
         }
     }
 
-    public static CompilationUnitSyntax ReplaceOptionWithCloseApplications(this CompilationUnitSyntax root, List<CloseApplicationItem> items)
+    public static CompilationUnitSyntax ReplaceOptionWithCloseApplications(this CompilationUnitSyntax root, IEnumerable<CloseApplicationItem> items)
     {
         // Build a C# collection expression string, e.g.:
         // [
         //     new CloseApplicationInfo { Target = "QuickLook.exe", CloseMessage = true, RebootPrompt = false, TerminateProcess = true, Timeout = 5 },
         // ]
-        System.Text.StringBuilder sb = new();
+        StringBuilder sb = new();
         sb.AppendLine("[");
         foreach (CloseApplicationItem item in items)
         {
