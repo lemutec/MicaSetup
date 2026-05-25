@@ -12,8 +12,4 @@
         <NuspecFile>..\..\..\nuget\Package.nuspec</NuspecFile>
     </PropertyGroup>
 
-    <ItemGroup>
-		<None Include="..\..\..\nuget\Package.nuspec" />
-    </ItemGroup>
-
 </Project>
