@@ -7,5 +7,5 @@ namespace MicaSetup;
 /// </summary>
 internal static class MicaInfo
 {
-    public const string Version = "2.5.1.0";
+    public const string Version = "2.5.2.0";
 }
