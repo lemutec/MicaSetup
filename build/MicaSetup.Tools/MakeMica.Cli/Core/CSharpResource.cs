@@ -21,13 +21,22 @@ public static class CSharpResource
 
         if (!string.IsNullOrWhiteSpace(config.LicenseFile) || !string.IsNullOrWhiteSpace(config.License))
         {
-            foreach (string file in Directory.GetFiles(Path.Combine(resourceDir, "Licenses"), "*.txt"))
+            string licenseExt = string.Equals(config.LicenseType, "rtf", StringComparison.OrdinalIgnoreCase)
+                ? "rtf"
+                : "txt";
+
+            foreach (string file in Directory.GetFiles(Path.Combine(resourceDir, "Licenses"), "license*.txt"))
+            {
+                File.Delete(file);
+            }
+
+            foreach (string file in Directory.GetFiles(Path.Combine(resourceDir, "Licenses"), "license*.rtf"))
             {
                 File.Delete(file);
             }
 
             string licenseFile = MicaMacro.GetFullPath(config.LicenseFile);
-            string license = Path.Combine(resourceDir, "Licenses", "license.txt");
+            string license = Path.Combine(resourceDir, "Licenses", $"license.{licenseExt}");
 
             if (File.Exists(licenseFile))
             {

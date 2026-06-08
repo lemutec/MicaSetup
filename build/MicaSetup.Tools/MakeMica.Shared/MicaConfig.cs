@@ -98,7 +98,8 @@ public class MicaConfig
     public string? License { get; set; } = null;
 
     /// <summary>
-    /// TODO
+    /// The license file type. Default is "txt", optional "rtf".
+    /// When null, defaults to "txt".
     /// </summary>
     public string? LicenseType { get; set; } = null;
 

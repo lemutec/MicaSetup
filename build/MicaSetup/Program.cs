@@ -53,6 +53,7 @@ internal class Program
                 option.IsInstallCertificate = false;
                 option.IsEnableUninstallDelayUntilReboot = true;
                 option.IsUseLicenseFile = false;
+                option.LicenseFileType = "txt";
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;

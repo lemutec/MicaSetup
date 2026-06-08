@@ -75,33 +75,33 @@ public class TrService : ITrService
     {
         const string prefix = "pack://application:,,,/MicaSetup;component/Resources/Licenses/";
 
+        string licenseExt = (Option.Current.LicenseFileType?.ToLowerInvariant()) switch
+        {
+            "rtf" => "rtf",
+            _ => "txt",
+        };
+
         if (Option.Current.IsUseLicenseFile)
         {
-            return prefix + "license.txt";
+            return prefix + $"license.{licenseExt}";
         }
 
         if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.Name)))
         {
             return GetUriString(CultureInfo.CurrentUICulture.Name);
         }
-        else
+        if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)))
         {
-            if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)))
-            {
-                return GetUriString(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
-            }
-            else
-            {
-                if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName)))
-                {
-                    return GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
-                }
-            }
+            return GetUriString(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName);
+        }
+        if (ResourceHelper.HasResource(GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName)))
+        {
+            return GetUriString(CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName);
         }
         Logger.Debug($"[TrService] NotFound with match mui license name of '{CultureInfo.CurrentUICulture.Name}' or '{CultureInfo.CurrentUICulture.TwoLetterISOLanguageName}' or '{CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName}'.");
         return GetUriString("en");
 
-        static string GetUriString(string name) => prefix + $"license.{name}.txt";
+        string GetUriString(string name) => prefix + $"license.{name}.{licenseExt}";
     }
 
     [Conditional("DEBUG")]

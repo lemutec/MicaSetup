@@ -162,10 +162,16 @@ public partial class Option
     public bool IsEnableUninstallDelayUntilReboot { get; set; } = false;
 
     /// <summary>
-    /// Indicates whether to use license.txt instead of others
+    /// Indicates whether to use license file instead of built-in multilingual license
     /// </summary>
     [Category("GlobalSetting")]
     public bool IsUseLicenseFile { get; internal set; }
+
+    /// <summary>
+    /// Indicates the license file type. Default is "txt", optional "rtf".
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string LicenseFileType { get; internal set; } = "txt";
 
     /// <summary>
     /// The file ext filter to remove when overlay install

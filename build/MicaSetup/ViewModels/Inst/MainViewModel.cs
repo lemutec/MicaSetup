@@ -46,7 +46,7 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string requestedFreeSpace = null!;
 
-    private long requestedFreeSpaceLong = default;
+    private readonly long requestedFreeSpaceLong = default;
 
     [ObservableProperty]
     private string availableFreeSpace = null!;
@@ -58,6 +58,9 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private string licenseInfo = null!;
+
+    [ObservableProperty]
+    private bool isRtfLicense = false;
 
     [ObservableProperty]
     private bool licenseShown = false;
@@ -98,7 +101,8 @@ public partial class MainViewModel : ObservableObject
     public MainViewModel()
     {
         string? licenseUrl = ServiceManager.GetService<ITrService>()?.GetLicenseUriString();
-        LicenseInfo = !string.IsNullOrEmpty(licenseUrl) ? ResourceHelper.GetString(licenseUrl!) : string.Empty;
+        IsRtfLicense = string.Equals(Option.Current.LicenseFileType, "rtf", StringComparison.OrdinalIgnoreCase);
+        LicenseInfo = (!IsRtfLicense && !string.IsNullOrEmpty(licenseUrl)) ? ResourceHelper.GetString(licenseUrl!) : string.Empty;
         using Stream archiveStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.7z");
 
         ReaderOptions readerOptions = new()
@@ -289,6 +293,24 @@ partial class MainViewModel
         }
     }
 
+    public bool IsRtfLicense
+    {
+        get => isRtfLicense;
+        set
+        {
+            if (!EqualityComparer<bool>.Default.Equals(isRtfLicense, value))
+            {
+                OnIsRtfLicenseChanging(value);
+                OnIsRtfLicenseChanging(default, value);
+                OnPropertyChanging(new PropertyChangingEventArgs("IsRtfLicense"));
+                isRtfLicense = value;
+                OnIsRtfLicenseChanged(value);
+                OnIsRtfLicenseChanged(default, value);
+                OnPropertyChanged(new PropertyChangedEventArgs("IsRtfLicense"));
+            }
+        }
+    }
+
     public bool LicenseShown
     {
         get => licenseShown;
@@ -472,6 +494,14 @@ partial class MainViewModel
     partial void OnLicenseInfoChanged(string value);
 
     partial void OnLicenseInfoChanged(string? oldValue, string newValue);
+
+    partial void OnIsRtfLicenseChanging(bool value);
+
+    partial void OnIsRtfLicenseChanging(bool oldValue, bool newValue);
+
+    partial void OnIsRtfLicenseChanged(bool value);
+
+    partial void OnIsRtfLicenseChanged(bool oldValue, bool newValue);
 
     partial void OnLicenseShownChanging(bool value);
 

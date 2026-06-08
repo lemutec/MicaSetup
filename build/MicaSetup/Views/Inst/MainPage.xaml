@@ -228,7 +228,7 @@
                 <SolidColorBrush Color="{DynamicResource ApplicationBackgroundColor}" />
             </Border.Background>
             <Border.Effect>
-                <DropShadowEffect BlurRadius="5"
+                <DropShadowEffect BlurRadius="2"
                                   ShadowDepth="0"
                                   Color="LightGray" />
             </Border.Effect>
@@ -276,13 +276,25 @@
                            FontSize="15"
                            Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                            Text="{DynamicResource UserLicenseAgreement}" />
-                <control:SmoothScrollViewer Grid.Row="1" Margin="5,18,5,0">
+                <control:SmoothScrollViewer Grid.Row="1"
+                                            Margin="5,18,5,0"
+                                            Visibility="{Binding IsRtfLicense, Converter={StaticResource BoolToVisibilityInvertedConverter}}">
                     <TextBlock FontSize="13"
                                Foreground="{DynamicResource TextFillColorPrimaryBrush}"
                                LineHeight="25"
                                Text="{Binding LicenseInfo}"
                                TextWrapping="Wrap" />
                 </control:SmoothScrollViewer>
+                <RichTextBox x:Name="LicenseRtfBox"
+                             Grid.Row="1"
+                             Margin="5,18,5,0"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             FontSize="13"
+                             Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                             IsReadOnly="True"
+                             VerticalScrollBarVisibility="Auto"
+                             Visibility="{Binding IsRtfLicense, Converter={StaticResource BoolToVisibilityConverter}}" />
                 <Button Grid.Row="2"
                         Height="30"
                         Margin="5"

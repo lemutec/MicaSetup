@@ -117,10 +117,12 @@ public static class CSharpProgram
             if (!string.IsNullOrWhiteSpace(config.LicenseFile) || !string.IsNullOrWhiteSpace(config.License))
             {
                 root = root.ReplaceOptionWithBoolean("IsUseLicenseFile", true);
+                root = root.ReplaceOptionWithString("LicenseFileType", string.IsNullOrWhiteSpace(config.LicenseType) ? "txt" : config.LicenseType);
             }
             else
             {
                 root = root.ReplaceOptionWithBoolean("IsUseLicenseFile", false);
+                root = root.ReplaceOptionWithString("LicenseFileType", "txt");
             }
         }
 
