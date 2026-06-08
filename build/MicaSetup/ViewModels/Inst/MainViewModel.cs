@@ -3,14 +3,12 @@ using MicaSetup.Design.ComponentModel;
 using MicaSetup.Design.Controls;
 using MicaSetup.Helper;
 using MicaSetup.Services;
-using MicaSetup.Shell.Dialogs;
+using MicaSetup.Shell.Dialog;
 using PureSharpCompress.Readers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
-using DialogResult = System.Windows.Forms.DialogResult;
-using FolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
 
 namespace MicaSetup.ViewModels;
 
@@ -135,12 +133,12 @@ public partial class MainViewModel : ObservableObject
     {
         if (Option.Current.IsUseFolderPickerPreferClassic)
         {
-            using FolderBrowserDialog dialog = new()
+            using System.Windows.Forms.FolderBrowserDialog dialog = new()
             {
                 ShowNewFolderButton = true,
             };
 
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string selectedFolder = dialog.SelectedPath;
                 Option.Current.InstallLocation = InstallPath = selectedFolder;
@@ -148,14 +146,11 @@ public partial class MainViewModel : ObservableObject
         }
         else
         {
-            using CommonOpenFileDialog dialog = new()
-            {
-                IsFolderPicker = true,
-            };
+            OpenFolderDialog dialog = new();
 
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                string selectedFolder = dialog.FileName;
+                string selectedFolder = dialog.SelectedPath!;
                 Option.Current.InstallLocation = InstallPath = selectedFolder;
             }
         }
