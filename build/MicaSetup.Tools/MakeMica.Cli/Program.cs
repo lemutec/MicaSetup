@@ -55,6 +55,26 @@ internal static class Program
             return;
         }
 
+        if (!string.IsNullOrWhiteSpace(config.MinimalVersion))
+        {
+            Version toolVersion = Assembly.GetCallingAssembly().GetName().Version!;
+            if (Version.TryParse(config.MinimalVersion, out Version? minVersion))
+            {
+                if (toolVersion < minVersion)
+                {
+                    Console.WriteLine($"ERR: makemica v{toolVersion.ToString(3)} is lower than the required minimal version v{minVersion.ToString(3)} specified in '{path}'.");
+                    Environment.ExitCode = -4;
+                    return;
+                }
+            }
+            else
+            {
+                Console.WriteLine($"ERR: Invalid MinimalVersion value '{config.MinimalVersion}' in '{path}'.");
+                Environment.ExitCode = -5;
+                return;
+            }
+        }
+
         try
         {
             App app = new();

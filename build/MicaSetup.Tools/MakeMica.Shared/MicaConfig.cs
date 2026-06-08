@@ -3,6 +3,13 @@
 public class MicaConfig
 {
     /// <summary>
+    /// The minimal required version of makemica tool.
+    /// When set, makemica will exit with error if its version is lower than this value.
+    /// When null, no version check is performed.
+    /// </summary>
+    public string? MinimalVersion { get; set; } = null;
+
+    /// <summary>
     /// The template file location.
     /// When `.dist` dir is empty, extract it to `.dist`.
     /// Support 7z/zip template.
