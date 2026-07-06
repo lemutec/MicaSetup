@@ -51,34 +51,44 @@ public static class InstallHelper
         {
             if (!string.IsNullOrWhiteSpace(Option.Current.OverlayInstallRemoveExt))
             {
-                string[] extFilters = Option.Current.OverlayInstallRemoveExt.Split(',');
+                HashSet<string> extFilters = new(StringComparer.OrdinalIgnoreCase);
 
-                foreach (string subDir in Directory.GetDirectories(Option.Current.InstallLocation))
+                foreach (string extFilter in Option.Current.OverlayInstallRemoveExt.Split(','))
                 {
-                    foreach (string file in Directory.GetFiles(subDir, "*.*", SearchOption.AllDirectories))
+                    string ext = extFilter.Trim();
+                    if (string.IsNullOrEmpty(ext))
                     {
-                        FileInfo fileInfo = new(file);
+                        continue;
+                    }
 
-                        foreach (string extFilter in extFilters)
-                        {
-                            string ext = extFilter;
-                            if (ext.StartsWith("."))
-                            {
-                                ext = ext.Substring(1);
-                            }
-                            if (fileInfo.Extension.ToLower() == ext)
-                            {
-                                try
-                                {
-                                    File.Delete(file);
-                                }
-                                catch (Exception e)
-                                {
-                                    Logger.Error(e);
-                                }
-                                break;
-                            }
-                        }
+                    if (ext.StartsWith("."))
+                    {
+                        ext = ext.Substring(1);
+                    }
+
+                    if (!string.IsNullOrEmpty(ext))
+                    {
+                        _ = extFilters.Add(ext);
+                    }
+                }
+
+                foreach (string file in Directory.GetFiles(Option.Current.InstallLocation, "*", SearchOption.AllDirectories))
+                {
+                    FileInfo fileInfo = new(file);
+                    string fileExt = fileInfo.Extension.TrimStart('.');
+
+                    if (string.IsNullOrEmpty(fileExt) || !extFilters.Contains(fileExt))
+                    {
+                        continue;
+                    }
+
+                    try
+                    {
+                        File.Delete(file);
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e);
                     }
                 }
             }
@@ -86,25 +96,22 @@ public static class InstallHelper
             if (Option.Current.OverlayInstallRemoveHandler != null
                 && !Option.Current.OverlayInstallRemoveHandler.IsEmpty)
             {
-                foreach (string subDir in Directory.GetDirectories(Option.Current.InstallLocation))
+                foreach (string file in Directory.GetFiles(Option.Current.InstallLocation, "*", SearchOption.AllDirectories))
                 {
-                    foreach (string file in Directory.GetFiles(subDir, "*.*", SearchOption.AllDirectories))
+                    FileInfo fileInfo = new(file);
+
+                    try
                     {
-                        FileInfo fileInfo = new(file);
+                        bool toRemove = Option.Current.OverlayInstallRemoveHandler.ToRemove(fileInfo);
 
-                        try
+                        if (toRemove)
                         {
-                            bool toRemove = Option.Current.OverlayInstallRemoveHandler.ToRemove(fileInfo);
-
-                            if (toRemove)
-                            {
-                                File.Delete(file);
-                            }
+                            File.Delete(file);
                         }
-                        catch (Exception e)
-                        {
-                            Logger.Error(e);
-                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e);
                     }
                 }
             }
