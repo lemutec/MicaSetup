@@ -14,16 +14,16 @@
     <releaseNotes>https://github.com/lemutec/MicaSetup/releases</releaseNotes>
     <copyright>Copyright (c) 2023-2026 Contributors by Lemutec</copyright>
     <tags>wpf micasetup setup installer uninst inst</tags>
-   </metadata>
+  </metadata>
   <files>
-  <file src=".\logo.png" target="" />
-  <file src="..\README.md" target="" />
-  <file src="..\build\Build\bin\7z.dll" target="build\bin\7z.dll" />
-  <file src="..\build\Build\bin\7z.exe" target="build\bin\7z.exe" />
-  <file src="..\build\Build\template\default.7z" target="build\template\default.7z" />
-  <file src="..\build\Build\fetchver.exe" target="build\fetchver.exe" />
-  <file src="..\build\Build\makeicon.exe" target="build\makeicon.exe" />
-  <file src="..\build\Build\makeiconw.exe" target="build\makeiconw.exe" />
-  <file src="..\build\Build\makemica.exe" target="build\makemica.exe" />
+    <file src=".\logo.png" target="" />
+    <file src="..\README.md" target="" />
+    <file src="..\build\Build\bin\7z.dll" target="build\bin\7z.dll" />
+    <file src="..\build\Build\bin\7z.exe" target="build\bin\7z.exe" />
+    <file src="..\build\Build\template\default.7z" target="build\template\default.7z" />
+    <file src="..\build\Build\fetchver.exe" target="build\fetchver.exe" />
+    <file src="..\build\Build\makeicon.exe" target="build\makeicon.exe" />
+    <file src="..\build\Build\makeiconw.exe" target="build\makeiconw.exe" />
+    <file src="..\build\Build\makemica.exe" target="build\makemica.exe" />
   </files> 
 </package>
