@@ -49,6 +49,16 @@ public static class InstallHelper
         }
         else
         {
+            OverlayInstallRemovePatternMatcher? patternMatcher = null;
+            if (Option.Current.OverlayInstallRemovePatterns is { Length: > 0 })
+            {
+                patternMatcher = new OverlayInstallRemovePatternMatcher(Option.Current.OverlayInstallRemovePatterns);
+                if (patternMatcher.IsEmpty)
+                {
+                    patternMatcher = null;
+                }
+            }
+
             if (!string.IsNullOrWhiteSpace(Option.Current.OverlayInstallRemoveExt))
             {
                 HashSet<string> extFilters = new(StringComparer.OrdinalIgnoreCase);
@@ -78,6 +88,38 @@ public static class InstallHelper
                     string fileExt = fileInfo.Extension.TrimStart('.');
 
                     if (string.IsNullOrEmpty(fileExt) || !extFilters.Contains(fileExt))
+                    {
+                        continue;
+                    }
+
+                    // Patterns "!" keep rules can veto Ext deletes
+                    if (patternMatcher != null && patternMatcher.HasKeepPatterns)
+                    {
+                        string relativePath = OverlayInstallRemovePatternMatcher.GetRelativePath(Option.Current.InstallLocation, file);
+                        if (patternMatcher.IsKept(relativePath))
+                        {
+                            continue;
+                        }
+                    }
+
+                    try
+                    {
+                        File.Delete(file);
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Error(e);
+                    }
+                }
+            }
+
+            if (patternMatcher != null)
+            {
+                foreach (string file in Directory.GetFiles(Option.Current.InstallLocation, "*", SearchOption.AllDirectories))
+                {
+                    string relativePath = OverlayInstallRemovePatternMatcher.GetRelativePath(Option.Current.InstallLocation, file);
+
+                    if (!patternMatcher.ShouldRemove(relativePath))
                     {
                         continue;
                     }

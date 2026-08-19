@@ -55,6 +55,7 @@ internal class Program
                 option.IsUseLicenseFile = false;
                 option.LicenseFileType = "txt";
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
+                option.OverlayInstallRemovePatterns = [];
                 option.OverlayInstallRemoveHandler = null!;
                 option.UnpackingPassword = null!;
                 option.CloseApplications = [];

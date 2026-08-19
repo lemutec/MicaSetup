@@ -163,6 +163,10 @@ public static class CSharpProgram
             root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferAppDataRoaming", config.IsUseInstallPathPreferAppDataRoaming);
             root = root.ReplaceOptionWithBoolean("IsAllowFullFolderSecurity", config.IsAllowFullFolderSecurity);
             root = root.ReplaceOptionWithString("OverlayInstallRemoveExt", config.OverlayInstallRemoveExt);
+            if (config.OverlayInstallRemovePatterns is { Length: > 0 })
+            {
+                root = root.ReplaceOptionWithStringArray("OverlayInstallRemovePatterns", config.OverlayInstallRemovePatterns);
+            }
             root = root.ReplaceOptionWithString("UnpackingPassword", config.UnpackingPassword);
         }
 
@@ -379,5 +383,20 @@ file static class SyntaxNodeExtensions
 
         ExpressionSyntax collectionExpr = SyntaxFactory.ParseExpression(sb.ToString());
         return root.ReplaceOptionWithAny("CloseApplications", collectionExpr);
+    }
+
+    public static CompilationUnitSyntax ReplaceOptionWithStringArray(this CompilationUnitSyntax root, string optionName, IEnumerable<string> items)
+    {
+        StringBuilder sb = new();
+        sb.AppendLine("[");
+        foreach (string item in items)
+        {
+            string literal = SyntaxFactory.Literal(item).ToFullString();
+            sb.AppendLine($"    {literal},");
+        }
+        sb.Append(']');
+
+        ExpressionSyntax collectionExpr = SyntaxFactory.ParseExpression(sb.ToString());
+        return root.ReplaceOptionWithAny(optionName, collectionExpr);
     }
 }

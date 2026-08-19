@@ -225,6 +225,13 @@ public class MicaConfig
     public string OverlayInstallRemoveExt { get; set; } = "exe,dll,pdb";
 
     /// <summary>
+    /// <see cref="MicaSetup.Option.OverlayInstallRemovePatterns"/>
+    /// Relative path globs (gitignore-like). Positive = delete; prefix "!" = keep.
+    /// Example: ["temp/**", "*.log", "!logs/*.log"]
+    /// </summary>
+    public string[]? OverlayInstallRemovePatterns { get; set; } = null;
+
+    /// <summary>
     /// <see cref="MicaSetup.Option.UnpackingPassword"/>
     /// </summary>
     public string? UnpackingPassword { get; set; } = null;

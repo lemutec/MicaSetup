@@ -181,8 +181,17 @@ public partial class Option
     public string OverlayInstallRemoveExt { get; set; } = string.Empty;
 
     /// <summary>
+    /// Relative path glob patterns to remove when overlay install (gitignore-like).
+    /// Positive patterns delete (e.g. "temp/**", "*.log").
+    /// Prefix "!" keeps the match (e.g. "!logs/*.log"), including vetoing Ext deletes.
+    /// Runs after <option refs="OverlayInstallRemoveExt"/> (keep rules also apply during Ext).
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string[] OverlayInstallRemovePatterns { get; set; } = [];
+
+    /// <summary>
     /// A handler to remove when overlay install
-    /// Handler will be run after <option refs="OverlayInstallRemoveExt"/>
+    /// Handler will be run after <option refs="OverlayInstallRemoveExt"/> and <option refs="OverlayInstallRemovePatterns"/>
     /// </summary>
     [Category("GlobalSetting")]
     public AbstractOverlayInstallRemoveHandler OverlayInstallRemoveHandler { get; set; } = null!;

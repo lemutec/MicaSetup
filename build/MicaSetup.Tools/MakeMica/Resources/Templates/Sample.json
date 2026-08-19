@@ -39,6 +39,11 @@
   "IsEnableUninstallDelayUntilReboot": true,
   "IsEnvironmentVariable": false,
   "OverlayInstallRemoveExt": "exe,dll,pdb",
+  "OverlayInstallRemovePatterns": [
+    "temp/**",
+    "*.log",
+    "!logs/*.log"
+  ],
   "UnpackingPassword": null,
   "MessageOfPage1": null,
   "MessageOfPage2": null,
