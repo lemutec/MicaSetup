@@ -84,7 +84,7 @@ public sealed class RoutingProvider : IRoutingProvider
 
     public T Resolve<T>(string name) where T : class
     {
-        var serviceInfo = services.Where(x => x.Name == name).FirstOrDefault()
+        var serviceInfo = services.FirstOrDefault(x => x.Name == name)
             ?? throw new InvalidOperationException($"Service '{name}' not found");
 
         return (T)Activator.CreateInstance(serviceInfo.Type);

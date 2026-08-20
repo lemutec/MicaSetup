@@ -4,6 +4,12 @@ namespace MicaSetup.Natives;
 
 public static class DwmApi
 {
+    /// <summary>Reset caption/border color to the system default (accent color may apply).</summary>
+    public const uint DWMWA_COLOR_DEFAULT = 0xFFFFFFFF;
+
+    /// <summary>Do not draw the caption/border color (ignores system accent on title bar).</summary>
+    public const uint DWMWA_COLOR_NONE = 0xFFFFFFFE;
+
     [DllImport(Lib.DwmApi)]
     [DefaultDllImportSearchPaths(DllImportSearchPath.System32)]
     public static extern int DwmSetWindowAttribute(nint hwnd, DWMWINDOWATTRIBUTE dwAttribute, ref int pvAttribute, int cbAttribute);

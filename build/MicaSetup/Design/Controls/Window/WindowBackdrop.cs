@@ -97,6 +97,9 @@ public static class WindowBackdrop
                 break;
         }
 
+        // Prevent accent color from painting the custom caption.
+        SuppressSystemAccentColor(hWnd);
+
         var wtaOptions = new UxTheme.WTA_OPTIONS()
         {
             Flags = UxTheme.WTNCA.WTNCA_NODRAWCAPTION,
@@ -182,5 +185,23 @@ public static class WindowBackdrop
         );
 
         return true;
+    }
+
+    // Win11+: suppress system accent on caption only; leave border color untouched.
+    private static void SuppressSystemAccentColor(nint hWnd)
+    {
+        if (!OsVersionHelper.IsWindows11_OrGreater)
+        {
+            return;
+        }
+
+        var colorNone = unchecked((int)DwmApi.DWMWA_COLOR_NONE);
+
+        _ = DwmApi.DwmSetWindowAttribute(
+            hWnd,
+            DWMWINDOWATTRIBUTE.DWMWA_CAPTION_COLOR,
+            colorNone,
+            Marshal.SizeOf(typeof(int))
+        );
     }
 }
