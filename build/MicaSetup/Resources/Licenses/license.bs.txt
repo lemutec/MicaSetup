@@ -1,0 +1,37 @@
+Ovaj Korisnički licencni ugovor (u daljem tekstu «Ugovor») stvara pravno obavezujući ugovor između vas, kao korisnika naših usluga (u daljem tekstu «Korisnik»), i nas. Na vas će se obraćati zamjenicama drugog lica poput «vaš» i «vaši». Mi, Kompanija, bit ćemo označeni zamjenicama poput «nas», «naš» i «naši». Zajedno, vi i Kompanija možete se nazivati «Strane», a pojedinačno «Strana».
+Pristupanjem, preuzimanjem, instaliranjem ili na bilo koji drugi način korištenjem našeg Softvera, slažete se da budete obavezani cijelim ovim Ugovorom. Ako se ne slažete, morate odmah prestati koristiti Softver.
+
+LICENCA ZA SOFTVER: Kada zakonito pristupite Softveru, bilo kupnjom ili na drugi zakonit način, dodjeljujemo vam, uz sve odredbe ovog Ugovora, neekskluzivnu, neprenosivu, ograničenu, opozivu ličnu licencu za korištenje Softvera («Licenca»). Ova Licenca obuhvata korištenje dokumentacije, podataka ili informacija koje je razvila Kompanija i drugih materijala koji vam mogu pomoći pri korištenju Softvera. Ova Licenca ne smije se koristiti u poslovne ili komercijalne svrhe. Ova Licenca ne smije se prenijeti trećim stranama bez izričitog, zakonitog, pisanog odobrenja Kompanije i prestaje kada prestanete koristiti Softver.
+Ova Licenca primjenjuje se na sve zakonite Korisnike Softvera, osim ako između vas i Kompanije nije sklopljen poseban pisani ugovor.
+
+DODATNI USLOVI: Dodatni uslovi mogu se primjenjivati na odnos Strana, poput Općih uslova ili Uslova korištenja Kompanije, Politike privatnosti Kompanije i drugih pisanih ugovora koji uređuju vaš odnos s nama. Ništa u ovom dokumentu nije namijenjeno ograničavanju uslova bilo kojeg drugog pisanog ugovora. Umjesto toga, svi relevantni dokumenti trebaju se tumačiti što šire.
+
+INTELEKTUALNO VLASNIŠTVO: Slažete se da Softver, web-mjesto Kompanije i sve usluge koje pruža Kompanija vlasništvo su Kompanije, uključujući sva autorska prava, zaštitne znakove, poslovne tajne, patente i drugo intelektualno vlasništvo («IP Kompanije»). Slažete se da Kompanija posjeduje sva prava, titule i interese u odnosu na IP Kompanije te da nećete koristiti IP Kompanije u nezakonite ili povredne svrhe. Slažete se da nećete reproducirati niti distribuirati IP Kompanije na bilo koji način, uključujući elektronski ili registracijom novih zaštitnih znakova, trgovačkih naziva, uslužnih znakova ili Uniform Resource Locators (URL-ova), bez izričitog pisanog odobrenja Kompanije.
+
+PRIHVATLJIVO KORIŠTENJE: Slažete se da nećete koristiti Softver u nezakonite svrhe niti u bilo koju svrhu zabranjenu ovom klauzulom. Slažete se da nećete koristiti Softver na način koji bi mogao oštetiti web-mjesto, usluge ili opću djelatnost Kompanije.
+Nadalje se slažete da nećete koristiti Softver:
+I) Za uznemiravanje, zlostavljanje ili prijetnje drugima ili na drugi način kršenje zakonskih prava bilo koje osobe;
+II) Za kršenje prava intelektualnog vlasništva Kompanije ili trećih strana;
+III) Za prijenos ili drugo širenje računalnih virusa ili drugog softvera koji može oštetiti imovinu drugih;
+IV) Za počinjenje prijevara;
+V) Za sudjelovanje u nezakonitom kockanju, nagradnim igrama ili piramidalnim shemama ili njihovo stvaranje;
+VI) Za objavljivanje ili distribuciju opscenog ili klevetničkog materijala;
+VII) Za objavljivanje ili distribuciju materijala koji potiče nasilje, mržnju ili diskriminaciju prema bilo kojoj skupini;
+VIII) Za nezakonito prikupljanje informacija o drugima.
+
+REVERSE ENGINEERING I SIGURNOST: Slažete se da nećete poduzimati nijednu od sljedećih radnji:
+a) Reverse engineering, pokušaj reverse engineeringa ili disassembliranje Softvera ili bilo kojeg koda unutar Softvera ili web-mjesta Kompanije ili povezanog s njima;
+b) Kršenje sigurnosti Softvera putem neovlaštenog pristupa, zaobilaženja enkripcije ili drugih sigurnosnih alata, data miningu ili ometanja bilo kojeg hosta, korisnika ili mreže;
+c) Kopiranje ili drugo nezakonito distribuiranje kopija Softvera, na primjer putem peer-to-peer mreže ili drugog alata za zaobilaženje intelektualnog vlasništva.
+
+OBEŠTEĆENJE: Slažete se da ćete braniti i obeštetiti Kompaniju i eventualne povezane subjekte te nas držati neodgovornima prema svim pravnim zahtjevima i potraživanjima, uključujući razumne odvjetničke naknade, koji mogu proizaći iz ili biti povezani s vašim korištenjem ili zlouporabom Softvera, vašim kršenjem ovog Ugovora ili vašim ponašanjem ili radnjama. Slažete se da Kompanija može odabrati vlastitog pravnog savjetnika i sudjelovati u vlastitoj obrani, ako to želi.
+
+POLITIKA PROTIV SPAMA: Strogo vam je zabranjeno koristiti Softver ili bilo koju uslugu Kompanije za nezakonite spam aktivnosti, uključujući prikupljanje e-mail adresa i osobnih podataka drugih ili slanje masovnih komercijalnih e-mailova.
+
+PREKIDI USLUGE: Kompanija može morati prekinuti pristup Softveru radi planiranog ili neplaniranog održavanja ili hitnih usluga. Slažete se da vaš pristup Softveru može biti pogođen neočekivanim ili neplaniranim zastojem iz bilo kojeg razloga, ali Kompanija nema odgovornost za bilo kakvu štetu ili gubitak uzrokovan takvim zastojem.
+
+BEZ JAMSTAVA: Slažete se da je vaše korištenje Softvera isključivo na vaš rizik i da se Softver pruža «takav kakav jest». Kompanija ovime izričito odriče bilo kakva izričita ili podrazumijevana jamstva bilo koje vrste, uključujući, ali ne ograničavajući se na, podrazumijevano jamstvo prikladnosti za određenu svrhu i podrazumijevano jamstvo trgovačke ispravnosti. Kompanija ne daje jamstva da će Softver zadovoljiti vaše potrebe niti da će pristup Softveru biti neprekidan ili bez grešaka. Kompanija također ne daje jamstva u pogledu pouzdanosti ili točnosti bilo koje informacije sadržane u Softveru. Slažete se da je bilo kakva šteta koja vam može nastati, putem vašeg računalnog sustava ili kao posljedica gubitka vaših podataka zbog korištenja Softvera, isključivo vaša odgovornost i da Kompanija nije odgovorna za takvu štetu ili gubitak.
+
+USTUPANJE: Ovaj Ugovor ili prava dodijeljena njime ne smiju se ustupiti, prodati, iznajmiti ili na drugi način prenijeti u cijelosti ili djelomično od strane vas. Ako ovaj Ugovor ili prava dodijeljena njime budu ustupljena, prodana, iznajmljena ili na drugi način prenesena od strane Kompanije, prava i obveze Kompanije obvezat će i koristit će svim ustupnicima, administratorima, nasljednicima i izvršiteljima.
+
+VIŠA SILA: Kompanija nije odgovorna za bilo kakvo neispunjenje zbog uzroka izvan njezine razumne kontrole, uključujući, ali ne ograničavajući se na, višu silu, radnje civilnih vlasti, radnje vojnih vlasti, nerede, embarga, prirodne pojave i prirodne katastrofe te druge radnje zbog nepredviđenih okolnosti.

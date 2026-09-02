@@ -54,6 +54,8 @@ internal class Program
                 option.IsEnableUninstallDelayUntilReboot = true;
                 option.IsUseLicenseFile = false;
                 option.LicenseFileType = "txt";
+                // Keep in sync with MSBuild SupportedLanguages (Languages.props / -p:SupportedLanguages=...).
+                option.SupportLanguages = ["en", "zh-Hans", "zh-Hant", "ja"];
                 option.OverlayInstallRemoveExt = "exe,dll,pdb";
                 option.OverlayInstallRemovePatterns = [];
                 option.OverlayInstallRemoveHandler = null!;

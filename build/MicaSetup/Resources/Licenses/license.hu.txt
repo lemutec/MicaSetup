@@ -1,0 +1,37 @@
+Ez a Felhasználói licencszerződés (a továbbiakban: «Szerződés») jogilag kötelező érvényű megállapodást hoz létre Ön, mint szolgáltatásaink felhasználója (a továbbiakban: «Felhasználó») és a Vállalat között. Önre a második személyű névmásokkal, például «az Ön» és «Öné» hivatkozunk. Ránk, a Vállalatra, olyan névmásokkal hivatkozunk, mint «minket», «a mi» és «miénk». Ön és a Vállalat együttesen «Felek», külön-külön pedig «Fél» megnevezéssel illethető.
+A Szoftverhez való hozzáféréssel, letöltéssel, telepítéssel vagy bármilyen egyéb módon történő használatával Ön elfogadja, hogy a jelen Szerződés teljes egészében kötelezi. Ha nem ért egyet, azonnal abba kell hagynia a Szoftver használatát.
+
+SZOFTVERLICENC: Amikor jogszerűen hozzáfér a Szoftverhez, akár vásárlás, akár más jogszerű módon, a jelen Szerződés valamennyi feltétele mellett nem kizárólagos, nem átruházható, korlátozott, visszavonható személyes licencet adunk Önnek a Szoftver használatára («Licenc»). Ez a Licenc kiterjed a Vállalat által kifejlesztett dokumentáció, adatok vagy információk, valamint a Szoftver használatát segítő egyéb anyagok használatára. Ezt a Licencet nem lehet üzleti vagy kereskedelmi célokra használni. Ezt a Licencet harmadik félnek a Vállalat kifejezett, jogszerű, írásbeli engedélye nélkül nem lehet átruházni, és a Licenc megszűnik, amikor Ön abbahagyja a Szoftver használatát.
+Ez a Licenc a Szoftver valamennyi jogszerű Felhasználójára vonatkozik, kivéve, ha Ön és a Vállalat között külön írásbeli megállapodás jött létre.
+
+Kiegészítő feltételek: További feltételek vonatkozhatnak a Felek viszonyára, például a Vállalat Általános Szerződési Feltételei vagy Felhasználási Feltételei, a Vállalat Adatvédelmi Szabályzata, valamint minden egyéb írásbeli megállapodás, amely a velünk fennálló kapcsolatát szabályozza. A jelen dokumentum semmije sem korlátozza más írásbeli megállapodás feltételeit. Ehelyett valamennyi releváns dokumentumot a lehető legszélesebb értelemben kell értelmezni.
+
+SZELLEMI TULAJDON: Ön elfogadja, hogy a Szoftver, a Vállalat weboldala és a Vállalat által nyújtott valamennyi szolgáltatás a Vállalat tulajdona, beleértve valamennyi szerzői jogot, védjegyet, üzleti titkot, szabadalmat és egyéb szellemi tulajdont («Vállalati IP»). Ön elfogadja, hogy a Vállalat birtokolja a Vállalati IP-hez fűződő valamennyi jogot, címet és érdekeltséget, és hogy a Vállalati IP-t nem használja jogellenes vagy jogsértő célokra. Ön elfogadja, hogy a Vállalati IP-t semmilyen módon nem sokszorosítja vagy terjeszti, beleértve elektronikusan vagy új védjegyek, kereskedelmi nevek, szolgáltatási jelek vagy Uniform Resource Locators (URL-ek) bejegyzésével, a Vállalat kifejezett írásbeli engedélye nélkül.
+
+ELFOGADHATÓ HASZNÁLAT: Ön elfogadja, hogy a Szoftvert nem használja jogellenes célokra vagy a jelen záradék által tiltott célokra. Ön elfogadja, hogy a Szoftvert nem használja oly módon, amely károsíthatja a Vállalat weboldalát, szolgáltatásait vagy általános üzleti tevékenységét.
+Továbbá elfogadja, hogy a Szoftvert nem használja:
+I) Mások zaklatására, bántalmazására vagy megfenyegetésére, vagy bármely személy jogi jogainak egyéb módon történő megsértésére;
+II) A Vállalat vagy harmadik fél szellemi tulajdonjogainak megsértésére;
+III) Számítógépes vírusok vagy más, mások vagyonát károsítható szoftver feltöltésére vagy egyéb módon történő terjesztésére;
+IV) Csalás elkövetésére;
+V) Jogellenes szerencsejátékban, nyereményjátékban vagy piramisjátékban való részvételre vagy ilyenek létrehozására;
+VI) Obszcén vagy rágalmazó anyag közzétételére vagy terjesztésére;
+VII) Erőszakra, gyűlöletre vagy bármely csoport elleni megkülönböztetésre uszító anyag közzétételére vagy terjesztésére;
+VIII) Másokról szóló információk jogellenes gyűjtésére.
+
+REVERSE ENGINEERING ÉS BIZTONSÁG: Ön elfogadja, hogy nem hajt végre az alábbiak közül egyet sem:
+a) Reverse engineeringet, vagy reverse engineering vagy a Szoftver vagy a Szoftverben vagy a Vállalat weboldalán található vagy ahhoz kapcsolódó kód szétszerelésének kísérletét;
+b) A Szoftver biztonságának megsértését jogosulatlan hozzáféréssel, titkosítás megkerülésével vagy más biztonsági eszközökkel, adatbányászattal vagy bármely hoszt, felhasználó vagy hálózat zavarásával;
+c) A Szoftver másolatainak jogellenes másolását vagy egyéb módon történő terjesztését, például peer-to-peer hálózaton vagy más szellemi tulajdon-megkerülő eszközön keresztül.
+
+KÁRTALANÍTÁS: Ön elfogadja, hogy megvédi és kártalanítja a Vállalatot és annak kapcsolt vállalkozásait (ha van ilyen), és mentesít minket minden jogi igény és követelés alól, beleértve az ésszerű ügyvédi díjakat is, amelyek a Szoftver használatából vagy visszaéléséből, a jelen Szerződés megsértéséből, vagy az Ön magatartásából vagy cselekedeteiből eredhetnek vagy ahhoz kapcsolódhatnak. Ön elfogadja, hogy a Vállalat kiválaszthatja saját jogi képviselőjét, és részt vehet saját védelmében, ha ezt kívánja.
+
+SPAM SZABÁLYZAT: Szigorúan tilos a Szoftvert vagy a Vállalat bármely szolgáltatását jogellenes spam tevékenységekre használni, beleértve e-mail címek és személyes adatok gyűjtését másoktól vagy tömeges kereskedelmi e-mailek küldését.
+
+SZOLGÁLTATÁSKIMARADÁS: A Vállalatnak szüksége lehet a Szoftverhez való hozzáférés megszakítására tervezett vagy nem tervezett karbantartás vagy vészhelyzeti szolgáltatások végzése érdekében. Ön elfogadja, hogy a Szoftverhez való hozzáférése bármilyen okból kiszámítatlan vagy nem tervezett leállás miatt érintett lehet, de a Vállalat nem felelős az ilyen leállásból eredő károkért vagy veszteségekért.
+
+GARANCIA NÉLKÜL: Ön elfogadja, hogy a Szoftver használata kizárólag az Ön kockázatára történik, és a Szoftver «ahogy van» alapon kerül biztosításra. A Vállalat ezennel kifejezetten elutasít minden kifejezett vagy hallgatólagos garanciát, beleértve, de nem kizárólagosan, a hallgatólagos alkalmassági garanciát meghatározott célra és a hallgatólagos eladhatósági garanciát. A Vállalat nem garantálja, hogy a Szoftver megfelel az Ön igényeinek, vagy hogy a Szoftverhez való hozzáférés megszakítás nélküli vagy hibamentes lesz. A Vállalat továbbá nem ad garanciát a Szoftverben található információk megbízhatóságára vagy pontosságára vonatkozóan. Ön elfogadja, hogy az Önt, számítógépes rendszerét érintő, vagy a Szoftver használatából eredő adatvesztés miatt keletkező károk kizárólag az Ön felelőssége, és a Vállalat nem felelős ilyen károkért vagy veszteségekért.
+
+ÁTRUHÁZÁS: A jelen Szerződés vagy az alapján biztosított jogok Ön által egészben vagy részben nem ruházhatók át, adhatók el, bérbe adhatók vagy más módon nem adhatók át. Ha a jelen Szerződés vagy az alapján biztosított jogok a Vállalat által átruházásra, eladásra, bérbeadásra vagy más módon történő átadásra kerülnek, a Vállalat jogai és kötelezettségei minden engedményesre, adminisztrátorra, jogutódra és végrehajtóra kötelezőek és hasznosulnak.
+
+VIS MÁJOR: A Vállalat nem felelős a teljesítés elmaradásáért az ésszerű ellenőrzésén kívül eső okok miatt, beleértve, de nem kizárólagosan, a vis maior eseményeket, polgári hatóságok cselekedeteit, katonai hatóságok cselekedeteit, zavargásokat, embargókat, természeti eseményeket és természeti katasztrófákat, valamint egyéb előre nem látható körülmények miatti cselekedeteket.

@@ -1,0 +1,37 @@
+El presente Acuerdu de llicencia d'usuariu (en adelante, el «Acuerdo») establece un contrato legalmente vinculante entre usted, como usuario de nuestros servicios (en adelante, el «Usuariu»). Se le designará mediante pronombres de segunda persona como «su» y «sus». Nosotros, la Empresa, seremos designados con pronombres como «nosotros», «nuestro» y «nuestros». En conjunto, usted y la Empresa podrán denominarse las «Partes» e individualmente cada «Parte».
+Al acceder, descargar, instalar o utilizar de cualquier forma nuestro Software, usted acepta quedar vinculado por la totalidad del presente Acuerdo. Si no está de acuerdo, debe cesar inmediatamente el uso del Software.
+
+LICENCIA DE SOFTWARE: Cuando accede legalmente al Software, ya sea mediante compra u otros medios legales, le otorgamos, con sujeción a todos los términos y condiciones del presente Acuerdo, una licencia personal no exclusiva, intransferible, limitada y revocable para utilizar el Software (la «Licencia»). Esta Licencia se extiende al uso de la documentación, datos o información desarrollados por la Empresa, y otros materiales que puedan ayudarle en el uso del Software. Esta Licencia no podrá utilizarse con fines comerciales o empresariales. Esta Licencia no podrá transferirse a terceros sin el permiso expreso, legal y por escrito de la Empresa, y esta Licencia termina cuando usted cesa el uso del Software.
+Esta Licencia será aplicable a todos los Usuarius legales del Software, salvo que se haya formalizado un acuerdo escrito separado entre usted y la Empresa.
+
+TÉRMINOS ADICIONALES: Pueden ser aplicables términos adicionales a la relación entre las Partes, como los Términos y condiciones o Términos de uso de la Empresa, la Política de privacidad de la Empresa y cualquier otro acuerdo escrito que rija su relación con nosotros. Nada de lo contenido en el presente documento pretende restringir los términos de cualquier otro acuerdo escrito. En su lugar, todos los documentos pertinentes deberán interpretarse de la forma más amplia posible.
+
+PROPIEDAD INTELECTUAL: Usted acepta que el Software, el sitio web de la Empresa y todos los servicios proporcionados por la Empresa son propiedad de la Empresa, incluidos todos los derechos de autor, marcas comerciales, secretos comerciales, patentes y demás propiedad intelectual (la «PI de la Empresa»). Usted acepta que la Empresa posee todos los derechos, títulos e intereses sobre la PI de la Empresa y que no utilizará la PI de la Empresa con fines ilícitos o infractores. Usted acepta no reproducir ni distribuir la PI de la Empresa de ninguna forma, incluida la vía electrónica o mediante el registro de nuevas marcas, nombres comerciales, marcas de servicio o localizadores uniformes de recursos (URL), sin el permiso expreso por escrito de la Empresa.
+
+USO ACEPTABLE: Usted acepta no utilizar el Software con fines ilícitos ni para ningún fin prohibido en virtud de esta cláusula. Usted acepta no utilizar el Software de forma que pueda dañar el sitio web, los servicios o la actividad general de la Empresa.
+Asimismo, usted acepta no utilizar el Software:
+I) Para acosar, maltratar o amenazar a otros o de cualquier otro modo violar los derechos legales de cualquier persona;
+II) Para violar los derechos de propiedad intelectual de la Empresa o de terceros;
+III) Para cargar o de cualquier otro modo difundir virus informáticos u otro software que pueda dañar los bienes de terceros;
+IV) Para cometer fraude;
+V) Para participar o crear juegos de azar, sorteos o esquemas piramidales ilegales;
+VI) Para publicar o distribuir material obsceno o difamatorio;
+VII) Para publicar o distribuir material que incite a la violencia, al odio o a la discriminación hacia cualquier grupo;
+VIII) Para recopilar información sobre terceros de forma ilícita.
+
+INGENIERÍA INVERSA Y SEGURIDAD: Usted acepta no realizar ninguna de las siguientes acciones:
+a) Realizar ingeniería inversa, o intentar realizar ingeniería inversa o desensamblar el Software o cualquier código contenido en el Software o el sitio web de la Empresa o relacionado con ellos;
+b) Violar la seguridad del Software mediante acceso no autorizado, elusión de cifrado u otras herramientas de seguridad, extracción de datos o interferencia con cualquier host, usuario o red;
+c) Copiar o distribuir de forma ilícita copias del Software, por ejemplo a través de cualquier red peer-to-peer u otra herramienta de elusión de la propiedad intelectual.
+
+INDEMNIZACIÓN: Usted acepta defender e indemnizar a la Empresa y, en su caso, a sus filiales, y mantenernos indemnes frente a cualesquiera reclamaciones y demandas legales, incluidos honorarios razonables de abogados, que puedan surgir de o estar relacionadas con su uso o uso indebido del Software, su incumplimiento del presente Acuerdo o su conducta o acciones. Usted acepta que la Empresa podrá elegir su propio asesor legal y participar en su propia defensa, si así lo desea.
+
+POLÍTICA ANTISPAM: Queda estrictamente prohibido utilizar el Software o cualquiera de los servicios de la Empresa para actividades de spam ilegales, incluida la recopilación de direcciones de correo electrónico e información personal de terceros o el envío de correos comerciales masivos.
+
+INTERRUPCIONES DEL SERVICIO: La Empresa puede necesitar interrumpir el acceso al Software para realizar mantenimiento o servicios de emergencia de forma programada o no programada. Usted acepta que su acceso al Software puede verse afectado por tiempos de inactividad imprevistos o no programados, por cualquier motivo, pero que la Empresa no será responsable de ningún daño o pérdida causados como resultado de dichos tiempos de inactividad.
+
+SIN GARANTÍAS: Usted acepta que su uso del Software es bajo su exclusivo riesgo y que el Software se proporciona «tal cual». La Empresa renuncia expresamente por la presente a cualesquiera garantías expresas o implícitas de cualquier tipo, incluidas, entre otras, la garantía implícita de idoneidad para un fin particular y la garantía implícita de comerciabilidad. La Empresa no garantiza que el Software satisfaga sus necesidades ni que el acceso al Software sea ininterrumpido o libre de errores. La Empresa tampoco garantiza la fiabilidad o exactitud de la información contenida en el Software. Usted acepta que cualquier daño que pueda sufrir usted, a través de su sistema informático, o como resultado de la pérdida de sus datos por el uso del Software es de su exclusiva responsabilidad y que la Empresa no es responsable de dichos daños o pérdidas.
+
+CESIÓN: El presente Acuerdo, o los derechos otorgados en virtud del mismo, no podrán ser cedidos, vendidos, arrendados ni transferidos de otro modo en su totalidad o en parte por usted. Si el presente Acuerdo, o los derechos otorgados en virtud del mismo, son cedidos, vendidos, arrendados o transferidos de otro modo por la Empresa, los derechos y obligaciones de la Empresa vincularán y beneficiarán a cualquier cesionario, administrador, sucesor y albacea.
+
+FUERZA MAYOR: La Empresa no será responsable de ningún incumplimiento debido a causas fuera de su control razonable, incluidas, entre otras, casos fortuitos, actos de autoridades civiles, actos de autoridades militares, disturbios, embargos, fenómenos naturales y desastres naturales, y otros actos debidos a circunstancias imprevistas.

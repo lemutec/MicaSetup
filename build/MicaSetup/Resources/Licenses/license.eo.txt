@@ -1,0 +1,37 @@
+This Uzanto-Licenca Interkonsento (hereinafter, "Interkonsento") creates a legally binding Interkonsento between you, as a user of nia services (hereinafter, "Uzanto"). Vi will be referred to through second-person pronouns such as "via" and "vias." We, the Kompanio, will be referred to with pronouns such as "us," "nia," and "nias." Collectively, you and the Kompanio may be referred to as the "Parties" and individually as "Party."
+By accessing, downloading, installing, or otherwise using nia Programaro in any way, you agree to be bound by this Interkonsento in its entirety. If you do not agree, you must cease use of the Programaro immediately.
+
+PROGRAMARO-LICENCO: When you lawfully access the Programaro, whether through purchase or other lawful means, we grant you, subject to all of the terms and conditions of this Interkonsento, a non-exclusive, non-transferable, limited, revocable personal license to use the Programaro ("Licenco"). This Licenco extends to the use of documentation, data, or information developed by the Kompanio, and other materials which may assist in via use of the Programaro. This Licenco may not be used for any business or commercial purposes. This Licenco may not be transferred to any third parties without express, lawful, written permission from the Kompanio and this Licenco terminates upon via cessation of use of the Programaro.
+This Licenco shall be applicable to all lawful Uzantos of the Programaro, unless a separate written agreement has been executed between you and the Kompanio.
+
+ALDONAJ KONDITIONOJ: Additional terms may be applicable to the Parties' relationship with each other, such as the Kompanio Terms & Conditions or Terms of Use, the Kompanio Privacy Policy, and any other such written agreements governing via relationship with us. Nothing contained herein is intended to restrict the terms of any other written agreement. Instead, all relevant documents shall be construed as broadly as possible.
+
+INTELEKTA PROPRCO: Vi agree that the Programaro, Kompanio website and all services provided by the Kompanio are the property of the Kompanio, including all copyrights, trademarks, trade secrets, patents, and other intellectual property ("Kompanio IP"). Vi agree that the Kompanio owns all right, title and interest in and to the Kompanio IP and that you will not use the Kompanio IP for any unlawful or infringing purpose. Vi agree not to reproduce or distribute the Kompanio IP in any way, including electronically or via registration of any new trademarks, trade names, service marks or Uniform Resniace Locators (URLs), without express written permission from the Kompanio.
+
+AKCEPTEBLA UZO: Vi agree not to use the Programaro for any unlawful purpose or any purpose prohibited under this clause. Vi agree not to use the Programaro in any way that could damage the Kompanio website, services, or general business of the Kompanio.
+Vi further agree not to use the Programaro:
+I) To harass, abuse, or threaten others or otherwise violate any person's legal rights;
+II) To violate any intellectual property rights of the Kompanio or any third party;
+III) To upload or otherwise disseminate any computer viruses or other software that may damage the property of another;
+IV) To perpetrate any fraud;
+V) To engage in or create any unlawful gambling, sweepstakes, or pyramid scheme;
+VI) To publish or distribute any obscene or defamatory material;
+VII) To publish or distribute any material that incites violence, hate, or discrimination towards any group;
+VIII) To unlawfully gather information about others.
+
+INVERSA INŽENIERISTO KAJ SEKURECO: Vi agree not to undertake any of the following actions:
+a) Reverse engineer, or attempt to reverse engineer or disassemble the Programaro or any code within or related to the Programaro or the Kompanio website;
+b) Violate the security of the Programaro through any unauthorized access, circumvention of encryption or other security tools, data mining or interference to any host, user or network;
+c) Copy or otherwise distribute copies of the Programaro unlawfully, such as through any peer-to-peer network or other intellectual property circumvention tool.
+
+INDEMNIGO: Vi agree to defend and indemnify the Kompanio and any of its affiliates (if applicable) and hold us harmless against any and all legal claims and demands, including reasonable attorney's fees, which may arise from or relate to via use or misuse of the Programaro, via breach of this Interkonsento, or via conduct or actions. Vi agree that the Kompanio shall be able to select its own legal counsel and may participate in its own defense, if the Kompanio wishes.
+
+POLITIKO KONTRAŬ SPAMO: Vi are strictly prohibited from using the Programaro or any of the Kompanio's services for illegal spam activities, including gathering email addresses and personal information from others or sending any mass commercial emails.
+
+SERVAJ INTERRUPTOJ: The Kompanio may need to interrupt access to the Programaro to perform maintenance or emergency services on a scheduled or unscheduled basis. Vi agree that via access to the Programaro may be affected by unanticipated or unscheduled downtime, for any reason, but that the Kompanio shall have no liability for any damage or loss caused as a result of such downtime.
+
+SEN GARANTIOJ: Vi agree that via use of the Programaro is at via sole and exclusive risk and that the Programaro is provided on "As Is" basis. The Kompanio hereby expressly disclaims any and all express or implied warranties of any kind, including, but not limited to the implied warranty of fitness for a particular purpose and the implied warranty of merchantability. The Kompanio makes no warranties that the Programaro will meet via needs or that access to the Programaro will be uninterrupted or error-free. The Kompanio also makes no warranties as to the reliability or accuracy of any information contained within the Programaro. Vi agree that any damage that may occur to you, through via computer system, or as a result of loss of via data from via use of the Programaro is via sole responsibility and that the Kompanio is not liable for any such damage or loss.
+
+CEADO: This Interkonsento, or the rights granted hereunder, may not be assigned, sold, leased or otherwise transferred in whole or part by you. Should this Interkonsento, or the rights granted hereunder, by assigned, sold, leased or otherwise transferred by the Kompanio, the rights and liabilities of the Kompanio will bind and inure to any assignees, administrators, successors, and executors.
+
+Forto Majuro: The Kompanio is not liable for any failure to perform due to causes beyond its reasonable control including, but not limited to, acts of God, acts of civil authorities, acts of military authorities, riots, embargoes, acts of nature and natural disasters, and other acts which may be due to unforeseen circumstances.

@@ -1,0 +1,37 @@
+Il presente Contratto di licenza utente (di seguito, il «Contratto») costituisce un accordo legalmente vincolante tra lei, in qualità di utente dei nostri servizi (di seguito, l'«Utente»). Lei sarà indicato con pronomi di seconda persona come «suo», «sua» e «suoi». Noi, la Società, saremo indicati con pronomi come «noi», «nostro» e «nostri». Collettivamente, lei e la Società possono essere indicati come le «Parti» e individualmente come «Parte».
+Accedendo, scaricando, installando o utilizzando in qualsiasi modo il nostro Software, lei accetta di essere vincolato dall'intero presente Contratto. Se non è d'accordo, deve cessare immediatamente l'uso del Software.
+
+LICENZA SOFTWARE: Quando accede legalmente al Software, sia mediante acquisto sia con altri mezzi leciti, le concediamo, subordinatamente a tutti i termini e le condizioni del presente Contratto, una licenza personale non esclusiva, non trasferibile, limitata e revocabile per l'utilizzo del Software (la «Licenza»). Questa Licenza si estende all'uso della documentazione, dei dati o delle informazioni sviluppate dalla Società e di altri materiali che possano assistere il suo utilizzo del Software. Questa Licenza non può essere utilizzata per scopi commerciali o aziendali. Questa Licenza non può essere trasferita a terzi senza l'espressa autorizzazione scritta e lecita della Società e termina al momento della cessazione del suo utilizzo del Software.
+La presente Licenza si applica a tutti gli Utenti leciti del Software, salvo che sia stato stipulato un accordo scritto separato tra lei e la Società.
+
+TERMINI AGGIUNTIVI: Termini aggiuntivi possono applicarsi al rapporto tra le Parti, quali i Termini e condizioni o Termini di utilizzo della Società, l'Informativa sulla privacy della Società e qualsiasi altro accordo scritto che regola il suo rapporto con noi. Nulla di quanto contenuto nel presente documento intende limitare i termini di qualsiasi altro accordo scritto. Al contrario, tutti i documenti pertinenti devono essere interpretati nel modo più ampio possibile.
+
+PROPRIETÀ INTELLETTUALE: Lei accetta che il Software, il sito web della Società e tutti i servizi forniti dalla Società sono di proprietà della Società, inclusi tutti i diritti d'autore, marchi, segreti commerciali, brevetti e altra proprietà intellettuale (la «PI della Società»). Lei accetta che la Società possiede tutti i diritti, titoli e interessi relativi alla PI della Società e che non utilizzerà la PI della Società per scopi illeciti o lesivi. Lei accetta di non riprodurre o distribuire la PI della Società in alcun modo, incluso elettronicamente o mediante la registrazione di nuovi marchi, nomi commerciali, marchi di servizio o Uniform Resource Locator (URL), senza l'espressa autorizzazione scritta della Società.
+
+USO ACCETTABILE: Lei accetta di non utilizzare il Software per scopi illeciti o per qualsiasi scopo vietato ai sensi della presente clausola. Lei accetta di non utilizzare il Software in modo che possa danneggiare il sito web, i servizi o l'attività generale della Società.
+Lei accetta inoltre di non utilizzare il Software:
+I) Per molestare, abusare o minacciare altri o altrimenti violare i diritti legali di qualsiasi persona;
+II) Per violare i diritti di proprietà intellettuale della Società o di terzi;
+III) Per caricare o altrimenti diffondere virus informatici o altro software che possa danneggiare i beni altrui;
+IV) Per perpetrare frodi;
+V) Per partecipare o creare giochi d'azzardo, lotterie o schemi piramidali illegali;
+VI) Per pubblicare o distribuire materiale osceno o diffamatorio;
+VII) Per pubblicare o distribuire materiale che inciti alla violenza, all'odio o alla discriminazione verso qualsiasi gruppo;
+VIII) Per raccogliere illegalmente informazioni su altri.
+
+REVERSE ENGINEERING E SICUREZZA: Lei accetta di non intraprendere alcuna delle seguenti azioni:
+a) Eseguire reverse engineering, o tentare di eseguire reverse engineering o disassemblare il Software o qualsiasi codice contenuto nel Software o nel sito web della Società o ad essi correlato;
+b) Violare la sicurezza del Software mediante accesso non autorizzato, elusione della crittografia o di altri strumenti di sicurezza, data mining o interferenza con qualsiasi host, utente o rete;
+c) Copiare o altrimenti distribuire illegalmente copie del Software, ad esempio tramite reti peer-to-peer o altri strumenti di elusione della proprietà intellettuale.
+
+INDENNIZZO: Lei accetta di difendere e indennizzare la Società e, ove applicabile, le sue affiliate, e di manlevarci da qualsiasi reclamo e richiesta legale, inclusi onorari legali ragionevoli, che possano derivare o essere correlati al suo uso o uso improprio del Software, alla sua violazione del presente Contratto o alla sua condotta o azioni. Lei accetta che la Società possa scegliere il proprio consulente legale e partecipare alla propria difesa, se lo desidera.
+
+POLITICA ANTI-SPAM: Lei è severamente vietato dall'utilizzare il Software o qualsiasi servizio della Società per attività di spam illegali, inclusa la raccolta di indirizzi e-mail e informazioni personali di altri o l'invio di e-mail commerciali di massa.
+
+INTERRUZIONI DEL SERVIZIO: La Società potrebbe dover interrompere l'accesso al Software per eseguire manutenzione o servizi di emergenza su base programmata o non programmata. Lei accetta che il suo accesso al Software possa essere influenzato da tempi di inattività imprevisti o non programmati, per qualsiasi motivo, ma che la Società non sarà responsabile per alcun danno o perdita causati da tali tempi di inattività.
+
+NESSUNA GARANZIA: Lei accetta che il suo utilizzo del Software avviene a suo esclusivo rischio e che il Software è fornito «così com'è». La Società declina espressamente con la presente qualsiasi garanzia espressa o implicita di qualsiasi tipo, incluse, a titolo esemplificativo, la garanzia implicita di idoneità a uno scopo particolare e la garanzia implicita di commerciabilità. La Società non garantisce che il Software soddisfi le sue esigenze o che l'accesso al Software sia ininterrotto o privo di errori. La Società non garantisce inoltre l'affidabilità o l'accuratezza di qualsiasi informazione contenuta nel Software. Lei accetta che qualsiasi danno che possa verificarsi a lei, al suo sistema informatico o come risultato della perdita dei suoi dati dall'utilizzo del Software è di sua esclusiva responsabilità e che la Società non è responsabile per tali danni o perdite.
+
+CESSIONE: Il presente Contratto, o i diritti concessi in virtude dello stesso, non possono essere ceduti, venduti, locati o altrimenti trasferiti in tutto o in parte da lei. Qualora il presente Contratto, o i diritti concessi in virtude dello stesso, siano ceduti, venduti, locati o altrimenti trasferiti dalla Società, i diritti e gli obblighi della Società vincoleranno e beneficeranno qualsiasi cessionario, amministratore, successore ed esecutore.
+
+FORZA MAGGIORE: La Società non è responsabile per qualsiasi inadempimento dovuto a cause al di fuori del suo ragionevole controllo, incluse, a titolo esemplificativo, cause di forza maggiore, atti delle autorità civili, atti delle autorità militari, sommosse, embargo, eventi naturali e disastri naturali, e altri atti dovuti a circostanze impreviste.

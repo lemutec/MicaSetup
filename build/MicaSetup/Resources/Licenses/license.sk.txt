@@ -1,0 +1,37 @@
+Táto Používateľská licenčná zmluva (ďalej len «Zmluva») vytvára právne záväznú dohodu medzi vami ako používateľom našich služieb (ďalej len «Používateľ») a nami. Budete označovaní zámenami druhej osoby, ako je «váš» a «vaše». My, Spoločnosť, budeme označovaní zámenami, ako je «nás», «náš» a «naše». Spoločne môžete byť vy a Spoločnosť označovaní ako «Zmluvné strany» a jednotlivo ako «Zmluvná strana».
+Prístupom k Softvéru, jeho stiahnutím, inštaláciou alebo iným používaním akýmkoľvek spôsobom súhlasíte s tým, že budete viazaní celou touto Zmluvou. Ak nesúhlasíte, musíte okamžite prestať Softvér používať.
+
+LICENCIA NA SOFTVÉR: Keď získate legálny prístup k Softvéru, či už nákupom alebo inými legálnymi prostriedkami, udeľujeme vám, s výhradou všetkých podmienok tejto Zmluvy, nevýhradnú, neprenosnú, obmedzenú, odvolateľnú osobnú licenciu na používanie Softvéru («Licencia»). Táto Licencia sa vzťahuje na používanie dokumentácie, údajov alebo informácií vyvinutých Spoločnosťou a ďalších materiálov, ktoré vám môžu pomôcť pri používaní Softvéru. Táto Licencia nesmie byť používaná na obchodné alebo komerčné účely. Táto Licencia nesmie byť prevedená na tretie strany bez výslovného, legálneho, písomného súhlasu Spoločnosti a táto Licencia končí ukončením vášho používania Softvéru.
+Táto Licencia sa vzťahuje na všetkých legálnych Používateľov Softvéru, pokiaľ medzi vami a Spoločnosťou nebola uzavretá samostatná písomná zmluva.
+
+DOPLŇUJÚCE PODMIENKY: Na vzťah medzi Zmluvnými stranami sa môžu vzťahovať ďalšie podmienky, ako sú Obchodné podmienky alebo Podmienky používania Spoločnosti, Zásady ochrany osobných údajov Spoločnosti a ďalšie písomné zmluvy upravujúce váš vzťah s nami. Nič v tomto dokumente nie je určené na obmedzenie podmienok akejkoľvek inej písomnej zmluvy. Namiesto toho majú byť všetky relevantné dokumenty vykladané čo najširším spôsobom.
+
+DUŠEVNÉ VLASTNÍCTVO: Súhlasíte s tým, že Softvér, webová stránka Spoločnosti a všetky služby poskytované Spoločnosťou sú majetkom Spoločnosti, vrátane všetkých autorských práv, ochranných známok, obchodných tajomstiev, patentov a iného duševného vlastníctva («IP Spoločnosti»). Súhlasíte s tým, že Spoločnosť vlastní všetky práva, tituly a záujmy k IP Spoločnosti a že nebudete IP Spoločnosti používať na nezákonné alebo porušujúce účely. Súhlasíte s tým, že nebudete IP Spoločnosti reprodukovať ani distribuovať akýmkoľvek spôsobom, vrátane elektronicky alebo registráciou nových ochranných známok, obchodných názvov, servisných značiek alebo Uniform Resource Locators (URL), bez výslovného písomného súhlasu Spoločnosti.
+
+PRÍPUSTNÉ POUŽITIE: Súhlasíte s tým, že nebudete Softvér používať na nezákonné účely ani na žiadny účel zakázaný podľa tejto doložky. Súhlasíte s tým, že nebudete Softvér používať spôsobom, ktorý by mohol poškodiť webovú stránku, služby alebo všeobecné podnikanie Spoločnosti.
+Ďalej súhlasíte s tým, že nebudete Softvér používať:
+I) Na obťažovanie, zneužívanie alebo vyhrážanie sa ostatným alebo inak na porušovanie zákonných práv akejkoľvek osoby;
+II) Na porušovanie práv duševného vlastníctva Spoločnosti alebo tretích strán;
+III) Na nahrávanie alebo iné šírenie počítačových vírusov alebo iného softvéru, ktorý môže poškodiť majetok iných;
+IV) Na páchanie podvodov;
+V) Na účasť na nelegálnom hazardnom hrách, lotériách alebo pyramídových schémach alebo na ich vytváranie;
+VI) Na publikovanie alebo šírenie obscénneho alebo urážlivého materiálu;
+VII) Na publikovanie alebo šírenie materiálu, ktorý podnecuje násilie, nenávisť alebo diskrimináciu voči akejkoľvek skupine;
+VIII) Na nezákonné zhromažďovanie informácií o ostatných.
+
+REVERSE ENGINEERING A BEZPEČNOSŤ: Súhlasíte s tým, že nebudete vykonávať žiadnu z nasledujúcich činností:
+a) Reverse engineering, pokus o reverse engineering alebo disassembláciu Softvéru alebo akéhokoľvek kódu v Softvéri alebo na webovej stránke Spoločnosti alebo s nimi súvisiaceho;
+b) Porušovanie bezpečnosti Softvéru prostredníctvom neoprávneného prístupu, obchádzania šifrovania alebo iných bezpečnostných nástrojov, data miningu alebo zásahu do akéhokoľvek hostiteľa, používateľa alebo siete;
+c) Kopírovanie alebo iné nezákonné šírenie kópií Softvéru, napríklad prostredníctvom peer-to-peer siete alebo iného nástroja na obchádzanie duševného vlastníctva.
+
+ODŠKODNENIE: Súhlasíte s tým, že budete brániť a odškodňovať Spoločnosť a prípadne jej pridružené spoločnosti a udržíte nás v bezúhonnom stave voči všetkým právnym nárokom a požiadavkám, vrátane primeraných poplatkov za právne zastúpenie, ktoré môžu vzniknúť z vášho používania alebo zneužívania Softvéru, vášho porušenia tejto Zmluvy alebo vášho správania či konania. Súhlasíte s tým, že Spoločnosť si môže vybrať vlastného právneho zástupcu a zúčastniť sa na vlastnej obhajobe, ak to Spoločnosť bude chcieť.
+
+POLITIKA PROTI SPAMU: Je vám prísne zakázané používať Softvér alebo akékoľvek služby Spoločnosti na nelegálne spamové aktivity, vrátane zhromažďovania e-mailových adries a osobných údajov ostatných alebo odosielania hromadných komerčných e-mailov.
+
+PRERUŠENIE SLUŽIEB: Spoločnosť môže byť nútená prerušiť prístup k Softvéru za účelom plánovanej alebo neplánovanej údržby alebo núdzových služieb. Súhlasíte s tým, že váš prístup k Softvéru môže byť ovplyvnený neočakávaným alebo neplánovaným výpadkom z akéhokoľvek dôvodu, ale Spoločnosť nenesie zodpovednosť za akékoľvek škody alebo straty spôsobené takým výpadkom.
+
+BEZ ZÁRUK: Súhlasíte s tým, že používanie Softvéru je na vaše výhradné riziko a že Softvér je poskytovaný «tak, ako je». Spoločnosť týmto výslovne odmietá akékoľvek výslovné alebo implicitné záruky akéhokoľvek druhu, vrátane okrem iného implicitnej záruky vhodnosti na určitý účel a implicitnej záruky predajnosti. Spoločnosť neposkytuje žiadne záruky, že Softvér splní vaše potreby alebo že prístup k Softvéru bude nepretržitý alebo bezchybný. Spoločnosť rovnako neposkytuje žiadne záruky týkajúce sa spoľahlivosti alebo presnosti informácií obsiahnutých v Softvéri. Súhlasíte s tým, že akékoľvek škody, ktoré vám môžu vzniknúť, prostredníctvom vášho počítačového systému alebo v dôsledku straty vašich údajov z používania Softvéru, sú výhradne vašou zodpovednosťou a Spoločnosť nie je zodpovedná za takéto škody alebo straty.
+
+POSTÚPENIE: Táto Zmluva alebo práva udelené na jej základe nesmú byť vami postúpené, predané, prenajaté ani inak prevedené celé alebo čiastočne. Ak bude táto Zmluva alebo práva udelené na jej základe postúpené, predané, prenajaté alebo inak prevedené Spoločnosťou, práva a povinnosti Spoločnosti budú zaväzovať a prospievať akémukoľvek postupníkovi, správcovi, nástupcovi a vykonávateľovi.
+
+VYŠŠIA MOC: Spoločnosť nenesie zodpovednosť za akékoľvek neplnenie z dôvodov mimo jej primeranej kontroly, vrátane okrem iného vyššej moci, činov civilných orgánov, činov vojenských orgánov, nepokojov, embárg, prírodných javov a prírodných katastrof a iných činov v dôsledku nepredvídaných okolností.

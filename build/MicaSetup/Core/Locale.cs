@@ -33,6 +33,8 @@ public static class Locale
 
     private static void SetCulture(CultureInfo? value)
     {
+        EnsureSupportLanguageDictionaries();
+
         CultureInfo culture = Resolve(value);
 
         _ = SetCulture(Resolve(value).Name);
@@ -70,6 +72,107 @@ public static class Locale
         }
     }
 
+    /// <summary>
+    /// Merge language dictionaries for <see cref="Option.SupportLanguages"/> (beyond the default en in App.xaml).
+    /// </summary>
+    public static void EnsureSupportLanguageDictionaries()
+    {
+        if (Application.Current == null)
+        {
+            return;
+        }
+
+        foreach (string name in GetEffectiveSupportLanguages())
+        {
+            if (string.Equals(name, "en", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            string source = $"/Resources/Languages/{name}.xaml";
+            bool alreadyMerged = false;
+
+            foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries)
+            {
+                if (dictionary.Source != null && dictionary.Source.OriginalString.Equals(source, StringComparison.Ordinal))
+                {
+                    alreadyMerged = true;
+                    break;
+                }
+            }
+
+            if (alreadyMerged)
+            {
+                continue;
+            }
+
+            if (!ResourceHelper.HasResource($"pack://application:,,,/MicaSetup;component/Resources/Languages/{name}.xaml"))
+            {
+                continue;
+            }
+
+            try
+            {
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary
+                {
+                    Source = new Uri(source, UriKind.Relative),
+                });
+            }
+            catch (Exception e)
+            {
+                _ = e;
+            }
+        }
+    }
+
+    public static IEnumerable<string> GetEffectiveSupportLanguages()
+    {
+        HashSet<string> set = new(StringComparer.OrdinalIgnoreCase) { "en" };
+        string[]? configured = Option.Current.SupportLanguages;
+
+        if (configured != null)
+        {
+            foreach (string lang in configured)
+            {
+                if (!string.IsNullOrWhiteSpace(lang))
+                {
+                    _ = set.Add(lang.Trim());
+                }
+            }
+        }
+
+        return set;
+    }
+
+    public static bool IsSupportLanguage(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return false;
+        }
+
+        if (string.Equals(name, "en", StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+
+        string[]? configured = Option.Current.SupportLanguages;
+        if (configured == null || configured.Length == 0)
+        {
+            return false;
+        }
+
+        foreach (string lang in configured)
+        {
+            if (string.Equals(lang?.Trim(), name, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static CultureInfo Resolve(CultureInfo? value)
     {
         CultureInfo culture = value ?? Fallback;
@@ -87,7 +190,8 @@ public static class Locale
     }
 
     public static bool HasCulture(CultureInfo culture)
-        => ResourceHelper.HasResource($"pack://application:,,,/MicaSetup;component/Resources/Languages/{culture.Name}.xaml");
+        => IsSupportLanguage(culture.Name)
+        && ResourceHelper.HasResource($"pack://application:,,,/MicaSetup;component/Resources/Languages/{culture.Name}.xaml");
 }
 
 internal static class LocaleExtension

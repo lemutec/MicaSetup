@@ -1,0 +1,37 @@
+See Kasutajalitsentsileping (edaspidi «Leping») loob teie kui meie teenuste kasutaja (edaspidi «Kasutaja») ja meie vahel juriidiliselt siduva lepingu. Teie poole pöördutakse teise isiku asesõnadega nagu «teie» ja «teie». Meid, Ettevõtet, tähistatakse asesõnadega nagu «meid», «meie» ja «meie». Koos võite teie ja Ettevõte olla «Pooled» ja eraldi «Pool».
+Meie Tarkvarale juurdepääsu, allalaadimise, installimise või muul viisil kasutamisega nõustute olema käesoleva Lepinguga tervikuna seotud. Kui te ei nõustu, peate Tarkvara kasutamise viivitamatult lõpetama.
+
+TARKVARALITSENTS: Kui pääsete Tarkvarale seaduslikult ligi, kas ostu või muu seadusliku viisi kaudu, anname teile, käesoleva Lepingu kõigi tingimuste alusel, mitteeksklusiivse, mitteülekantava, piiratud, tagasivõetava isikliku litsentsi Tarkvara kasutamiseks («Litsents»). See Litsents hõlmab Ettevõtte koostatud dokumentatsiooni, andmete või teabe ning muude materjalide kasutamist, mis võivad teil Tarkvara kasutamisel abiks olla. Seda Litsentsi ei tohi kasutada äri- ega kaubanduslikel eesmärkidel. Seda Litsentsi ei tohi üle kanda kolmandatele isikutele ilma Ettevõtte selgesõnalise, seadusliku, kirjaliku loata ning see Litsents lõpeb teie Tarkvara kasutamise lõpetamisel.
+See Litsents kehtib kõigile Tarkvara seaduslikele Kasutajatele, välja arvatud juhul, kui teie ja Ettevõtte vahel on sõlmitud eraldi kirjalik leping.
+
+LISATINGIMUSED: Poolte vahelisele suhtele võivad kehtida täiendavad tingimused, nagu Ettevõtte üldtingimused või kasutustingimused, Ettevõtte privaatsuspoliitika ja muud kirjalikud lepingud, mis reguleerivad teie suhet meiega. Midagi käesolevas dokumendis ei ole mõeldud piirama ühegi teise kirjaliku lepingu tingimusi. Selle asemel tuleks kõiki asjakohaseid dokumente tõlgendada võimalikult laialdaselt.
+
+INTELLEKTUAALOMAND: Nõustute, et Tarkvara, Ettevõtte veebisait ja kõik Ettevõtte pakutavad teenused on Ettevõtte omand, sealhulgas kõik autoriõigused, kaubamärgid, ärisaladused, patendid ja muu intellektuaalne omand («Ettevõtte IP»). Nõustute, et Ettevõte omab kõiki õigusi, tiitleid ja huve Ettevõtte IP suhtes ning et te ei kasuta Ettevõtte IP-d ebaseaduslikel ega rikkuvatel eesmärkidel. Nõustute mitte reprodutseerima ega levitama Ettevõtte IP-d ühelgi viisil, sealhulgas elektrooniliselt või uute kaubamärkide, kaubanimede, teenusemärkide või Uniform Resource Locators (URL) registreerimise teel, ilma Ettevõtte selgesõnalise kirjaliku loata.
+
+LUBATUD KASUTAMINE: Nõustute mitte kasutama Tarkvara ebaseaduslikel eesmärkidel ega ühelgi käesoleva klausliga keelatud eesmärgil. Nõustute mitte kasutama Tarkvara viisil, mis võiks kahjustada Ettevõtte veebisaiti, teenuseid või üldist äritegevust.
+Lisaks nõustute mitte kasutama Tarkvara:
+I) Teiste ahistamiseks, kuritarvitamiseks või ähvardamiseks või muul viisil kellegi seaduslike õiguste rikkumiseks;
+II) Ettevõtte või kolmandate isikute intellektuaalse omandi õiguste rikkumiseks;
+III) Arvutiviiruste või muu tarkvara üleslaadimiseks või muul viisil levitamiseks, mis võib kahjustada teiste omandit;
+IV) Pettuse toimepanemiseks;
+V) Ebaseaduslikus hasartmängus, loteriides või püramiidskeemides osalemiseks või nede loomiseks;
+VI) Obscoonses või laimava materjali avaldamiseks või levitamiseks;
+VII) Materjali avaldamiseks või levitamiseks, mis õhutab vägivalda, vihkamist või diskriminatsiooni mis tahes rühma suhtes;
+VIII) Teiste kohta teabe ebaseaduslikuks kogumiseks.
+
+PÖÖRDPROJEKTEERIMINE JA TURVALISUS: Nõustute mitte tegema ühtegi järgmistest toimingutest:
+a) Pöördprojekteerimist ega pöördprojekteerimise katset ega Tarkvara või mis tahes koodi või Ettevõtte veebisaidiga seotud koodi demonteerimist;
+b) Tarkvara turvalisuse rikkumist volitamata juurdepääsu, krüpteerimise või muude turvavahendite möödahiilimise, andmekaevandamise või mis tahes hosti, kasutaja või võrgu häirimise teel;
+c) Tarkvara koopiaid ebaseaduslikult kopeerimist või muul viisil levitamist, näiteks peer-to-peer võrgu või muu intellektuaalse omandi möödahiilimise vahendi kaudu.
+
+HÜVITAMINE: Nõustute kaitsma ja hüvitama Ettevõtet ja kõiki selle sidusettevõtteid (kui kohaldatav) ning hoidma meid kahjutuks kõigi juriidiliste nõuete ja nõudmiste eest, sealhulgas mõistlike advokaaditasude eest, mis võivad tekkida teie Tarkvara kasutamisest või kuritarvitamisest, käesoleva Lepingu rikkumisest või teie käitumisest või tegevustest. Nõustute, et Ettevõte võib valida oma juriidilise nõustaja ja osaleda oma kaitse korraldamises, kui ta seda soovib.
+
+RÄMPSPOSTI POLIITIKA: Teil on rangelt keelatud kasutada Tarkvara või mis tahes Ettevõtte teenust ebaseaduslike rämpsposti tegevuste jaoks, sealhulgas teiste e-posti aadresside ja isikuandmete kogumiseks või masskommertse-posti saatmiseks.
+
+TEENUSE KATKESTUSED: Ettevõte võib vajada juurdepääsu Tarkvarale katkestamist plaanilise või kiireloomulise hoolduse teostamiseks. Nõustute, et teie juurdepääs Tarkvarale võib olla mõjutatud ootamatust või planeerimata seisakust mis tahes põhjusel, kuid Ettevõte ei vastuta sellise seisaku tõttu tekkinud kahju ega kaotuse eest.
+
+GARANTIID PUUDUVAD: Nõustute, et Tarkvara kasutamine toimub ainult teie enda riskil ja et Tarkvara pakutakse «nagu on» põhimõttel. Ettevõte loobub käesolevaga selgesõnaliselt igasugustest otseselt või kaudselt väljendatud garantiidest, sealhulgas, kuid mitte ainult, kaudselt väljendatud garantiidest konkreetseks otstarbeks sobivuse ja kaubeldavuse osas. Ettevõte ei anna garantiid, et Tarkvara vastab teie vajadustele ega et juurdepääs Tarkvarale on katkematu või vigadeta. Ettevõte ei anna ka garantiid Tarkvaras sisalduva teabe usaldusväärsuse või täpsuse osas. Nõustute, et mis tahes kahju, mis teile, teie arvutisüsteemile või teie andmete kaotuse tõttu Tarkvara kasutamisest võib tekkida, on ainult teie vastutus ja et Ettevõte ei vastuta sellise kahju ega kaotuse eest.
+
+ÜLEANDMINE: Te ei tohi seda Lepingut ega siin antud õigusi tervikuna ega osaliselt üle anda, müüa, liisida ega muul viisil üle kanda. Kui Ettevõte seda Lepingut või siin antud õigusi üle annab, müüb, liisib või muul viisil üle kannab, kohustuvad Ettevõtte õigused ja kohustused siduma ja kehtima kõigi ülevõtjate, administraatorite, järglaste ja täitjate suhtes.
+
+VÄLTIMATU JÕUD: Ettevõte ei vastuta täitmata jätmise eest põhjustel, mis jäävad tema mõistliku kontrolli alt välja, sealhulgas, kuid mitte ainult, jumalateo, tsiviilasutuste, sõjaväe asutuste, rahutuste, embargode, loodusnähtuste ja looduskatastroofide ning muude ettenägematute asjaolude tõttu.

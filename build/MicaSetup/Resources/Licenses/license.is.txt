@@ -1,0 +1,37 @@
+Denne Notendaleyfissamningur (herefter «Samningurinn») udgør en juridisk bindende aftale mellem dig som bruger af okkar tjenester (herefter «Notanþinnn»). Þú viðl blive omtalt med andenpersons pronominer som «þinn» og «þinne». Vi, Fyrirtækið, viðl blive omtalt med pronominer som «os», «okkar» og «vort». Samlet kan du og Fyrirtækið omtales som «Parterne» og enkeltviðs som «Part».
+Ved at tilgå, downloade, installere eller på anden måde bruge okkar Hugbúnaður accepterer du at være bundet af hele denne Aftale. Hviðs du ikke accepterer, skal du straks ophøre med at bruge Hugbúnaðurinn.
+
+SOFTWARELICENS: Når du lovligt får adgang til Hugbúnaðurinn, enten ved køb eller på anden lovlig måde, giver við dig, under forbehold af alle viðlkår og betingelser i denne Aftale, en ikke-eksklusiv, ikke-overdragelig, begrænset, tilbagekaldelig personlig licens til at bruge Hugbúnaðurinn («Leyfið»). Denne Licens omfatter brug af dokumentation, data eller information udviðklet af Fyrirtækið og andet materiale, der kan hjælpe dig med at bruge Hugbúnaðurinn. Denne Licens må ikke anvendes til erhvervs- eller kommercielle formål. Denne Licens må ikke overdrages til tredjeparter uden udtrykkelig, lovlig, skriftlig tilladelse fra Fyrirtækið, og denne Licens ophører, når du stopper med at bruge Hugbúnaðurinn.
+Denne Licens gælder for alle lovlige Brugere af Hugbúnaðurinn, medmindre der er indgået en særskilt skriftlig aftale mellem dig og Fyrirtækið.
+
+YDERLIGERE VILKÅR: Yderligere viðlkår kan gælde for Parternes forhold til hinanden, såsom Fyrirtækiðs viðlkår og betingelser eller brugsviðlkår, Fyrirtækiðs privatlivspolitik og andre skriftlige aftaler, der regulerer dit forhold til os. Intet i dette dokument er ment at begrænse viðlkårene i andre skriftlige aftaler. I stedet skal alle relevante dokumenter fortolkes så bredt som muligt.
+
+INTELLEKTUEL EJENDOM: Þú accepterer, at Hugbúnaðurinn, Fyrirtækiðs website og alle tjenester leveret af Fyrirtækið tilhører Fyrirtækið, herunder alle ophavsrettigheder, varemærker, forretningshemmeligheder, patenter og anden intellektuel ejendom («Fyrirtækiðs IP»). Þú accepterer, at Fyrirtækið ejer alle rettigheder, titler og interesser i og til Fyrirtækiðs IP, og at du ikke viðl bruge Fyrirtækiðs IP til ulovlige eller krænkende formål. Þú accepterer ikke at reproducere eller distribuere Fyrirtækiðs IP på nogen måde, herunder elektronisk eller ved registrering af nye varemærker, handelsnavne, serviðcemærker eller Uniform Resource Locators (URL'er), uden udtrykkelig skriftlig tilladelse fra Fyrirtækið.
+
+ACCEPTABEL BRUG: Þú accepterer ikke at bruge Hugbúnaðurinn til ulovlige formål eller til formål, der er forbudt i henhold til denne klausul. Þú accepterer ikke at bruge Hugbúnaðurinn på en måde, der kan skade Fyrirtækiðs website, tjenester eller generelle forretning.
+Þú accepterer desuden ikke at bruge Hugbúnaðurinn:
+I) Til at chikanere, misbruge eller true andre eller på anden måde krænke en persons lovlige rettigheder;
+II) Til at krænke Fyrirtækiðs eller tredjeparters intellektuelle ejendomsrettigheder;
+III) Til at uploade eller på anden måde sprede computerviðra eller anden software, der kan skade andres ejendom;
+IV) Til at begå sviðg;
+V) Til at deltage i eller oprette ulovligt hasardspil, lotterier eller pyramidespil;
+VI) Til at udgive eller distribuere obsønt eller ærekrænkende materiale;
+VII) Til at udgive eller distribuere materiale, der opfordrer til vold, had eller diskrimination mod en gruppe;
+VIII) Til ulovligt at indsamle information om andre.
+
+REVERSE ENGINEERING OG SIKKERHED: Þú accepterer ikke at foretage nogen af følgende handlinger:
+a) Reverse engineering, eller forsøge på reverse engineering eller adskillelse af Hugbúnaðurinn eller enhver kode i eller relateret til Hugbúnaðurinn eller Fyrirtækiðs website;
+b) Krænke Hugbúnaðurinns sikkerhed gennem uautoriseret adgang, omgåelse af kryptering eller andre sikkerhedsværktøjer, datamining eller indblanþinng med enhver vært, bruger eller netværk;
+c) Kopiere eller på anden måde ulovligt distribuere kopier af Hugbúnaðurinn, f.eks. viða et peer-to-peer-netværk eller andet værktøj til omgåelse af intellektuel ejendom.
+
+SKADESLØSHOLDELSE: Þú accepterer at forsvare og holde Fyrirtækið og eventuelle tilknyttede selskaber skadesløse og fri for ethvert juridisk krav og ethvert krav, herunder rimelige advokatsalærer, der måtte opstå fra eller relateres til þinn brug eller misbrug af Hugbúnaðurinn, dit brud på denne Aftale eller þinn adfærd eller handlinger. Þú accepterer, at Fyrirtækið kan vælge sin egen juridiske rådgiver og deltage i sin egen forsvar, hviðs Fyrirtækið ønsker det.
+
+SPAMPOLITIK: Det er strengt forbudt at bruge Hugbúnaðurinn eller nogen af Fyrirtækiðs tjenester til ulovlige spamaktiviðteter, herunder indsamling af e-mailadresser og personlige oplysninger fra andre eller afsendelse af massekommercielle e-mails.
+
+TJENESTEAFBRYDELSER: Fyrirtækið kan være nødt til at afbryde adgangen til Hugbúnaðurinn for at udføre planlagt eller uplanlagt vedligeholdelse eller nødtjenester. Þú accepterer, at þinn adgang til Hugbúnaðurinn kan påviðrkes af uforudset eller uplanlagt nedetid af enhver årsag, men at Fyrirtækið ikke har noget ansvar for skade eller tab som følge af sådan nedetid.
+
+INGEN GARANTIER: Þú accepterer, at þinn brug af Hugbúnaðurinn sker på þinn egen og udelukkende risiko, og at Hugbúnaðurinn leveres «som den er». Fyrirtækið fraskriver sig hermed udtrykkeligt enhver udtrykkelig eller underforstået garanti af enhver art, herunder, men ikke begrænset til, den underforståede garanti for egnethed til et bestemt formål og den underforståede garanti for salgbarhed. Fyrirtækið giver ingen garantier for, at Hugbúnaðurinn opfylder þinne behov, eller at adgangen til Hugbúnaðurinn viðl være uafbrudt eller fejlfri. Fyrirtækið giver heller ingen garantier for pålideligheden eller nøjagtigheden af information i Hugbúnaðurinn. Þú accepterer, at enhver skade, der måtte opstå for dig, viða dit computersystem, eller som følge af tab af þinne data ved þinn brug af Hugbúnaðurinn, er dit ene ansvar, og at Fyrirtækið ikke er ansvarlig for sådan skade eller tab.
+
+OVERDRAGELSE: Denne Aftale eller de rettigheder, der gives herunder, må ikke af dig overdrages, sælges, leases eller på anden måde overføres helt eller delviðst. Skulle denne Aftale eller de rettigheder, der gives herunder, af Fyrirtækið overdrages, sælges, leases eller på anden måde overføres, viðl Fyrirtækiðs rettigheder og forpligtelser binde og komme til gode for enhver erhverver, administrator, efterfølger og bobestyrer.
+
+ÓVIÐRÁÐANLEG ATVIK: Fyrirtækið er ikke ansvarlig for manglende opfyldelse som følge af årsager uden for dets rimelige kontrol, herunder, men ikke begrænset til, force majeure, civiðle myndigheders handlinger, militære myndigheders handlinger, optøjer, embargoer, naturens luner og naturkatastrofer samt andre handlinger som følge af uforudsete omstændigheder.

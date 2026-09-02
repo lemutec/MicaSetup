@@ -47,6 +47,8 @@ internal class Program
                 option.IsInstallCertificate = false;
                 option.IsEnableUninstallDelayUntilReboot = true;
                 option.IsEnvironmentVariable = false;
+                // Keep in sync with MSBuild SupportedLanguages (Languages.props / -p:SupportedLanguages=...).
+                option.SupportLanguages = ["en", "zh-Hans", "zh-Hant", "ja"];
                 option.CloseApplications = [];
                 option.AppName = "MicaApp";
                 option.KeyName = "MicaApp";

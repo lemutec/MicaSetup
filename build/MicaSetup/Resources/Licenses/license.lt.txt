@@ -1,0 +1,37 @@
+Ši vartotojo licencijos sutartis (toliau – «Sutartis») sudaro teisiškai privalomą sutartį tarp jūsų kaip mūsų paslaugų vartotojo (toliau – «Vartotojas») ir mūsų. Jūsų atžvilgiu bus naudojami antrojo asmens įvardžiai, tokie kaip «jūsų» ir «jūsų». Mes, Įmonė, busime vadinami įvardžiais, tokiais kaip «mus», «mūsų» ir «mūsų». Kartu jūs ir Įmonė galite būti vadinami «Šalys», o atskirai – «Šalis».
+Gaudami prieigą prie mūsų Programinės įrangos, atsisiųsdami, diegdami ar kitaip ja naudodamiesi bet kokiu būdu, sutinkate būti saistomi visos šios Sutarties. Jei nesutinkate, privalote nedelsdami nustoti naudotis Programine įranga.
+
+PROGRAMINĖS ĮRANGOS LICENCIJA: Kai teisėtai gaunate prieigą prie Programinės įrangos, ar tai būtų pirkimu, ar kitu teisėtu būdu, suteikiame jums, laikantis visų šios Sutarties sąlygų, neišimtinę, neperduodamą, ribotą, atšaukiamą asmeninę licenciją naudotis Programine įranga («Licencija»). Ši Licencija apima Įmonės sukurtos dokumentacijos, duomenų ar informacijos ir kitų medžiagų, galinčių padėti naudotis Programine įranga, naudojimą. Ši Licencija negali būti naudojama verslo ar komerciniais tikslais. Ši Licencija negali būti perduota tretiesiems asmenims be aiškaus, teisėto, rašytinio Įmonės leidimo ir nustoja galioti, kai nustojate naudotis Programine įranga.
+Ši Licencija taikoma visiems teisėtiems Programinės įrangos Vartotojams, nebent tarp jūsų ir Įmonės sudaryta atskira rašytinė sutartis.
+
+PAPILDOMOS SĄLYGOS: Šalių santykiams gali būti taikomos papildomos sąlygos, tokios kaip Įmonės bendrosios sąlygos ar naudojimo sąlygos, Įmonės privatumo politika ir kitos rašytinės sutartys, reglamentuojančios jūsų santykius su mumis. Nieko šiame dokumente nėra siekiama apriboti jokios kitos rašytinės sutarties sąlygų. Vietoj to visi atitinkami dokumentai turi būti aiškinami kiek įmanoma plačiau.
+
+INTELEKTINĖ NUOSAVYBĖ: Sutinkate, kad Programinė įranga, Įmonės interneto svetainė ir visos Įmonės teikiamos paslaugos priklauso Įmonei, įskaitant visus autorių teises, prekių ženklus, komercines paslaptis, patentus ir kitą intelektinę nuosavybę («Įmonės IP»). Sutinkate, kad Įmonė turi visas teises, nuosavybės teises ir interesus Įmonės IP atžvilgiu ir kad nenaudosite Įmonės IP neteisėtais ar pažeidžiančiais tikslais. Sutinkate nereprodukuoti ir neplatinti Įmonės IP jokiu būdu, įskaitant elektroniniu būdu ar registruojant naujus prekių ženklus, prekybinius pavadinimus, paslaugų ženklus ar Uniform Resource Locators (URL), be aiškaus rašytinio Įmonės leidimo.
+
+PRIIMTINAS NAUDOJIMAS: Sutinkate nenaudoti Programinės įrangos neteisėtais tikslais ar jokiais šioje sąlygoje draudžiamais tikslais. Sutinkate nenaudoti Programinės įrangos būdu, galinčiu pakenkti Įmonės interneto svetainei, paslaugoms ar bendrai Įmonės veiklai.
+Be to, sutinkate nenaudoti Programinės įrangos:
+I) Siekiant priekabiauti, piktnaudžiauti ar grasinti kitiems ar kitaip pažeisti bet kurio asmens teisines teises;
+II) Siekiant pažeisti Įmonės ar trečiųjų šalių intelektinės nuosavybės teises;
+III) Siekiant įkelti ar kitaip platinti kompiuterinius virusus ar kitą programinę įrangą, galinčią pakenkti kitų turtui;
+IV) Siekiant vykdyti sukčiavimą;
+V) Siekiant dalyvauti neteisėtuose lošimuose, loterijose ar piramidinėse schemose ar jas kurti;
+VI) Siekiant skelbti ar platinti obsceninę ar šmeižikišką medžiagą;
+VII) Siekiant skelbti ar platinti medžiagą, kurioje kurstoma smurtas, neapykanta ar diskriminacija bet kurios grupės atžvilgiu;
+VIII) Siekiant neteisėtai rinkti informaciją apie kitus.
+
+ATVIRKŠTINIS INŽINERIJA IR SAUGUMAS: Sutinkate neatlikti nė vieno iš šių veiksmų:
+a) Atvirkštinės inžinerijos, bandymo atlikti atvirkštinę inžineriją ar Programinės įrangos ar bet kurio kodo, susijusio su Programine įranga ar Įmonės interneto svetaine, išardymo;
+b) Programinės įrangos saugumo pažeidimo per neteisėtą prieigą, šifravimo ar kitų saugumo priemonių apeitimą, duomenų gavybą ar bet kurio serverio, vartotojo ar tinklo trukdymą;
+c) Programinės įrangos kopijų neteisėto kopijavimo ar kito platinimo, pavyzdžiui per peer-to-peer tinklą ar kitą intelektinės nuosavybės apeitimo priemonę.
+
+ŽALOS ATLYGINIMAS: Sutinkate ginti ir atlyginti žalą Įmonei ir visoms jos susijusioms įmonėms (jei taikoma) bei apsaugoti mus nuo visų teisinių pretenzijų ir reikalavimų, įskaitant pagrįstus advokato honorarus, kurie gali kilti dėl jūsų Programinės įrangos naudojimo ar piktnaudžiavimo ja, šios Sutarties pažeidimo ar jūsų elgesio ar veiksmų. Sutinkate, kad Įmonė gali pasirinkti savo teisininką ir dalyvauti savo gynyboje, jei to pageidauja.
+
+SPAMO POLITIKA: Jums griežtai draudžiama naudoti Programinę įrangą ar bet kurią Įmonės paslaugą neteisėtai spamo veiklai, įskaitant el. pašto adresų ir asmeninės informacijos apie kitus rinkimą ar masinių komercinių el. laiškų siuntimą.
+
+PASLAUGŲ PERTRŪKIAI: Įmonė gali turėti nutraukti prieigą prie Programinės įrangos, kad atliktų planinę ar neplaninę priežiūrą ar skubias paslaugas. Sutinkate, kad jūsų prieiga prie Programinės įrangos gali būti paveikta netikėto ar neplanuoto prastovos dėl bet kokios priežasties, tačiau Įmonė neatsako už jokius nuostolius ar žalą, atsiradusius dėl tokios prastovos.
+
+JOKIŲ GARANTIJŲ: Sutinkate, kad Programine įranga naudojatės tik savo rizika ir kad Programinė įranga teikiama «tokia, kokia yra». Įmonė šiuo dokumentu aiškiai atsisako bet kokių tiesioginių ar numanomų garantijų, įskaitant, bet neapsiribojant, numanomą tinkamumo tam tikram tikslui ir numanomą prekinės kokybės garantiją. Įmonė negarantuoja, kad Programinė įranga atitiks jūsų poreikius ar kad prieiga prie Programinės įrangos bus nepertraukiama ar be klaidų. Įmonė taip pat negarantuoja Programinėje įrangoje esančios informacijos patikimumo ar tikslumo. Sutinkate, kad bet kokia žala, galinti jums atsirasti per jūsų kompiuterinę sistemą ar dėl jūsų duomenų praradimo naudojantis Programine įranga, yra tik jūsų atsakomybė ir kad Įmonė neatsako už tokią žalą ar nuostolius.
+
+PERLEIDIMAS: Ši Sutartis ar čia suteiktos teisės negali būti perleistos, parduotos, išnuomotos ar kitaip perduotos visiškai ar iš dalies jūsų. Jei Įmonė perleidžia, parduoda, išnuomoja ar kitaip perduoda šią Sutartį ar čia suteiktas teises, Įmonės teisės ir pareigos privalės ir galios visiems perėmėjams, administratoriams, teisių perėmėjams ir vykdytojams.
+
+FORCE MAJEURE: Įmonė neatsako už neįvykdymą dėl priežasčių, nepriklausančių jos protingai kontrolei, įskaitant, bet neapsiribojant, force majeure, civilinių valdžios institucijų veiksmus, karinių valdžios institucijų veiksmus, riaušes, embargus, gamtos reiškinius ir gamtos katastrofas bei kitus nenumatytus atvejus.

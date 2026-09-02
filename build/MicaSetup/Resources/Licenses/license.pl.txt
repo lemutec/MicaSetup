@@ -1,0 +1,37 @@
+Niniejsza Umowa licencyjna użytkownika (dalej «Umowa») stanowi prawnie wiążącą umowę między Tobą jako użytkownikiem naszych usług (dalej «Użytkownik») a nami. Będziesz określany zaimkami drugiej osoby, takimi jak «Twój» i «Twoje». My, Spółka, będziemy określani zaimkami takimi jak «nas», «nasz» i «nasze». Łącznie Ty i Spółka możecie być określani jako «Strony», a indywidualnie jako «Strona».
+Uzyskując dostęp do naszego Oprogramowania, pobierając, instalując lub w inny sposób korzystając z niego, zgadzasz się być związany całością niniejszej Umowy. Jeśli nie wyrażasz zgody, musisz natychmiast zaprzestać korzystania z Oprogramowania.
+
+LICENCJA NA OPROGRAMOWANIE: Gdy uzyskujesz legalny dostęp do Oprogramowania, czy to poprzez zakup, czy w inny legalny sposób, udzielamy Ci, z zastrzeżeniem wszystkich warunków niniejszej Umowy, niewyłącznej, niezbywalnej, ograniczonej, odwoływalnej osobistej licencji na korzystanie z Oprogramowania («Licencja»). Licencja ta obejmuje korzystanie z dokumentacji, danych lub informacji opracowanych przez Spółkę oraz innych materiałów, które mogą pomóc Ci w korzystaniu z Oprogramowania. Licencja ta nie może być wykorzystywana w celach biznesowych lub komercyjnych. Licencja ta nie może być przenoszona na osoby trzecie bez wyraźnej, legalnej, pisemnej zgody Spółki i wygasa z chwilą zaprzestania przez Ciebie korzystania z Oprogramowania.
+Niniejsza Licencja ma zastosowanie do wszystkich legalnych Użytkowników Oprogramowania, chyba że między Tobą a Spółką zawarto odrębną pisemną umowę.
+
+DODATKOWE WARUNKI: Dodatkowe warunki mogą mieć zastosowanie do relacji między Stronami, takie jak Regulamin lub Warunki użytkowania Spółki, Polityka prywatności Spółki oraz inne pisemne umowy regulujące Twoją relację z nami. Nic w niniejszym dokumencie nie ma na celu ograniczania warunków jakiejkolwiek innej pisemnej umowy. Zamiast tego wszystkie istotne dokumenty powinny być interpretowane jak najszerzej.
+
+WŁASNOŚĆ INTELEKTUALNA: Zgadzasz się, że Oprogramowanie, witryna internetowa Spółki oraz wszystkie usługi świadczone przez Spółkę są własnością Spółki, w tym wszelkie prawa autorskie, znaki towarowe, tajemnice handlowe, patenty i inna własność intelektualna («IP Spółki»). Zgadzasz się, że Spółka posiada wszelkie prawa, tytuły i interesy w odniesieniu do IP Spółki oraz że nie będziesz wykorzystywać IP Spółki w celach niezgodnych z prawem lub naruszających prawa. Zgadzasz się nie reprodukować ani nie rozpowszechniać IP Spółki w jakikolwiek sposób, w tym drogą elektroniczną lub poprzez rejestrację nowych znaków towarowych, nazw handlowych, znaków usługowych lub Uniform Resource Locators (URL), bez wyraźnej pisemnej zgody Spółki.
+
+DOPUŚCZALNE UŻYTKOWANIE: Zgadzasz się nie używać Oprogramowania w celach niezgodnych z prawem ani w celach zabronionych na mocy niniejszej klauzuli. Zgadzasz się nie używać Oprogramowania w sposób, który mógłby uszkodzić witrynę internetową, usługi lub ogólną działalność Spółki.
+Zgadzasz się ponadto nie używać Oprogramowania:
+I) Do nękania, znęcania się lub grożenia innym lub w inny sposób naruszania prawnych praw jakiejkolwiek osoby;
+II) Do naruszania praw własności intelektualnej Spółki lub osób trzecich;
+III) Do przesyłania lub w inny sposób rozpowszechniania wirusów komputerowych lub innego oprogramowania, które może uszkodzić mienie innej osoby;
+IV) Do popełniania oszustw;
+V) Do uczestniczenia w nielegalnych grach hazardowych, loteriach lub schematach piramidalnych lub ich tworzenia;
+VI) Do publikowania lub rozpowszechniania materiałów obscenicznych lub zniesławiających;
+VII) Do publikowania lub rozpowszechniania materiałów nawołujących do przemocy, nienawiści lub dyskryminacji wobec jakiejkolwiek grupy;
+VIII) Do nielegalnego gromadzenia informacji o innych.
+
+REVERSE ENGINEERING I BEZPIECZEŃSTWO: Zgadzasz się nie podejmować żadnego z następujących działań:
+a) Reverse engineering, próby reverse engineering lub deasemblacji Oprogramowania lub jakiegokolwiek kodu zawartego w Oprogramowaniu lub witrynie internetowej Spółki albo z nimi związanego;
+b) Naruszania bezpieczeństwa Oprogramowania poprzez nieautoryzowany dostęp, obejście szyfrowania lub innych narzędzi bezpieczeństwa, data mining lub ingerencję w jakiegokolwiek hosta, użytkownika lub sieć;
+c) Kopiowania lub w inny sposób nielegalnego rozpowszechniania kopii Oprogramowania, na przykład poprzez sieć peer-to-peer lub inne narzędzie obchodzenia własności intelektualnej.
+
+ODSZKODOWANIE: Zgadzasz się bronić i zabezpieczać Spółkę oraz ewentualne podmioty stowarzyszone przed wszelkimi roszczeniami i żądaniami prawnymi, w tym rozsądnymi honorariami adwokackimi, które mogą wyniknąć z Twojego korzystania lub niewłaściwego korzystania z Oprogramowania, naruszenia niniejszej Umowy lub Twojego postępowania lub działań. Zgadzasz się, że Spółka może wybrać własnego pełnomocnika prawnego i uczestniczyć we własnej obronie, jeśli tego zażyczy.
+
+POLITYKA ANTYSPAMOWA: Surowo zabrania się używania Oprogramowania lub jakichkolwiek usług Spółki do nielegalnych działań spamowych, w tym zbierania adresów e-mail i danych osobowych innych osób lub wysyłania masowych wiadomości e-mail o charakterze komercyjnym.
+
+PRZERWY W ŚWIADCZENIU USŁUG: Spółka może być zmuszona przerwać dostęp do Oprogramowania w celu przeprowadzenia planowanej lub nieplanowanej konserwacji lub usług awaryjnych. Zgadzasz się, że Twój dostęp do Oprogramowania może być dotknięty nieprzewidzianymi lub nieplanowanymi przerwami w działaniu z jakiegokolwiek powodu, jednak Spółka nie ponosi odpowiedzialności za jakiekolwiek szkody lub straty spowodowane takimi przerwami.
+
+BRAK GWARANCJI: Zgadzasz się, że korzystasz z Oprogramowania wyłącznie na własne ryzyko i że Oprogramowanie jest dostarczane «w stanie takim, w jakim jest». Spółka niniejszym wyraźnie zrzeka się wszelkich wyraźnych lub dorozumianych gwarancji jakiegokolwiek rodzaju, w tym między innymi dorozumianej gwarancji przydatności do określonego celu i dorozumianej gwarancji jakości handlowej. Spółka nie gwarantuje, że Oprogramowanie spełni Twoje potrzeby ani że dostęp do Oprogramowania będzie nieprzerwany lub wolny od błędów. Spółka nie udziela również gwarancji co do wiarygodności lub dokładności informacji zawartych w Oprogramowaniu. Zgadzasz się, że wszelkie szkody, które mogą Cię dotknąć, dotknąć Twojego systemu komputerowego lub wynikną z utraty danych w związku z korzystaniem z Oprogramowania, leżą wyłącznie po Twojej stronie i że Spółka nie ponosi odpowiedzialności za takie szkody lub straty.
+
+CESJA: Niniejsza Umowa lub prawa udzielone na jej podstawie nie mogą być przez Ciebie cesjonowane, sprzedawane, dzierżawione ani w inny sposób przenoszone w całości lub w części. Jeśli niniejsza Umowa lub prawa udzielone na jej podstawie zostaną przez Spółkę cesjonowane, sprzedane, dzierżawione lub w inny sposób przeniesione, prawa i zobowiązania Spółki będą wiązać i służyć wszelkim cesjonariuszom, administratorom, następcom prawnym i wykonawcom.
+
+SIŁA WYŻSZA: Spółka nie ponosi odpowiedzialności za niewykonanie zobowiązań z powodu przyczyn pozostających poza jej rozsądną kontrolą, w tym między innymi siły wyższej, działań władz cywilnych, działań władz wojskowych, zamieszek, embarg, zjawisk naturalnych i klęsk żywiołowych oraz innych działań wynikających z nieprzewidzianych okoliczności.

@@ -1,0 +1,37 @@
+Tämä Käyttöoikeussopimus (jäljempänä «Sopimus») muodostaa oikeudellisesti sitovan sopimuksen sinun, palveluidemme käyttäjän (jäljempänä «Käyttäjä»), ja meidän välillämme. Sinua viitataan toisen persoonan pronomineilla, kuten «sinun» ja «sinun». Meitä, Yhtiötä, viitataan pronomineilla, kuten «me», «meidän» ja «meidän». Yhdessä sinua ja Yhtiötä voidaan kutsua «Osapuoliksi» ja erikseen «Osapuoleksi».
+Käyttämällä Ohjelmistoa millä tahansa tavalla, kuten lataamalla, asentamalla tai muuten käyttämällä sitä, hyväksyt sitoutuvasi tähän Sopimukseen kokonaisuudessaan. Jos et hyväksy, sinun on lopetettava Ohjelmiston käyttö välittömästi.
+
+OHJELMISTOLISENSSI: Kun saat laillisen pääsyn Ohjelmistoon joko ostamalla tai muilla laillisilla keinoilla, myönnämme sinulle tämän Sopimuksen kaikkien ehtojen alaisena ei-yksinomaisen, siirtämättömän, rajoitetun, peruutettavissa olevan henkilökohtaisen lisenssin Ohjelmiston käyttöön («Lisenssi»). Tämä Lisenssi kattaa Yhtiön kehittämän dokumentaation, tiedot tai informaation sekä muut materiaalit, jotka voivat auttaa sinua Ohjelmiston käytössä. Tätä Lisenssiä ei saa käyttää liike- tai kaupallisiin tarkoituksiin. Tätä Lisenssiä ei saa siirtää kolmansille osapuolille ilman Yhtiön nimenomaista, laillista, kirjallista lupaa, ja tämä Lisenssi päättyy, kun lopetat Ohjelmiston käytön.
+Tämä Lisenssi koskee kaikkia Ohjelmiston laillisia Käyttäjiä, ellei sinun ja Yhtiön välillä ole tehty erillistä kirjallista sopimusta.
+
+LISÄEHDOT: Osapuolten väliseen suhteeseen voidaan soveltaa lisäehtoja, kuten Yhtiön yleisiä ehtoja tai käyttöehtoja, Yhtiön tietosuojakäytäntöä ja muita kirjallisia sopimuksia, jotka säätelevät suhdettasi meihin. Mikään tässä ei ole tarkoitettu rajoittamaan muiden kirjallisten sopimusten ehtoja. Sen sijaan kaikkia asiaan liittyviä asiakirjoja on tulkittava mahdollisimman laajasti.
+
+IMMATERIAALIOIKEUDET: Hyväksyt, että Ohjelmisto, Yhtiön verkkosivusto ja kaikki Yhtiön tarjoamat palvelut ovat Yhtiön omaisuutta, mukaan lukien kaikki tekijänoikeudet, tavaramerkit, liikesalaisuudet, patentit ja muu immateriaalioikeus («Yhtiön IP»). Hyväksyt, että Yhtiö omistaa kaikki oikeudet, omistusoikeudet ja edut Yhtiön IP:hen liittyen, etkä käytä Yhtiön IP:tä laittomiin tai loukkaaviin tarkoituksiin. Hyväksyt, ettet kopioi tai levitä Yhtiön IP:tä millään tavalla, mukaan lukien sähköisesti tai rekisteröimällä uusia tavaramerkkejä, kauppanimiä, palvelumerkkejä tai Uniform Resource Locators (URL-osoitteita), ilman Yhtiön nimenomaista kirjallista lupaa.
+
+HYVÄKSYTTÄVÄ KÄYTTÖ: Hyväksyt, ettet käytä Ohjelmistoa laittomiin tarkoituksiin tai mihinkään tässä klausulissa kiellettyyn tarkoitukseen. Hyväksyt, ettet käytä Ohjelmistoa tavalla, joka voisi vahingoittaa Yhtiön verkkosivustoa, palveluita tai yleistä liiketoimintaa.
+Hyväksyt lisäksi, ettet käytä Ohjelmistoa:
+I) Häiritäksesi, loukataksesi tai uhatessasi muita tai muuten rikkoaksesi kenen tahansa laillisia oikeuksia;
+II) Loukataksesi Yhtiön tai kolmannen osapuolen immateriaalioikeuksia;
+III) Ladataksesi tai muuten levittääksesi tietokoneviruksia tai muuta ohjelmistoa, joka voi vahingoittaa toisen omaisuutta;
+IV) Harjoittaaksesi petosta;
+V) Osallistuaksesi laittomaan uhkapeliin, arvontoihin tai pyramidihuijauksiin tai luodaksesi niitä;
+VI) Julkaistaksesi tai levittääksesi säädytöntä tai herjaavaa materiaalia;
+VII) Julkaistaksesi tai levittääksesi materiaalia, joka yllyttää väkivaltaan, vihaan tai syrjintään ketään ryhmää kohtaan;
+VIII) Kerätäksesi laittomasti tietoja muista.
+
+KÄÄNTÖINSINÖÖRITYS JA TIETOTURVA: Hyväksyt, ettet suorita mitään seuraavista toimenpiteistä:
+a) Kääntöinsinööritystä tai yritystä suorittaa kääntöinsinööritystä tai purkaa Ohjelmistoa tai mitään Ohjelmistoon tai Yhtiön verkkosivustoon liittyvää koodia;
+b) Rikkoa Ohjelmiston tietoturvaa luvattomalla pääsyllä, salauksen kiertämisellä tai muilla tietoturvatyökaluilla, dataminingilla tai häiritsemällä mitä tahansa isäntää, käyttäjää tai verkkoa;
+c) Kopioida tai muuten laittomasti levittää Ohjelmiston kopioita, esimerkiksi peer-to-peer-verkon tai muun immateriaalioikeuksien kiertämistyökalun kautta.
+
+VASTUUVAPAUTUS: Hyväksyt puolustavasi ja korvaavasi Yhtiön ja mahdolliset tytäryhtiöt sekä pitäväsi meidät vahingoittumattomina kaikista oikeudellisista vaatimuksista ja vaatimuksista, mukaan lukien kohtuulliset asianajopalkkiot, jotka voivat johtua Ohjelmiston käytöstäsi tai väärinkäytöstäsi, tämän Sopimuksen rikkomisestasi tai käytöksestäsi tai toimistasi. Hyväksyt, että Yhtiö voi valita oman oikeudellisen neuvonantajansa ja osallistua omaan puolustukseensa, jos Yhtiö niin haluaa.
+
+ROSKAPOSTIKÄYTÄNTÖ: Ohjelmiston tai minkä tahansa Yhtiön palvelun käyttö laittomiin roskapostitoimintoihin on ehdottomasti kielletty, mukaan lukien sähköpostiosoitteiden ja henkilötietojen kerääminen muilta tai massakaupallisten sähköpostien lähettäminen.
+
+PALVELUKATKOKSET: Yhtiö saattaa joutua keskeyttämään pääsyn Ohjelmistoon suorittaakseen ajoitettua tai ajoittamatonta huoltoa tai hätäpalveluita. Hyväksyt, että pääsyysi Ohjelmistoon voi olla alttiina odottamattomille tai ajoittamattomille katkoksille mistä tahansa syystä, mutta Yhtiö ei ole vastuussa mistään tällaisista katkoksista aiheutuvista vahingoista tai menetyksistä.
+
+EI TAKUITA: Hyväksyt, että Ohjelmiston käyttö tapahtuu yksinomaan omalla riskilläsi ja että Ohjelmisto toimitetaan «sellaisenaan». Yhtiö kiistää täten nimenomaisesti kaikki nimenomaiset tai implisiittiset takuut, mukaan lukien, mutta ei rajoittuen, implisiittinen takuu soveltuvuudesta tiettyyn tarkoitukseen ja implisiittinen takuu kaupallisesta laadusta. Yhtiö ei takaa, että Ohjelmisto vastaa tarpeitasi tai että pääsy Ohjelmistoon on keskeytymätöntä tai virheetöntä. Yhtiö ei myöskään anna takuita Ohjelmiston sisältämien tietojen luotettavuudesta tai tarkkuudesta. Hyväksyt, että kaikki sinulle, tietokonejärjestelmällesi tai tietojesi menetyksestä Ohjelmiston käytön seurauksena aiheutuvat vahingot ovat yksinomaan sinun vastuullasi ja että Yhtiö ei ole vastuussa tällaisista vahingoista tai menetyksistä.
+
+SIIRTO: Tätä Sopimusta tai sen nojalla myönnettyjä oikeuksia ei saa siirtää, myydä, vuokrata tai muutoin luovuttaa kokonaan tai osittain. Jos Yhtiö siirtää, myy, vuokraa tai muutoin luovuttaa tätä Sopimusta tai sen nojalla myönnettyjä oikeuksia, Yhtiön oikeudet ja velvoitteet sitovat ja hyödyttävät kaikkia siirronsaajia, hallinnoijia, seuraajia ja toimeenpanijoita.
+
+Ylivoimainen este: Yhtiö ei ole vastuussa suorittamatta jättämisestä syistä, jotka ovat sen kohtuullisen hallinnan ulkopuolella, mukaan lukien, mutta ei rajoittuen, ylivoimainen este, siviiliviranomaisten toimet, sotilasviranomaisten toimet, mellakat, embargo, luonnonilmiöt ja luonnonkatastrofit sekä muut odottamattomista olosuhteista johtuvat tapahtumat.

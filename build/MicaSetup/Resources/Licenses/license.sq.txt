@@ -1,0 +1,37 @@
+Ky Marrëveshja e Licencës së Përdoruesit (këtu e tutje «Marrëveshja») krijon një marrëveshje juridikisht detyruese midis jush si përdorues i shërbimeve tona (këtu e tutje «Përdoruesi») dhe nesh. Do t'ju drejtohemi me zëremra të personit të dytë si «juaj» dhe «të tuajat». Ne, Kompania, do të përmendemi me zëremra si «ne», «tonë» dhe «tonat». Së bashku, ju dhe Kompania mund të quheni «Palët» dhe individualisht «Pala».
+Duke hyrë, shkarkuar, instaluar ose përdorur ndryshe Softuerin tonë në çdo mënyrë, ju pranoni të jeni të lidhur me këtë Marrëveshje në tërësi. Nëse nuk jeni dakord, duhet të ndaloni menjëherë përdorimin e Softuerit.
+
+LICENCA E SOFTUERIT: Kur hyni ligjërisht në Softuer, qoftë me blerje apo me mjete të tjera ligjore, ne ju japim, nën kushtet e të gjitha termave të kësaj Marrëveshjeje, një licencë personale joekskluzive, jo të transferueshme, të kufizuar dhe të revokueshme për përdorimin e Softuerit («Licenca»). Kjo Licencë shtrihet në përdorimin e dokumentacionit, të dhënave ose informacionit të zhvilluar nga Kompania dhe materialeve të tjera që mund t'ju ndihmojnë në përdorimin e Softuerit. Kjo Licencë nuk mund të përdoret për qëllime biznesi apo komerciale. Kjo Licencë nuk mund t'i transferohet palëve të treta pa lejen e shprehur, ligjore dhe me shkrim të Kompanisë dhe përfundon me ndërprerjen e përdorimit tuaj të Softuerit.
+Kjo Licencë vlen për të gjithë Përdoruesit ligjorë të Softuerit, përveç nëse është lidhur një marrëveshje e veçantë me shkrim midis jush dhe Kompanisë.
+
+KUSHTE SHTESË: Kushte shtesë mund të zbatohen ndaj marrëdhënies midis Palëve, si Kushtet e Përgjithshme ose Kushtet e Përdorimit të Kompanisë, Politika e Privatësisë së Kompanisë dhe çdo marrëveshje tjetër me shkrim që rregullon marrëdhënien tuaj me ne. Asgjë në këtë dokument nuk synon të kufizojë kushtet e çdo marrëveshjeje tjetër me shkrim. Përkundrazi, të gjitha dokumentet përkatëse duhet të interpretohen sa më gjerësisht të jetë e mundur.
+
+PRONA INTELLEKTUALE: Ju pranoni se Softueri, faqja e internetit e Kompanisë dhe të gjitha shërbimet e ofruara nga Kompania janë pronë e Kompanisë, duke përfshirë të gjitha të drejtat e autorit, markat tregtare, sekretet tregtare, patentat dhe pronën tjetër intelektuale («IP e Kompanisë»). Ju pranoni se Kompania zotëron të gjitha të drejtat, titullat dhe interesat mbi IP-në e Kompanisë dhe se nuk do ta përdorni IP-në e Kompanisë për qëllime të paligjshme apo shkelëse. Ju pranoni të mos riprodhoni ose shpërndani IP-në e Kompanisë në asnjë mënyrë, duke përfshirë elektronikisht ose përmes regjistrimit të markave të reja, emrave tregtarë, shenjave të shërbimit ose Uniform Resource Locators (URL), pa lejen e shprehur me shkrim të Kompanisë.
+
+PËRDORIMI I PRANUESHËM: Ju pranoni të mos e përdorni Softuerin për qëllime të paligjshme ose për çdo qëllim të ndaluar sipas kësaj klauzole. Ju pranoni të mos e përdorni Softuerin në mënyrë që mund të dëmtojë faqen e internetit, shërbimet ose aktivitetin e përgjithshëm të Kompanisë.
+Gjithashtu pranoni të mos e përdorni Softuerin:
+I) Për të ngacmuar, abuzuar ose kërcënuar të tjerët ose për të shkelur ndryshe të drejtat ligjore të çdo personi;
+II) Për të shkelur të drejtat e pronës intelektuale të Kompanisë ose të palëve të treta;
+III) Për të ngarkuar ose shpërndarë ndryshe virusë kompjuterikë ose softuer tjetër që mund të dëmtojë pronën e të tjerëve;
+IV) Për të kryer mashtrime;
+V) Për të marrë pjesë ose krijuar lojëra fati, lotari ose skema piramidale të paligjshme;
+VI) Për të publikuar ose shpërndarë material obscen ose shpifës;
+VII) Për të publikuar ose shpërndarë material që nxisin dhunë, urrejtje ose diskriminim ndaj çdo grupi;
+VIII) Për të mbledhur në mënyrë të paligjshme informacion rreth të tjerëve.
+
+INXHINIERIA E KUNDËRT DHE SIGURIA: Ju pranoni të mos ndërmerrni asnjë nga veprimet e mëposhtme:
+a) Inxhinieri e kundërt, ose përpjekje për inxhinieri të kundërt ose çmontim të Softuerit ose çdo kodi brenda ose në lidhje me Softuerin ose faqen e internetit të Kompanisë;
+b) Shkelje e sigurisë së Softuerit përmes aksesit të paautorizuar, anashkalimit të enkriptimit ose mjeteve të tjera të sigurisë, data mining ose ndërhyrjes në çdo host, përdorues ose rrjet;
+c) Kopjim ose shpërndarje të paligjshme e kopjeve të Softuerit, si përmes rrjetit peer-to-peer ose mjetit tjetër për anashkalimin e pronës intelektuale.
+
+DËM SHPËRBLIMI: Ju pranoni të mbrojni dhe dëmshpërbleni Kompaninë dhe çdo filial të saj (nëse ka) dhe të na mbani të padëmshëm ndaj të gjitha kërkesave dhe pretendimeve ligjore, duke përfshirë honorarët e arsyeshëm të avokatëve, që mund të lindin nga ose lidhen me përdorimin ose keqpërdorimin tuaj të Softuerit, shkeljen tuaj të kësaj Marrëveshjeje ose sjelljen ose veprimet tuaja. Ju pranoni se Kompania mund të zgjedhë këshilltarin e vet ligjor dhe të marrë pjesë në mbrojtjen e vet, nëse dëshiron.
+
+POLITIKA KUNDËR SPAMIT: Ju ndalohet rreptësisht të përdorni Softuerin ose ndonjë shërbim të Kompanisë për aktivitete spam të paligjshme, duke përfshirë mbledhjen e adresave e-mail dhe informacioneve personale të të tjerëve ose dërgimin e e-mailave masive komerciale.
+
+NDËRPRERJET E SHËRBIMIT: Kompania mund të duhet të ndërpresë aksesin në Softuer për të kryer mirëmbajtje ose shërbime urgjente të planifikuara ose të paplanifikuara. Ju pranoni se aksesi juaj në Softuer mund të preket nga ndërprerje të papritura ose të paplanifikuara, për çdo arsye, por Kompania nuk ka përgjegjësi për asnjë dëm ose humbje të shkaktuar nga një ndërprerje e tillë.
+
+PA GARANCI: Ju pranoni se përdorimi i Softuerit bëhet vetëm me rrezikun tuaj dhe se Softueri ofrohet «siç është». Kompania me këtë heq në mënyrë të shprehur çdo garanci të shprehur ose të nënkuptuar të çdo lloji, duke përfshirë, por pa u kufizuar në, garancinë e nënkuptuar të përshtatshmërisë për një qëllim të caktuar dhe garancinë e nënkuptuar të tregtueshmërisë. Kompania nuk jep garanci se Softueri do t'u përmbushë nevojave tuaja ose se aksesi në Softuer do të jetë i pandërprerë ose pa gabime. Kompania gjithashtu nuk jep garanci për besueshmërinë ose saktësinë e çdo informacioni të përfshirë në Softuer. Ju pranoni se çdo dëm që mund t'ju ndodhë, përmes sistemit tuaj kompjuterik, ose si rezultat i humbjes së të dhënave tuaja nga përdorimi i Softuerit është vetëm përgjegjësia juaj dhe se Kompania nuk është përgjegjëse për një dëm ose humbje të tillë.
+
+CESHJE: Kjo Marrëveshje, ose të drejtat e dhëna sipas saj, nuk mund t'u cedoni, shisni, jepni me qira ose transferoni ndryshe në tërësi ose pjesërisht nga ju. Nëse kjo Marrëveshje, ose të drejtat e dhëna sipas saj, cedohet, shitet, jepet me qira ose transferohet ndryshe nga Kompania, të drejtat dhe detyrimet e Kompanisë do të lidhin dhe do t'u vlejnë çdo cesi, administratori, pasardhësi dhe ekzekutori.
+
+FORCA MADHORE: Kompania nuk është përgjegjëse për çdo mos përmbushje për shkak të shkaqeve jashtë kontrollit të arsyeshëm të saj, duke përfshirë, por pa u kufizuar në, forcën madhore, veprimet e autoriteteve civile, veprimet e autoriteteve ushtarake, trazirat, embargot, ngjarjet natyrore dhe katastrofat natyrore dhe veprime të tjera për shkak të rrethanave të paparashikuara.

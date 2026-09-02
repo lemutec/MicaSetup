@@ -1,0 +1,37 @@
+Ta uporabniška licenčna pogodba (v nadaljevanju «Pogodba») ustvarja pravno zavezujočo pogodbo med vami kot uporabnikom naših storitev (v nadaljevanju «Uporabnik») in nami. Naslavljali vas bomo z zaimki druge osebe, kot sta «vaš» in «vaši». Mi, Podjetje, bomo označeni z zaimki, kot so «nas», «naš» in «naši». Skupaj lahko vi in Podjetje nosita ime «Stranki», posamezno pa «Stranka».
+Z dostopom do, prenosom, namestitvijo ali kakršno koli drugo uporabo naše Programske opreme se strinjate, da vas zavezuje ta Pogodba v celoti. Če se ne strinjate, morate takoj prenehati z uporabo Programske opreme.
+
+LICENCA ZA PROGRAMSKO OPREMO: Ko zakonito dostopate do Programske opreme, bodisi z nakupom ali na drug zakonit način, vam podeljujemo, v skladu z vsemi pogoji te Pogodbe, neizključno, neprenosljivo, omejeno, preklicno osebno licenco za uporabo Programske opreme («Licenca»). Ta Licenca se nanaša na uporabo dokumentacije, podatkov ali informacij, ki jih je razvilo Podjetje, ter drugih gradiv, ki vam lahko pomagajo pri uporabi Programske opreme. Te Licence ni dovoljeno uporabljati za poslovne ali komercialne namene. Te Licence ni dovoljeno prenesti na tretje osebe brez izrecnega, zakonitega, pisnega dovoljenja Podjetja in preneha veljati ob prenehanju vaše uporabe Programske opreme.
+Ta Licenca velja za vse zakonite Uporabnike Programske opreme, razen če med vami in Podjetjem ni sklenjena ločena pisna pogodba.
+
+DODATNI POGOJI: Na razmerje med Strankama lahko veljajo dodatni pogoji, kot so Splošni pogoji ali Pogoji uporabe Podjetja, Politika zasebnosti Podjetja in druge pisne pogodbe, ki urejajo vaše razmerje z nami. Nič v tem dokumentu ni namenjeno omejevanju pogojev katere koli druge pisne pogodbe. Namesto tega je treba vse relevantne dokumente razlagati čim širše.
+
+INTELEKTUALNA LASTNINA: Strinjate se, da so Programska oprema, spletno mesto Podjetja in vse storitve, ki jih zagotavlja Podjetje, last Podjetja, vključno z vsemi avtorskimi pravicami, blagovnimi znamkami, poslovnimi skrivnostmi, patenti in drugo intelektualno lastnino («IP Podjetja»). Strinjate se, da Podjetje ima vse pravice, naslove in interese glede IP Podjetja in da IP Podjetja ne boste uporabljali za nezakonite ali kršitvene namene. Strinjate se, da ne boste reproducirali ali distribuirali IP Podjetja na kakršen koli način, vključno z elektronskim ali z registracijo novih blagovnih znamk, trgovskih imen, storitvenih znamk ali Uniform Resource Locators (URL), brez izrecnega pisnega dovoljenja Podjetja.
+
+SPREJEMLJIVA UPORABA: Strinjate se, da Programske opreme ne boste uporabljali za nezakonite namene ali za kateri koli namen, ki ga prepoveduje ta klavzula. Strinjate se, da Programske opreme ne boste uporabljali na način, ki bi lahko poškodoval spletno mesto, storitve ali splošno poslovanje Podjetja.
+Nadalje se strinjate, da Programske opreme ne boste uporabljali:
+I) Za nadlegovanje, zlorabo ali grožnje drugim ali za kakršno koli kršitev zakonskih pravic katere koli osebe;
+II) Za kršitev pravic intelektualne lastnine Podjetja ali tretjih oseb;
+III) Za nalaganje ali drugo širjenje računalniških virusov ali druge programske opreme, ki bi lahko poškodovala last drugih;
+IV) Za izvajanje goljufij;
+V) Za sodelovanje v nezakonitem igranju na srečo, nagradnih igrah ali piramidnih shemah ali za njihovo ustvarjanje;
+VI) Za objavo ali distribucijo obscenega ali obrekljivega gradiva;
+VII) Za objavo ali distribucijo gradiva, ki spodbuja nasilje, sovraštvo ali diskriminacijo do katere koli skupine;
+VIII) Za nezakonito zbiranje informacij o drugih.
+
+OBRATNO INŽENIRSTVO IN VARNOST: Strinjate se, da ne boste izvajali nobenega od naslednjih dejanj:
+a) Obratnega inženirstva, poskusa obratnega inženirstva ali razstavljanja Programske opreme ali katere koli kode znotraj ali v povezavi s Programsko opremo ali spletnim mestom Podjetja;
+b) Kršitve varnosti Programske opreme z nepooblaščenim dostopom, obhodom šifriranja ali drugih varnostnih orodij, rudarjenjem podatkov ali motenjem katerega koli gostitelja, uporabnika ali omrežja;
+c) Nezakonitega kopiranja ali druge distribucije kopij Programske opreme, na primer prek peer-to-peer omrežja ali drugega orodja za obhod intelektualne lastnine.
+
+ODŠKODNINSKA ODGOVORNOST: Strinjate se, da boste branili in odškodovali Podjetje in vse njegove povezane subjekte (če je primerno) ter nas oprostili odgovornosti za vse pravne zahtevke in terjatve, vključno z razumnimi odvetniškimi stroški, ki bi lahko nastali iz vaše uporabe ali zlorabe Programske opreme, vaše kršitve te Pogodbe ali vašega vedenja ali dejanj. Strinjate se, da lahko Podjetje izbere svojega pravnega svetovalca in sodeluje pri svoji obrambi, če to želi.
+
+POLITIKA PROTI SPAMU: Strogo vam je prepovedano uporabljati Programsko opremo ali katero koli storitev Podjetja za nezakonite dejavnosti neželene pošte, vključno z zbiranjem e-poštnih naslovov in osebnih podatkov drugih ali pošiljanjem množičnih komercialnih e-poštnih sporočil.
+
+PREKINITVE STORITEV: Podjetje lahko mora prekiniti dostop do Programske opreme za izvedbo načrtovanega ali nenačrtovanega vzdrževanja ali nujnih storitev. Strinjate se, da je lahko vaš dostop do Programske opreme prizadet z nepričakovanimi ali nenačrtovanimi izpadi iz katerega koli razloga, vendar Podjetje ne odgovarja za kakršno koli škodo ali izgubo, ki bi nastala zaradi takih izpadov.
+
+BREZ JAMSTEV: Strinjate se, da je vaša uporaba Programske opreme izključno na vašo lastno tveganje in da se Programska oprema zagotavlja «taka, kot je». Podjetje s tem izrecno zavrača vsa izrecna ali implicitna jamstva katere koli vrste, vključno z, vendar ne omejeno na, implicitno jamstvo primernosti za določen namen in implicitno jamstvo tržne ustreznosti. Podjetje ne jamči, da bo Programska oprema izpolnjevala vaše potrebe ali da bo dostop do Programske opreme neprekinjen ali brez napak. Podjetje prav tako ne jamči za zanesljivost ali točnost kakršnih koli informacij v Programski opremi. Strinjate se, da je kakršna koli škoda, ki vam lahko nastane prek vašega računalniškega sistema ali kot posledica izgube vaših podatkov zaradi uporabe Programske opreme, izključno vaša odgovornost in da Podjetje ne odgovarja za takšno škodo ali izgubo.
+
+PRENOS: Te Pogodbe ali pravic, podeljenih v skladu z njo, ne smete v celoti ali delno dodeliti, prodati, dati v najem ali drugače prenesti. Če Podjetje to Pogodbo ali pravice, podeljene v skladu z njo, dodeli, proda, da v najem ali drugače prenese, bodo pravice in obveznosti Podjetja zavezovale in koristile vsem prejemnikom, administratorjem, naslednikom in izvršiteljem.
+
+VIŠJA SILA: Podjetje ne odgovarja za kakršno koli neizpolnitev zaradi vzrokov zunaj njegove razumne kontrole, vključno z, vendar ne omejeno na, višjo silo, dejanja civilnih oblasti, dejanja vojaških oblasti, nemirov, embargov, naravnih pojavov in naravnih nesreč ter drugih dejanj zaradi nepredvidenih okoliščin.

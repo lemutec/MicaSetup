@@ -1,0 +1,37 @@
+Detta Användarlicensavtal (härefter «Avtalet») utgör ett juridiskt bindande avtal mellan dig som användare av våra tjänster (härefter «Användaren»). Du kommer att refereras till med andrapersonspronomen som «din» och «dina». Vi, Företaget, kommer att refereras till med pronomen som «oss», «vår» och «våra». Sammantaget kan du och Företaget kallas «Parterna» och var för sig «Part».
+Genom att på något sätt få åtkomst till, ladda ner, installera eller på annat sätt använda vår Programvara godkänner du att vara bunden av detta Avtal i sin helhet. Om du inte godkänner måste du omedelbart upphöra att använda Programvaran.
+
+PROGRAMVARULICENS: När du lagligt får åtkomst till Programvaran, antingen genom köp eller på annat lagligt sätt, beviljar vi dig, med förbehåll för alla villkor i detta Avtal, en icke-exklusiv, icke-överlåtbar, begränsad, återkallelig personlig licens att använda Programvaran («Licensen»). Denna Licens omfattar användning av dokumentation, data eller information utvecklad av Företaget och annat material som kan hjälpa dig att använda Programvaran. Denna Licens får inte användas för affärs- eller kommersiella ändamål. Denna Licens får inte överlåtas till tredje part utan uttryckligt, lagligt, skriftligt tillstånd från Företaget, och denna Licens upphör när du upphör att använda Programvaran.
+Denna Licens ska gälla för alla lagliga Användare av Programvaran, såvida inte ett separat skriftligt avtal har ingåtts mellan dig och Företaget.
+
+YTTERLIGARE VILLKOR: Ytterligare villkor kan gälla för Parternas relation till varandra, såsom Företagets allmänna villkor eller användarvillkor, Företagets integritetspolicy och andra skriftliga avtal som reglerar din relation med oss. Ingenting härin ska begränsa villkoren i något annat skriftligt avtal. Istället ska alla relevanta dokument tolkas så brett som möjligt.
+
+IMMATERIELL EGENDOM: Du godkänner att Programvaran, Företagets webbplats och alla tjänster som tillhandahålls av Företaget tillhör Företaget, inklusive alla upphovsrätter, varumärken, affärshemligheter, patent och annan immateriell egendom («Företagets IP»). Du godkänner att Företaget äger alla rättigheter, titlar och intressen i och till Företagets IP och att du inte kommer att använda Företagets IP för olagliga eller intrångsgörande ändamål. Du godkänner att inte reproducera eller distribuera Företagets IP på något sätt, inklusive elektroniskt eller genom registrering av nya varumärken, handelsnamn, tjänstemärken eller Uniform Resource Locators (URL:er), utan uttryckligt skriftligt tillstånd från Företaget.
+
+GODTAGBAR ANVÄNDNING: Du godkänner att inte använda Programvaran för olagliga ändamål eller för något ändamål som förbjuds enligt denna klausul. Du godkänner att inte använda Programvaran på ett sätt som kan skada Företagets webbplats, tjänster eller allmänna verksamhet.
+Du godkänner vidare att inte använda Programvaran:
+I) För att trakassera, missbruka eller hota andra eller på annat sätt kränka någon persons lagliga rättigheter;
+II) För att kränka Företagets eller tredje parts immateriella rättigheter;
+III) För att ladda upp eller på annat sätt sprida datorvirus eller annan programvara som kan skada annans egendom;
+IV) För att begå bedrägeri;
+V) För att delta i eller skapa olagligt spel, lotterier eller pyramidspel;
+VI) För att publicera eller distribuera obscent eller ärekränkande material;
+VII) För att publicera eller distribuera material som uppmanar till våld, hat eller diskriminering mot någon grupp;
+VIII) För att olagligt samla in information om andra.
+
+REVERSE ENGINEERING OCH SÄKERHET: Du godkänner att inte vidta någon av följande åtgärder:
+a) Reverse engineering, eller försöka reverse engineering eller demontera Programvaran eller någon kod inom eller relaterad till Programvaran eller Företagets webbplats;
+b) Kränka Programvarans säkerhet genom obehörig åtkomst, kringgående av kryptering eller andra säkerhetsverktyg, datamining eller störning av någon värd, användare eller nätverk;
+c) Kopiera eller på annat sätt olagligt distribuera kopior av Programvaran, till exempel via ett peer-to-peer-nätverk eller annat verktyg för kringgående av immateriell egendom.
+
+SKADEERSÄTTNING: Du godkänner att försvara och ersätta Företaget och eventuella dotterbolag och hålla oss skadeslösa mot alla juridiska anspråk och krav, inklusive rimliga advokatarvoden, som kan uppstå från eller relateras till din användning eller missbruk av Programvaran, ditt brott mot detta Avtal eller ditt beteende eller dina handlingar. Du godkänner att Företaget ska kunna välja sin egen juridiska rådgivare och delta i sitt eget försvar, om Företaget så önskar.
+
+SPAMPOLICY: Det är strängt förbjudet att använda Programvaran eller någon av Företagets tjänster för olaglig spamverksamhet, inklusive insamling av e-postadresser och personlig information från andra eller sändning av masskommersiella e-postmeddelanden.
+
+TJÄNSTAVBROTT: Företaget kan behöva avbryta åtkomsten till Programvaran för att utföra planerat eller oplanerat underhåll eller nödtjänster. Du godkänner att din åtkomst till Programvaran kan påverkas av oförutsedd eller oplanerad driftstopp av vilken anledning som helst, men att Företaget inte har något ansvar för skada eller förlust till följd av sådant driftstopp.
+
+INGA GARANTIER: Du godkänner att din användning av Programvaran sker på din egen och uteslutande risk och att Programvaran tillhandahålls «i befintligt skick». Företaget friskriver sig härmed uttryckligen från alla uttryckliga eller underförstådda garantier av något slag, inklusive, men inte begränsat till, den underförstådda garantin om lämplighet för ett visst ändamål och den underförstådda garantin om säljbarhet. Företaget lämnar inga garantier om att Programvaran uppfyller dina behov eller att åtkomsten till Programvaran kommer att vara oavbruten eller felfri. Företaget lämnar heller inga garantier avseende tillförlitligheten eller riktigheten av information i Programvaran. Du godkänner att eventuell skada som kan drabba dig, via ditt datorsystem, eller till följd av förlust av dina data från din användning av Programvaran är ditt eget ansvar och att Företaget inte är ansvarigt för sådan skada eller förlust.
+
+ÖVERLÅTELSE: Detta Avtal, eller de rättigheter som beviljas härunder, får inte av dig överlåtas, säljas, hyras ut eller på annat sätt överföras helt eller delvis. Om detta Avtal, eller de rättigheter som beviljas härunder, överlåts, säljs, hyras ut eller på annat sätt överförs av Företaget, ska Företagets rättigheter och skyldigheter binda och tillkomma alla övertagare, administratörer, efterträdare och boutredningsmän.
+
+FORCE MAJEURE: Företaget ansvarar inte för utebliven prestation på grund av orsaker utanför dess rimliga kontroll, inklusive, men inte begränsat till, force majeure, civila myndigheters handlingar, militära myndigheters handlingar, upplopp, embargo, naturens makter och naturkatastrofer samt andra handlingar till följd av oförutsedda omständigheter.

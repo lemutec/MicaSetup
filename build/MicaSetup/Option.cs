@@ -174,6 +174,14 @@ public partial class Option
     public string LicenseFileType { get; internal set; } = "txt";
 
     /// <summary>
+    /// Supported UI culture names to enable (e.g. "en", "zh-Hans", "ja").
+    /// Default is English only. Keep in sync with MSBuild <c>SupportedLanguages</c> so unused language/license resources are not packed.
+    /// Culture "en" is always available as fallback.
+    /// </summary>
+    [Category("GlobalSetting")]
+    public string[] SupportLanguages { get; set; } = ["en", "zh-Hans", "zh-Hant", "ja"];
+
+    /// <summary>
     /// The file ext filter to remove when overlay install
     /// Using just like "exe,dll,pdb"
     /// </summary>

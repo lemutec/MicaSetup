@@ -1,0 +1,37 @@
+Bu Kullanıcı Lisans Sözleşmesi (bundan böyle "Sözleşme"), hizmetlerimizin kullanıcısı olarak sizinle (bundan böyle "Kullanıcı") aramızda yasal olarak bağlayıcı bir sözleşme oluşturur. Size "sizin", "sizin" gibi ikinci kişi zamirleriyle hitap edilecektir. Biz, Şirket, "biz", "bizim" ve "bizim" gibi zamirlerle anılacağız. Toplu olarak siz ve Şirket "Taraflar", ayrı ayrı ise "Taraf" olarak anılabilir.
+Yazılımımıza herhangi bir şekilde erişerek, indirerek, yükleyerek veya başka bir şekilde kullanarak, bu Sözleşmenin tamamına bağlı olmayı kabul edersiniz. Kabul etmiyorsanız, Yazılımı kullanmayı derhal bırakmalısınız.
+
+YAZILIM LİSANSI: Yazılıma satın alma veya diğer yasal yollarla yasal olarak eriştiğinizde, bu Sözleşmenin tüm hüküm ve koşullarına tabi olarak, Yazılımı kullanmak için münhasır olmayan, devredilemez, sınırlı, geri alınabilir kişisel bir lisans ("Lisans") veririz. Bu Lisans, Şirket tarafından geliştirilen belgelerin, verilerin veya bilgilerin ve Yazılımı kullanmanıza yardımcı olabilecek diğer materyallerin kullanımını da kapsar. Bu Lisans herhangi bir ticari veya iş amacıyla kullanılamaz. Bu Lisans, Şirketten açık, yasal, yazılı izin olmaksızın üçüncü taraflara devredilemez ve Yazılımı kullanmayı bıraktığınızda sona erer.
+Bu Lisans, sizinle Şirket arasında ayrı bir yazılı sözleşme yapılmadıkça, Yazılımın tüm yasal Kullanıcıları için geçerlidir.
+
+EK HÜKÜMLER: Taraflar arasındaki ilişkiye, Şirket Hüküm ve Koşulları veya Kullanım Koşulları, Şirket Gizlilik Politikası ve bizimle ilişkinizi düzenleyen diğer yazılı sözleşmeler gibi ek hükümler uygulanabilir. Burada yer alan hiçbir şey, başka bir yazılı sözleşmenin hükümlerini kısıtlamayı amaçlamaz. Bunun yerine, ilgili tüm belgeler mümkün olduğunca geniş yorumlanmalıdır.
+
+FİKRİ MÜLKİYET: Yazılımın, Şirket web sitesinin ve Şirket tarafından sağlanan tüm hizmetlerin, tüm telif hakları, ticari markalar, ticari sırlar, patentler ve diğer fikri mülkiyet ("Şirket Fikri Mülkiyeti") dahil olmak üzere Şirketin mülkiyetinde olduğunu kabul edersiniz. Şirketin, Şirket Fikri Mülkiyeti üzerindeki tüm hak, unvan ve menfaatlere sahip olduğunu ve Şirket Fikri Mülkiyetini yasadışı veya ihlal edici amaçlarla kullanmayacağınızı kabul edersiniz. Şirketten açık yazılı izin olmaksızın, elektronik yollarla veya yeni ticari markalar, ticari unvanlar, hizmet markaları veya URL (Uniform Resource Locator) kaydı yoluyla dahil olmak üzere, Şirket Fikri Mülkiyetini hiçbir şekilde çoğaltmayacağınızı veya dağıtmayacağınızı kabul edersiniz.
+
+KABUL EDİLEBİLİR KULLANIM: Yazılımı yasadışı amaçlarla veya bu madde kapsamında yasaklanan amaçlarla kullanmayacağınızı kabul edersiniz. Yazılımı, Şirket web sitesine, hizmetlerine veya genel iş faaliyetlerine zarar verebilecek herhangi bir şekilde kullanmayacağınızı kabul edersiniz.
+Ayrıca Yazılımı aşağıdaki amaçlarla kullanmayacağınızı kabul edersiniz:
+I) Başkalarını taciz etmek, kötüye kullanmak veya tehdit etmek ya da herhangi bir kişinin yasal haklarını ihlal etmek;
+II) Şirketin veya herhangi bir üçüncü tarafın fikri mülkiyet haklarını ihlal etmek;
+III) Başkasının mülküne zarar verebilecek bilgisayar virüsleri veya diğer yazılımları yüklemek veya yaymak;
+IV) Herhangi bir dolandırıcılık işlemek;
+V) Yasadışı kumar, çekiliş veya piramit şemalarına katılmak veya bunları oluşturmak;
+VI) Müstehcen veya iftira niteliğinde materyaller yayınlamak veya dağıtmak;
+VII) Herhangi bir gruba karşı şiddeti, nefreti veya ayrımcılığı kışkırtan materyaller yayınlamak veya dağıtmak;
+VIII) Başkaları hakkında yasadışı olarak bilgi toplamak.
+
+TERSİNE MÜHENDİSLİK VE GÜVENLİK: Aşağıdaki eylemleri gerçekleştirmeyeceğinizi kabul edersiniz:
+a) Yazılımı veya Yazılım içindeki veya Yazılımla veya Şirket web sitesiyle ilgili herhangi bir kodu tersine mühendislik yapmak, tersine mühendislik yapmaya çalışmak veya disassemble etmek;
+b) Yetkisiz erişim, şifreleme veya diğer güvenlik araçlarının atlatılması, veri madenciliği veya herhangi bir ana bilgisayara, kullanıcıya veya ağa müdahale yoluyla Yazılımın güvenliğini ihlal etmek;
+c) Eşler arası ağ veya diğer fikri mülkiyet atlatma araçları gibi yollarla Yazılım kopyalarını yasadışı olarak kopyalamak veya dağıtmak.
+
+TAZMİNAT: Yazılımı kullanımınız veya kötüye kullanımınız, bu Sözleşmeyi ihlaliniz veya davranış ve eylemlerinizden kaynaklanabilecek veya bunlarla ilgili olabilecek, makul avukatlık ücretleri dahil tüm yasal talep ve isteklere karşı Şirketi ve varsa bağlı kuruluşlarını savunmayı, tazmin etmeyi ve bizi sorumlu tutmamayı kabul edersiniz. Şirketin kendi yasal danışmanını seçebileceğini ve Şirket istediği takdirde kendi savunmasına katılabileceğini kabul edersiniz.
+
+SPAM POLİTİKASI: Yazılımı veya Şirketin herhangi bir hizmetini, başkalarının e-posta adreslerini ve kişisel bilgilerini toplamak veya toplu ticari e-postalar göndermek dahil olmak üzere yasadışı spam faaliyetleri için kullanmanız kesinlikle yasaktır.
+
+HİZMET KESİNTİLERİ: Şirket, planlı veya plansız olarak bakım veya acil hizmetler gerçekleştirmek için Yazılıma erişimi kesmek zorunda kalabilir. Yazılıma erişiminizin herhangi bir nedenle beklenmedik veya plansız kesintilerden etkilenebileceğini kabul edersiniz; ancak Şirket, bu tür kesintilerden kaynaklanan herhangi bir zarar veya kayıptan sorumlu olmayacaktır.
+
+GARANTİ YOK: Yazılımı kullanımınızın yalnızca sizin riskiniz altında olduğunu ve Yazılımın "olduğu gibi" sunulduğunu kabul edersiniz. Şirket, belirli bir amaca uygunluk zımni garantisi ve satılabilirlik zımni garantisi dahil ancak bunlarla sınırlı olmamak üzere, her türlü açık veya zımni garantiyi açıkça reddeder. Şirket, Yazılımın ihtiyaçlarınızı karşılayacağına veya Yazılıma erişimin kesintisiz veya hatasız olacağına dair hiçbir garanti vermez. Şirket ayrıca Yazılım içinde yer alan herhangi bir bilginin güvenilirliği veya doğruluğu konusunda da hiçbir garanti vermez. Yazılımı kullanımınızdan kaynaklanan, bilgisayar sisteminize veya veri kaybınıza yol açabilecek herhangi bir zararın yalnızca sizin sorumluluğunuzda olduğunu ve Şirketin bu tür zarar veya kayıplardan sorumlu olmadığını kabul edersiniz.
+
+DEVİR: Bu Sözleşme veya burada verilen haklar, sizin tarafınızdan tamamen veya kısmen devredilemez, satılamaz, kiralanamaz veya başka şekilde aktarılamaz. Bu Sözleşme veya burada verilen haklar Şirket tarafından devredilir, satılır, kiralanır veya başka şekilde aktarılırsa, Şirketin hak ve yükümlülükleri tüm devir alanlara, yöneticilere, haleflere ve icra memurlarına bağlayıcı olacaktır.
+
+MÜCBİR SEBEP: Şirket, makul kontrolü dışındaki nedenlerden kaynaklanan ifa edememe durumlarından sorumlu değildir; bunlar arasında, ancak bunlarla sınırlı olmamak üzere, doğal afetler, sivil otoritelerin eylemleri, askeri otoritelerin eylemleri, ayaklanmalar, ambargolar, doğa olayları ve doğal afetler ile öngörülemeyen koşullardan kaynaklanan diğer eylemler yer alır.

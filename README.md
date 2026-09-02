@@ -48,7 +48,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Shortcut           | ☑          | Support to create your app shortcut (`.lnk`).                |
 | Fork Process       | ☑          | Support setup process forked itself to avoid the file lock.  |
 | Folder Picker      | ☑          | Support advanced Folder Picker by `WindowsAPICodePack-Shell`. |
-| Globalization      | ☑          | Support English, Chinese and Japanese nowaday.<br />Support other languages customized by yourself. |
+| Globalization      | ☑          | Default UI languages: `en`, `zh-Hans`, `zh-Hant`, `ja` via `Option.SupportLanguages`. Set MSBuild `SupportedLanguages` the same way to keep the exe small. |
 | Registry           | ☑          | Support x86/x64 registry.                                    |
 | Create StartMenu   | ☑          | Support to create Start Menu in system folder.               |
 | Create QuickLaunch | ☑          | Support to create Quick Launch shortcut (`.lnk`).<br />Quick Launch has been obsoleted since Windows 10. |

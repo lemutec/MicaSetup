@@ -1,0 +1,37 @@
+Este Contrato de Licença de Usuário (doravante, o «Contrato») estabelece um acordo juridicamente vinculativo entre você, como usuário de nossos serviços (doravante, o «Usuário»). Você será referido por pronomes de segunda pessoa como «seu» e «sua». Nós, a Empresa, seremos referidos por pronomes como «nós», «nosso» e «nossa». Coletivamente, você e a Empresa poderão ser denominados as «Partes» e individualmente cada «Parte».
+Ao acessar, baixar, instalar ou utilizar de qualquer forma nosso Software, você concorda em ficar vinculado integralmente a este Contrato. Se você não concordar, deve cessar imediatamente o uso do Software.
+
+LICENÇA DE SOFTWARE: Quando você acessa legalmente o Software, seja por compra ou por outros meios legais, concedemos a você, sujeito a todos os termos e condições deste Contrato, uma licença pessoal não exclusiva, intransferível, limitada e revogável para usar o Software (a «Licença»). Esta Licença abrange o uso da documentação, dados ou informações desenvolvidos pela Empresa e outros materiais que possam auxiliar no seu uso do Software. Esta Licença não pode ser usada para fins comerciais ou empresariais. Esta Licença não pode ser transferida a terceiros sem permissão expressa, legal e por escrito da Empresa, e esta Licença termina quando você cessa o uso do Software.
+Esta Licença se aplica a todos os Usuários legais do Software, salvo se houver um acordo escrito separado entre você e a Empresa.
+
+TERMOS ADICIONAIS: Termos adicionais podem ser aplicáveis à relação entre as Partes, como os Termos e Condições ou Termos de Uso da Empresa, a Política de Privacidade da Empresa e quaisquer outros acordos escritos que regulem sua relação conosco. Nada aqui contido pretende restringir os termos de qualquer outro acordo escrito. Em vez disso, todos os documentos relevantes devem ser interpretados da forma mais ampla possível.
+
+PROPRIEDADE INTELECTUAL: Você concorda que o Software, o site da Empresa e todos os serviços fornecidos pela Empresa são propriedade da Empresa, incluindo todos os direitos autorais, marcas registradas, segredos comerciais, patentes e outra propriedade intelectual (a «PI da Empresa»). Você concorda que a Empresa detém todos os direitos, títulos e interesses sobre a PI da Empresa e que não usará a PI da Empresa para fins ilícitos ou infratores. Você concorda em não reproduzir ou distribuir a PI da Empresa de qualquer forma, incluindo eletronicamente ou mediante registro de novas marcas, nomes comerciais, marcas de serviço ou Uniform Resource Locators (URLs), sem permissão expressa por escrito da Empresa.
+
+USO ACEITÁVEL: Você concorda em não usar o Software para fins ilícitos ou para qualquer finalidade proibida nesta cláusula. Você concorda em não usar o Software de forma que possa danificar o site, os serviços ou o negócio geral da Empresa.
+Você concorda ainda em não usar o Software:
+I) Para assediar, abusar ou ameaçar terceiros ou, de outra forma, violar os direitos legais de qualquer pessoa;
+II) Para violar direitos de propriedade intelectual da Empresa ou de terceiros;
+III) Para enviar ou de outra forma disseminar vírus de computador ou outro software que possa danificar bens de terceiros;
+IV) Para perpetrar fraude;
+V) Para participar ou criar jogos de azar, sorteios ou esquemas de pirâmide ilegais;
+VI) Para publicar ou distribuir material obsceno ou difamatório;
+VII) Para publicar ou distribuir material que incite à violência, ao ódio ou à discriminação contra qualquer grupo;
+VIII) Para coletar ilegalmente informações sobre terceiros.
+
+ENGENHARIA REVERSA E SEGURANÇA: Você concorda em não realizar nenhuma das seguintes ações:
+a) Engenharia reversa, ou tentar realizar engenharia reversa ou desmontar o Software ou qualquer código contido no Software ou no site da Empresa ou relacionado a estes;
+b) Violar a segurança do Software por meio de acesso não autorizado, contorno de criptografia ou outras ferramentas de segurança, mineração de dados ou interferência com qualquer host, usuário ou rede;
+c) Copiar ou de outra forma distribuir ilegalmente cópias do Software, como por meio de qualquer rede peer-to-peer ou outra ferramenta de contorno de propriedade intelectual.
+
+INDENIZAÇÃO: Você concorda em defender e indenizar a Empresa e quaisquer afiliadas (se aplicável) e mantê-las isentas de quaisquer reclamações e exigências legais, incluindo honorários advocatícios razoáveis, que possam surgir ou estar relacionadas ao seu uso ou uso indevido do Software, à sua violação deste Contrato ou à sua conduta ou ações. Você concorda que a Empresa poderá selecionar seu próprio advogado e participar de sua própria defesa, se desejar.
+
+POLÍTICA ANTI-SPAM: É estritamente proibido usar o Software ou quaisquer serviços da Empresa para atividades de spam ilegais, incluindo coleta de endereços de e-mail e informações pessoais de terceiros ou envio de e-mails comerciais em massa.
+
+INTERRUPÇÕES DE SERVIÇO: A Empresa pode precisar interromper o acesso ao Software para realizar manutenção ou serviços de emergência, de forma programada ou não programada. Você concorda que seu acesso ao Software pode ser afetado por indisponibilidade imprevista ou não programada, por qualquer motivo, mas que a Empresa não terá responsabilidade por danos ou perdas causados por tal indisponibilidade.
+
+SEM GARANTIAS: Você concorda que seu uso do Software é por sua conta e risco exclusivos e que o Software é fornecido «no estado em que se encontra». A Empresa declina expressamente por meio deste quaisquer garantias expressas ou implícitas de qualquer tipo, incluindo, sem limitação, a garantia implícita de adequação a uma finalidade específica e a garantia implícita de comercialização. A Empresa não garante que o Software atenderá às suas necessidades ou que o acesso ao Software será ininterrupto ou livre de erros. A Empresa também não oferece garantias quanto à confiabilidade ou exatidão de qualquer informação contida no Software. Você concorda que quaisquer danos que possam ocorrer a você, ao seu sistema de computador ou como resultado da perda de seus dados pelo uso do Software são de sua exclusiva responsabilidade e que a Empresa não é responsável por tais danos ou perdas.
+
+CESSÃO: Este Contrato, ou os direitos concedidos nos termos dele, não podem ser cedidos, vendidos, alugados ou de outra forma transferidos, no todo ou em parte, por você. Caso este Contrato, ou os direitos concedidos nos termos dele, sejam cedidos, vendidos, alugados ou de outra forma transferidos pela Empresa, os direitos e responsabilidades da Empresa vincularão e beneficiarão quaisquer cessionários, administradores, sucessores e executores.
+
+FORÇA MAIOR: A Empresa não é responsável por qualquer falha de desempenho devido a causas fora de seu controle razoável, incluindo, sem limitação, casos fortuitos, atos de autoridades civis, atos de autoridades militares, tumultos, embargos, fenômenos naturais e desastres naturais, e outros atos devidos a circunstâncias imprevistas.

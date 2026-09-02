@@ -1,0 +1,37 @@
+Perjanjian Lisensi Pengguna ini (selanjutnya disebut "Perjanjian") merupakan perjanjian yang mengikat secara hukum antara Anda, sebagai pengguna layanan kami (selanjutnya disebut "Pengguna"). Anda akan disebut dengan kata ganti orang kedua seperti "Anda" dan "milik Anda". Kami, Perusahaan, akan disebut dengan kata ganti seperti "kami" dan "milik kami". Secara bersama-sama, Anda dan Perusahaan dapat disebut "Para Pihak" dan secara individual disebut "Pihak".
+Dengan mengakses, mengunduh, menginstal, atau menggunakan Perangkat Lunak kami dengan cara apa pun, Anda setuju untuk terikat oleh Perjanjian ini secara keseluruhan. Jika Anda tidak setuju, Anda harus segera berhenti menggunakan Perangkat Lunak.
+
+LISENSI PERANGKAT LUNAK: Ketika Anda secara sah mengakses Perangkat Lunak, baik melalui pembelian maupun cara sah lainnya, kami memberikan Anda, tunduk pada semua syarat dan ketentuan Perjanjian ini, lisensi pribadi non-eksklusif, tidak dapat dialihkan, terbatas, dan dapat dicabut untuk menggunakan Perangkat Lunak ("Lisensi"). Lisensi ini mencakup penggunaan dokumentasi, data, atau informasi yang dikembangkan oleh Perusahaan, serta materi lain yang dapat membantu penggunaan Perangkat Lunak oleh Anda. Lisensi ini tidak boleh digunakan untuk tujuan bisnis atau komersial apa pun. Lisensi ini tidak dapat dialihkan kepada pihak ketiga tanpa izin tertulis, tegas, dan sah dari Perusahaan, dan Lisensi ini berakhir apabila Anda berhenti menggunakan Perangkat Lunak.
+Lisensi ini berlaku bagi semua Pengguna sah Perangkat Lunak, kecuali apabila perjanjian tertulis terpisah telah dibuat antara Anda dan Perusahaan.
+
+KETENTUAN TAMBAHAN: Ketentuan tambahan dapat berlaku terhadap hubungan antar Para Pihak, seperti Syarat & Ketentuan atau Ketentuan Penggunaan Perusahaan, Kebijakan Privasi Perusahaan, serta perjanjian tertulis lain yang mengatur hubungan Anda dengan kami. Tidak ada ketentuan di sini yang dimaksudkan untuk membatasi ketentuan perjanjian tertulis lainnya. Sebaliknya, semua dokumen terkait harus ditafsirkan seluas mungkin.
+
+KEKAYAAN INTELEKTUAL: Anda setuju bahwa Perangkat Lunak, situs web Perusahaan, dan semua layanan yang disediakan oleh Perusahaan adalah milik Perusahaan, termasuk semua hak cipta, merek dagang, rahasia dagang, paten, dan kekayaan intelektual lainnya ("KI Perusahaan"). Anda setuju bahwa Perusahaan memiliki seluruh hak, kepemilikan, dan kepentingan atas KI Perusahaan dan bahwa Anda tidak akan menggunakan KI Perusahaan untuk tujuan yang melanggar hukum atau melanggar hak. Anda setuju untuk tidak mereproduksi atau mendistribusikan KI Perusahaan dengan cara apa pun, termasuk secara elektronik atau melalui pendaftaran merek dagang, nama dagang, merek jasa, atau Uniform Resource Locator (URL) baru, tanpa izin tertulis tegas dari Perusahaan.
+
+PENGGUNAAN YANG DAPAT DITERIMA: Anda setuju untuk tidak menggunakan Perangkat Lunak untuk tujuan yang melanggar hukum atau tujuan apa pun yang dilarang dalam klausul ini. Anda setuju untuk tidak menggunakan Perangkat Lunak dengan cara apa pun yang dapat merusak situs web, layanan, atau bisnis Perusahaan secara umum.
+Anda selanjutnya setuju untuk tidak menggunakan Perangkat Lunak:
+I) Untuk melecehkan, menyalahgunakan, atau mengancam orang lain atau melanggar hak hukum siapa pun;
+II) Untuk melanggar hak kekayaan intelektual Perusahaan atau pihak ketiga mana pun;
+III) Untuk mengunggah atau menyebarluaskan virus komputer atau perangkat lunak lain yang dapat merusak properti orang lain;
+IV) Untuk melakukan penipuan apa pun;
+V) Untuk terlibat atau membuat perjudian, undian, atau skema piramida yang melanggar hukum;
+VI) Untuk menerbitkan atau mendistribusikan materi cabul atau fitnah;
+VII) Untuk menerbitkan atau mendistribusikan materi yang menghasut kekerasan, kebencian, atau diskriminasi terhadap kelompok apa pun;
+VIII) Untuk mengumpulkan informasi tentang orang lain secara melanggar hukum.
+
+REKAYASA BALIK & KEAMANAN: Anda setuju untuk tidak melakukan tindakan berikut:
+a) Merekayasa balik, atau mencoba merekayasa balik atau membongkar Perangkat Lunak atau kode apa pun di dalam atau terkait dengan Perangkat Lunak atau situs web Perusahaan;
+b) Melanggar keamanan Perangkat Lunak melalui akses tidak sah, pengelakan enkripsi atau alat keamanan lain, penambangan data, atau gangguan terhadap host, pengguna, atau jaringan apa pun;
+c) Menyalin atau mendistribusikan salinan Perangkat Lunak secara melanggar hukum, seperti melalui jaringan peer-to-peer atau alat pengelakan kekayaan intelektual lainnya.
+
+GANTI RUGI: Anda setuju untuk membela dan memberi ganti rugi kepada Perusahaan dan afiliasinya (jika ada) serta membebaskan kami dari tanggung jawab atas setiap dan semua klaim serta tuntutan hukum, termasuk biaya pengacara yang wajar, yang mungkin timbul dari atau terkait dengan penggunaan atau penyalahgunaan Perangkat Lunak oleh Anda, pelanggaran Anda terhadap Perjanjian ini, atau perilaku dan tindakan Anda. Anda setuju bahwa Perusahaan dapat memilih penasihat hukumnya sendiri dan dapat berpartisipasi dalam pembelaannya sendiri, jika Perusahaan menghendakinya.
+
+KEBIJAKAN SPAM: Anda dilarang keras menggunakan Perangkat Lunak atau layanan Perusahaan untuk aktivitas spam ilegal, termasuk mengumpulkan alamat email dan informasi pribadi orang lain atau mengirim email komersial massal apa pun.
+
+GANGGUAN LAYANAN: Perusahaan mungkin perlu menghentikan akses ke Perangkat Lunak untuk melakukan pemeliharaan atau layanan darurat secara terjadwal maupun tidak terjadwal. Anda setuju bahwa akses Anda ke Perangkat Lunak dapat terpengaruh oleh downtime yang tidak terduga atau tidak terjadwal, karena alasan apa pun, tetapi Perusahaan tidak bertanggung jawab atas kerusakan atau kerugian apa pun yang disebabkan oleh downtime tersebut.
+
+TANPA JAMINAN: Anda setuju bahwa penggunaan Perangkat Lunak sepenuhnya menjadi risiko Anda sendiri dan bahwa Perangkat Lunak disediakan "apa adanya". Perusahaan dengan tegas menolak setiap dan semua jaminan tersurat maupun tersirat dalam bentuk apa pun, termasuk namun tidak terbatas pada jaminan tersirat kesesuaian untuk tujuan tertentu dan jaminan tersirat kelayakan jual. Perusahaan tidak memberikan jaminan bahwa Perangkat Lunak akan memenuhi kebutuhan Anda atau bahwa akses ke Perangkat Lunak akan berlangsung tanpa gangguan atau bebas kesalahan. Perusahaan juga tidak memberikan jaminan mengenai keandalan atau keakuratan informasi apa pun yang terdapat dalam Perangkat Lunak. Anda setuju bahwa kerusakan apa pun yang mungkin terjadi pada Anda, melalui sistem komputer Anda, atau akibat kehilangan data Anda dari penggunaan Perangkat Lunak adalah tanggung jawab Anda sepenuhnya dan bahwa Perusahaan tidak bertanggung jawab atas kerusakan atau kerugian tersebut.
+
+PENGALIHAN: Perjanjian ini, atau hak yang diberikan berdasarkan Perjanjian ini, tidak dapat dialihkan, dijual, disewakan, atau dipindahkan secara keseluruhan maupun sebagian oleh Anda. Apabila Perjanjian ini, atau hak yang diberikan berdasarkan Perjanjian ini, dialihkan, dijual, disewakan, atau dipindahkan oleh Perusahaan, hak dan kewajiban Perusahaan akan mengikat dan berlaku bagi setiap penerima pengalihan, administrator, penerus, dan pelaksana.
+
+KEADAAN KAHAR: Perusahaan tidak bertanggung jawab atas kegagalan untuk melaksanakan kewajiban karena sebab di luar kendali wajar Perusahaan, termasuk namun tidak terbatas pada bencana alam, tindakan otoritas sipil, tindakan otoritas militer, kerusuhan, embargo, fenomena alam dan bencana alam, serta tindakan lain yang mungkin disebabkan oleh keadaan yang tidak terduga.

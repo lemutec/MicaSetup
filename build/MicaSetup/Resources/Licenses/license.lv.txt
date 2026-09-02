@@ -1,0 +1,37 @@
+Šis Lietotāja licences līgums (turpmāk «Līgums») noslēdz juridiski saistošu vienošanos starp jums kā mūsu pakalpojumu lietotāju (turpmāk «Lietotājs») un mums. Jūs tiksiet apzīmēts ar otās personas vietniekvārdiem, piemēram, «jūsu». Mēs, Uzņēmums, tiksim apzīmēti ar vietniekvārdiem, piemēram, «mums», «mūsu». Kopā jūs un Uzņēmums var tikt saukti par «Pusēm», bet atsevišķi par «Pusi».
+Piekļūstot, lejupielādējot, instalējot vai citādi izmantojot mūsu Programmatūru jebkādā veidā, jūs piekrītat būt saistītam ar visu šo Līgumu. Ja nepiekrītat, jums nekavējoties jāpārtrauc Programmatūras lietošana.
+
+PROGRAMMATŪRAS LICENCE: Kad jūs likumīgi piekļūstat Programmatūrai, vai nu iegādājoties to, vai citos likumīgos veidos, mēs piešķiram jums, ievērojot visus šī Līguma noteikumus un nosacījumus, neekskluzīvu, nenododamu, ierobežotu, atsaucamu personīgu licenci Programmatūras lietošanai («Licence»). Šī Licence attiecas uz Uzņēmuma izstrādātās dokumentācijas, datu vai informācijas un citu materiālu lietošanu, kas var palīdzēt jums lietot Programmatūru. Šo Licenci nedrīkst izmantot komerciāliem vai uzņēmējdarbības mērķiem. Šo Licenci nedrīkst nodot trešajām personām bez Uzņēmuma skaidras, likumīgas, rakstiskas atļaujas, un šī Licence beidzas, kad jūs pārtraucat Programmatūras lietošanu.
+Šī Licence attiecas uz visiem likumīgiem Programmatūras Lietotājiem, ja vien starp jums un Uzņēmumu nav noslēgts atsevišķs rakstisks līgums.
+
+PAPILDU NOTEIKUMI: Papildu noteikumi var attiekties uz Pušu attiecībām, piemēram, Uzņēmuma noteikumi un nosacījumi vai lietošanas noteikumi, Uzņēmuma privātuma politika un citi rakstiski līgumi, kas regulē jūsu attiecības ar mums. Nekas šajā dokumentā nav paredzēts, lai ierobežotu jebkura cita rakstiska līguma noteikumus. Tā vietā visi attiecīgie dokumenti jāinterpretē pēc iespējas plašāk.
+
+INTELEKTUĀLAIS ĪPAŠUMS: Jūs piekrītat, ka Programmatūra, Uzņēmuma tīmekļa vietne un visi Uzņēmuma sniegtie pakalpojumi ir Uzņēmuma īpašums, ieskaitot visus autortiesības, preču zīmes, komercnoslēpumus, patentus un citu intelektuālo īpašumu («Uzņēmuma IP»). Jūs piekrītat, ka Uzņēmumam pieder visas tiesības, īpašumtiesības un intereses attiecībā uz Uzņēmuma IP un ka jūs neizmantosiet Uzņēmuma IP nelikumīgiem vai tiesību pārkāpjošiem mērķiem. Jūs piekrītat nereproducēt un neizplatīt Uzņēmuma IP nekādā veidā, ieskaitot elektroniski vai reģistrējot jaunas preču zīmes, tirdzniecības nosaukumus, pakalpojumu zīmes vai Uniform Resource Locators (URL), bez Uzņēmuma skaidras rakstiskas atļaujas.
+
+PIEŅEMAMA LIETOŠANA: Jūs piekrītat neizmantot Programmatūru nelikumīgiem mērķiem vai jebkuram mērķim, kas ir aizliegts saskaņā ar šo klauzulu. Jūs piekrītat neizmantot Programmatūru tā, ka tas varētu kaitēt Uzņēmuma tīmekļa vietnei, pakalpojumiem vai vispārējai darbībai.
+Turklāt jūs piekrītat neizmantot Programmatūru:
+I) Lai uzmāktos, ļaunprātīgi izmantotu vai draudētu citiem vai citādi pārkāptu jebkuras personas likumīgās tiesības;
+II) Lai pārkāptu Uzņēmuma vai trešo personu intelektuālā īpašuma tiesības;
+III) Lai augšupielādētu vai citādi izplatītu datorvīrusus vai citu programmatūru, kas var kaitēt citu īpašumam;
+IV) Lai veiktu krāpšanu;
+V) Lai piedalītos nelikumīgās azartspēlēs, izlozēs vai piramīdas shēmās vai tās izveidotu;
+VI) Lai publicētu vai izplatītu neķītru vai apmelojošu materiālu;
+VII) Lai publicētu vai izplatītu materiālu, kas kūda uz vardarbību, naidu vai diskrimināciju pret jebkuru grupu;
+VIII) Lai nelikumīgi vāktu informāciju par citiem.
+
+REVERSE ENGINEERING UN DROŠĪBA: Jūs piekrītat neveikt nevienu no šādām darbībām:
+a) Reverse engineering, mēģināt veikt reverse engineering vai izjaukt Programmatūru vai jebkuru kodu Programmatūrā vai Uzņēmuma tīmekļa vietnē vai ar tiem saistītu;
+b) Pārkāpt Programmatūras drošību ar nesankcionētu piekļuvi, šifrēšanas apiešanu vai citiem drošības rīkiem, datu ieguvi vai iejaukšanos jebkurā resursdatorā, lietotājā vai tīklā;
+c) Kopēt vai citādi nelikumīgi izplatīt Programmatūras kopijas, piemēram, caur peer-to-peer tīklu vai citu intelektuālā īpašuma apiešanas rīku.
+
+ATLĪDZINĀŠANA: Jūs piekrītat aizstāvēt un atlīdzināt Uzņēmumam un tā saistītajiem uzņēmumiem (ja piemērojams) un turēt mūs nesodāmus pret visiem juridiskajiem prasījumiem un pieprasījumiem, ieskaitot saprātīgas advokāta honorārus, kas var rasties no jūsu Programmatūras lietošanas vai ļaunprātīgas izmantošanas, šī Līguma pārkāpuma vai jūsu uzvedības vai darbībām. Jūs piekrītat, ka Uzņēmums var izvēlēties savu juridisko padomnieku un piedalīties savā aizstāvībā, ja vēlas.
+
+SPAM POLITIKA: Jums ir stingri aizliegts izmantot Programmatūru vai jebkuru Uzņēmuma pakalpojumu nelikumīgām surogātpasta darbībām, ieskaitot e-pasta adrešu un personīgās informācijas vākšanu no citiem vai masveida komerciālu e-pastu sūtīšanu.
+
+PAKALPOJUMU PĀRTRAUKUMI: Uzņēmumam var būt nepieciešams pārtraukt piekļuvi Programmatūrai, lai veiktu plānotu vai neplānotu apkopi vai ārkārtas pakalpojumus. Jūs piekrītat, ka jūsu piekļuve Programmatūrai var tikt ietekmēta neparedzētas vai neplānotas dīkstāves dēļ jebkāda iemesla dēļ, bet Uzņēmumam nav atbildības par jebkādiem zaudējumiem vai kaitējumu, kas radies šādas dīkstāves rezultātā.
+
+BEZ GARANTIJĀM: Jūs piekrītat, ka Programmatūras lietošana notiek uz jūsu vienīgo un ekskluzīvo risku un ka Programmatūra tiek nodrošināta «kā ir». Uzņēmums ar šo skaidri atsakās no jebkurām tiešām vai netiešām garantijām jebkāda veida, ieskaitot, bet neaprobežojoties ar, netiešo garantiju par piemērotību konkrētam mērķim un netiešo garantiju par tirgojamību. Uzņēmums nesniedz garantijas, ka Programmatūra atbildīs jūsu vajadzībām vai ka piekļuve Programmatūrai būs nepārtraukta vai bez kļūdām. Uzņēmums arī nesniedz garantijas par informācijas uzticamību vai precizitāti Programmatūrā. Jūs piekrītat, ka jebkurš kaitējums, kas var jums rasties, caur jūsu datoru sistēmu vai datu zaudējuma rezultātā Programmatūras lietošanas dēļ, ir jūsu vienīgā atbildība un ka Uzņēmums nav atbildīgs par šādu kaitējumu vai zaudējumiem.
+
+NODOŠANA: Šo Līgumu vai saskaņā ar to piešķirtās tiesības jūs nedrīkstat nodot, pārdot, izīrēt vai citādi pārsūtīt pilnībā vai daļēji. Ja Uzņēmums nodod, pārdod, izīrē vai citādi pārsūta šo Līgumu vai saskaņā ar to piešķirtās tiesības, Uzņēmuma tiesības un pienākumi saistīs un labu gūs jebkuram cesionāram, administratoram, tiesību pārņēmējam un izpildītājam.
+
+NEPĀRVARĒAMS SPĒKS: Uzņēmums nav atbildīgs par neizpildi saistībā ar iemesliem, kas ir ārpus tā saprātīgas kontroles, ieskaitot, bet neaprobežojoties ar, nepārvaramu spēku, civilo iestāžu rīcību, militāro iestāžu rīcību, nemieriem, embargo, dabas parādībām un dabas katastrofām, un citām darbībām neparedzētu apstākļu dēļ.

@@ -1,0 +1,37 @@
+Denne Brukarlisensavtalen (heretter «Avtalen») utgjer ein juridisk bindande avtale mellom deg som brukar av tenestene våre (heretter «Brukaren»). Du vil bli omtala med andrepersonspronomen som «din» og «dine». Vi, Selskapet, vil bli omtala med pronomen som «oss», «vår» og «våre». Samla kan du og Selskapet omtalast som «Partane» og einskildvis som «Part».
+Ved å få tilgang til, laste ned, installere eller på annan måte bruke Programvaren vår, godtek du å vere bunden av heile denne Avtalen. Dersom du ikkje godtek, må du straks slutte å bruke Programvaren.
+
+PROGRAMVARELISENS: Når du lovleg får tilgang til Programvaren, anten ved kjøp eller på annan lovleg måte, gir vi deg, underlagt alle vilkår og betingelsar i denne Avtalen, ein ikkje-eksklusiv, ikkje-overførbar, avgrensa, tilbakekallbar personleg lisens til å bruke Programvaren («Lisensen»). Denne Lisensen omfattar bruk av dokumentasjon, data eller informasjon utvikla av Selskapet og anna materiale som kan hjelpe deg med å bruke Programvaren. Denne Lisensen kan ikkje brukast til forretnings- eller kommersielle føremål. Denne Lisensen kan ikkje overførast til tredjepartar utan uttrykkjeleg, lovleg, skriftleg løyve frå Selskapet, og denne Lisensen tek slutt når du sluttar å bruke Programvaren.
+Denne Lisensen gjeld for alle lovlege Brukarar av Programvaren, med mindre det er inngått ein separat skriftleg avtale mellom deg og Selskapet.
+
+YTTERLIGARE VILKÅR: Ytterligare vilkår kan gjelde for Partane si relasjon til kvarandre, som Selskapet si vilkår og betingelsar eller brukervilkår, Selskapet si personvernerklæring og andre skriftlege avtalar som regulerer forholdet ditt til oss. Ingenting heri er meint å avgrense vilkåra i andre skriftlege avtalar. I staden skal alle relevante dokument tolkast så breitt som mogleg.
+
+INTELLEKTUELL EIGEDOM: Du godtek at Programvaren, Selskapet si nettside og alle tenester levert av Selskapet høyrer til Selskapet, inkludert alle opphavsrettar, varemerke, forretningshemmeligheiter, patent og annan intellektuell eigedom («Selskapet si IP»). Du godtek at Selskapet eig alle rettar, titlar og interesser i og til Selskapet si IP, og at du ikkje vil bruke Selskapet si IP til ulovlege eller krenkjande føremål. Du godtek å ikkje reprodusere eller distribuere Selskapet si IP på nokon måte, inkludert elektronisk eller ved registrering av nye varemerke, handelsnamn, tenestemerke eller Uniform Resource Locators (URL-ar), utan uttrykkjeleg skriftleg løyve frå Selskapet.
+
+AKSEPTABEL BRUK: Du godtek å ikkje bruke Programvaren til ulovlege føremål eller til føremål som er forbode i denne klausulen. Du godtek å ikkje bruke Programvaren på ein måte som kan skade Selskapet si nettside, tenester eller generelle verksemd.
+Du godtek vidare å ikkje bruke Programvaren:
+I) For å trakassere, misbruke eller true andre eller på annan måte krenke ein persons lovlege rettar;
+II) For å krenke Selskapet si eller tredjepartar si immaterielle rettar;
+III) For å laste opp eller på annan måte spre datavirus eller annan programvare som kan skade andre si eigedom;
+IV) For å begå svindel;
+V) For å delta i eller opprette ulovleg gambling, lotteri eller pyramidespel;
+VI) For å publisere eller distribuere obskønt eller ærekrenkjande materiale;
+VII) For å publisere eller distribuere materiale som oppfordrar til vald, hat eller diskriminering mot ei gruppe;
+VIII) For ulovleg å samle inn informasjon om andre.
+
+REVERSE ENGINEERING OG SIKKERHEIT: Du godtek å ikkje utføre nokon av følgjande handlingar:
+a) Reverse engineering, eller prøve reverse engineering eller demontere Programvaren eller kode i eller relatert til Programvaren eller Selskapet si nettside;
+b) Krenke Programvaren si sikkerheit gjennom uautorisert tilgang, omgåing av kryptering eller andre sikkerheitsverktøy, datamining eller innblanding med vert, brukar eller nettverk;
+c) Kopiere eller på annan måte ulovleg distribuere kopiar av Programvaren, til dømes via eit peer-to-peer-nettverk eller anna verktøy for omgåing av intellektuell eigedom.
+
+SKADESLØSHALDING: Du godtek å forsvare og halde Selskapet og eventuelle tilknytte selskap skadesløse mot eit kvart juridisk krav og eit kvart krav, inkludert rimelege advokathonorarar, som kan oppstå frå eller relaterast til bruken eller misbruken din av Programvaren, brotet ditt på denne Avtalen eller oppførselen eller handlingane dine. Du godtek at Selskapet kan velje sin eigen juridiske rådgjevar og delta i sitt eige forsvar, dersom Selskapet ønskjer det.
+
+SPAMPOLITIKK: Det er strengt forbode å bruke Programvaren eller nokon av Selskapet sine tenester til ulovlege spamaktivitetar, inkludert innsamling av e-postadresser og personleg informasjon frå andre eller sending av massekommersielle e-postar.
+
+TENESTEAVBROTT: Selskapet kan trenge å avbryte tilgangen til Programvaren for å utføre planlagt eller uplanlagt vedlikehald eller nødtenester. Du godtek at tilgangen din til Programvaren kan påverkast av uforutsett eller uplanlagt nedetid av kva grunn som helst, men at Selskapet ikkje har ansvar for skade eller tap som følgje av slik nedetid.
+
+INGEN GARANTiar: Du godtek at bruken din av Programvaren skjer på din eigen og utelukkande risiko, og at Programvaren blir levert «som ho er». Selskapet fråskriv seg herved uttrykkjeleg kvar uttrykkjeleg eller underforstått garanti av nokon art, inkludert, men ikkje avgrensa til, den underforståtte garantien om eignaheit for eit bestemt føremål og den underforståtte garantien om salbarheit. Selskapet gir ingen garantiar for at Programvaren oppfyller behova dine eller at tilgangen til Programvaren vil vere uavbroten eller feilfri. Selskapet gir heller ingen garantiar for pålitelegheita eller nøyaktigheita av informasjon i Programvaren. Du godtek at kvar skade som måtte oppstå for deg, via datasystemet ditt, eller som følgje av tap av dataa dine ved bruken din av Programvaren, er ditt eige ansvar, og at Selskapet ikkje er ansvarleg for slik skade eller tap.
+
+OVERDRAGING: Denne Avtalen, eller rettane gitt i henhold til han, kan ikkje av deg overdrast, seljast, leasast eller på annan måte overførast heilt eller delvis. Dersom denne Avtalen, eller rettane gitt i henhold til han, vert overdratt, seld, leasast eller på annan måte overført av Selskapet, skal Selskapet sine rettar og plikter binde og komme til gode for kvar ervervar, administrator, etterfølgjar og bobestyrar.
+
+FORCE MAJEURE: Selskapet er ikkje ansvarleg for manglande oppfylling som følgje av årsaker utanfor rimeleg kontroll, inkludert, men ikkje avgrensa til, force majeure, sivile myndigheiter si handling, militære myndigheiter si handling, opptøyer, embargoar, naturens luner og naturkatastrofar samt andre handlingar som følgje av uforutsette omstende.

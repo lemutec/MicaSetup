@@ -1,0 +1,37 @@
+Denne Brugerlicensaftale (herefter «Aftalen») udgør en juridisk bindende aftale mellem dig som bruger af vores tjenester (herefter «Brugeren»). Du vil blive omtalt med andenpersons pronominer som «din» og «dine». Vi, Selskabet, vil blive omtalt med pronominer som «os», «vores» og «vort». Samlet kan du og Selskabet omtales som «Parterne» og enkeltvis som «Part».
+Ved at tilgå, downloade, installere eller på anden måde bruge vores Software accepterer du at være bundet af hele denne Aftale. Hvis du ikke accepterer, skal du straks ophøre med at bruge Softwaren.
+
+SOFTWARELICENS: Når du lovligt får adgang til Softwaren, enten ved køb eller på anden lovlig måde, giver vi dig, under forbehold af alle vilkår og betingelser i denne Aftale, en ikke-eksklusiv, ikke-overdragelig, begrænset, tilbagekaldelig personlig licens til at bruge Softwaren («Licensen»). Denne Licens omfatter brug af dokumentation, data eller information udviklet af Selskabet og andet materiale, der kan hjælpe dig med at bruge Softwaren. Denne Licens må ikke anvendes til erhvervs- eller kommercielle formål. Denne Licens må ikke overdrages til tredjeparter uden udtrykkelig, lovlig, skriftlig tilladelse fra Selskabet, og denne Licens ophører, når du stopper med at bruge Softwaren.
+Denne Licens gælder for alle lovlige Brugere af Softwaren, medmindre der er indgået en særskilt skriftlig aftale mellem dig og Selskabet.
+
+YDERLIGERE VILKÅR: Yderligere vilkår kan gælde for Parternes forhold til hinanden, såsom Selskabets vilkår og betingelser eller brugsvilkår, Selskabets privatlivspolitik og andre skriftlige aftaler, der regulerer dit forhold til os. Intet i dette dokument er ment at begrænse vilkårene i andre skriftlige aftaler. I stedet skal alle relevante dokumenter fortolkes så bredt som muligt.
+
+INTELLEKTUEL EJENDOM: Du accepterer, at Softwaren, Selskabets website og alle tjenester leveret af Selskabet tilhører Selskabet, herunder alle ophavsrettigheder, varemærker, forretningshemmeligheder, patenter og anden intellektuel ejendom («Selskabets IP»). Du accepterer, at Selskabet ejer alle rettigheder, titler og interesser i og til Selskabets IP, og at du ikke vil bruge Selskabets IP til ulovlige eller krænkende formål. Du accepterer ikke at reproducere eller distribuere Selskabets IP på nogen måde, herunder elektronisk eller ved registrering af nye varemærker, handelsnavne, servicemærker eller Uniform Resource Locators (URL'er), uden udtrykkelig skriftlig tilladelse fra Selskabet.
+
+ACCEPTABEL BRUG: Du accepterer ikke at bruge Softwaren til ulovlige formål eller til formål, der er forbudt i henhold til denne klausul. Du accepterer ikke at bruge Softwaren på en måde, der kan skade Selskabets website, tjenester eller generelle forretning.
+Du accepterer desuden ikke at bruge Softwaren:
+I) Til at chikanere, misbruge eller true andre eller på anden måde krænke en persons lovlige rettigheder;
+II) Til at krænke Selskabets eller tredjeparters intellektuelle ejendomsrettigheder;
+III) Til at uploade eller på anden måde sprede computervira eller anden software, der kan skade andres ejendom;
+IV) Til at begå svig;
+V) Til at deltage i eller oprette ulovligt hasardspil, lotterier eller pyramidespil;
+VI) Til at udgive eller distribuere obsønt eller ærekrænkende materiale;
+VII) Til at udgive eller distribuere materiale, der opfordrer til vold, had eller diskrimination mod en gruppe;
+VIII) Til ulovligt at indsamle information om andre.
+
+REVERSE ENGINEERING OG SIKKERHED: Du accepterer ikke at foretage nogen af følgende handlinger:
+a) Reverse engineering, eller forsøge på reverse engineering eller adskillelse af Softwaren eller enhver kode i eller relateret til Softwaren eller Selskabets website;
+b) Krænke Softwarens sikkerhed gennem uautoriseret adgang, omgåelse af kryptering eller andre sikkerhedsværktøjer, datamining eller indblanding med enhver vært, bruger eller netværk;
+c) Kopiere eller på anden måde ulovligt distribuere kopier af Softwaren, f.eks. via et peer-to-peer-netværk eller andet værktøj til omgåelse af intellektuel ejendom.
+
+SKADESLØSHOLDELSE: Du accepterer at forsvare og holde Selskabet og eventuelle tilknyttede selskaber skadesløse og fri for ethvert juridisk krav og ethvert krav, herunder rimelige advokatsalærer, der måtte opstå fra eller relateres til din brug eller misbrug af Softwaren, dit brud på denne Aftale eller din adfærd eller handlinger. Du accepterer, at Selskabet kan vælge sin egen juridiske rådgiver og deltage i sin egen forsvar, hvis Selskabet ønsker det.
+
+SPAMPOLITIK: Det er strengt forbudt at bruge Softwaren eller nogen af Selskabets tjenester til ulovlige spamaktiviteter, herunder indsamling af e-mailadresser og personlige oplysninger fra andre eller afsendelse af massekommercielle e-mails.
+
+TJENESTEAFBRYDELSER: Selskabet kan være nødt til at afbryde adgangen til Softwaren for at udføre planlagt eller uplanlagt vedligeholdelse eller nødtjenester. Du accepterer, at din adgang til Softwaren kan påvirkes af uforudset eller uplanlagt nedetid af enhver årsag, men at Selskabet ikke har noget ansvar for skade eller tab som følge af sådan nedetid.
+
+INGEN GARANTIER: Du accepterer, at din brug af Softwaren sker på din egen og udelukkende risiko, og at Softwaren leveres «som den er». Selskabet fraskriver sig hermed udtrykkeligt enhver udtrykkelig eller underforstået garanti af enhver art, herunder, men ikke begrænset til, den underforståede garanti for egnethed til et bestemt formål og den underforståede garanti for salgbarhed. Selskabet giver ingen garantier for, at Softwaren opfylder dine behov, eller at adgangen til Softwaren vil være uafbrudt eller fejlfri. Selskabet giver heller ingen garantier for pålideligheden eller nøjagtigheden af information i Softwaren. Du accepterer, at enhver skade, der måtte opstå for dig, via dit computersystem, eller som følge af tab af dine data ved din brug af Softwaren, er dit ene ansvar, og at Selskabet ikke er ansvarlig for sådan skade eller tab.
+
+OVERDRAGELSE: Denne Aftale eller de rettigheder, der gives herunder, må ikke af dig overdrages, sælges, leases eller på anden måde overføres helt eller delvist. Skulle denne Aftale eller de rettigheder, der gives herunder, af Selskabet overdrages, sælges, leases eller på anden måde overføres, vil Selskabets rettigheder og forpligtelser binde og komme til gode for enhver erhverver, administrator, efterfølger og bobestyrer.
+
+FORCE MAJEURE: Selskabet er ikke ansvarlig for manglende opfyldelse som følge af årsager uden for dets rimelige kontrol, herunder, men ikke begrænset til, force majeure, civile myndigheders handlinger, militære myndigheders handlinger, optøjer, embargoer, naturens luner og naturkatastrofer samt andre handlinger som følge af uforudsete omstændigheder.

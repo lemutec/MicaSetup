@@ -1,0 +1,22 @@
+<Project>
+    <!--
+      Semicolon-separated culture names to pack into the exe (language XAML + matching licenses).
+      Keep in sync with Option.SupportLanguages. "en" is always packed as fallback.
+      Default: en;zh-Hans;zh-Hant;ja
+
+      Set in this file, or override in the csproj / Directory.Build.props, e.g.:
+        <SupportedLanguages>en;zh-Hans;ja</SupportedLanguages>
+      (Avoid passing semicolon lists via `dotnet build -p:`, which splits on `;`.)
+    -->
+    <PropertyGroup>
+        <SupportedLanguages Condition="'$(SupportedLanguages)' == ''">en;zh-Hans;zh-Hant;ja</SupportedLanguages>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <_MicaSupportLanguage Include="$(SupportedLanguages)" />
+        <_MicaSupportLanguageExtra Include="@(_MicaSupportLanguage)" Exclude="en" />
+        <Page Remove="Resources\Languages\*.xaml" />
+        <Page Include="Resources\Languages\en.xaml" />
+        <Page Include="@(_MicaSupportLanguageExtra->'Resources\Languages\%(Identity).xaml')" />
+    </ItemGroup>
+</Project>

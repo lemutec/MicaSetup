@@ -7,9 +7,6 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/Languages/zh-Hans.xaml" />
-                <ResourceDictionary Source="/Resources/Languages/zh-Hant.xaml" />
-                <ResourceDictionary Source="/Resources/Languages/ja.xaml" />
                 <ResourceDictionary Source="/Resources/Languages/en.xaml" />
                 <design:ResourceResourceDictionary />
                 <design:GenericResourceDictionary />

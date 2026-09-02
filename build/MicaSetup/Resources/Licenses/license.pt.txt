@@ -1,0 +1,37 @@
+O presente Contrato de Licença de Utilizador (doravante, o «Contrato») estabelece um acordo juridicamente vinculativo entre si, enquanto utilizador dos nossos serviços (doravante, o «Utilizador»). Será referido através de pronomes de segunda pessoa como «seu» e «sua». Nós, a Empresa, seremos referidos com pronomes como «nós», «nosso» e «nossa». Coletivamente, o Utilizador e a Empresa poderão ser designados como as «Partes» e individualmente como «Parte».
+Ao aceder, transferir, instalar ou utilizar de qualquer forma o nosso Software, concorda em ficar vinculado na íntegra pelo presente Contrato. Se não concordar, deve cessar imediatamente a utilização do Software.
+
+LICENÇA DE SOFTWARE: Quando acede legalmente ao Software, seja por compra ou por outros meios legais, concedemos-lhe, sujeito a todos os termos e condições do presente Contrato, uma licença pessoal não exclusiva, intransmissível, limitada e revogável para utilizar o Software (a «Licença»). Esta Licença abrange a utilização da documentação, dados ou informações desenvolvidos pela Empresa e outros materiais que possam auxiliar na utilização do Software. Esta Licença não pode ser utilizada para fins comerciais ou empresariais. Esta Licença não pode ser transferida a terceiros sem autorização expressa, legal e escrita da Empresa, e termina com a cessação da utilização do Software.
+A presente Licença aplica-se a todos os Utilizadores legais do Software, salvo se tiver sido celebrado um acordo escrito separado entre si e a Empresa.
+
+TERMOS ADICIONAIS: Podem aplicar-se termos adicionais à relação entre as Partes, tais como os Termos e Condições ou Termos de Utilização da Empresa, a Política de Privacidade da Empresa e quaisquer outros acordos escritos que regulem a sua relação connosco. Nada do aqui contido se destina a restringir os termos de qualquer outro acordo escrito. Em vez disso, todos os documentos relevantes devem ser interpretados da forma mais ampla possível.
+
+PROPRIEDADE INTELECTUAL: Concorda que o Software, o website da Empresa e todos os serviços prestados pela Empresa são propriedade da Empresa, incluindo todos os direitos de autor, marcas registadas, segredos comerciais, patentes e outra propriedade intelectual (a «PI da Empresa»). Concorda que a Empresa detém todos os direitos, títulos e interesses sobre a PI da Empresa e que não utilizará a PI da Empresa para fins ilícitos ou infratores. Concorda em não reproduzir ou distribuir a PI da Empresa de qualquer forma, incluindo eletronicamente ou mediante registo de novas marcas, nomes comerciais, marcas de serviço ou Uniform Resource Locators (URLs), sem autorização expressa por escrito da Empresa.
+
+UTILIZAÇÃO ACEITÁVEL: Concorda em não utilizar o Software para fins ilícitos ou para qualquer fim proibido ao abrigo da presente cláusula. Concorda em não utilizar o Software de forma que possa danificar o website, os serviços ou a atividade geral da Empresa.
+Concorda ainda em não utilizar o Software:
+I) Para assediar, abusar ou ameaçar terceiros ou, de outra forma, violar os direitos legais de qualquer pessoa;
+II) Para violar direitos de propriedade intelectual da Empresa ou de terceiros;
+III) Para carregar ou, de outra forma, divulgar vírus informáticos ou outro software que possa danificar bens de terceiros;
+IV) Para perpetrar fraude;
+V) Para participar ou criar jogos de azar, sorteios ou esquemas piramidais ilegais;
+VI) Para publicar ou distribuir material obsceno ou difamatório;
+VII) Para publicar ou distribuir material que incite à violência, ao ódio ou à discriminação contra qualquer grupo;
+VIII) Para recolher ilegalmente informações sobre terceiros.
+
+ENGENHARIA INVERSA E SEGURANÇA: Concorda em não realizar qualquer das seguintes ações:
+a) Engenharia inversa, ou tentar realizar engenharia inversa ou desmontar o Software ou qualquer código contido no Software ou no website da Empresa ou relacionado com estes;
+b) Violar a segurança do Software através de acesso não autorizado, contorno de encriptação ou outras ferramentas de segurança, mineração de dados ou interferência com qualquer anfitrião, utilizador ou rede;
+c) Copiar ou, de outra forma, distribuir ilegalmente cópias do Software, por exemplo através de qualquer rede peer-to-peer ou outra ferramenta de contorno da propriedade intelectual.
+
+INDEMNIZAÇÃO: Concorda em defender e indemnizar a Empresa e quaisquer afiliadas (se aplicável) e mantê-los isentos de quaisquer reclamações e exigências legais, incluindo honorários razoáveis de advogados, que possam surgir ou estar relacionadas com a sua utilização ou utilização indevida do Software, a sua violação do presente Contrato ou a sua conduta ou ações. Concorda que a Empresa poderá selecionar o seu próprio advogado e participar na sua própria defesa, se assim o desejar.
+
+POLÍTICA ANTI-SPAM: É estritamente proibido utilizar o Software ou quaisquer serviços da Empresa para atividades de spam ilegais, incluindo a recolha de endereços de correio eletrónico e informações pessoais de terceiros ou o envio de correio comercial em massa.
+
+INTERRUPÇÕES DE SERVIÇO: A Empresa poderá necessitar de interromper o acesso ao Software para realizar manutenção ou serviços de emergência, de forma programada ou não programada. Concorda que o seu acesso ao Software pode ser afetado por períodos de indisponibilidade imprevistos ou não programados, por qualquer motivo, mas que a Empresa não terá qualquer responsabilidade por danos ou perdas resultantes de tais períodos de indisponibilidade.
+
+SEM GARANTIAS: Concorda que a sua utilização do Software é por sua conta e risco exclusivos e que o Software é fornecido «tal como está». A Empresa declina expressamente por meio do presente quaisquer garantias expressas ou implícitas de qualquer tipo, incluindo, sem limitação, a garantia implícita de adequação a um fim particular e a garantia implícita de comercialização. A Empresa não garante que o Software satisfará as suas necessidades ou que o acesso ao Software será ininterrupto ou isento de erros. A Empresa também não presta garantias quanto à fiabilidade ou exatidão de qualquer informação contida no Software. Concorda que quaisquer danos que possam ocorrer consigo, através do seu sistema informático, ou como resultado da perda dos seus dados pela utilização do Software são da sua exclusiva responsabilidade e que a Empresa não é responsável por tais danos ou perdas.
+
+CESSÃO: O presente Contrato, ou os direitos concedidos ao abrigo do mesmo, não podem ser cedidos, vendidos, arrendados ou de outra forma transferidos, no todo ou em parte, por si. Caso o presente Contrato, ou os direitos concedidos ao abrigo do mesmo, sejam cedidos, vendidos, arrendados ou de outra forma transferidos pela Empresa, os direitos e responsabilidades da Empresa vincularão e beneficiarão quaisquer cessionários, administradores, sucessores e executores.
+
+FORÇA MAIOR: A Empresa não é responsável por qualquer incumprimento devido a causas fora do seu controlo razoável, incluindo, sem limitação, casos de força maior, atos de autoridades civis, atos de autoridades militares, motins, embargos, fenómenos naturais e catástrofes naturais, e outros atos devidos a circunstâncias imprevistas.

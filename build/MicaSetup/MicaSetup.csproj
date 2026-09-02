@@ -27,6 +27,8 @@
         <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     </PropertyGroup>
 
+    <Import Project="Languages.props" />
+
     <PropertyGroup>
         <NoWarn>$(NoWarn);NU1902;NU1903;CS8625;</NoWarn>
     </PropertyGroup>
@@ -46,7 +48,8 @@
         <Resource Include="Resources\Fonts\*.ttf" />
         <Resource Include="Resources\Images\*.ico" />
         <Resource Include="Resources\Images\*.png" />
-        <Resource Include="Resources\Licenses\license*.txt" />
+        <Resource Include="Resources\Licenses\license.en.txt" />
+        <Resource Include="@(_MicaSupportLanguageExtra->'Resources\Licenses\license.%(Identity).txt')" />
         <Resource Include="Resources\Licenses\license*.rtf" />
         <Resource Include="Resources\Setups\*.7z" />
         <Resource Include="Resources\Setups\*.appx" />
