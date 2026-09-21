@@ -18,7 +18,7 @@ internal static class CSharpCompiler
         StringBuilder stdout = new();
 
         vswhere
-            .WithArguments("-latest -property installationPath")
+            .WithArguments("-latest -products * -requires Microsoft.Component.MSBuild -version [17.0,) -property installationPath")
             .WithStandardOutputPipe(PipeTarget.ToStringBuilder(stdout, Encoding.UTF8))
             .ExecuteAsync()
             .GetAwaiter()
@@ -28,14 +28,14 @@ internal static class CSharpCompiler
 
         if (!Directory.Exists(installationPath))
         {
-            throw new FileNotFoundException("Visual Studio 2022 or greater not found on your system. Are you missing install?");
+            throw new FileNotFoundException("Visual Studio or Build Tools 2022 or greater with MSBuild not found on your system. Are you missing install?");
         }
 
         string msbuild = Path.Combine(installationPath, @"MSBuild\Current\Bin\MSBuild.exe");
 
         if (!File.Exists(msbuild))
         {
-            throw new FileNotFoundException("MSBuild not found on Visual Studio. It may be caused by version mismatch.");
+            throw new FileNotFoundException("MSBuild not found on Visual Studio / Build Tools. It may be caused by version mismatch.");
         }
 
         Console.OutputEncoding = Encoding.UTF8;
