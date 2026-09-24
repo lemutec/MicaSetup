@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using FetchVer.Helper;
+using System.Reflection;
 
 namespace FetchVer;
 
@@ -6,6 +7,11 @@ internal sealed class Program
 {
     private static void Main(string[] args)
     {
+        if (WineHelper.IsRunningUnderWine())
+        {
+            Console.WriteLine("INF: Detected Wine environment.");
+        }
+
         if (args.Length <= 0)
         {
             Console.WriteLine($"Startup: fetchver v{Assembly.GetCallingAssembly().GetName().Version.ToString(3)}");

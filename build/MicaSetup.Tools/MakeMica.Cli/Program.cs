@@ -1,4 +1,5 @@
 ﻿using MakeMica.Cli;
+using MakeMica.Cli.Helper;
 using MakeMica.Shared;
 using Newtonsoft.Json;
 using System.Reflection;
@@ -8,6 +9,11 @@ internal static class Program
     private static void Main(string[] args)
     {
         Console.WriteLine($"Startup: makemica v{Assembly.GetCallingAssembly().GetName().Version.ToString(3)}");
+
+        if (WineHelper.IsRunningUnderWine())
+        {
+            Console.WriteLine("INF: Detected Wine environment.");
+        }
 
         if (args.Length <= 0)
         {
