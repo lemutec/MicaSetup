@@ -21,6 +21,7 @@
     <file src="..\build\Build\bin\7z.dll" target="build\bin\7z.dll" />
     <file src="..\build\Build\bin\7z.exe" target="build\bin\7z.exe" />
     <file src="..\build\Build\template\default.7z" target="build\template\default.7z" />
+    <file src="..\build\Build\checkver.exe" target="build\checkver.exe" />
     <file src="..\build\Build\fetchver.exe" target="build\fetchver.exe" />
     <file src="..\build\Build\makeicon.exe" target="build\makeicon.exe" />
     <file src="..\build\Build\makeiconw.exe" target="build\makeiconw.exe" />

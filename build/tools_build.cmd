@@ -2,6 +2,7 @@ cd /d %~dp0
 
 echo [build]
 
+dotnet publish MicaSetup.Tools\CheckVer\CheckVer.csproj -c Release -p:PublishProfile=FolderProfile
 dotnet publish MicaSetup.Tools\FetchVer\FetchVer.csproj -c Release -p:PublishProfile=FolderProfile
 dotnet publish MicaSetup.Tools\MakeIcon\MakeIcon.csproj -c Release -p:PublishProfile=FolderProfile
 dotnet publish MicaSetup.Tools\MakeIcon.Cli\MakeIcon.Cli.csproj -c Release -p:PublishProfile=FolderProfile
@@ -19,6 +20,9 @@ mkdir .\Build\
 mkdir .\Build\bin\
 
 copy /y .\MicaSetup.Tools\MICA\bin\Release\publish\MICA.exe .\Build\
+
+copy /y .\MicaSetup.Tools\CheckVer\bin\Release\publish\CheckVer.exe .\Build\
+ren .\Build\CheckVer.exe checkver.exe
 
 copy /y .\MicaSetup.Tools\FetchVer\bin\Release\publish\FetchVer.exe .\Build\
 ren .\Build\FetchVer.exe fetchver.exe

@@ -10,6 +10,7 @@ MicaSetup is a universal advanced installation package generation tool project t
 
 | Toolkits | Description                                               | GUI               | CLI               |
 | -------- | --------------------------------------------------------- | ----------------- | ----------------- |
+| CheckVer | Print dependency DLL versions, including Costura embeds.  | /                 | Ready             |
 | MakeIcon | Create setup and uninst icon, both *.png and *.ico.       | Ready             | Ready             |
 | MakeMica | Build a package installer using configuration JSON file.  | Under development | Under development |
 | MakeMui  | A GUI for editing the multi-language XAML resource files. | Under development | /                 |
@@ -117,6 +118,18 @@ for /f "tokens=* delims=" %%i in ('fetchver.exe /v3 "fetchver.exe"') do set fetc
 ```
 
 Support options: v1, v2, v3, v4
+
+### Usage of `checkver`
+
+```bash
+checkver "path\to\app.exe"
+```
+
+Prints dependency information for the given executable or DLL:
+
+- Managed assembly references and their versions. When the DLL is next to the file, its file version is included.
+- Native import libraries.
+- Assemblies embedded by Costura.Fody (`costura.*.dll` / `costura.*.dll.compressed`, including `costura_win_x86` / `costura_win_x64` / `costura_win_arm64`), with the assembly version and file version read from the embedded payload.
 
 ## 🎃Developer
 

@@ -16,6 +16,7 @@
   </Folder>
   <Folder Name="/Tools/">
     <File Path="nuget/Package.nuspec" />
+    <Project Path="build/MicaSetup.Tools/CheckVer/CheckVer.csproj" />
     <Project Path="build/MicaSetup.Tools/FetchVer/FetchVer.csproj" />
     <Project Path="build/MicaSetup.Tools/MakeIcon.Cli/MakeIcon.Cli.csproj" />
     <Project Path="build/MicaSetup.Tools/MakeIcon.Shared/MakeIcon.Shared.shproj" />
