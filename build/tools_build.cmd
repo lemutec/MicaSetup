@@ -8,9 +8,9 @@ dotnet publish MicaSetup.Tools\MakeIcon\MakeIcon.csproj -c Release -p:PublishPro
 dotnet publish MicaSetup.Tools\MakeIcon.Cli\MakeIcon.Cli.csproj -c Release -p:PublishProfile=FolderProfile
 dotnet publish MicaSetup.Tools\MakeMica\MakeMica.csproj -c Release -p:PublishProfile=FolderProfile
 dotnet publish MicaSetup.Tools\MakeMica.Cli\MakeMica.Cli.csproj -c Release -p:PublishProfile=FolderProfile
-dotnet publish MicaSetup.Tools\MakeMui\MakeMui.csproj -c Release -p:PublishProfile=FolderProfile
+@REM MakeMui is under development and not in the tree yet
+@REM dotnet publish MicaSetup.Tools\MakeMui\MakeMui.csproj -c Release -p:PublishProfile=FolderProfile
 dotnet publish MicaSetup.Tools\MICA\MICA.csproj -c Release -p:PublishProfile=FolderProfile
-dotnet pack MicaSetup.Tools\MicaSetup.Tools\MicaSetup.Tools.csproj -c Release -p:PublishProfile=FolderProfile
 
 echo [copy]
 
@@ -43,9 +43,6 @@ copy /y .\MicaSetup.Tools\MakeIcon.Cli\bin\Release\publish\MakeIcon.Cli.exe .\Bu
 del .\Build\makeicon.exe
 ren .\Build\MakeIcon.Cli.exe makeicon.exe
 
-copy /y .\MicaSetup.Tools\MicaSetup.Tools\bin\Release\*.nupkg .\
-copy /y .\MicaSetup.Tools\MicaSetup.Tools\bin\Release\*.snupkg .\
-
 copy /y .\MicaSetup.Tools\7-Zip\7z.dll .\Build\bin\7z.dll
 copy /y .\MicaSetup.Tools\7-Zip\7z.exe .\Build\bin\7z.exe
 
@@ -60,6 +57,13 @@ del .\MicaSetup\Resources\Setups\Uninst.exe
 MicaSetup.Tools\7-Zip\7z a default.7z .\MicaSetup\* -t7z -mx=5 -mf=BCJ2 -r -y
 mkdir .\Build\template
 move default.7z .\Build\template\default.7z
+
+echo [nuget]
+
+@REM Package.nuspec packs files from .\Build\, so pack after copy/create
+dotnet pack MicaSetup.Tools\MicaSetup.Tools\MicaSetup.Tools.csproj -c Release -p:PublishProfile=FolderProfile
+copy /y .\MicaSetup.Tools\MicaSetup.Tools\bin\Release\*.nupkg .\
+copy /y .\MicaSetup.Tools\MicaSetup.Tools\bin\Release\*.snupkg .\
 
 echo [pack]
 
