@@ -205,6 +205,11 @@ public class MicaConfig
     public bool IsAllowFirewall { get; set; } = true;
 
     /// <summary>
+    /// <see cref="MicaSetup.Option.IsForceOpenAsNormalUser"/>
+    /// </summary>
+    public bool IsForceOpenAsNormalUser { get; set; } = false;
+
+    /// <summary>
     /// <see cref="MicaSetup.Option.IsRefreshExplorer"/>
     /// </summary>
     public bool IsRefreshExplorer { get; set; } = true;

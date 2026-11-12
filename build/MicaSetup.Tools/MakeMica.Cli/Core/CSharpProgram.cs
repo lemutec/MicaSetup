@@ -162,6 +162,7 @@ public static class CSharpProgram
             root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferAppDataLocalPrograms", config.IsUseInstallPathPreferAppDataLocalPrograms);
             root = root.ReplaceOptionWithBoolean("IsUseInstallPathPreferAppDataRoaming", config.IsUseInstallPathPreferAppDataRoaming);
             root = root.ReplaceOptionWithBoolean("IsAllowFullFolderSecurity", config.IsAllowFullFolderSecurity);
+            root = root.ReplaceOptionWithBoolean("IsForceOpenAsNormalUser", config.IsForceOpenAsNormalUser);
             root = root.ReplaceOptionWithString("OverlayInstallRemoveExt", config.OverlayInstallRemoveExt);
             if (config.OverlayInstallRemovePatterns is { Length: > 0 })
             {

@@ -230,6 +230,15 @@ public partial class Option
     public string ExeName { get; set; } = null!;
 
     /// <summary>
+    /// Force the finish-page Open action to launch the installed app as a normal (non-elevated) user.
+    /// Default is false: Open inherits the setup process privileges (easier to reason about).
+    /// Set true to always de-elevate, avoiding UAC-related issues (e.g. broken dropdowns) when setup runs as admin.
+    /// Only takes effect when the setup process is elevated.
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsForceOpenAsNormalUser { get; set; } = false;
+
+    /// <summary>
     /// Indicates whether to uninst and keep my data
     /// For security reason, it's only can be used in admin
     /// </summary>

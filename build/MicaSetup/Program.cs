@@ -49,6 +49,7 @@ internal class Program
                 option.IsUseRegistryPreferX86 = null!;
                 option.IsAllowFullFolderSecurity = true;
                 option.IsAllowFirewall = true;
+                option.IsForceOpenAsNormalUser = false;
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
                 option.IsEnableUninstallDelayUntilReboot = true;

@@ -34,6 +34,7 @@
   "IsUseRegistryPreferX86": null,
   "IsAllowFullFolderSecurity": true,
   "IsAllowFirewall": true,
+  "IsForceOpenAsNormalUser": false,
   "IsRefreshExplorer": true,
   "IsInstallCertificate": false,
   "IsEnableUninstallDelayUntilReboot": true,

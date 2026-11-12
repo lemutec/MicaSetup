@@ -35,6 +35,7 @@ public partial class FinishViewModel : ObservableObject
                     .FileName(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName))
                     .WorkingDirectory(Option.Current.InstallLocation)
                     .UseShellExecute()
+                    .UseUnelevated(Option.Current.IsForceOpenAsNormalUser)
                     .Start()
                     .Forget();
             }
