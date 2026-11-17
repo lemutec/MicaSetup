@@ -17,6 +17,6 @@ public class HostBuilder : IHostBuilder
 
     public void RunApp()
     {
-        App?.Run();
+        Environment.ExitCode = App?.Run() ?? default;
     }
 }

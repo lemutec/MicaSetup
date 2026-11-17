@@ -33,10 +33,13 @@ public static class TempPathForkHelper
         }
     }
 
+    private static bool cleaned = false;
+
     public static void Clean()
     {
-        if (CommandLineHelper.Has(ForkedCli))
+        if (CommandLineHelper.Has(ForkedCli) && !cleaned)
         {
+            cleaned = true;
             string tempPath = AppDomain.CurrentDomain.BaseDirectory;
             string filePath = Path.Combine(tempPath, $"{(Option.Current.IsUninst ? "Uninst" : "Setup")}.exe");
 

@@ -31,7 +31,7 @@ public static class HostBuilderExtension
 
     public static IHostBuilder UseLogger(this IHostBuilder builder, bool enabled = true)
     {
-        Option.Current.Logging = enabled;
+        Option.Current.Logging = enabled || CliParser.IsLoggingRequested;
         Logger.Information("Setup run started ...");
         return builder;
     }
@@ -114,6 +114,16 @@ public static class HostBuilderExtension
     public static IHostBuilder UseOptions(this IHostBuilder builder, Action<Option> handler)
     {
         handler?.Invoke(Option.Current);
+        return builder;
+    }
+
+    public static IHostBuilder UseCli(this IHostBuilder builder)
+    {
+        if (!CliParser.Apply(Option.Current))
+        {
+            TempPathForkHelper.Clean();
+            Environment.Exit(CliExitCode.Failure);
+        }
         return builder;
     }
 

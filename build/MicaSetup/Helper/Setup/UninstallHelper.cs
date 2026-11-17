@@ -28,7 +28,7 @@ public static class UninstallHelper
 
                 if (string.IsNullOrWhiteSpace(uinfo.UninstallData))
                 {
-                    MessageBox.Info(ApplicationDispatcherHelper.MainWindow, "InstallationInfoLostHint".Tr());
+                    ReportInstallationInfoLost();
                 }
             }
         }
@@ -41,7 +41,7 @@ public static class UninstallHelper
 
             if (string.IsNullOrWhiteSpace(uinfo.UninstallData))
             {
-                MessageBox.Info(ApplicationDispatcherHelper.MainWindow, "InstallationInfoLostHint".Tr());
+                ReportInstallationInfoLost();
             }
         }
 
@@ -305,6 +305,17 @@ public static class UninstallHelper
                 reportCallback?.Invoke(UninstallReport.AnyDeleteDelayUntilReboot, deleteDelayUntilRebootList.ToArray());
             }
         }
+    }
+
+    private static void ReportInstallationInfoLost()
+    {
+        if (Option.Current.IsCliUnattended)
+        {
+            // Continue like the UI does after the hint, so that registry keys and shortcuts are still cleaned up.
+            Logger.Warning("[UninstallHelper] Installation info is lost, continue uninstalling.");
+            return;
+        }
+        MessageBox.Info(ApplicationDispatcherHelper.MainWindow, "InstallationInfoLostHint".Tr());
     }
 
     public static void DeleteUninst()

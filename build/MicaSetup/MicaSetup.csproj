@@ -101,4 +101,28 @@
         <Reference Include="System.Management" />
     </ItemGroup>
 
+    <!-- Debug / first build: create a minimal publish.7z when missing (same idea as setup_dummy.cmd). -->
+    <Target Name="EnsureDummyPublish7z" BeforeTargets="BeforeBuild;PrepareResources">
+        <PropertyGroup>
+            <_SetupsDir>$(MSBuildProjectDirectory)\Resources\Setups</_SetupsDir>
+            <_Publish7z>$(_SetupsDir)\publish.7z</_Publish7z>
+            <_SevenZip>$(MSBuildProjectDirectory)\..\MicaSetup.Tools\7-Zip\7z.exe</_SevenZip>
+            <_DummyWorkDir>$(IntermediateOutputPath)dummy_publish7z</_DummyWorkDir>
+        </PropertyGroup>
+        <MakeDir Directories="$(_SetupsDir)" Condition="!Exists('$(_SetupsDir)')" />
+        <MakeDir Directories="$(_DummyWorkDir)" Condition="!Exists('$(_Publish7z)')" />
+        <WriteLinesToFile File="$(_DummyWorkDir)\test.txt" Lines="test" Overwrite="true" Condition="!Exists('$(_Publish7z)')" />
+        <Exec Command="&quot;$(_SevenZip)&quot; a &quot;$(_Publish7z)&quot; test.txt -t7z -mx=5 -mf=BCJ2 -r -y"
+              WorkingDirectory="$(_DummyWorkDir)"
+              Condition="!Exists('$(_Publish7z)') AND Exists('$(_SevenZip)')" />
+        <Delete Files="$(_DummyWorkDir)\test.txt" Condition="Exists('$(_DummyWorkDir)\test.txt')" />
+        <Error Text="Missing Resources\Setups\publish.7z and cannot create a dummy (7z.exe not found at $(_SevenZip)). Run build\setup_dummy.cmd first."
+               Condition="!Exists('$(_Publish7z)')" />
+        <!-- Glob may have missed the file on first evaluation; ensure it is embedded. -->
+        <ItemGroup Condition="Exists('$(_Publish7z)')">
+            <Resource Remove="Resources\Setups\publish.7z" />
+            <Resource Include="Resources\Setups\publish.7z" />
+        </ItemGroup>
+    </Target>
+
 </Project>

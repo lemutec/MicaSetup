@@ -30,7 +30,7 @@ public partial class UninstallViewModel : ObservableObject
             await Task.Delay(200);
             InstallInfo = "ProgressTipsUninstalling".Tr();
 
-            UninstallHelper.Uninstall((progress, key) =>
+            bool success = SetupPipelineHelper.Uninstall((progress, key) =>
             {
                 ApplicationDispatcherHelper.BeginInvoke(() =>
                 {
@@ -39,7 +39,7 @@ public partial class UninstallViewModel : ObservableObject
                 });
             }, (report, _) =>
             {
-                if (report == UninstallReport.AnyDeleteDelayUntilReboot)
+                if (report == UninstallReport.AnyDeleteDelayUntilReboot && !Option.Current.IsCliUnattended)
                 {
                     ApplicationDispatcherHelper.Invoke(main =>
                     {
@@ -48,33 +48,20 @@ public partial class UninstallViewModel : ObservableObject
                 }
             });
 
-            if (Option.Current.IsAllowFirewall)
-            {
-                try
-                {
-                    FirewallHelper.RemoveApplication(Path.Combine(Option.Current.InstallLocation ?? string.Empty, Option.Current.ExeName));
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
-            }
-
             Option.Current.Uninstalling = false;
             await Task.Delay(200);
 
-            if (Option.Current.IsRefreshExplorer)
+            SetupPipelineHelper.RefreshExplorer();
+
+            if (Option.Current.CliUiMode == CliUiMode.Passive)
             {
-                try
-                {
-                    ServiceManager.GetService<IExplorerService>()?.Refresh();
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
+                int exitCode = SetupPipelineHelper.Complete(success);
+                ApplicationDispatcherHelper.Invoke(() => SetupPipelineHelper.Exit(exitCode));
             }
-            ApplicationDispatcherHelper.Invoke(Routing.GoToNext);
+            else
+            {
+                ApplicationDispatcherHelper.Invoke(Routing.GoToNext);
+            }
         });
     }
 }

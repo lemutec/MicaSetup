@@ -75,6 +75,7 @@ internal class Program
                 option.MessageOfPage2 = "Installing".Tr();
                 option.MessageOfPage3 = "InstallFinishTips".Tr();
             })
+            .UseCli()
             .UseServices(service =>
             {
                 service.AddSingleton<ITrService, TrService>();

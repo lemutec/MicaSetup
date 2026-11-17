@@ -19,7 +19,12 @@ public partial class MainWindow : FluentWindow
 
     private void OnClosing(object sender, CancelEventArgs e)
     {
-        if (Option.Current.IsUninst)
+        if (Option.Current.IsCliUnattended)
+        {
+            // Passive mode can not be cancelled by user, just like `msiexec /passive`.
+            e.Cancel = Option.Current.Installing || Option.Current.Uninstalling;
+        }
+        else if (Option.Current.IsUninst)
         {
             if (Option.Current.Uninstalling)
             {

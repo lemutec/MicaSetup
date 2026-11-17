@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -9,17 +10,48 @@ public static class CommandLineHelper
 {
     public static StringDictionary Values { get; private set; } = [];
 
+    /// <summary>
+    /// Public properties passed as bare `NAME=value` tokens (MSI style)
+    /// </summary>
+    public static Dictionary<string, string> Properties { get; } = new(StringComparer.OrdinalIgnoreCase);
+
     static CommandLineHelper()
     {
         string[] args = Environment.GetCommandLineArgs();
         Regex spliter = new(@"^-{1,2}|^/|=|:", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         Regex remover = new(@"^['""]?(.*?)['""]?$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        Regex switcher = new(@"^(-{1,2}|/)", RegexOptions.Compiled);
+        Regex property = new(@"^(?<key>[A-Za-z_][\w.]*)=(?<value>.*)$", RegexOptions.Compiled);
 
         string param = null!;
         string[] parts;
 
         foreach (string txt in args.Skip(1))
         {
+            if (!switcher.IsMatch(txt))
+            {
+                Match match = property.Match(txt);
+
+                if (match.Success)
+                {
+                    if (param != null && !Values.ContainsKey(param))
+                    {
+                        Values.Add(param, bool.TrueString);
+                    }
+                    param = null!;
+                    Properties[match.Groups["key"].Value] = remover.Replace(match.Groups["value"].Value, "$1");
+                }
+                else if (param != null)
+                {
+                    if (!Values.ContainsKey(param))
+                    {
+                        Values.Add(param, remover.Replace(txt, "$1"));
+                    }
+                    param = null!;
+                }
+                continue;
+            }
+
             parts = spliter.Split(txt, 3);
 
             switch (parts.Length)

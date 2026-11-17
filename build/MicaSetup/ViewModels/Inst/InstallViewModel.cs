@@ -31,56 +31,15 @@ public partial class InstallViewModel : ObservableObject
         {
             await Task.Delay(200).ConfigureAwait(true);
 
-            try
+            InstallInfo = "ProgressTipsInstalling".Tr();
+            bool success = SetupPipelineHelper.Install((progress, key) =>
             {
-                using Stream archiveStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/publish.7z");
-                InstallInfo = "ProgressTipsInstalling".Tr();
-                InstallHelper.Install(archiveStream, (progress, key) =>
+                ApplicationDispatcherHelper.BeginInvoke(() =>
                 {
-                    ApplicationDispatcherHelper.BeginInvoke(() =>
-                    {
-                        InstallProgress = progress * 100d;
-                        InstallInfo = key;
-                    });
+                    InstallProgress = progress * 100d;
+                    InstallInfo = key;
                 });
-
-                using Stream uninstStream = ResourceHelper.GetStream("pack://application:,,,/MicaSetup;component/Resources/Setups/Uninst.exe");
-                InstallHelper.CreateUninst(uninstStream);
-            }
-            catch (Exception e)
-            {
-                Logger.Error(e);
-            }
-
-            if (Option.Current.IsAllowFullFolderSecurity)
-            {
-                try
-                {
-                    if (RuntimeHelper.IsElevated)
-                    {
-                        SecurityControlHelper.AllowFullFolderSecurity(Option.Current.InstallLocation);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
-            }
-
-            if (Option.Current.IsAllowFirewall)
-            {
-                try
-                {
-                    if (RuntimeHelper.IsElevated)
-                    {
-                        FirewallHelper.AllowApplication(Path.Combine(Option.Current.InstallLocation, Option.Current.ExeName));
-                    }
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
-            }
+            });
 
             if (false)
             {
@@ -131,18 +90,17 @@ public partial class InstallViewModel : ObservableObject
             Option.Current.Installing = false;
             await Task.Delay(200).ConfigureAwait(false);
 
-            if (Option.Current.IsRefreshExplorer)
+            SetupPipelineHelper.RefreshExplorer();
+
+            if (Option.Current.CliUiMode == CliUiMode.Passive)
             {
-                try
-                {
-                    ServiceManager.GetService<IExplorerService>()?.Refresh();
-                }
-                catch (Exception e)
-                {
-                    Logger.Error(e);
-                }
+                int exitCode = SetupPipelineHelper.Complete(success);
+                ApplicationDispatcherHelper.Invoke(() => SetupPipelineHelper.Exit(exitCode));
             }
-            ApplicationDispatcherHelper.Invoke(Routing.GoToNext);
+            else
+            {
+                ApplicationDispatcherHelper.Invoke(Routing.GoToNext);
+            }
         });
     }
 }

@@ -1,4 +1,6 @@
 ﻿using MicaSetup.Helper;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace MicaSetup;
@@ -336,4 +338,46 @@ public partial class Option
     /// </summary>
     [Category("GlobalSetting")]
     public string MessageOfPage3 { get; set; } = null!;
+
+    /// <summary>
+    /// UI level requested from CLI: `/q` or `/s` => Quiet, `/p` => Passive
+    /// </summary>
+    [Category("GlobalVariable")]
+    public CliUiMode CliUiMode { get; set; } = CliUiMode.Full;
+
+    /// <summary>
+    /// Indicates whether CLI requests an unattended run (Quiet or Passive)
+    /// </summary>
+    public bool IsCliUnattended => CliUiMode != CliUiMode.Full;
+
+    /// <summary>
+    /// CLI `/norestart`
+    /// </summary>
+    [Category("GlobalVariable")]
+    public bool CliNoRestart { get; set; } = false;
+
+    /// <summary>
+    /// CLI `/forcerestart`
+    /// </summary>
+    [Category("GlobalVariable")]
+    public bool CliForceRestart { get; set; } = false;
+
+    /// <summary>
+    /// CLI public properties passed as `NAME=value`, reserved for future use
+    /// </summary>
+    [Category("GlobalVariable")]
+    public Dictionary<string, string> CliProperties { get; } = new(StringComparer.OrdinalIgnoreCase);
+
+    /// <summary>
+    /// Indicates whether a system restart is needed to complete the operation
+    /// </summary>
+    [Category("GlobalVariable")]
+    public bool RebootRequired { get; set; } = false;
+}
+
+public enum CliUiMode
+{
+    Full,
+    Passive,
+    Quiet,
 }

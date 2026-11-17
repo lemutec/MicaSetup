@@ -62,20 +62,57 @@ public static class RuntimeHelper
 
     public static void Restart(string fileName = null!, string dir = null!, string args = null!, int? exitCode = null, bool forced = false)
     {
+        // Unattended CLI callers wait on this process, so it must stay alive and forward the child's exit code.
+        bool waitForExit = CliParser.IsUnattended;
+        FluentProcess process;
+
         try
         {
-            FluentProcess.Create()
+            if (waitForExit)
+            {
+                ReleaseSingleInstance();
+            }
+
+            process = FluentProcess.Create()
                 .FileName(fileName ?? Path.Combine(dir ?? AppDomain.CurrentDomain.BaseDirectory, AppDomain.CurrentDomain.FriendlyName))
                 .Arguments(args ?? ReArguments())
                 .WorkingDirectory(dir ?? Environment.CurrentDirectory)
                 .UseShellExecute()
                 .Verb(RequestExecutionLevelAttribute.IsRequestAdmin ? "runas" : string.Empty)
-                .Start()
-                .Forget();
+                .Start();
         }
-        catch (Win32Exception)
+        catch (Win32Exception e)
         {
+            // The child was never started (such as UAC cancelled), so the forked copy is not locked and can be removed now.
+            if (fileName != null)
+            {
+                try
+                {
+                    File.Delete(fileName);
+                    string? forkedDir = Path.GetDirectoryName(fileName);
+                    if (forkedDir != null && Directory.Exists(forkedDir) && Directory.GetFileSystemEntries(forkedDir).Length == 0)
+                    {
+                        Directory.Delete(forkedDir);
+                    }
+                }
+                catch
+                {
+                }
+            }
+
+            if (waitForExit)
+            {
+                // The single instance handle is released already, so never continue in this process.
+                Logger.Error(e);
+                TempPathForkHelper.Clean();
+                Environment.Exit(e.NativeErrorCode == ErrorCancelled ? CliExitCode.UserCancel : CliExitCode.Failure);
+            }
             return;
+        }
+        if (waitForExit)
+        {
+            process.WaitForExit();
+            Environment.Exit(process.ExitCode);
         }
         if (forced)
         {
@@ -83,6 +120,12 @@ public static class RuntimeHelper
         }
         Environment.Exit(exitCode ?? 'r' + 'u' + 'n' + 'a' + 's');
     }
+
+    private const int ErrorCancelled = 1223;
+
+    private static EventWaitHandle? singleInstanceHandle;
+    private static Task? singleInstanceTask;
+    private static volatile bool singleInstanceReleased;
 
     public static void CheckSingleInstance(string instanceName, Action<bool> callback = null!)
     {
@@ -93,18 +136,23 @@ public static class RuntimeHelper
             handle = EventWaitHandle.OpenExisting(instanceName);
             handle.Set();
             callback?.Invoke(false);
-            Environment.Exit(0xFFFF);
+            Environment.Exit(CliParser.IsUnattended ? CliExitCode.AlreadyRunning : 0xFFFF);
         }
         catch (WaitHandleCannotBeOpenedException)
         {
             callback?.Invoke(true);
             handle = new EventWaitHandle(false, EventResetMode.AutoReset, instanceName);
         }
-        GC.KeepAlive(handle);
-        _ = Task.Run(() =>
+        singleInstanceHandle = handle;
+        singleInstanceTask = Task.Run(() =>
         {
-            while (handle.WaitOne())
+            while (handle.WaitOne() && !singleInstanceReleased)
             {
+                // Skip activation when there is no UI, such as quiet mode.
+                if (Option.Current.CliUiMode == CliUiMode.Quiet)
+                {
+                    continue;
+                }
                 ApplicationDispatcherHelper.BeginInvoke(main =>
                 {
                     main?.Activate();
@@ -112,5 +160,22 @@ public static class RuntimeHelper
                 });
             }
         });
+    }
+
+    /// <summary>
+    /// Close the single instance handle so that a restarted child process can own it.
+    /// </summary>
+    public static void ReleaseSingleInstance()
+    {
+        if (singleInstanceHandle == null)
+        {
+            return;
+        }
+
+        singleInstanceReleased = true;
+        _ = singleInstanceHandle.Set();
+        _ = singleInstanceTask?.Wait(1000);
+        singleInstanceHandle.Dispose();
+        singleInstanceHandle = null;
     }
 }

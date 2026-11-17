@@ -27,7 +27,10 @@ public static class SecurityControlHelper
         catch (Exception e)
         {
             Logger.Error(e);
-            System.Windows.MessageBox.Show("Allow Full File Security Error" + e.ToString());
+            if (!Option.Current.IsCliUnattended)
+            {
+                System.Windows.MessageBox.Show("Allow Full File Security Error" + e.ToString());
+            }
         }
     }
 
@@ -53,7 +56,10 @@ public static class SecurityControlHelper
         catch (Exception e)
         {
             Logger.Error(e);
-            System.Windows.MessageBox.Show("Allow Full Folder Security Error" + e.ToString());
+            if (!Option.Current.IsCliUnattended)
+            {
+                System.Windows.MessageBox.Show("Allow Full Folder Security Error" + e.ToString());
+            }
         }
     }
 }

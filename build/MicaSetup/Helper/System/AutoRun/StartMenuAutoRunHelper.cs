@@ -21,7 +21,10 @@ public static class StartMenuAutoRunHelper
         catch (Exception e)
         {
             Logger.Error(e);
-            System.Windows.MessageBox.Show("Create Startup ShortCut error" + "See detail following" + e.ToString());
+            if (!Option.Current.IsCliUnattended)
+            {
+                System.Windows.MessageBox.Show("Create Startup ShortCut error" + "See detail following" + e.ToString());
+            }
         }
     }
 

@@ -62,6 +62,7 @@ internal class Program
                 option.MessageOfPage2 = "ProgressTipsUninstalling".Tr();
                 option.MessageOfPage3 = "UninstallFinishTips".Tr();
             })
+            .UseCli()
             .UseServices(service =>
             {
                 service.AddSingleton<ITrService, TrService>();

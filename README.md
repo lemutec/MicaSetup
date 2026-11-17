@@ -58,8 +58,8 @@ MicaSetup is a universal advanced installation package generation tool project t
 | Auto Run           | ☑          | Support to make your installed app auto run.                 |
 | Security Control   | ☑          | Support to make your installed path Allow Full File Security. |
 | Install Font       | 🔲          | Support to install your fonts into system.                   |
-| Install Silent     | 🔲          | Support silent installation using CLI `/q`.<br />Useful for auto updating in the background. |
-| Install Automate   | 🔲          | Support no interactive installation using CLI `/a`.<br />Useful for auto updating in the foreground. |
+| Install Silent     | ☑          | Support silent installation using CLI `/q` or `/s`.<br />Useful for auto updating in the background. |
+| Install Passive    | ☑          | Support progress-only installation using CLI `/p`.<br />Useful for auto updating in the foreground. |
 
 ## 🎛️Personalized Controls
 
@@ -107,6 +107,42 @@ Write-Host "Installer building"
 # Ensure your micasetup.json file here
 & $exePath
 ```
+
+### Command line of Setup and Uninst
+
+```bash
+MicaSetup.exe /q /d "C:\Program Files\MicaApp" /norestart LOGGING=1
+Uninst.exe /p
+```
+
+| Options                         | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| `/i`                            | Install. Only accepted by Setup and can be omitted.         |
+| `/x`                            | Uninstall. Only accepted by Uninst and can be omitted.      |
+| `/d=<path>` or `/d <path>`      | Install location. `KeyName` is appended when the path does not end with it, same as the UI.<br />Default is the same as the UI without changes. |
+| `/q` or `/s`                    | Quiet mode, no UI at all. The app will not be launched after installation. |
+| `/p`                            | Passive mode, only shows the progress page and closes when completed. |
+| `/norestart`                    | Never restart the system. Exits with `3010` when a restart is required.<br />Takes precedence over `/forcerestart`. This is also the default behavior. |
+| `/forcerestart`                 | Always restart the system after a successful operation in quiet or passive mode, same as msiexec. |
+| `NAME=value`                    | Public properties. Supported properties are listed below.    |
+
+| Properties                      | Description                                                  |
+| ------------------------------- | ------------------------------------------------------------ |
+| `LOGGING=1`                     | Write the log file to `%USERPROFILE%\Documents\MicaSetup\yyyyMMdd.log`.<br />Accepts `1`, `true`, `yes` or `on`. |
+
+Options and property names are case-insensitive.
+
+> [!NOTE]
+> Quiet and passive modes skip the wizard pages, so the license agreement is not shown and is treated as accepted, same as `msiexec`.
+
+| Exit codes | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| `0`        | Success.                                                     |
+| `1`        | Failure, such as invalid arguments, insufficient free space or locked files. Use `LOGGING=1` for details. |
+| `1602`     | User cancelled the UAC prompt in quiet or passive mode.      |
+| `1618`     | Another Setup or Uninst is already running in quiet or passive mode. |
+| `1641`     | Restart initiated by `/forcerestart`.                        |
+| `3010`     | Restart required to complete the operation.                  |
 
 ### Usage of `fetchver`
 

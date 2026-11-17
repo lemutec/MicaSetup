@@ -14,8 +14,24 @@ public partial class ShellViewModel : ObservableObject
     public ShellViewModel()
     {
         Routing.RegisterRoute();
-        Route = ShellPageSetting.PageDict.FirstOrDefault().Key;
+
+        if (Option.Current.CliUiMode == CliUiMode.Passive && ShellPageSetting.PageDict.ContainsKey(ProgressRoute))
+        {
+            Route = ProgressRoute;
+        }
+        else
+        {
+            Route = ShellPageSetting.PageDict.FirstOrDefault().Key;
+        }
     }
+
+#if SETUP
+    private const string ProgressRoute = nameof(Views.InstallPage);
+#elif UNINST
+    private const string ProgressRoute = nameof(Views.UninstallPage);
+#else
+    private const string ProgressRoute = "";
+#endif
 }
 
 partial class ShellViewModel
