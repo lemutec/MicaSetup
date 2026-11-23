@@ -17,7 +17,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 10.0.x
+          dotnet-version: 11.0.x
 
       - name: Prepare dummy files `publish.7z` and `Uninst.exe`
         run: echo publish.7z > .\build\MicaSetup\Resources\Setups\publish.7z && echo uninst.exe > .\build\MicaSetup\Resources\Setups\Uninst.exe
