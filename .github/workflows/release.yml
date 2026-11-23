@@ -4,7 +4,7 @@ name: release
 # https://github.com/lemutec/MicaSetup/releases/tag/v2.5.7
 # and to push the nupkg to nuget.org.
 #
-# Required repository secret: NUGET_API_KEY
+# Required repository secret: NUGET_AUTH_TOKEN
 on:
   push:
     tags:
@@ -29,10 +29,10 @@ jobs:
       - name: Require NuGet API key
         shell: pwsh
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_AUTH_TOKEN }}
         run: |
-          if ([string]::IsNullOrWhiteSpace($env:NUGET_API_KEY)) {
-            throw 'Missing repository secret NUGET_API_KEY. Add a nuget.org API key before pushing a release tag.'
+          if ([string]::IsNullOrWhiteSpace($env:NUGET_AUTH_TOKEN)) {
+            throw 'Missing repository secret NUGET_AUTH_TOKEN. Add a nuget.org API key before pushing a release tag.'
           }
 
       - name: Verify Visual Studio MSBuild
@@ -124,12 +124,12 @@ jobs:
       - name: Push NuGet package
         shell: pwsh
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_AUTH_TOKEN }}
           NUPKG: ${{ steps.assets.outputs.nupkg }}
         run: |
           $ErrorActionPreference = 'Stop'
           $PSNativeCommandUseErrorActionPreference = $false
-          & dotnet nuget push $env:NUPKG --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json --skip-duplicate
+          & dotnet nuget push $env:NUPKG --api-key $env:NUGET_AUTH_TOKEN --source https://api.nuget.org/v3/index.json --skip-duplicate
           if ($LASTEXITCODE -ne 0) {
             throw "dotnet nuget push failed with exit code $LASTEXITCODE"
           }
