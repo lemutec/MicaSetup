@@ -1,0 +1,170 @@
+name: release
+
+# Push a version tag (v2.6.0) to publish the same three assets as
+# https://github.com/lemutec/MicaSetup/releases/tag/v2.5.7
+# and to push the nupkg to nuget.org.
+#
+# Required repository secret: NUGET_API_KEY
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Require NuGet API key
+        shell: pwsh
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:NUGET_API_KEY)) {
+            throw 'Missing repository secret NUGET_API_KEY. Add a nuget.org API key before pushing a release tag.'
+          }
+
+      - name: Verify Visual Studio MSBuild
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
+          if (-not (Test-Path -LiteralPath $vswhere)) {
+            throw 'vswhere.exe was not found. makemica needs Visual Studio 2022 or newer.'
+          }
+          $install = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -version '[17.0,)' -property installationPath
+          if ([string]::IsNullOrWhiteSpace($install)) {
+            throw 'Visual Studio 2022 or newer with MSBuild was not found.'
+          }
+          Write-Host "MSBuild installation: $($install.Trim())"
+
+      - name: Build tools package and installer
+        shell: pwsh
+        working-directory: build
+        run: ./tools_build.ps1 -NoPause
+
+      - name: Stage release assets
+        id: assets
+        shell: pwsh
+        working-directory: build
+        run: |
+          $ErrorActionPreference = 'Stop'
+
+          function ConvertTo-ReleaseVersion([string]$Version) {
+            $Version = $Version.Trim()
+            if ($Version.StartsWith('v') -or $Version.StartsWith('V')) {
+              $Version = $Version.Substring(1)
+            }
+            # NuGet normalizes a four-part version with a trailing zero: 2.6.0.0 -> 2.6.0
+            if ($Version -match '^(\d+\.\d+\.\d+)\.0$') {
+              return $Matches[1]
+            }
+            return $Version
+          }
+
+          function Add-GitHubOutput([string]$Name, [string]$Value) {
+            "$Name=$Value" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8NoBOM
+          }
+
+          $tag = $env:GITHUB_REF_NAME
+          $tagVersion = ConvertTo-ReleaseVersion $tag
+
+          $exes = @(Get-ChildItem -LiteralPath . -File | Where-Object { $_.Name -match '^MicaSetup_v\d+(\.\d+)+\.exe$' })
+          if ($exes.Count -ne 1) {
+            throw "Expected one MicaSetup_v*.exe, found $($exes.Count)."
+          }
+          $exe = $exes[0]
+          $exeVersion = ConvertTo-ReleaseVersion ($exe.BaseName -replace '^MicaSetup_v', '')
+
+          $nupkgs = @(Get-ChildItem -LiteralPath . -File | Where-Object { $_.Name -match '^MicaSetup\.Tools\.\d+(\.\d+)+\.nupkg$' })
+          if ($nupkgs.Count -ne 1) {
+            throw "Expected one MicaSetup.Tools.*.nupkg, found $($nupkgs.Count)."
+          }
+          $nupkg = $nupkgs[0]
+          $nupkgVersion = ConvertTo-ReleaseVersion ($nupkg.BaseName -replace '^MicaSetup\.Tools\.', '')
+
+          if ($tagVersion -ne $exeVersion -or $tagVersion -ne $nupkgVersion) {
+            throw "Tag $tag does not match the built assets (exe $($exe.Name), package $($nupkg.Name)). Bump Package.nuspec and the tool file versions, then push the tag again."
+          }
+
+          if (-not (Test-Path -LiteralPath '.\micasetup.7z')) {
+            throw 'micasetup.7z was not produced.'
+          }
+          $archiveName = "MicaSetup_v$exeVersion.7z"
+          $archivePath = Join-Path (Get-Location) $archiveName
+          Move-Item -LiteralPath '.\micasetup.7z' -Destination $archivePath -Force
+
+          Write-Host 'Release assets:'
+          Write-Host "  $($exe.Name)"
+          Write-Host "  $archiveName"
+          Write-Host "  $($nupkg.Name)"
+
+          @(
+            "### $tag"
+            "- $($exe.Name)"
+            "- $archiveName"
+            "- $($nupkg.Name)"
+          ) | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Encoding utf8NoBOM
+
+          Add-GitHubOutput -Name 'exe' -Value $exe.FullName
+          Add-GitHubOutput -Name 'archive' -Value $archivePath
+          Add-GitHubOutput -Name 'nupkg' -Value $nupkg.FullName
+
+      - name: Push NuGet package
+        shell: pwsh
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUPKG: ${{ steps.assets.outputs.nupkg }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $false
+          & dotnet nuget push $env:NUPKG --api-key $env:NUGET_API_KEY --source https://api.nuget.org/v3/index.json --skip-duplicate
+          if ($LASTEXITCODE -ne 0) {
+            throw "dotnet nuget push failed with exit code $LASTEXITCODE"
+          }
+
+      - name: Publish GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXE: ${{ steps.assets.outputs.exe }}
+          ARCHIVE: ${{ steps.assets.outputs.archive }}
+          NUPKG: ${{ steps.assets.outputs.nupkg }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $false
+          $tag = $env:GITHUB_REF_NAME
+          $files = @($env:EXE, $env:ARCHIVE, $env:NUPKG)
+          $prerelease = $tag -match '(?i)-(alpha|beta|preview|rc|pre)'
+
+          & gh release view $tag --repo $env:GITHUB_REPOSITORY *> $null
+          if ($LASTEXITCODE -eq 0) {
+            & gh release upload $tag @files --repo $env:GITHUB_REPOSITORY --clobber
+          }
+          else {
+            $createArgs = @(
+              'release', 'create', $tag
+            ) + $files + @(
+              '--repo', $env:GITHUB_REPOSITORY,
+              '--title', $tag,
+              '--generate-notes'
+            )
+            if ($prerelease) {
+              $createArgs += '--prerelease'
+            }
+            & gh @createArgs
+          }
+          if ($LASTEXITCODE -ne 0) {
+            throw "gh release failed with exit code $LASTEXITCODE"
+          }
