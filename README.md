@@ -139,7 +139,7 @@ Options and property names are case-insensitive.
 | ---------- | ------------------------------------------------------------ |
 | `0`        | Success.                                                     |
 | `1`        | Failure, such as invalid arguments, insufficient free space or locked files. Use `LOGGING=1` for details. |
-| `1602`     | User cancelled the UAC prompt in quiet or passive mode.      |
+| `1602`     | User cancelled the UAC prompt in quiet or passive mode, or in full UI when `IsAllowElevationFallback` is false. |
 | `1618`     | Another Setup or Uninst is already running in quiet or passive mode. |
 | `1641`     | Restart initiated by `/forcerestart`.                        |
 | `3010`     | Restart required to complete the operation.                  |

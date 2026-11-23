@@ -46,6 +46,7 @@ internal class Program
                 option.IsRefreshExplorer = true;
                 option.IsInstallCertificate = false;
                 option.IsEnableUninstallDelayUntilReboot = true;
+                option.IsAllowElevationFallback = true;
                 option.IsEnvironmentVariable = false;
                 // Keep in sync with MSBuild SupportedLanguages (Languages.props / -p:SupportedLanguages=...).
                 option.SupportLanguages = ["en", "zh-Hans", "zh-Hant", "ja"];

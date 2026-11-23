@@ -135,6 +135,7 @@ public static class CSharpProgram
         root = root.ReplaceOptionWithBoolean("IsCreateAsAutoRun", config.IsCreateAsAutoRun);
         root = root.ReplaceOptionWithNullableBoolean("IsUseRegistryPreferX86", config.IsUseRegistryPreferX86);
         root = root.ReplaceOptionWithBoolean("IsAllowFirewall", config.IsAllowFirewall);
+        root = root.ReplaceOptionWithBoolean("IsAllowElevationFallback", config.IsAllowElevationFallback);
         root = root.ReplaceOptionWithBoolean("IsRefreshExplorer", config.IsRefreshExplorer);
         root = root.ReplaceOptionWithBoolean("IsInstallCertificate", config.IsInstallCertificate);
         root = root.ReplaceOptionWithBoolean("IsEnableUninstallDelayUntilReboot", config.IsEnableUninstallDelayUntilReboot);

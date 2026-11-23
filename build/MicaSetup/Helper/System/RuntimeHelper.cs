@@ -16,6 +16,8 @@ public static class RuntimeHelper
     public static bool IsDebuggerAttached => Debugger.IsAttached;
     public static bool IsDesignMode { get; } = GetDesignMode();
 
+    private static Win32Exception? elevationFailureException;
+
     private static bool GetElevated()
     {
         using WindowsIdentity identity = WindowsIdentity.GetCurrent();
@@ -43,11 +45,28 @@ public static class RuntimeHelper
             Logger.Warning("[RuntimeHelper] IsDebuggerAttached causes skip EnsureElevated");
             return;
         }
+        if (elevationFailureException != null)
+        {
+            return;
+        }
         if (!IsElevated)
         {
             Restart();
         }
     }
+
+    public static void EnsureElevationFallbackAllowed()
+    {
+        if (elevationFailureException != null && !Option.Current.IsAllowElevationFallback)
+        {
+            Logger.Error(elevationFailureException);
+            TempPathForkHelper.Clean();
+            Environment.Exit(GetElevationFailureExitCode(elevationFailureException.NativeErrorCode));
+        }
+    }
+
+    private static int GetElevationFailureExitCode(int nativeErrorCode)
+        => nativeErrorCode == ErrorCancelled ? CliExitCode.UserCancel : CliExitCode.Failure;
 
     public static string ReArguments()
     {
@@ -64,6 +83,7 @@ public static class RuntimeHelper
     {
         // Unattended CLI callers wait on this process, so it must stay alive and forward the child's exit code.
         bool waitForExit = CliParser.IsUnattended;
+        bool isRequestElevation = RequestExecutionLevelAttribute.IsRequestAdmin && !IsElevated;
         FluentProcess process;
 
         try
@@ -100,12 +120,18 @@ public static class RuntimeHelper
                 }
             }
 
-            if (waitForExit)
+            if (isRequestElevation)
             {
-                // The single instance handle is released already, so never continue in this process.
+                elevationFailureException = e;
+            }
+
+            // Unattended callers already released the single-instance handle.
+            // Disallowing elevation fallback must not continue unelevated either.
+            if (waitForExit || (isRequestElevation && !Option.Current.IsAllowElevationFallback))
+            {
                 Logger.Error(e);
                 TempPathForkHelper.Clean();
-                Environment.Exit(e.NativeErrorCode == ErrorCancelled ? CliExitCode.UserCancel : CliExitCode.Failure);
+                Environment.Exit(GetElevationFailureExitCode(e.NativeErrorCode));
             }
             return;
         }

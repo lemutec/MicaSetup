@@ -205,6 +205,11 @@ public class MicaConfig
     public bool IsAllowFirewall { get; set; } = true;
 
     /// <summary>
+    /// <see cref="MicaSetup.Option.IsAllowElevationFallback"/>
+    /// </summary>
+    public bool IsAllowElevationFallback { get; set; } = true;
+
+    /// <summary>
     /// <see cref="MicaSetup.Option.IsForceOpenAsNormalUser"/>
     /// </summary>
     public bool IsForceOpenAsNormalUser { get; set; } = false;

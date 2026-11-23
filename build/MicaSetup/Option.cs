@@ -232,6 +232,16 @@ public partial class Option
     public string ExeName { get; set; } = null!;
 
     /// <summary>
+    /// When <c>RequestExecutionLevel</c> is admin and elevation fails (for example the user cancels UAC),
+    /// continue the current process unelevated.
+    /// Default is true, matching the previous behavior.
+    /// Set false to exit instead: 1602 when the user cancels, otherwise 1.
+    /// Quiet and passive modes already exit and do not use this fallback.
+    /// </summary>
+    [Category("GlobalSetting")]
+    public bool IsAllowElevationFallback { get; set; } = true;
+
+    /// <summary>
     /// Force the finish-page Open action to launch the installed app as a normal (non-elevated) user.
     /// Default is false: Open inherits the setup process privileges (easier to reason about).
     /// Set true to always de-elevate, avoiding UAC-related issues (e.g. broken dropdowns) when setup runs as admin.

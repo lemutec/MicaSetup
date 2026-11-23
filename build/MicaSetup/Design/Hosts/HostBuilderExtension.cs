@@ -114,6 +114,7 @@ public static class HostBuilderExtension
     public static IHostBuilder UseOptions(this IHostBuilder builder, Action<Option> handler)
     {
         handler?.Invoke(Option.Current);
+        RuntimeHelper.EnsureElevationFallbackAllowed();
         return builder;
     }
 
