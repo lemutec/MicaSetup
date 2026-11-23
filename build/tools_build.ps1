@@ -1,7 +1,8 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-  Publish the MicaSetup tools, stage .\Build, pack the default template, and create the NuGet package.
+  Publish the MicaSetup tools, stage .\Build, pack the default template, create the NuGet package,
+  and rename micasetup.7z to MicaSetup_v*.7z so it matches the installer.
 
 .DESCRIPTION
   Run from any directory; the script switches to its own folder first. Native tools
@@ -160,7 +161,26 @@ try {
     Invoke-Native -FilePath $sevenZip -ArgumentList @(
         'a', 'micasetup.7z', '.\Build\*', '-t7z', '-mx=5', '-mf=BCJ2', '-r', '-y'
     )
+
+    # makemica reads .\micasetup.7z, then writes .\MicaSetup_v${Version}.exe.
+    $packStarted = Get-Date
     Invoke-Native -FilePath (Join-Path $buildDir 'makemica.exe') -ArgumentList @('micasetup.json')
+
+    $installers = @(Get-ChildItem -LiteralPath $PSScriptRoot -File | Where-Object {
+            $_.Name -match '^MicaSetup_v\d+(\.\d+)+\.exe$' -and
+            $_.LastWriteTime -ge $packStarted.AddSeconds(-5)
+        })
+    if ($installers.Count -ne 1) {
+        throw "Expected makemica to produce one MicaSetup_v*.exe, found $($installers.Count)."
+    }
+
+    $archiveName = "$($installers[0].BaseName).7z"
+    $archivePath = Join-Path $PSScriptRoot $archiveName
+    if (Test-Path -LiteralPath $archivePath) {
+        Remove-Item -LiteralPath $archivePath -Force
+    }
+    Move-Item -LiteralPath (Join-Path $PSScriptRoot 'micasetup.7z') -Destination $archivePath
+    Write-Host "Archive: $archiveName"
 }
 catch {
     Write-Host $_.Exception.Message -ForegroundColor Yellow

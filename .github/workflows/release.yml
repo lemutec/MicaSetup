@@ -98,12 +98,11 @@ jobs:
             throw "Tag $tag does not match the built assets (exe $($exe.Name), package $($nupkg.Name)). Bump Package.nuspec and the tool file versions, then push the tag again."
           }
 
-          if (-not (Test-Path -LiteralPath '.\micasetup.7z')) {
-            throw 'micasetup.7z was not produced.'
-          }
-          $archiveName = "MicaSetup_v$exeVersion.7z"
+          $archiveName = "$($exe.BaseName).7z"
           $archivePath = Join-Path (Get-Location) $archiveName
-          Move-Item -LiteralPath '.\micasetup.7z' -Destination $archivePath -Force
+          if (-not (Test-Path -LiteralPath $archivePath)) {
+            throw "$archiveName was not produced."
+          }
 
           Write-Host 'Release assets:'
           Write-Host "  $($exe.Name)"
