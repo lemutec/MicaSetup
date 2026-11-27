@@ -7,8 +7,6 @@ public static class CSharpProject
 {
     public static void SetupConfig(string csprojPath, MicaConfig config, bool isUninst = false)
     {
-        _ = isUninst;
-
         if (!File.Exists(csprojPath))
         {
             return;
@@ -33,6 +31,46 @@ public static class CSharpProject
                .SetElementValue("TargetFramework", targetFramework);
         }
 
+        if (!isUninst && (!string.IsNullOrWhiteSpace(config.LicenseFile) || !string.IsNullOrWhiteSpace(config.License)))
+        {
+            // A custom license replaces the built-in per-language files with one license.txt or license.rtf.
+            string licenseExt = string.Equals(config.LicenseType, "rtf", StringComparison.OrdinalIgnoreCase)
+                ? "rtf"
+                : "txt";
+            UseSingleLicenseResource(doc, licenseExt);
+        }
+
         doc.Save(csprojPath);
+    }
+
+    private static void UseSingleLicenseResource(XDocument doc, string licenseExt)
+    {
+        List<XElement> licenseResources = doc.Descendants("Resource")
+            .Where(element => IsLicenseInclude((string?)element.Attribute("Include")))
+            .ToList();
+
+        if (licenseResources.Count == 0)
+        {
+            return;
+        }
+
+        licenseResources[0].AddBeforeSelf(new XElement("Resource",
+            new XAttribute("Include", $@"Resources\Licenses\license.{licenseExt}")));
+
+        foreach (XElement element in licenseResources)
+        {
+            element.Remove();
+        }
+    }
+
+    private static bool IsLicenseInclude(string? include)
+    {
+        if (string.IsNullOrWhiteSpace(include))
+        {
+            return false;
+        }
+
+        return include.Contains(@"Resources\Licenses\license", StringComparison.OrdinalIgnoreCase)
+            || include.Contains("Resources/Licenses/license", StringComparison.OrdinalIgnoreCase);
     }
 }
