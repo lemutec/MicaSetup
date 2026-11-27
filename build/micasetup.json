@@ -48,8 +48,8 @@
   "MessageOfPage3": null,
   "CloseApplications": [
     {
-      "Target": "QuickLook.exe",
-      "Description": "QuickLook",
+      "Target": "MicaApp.exe",
+      "Description": "MicaApp",
       "WindowTitle": null,
       "CloseMessage": true,
       "RebootPrompt": false,
